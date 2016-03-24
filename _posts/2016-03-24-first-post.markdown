@@ -11,3 +11,4 @@ tags:
 ---
 
 ##我的第一个Blog
+> 'Happy Every Day!'
