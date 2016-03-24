@@ -12,11 +12,11 @@ baseurl: ""                             # for example, '/blog' if your blog host
 
 # SNS settings
 RSS: false
-weibo_username:     clovercui
+weibo_username:     2831524662
 zhihu_username:     clovercui
 github_username:    clovercui
 #twitter_username:  huxpro
-facebook_username:  clovercui
+#facebook_username:  clovercui
 
 
 
