@@ -1,13 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Clover Blog</title>
-    <description>关于前端与设计、黑客与画家 | 克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Clover 克洛弗 的个人博客，与你一起发现更大的世界。</description>
-    <link>http://blog.luckhu.com/</link>
-    <atom:link href="http://blog.luckhu.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 24 Mar 2016 15:09:10 +0800</pubDate>
-    <lastBuildDate>Thu, 24 Mar 2016 15:09:10 +0800</lastBuildDate>
+    <title>Hux Blog</title>
+    <description>关于前端与设计、黑客与画家 | 黄玄，Web &amp; Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。</description>
+    <link>http://huangxuan.me/</link>
+    <atom:link href="http://huangxuan.me/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Thu, 24 Mar 2016 15:21:25 +0800</pubDate>
+    <lastBuildDate>Thu, 24 Mar 2016 15:21:25 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>My First Blog</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;宇宙，海洋，黑洞&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;大海&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo &#39;hello word!&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;## 宇宙&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+echo &#39;hello black!&#39;;
+&lt;/code&gt;&lt;br /&gt;
+## 黑洞&lt;/p&gt;
+</description>
+        <pubDate>Thu, 24 Mar 2016 00:00:00 +0800</pubDate>
+        <link>http://huangxuan.me/2016/03/24/my-first-blog/</link>
+        <guid isPermaLink="true">http://huangxuan.me/2016/03/24/my-first-blog/</guid>
+        
+        <category>Clover</category>
+        
+        <category>OS</category>
+        
+        <category>Blog</category>
+        
+        
+      </item>
     
       <item>
         <title>React vs Angular 2：冰与火之歌「译」</title>
@@ -107,26 +136,26 @@
 
 &lt;p&gt;Angular 2 延续了 Angular 1 试图让 HTML 更加强大的老路子。所以即使是像循环或者条件判断这样的简单任务你也不得不使用 Angular 2 的独特语法来完成。例如，Angular 2 通过两种语法同时提供了单向数据绑定与双向数据绑定，可不幸的是它们实在差得有点多：&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;javascript
-{{myVar}}        //单向数据绑定
-ngModel=&quot;myVar&quot;  //双向数据绑定
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myVar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;//单向数据绑定&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;ngModel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;myVar&quot;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//双向数据绑定&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;在 React 中，数据绑定语法不取决于数据流的单双向（数据绑定的单双向是在其他地方处理的，不得不说我觉得理应如此）。不管是单向还是双向数据流，绑定语法都是这样的：&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;javascript
-{myVar}
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myVar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Angular 2 的内联母版（inline master templates）使用了这样的语法：&lt;/p&gt;
 
-&lt;p&gt;```html&lt;/p&gt;
-&lt;ul&gt;
-  &amp;lt;li *ngFor=&quot;#hero of heroes&quot;&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ngFor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#hero of heroes&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
     {{hero.name}}
-  
-&lt;/ul&gt;
-&lt;p&gt;```&lt;/p&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;上面这个代码片段遍历了一组 hero，而我比较关心的几点是：&lt;/p&gt;
 
@@ -138,13 +167,13 @@ ngModel=&quot;myVar&quot;  //双向数据绑定
 
 &lt;p&gt;相比上面 Angular 2 的语法，React 的语法可是纯净的 JavaScript （不过我得承认下面的属性 &lt;code class=&quot;highlighter-rouge&quot;&gt;key&lt;/code&gt; 是个 React 的私货）&lt;/p&gt;
 
-&lt;p&gt;```html&lt;/p&gt;
-&lt;ul&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
   { heroes.map(hero =&amp;gt;
-    &amp;lt;li key={hero.id}&amp;gt;{hero.name}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;{hero.id}&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{hero.name}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
   )}
-&lt;/ul&gt;
-&lt;p&gt;```&lt;/p&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;鉴于 JS 原生支持循环，React JSX 利用 JS 的力量来做到这类事情简直易如反掌，配合 &lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;filter&lt;/code&gt; 能做的还远不止此。&lt;/p&gt;
 
@@ -158,27 +187,27 @@ ngModel=&quot;myVar&quot;  //双向数据绑定
 
 &lt;p&gt;React 因为语法和概念的简约而与众不同。我们不妨品味下当今流行的 JS 框架/库都是如何实现遍历的：&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;javascript
-Ember: 
-Angular 1: ng-repeat
-Angular 2: ngFor
-Knockout: data-bind=&quot;foreach&quot;
-React: 直接用 JS 就好啦 :)
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Ember&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; 
+&lt;span class=&quot;nx&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ng&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;repeat&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Angular&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ngFor&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;Knockout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;foreach&quot;&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;直接用&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JS&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;就好啦&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;除了 React，所有其它框架都用自己的专有语法重新发明了一个我们在 JavaScript 常见得不能再常见的东西：&lt;strong&gt;循环&lt;/strong&gt;。这大概就是 React 的美妙之处，利用 JavaScript 的力量来处理标签，而不是什么奇怪的新语法。&lt;/p&gt;
 
 &lt;p&gt;Angular 2 中的奇怪语法还有点击事件的绑定：&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;javascript
-(click)=&quot;onSelect(hero)&quot;
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;onSelect(hero)&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;相反，React 再一次使用了普通的 JavaScript：&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;javascript
-onClick={this.onSelect.bind(this, hero)}
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onSelect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;并且，鉴于 React 内建了一个模拟的事件机制（Angular 2 也有），你并不需要去担心使用内联语法声明事件处理器所暗含的性能问题。&lt;/p&gt;
 
@@ -244,12 +273,12 @@ onClick={this.onSelect.bind(this, hero)}
 
 &lt;h3 id=&quot;section-7&quot;&gt;著作权声明&lt;/h3&gt;
 
-&lt;p&gt;本文译自 &lt;a href=&quot;https://medium.freecodecamp.com/angular-2-versus-react-there-will-be-blood-66595faafd51#.v4y4euy1r&quot;&gt;Angular 2 versus React: There Will Be Blood&lt;/a&gt;，其实&lt;a href=&quot;http://www.w3ctech.com/topic/1675?from=timeline&amp;amp;isappinstalled=0&quot;&gt;之前有人翻译过&lt;/a&gt;，但是翻得水平有一点不忍直视，我们不希望浪费这篇好文章。&lt;br /&gt;
+&lt;p&gt;本文译自 &lt;a href=&quot;https://medium.freecodecamp.com/angular-2-versus-react-there-will-be-blood-66595faafd51#.v4y4euy1r&quot;&gt;Angular 2 versus React: There Will Be Blood&lt;/a&gt;，其实&lt;a href=&quot;http://www.w3ctech.com/topic/1675?from=timeline&amp;amp;isappinstalled=0&quot;&gt;之前有人翻译过&lt;/a&gt;，但是翻得水平有一点不忍直视，我们不希望浪费这篇好文章。  &lt;br /&gt;
 本文由 &lt;a href=&quot;https://www.zhihu.com/people/li-ling-hao&quot;&gt;@李凌豪&lt;/a&gt; &lt;a href=&quot;https://www.zhihu.com/people/huxpro&quot;&gt;@黄玄&lt;/a&gt; 联合翻译，首次发布于&lt;a href=&quot;http://zhuanlan.zhihu.com/FrontendMagazine&quot;&gt;前端外刊评论 · 知乎专栏&lt;/a&gt;，转载请保留原文链接 ;)&lt;/p&gt;
 </description>
         <pubDate>Mon, 01 Feb 2016 20:00:00 +0800</pubDate>
-        <link>http://blog.luckhu.com/2016/02/01/React-vs-Angular2/</link>
-        <guid isPermaLink="true">http://blog.luckhu.com/2016/02/01/React-vs-Angular2/</guid>
+        <link>http://huangxuan.me/2016/02/01/React-vs-Angular2/</link>
+        <guid isPermaLink="true">http://huangxuan.me/2016/02/01/React-vs-Angular2/</guid>
         
         <category>前端开发</category>
         
@@ -320,40 +349,40 @@ onClick={this.onSelect.bind(this, hero)}
 
 &lt;h3 id=&quot;scoping-components-brsmall-styleline-height2emcss-blocks-should-only-be-used-inside-a-component-of-the-same-namesmall&quot;&gt;1. Scoping Components &lt;br /&gt;&lt;small style=&quot;line-height:2em;&quot;&gt;&lt;em&gt;CSS Blocks should only be used inside a component of the same name.&lt;/em&gt;&lt;/small&gt;&lt;/h3&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scss
-// Component/index.scss
-.ComponentName {
-    &amp;amp;--mofierName {}
-    &amp;amp;__decendentName {
-        &amp;amp;--modifierName {}
-    }
-    .isStateOfComponent {}
-}
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Component/index.scss
+&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.ComponentName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--mofierName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;__decendentName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--modifierName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;.isStateOfComponent&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;javascript
-// Component/index.js
-require(&#39;./index.scss&#39;);
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Component/index.js&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;./index.scss&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;CSS is &lt;em&gt;always bundled&lt;/em&gt; with components&lt;br /&gt;(from loading, mount to unmount)&lt;/p&gt;
 
 &lt;h3 id=&quot;components-can-be-overrode-by-pages-brsmall-styleline-height2emthere-is-always-requirements-to-rewrite-styles-of-components-in-pagessmall&quot;&gt;2. Components can be Overrode by Pages &lt;br /&gt;&lt;small style=&quot;line-height:2em;&quot;&gt;&lt;em&gt;There is always requirements to rewrite styles of components in pages&lt;/em&gt;&lt;/small&gt;&lt;/h3&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scss
-// Pages/PageA.scss
-#PageA {
-    .pagelet-name {
-        .pagelet-descendent-name {}
-    }
-    .ComponentName{ /* override */ }
-}
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Pages/PageA.scss
+&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;#PageA&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;.pagelet-name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;.pagelet-descendent-name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;.ComponentName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* override */&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;javascript
-// Pages/index.js
-require(&#39;./PageA.scss&#39;);
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Pages/index.js&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;./PageA.scss&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;em&gt;#Page&lt;/em&gt; for absolutely scoping between pages&lt;/li&gt;
@@ -364,21 +393,21 @@ require(&#39;./PageA.scss&#39;);
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;It’s technology-agnostic&lt;/strong&gt;
+    &lt;p&gt;&lt;strong&gt;It’s technology-agnostic&lt;/strong&gt;&lt;br /&gt;
 &lt;small&gt;
   &lt;em&gt;One css framework can be played with whatever technology stacks&lt;/em&gt;&lt;br /&gt;
   &lt;em&gt;You can combined Scss, PostCSS and whatever you want&lt;/em&gt;
 &lt;/small&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Solving problems, and easy&lt;/strong&gt;
+    &lt;p&gt;&lt;strong&gt;Solving problems, and easy&lt;/strong&gt;&lt;br /&gt;
 &lt;small&gt;
   &lt;em&gt;Makes reading and teamwork much easier&lt;/em&gt;&lt;br /&gt;
   &lt;em&gt;Get all benefit from BEM, SUITCSS and others&lt;/em&gt;
 &lt;/small&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Leverage the power of cascading properly&lt;/strong&gt;
+    &lt;p&gt;&lt;strong&gt;Leverage the power of cascading properly&lt;/strong&gt;&lt;br /&gt;
 &lt;small&gt;
   &lt;em&gt;Scoping components but allow reasonable overriding&lt;/em&gt;&lt;br /&gt;
   &lt;em&gt;It’s pragmatic, flexible and hitting the sweet spot&lt;/em&gt;
@@ -391,8 +420,8 @@ require(&#39;./PageA.scss&#39;);
 &lt;p&gt;&lt;a href=&quot;http://lab.hakim.se/reveal-js&quot;&gt;Reveal.js&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 28 Dec 2015 00:00:00 +0800</pubDate>
-        <link>http://blog.luckhu.com/2015/12/28/css-sucks-2015/</link>
-        <guid isPermaLink="true">http://blog.luckhu.com/2015/12/28/css-sucks-2015/</guid>
+        <link>http://huangxuan.me/2015/12/28/css-sucks-2015/</link>
+        <guid isPermaLink="true">http://huangxuan.me/2015/12/28/css-sucks-2015/</guid>
         
         <category>前端开发</category>
         
@@ -406,8 +435,8 @@ require(&#39;./PageA.scss&#39;);
         <description>&lt;p&gt;2015 年 9 月，Apple 重磅发布了全新的 iPhone 6s/6s Plus、iPad Pro 与全新的操作系统 watchOS 2 与 tvOS 9（是的，这货居然是第 9 版），加上已经发布的 iOS 9，它们都为前端世界带来了哪些变化呢？作为一个 web 开发者，是时候站在我们的角度来说一说了！&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;注！&lt;/strong&gt; 该译文存在大量英文术语，笔者将默认读者知晓 ES6、viewport、native app、webview 等常用前端术语，并不对这些已知术语进行汉语翻译
-对于新发布或较新的产品名称与技术术语，诸如 Apple Pen、Split View 等专有名词，笔者将在文中使用其英文名，但会尝试对部分名词进行汉语标注
+  &lt;p&gt;&lt;strong&gt;注！&lt;/strong&gt; 该译文存在大量英文术语，笔者将默认读者知晓 ES6、viewport、native app、webview 等常用前端术语，并不对这些已知术语进行汉语翻译&lt;br /&gt;
+对于新发布或较新的产品名称与技术术语，诸如 Apple Pen、Split View 等专有名词，笔者将在文中使用其英文名，但会尝试对部分名词进行汉语标注&lt;br /&gt;
 另外，出于对 wiki 式阅读的偏爱，笔者为您添加了很多额外的链接，方便您查阅文档或出处&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -518,12 +547,12 @@ require(&#39;./PageA.scss&#39;);
 
 &lt;p&gt;在这个模式下，无论横屏还是竖屏，所有的 iPad（包括 Pro）都会把你的网站以 320px 的 viewport 宽度进行渲染，就好像在一个大 iPhone 5 上一样。你可以在 CSS 中通过 media query（媒体查询）探测到这个模式：&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
-/* iPad Air or iPad Mini */
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/* iPad Air or iPad Mini */
 (device-width: 768px) and (width: 320px)
 /* iPad Pro */
 (device-width: 1024px) and (width: 320px)
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h6 id=&quot;split-view&quot;&gt;Split View（分屏视图）&lt;/h6&gt;
 
@@ -560,7 +589,7 @@ require(&#39;./PageA.scss&#39;);
 &lt;p&gt;当你需要基于 web 的鉴权，比如 OAuth 时，使用 Safari View Controller 同样是一个好主意，这样就不再需要打开浏览器再重定向回你的应用。不过注意了，Safari View Controller 只适用于在线、公开的 web 内容。如果你的 web 内容假设在本地或者私服，那么 WKWebView 仍然是最推荐的选择。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;笔者八卦一下，Safari View Controller 实际上也算是半个社区推进的产物。早在 2014 年 12 月，Tumblr 的 iOS 工程师 Bryan 就发表了一篇著名的 &lt;a href=&quot;http://bryan.io/post/104845880796/we-need-a-safari-view-controller&quot;&gt;We need a “Safari view controller”&lt;/a&gt; 叙述现有 webview 在第三方登录鉴权时的窘境。
+  &lt;p&gt;笔者八卦一下，Safari View Controller 实际上也算是半个社区推进的产物。早在 2014 年 12 月，Tumblr 的 iOS 工程师 Bryan 就发表了一篇著名的 &lt;a href=&quot;http://bryan.io/post/104845880796/we-need-a-safari-view-controller&quot;&gt;We need a “Safari view controller”&lt;/a&gt; 叙述现有 webview 在第三方登录鉴权时的窘境。&lt;br /&gt;
 2015 年 6 月，Apple Safari 工程师 Ricky Mondello 的 Twitter 宣告了这个设想的落地：You all asked for it. Come see me introduce it. Introducing Safari View Controller 1:30 PM, Tuesday. Nob Hill.&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -632,13 +661,13 @@ require(&#39;./PageA.scss&#39;);
 
 &lt;p&gt;举个例子，我们可以在内嵌模式与 PiP 模式中切换：&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
-video.webkitSetPresentationMode(
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;video.webkitSetPresentationMode(
     video.webkitPresentationMode === &quot;picture-in-picture&quot; ?
     &quot;inline&quot; : 
     &quot;picture-in-picture&quot;
 );
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;我们还可以通过新的 &lt;code class=&quot;highlighter-rouge&quot;&gt;onwebkitpresentationmodechanged&lt;/code&gt; 事件来检测 Presentation Mode（展示模式）的变化。&lt;/p&gt;
 
@@ -648,13 +677,13 @@ video.webkitSetPresentationMode(
 
 &lt;p&gt;iOS 9 上的 Safari 现在支持了来自 Filter Effect v2 spec（滤镜特效第二版规范）的 &lt;strong&gt;backdrop-filter&lt;/strong&gt;。比如说，我们可以使用一个半透明的背景并且对其背后的背景使用滤镜：&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
-header {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;header {
    background-color: rgba(255, 255, 255, 0.4);
    -webkit-backdrop-filter: blur(5px);
    backdrop-filter: blur(5px);
 }
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://www.mobilexweb.com/wp-content/uploads/2015/09/backdrop.png&quot; alt=&quot;backdrop&quot; /&gt;&lt;/p&gt;
 
@@ -664,14 +693,14 @@ header {
 
 &lt;p&gt;来看个例子：&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
-#photo-gallery{
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#photo-gallery{
     width: 100%;
     overflow-x: scroll;
     -webkit-scroll-snap-points-x: repeat(100%);
     -webkit-scroll-snap-type: mandatory;
 }
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;想要看个跑起来后的例子？笔者为大家准备了 webkit 的官方 &lt;a href=&quot;http://www.webkit.org/demos/scroll-snap/&quot;&gt;demo&lt;/a&gt;，不过这个属性目前只支持 iOS 9 Safari 哦，并不支持 webview&lt;/p&gt;
@@ -681,17 +710,17 @@ header {
 
 &lt;p&gt;CSS Supports，包括 CSS &lt;code class=&quot;highlighter-rouge&quot;&gt;@supports&lt;/code&gt; 与来自 CSS Conditional Rules Module Level 3 spec 的 JavaScript CSS Supports API 都在 iOS 上迎来降临。现在，我们可以针对某个 CSS 属性的特定值的支持情况来编写代码：&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
-@supports(-webkit-scroll-snap-type: mandatory) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@supports(-webkit-scroll-snap-type: mandatory) {
     /* we use it */
 }
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;同样，使用 JavaScript：&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
-if (CSS.supports(&quot;-webkit-scroll-snap-type&quot;, &quot;mandatory&quot;)) {}
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (CSS.supports(&quot;-webkit-scroll-snap-type&quot;, &quot;mandatory&quot;)) {}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h5 id=&quot;section-3&quot;&gt;一些细微的改进&lt;/h5&gt;
 
@@ -735,12 +764,12 @@ if (CSS.supports(&quot;-webkit-scroll-snap-type&quot;, &quot;mandatory&quot;)) {
 
 &lt;h3 id=&quot;section-5&quot;&gt;著作权声明&lt;/h3&gt;
 
-&lt;p&gt;本文译自 &lt;a href=&quot;http://www.mobilexweb.com/blog/ios9-safari-for-web-developers&quot;&gt;iOS 9, Safari and the Web: 3D Touch, new Responsive Web Design, Native integration and HTML5 APIs — Breaking the Mobile Web&lt;/a&gt; &lt;br /&gt;
+&lt;p&gt;本文译自 &lt;a href=&quot;http://www.mobilexweb.com/blog/ios9-safari-for-web-developers&quot;&gt;iOS 9, Safari and the Web: 3D Touch, new Responsive Web Design, Native integration and HTML5 APIs — Breaking the Mobile Web&lt;/a&gt;   &lt;br /&gt;
 译者 &lt;a href=&quot;http://weibo.com/huxpro&quot;&gt;黄玄&lt;/a&gt;，首次发布于 &lt;a href=&quot;http://huangxuan.me&quot;&gt;Hux Blog&lt;/a&gt;，转载请保留以上链接&lt;/p&gt;
 </description>
         <pubDate>Tue, 15 Dec 2015 00:00:00 +0800</pubDate>
-        <link>http://blog.luckhu.com/2015/12/15/ios9-safari-web/</link>
-        <guid isPermaLink="true">http://blog.luckhu.com/2015/12/15/ios9-safari-web/</guid>
+        <link>http://huangxuan.me/2015/12/15/ios9-safari-web/</link>
+        <guid isPermaLink="true">http://huangxuan.me/2015/12/15/ios9-safari-web/</guid>
         
         <category>前端开发</category>
         
@@ -928,8 +957,8 @@ $(&#39;.className&#39;).click(function(){
 
 </description>
         <pubDate>Wed, 28 Oct 2015 20:00:00 +0800</pubDate>
-        <link>http://blog.luckhu.com/2015/10/28/how-designer-learn-fe/</link>
-        <guid isPermaLink="true">http://blog.luckhu.com/2015/10/28/how-designer-learn-fe/</guid>
+        <link>http://huangxuan.me/2015/10/28/how-designer-learn-fe/</link>
+        <guid isPermaLink="true">http://huangxuan.me/2015/10/28/how-designer-learn-fe/</guid>
         
         <category>知乎</category>
         
@@ -946,7 +975,7 @@ $(&#39;.className&#39;).click(function(){
 
 &lt;p&gt;1995 年，它作为网景浏览器（Netscape Navigator）的一部分首次发布，网景给这个新语言命名为 LiveScript。一年后，为了搭上当时媒体热炒 Java 的顺风车，临时改名为了 JavaScript &lt;em&gt;（当然，Java 和 JavaScript 的关系，就和雷锋和雷锋塔一样 —— 并没有什么关系）&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-js-version/javascript-java.jpg&quot; alt=&quot;java-javascript&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/post-js-version/javascript-java.jpg&quot; alt=&quot;java-javascript&quot; /&gt;&lt;br /&gt;
 &lt;small class=&quot;img-hint&quot;&gt;歪果仁的笑话怎么一点都不好笑&lt;/small&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -995,18 +1024,18 @@ $(&#39;.className&#39;).click(function(){
   &lt;li&gt;如果你希望深入 ES6，这里有两本很不错的书： Axel Rauschmayer 的 &lt;a href=&quot;http://exploringjs.com/&quot;&gt;Exploring ES6&lt;/a&gt;和 Nicholas Zakas 的 &lt;a href=&quot;https://leanpub.com/understandinges6&quot;&gt;Understanding ECMAScript 6&lt;/a&gt;。Axel 的博客 &lt;a href=&quot;http://www.2ality.com/&quot;&gt;2ality&lt;/a&gt; 也是很不错的 ES6 资源&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img class=&quot;shadow&quot; width=&quot;320&quot; src=&quot;/img/in-post/post-js-version/keep-calm-and-learn-javascript.png&quot; /&gt;
+&lt;p&gt;&lt;img class=&quot;shadow&quot; width=&quot;320&quot; src=&quot;/img/in-post/post-js-version/keep-calm-and-learn-javascript.png&quot; /&gt;&lt;br /&gt;
 &lt;small class=&quot;img-hint&quot;&gt;来学 JavaScript 吧！&lt;/small&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;section-1&quot;&gt;著作权声明&lt;/h4&gt;
 
-&lt;p&gt;本文译自 &lt;a href=&quot;http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/&quot;&gt;ES5, ES6, ES2016, ES.Next: What’s going on with JavaScript versioning?&lt;/a&gt; &lt;br /&gt;
+&lt;p&gt;本文译自 &lt;a href=&quot;http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/&quot;&gt;ES5, ES6, ES2016, ES.Next: What’s going on with JavaScript versioning?&lt;/a&gt;   &lt;br /&gt;
 译者 &lt;a href=&quot;http://weibo.com/huxpro&quot;&gt;黄玄&lt;/a&gt;，首次发布于 &lt;a href=&quot;http://huangxuan.me&quot;&gt;Hux Blog&lt;/a&gt;，转载请保留以上链接&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 22 Sep 2015 00:00:00 +0800</pubDate>
-        <link>http://blog.luckhu.com/2015/09/22/js-version/</link>
-        <guid isPermaLink="true">http://blog.luckhu.com/2015/09/22/js-version/</guid>
+        <link>http://huangxuan.me/2015/09/22/js-version/</link>
+        <guid isPermaLink="true">http://huangxuan.me/2015/09/22/js-version/</guid>
         
         <category>前端开发</category>
         
@@ -1052,8 +1081,8 @@ $(&#39;.className&#39;).click(function(){
 &lt;p&gt;&lt;a href=&quot;http://lab.hakim.se/reveal-js&quot;&gt;Reveal.js&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 09 Jul 2015 00:00:00 +0800</pubDate>
-        <link>http://blog.luckhu.com/2015/07/09/js-module-7day/</link>
-        <guid isPermaLink="true">http://blog.luckhu.com/2015/07/09/js-module-7day/</guid>
+        <link>http://huangxuan.me/2015/07/09/js-module-7day/</link>
+        <guid isPermaLink="true">http://huangxuan.me/2015/07/09/js-module-7day/</guid>
         
         <category>前端开发</category>
         
@@ -1096,15 +1125,15 @@ $(&#39;.className&#39;).click(function(){
 
 &lt;p&gt;旅行社，一个耳熟能详的名字。在互联网的变革到来之前，旅游行业几乎就是旅行社的天下。&lt;/p&gt;
 
-&lt;p&gt;在行业术语里，旅行社被称为 &lt;strong&gt;TA：Travel Agency —— 旅游代理&lt;/strong&gt;。
+&lt;p&gt;在行业术语里，旅行社被称为 &lt;strong&gt;TA：Travel Agency —— 旅游代理&lt;/strong&gt;。&lt;br /&gt;
 旅行社为你提供旅游信息，代理你办航班，定酒店，买门票，办签证，找导游。通过代理你的旅游消费行为，TA 从中获利。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.013.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;ota&quot;&gt;第一轮革命：兴起的电商与 OTA&lt;/h3&gt;
 
-&lt;p&gt;1995 年，中国互联网沸腾元年，北京上海接入 Internet 节点。
-1998 年，中国互联网电商元年，第一笔在线交易产生。
+&lt;p&gt;1995 年，中国互联网沸腾元年，北京上海接入 Internet 节点。&lt;br /&gt;
+1998 年，中国互联网电商元年，第一笔在线交易产生。&lt;br /&gt;
 1999 年，马云的阿里巴巴创办。同年，旅游行业未来的两大巨头，&lt;strong&gt;携程&lt;/strong&gt;、&lt;strong&gt;艺龙&lt;/strong&gt; 双双出世。&lt;/p&gt;
 
 &lt;p&gt;携程、艺龙利用互联网的体验优势，迅速占领了 TA 的市场，它们被称作 &lt;strong&gt;OTA：Online Travel Agency&lt;/strong&gt;&lt;/p&gt;
@@ -1117,15 +1146,15 @@ $(&#39;.className&#39;).click(function(){
 
 &lt;h4 id=&quot;agency-&quot;&gt;Agency 模式&lt;/h4&gt;
 
-&lt;p&gt;Agency，即&lt;strong&gt;代理模式&lt;/strong&gt;。通过代理用户的消费行为，代理商就可以靠佣金的方式从中获利。
+&lt;p&gt;Agency，即&lt;strong&gt;代理模式&lt;/strong&gt;。通过代理用户的消费行为，代理商就可以靠佣金的方式从中获利。&lt;br /&gt;
 举个例子：假设携程旅行网今天给某某酒店拉来了 100 个日间，那么这个酒店就要以 30元/日间 的方式给携程旅行网反多少的红利。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;佣金，说白了，就是中介费。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.016.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;了解了 Agency 模式，我们再回过来看携程、艺龙：
-虽然渠道改成了互联网，但其商业模式还是 TA 的那套玩法，它们其实是在和传统 TA 分同一块蛋糕。
+&lt;p&gt;了解了 Agency 模式，我们再回过来看携程、艺龙：&lt;br /&gt;
+虽然渠道改成了互联网，但其商业模式还是 TA 的那套玩法，它们其实是在和传统 TA 分同一块蛋糕。&lt;br /&gt;
 还是咨询、酒店、机票、旅游团、旅游套餐，只是&lt;strong&gt;你们在线下玩，我去线上玩了&lt;/strong&gt;，我有渠道优势。&lt;/p&gt;
 
 &lt;h3 id=&quot;section-3&quot;&gt;第二轮革命：比价搜索与去哪儿&lt;/h3&gt;
@@ -1142,14 +1171,14 @@ $(&#39;.className&#39;).click(function(){
 
 &lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.018.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;这个这个玩法一下就厉害了：
+&lt;p&gt;这个这个玩法一下就厉害了：&lt;br /&gt;
 &lt;strong&gt;去哪儿挡在了用户和所有 OTA 之间，OTA 还是做原来的事情，而去哪儿则拿下了用户找 OTA 的过程&lt;/strong&gt;。同是搜索引擎的百度也是如此：百度自己并不生产内容，而是拿下了用户找内容的过程。&lt;/p&gt;
 
 &lt;p&gt;Let’s why search engine awesome：因为用户在互联网的信息海洋上找信息太难了，所以用户必须要靠搜索引擎来解决这个痛点，而搜索引擎自己也就成为了渠道：&lt;/p&gt;
 
 &lt;h4 id=&quot;channel-&quot;&gt;Channel 模式&lt;/h4&gt;
 
-&lt;p&gt;Channel，即&lt;strong&gt;渠道模式&lt;/strong&gt;。通过优化用户的体验路径，在用户和 B 方之前挡了一道，主要对 B 盈利。
+&lt;p&gt;Channel，即&lt;strong&gt;渠道模式&lt;/strong&gt;。通过优化用户的体验路径，在用户和 B 方之前挡了一道，主要对 B 盈利。&lt;br /&gt;
 最常见的对 B 盈利方式就是广告：&lt;strong&gt;Pay for Performance&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.019.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
@@ -1167,17 +1196,17 @@ $(&#39;.className&#39;).click(function(){
 
 &lt;h3 id=&quot;section-4&quot;&gt;第 2.5 轮革命：尴尬的淘宝旅行&lt;/h3&gt;
 
-&lt;p&gt;为什么说淘宝旅行是 2.5 次革命呢，因为它想革，但没革上。
+&lt;p&gt;为什么说淘宝旅行是 2.5 次革命呢，因为它想革，但没革上。&lt;br /&gt;
 为什么没有革上呢？&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;首先是切入时机太晚&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;阿里其实 2010 年就开始做淘宝旅行了，一直划分在淘宝网下，由那时的淘宝北研（淘宝 UED 北京研发）团队负责，这个团队吸纳了大批雅虎中国的精英，技术水平相当高。&lt;br /&gt;
+&lt;p&gt;阿里其实 2010 年就开始做淘宝旅行了，一直划分在淘宝网下，由那时的淘宝北研（淘宝 UED 北京研发）团队负责，这个团队吸纳了大批雅虎中国的精英，技术水平相当高。  &lt;br /&gt;
 可是 2010 年才切入这个市场实在是太晚了，携程、去哪儿的口碑和用户习惯早都养成好几年了，没人会去你淘宝上搜航班酒店，你有大入口也没有用。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;二是资源倾斜不足&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;2010 年还没有什么 &lt;strong&gt;互联网+&lt;/strong&gt; 的概念，结合传统行业也还没有现在这么热，淘宝做旅游这事用了多大力气推很难说，反正我是没听过。
+&lt;p&gt;2010 年还没有什么 &lt;strong&gt;互联网+&lt;/strong&gt; 的概念，结合传统行业也还没有现在这么热，淘宝做旅游这事用了多大力气推很难说，反正我是没听过。&lt;br /&gt;
 阿里同年的发展重心还是在其电商体系的完善上：&lt;strong&gt;淘宝商城&lt;/strong&gt; 启用独立域名，其 B2C 的模式刚好弥补了淘宝 C2C 的问题，这货就是后来的&lt;strong&gt;天猫&lt;/strong&gt;，我们可以比较一下两者在资源倾斜上的差异：&lt;/p&gt;
 
 &lt;table&gt;
@@ -1239,24 +1268,24 @@ $(&#39;.className&#39;).click(function(){
 
 &lt;h3 id=&quot;now&quot;&gt;第三轮革命：Now&lt;/h3&gt;
 
-&lt;p&gt;OK，经过这么一番折腾，第三次变革就来了。
+&lt;p&gt;OK，经过这么一番折腾，第三次变革就来了。&lt;br /&gt;
 BAT 纷纷介入，行业进入了传说中的 BATX 格局：&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.028.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;阿里最近动作频频，力推去啊不说，更是收购线下酒店软件石基，配合蚂蚁金服期下芝麻信用开展“酒店信用住”等业务
-百度早早投资去哪儿，两个搜索引擎起家的公司风格一脉相承。同时，百度也悄悄发布了百度旅行这样的试水产品
+&lt;p&gt;阿里最近动作频频，力推去啊不说，更是收购线下酒店软件石基，配合蚂蚁金服期下芝麻信用开展“酒店信用住”等业务&lt;br /&gt;
+百度早早投资去哪儿，两个搜索引擎起家的公司风格一脉相承。同时，百度也悄悄发布了百度旅行这样的试水产品&lt;br /&gt;
 腾讯入股艺龙，同程网等，也在尝试 QQ 旅游等产品&lt;/p&gt;
 
 &lt;p&gt;Update：不过，就在 2015.5 左右，携程宣布收购艺龙，非常戏剧性的局面啊……&lt;/p&gt;
 
-&lt;p&gt;为什么都要介入呢？
-一是互联网结合传统行业的大潮到来，大家都发现旅游行业是一个金矿，市场其实特别大……
+&lt;p&gt;为什么都要介入呢？&lt;br /&gt;
+一是互联网结合传统行业的大潮到来，大家都发现旅游行业是一个金矿，市场其实特别大……&lt;br /&gt;
 二是这个领域确实还有很多可以突破的商业模式存在，很多细分领域都开始有创业公司起来，整个行业的生态也越来越丰富：&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.029.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;这种时候，BAT 这样的土豪公司就想进来收网了 —— 砸钱也得砸出个平台来！
+&lt;p&gt;这种时候，BAT 这样的土豪公司就想进来收网了 —— 砸钱也得砸出个平台来！&lt;br /&gt;
 所以，这一轮游戏一定能看到一次大洗牌（艺龙第一个就阵亡了）&lt;/p&gt;
 
 &lt;p&gt;那么，这轮革命怎么演变呢？&lt;/p&gt;
@@ -1288,14 +1317,14 @@ BAT 纷纷介入，行业进入了传说中的 BATX 格局：&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;本篇完。&lt;/em&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;本文作者系前「阿里旅行 · 去啊」前端实习生，本文系业余时间学习之作。
-如有任何知识产权、版权问题或理论错误，还请指正。
+  &lt;p&gt;本文作者系前「阿里旅行 · 去啊」前端实习生，本文系业余时间学习之作。&lt;br /&gt;
+如有任何知识产权、版权问题或理论错误，还请指正。&lt;br /&gt;
 转载请注明原作者及以上信息。&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <pubDate>Mon, 15 Jun 2015 00:00:00 +0800</pubDate>
-        <link>http://blog.luckhu.com/2015/06/15/alitrip-strategy/</link>
-        <guid isPermaLink="true">http://blog.luckhu.com/2015/06/15/alitrip-strategy/</guid>
+        <link>http://huangxuan.me/2015/06/15/alitrip-strategy/</link>
+        <guid isPermaLink="true">http://huangxuan.me/2015/06/15/alitrip-strategy/</guid>
         
         <category>产品设计</category>
         
@@ -1332,17 +1361,17 @@ BAT 纷纷介入，行业进入了传说中的 BATX 格局：&lt;/p&gt;
 
 &lt;p&gt;让我们看看 Node 中的实现：&lt;/p&gt;
 
-&lt;p&gt;```
-// 由于 Node 原生支持模块的作用域，并不需要额外的 wrapper
-// “as though the module was wrapped in a function”&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 由于 Node 原生支持模块的作用域，并不需要额外的 wrapper
+// &quot;as though the module was wrapped in a function&quot;
 
-&lt;p&gt;var a = require(‘./a’)  // 加载模块（同步加载）
-a.doSomething()         // 等上一句执行完才会执行&lt;/p&gt;
-
-&lt;p&gt;exports.b = function(){ // 暴露 b 函数接口
+var a = require(&#39;./a&#39;)  // 加载模块（同步加载）
+a.doSomething()         // 等上一句执行完才会执行
+  
+exports.b = function(){ // 暴露 b 函数接口
   // do something
 }
-```&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;exports&lt;/code&gt;是一个内置对象，就像&lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt;是一个内置加载函数一样。如果你希望直接赋值一个完整的对象或者构造函数，覆写&lt;code class=&quot;highlighter-rouge&quot;&gt;module.exports&lt;/code&gt;就可以了。&lt;/p&gt;
 
@@ -1393,58 +1422,61 @@ a.doSomething()         // 等上一句执行完才会执行&lt;/p&gt;
 
 &lt;p&gt;RequireJS 主要解决的还是 CommonJS 同步加载脚本不适合浏览器 这个问题：&lt;/p&gt;
 
-&lt;p&gt;```
-//CommonJS&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//CommonJS
 
-&lt;p&gt;var Employee = require(“types/Employee”);&lt;/p&gt;
+var Employee = require(&quot;types/Employee&quot;);
 
-&lt;p&gt;function Programmer (){
+function Programmer (){
     //do something
-}&lt;/p&gt;
+}  
 
-&lt;p&gt;Programmer.prototype = new Employee();&lt;/p&gt;
+Programmer.prototype = new Employee();
 
-&lt;p&gt;//如果 require call 是异步的，那么肯定 error
+//如果 require call 是异步的，那么肯定 error
 //因为在执行这句前 Employee 模块肯定来不及加载进来 
-```
-&amp;gt; As the comment indicates above, if require() is async, this code will not work. However, loading scripts synchronously in the browser kills performance. So, what to do?&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;As the comment indicates above, if require() is async, this code will not work. However, loading scripts synchronously in the browser kills performance. So, what to do?&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;所以我们需要 &lt;strong&gt;Function Wrapping&lt;/strong&gt; 来获取依赖并且提前通过 script tag 提前加载进来&lt;/p&gt;
 
-&lt;p&gt;```
-//AMD Wrapper&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//AMD Wrapper
 
-&lt;p&gt;define(
+define(
     [types/Employee],    //依赖
-    function(Employee){  //这个回调会在所有依赖都被加载后才执行&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    function Programmer(){
-        //do something
-    };
-
-    Programmer.prototype = new Employee();
-    return Programmer;  //return Constructor
-} ) ```
+    function(Employee){  //这个回调会在所有依赖都被加载后才执行
+    
+        function Programmer(){
+            //do something
+        };
+    
+        Programmer.prototype = new Employee();
+        return Programmer;  //return Constructor
+    }
+)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;当依赖模块非常多时，这种&lt;strong&gt;依赖前置&lt;/strong&gt;的写法会显得有点奇怪，所以 AMD 给了一个语法糖， &lt;strong&gt;simplified CommonJS wrapping&lt;/strong&gt;，借鉴了 CommonJS 的 require 就近风格，也更方便对 CommonJS 模块的兼容：&lt;/p&gt;
 
-&lt;p&gt;```
-define(function (require) {
-    var dependency1 = require(‘dependency1’),
-        dependency2 = require(‘dependency2’);&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;define(function (require) {
+    var dependency1 = require(&#39;dependency1&#39;),
+        dependency2 = require(&#39;dependency2&#39;);
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;return function () {}; }); ``` The AMD loader will parse out the `require(&#39;&#39;)` calls by using `Function.prototype.toString()`, then internally convert the above define call into this:
+    return function () {};
+});
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;p&gt;The AMD loader will parse out the &lt;code class=&quot;highlighter-rouge&quot;&gt;require(&#39;&#39;)&lt;/code&gt; calls by using &lt;code class=&quot;highlighter-rouge&quot;&gt;Function.prototype.toString()&lt;/code&gt;, then internally convert the above define call into this:&lt;/p&gt;
 
-&lt;p&gt;```
-define([‘require’, ‘dependency1’, ‘dependency2’], function (require) {
-    var dependency1 = require(‘dependency1’),
-        dependency2 = require(‘dependency2’);&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;define([&#39;require&#39;, &#39;dependency1&#39;, &#39;dependency2&#39;], function (require) {
+    var dependency1 = require(&#39;dependency1&#39;),
+        dependency2 = require(&#39;dependency2&#39;);
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;return function () {}; }); ```
+    return function () {};
+});
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -1456,19 +1488,19 @@ define([‘require’, ‘dependency1’, ‘dependency2’], function (require)
 
 &lt;p&gt;Modules/1.0:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
-var a = require(&quot;./a&quot;) // 执行到此时，a.js 才同步下载并执行
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var a = require(&quot;./a&quot;) // 执行到此时，a.js 才同步下载并执行
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;AMD: （使用 require 的语法糖时）&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
-define([&quot;require&quot;],function(require)){
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;define([&quot;require&quot;],function(require)){
     // 在这里，a.js 已经下载并且执行好了
     // 使用 require() 并不是 AMD 的推荐写法
     var a = require(&quot;./a&quot;) // 此处仅仅是取模块 a 的 exports
 })
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;AMD 里提前下载 a.js 是出于对浏览器环境的考虑，只能采取异步下载，这个社区都认可（Sea.js 也是这么做的）&lt;/p&gt;
 
@@ -1478,11 +1510,11 @@ define([&quot;require&quot;],function(require)){
 
 &lt;p&gt;AMD 推荐的风格并不使用&lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt;，而是通过参数传入，破坏了&lt;strong&gt;依赖就近&lt;/strong&gt;：&lt;/p&gt;
 
-&lt;p&gt;```
-define([“a”, “b”, “c”],function(a, b, c){
-    // 提前申明了并初始化了所有模块&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;true || b.foo(); //即便根本没用到模块 b，但 b 还是提前执行了。 }) ```
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;define([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;],function(a, b, c){
+    // 提前申明了并初始化了所有模块
+    
+    true || b.foo(); //即便根本没用到模块 b，但 b 还是提前执行了。
+})
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -1490,14 +1522,14 @@ define([“a”, “b”, “c”],function(a, b, c){
 
 &lt;p&gt;另外，require 2.0 也开始思考异步处理&lt;strong&gt;软依赖&lt;/strong&gt;（区别于一定需要的&lt;strong&gt;硬依赖&lt;/strong&gt;）的问题，提出了这样的方案：&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
-// 函数体内：
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 函数体内：
 if(status){
     async([&#39;a&#39;],function(a){
         a.doSomething()
     })
 }
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h2 id=&quot;seajs--cmd&quot;&gt;SeaJS &amp;amp; CMD&lt;/h2&gt;
 
@@ -1529,41 +1561,37 @@ if(status){
   &lt;li&gt;这个 require 实际上是一个全局函数，用于加载模块，这里实际就是传入而已&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;```
-define(function(require, exports) {&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;define(function(require, exports) {
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 获取模块 a 的接口
-var a = require(&#39;./a&#39;);
-// 调用模块 a 的方法
-a.doSomething();
+    // 获取模块 a 的接口
+    var a = require(&#39;./a&#39;);
+    // 调用模块 a 的方法
+    a.doSomething();
   
-// 对外提供 foo 属性
-exports.foo = &#39;bar&#39;;
-// 对外提供 doSomething 方法
-exports.doSomething = function() {};
+    // 对外提供 foo 属性
+    exports.foo = &#39;bar&#39;;
+    // 对外提供 doSomething 方法
+    exports.doSomething = function() {};
+  
+});
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-
-&lt;p&gt;});
-```&lt;/p&gt;
 
 &lt;p&gt;但是你也可以使用 AMD 风格，或者使用 return 来进行模块暴露&lt;/p&gt;
 
-&lt;p&gt;```
-define(‘hello’, [‘jquery’], function(require, exports, module) {&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;define(&#39;hello&#39;, [&#39;jquery&#39;], function(require, exports, module) {
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 模块代码...
+    // 模块代码...
   
-// 直接通过 return 暴露接口
-return {
-    foo: &#39;bar&#39;,
-    doSomething: function() {}
-};
+    // 直接通过 return 暴露接口
+    return {
+        foo: &#39;bar&#39;,
+        doSomething: function() {}
+    };
+
+});
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-
-&lt;p&gt;});
-```&lt;/p&gt;
 
 &lt;p&gt;Sea.js 借鉴了 RequireJS 的不少东西，比如将 FlyScript 中的 module.declare 改名为 define 等。Sea.js 更多地来自 Modules/2.0 的观点，但尽可能去掉了学院派的东西，加入了不少实战派的理念。&lt;/p&gt;
 
@@ -1581,30 +1609,28 @@ return {
 
 &lt;p&gt;看代码：&lt;/p&gt;
 
-&lt;p&gt;```
-// AMD 默认推荐&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// AMD 默认推荐
 
-&lt;p&gt;define([’./a’, ‘./b’], function(a, b) {  // 依赖前置，提前执行&lt;/p&gt;
+define([&#39;./a&#39;, &#39;./b&#39;], function(a, b) {  // 依赖前置，提前执行
+  
+    a.doSomething()
+    b.doSomething()
+  
+})
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;a.doSomething()
-b.doSomething()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;})&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// CMD
 
-&lt;p&gt;```&lt;/p&gt;
-
-&lt;p&gt;```
-// CMD&lt;/p&gt;
-
-&lt;p&gt;define(function(require, exports, module) {&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var a = require(&#39;./a&#39;)
-a.doSomething()
+define(function(require, exports, module) {
   
-var b = require(&#39;./b&#39;) // 依赖就近，延迟执行
-b.doSomething()  }) ```
+    var a = require(&#39;./a&#39;)
+    a.doSomething()
+  
+    var b = require(&#39;./b&#39;) // 依赖就近，延迟执行
+    b.doSomething() 
+})
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -1614,8 +1640,8 @@ b.doSomething()  }) ```
 
 </description>
         <pubDate>Mon, 25 May 2015 00:00:00 +0800</pubDate>
-        <link>http://blog.luckhu.com/2015/05/25/js-module-loader/</link>
-        <guid isPermaLink="true">http://blog.luckhu.com/2015/05/25/js-module-loader/</guid>
+        <link>http://huangxuan.me/2015/05/25/js-module-loader/</link>
+        <guid isPermaLink="true">http://huangxuan.me/2015/05/25/js-module-loader/</guid>
         
         <category>前端开发</category>
         
@@ -1630,7 +1656,7 @@ b.doSomething()  }) ```
   &lt;p&gt;世界那么大，我想去看看&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Hi all&lt;br /&gt;
+&lt;p&gt;Hi all  &lt;br /&gt;
 这里是鬼栈的离职信。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/in-post/post-c-u-ali-team.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
@@ -1643,7 +1669,7 @@ b.doSomething()  }) ```
 
 &lt;p&gt;8 月，感谢 &lt;a href=&quot;http://weibo.com/jayli&quot;&gt;@拔赤&lt;/a&gt; 老大的提携，同意了我转岗到航旅前端团队的申请，分在了老大亲自带队的 &lt;strong&gt;航旅事业群-无线业务部-无线技术-前端团队-前端三组&lt;/strong&gt;，从此开始了一名&lt;strong&gt;前端程序猿&lt;/strong&gt;的职业生涯。&lt;/p&gt;
 
-&lt;p&gt;我的第一个 mentor 是大家的小师妹，我的 @晴舞 姐，不过很可惜的是她居然早于我离职，回北邮任教了。我跟着她在 H5 酒店 的业务线上学习、厮杀，从一个连 git 都用不熟的小小鬼，变成了一个可以独立战斗的小鬼。&lt;br /&gt;
+&lt;p&gt;我的第一个 mentor 是大家的小师妹，我的 @晴舞 姐，不过很可惜的是她居然早于我离职，回北邮任教了。我跟着她在 H5 酒店 的业务线上学习、厮杀，从一个连 git 都用不熟的小小鬼，变成了一个可以独立战斗的小鬼。  &lt;br /&gt;
 在 Acting H5 酒店/团购 业务线时，也非常感谢 @骏隆 的指导和信任，算是我的大半个 mentor 了。&lt;/p&gt;
 
 &lt;p&gt;我的第二个 mentor 是人超 nice 的 @智峰 师傅，前手机腾讯网主管，负责团队 CSS 框架，很有生活哲学的一个人。我们一起拿下了 h5 红包等工作，不过很可惜的是没机会从师傅身上学更多的 CSS 了。&lt;/p&gt;
@@ -1731,137 +1757,12 @@ b.doSomething()  }) ```
 &lt;p&gt;&lt;img src=&quot;/img/in-post/post-c-u-ali-079717.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 11 May 2015 00:00:00 +0800</pubDate>
-        <link>http://blog.luckhu.com/2015/05/11/see-u-ali/</link>
-        <guid isPermaLink="true">http://blog.luckhu.com/2015/05/11/see-u-ali/</guid>
+        <link>http://huangxuan.me/2015/05/11/see-u-ali/</link>
+        <guid isPermaLink="true">http://huangxuan.me/2015/05/11/see-u-ali/</guid>
         
         <category>生活</category>
         
         <category>阿里巴巴</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>hUX 随想录（二）：操作系统的浪漫主义 —— Metro 篇</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;操作系统的背后不只是冷冰冰的 0 和 1 ，数字时代的设计师们，如初神般刻画着新世界的秩序。信息、量子、宇宙，他们取世间万物为灵感来表达自己，那是它们对数字时代最浪漫的隐喻。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
-
-&lt;p&gt;操作系统，数字时代当之无愧的地基。当大部分从业人员都更关注它的技术与功能时，操作系统的 UI 设计师们却赋予了它无限的艺术气息：他们用充满着浪漫主义幻想色彩的设计语言，配合着物理定律般严谨的交互体系，描绘着自己心目中的数字世界，那些界面 的背后是他们对数字世界的思考、理解、期待、抽象与隐喻，&lt;strong&gt;这些艺术思想支撑着浮在表面的设计&lt;/strong&gt;。他们用一切你熟悉或不熟悉的方式，告诉世人：&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;“看呐，那个虚拟又真实的世界”&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;metro&quot;&gt;Metro&lt;/h2&gt;
-
-&lt;p&gt;我们第一个要聊的，就是 &lt;a href=&quot;http://en.wikipedia.org/wiki/Metro_(design_language\)&quot;&gt;Metro&lt;/a&gt; 。虽然它已经改名为 Modern UI ，虽然它作为 Windows Phone 、Windows 8 甚至 Windows 10 的 UI 风格算不上成功，但是作为一个设计语言，它却是声名显赫。以它而非 Windows 来命名这一章节，就是出于对它的敬意。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-metro-ui.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;众所周知 Metro 借鉴了交通标示语言、包豪斯现代风格与瑞士国际主义平面设计，其核心思想在于剔除多余信息，专注于内容传达（Content, not chrome），所以 Metro 采用了以 Typography、Color 为主要元素的视觉语言，另外它也非常重视动效设计（Motion Design），这是同期 UI 设计的共识，Motion provides meaning，动效对于表达隐喻有着巨大得作用。&lt;/p&gt;
-
-&lt;p&gt;我们暂且不去讨论 Metro 在实际运用中的情况，而是尝试去猜想一下 Metro 的设计师们对数字世界的思考，以及那些隐藏在 Metro 背后的奇思妙想：&lt;/p&gt;
-
-&lt;h4 id=&quot;section-1&quot;&gt;思考 —— 极致抽象信息&lt;/h4&gt;
-
-&lt;p&gt;数字时代是基于信息的。这也是为什么我们称这个产业为 IT (Information Technology) ，我们每天使用 PC、Mobile 等数字设备、其实本质是主动或被动的接收、筛选、消化与产生信息。&lt;/p&gt;
-
-&lt;p&gt;语言与文字的发明是人类信息革命的第一个里程碑，掌握同种语言或文字的人类从此可以高效得进行信息的交换与传播。而现在我们正在走进人机交互与万物互联的时代：人类不但要和人类通信，还要和智能设备建立连接。历史总是上演着重复因此值得借鉴，为什么不把已经发明的东西在数字世界重新发明一次呢？&lt;strong&gt;于是 Cortana 承担了微软在数字时代复刻语音的使命，而 Metro 则继承了老祖宗文字的魔力。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;无论 Typography-based 还是 Content, not chrome ，&lt;strong&gt;Metro 试图对一切数字时代的信息进行一种非常极致的抽象 —— 我们的 UI 不需要来自真实世界的隐喻，我们只需要足够直接的信息。&lt;/strong&gt; 既然文字就是信息、图片就是信息、音视频就是信息，所以它们理所当然应该直接呈现；而所有的样式也都必须直接传达信息，于是网格和灰度表示层级，颜色的存在也更多代表着符号化的视觉传达：比如用于 VI 的品牌色，或者是刻板印象心情。&lt;/p&gt;
-
-&lt;p&gt;这种对信息简单粗暴的抽象使得 Metro 的首秀极具冲击，却也成为其日后发展最大的绊脚石。&lt;/p&gt;
-
-&lt;h4 id=&quot;section-2&quot;&gt;载体 —— 信息平面&lt;/h4&gt;
-
-&lt;p&gt;信息总归需要载体，而设计师们的目的就是寻找，或者创造一种介质来承载、传递、可视化这些信息，然后呈现给用户， 最后才得以成为 UI&lt;/p&gt;
-
-&lt;p&gt;我们都看着屏幕越来越趋于一种扁平的状态，所有设计师们理所当然的想到这种介质可能是一种类似平面的东西，比如说 WebOS 具有抽象意义的“卡片纸” ，或是 iOS/OS X 改变风格前使用的“亚麻桌布”，他们尝试告诉你藏在屏幕后面的数字世界，可能是由某种类似真实世界的平面状物体来承载信息的。&lt;br /&gt;
-而 Metro 则做得更加彻底，在它看来这种拟物是强加给数字世界的不必要信息，于是它抛开了所有自然界存在的元素，又一次将信息抽象做到了极致 ：其实那就是一个单纯放置信息的平面而已，或者说，&lt;strong&gt;其实是信息组成了这个平面，数字世界的信息根本无需额外的载体——文字与图像，一方面可以看作是狭义信息的载体，另一方面也可以被看作是广义信息的一种表现形态。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;所以我们可以看到 Metro UI 的背景经常是一个空旷的黑色，其实那个黑色代表着 Nothing ，意味着这个平面的下方没有任何东西。&lt;/strong&gt;而如果你在下方使用了图像作为背景，你就会发现这其实是两个平面 —— 上层是一个背景透明、漂浮在图像层上的信息平面。而下层则是另一个完全由图像信息组成的信息平面，当我们去划动上层时，产生的视差移动也在告诉我们：这是两个层级。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-metro-panorama.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在所有的 Metro 组件里，我印象最深刻的叫 Panorama Panel（上图） ，Panorama 在我看来是 Metro 对信息最直接的隐喻：&lt;strong&gt;不同的信息体，聚合成了一个完整的信息平面&lt;/strong&gt;。当我们在手机屏幕上左右滑动 Panorama 时就好像在操作一个摄像机平移镜头。这种“数字报纸”区别于报纸的最大感受就好像它可以随着信息的量级在 X 轴和 Y 轴 上无限延伸下去，变成一个信息的海洋，在你的面前流动。&lt;/p&gt;
-
-&lt;p&gt;对啊，那不就是信息流吗。&lt;/p&gt;
-
-&lt;h4 id=&quot;section-3&quot;&gt;世界 —— 卡片飞舞的世界&lt;/h4&gt;
-
-&lt;p&gt;我之所以不愿称 Metro 的信息平面为纸片，是因为它不能卷曲也不能折叠；&lt;br /&gt;
-而之所以不愿称 Metro 的信息平面为卡片，是因为它并非实体，而且尺寸无限；&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;可 Metro 的世界却又让我觉得是卡片飞舞的。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;一张卡片的秩序是动态磁贴（Live Tiles），它很硬，只能翻转。却又具备魔力，好像在每一次的翻转中，信息都可以得到重组和再现。&lt;br /&gt;
-二张卡片的秩序是视差原理（Parallax），当你移动镜头时，任意两张卡片在你眼中的位移，都必须由它们距离屏幕 (Z=0) 的深度决定&lt;br /&gt;
-三张卡片的秩序就像飞来咒，原有的平面撤离，被呼唤的卡片俏皮的翻滚着从侧后方飞进视野，Metro UI 的动画设计隐喻着一切。&lt;/p&gt;
-
-&lt;p&gt;Status Bar 和 Application Bar 就像是紧贴在屏幕上的卡片，所以不受视差影响。而 Pivot Control 则更有魔幻色彩一点，你操纵它就如操作交通枢纽，指挥一个个小的信息片，来来去去在你的面前。&lt;/p&gt;
-
-&lt;p&gt;所有这些零厚度的卡片，或近，或远，最终组成了整个 Metro 世界。&lt;strong&gt;在我的想象里，那个次元就好像，所有的信息都以片状飞在空中，而你只能看见你所需要的那些，它们有条不紊的在纵横间穿梭，就好像到处都是信息流的交通轨道，你仿佛置身于，那个数据包飞来飞去、路由器控制地址的 —— 网路世界。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-metro-real.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section-4&quot;&gt;结语&lt;/h2&gt;
-
-&lt;p&gt;Metro 对信息极致的抽象与压平，与同期的 iOS 6- 风格形成鲜明对比，引发大家对于数字世界与用户界面的新一轮思考，里程碑式的推动了 Flat Design 在新一代数字设计中的普及。不过我们也知道 Metro UI 在微软的实际运用中却其实不成功，这又是为什么呢？&lt;/p&gt;
-
-&lt;p&gt;笔者抛砖引玉一些自己的观点：&lt;/p&gt;
-
-&lt;p&gt;当年 Metro 第一次运用在 Zune 身上时是非常惊艳的，风格超前、细节精致、动画细腻。再看现在的 Xbox （图一），Pivot 配合磁贴组、简单大气，几乎成为电视 UI 设计的模版。可偏偏在 PC 和 Mobile 两个场景，Metro 却饱受非议。&lt;/p&gt;
-
-&lt;p&gt;在我看来 PC 和 Mobile 其实代表着两个信息密度最高的场景、PC 是传统互联网的计算中心，而 Mobile 则是移动互联网和可以预见的未来内的个人计算中心。
-&lt;strong&gt;在如此复杂的场景下，其实 Metro 作为设计语言的尺度是不够的。&lt;/strong&gt;为什么这么说呢，虽然 Metro 对信息的抽象方式不无道理，但其实还是过分理想和纯粹了。有太多的屏幕像素因此被浪费，有太多其他维度的信息表达方式因此被舍弃掉了。&lt;/p&gt;
-
-&lt;p&gt;也就是说：Metro 这个设计语言本身是没有问题的，但是拿目前的它作为 PC/Mobile 这种操作系统级别的设计语言却是存在问题的。&lt;strong&gt;一个操作系统的设计语言与交互体系，一定不能太小，必须是一套包容性足够强又可被拓展和延伸的体系。&lt;/strong&gt;其实我们能看到 Windows Phone 的 UI 设计容纳度是非常低的，这或许就可以说明问题。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;这也是为什么 Win 10 for PC 和 Win 10 for Mobile 都开始削弱最初的那个纯粹的 Metro 体系，转而采用一种 Metro 的视觉语言混搭非 Metro 交互逻辑的方式来设计。&lt;/strong&gt;
-期待 new Metro (Metro 2.0) 能在 Win 10 上逐步走向成熟，让我们一同见证。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;本文是“操作系统的浪漫主义”系列的第一篇文章，如果您喜欢，请继续关注我的博客 ;)&lt;/p&gt;
-
-&lt;p&gt;尽请期待：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Android 篇&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;思考 —— 从卡片的层叠说起&lt;/li&gt;
-      &lt;li&gt;载体 —— 量子纸&lt;/li&gt;
-      &lt;li&gt;世界 —— 魔法材质统一世界&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;iOS 篇&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;思考 —— 盒子里的蒸汽朋克&lt;/li&gt;
-      &lt;li&gt;载体 —— 景深的无穷近与无穷远&lt;/li&gt;
-      &lt;li&gt;世界 —— 小宇宙里的小宇宙&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Wed, 15 Apr 2015 00:00:00 +0800</pubDate>
-        <link>http://blog.luckhu.com/2015/04/15/os-metro/</link>
-        <guid isPermaLink="true">http://blog.luckhu.com/2015/04/15/os-metro/</guid>
-        
-        <category>hUX 随想录</category>
-        
-        <category>UX Design</category>
-        
-        <category>Windows</category>
-        
-        <category>Metro</category>
-        
-        <category>OS</category>
         
         
       </item>

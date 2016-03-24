@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="关于前端与设计、黑客与画家 | 克洛弗，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Clover 克洛弗 的个人博客，与你一起发现更大的世界。">
-    <meta name="keyword"  content="克洛弗, Clover,clovercui,  @clover, 克洛弗的博客, Clover Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品">
+    <meta name="description" content="关于前端与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。">
+    <meta name="keyword"  content="黄玄, Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品, 肖玉, Lynn, 肖玉的男朋友">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>都 2015 年了，CSS 怎么还是这么糟糕 - 克洛弗的博客 | Clover Blog</title>
+    <title>都 2015 年了，CSS 怎么还是这么糟糕 - 黄玄的博客 | Hux Blog</title>
 
-    <link rel="canonical" href="http://blog.luckhu.com/2015/12/28/css-sucks-2015/">
+    <link rel="canonical" href="http://huangxuan.me/2015/12/28/css-sucks-2015/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -62,7 +62,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Clover Blog</a>
+            <a class="navbar-brand" href="/">Hux Blog</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -257,40 +257,40 @@
 
 <h3 id="scoping-components-brsmall-styleline-height2emcss-blocks-should-only-be-used-inside-a-component-of-the-same-namesmall">1. Scoping Components <br /><small style="line-height:2em;"><em>CSS Blocks should only be used inside a component of the same name.</em></small></h3>
 
-<p><code class="highlighter-rouge">scss
-// Component/index.scss
-.ComponentName {
-    &amp;--mofierName {}
-    &amp;__decendentName {
-        &amp;--modifierName {}
-    }
-    .isStateOfComponent {}
-}
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// Component/index.scss
+</span><span class="nc">.ComponentName</span> <span class="p">{</span>
+    <span class="k">&amp;</span><span class="nt">--mofierName</span> <span class="p">{}</span>
+    <span class="k">&amp;</span><span class="nt">__decendentName</span> <span class="p">{</span>
+        <span class="k">&amp;</span><span class="nt">--modifierName</span> <span class="p">{}</span>
+    <span class="p">}</span>
+    <span class="nc">.isStateOfComponent</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
-<p><code class="highlighter-rouge">javascript
-// Component/index.js
-require('./index.scss');
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// Component/index.js</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">'./index.scss'</span><span class="p">);</span>
+</code></pre>
+</div>
 
 <p>CSS is <em>always bundled</em> with components<br />(from loading, mount to unmount)</p>
 
 <h3 id="components-can-be-overrode-by-pages-brsmall-styleline-height2emthere-is-always-requirements-to-rewrite-styles-of-components-in-pagessmall">2. Components can be Overrode by Pages <br /><small style="line-height:2em;"><em>There is always requirements to rewrite styles of components in pages</em></small></h3>
 
-<p><code class="highlighter-rouge">scss
-// Pages/PageA.scss
-#PageA {
-    .pagelet-name {
-        .pagelet-descendent-name {}
-    }
-    .ComponentName{ /* override */ }
-}
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// Pages/PageA.scss
+</span><span class="nn">#PageA</span> <span class="p">{</span>
+    <span class="nc">.pagelet-name</span> <span class="p">{</span>
+        <span class="nc">.pagelet-descendent-name</span> <span class="p">{}</span>
+    <span class="p">}</span>
+    <span class="nc">.ComponentName</span><span class="p">{</span> <span class="cm">/* override */</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
-<p><code class="highlighter-rouge">javascript
-// Pages/index.js
-require('./PageA.scss');
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// Pages/index.js</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">'./PageA.scss'</span><span class="p">);</span>
+</code></pre>
+</div>
 
 <ul>
   <li><em>#Page</em> for absolutely scoping between pages</li>
@@ -301,21 +301,21 @@ require('./PageA.scss');
 
 <ul>
   <li>
-    <p><strong>It’s technology-agnostic</strong>
+    <p><strong>It’s technology-agnostic</strong><br />
 <small>
   <em>One css framework can be played with whatever technology stacks</em><br />
   <em>You can combined Scss, PostCSS and whatever you want</em>
 </small></p>
   </li>
   <li>
-    <p><strong>Solving problems, and easy</strong>
+    <p><strong>Solving problems, and easy</strong><br />
 <small>
   <em>Makes reading and teamwork much easier</em><br />
   <em>Get all benefit from BEM, SUITCSS and others</em>
 </small></p>
   </li>
   <li>
-    <p><strong>Leverage the power of cascading properly</strong>
+    <p><strong>Leverage the power of cascading properly</strong><br />
 <small>
   <em>Scoping components but allow reasonable overriding</em><br />
   <em>It’s pragmatic, flexible and hitting the sweet spot</em>
@@ -336,7 +336,7 @@ require('./PageA.scss');
                 <div class="ds-share"
                     style="text-align: right"
                     data-thread-key="/2015/12/28/css-sucks-2015" data-title="都 2015 年了，CSS 怎么还是这么糟糕"
-                    data-images="http://blog.luckhu.com/img/home-bg.jpg"
+                    data-images="http://huangxuan.me/img/home-bg.jpg"
                     data-content="
   下滑这里查看更多内容
 
@@ -348,7 +348,7 @@ Watch Slides →
 你也可以通过扫描二维码在手机上观看
 
 这个 Web Slides 开源在我的 Gith... | Hux Blog，@Hux黄玄 的个人博客"
-                    data-url="http://blog.luckhu.com/2015/12/28/css-sucks-2015/">
+                    data-url="http://huangxuan.me/2015/12/28/css-sucks-2015/">
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -391,7 +391,7 @@ Watch Slides →
                     <div class="ds-thread"
                         data-thread-key="/2015/12/28/css-sucks-2015"
                         data-title="都 2015 年了，CSS 怎么还是这么糟糕"
-                        data-url="http://blog.luckhu.com/2015/12/28/css-sucks-2015/" >
+                        data-url="http://huangxuan.me/2015/12/28/css-sucks-2015/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -478,7 +478,7 @@ Watch Slides →
                             
                         
                             
-                                <a href="/tags/#OS" title="OS" rel="2">
+                                <a href="/tags/#OS" title="OS" rel="3">
                                     OS
                                 </a>
                             
@@ -511,6 +511,10 @@ Watch Slides →
                                 <a href="/tags/#译文" title="译文" rel="2">
                                     译文
                                 </a>
+                            
+                        
+                            
+                        
                             
                         
                             
@@ -641,26 +645,44 @@ Watch Slides →
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                     
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
                     <li>
-                        <a href="/feed.xml">
+                        <a target="_blank" href="https://www.zhihu.com/people/huxpro">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
                             </span>
                         </a>
                     </li>
                     
                     
-
-                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    <li>
+                        <a target="_blank" href="http://weibo.com/huxpro">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                     
+
+
                     
-
-
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/huxpro">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                     
                     
                     <li>
-                        <a target="_blank" href="https://github.com/clovercui">
+                        <a target="_blank" href="https://github.com/huxpro">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -670,7 +692,7 @@ Watch Slides →
                     
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Clover Blog 2016
+                    Copyright &copy; Hux Blog 2016
                     <br>
                     Theme © <a href="http://huangxuan.me">Hux</a> |
                     <iframe
@@ -740,7 +762,7 @@ Watch Slides →
 <script>
     // dynamic User by Hux
     var _gaId = 'UA-49627206-1';
-    var _gaDomain = 'blog.luckhu.com';
+    var _gaDomain = 'huangxuan.me';
 
     // Originial
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

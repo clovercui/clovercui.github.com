@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="关于前端与设计、黑客与画家 | 克洛弗，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Clover 克洛弗 的个人博客，与你一起发现更大的世界。">
-    <meta name="keyword"  content="克洛弗, Clover,clovercui,  @clover, 克洛弗的博客, Clover Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品">
+    <meta name="description" content="关于前端与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。">
+    <meta name="keyword"  content="黄玄, Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品, 肖玉, Lynn, 肖玉的男朋友">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>React vs Angular 2：冰与火之歌「译」 - 克洛弗的博客 | Clover Blog</title>
+    <title>React vs Angular 2：冰与火之歌「译」 - 黄玄的博客 | Hux Blog</title>
 
-    <link rel="canonical" href="http://blog.luckhu.com/2016/02/01/React-vs-Angular2/">
+    <link rel="canonical" href="http://huangxuan.me/2016/02/01/React-vs-Angular2/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -62,7 +62,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Clover Blog</a>
+            <a class="navbar-brand" href="/">Hux Blog</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -300,26 +300,26 @@
 
 <p>Angular 2 延续了 Angular 1 试图让 HTML 更加强大的老路子。所以即使是像循环或者条件判断这样的简单任务你也不得不使用 Angular 2 的独特语法来完成。例如，Angular 2 通过两种语法同时提供了单向数据绑定与双向数据绑定，可不幸的是它们实在差得有点多：</p>
 
-<p><code class="highlighter-rouge">javascript
-{{myVar}}        //单向数据绑定
-ngModel="myVar"  //双向数据绑定
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{{</span><span class="nx">myVar</span><span class="p">}}</span>        <span class="c1">//单向数据绑定</span>
+<span class="nx">ngModel</span><span class="o">=</span><span class="s2">"myVar"</span>  <span class="c1">//双向数据绑定</span>
+</code></pre>
+</div>
 
 <p>在 React 中，数据绑定语法不取决于数据流的单双向（数据绑定的单双向是在其他地方处理的，不得不说我觉得理应如此）。不管是单向还是双向数据流，绑定语法都是这样的：</p>
 
-<p><code class="highlighter-rouge">javascript
-{myVar}
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="nx">myVar</span><span class="p">}</span>
+</code></pre>
+</div>
 
 <p>Angular 2 的内联母版（inline master templates）使用了这样的语法：</p>
 
-<p>```html</p>
-<ul>
-  &lt;li *ngFor="#hero of heroes"&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li</span> <span class="err">*</span><span class="na">ngFor=</span><span class="s">"#hero of heroes"</span><span class="nt">&gt;</span>
     {{hero.name}}
-  
-</ul>
-<p>```</p>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+</div>
 
 <p>上面这个代码片段遍历了一组 hero，而我比较关心的几点是：</p>
 
@@ -331,13 +331,13 @@ ngModel="myVar"  //双向数据绑定
 
 <p>相比上面 Angular 2 的语法，React 的语法可是纯净的 JavaScript （不过我得承认下面的属性 <code class="highlighter-rouge">key</code> 是个 React 的私货）</p>
 
-<p>```html</p>
-<ul>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;ul&gt;</span>
   { heroes.map(hero =&gt;
-    &lt;li key={hero.id}&gt;{hero.name}
+    <span class="nt">&lt;li</span> <span class="na">key=</span><span class="s">{hero.id}</span><span class="nt">&gt;</span>{hero.name}<span class="nt">&lt;/li&gt;</span>
   )}
-</ul>
-<p>```</p>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+</div>
 
 <p>鉴于 JS 原生支持循环，React JSX 利用 JS 的力量来做到这类事情简直易如反掌，配合 <code class="highlighter-rouge">map</code>、<code class="highlighter-rouge">filter</code> 能做的还远不止此。</p>
 
@@ -351,27 +351,27 @@ ngModel="myVar"  //双向数据绑定
 
 <p>React 因为语法和概念的简约而与众不同。我们不妨品味下当今流行的 JS 框架/库都是如何实现遍历的：</p>
 
-<p><code class="highlighter-rouge">javascript
-Ember: 
-Angular 1: ng-repeat
-Angular 2: ngFor
-Knockout: data-bind="foreach"
-React: 直接用 JS 就好啦 :)
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">Ember</span><span class="err">:</span> 
+<span class="nx">Angular</span> <span class="mi">1</span><span class="err">:</span> <span class="nx">ng</span><span class="o">-</span><span class="nx">repeat</span>
+<span class="nx">Angular</span> <span class="mi">2</span><span class="err">:</span> <span class="nx">ngFor</span>
+<span class="nl">Knockout</span><span class="p">:</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"foreach"</span>
+<span class="nl">React</span><span class="p">:</span> <span class="err">直接用</span> <span class="nx">JS</span> <span class="err">就好啦</span> <span class="err">:</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <p>除了 React，所有其它框架都用自己的专有语法重新发明了一个我们在 JavaScript 常见得不能再常见的东西：<strong>循环</strong>。这大概就是 React 的美妙之处，利用 JavaScript 的力量来处理标签，而不是什么奇怪的新语法。</p>
 
 <p>Angular 2 中的奇怪语法还有点击事件的绑定：</p>
 
-<p><code class="highlighter-rouge">javascript
-(click)="onSelect(hero)"
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="nx">click</span><span class="p">)</span><span class="o">=</span><span class="s2">"onSelect(hero)"</span>
+</code></pre>
+</div>
 
 <p>相反，React 再一次使用了普通的 JavaScript：</p>
 
-<p><code class="highlighter-rouge">javascript
-onClick={this.onSelect.bind(this, hero)}
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">onSelect</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">hero</span><span class="p">)}</span>
+</code></pre>
+</div>
 
 <p>并且，鉴于 React 内建了一个模拟的事件机制（Angular 2 也有），你并不需要去担心使用内联语法声明事件处理器所暗含的性能问题。</p>
 
@@ -437,7 +437,7 @@ onClick={this.onSelect.bind(this, hero)}
 
 <h3 id="section-7">著作权声明</h3>
 
-<p>本文译自 <a href="https://medium.freecodecamp.com/angular-2-versus-react-there-will-be-blood-66595faafd51#.v4y4euy1r">Angular 2 versus React: There Will Be Blood</a>，其实<a href="http://www.w3ctech.com/topic/1675?from=timeline&amp;isappinstalled=0">之前有人翻译过</a>，但是翻得水平有一点不忍直视，我们不希望浪费这篇好文章。<br />
+<p>本文译自 <a href="https://medium.freecodecamp.com/angular-2-versus-react-there-will-be-blood-66595faafd51#.v4y4euy1r">Angular 2 versus React: There Will Be Blood</a>，其实<a href="http://www.w3ctech.com/topic/1675?from=timeline&amp;isappinstalled=0">之前有人翻译过</a>，但是翻得水平有一点不忍直视，我们不希望浪费这篇好文章。  <br />
 本文由 <a href="https://www.zhihu.com/people/li-ling-hao">@李凌豪</a> <a href="https://www.zhihu.com/people/huxpro">@黄玄</a> 联合翻译，首次发布于<a href="http://zhuanlan.zhihu.com/FrontendMagazine">前端外刊评论 · 知乎专栏</a>，转载请保留原文链接 ;)</p>
 
 
@@ -450,13 +450,13 @@ onClick={this.onSelect.bind(this, hero)}
                     style="text-align: right"
                     data-thread-key="/2016/02/01/React-vs-Angular2"
                     data-title="React vs Angular 2：冰与火之歌「译」"
-                    data-url="http://blog.luckhu.com/2016/02/01/React-vs-Angular2/"
-                    data-images="http://blog.luckhu.com/img/post-bg-re-vs-ng2.jpg"
+                    data-url="http://huangxuan.me/2016/02/01/React-vs-Angular2/"
+                    data-images="http://huangxuan.me/img/post-bg-re-vs-ng2.jpg"
                     data-content="
   这篇文章转载自我在知乎专栏「前端外刊评论」上发表的文章。
 
 
-Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热门框... | 克洛弗的博客 | Clover Blog " >
+Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热门框... | 黄玄的博客 | Hux Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -483,6 +483,13 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
                     </li>
                     
                     
+                    <li class="next">
+                        <a href="/2016/03/24/my-first-blog/" data-toggle="tooltip" data-placement="top" title="My First Blog">
+                        Next<br>
+                        <span>My First Blog</span>
+                        </a>
+                    </li>
+                    
                 </ul>
 
 
@@ -492,7 +499,7 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
                     <div class="ds-thread"
                         data-thread-key="/2016/02/01/React-vs-Angular2"
                         data-title="React vs Angular 2：冰与火之歌「译」"
-                        data-url="http://blog.luckhu.com/2016/02/01/React-vs-Angular2/" >
+                        data-url="http://huangxuan.me/2016/02/01/React-vs-Angular2/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -597,7 +604,7 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
                             
         				
                             
-                				<a href="/tags/#OS" title="OS" rel="2">
+                				<a href="/tags/#OS" title="OS" rel="3">
                                     OS
                                 </a>
                             
@@ -630,6 +637,10 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
                 				<a href="/tags/#译文" title="译文" rel="2">
                                     译文
                                 </a>
+                            
+        				
+                            
+        				
                             
         				
                             
@@ -737,26 +748,44 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                     
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
                     <li>
-                        <a href="/feed.xml">
+                        <a target="_blank" href="https://www.zhihu.com/people/huxpro">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
                             </span>
                         </a>
                     </li>
                     
                     
-
-                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    <li>
+                        <a target="_blank" href="http://weibo.com/huxpro">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                     
+
+
                     
-
-
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/huxpro">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                     
                     
                     <li>
-                        <a target="_blank" href="https://github.com/clovercui">
+                        <a target="_blank" href="https://github.com/huxpro">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -766,7 +795,7 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
                     
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Clover Blog 2016
+                    Copyright &copy; Hux Blog 2016
                     <br>
                     Theme © <a href="http://huangxuan.me">Hux</a> |
                     <iframe
@@ -836,7 +865,7 @@ Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热�
 <script>
     // dynamic User by Hux
     var _gaId = 'UA-49627206-1';
-    var _gaDomain = 'blog.luckhu.com';
+    var _gaDomain = 'huangxuan.me';
 
     // Originial
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

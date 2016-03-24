@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="关于前端与设计、黑客与画家 | 克洛弗，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Clover 克洛弗 的个人博客，与你一起发现更大的世界。">
-    <meta name="keyword"  content="克洛弗, Clover,clovercui,  @clover, 克洛弗的博客, Clover Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品">
+    <meta name="description" content="关于前端与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。">
+    <meta name="keyword"  content="黄玄, Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品, 肖玉, Lynn, 肖玉的男朋友">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>JavaScript Module Loader - 克洛弗的博客 | Clover Blog</title>
+    <title>JavaScript Module Loader - 黄玄的博客 | Hux Blog</title>
 
-    <link rel="canonical" href="http://blog.luckhu.com/2015/05/25/js-module-loader/">
+    <link rel="canonical" href="http://huangxuan.me/2015/05/25/js-module-loader/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -62,7 +62,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Clover Blog</a>
+            <a class="navbar-brand" href="/">Hux Blog</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -217,17 +217,17 @@
 
 <p>让我们看看 Node 中的实现：</p>
 
-<p>```
-// 由于 Node 原生支持模块的作用域，并不需要额外的 wrapper
-// “as though the module was wrapped in a function”</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>// 由于 Node 原生支持模块的作用域，并不需要额外的 wrapper
+// "as though the module was wrapped in a function"
 
-<p>var a = require(‘./a’)  // 加载模块（同步加载）
-a.doSomething()         // 等上一句执行完才会执行</p>
-
-<p>exports.b = function(){ // 暴露 b 函数接口
+var a = require('./a')  // 加载模块（同步加载）
+a.doSomething()         // 等上一句执行完才会执行
+  
+exports.b = function(){ // 暴露 b 函数接口
   // do something
 }
-```</p>
+</code></pre>
+</div>
 
 <p><code class="highlighter-rouge">exports</code>是一个内置对象，就像<code class="highlighter-rouge">require</code>是一个内置加载函数一样。如果你希望直接赋值一个完整的对象或者构造函数，覆写<code class="highlighter-rouge">module.exports</code>就可以了。</p>
 
@@ -278,58 +278,61 @@ a.doSomething()         // 等上一句执行完才会执行</p>
 
 <p>RequireJS 主要解决的还是 CommonJS 同步加载脚本不适合浏览器 这个问题：</p>
 
-<p>```
-//CommonJS</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>//CommonJS
 
-<p>var Employee = require(“types/Employee”);</p>
+var Employee = require("types/Employee");
 
-<p>function Programmer (){
+function Programmer (){
     //do something
-}</p>
+}  
 
-<p>Programmer.prototype = new Employee();</p>
+Programmer.prototype = new Employee();
 
-<p>//如果 require call 是异步的，那么肯定 error
+//如果 require call 是异步的，那么肯定 error
 //因为在执行这句前 Employee 模块肯定来不及加载进来 
-```
-&gt; As the comment indicates above, if require() is async, this code will not work. However, loading scripts synchronously in the browser kills performance. So, what to do?</p>
+</code></pre>
+</div>
+<blockquote>
+  <p>As the comment indicates above, if require() is async, this code will not work. However, loading scripts synchronously in the browser kills performance. So, what to do?</p>
+</blockquote>
 
 <p>所以我们需要 <strong>Function Wrapping</strong> 来获取依赖并且提前通过 script tag 提前加载进来</p>
 
-<p>```
-//AMD Wrapper</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>//AMD Wrapper
 
-<p>define(
+define(
     [types/Employee],    //依赖
-    function(Employee){  //这个回调会在所有依赖都被加载后才执行</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>    function Programmer(){
-        //do something
-    };
-
-    Programmer.prototype = new Employee();
-    return Programmer;  //return Constructor
-} ) ```
+    function(Employee){  //这个回调会在所有依赖都被加载后才执行
+    
+        function Programmer(){
+            //do something
+        };
+    
+        Programmer.prototype = new Employee();
+        return Programmer;  //return Constructor
+    }
+)
 </code></pre>
 </div>
 
 <p>当依赖模块非常多时，这种<strong>依赖前置</strong>的写法会显得有点奇怪，所以 AMD 给了一个语法糖， <strong>simplified CommonJS wrapping</strong>，借鉴了 CommonJS 的 require 就近风格，也更方便对 CommonJS 模块的兼容：</p>
 
-<p>```
-define(function (require) {
-    var dependency1 = require(‘dependency1’),
-        dependency2 = require(‘dependency2’);</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>define(function (require) {
+    var dependency1 = require('dependency1'),
+        dependency2 = require('dependency2');
 
-<div class="highlighter-rouge"><pre class="highlight"><code>return function () {}; }); ``` The AMD loader will parse out the `require('')` calls by using `Function.prototype.toString()`, then internally convert the above define call into this:
+    return function () {};
+});
 </code></pre>
 </div>
+<p>The AMD loader will parse out the <code class="highlighter-rouge">require('')</code> calls by using <code class="highlighter-rouge">Function.prototype.toString()</code>, then internally convert the above define call into this:</p>
 
-<p>```
-define([‘require’, ‘dependency1’, ‘dependency2’], function (require) {
-    var dependency1 = require(‘dependency1’),
-        dependency2 = require(‘dependency2’);</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>define(['require', 'dependency1', 'dependency2'], function (require) {
+    var dependency1 = require('dependency1'),
+        dependency2 = require('dependency2');
 
-<div class="highlighter-rouge"><pre class="highlight"><code>return function () {}; }); ```
+    return function () {};
+});
 </code></pre>
 </div>
 
@@ -341,19 +344,19 @@ define([‘require’, ‘dependency1’, ‘dependency2’], function (require)
 
 <p>Modules/1.0:</p>
 
-<p><code class="highlighter-rouge">
-var a = require("./a") // 执行到此时，a.js 才同步下载并执行
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>var a = require("./a") // 执行到此时，a.js 才同步下载并执行
+</code></pre>
+</div>
 
 <p>AMD: （使用 require 的语法糖时）</p>
 
-<p><code class="highlighter-rouge">
-define(["require"],function(require)){
+<div class="highlighter-rouge"><pre class="highlight"><code>define(["require"],function(require)){
     // 在这里，a.js 已经下载并且执行好了
     // 使用 require() 并不是 AMD 的推荐写法
     var a = require("./a") // 此处仅仅是取模块 a 的 exports
 })
-</code></p>
+</code></pre>
+</div>
 
 <p>AMD 里提前下载 a.js 是出于对浏览器环境的考虑，只能采取异步下载，这个社区都认可（Sea.js 也是这么做的）</p>
 
@@ -363,11 +366,11 @@ define(["require"],function(require)){
 
 <p>AMD 推荐的风格并不使用<code class="highlighter-rouge">require</code>，而是通过参数传入，破坏了<strong>依赖就近</strong>：</p>
 
-<p>```
-define([“a”, “b”, “c”],function(a, b, c){
-    // 提前申明了并初始化了所有模块</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>true || b.foo(); //即便根本没用到模块 b，但 b 还是提前执行了。 }) ```
+<div class="highlighter-rouge"><pre class="highlight"><code>define(["a", "b", "c"],function(a, b, c){
+    // 提前申明了并初始化了所有模块
+    
+    true || b.foo(); //即便根本没用到模块 b，但 b 还是提前执行了。
+})
 </code></pre>
 </div>
 
@@ -375,14 +378,14 @@ define([“a”, “b”, “c”],function(a, b, c){
 
 <p>另外，require 2.0 也开始思考异步处理<strong>软依赖</strong>（区别于一定需要的<strong>硬依赖</strong>）的问题，提出了这样的方案：</p>
 
-<p><code class="highlighter-rouge">
-// 函数体内：
+<div class="highlighter-rouge"><pre class="highlight"><code>// 函数体内：
 if(status){
     async(['a'],function(a){
         a.doSomething()
     })
 }
-</code></p>
+</code></pre>
+</div>
 
 <h2 id="seajs--cmd">SeaJS &amp; CMD</h2>
 
@@ -414,41 +417,37 @@ if(status){
   <li>这个 require 实际上是一个全局函数，用于加载模块，这里实际就是传入而已</li>
 </ul>
 
-<p>```
-define(function(require, exports) {</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>define(function(require, exports) {
 
-<div class="highlighter-rouge"><pre class="highlight"><code>// 获取模块 a 的接口
-var a = require('./a');
-// 调用模块 a 的方法
-a.doSomething();
+    // 获取模块 a 的接口
+    var a = require('./a');
+    // 调用模块 a 的方法
+    a.doSomething();
   
-// 对外提供 foo 属性
-exports.foo = 'bar';
-// 对外提供 doSomething 方法
-exports.doSomething = function() {};
+    // 对外提供 foo 属性
+    exports.foo = 'bar';
+    // 对外提供 doSomething 方法
+    exports.doSomething = function() {};
+  
+});
 </code></pre>
 </div>
-
-<p>});
-```</p>
 
 <p>但是你也可以使用 AMD 风格，或者使用 return 来进行模块暴露</p>
 
-<p>```
-define(‘hello’, [‘jquery’], function(require, exports, module) {</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>define('hello', ['jquery'], function(require, exports, module) {
 
-<div class="highlighter-rouge"><pre class="highlight"><code>// 模块代码...
+    // 模块代码...
   
-// 直接通过 return 暴露接口
-return {
-    foo: 'bar',
-    doSomething: function() {}
-};
+    // 直接通过 return 暴露接口
+    return {
+        foo: 'bar',
+        doSomething: function() {}
+    };
+
+});
 </code></pre>
 </div>
-
-<p>});
-```</p>
 
 <p>Sea.js 借鉴了 RequireJS 的不少东西，比如将 FlyScript 中的 module.declare 改名为 define 等。Sea.js 更多地来自 Modules/2.0 的观点，但尽可能去掉了学院派的东西，加入了不少实战派的理念。</p>
 
@@ -466,30 +465,28 @@ return {
 
 <p>看代码：</p>
 
-<p>```
-// AMD 默认推荐</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>// AMD 默认推荐
 
-<p>define([’./a’, ‘./b’], function(a, b) {  // 依赖前置，提前执行</p>
+define(['./a', './b'], function(a, b) {  // 依赖前置，提前执行
+  
+    a.doSomething()
+    b.doSomething()
+  
+})
 
-<div class="highlighter-rouge"><pre class="highlight"><code>a.doSomething()
-b.doSomething()
 </code></pre>
 </div>
 
-<p>})</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>// CMD
 
-<p>```</p>
-
-<p>```
-// CMD</p>
-
-<p>define(function(require, exports, module) {</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var a = require('./a')
-a.doSomething()
+define(function(require, exports, module) {
   
-var b = require('./b') // 依赖就近，延迟执行
-b.doSomething()  }) ```
+    var a = require('./a')
+    a.doSomething()
+  
+    var b = require('./b') // 依赖就近，延迟执行
+    b.doSomething() 
+})
 </code></pre>
 </div>
 
@@ -508,15 +505,15 @@ b.doSomething()  }) ```
                     style="text-align: right"
                     data-thread-key="/2015/05/25/js-module-loader"
                     data-title="JavaScript Module Loader"
-                    data-url="http://blog.luckhu.com/2015/05/25/js-module-loader/"
-                    data-images="http://blog.luckhu.com/img/post-bg-js-module.jpg"
+                    data-url="http://huangxuan.me/2015/05/25/js-module-loader/"
+                    data-images="http://huangxuan.me/img/post-bg-js-module.jpg"
                     data-content="Foreword
 
 
   Here comes Module!
 
 
-随着网站逐渐变成「互联网应用程序」，嵌入网页的 JavaScript 代码越来越庞大，... | 克洛弗的博客 | Clover Blog " >
+随着网站逐渐变成「互联网应用程序」，嵌入网页的 JavaScript 代码越来越庞大，... | 黄玄的博客 | Hux Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -559,7 +556,7 @@ b.doSomething()  }) ```
                     <div class="ds-thread"
                         data-thread-key="/2015/05/25/js-module-loader"
                         data-title="JavaScript Module Loader"
-                        data-url="http://blog.luckhu.com/2015/05/25/js-module-loader/" >
+                        data-url="http://huangxuan.me/2015/05/25/js-module-loader/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -664,7 +661,7 @@ b.doSomething()  }) ```
                             
         				
                             
-                				<a href="/tags/#OS" title="OS" rel="2">
+                				<a href="/tags/#OS" title="OS" rel="3">
                                     OS
                                 </a>
                             
@@ -697,6 +694,10 @@ b.doSomething()  }) ```
                 				<a href="/tags/#译文" title="译文" rel="2">
                                     译文
                                 </a>
+                            
+        				
+                            
+        				
                             
         				
                             
@@ -804,26 +805,44 @@ b.doSomething()  }) ```
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                     
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
                     <li>
-                        <a href="/feed.xml">
+                        <a target="_blank" href="https://www.zhihu.com/people/huxpro">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
                             </span>
                         </a>
                     </li>
                     
                     
-
-                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    <li>
+                        <a target="_blank" href="http://weibo.com/huxpro">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                     
+
+
                     
-
-
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/huxpro">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                     
                     
                     <li>
-                        <a target="_blank" href="https://github.com/clovercui">
+                        <a target="_blank" href="https://github.com/huxpro">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -833,7 +852,7 @@ b.doSomething()  }) ```
                     
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Clover Blog 2016
+                    Copyright &copy; Hux Blog 2016
                     <br>
                     Theme © <a href="http://huangxuan.me">Hux</a> |
                     <iframe
@@ -903,7 +922,7 @@ b.doSomething()  }) ```
 <script>
     // dynamic User by Hux
     var _gaId = 'UA-49627206-1';
-    var _gaDomain = 'blog.luckhu.com';
+    var _gaDomain = 'huangxuan.me';
 
     // Originial
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

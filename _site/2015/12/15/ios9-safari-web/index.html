@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="关于前端与设计、黑客与画家 | 克洛弗，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Clover 克洛弗 的个人博客，与你一起发现更大的世界。">
-    <meta name="keyword"  content="克洛弗, Clover,clovercui,  @clover, 克洛弗的博客, Clover Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品">
+    <meta name="description" content="关于前端与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。">
+    <meta name="keyword"  content="黄玄, Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品, 肖玉, Lynn, 肖玉的男朋友">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>iOS 9，为前端世界都带来了些什么？「译」 - 克洛弗的博客 | Clover Blog</title>
+    <title>iOS 9，为前端世界都带来了些什么？「译」 - 黄玄的博客 | Hux Blog</title>
 
-    <link rel="canonical" href="http://blog.luckhu.com/2015/12/15/ios9-safari-web/">
+    <link rel="canonical" href="http://huangxuan.me/2015/12/15/ios9-safari-web/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -62,7 +62,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Clover Blog</a>
+            <a class="navbar-brand" href="/">Hux Blog</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -202,8 +202,8 @@
 				<p>2015 年 9 月，Apple 重磅发布了全新的 iPhone 6s/6s Plus、iPad Pro 与全新的操作系统 watchOS 2 与 tvOS 9（是的，这货居然是第 9 版），加上已经发布的 iOS 9，它们都为前端世界带来了哪些变化呢？作为一个 web 开发者，是时候站在我们的角度来说一说了！</p>
 
 <blockquote>
-  <p><strong>注！</strong> 该译文存在大量英文术语，笔者将默认读者知晓 ES6、viewport、native app、webview 等常用前端术语，并不对这些已知术语进行汉语翻译
-对于新发布或较新的产品名称与技术术语，诸如 Apple Pen、Split View 等专有名词，笔者将在文中使用其英文名，但会尝试对部分名词进行汉语标注
+  <p><strong>注！</strong> 该译文存在大量英文术语，笔者将默认读者知晓 ES6、viewport、native app、webview 等常用前端术语，并不对这些已知术语进行汉语翻译<br />
+对于新发布或较新的产品名称与技术术语，诸如 Apple Pen、Split View 等专有名词，笔者将在文中使用其英文名，但会尝试对部分名词进行汉语标注<br />
 另外，出于对 wiki 式阅读的偏爱，笔者为您添加了很多额外的链接，方便您查阅文档或出处</p>
 </blockquote>
 
@@ -314,12 +314,12 @@
 
 <p>在这个模式下，无论横屏还是竖屏，所有的 iPad（包括 Pro）都会把你的网站以 320px 的 viewport 宽度进行渲染，就好像在一个大 iPhone 5 上一样。你可以在 CSS 中通过 media query（媒体查询）探测到这个模式：</p>
 
-<p><code class="highlighter-rouge">
-/* iPad Air or iPad Mini */
+<div class="highlighter-rouge"><pre class="highlight"><code>/* iPad Air or iPad Mini */
 (device-width: 768px) and (width: 320px)
 /* iPad Pro */
 (device-width: 1024px) and (width: 320px)
-</code></p>
+</code></pre>
+</div>
 
 <h6 id="split-view">Split View（分屏视图）</h6>
 
@@ -356,7 +356,7 @@
 <p>当你需要基于 web 的鉴权，比如 OAuth 时，使用 Safari View Controller 同样是一个好主意，这样就不再需要打开浏览器再重定向回你的应用。不过注意了，Safari View Controller 只适用于在线、公开的 web 内容。如果你的 web 内容假设在本地或者私服，那么 WKWebView 仍然是最推荐的选择。</p>
 
 <blockquote>
-  <p>笔者八卦一下，Safari View Controller 实际上也算是半个社区推进的产物。早在 2014 年 12 月，Tumblr 的 iOS 工程师 Bryan 就发表了一篇著名的 <a href="http://bryan.io/post/104845880796/we-need-a-safari-view-controller">We need a “Safari view controller”</a> 叙述现有 webview 在第三方登录鉴权时的窘境。
+  <p>笔者八卦一下，Safari View Controller 实际上也算是半个社区推进的产物。早在 2014 年 12 月，Tumblr 的 iOS 工程师 Bryan 就发表了一篇著名的 <a href="http://bryan.io/post/104845880796/we-need-a-safari-view-controller">We need a “Safari view controller”</a> 叙述现有 webview 在第三方登录鉴权时的窘境。<br />
 2015 年 6 月，Apple Safari 工程师 Ricky Mondello 的 Twitter 宣告了这个设想的落地：You all asked for it. Come see me introduce it. Introducing Safari View Controller 1:30 PM, Tuesday. Nob Hill.</p>
 </blockquote>
 
@@ -428,13 +428,13 @@
 
 <p>举个例子，我们可以在内嵌模式与 PiP 模式中切换：</p>
 
-<p><code class="highlighter-rouge">
-video.webkitSetPresentationMode(
+<div class="highlighter-rouge"><pre class="highlight"><code>video.webkitSetPresentationMode(
     video.webkitPresentationMode === "picture-in-picture" ?
     "inline" : 
     "picture-in-picture"
 );
-</code></p>
+</code></pre>
+</div>
 
 <p>我们还可以通过新的 <code class="highlighter-rouge">onwebkitpresentationmodechanged</code> 事件来检测 Presentation Mode（展示模式）的变化。</p>
 
@@ -444,13 +444,13 @@ video.webkitSetPresentationMode(
 
 <p>iOS 9 上的 Safari 现在支持了来自 Filter Effect v2 spec（滤镜特效第二版规范）的 <strong>backdrop-filter</strong>。比如说，我们可以使用一个半透明的背景并且对其背后的背景使用滤镜：</p>
 
-<p><code class="highlighter-rouge">
-header {
+<div class="highlighter-rouge"><pre class="highlight"><code>header {
    background-color: rgba(255, 255, 255, 0.4);
    -webkit-backdrop-filter: blur(5px);
    backdrop-filter: blur(5px);
 }
-</code></p>
+</code></pre>
+</div>
 
 <p><img src="http://www.mobilexweb.com/wp-content/uploads/2015/09/backdrop.png" alt="backdrop" /></p>
 
@@ -460,14 +460,14 @@ header {
 
 <p>来看个例子：</p>
 
-<p><code class="highlighter-rouge">
-#photo-gallery{
+<div class="highlighter-rouge"><pre class="highlight"><code>#photo-gallery{
     width: 100%;
     overflow-x: scroll;
     -webkit-scroll-snap-points-x: repeat(100%);
     -webkit-scroll-snap-type: mandatory;
 }
-</code></p>
+</code></pre>
+</div>
 
 <blockquote>
   <p>想要看个跑起来后的例子？笔者为大家准备了 webkit 的官方 <a href="http://www.webkit.org/demos/scroll-snap/">demo</a>，不过这个属性目前只支持 iOS 9 Safari 哦，并不支持 webview</p>
@@ -477,17 +477,17 @@ header {
 
 <p>CSS Supports，包括 CSS <code class="highlighter-rouge">@supports</code> 与来自 CSS Conditional Rules Module Level 3 spec 的 JavaScript CSS Supports API 都在 iOS 上迎来降临。现在，我们可以针对某个 CSS 属性的特定值的支持情况来编写代码：</p>
 
-<p><code class="highlighter-rouge">
-@supports(-webkit-scroll-snap-type: mandatory) {
+<div class="highlighter-rouge"><pre class="highlight"><code>@supports(-webkit-scroll-snap-type: mandatory) {
     /* we use it */
 }
-</code></p>
+</code></pre>
+</div>
 
 <p>同样，使用 JavaScript：</p>
 
-<p><code class="highlighter-rouge">
-if (CSS.supports("-webkit-scroll-snap-type", "mandatory")) {}
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>if (CSS.supports("-webkit-scroll-snap-type", "mandatory")) {}
+</code></pre>
+</div>
 
 <h5 id="section-3">一些细微的改进</h5>
 
@@ -531,7 +531,7 @@ if (CSS.supports("-webkit-scroll-snap-type", "mandatory")) {}
 
 <h3 id="section-5">著作权声明</h3>
 
-<p>本文译自 <a href="http://www.mobilexweb.com/blog/ios9-safari-for-web-developers">iOS 9, Safari and the Web: 3D Touch, new Responsive Web Design, Native integration and HTML5 APIs — Breaking the Mobile Web</a> <br />
+<p>本文译自 <a href="http://www.mobilexweb.com/blog/ios9-safari-for-web-developers">iOS 9, Safari and the Web: 3D Touch, new Responsive Web Design, Native integration and HTML5 APIs — Breaking the Mobile Web</a>   <br />
 译者 <a href="http://weibo.com/huxpro">黄玄</a>，首次发布于 <a href="http://huangxuan.me">Hux Blog</a>，转载请保留以上链接</p>
 
 
@@ -544,9 +544,9 @@ if (CSS.supports("-webkit-scroll-snap-type", "mandatory")) {}
                     style="text-align: right"
                     data-thread-key="/2015/12/15/ios9-safari-web"
                     data-title="iOS 9，为前端世界都带来了些什么？「译」"
-                    data-url="http://blog.luckhu.com/2015/12/15/ios9-safari-web/"
-                    data-images="http://blog.luckhu.com/img/post-bg-ios9-web.jpg"
-                    data-content="2015 年 9 月，Apple 重磅发布了全新的 iPhone 6s/6s Plus、iPad Pro 与全新的操作系统 watchOS 2 与 tvO... | 克洛弗的博客 | Clover Blog " >
+                    data-url="http://huangxuan.me/2015/12/15/ios9-safari-web/"
+                    data-images="http://huangxuan.me/img/post-bg-ios9-web.jpg"
+                    data-content="2015 年 9 月，Apple 重磅发布了全新的 iPhone 6s/6s Plus、iPad Pro 与全新的操作系统 watchOS 2 与 tvO... | 黄玄的博客 | Hux Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -589,7 +589,7 @@ if (CSS.supports("-webkit-scroll-snap-type", "mandatory")) {}
                     <div class="ds-thread"
                         data-thread-key="/2015/12/15/ios9-safari-web"
                         data-title="iOS 9，为前端世界都带来了些什么？「译」"
-                        data-url="http://blog.luckhu.com/2015/12/15/ios9-safari-web/" >
+                        data-url="http://huangxuan.me/2015/12/15/ios9-safari-web/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -694,7 +694,7 @@ if (CSS.supports("-webkit-scroll-snap-type", "mandatory")) {}
                             
         				
                             
-                				<a href="/tags/#OS" title="OS" rel="2">
+                				<a href="/tags/#OS" title="OS" rel="3">
                                     OS
                                 </a>
                             
@@ -727,6 +727,10 @@ if (CSS.supports("-webkit-scroll-snap-type", "mandatory")) {}
                 				<a href="/tags/#译文" title="译文" rel="2">
                                     译文
                                 </a>
+                            
+        				
+                            
+        				
                             
         				
                             
@@ -834,26 +838,44 @@ if (CSS.supports("-webkit-scroll-snap-type", "mandatory")) {}
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                     
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
                     <li>
-                        <a href="/feed.xml">
+                        <a target="_blank" href="https://www.zhihu.com/people/huxpro">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
                             </span>
                         </a>
                     </li>
                     
                     
-
-                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    <li>
+                        <a target="_blank" href="http://weibo.com/huxpro">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                     
+
+
                     
-
-
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/huxpro">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                     
                     
                     <li>
-                        <a target="_blank" href="https://github.com/clovercui">
+                        <a target="_blank" href="https://github.com/huxpro">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -863,7 +885,7 @@ if (CSS.supports("-webkit-scroll-snap-type", "mandatory")) {}
                     
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Clover Blog 2016
+                    Copyright &copy; Hux Blog 2016
                     <br>
                     Theme © <a href="http://huangxuan.me">Hux</a> |
                     <iframe
@@ -933,7 +955,7 @@ if (CSS.supports("-webkit-scroll-snap-type", "mandatory")) {}
 <script>
     // dynamic User by Hux
     var _gaId = 'UA-49627206-1';
-    var _gaDomain = 'blog.luckhu.com';
+    var _gaDomain = 'huangxuan.me';
 
     // Originial
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
