@@ -10,9 +10,9 @@
     <meta name="keyword"  content="克洛弗, Clover克洛弗, Clover, @Clover, 克洛弗的博客, Clover Blog, 博客, 个人网站, 互联网, 前端,后端, 设计, 产品, PHP, JAVA,服务器,LINUX">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>My First Blog - 克洛弗的博客 | Clover Blog</title>
+    <title>Monogo DB Study - 克洛弗的博客 | Clover Blog</title>
 
-    <link rel="canonical" href="http://huangxuan.me/2016/03/24/my-first-blog/">
+    <link rel="canonical" href="http://huangxuan.me/2016/05/20/monogo-db-study/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -169,17 +169,15 @@
                         
                         <a class="tag" href="/tags/#Clover" title="Clover">Clover</a>
                         
-                        <a class="tag" href="/tags/#OS" title="OS">OS</a>
-                        
-                        <a class="tag" href="/tags/#Blog" title="Blog">Blog</a>
+                        <a class="tag" href="/tags/#MonogoBD" title="MonogoBD">MonogoBD</a>
                         
                     </div>
-                    <h1>My First Blog</h1>
+                    <h1>Monogo DB Study</h1>
                     
                     
-                    <h2 class="subheading">我的第一个blog</h2>
+                    <h2 class="subheading">MonogoDB学习笔记</h2>
                     
-                    <span class="meta">Posted by Clover on March 24, 2016</span>
+                    <span class="meta">Posted by Clover on May 20, 2016</span>
                 </div>
             </div>
         </div>
@@ -197,30 +195,366 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<blockquote>
-  <p>宇宙，海洋，黑洞</p>
+				<h1 id="monogodb--">MonogoDB  学习笔记</h1>
+
+<hr />
+
+<p>#入门篇</p>
+
+<hr />
+
+<h2 id="section">学习目标</h2>
+
+<hr />
+
+<h4 id="mongo-">Mongo 概念</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">mongo</code> <code class="highlighter-rouge">MongoDB</code> <code class="highlighter-rouge">索引</code> <code class="highlighter-rouge">集合</code> <code class="highlighter-rouge">复制集</code> <code class="highlighter-rouge">分片</code> <code class="highlighter-rouge">数据均衡</code></li>
+</ul>
+
+<h4 id="mongodb">学会MongoDB的搭建</h4>
+
+<ul>
+  <li>搭建简单的单击服务</li>
+  <li>搭建具有冗余容错功能的复制集</li>
+  <li>搭建大规模数据集群</li>
+  <li>完成集群的自动部署</li>
+</ul>
+
+<h4 id="mongodb-1">MongoDB的使用</h4>
+
+<ul>
+  <li>最基本的文档的读写和更新</li>
+  <li>各种不同类型的索引的创建与使用</li>
+  <li>复杂的聚合查询</li>
+  <li>对数据集合进行分片，在不同分片间维持数据均衡</li>
+  <li>数据备份与恢复</li>
+  <li>数据迁移</li>
+</ul>
+
+<h4 id="section-1">简单运维</h4>
+
+<ul>
+  <li>部署集群</li>
+  <li>处理多种常见的故障</li>
+</ul>
+
+<p>```<br />
+ 单节点失效，如何恢复工作<br />
+ 数据库意外被杀死如何进行数据恢复<br />
+ 数据库拒绝服务如何排除原因<br />
+ 数据库磁盘快慢时如何处理</p>
+
+<p>```</p>
+
+<hr />
+
+<h2 id="section-2">学习资源</h2>
+<hr />
+<ul>
+  <li><strong>MongoDB官网</strong> <code class="highlighter-rouge">www.mongodb.org</code></li>
+  <li><strong>MongoDB中国官网</strong> <code class="highlighter-rouge">www.mongoing.com</code></li>
+  <li><strong>github</strong> <code class="highlighter-rouge">https://github.com/mongodb/mongo</code></li>
+  <li><strong>中文文档</strong> <code class="highlighter-rouge">docs.mongoing.com</code></li>
+  <li><strong>视频资源</strong> <code class="highlighter-rouge">http://www.imooc.com/video/5934</code></li>
+</ul>
+
+<hr />
+
+<p>#开始学习</p>
+
+<hr />
+
+<h2 id="section-3">数据库</h2>
+
+<hr />
+<p>### 概念<br />
+1. 有组织的存放数据<br />
+2. 按照不同的需求进行查询</p>
+
+<h3 id="section-4">数据库分类</h3>
+<ol>
+  <li>sql数据库：支持sql语言的数据库 Oracle,Mysql</li>
+  <li>NoSql数据库：不支持SQL语言的数据库 Redis,MongoDB</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sql 数据库</th>
+      <th>NoSql数据库</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>实时一致性</td>
+      <td>简单便捷</td>
+    </tr>
+    <tr>
+      <td>事务</td>
+      <td>方便扩展</td>
+    </tr>
+    <tr>
+      <td>多表联合查询</td>
+      <td>更好的性能</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="mongodb-2">为什么是MongoDB</h3>
+<ol>
+  <li>无数据结构的限制
+    <ol>
+      <li>没有表结构的概念，每条记录可以有完全不同的结构</li>
+      <li>业务开发方便快捷</li>
+      <li>sql数据库需要先定义表结构再使用</li>
+    </ol>
+
+    <p><code class="highlighter-rouge"><span class="w">
+ </span><span class="p">{</span><span class="err">name:</span><span class="nt">"小明"</span><span class="err">,sex</span><span class="p">:</span><span class="s2">"男"</span><span class="p">}</span><span class="w">
+ </span><span class="p">{</span><span class="err">name:</span><span class="nt">"小明"</span><span class="err">,address</span><span class="p">:</span><span class="s2">"上海"</span><span class="p">}</span><span class="w">
+ </span><span class="p">{</span><span class="err">name:</span><span class="nt">"小明"</span><span class="err">,home</span><span class="p">:[{</span><span class="nt">"山东"</span><span class="err">}</span><span class="p">,{</span><span class="nt">"江西"</span><span class="err">}</span><span class="p">]}</span><span class="w">
+</span></code></p>
+  </li>
+  <li>完全的索引支持
+    <ol>
+      <li>redis的key-value</li>
+      <li>hbase的单索引	，二级索引需要自己实现</li>
+    </ol>
+
+    <p><code class="highlighter-rouge">
+ 单键索引，多键索引：{x:1,y:1}
+ 数组索引：["apple","lemon"]
+ 全文索引：“I am a little bird” (中文)
+ 地理位置索引：2D
+</code></p>
+  </li>
+  <li>方便的冗余和扩展
+    <ol>
+      <li>复制集保证数据安全</li>
+      <li>分片扩展数据规模</li>
+    </ol>
+  </li>
+  <li>良好的支持
+    <ol>
+      <li>完善的文档</li>
+      <li>齐全的驱动支持</li>
+    </ol>
+  </li>
+</ol>
+
+<hr />
+
+<blockquote>
+  <p>安装过程 略过</p>
 </blockquote>
 
-<h2 id="section">大海</h2>
-<p><code class="highlighter-rouge">
-echo 'hello word!';
-</code></p>
+<hr />
 
-<h2 id="section-1">宇宙</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code># mkdir data
+# mkdir log
+# mkdir conf
+# mkdir bin
+# cd conf
+# vim mongodb.conf
+  port=27017
+  dbpath=data
+  logpath=log/mongod.log
+  fork=true
+启动 # mongod -f conf/mongodb.conf   
+</code></pre>
+</div>
+<p>连接 mongo 121.41.31.214:27017<br />
+数据库的关闭 连接时   db.shutdownServer()</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>echo 'hello black!';
+<hr />
+
+<h2 id="mongodb-3">mongoDB的基本操作</h2>
+
+<hr />
+
+<div class="highlighter-rouge"><pre class="highlight"><code>查看所有数据库
+&gt; show dbs
+
+切换数据库
+&gt; use dbname
+
+删除当前数据库,（需要先use）
+&gt; db.dropDatabase();
+
+创建表 (不要特殊创建 只需要use 一个不存在的name mongoDb会在需要的时候自己创建，一个表是一个集合)
+&gt; use dbname
+
+数据的写入  db.集合名.insert(json数据) 表集合不存在的话自动创建 _id自动创建 _id自定义时不能重复
+&gt; db.dbname_collection.insert({x:1})
+
+数据的查询 db.集合名.find()  参数可以为空，返回所有文档
+&gt; db.dbname_collection.find()
+&gt; db.dbname_collection.find({x:1})   查询x=1的文档
+
+循环插入
+&gt; for(i=3;i&lt;100;i++)db.dbname_collection.insert({x:i})
+
+计数
+&gt; db.dbname_collection.find().count()
+
+跳过，限制条数，排序
+&gt; db.dbname_collection.find().skip(3).limit(2).sort({x:1})
+
+
+数据更新 db.集合名.find(查询条件,更新条目)  默认只会更新第一条找到的数据
+&gt; db.dbname_collection.update({x:1},{x:999})  会更新x=1的文档为 {x:999}
+注意：db.dbname_collection.insert({x:1,y:2,z:3}) 若要更新z=3的文档 把x更新为22， 使用 db.dbname_collection.update({z:3},{x:22})  会把{x:1,y:2,z:3}整体覆盖为{x:22} 
+
+局部更新
+&gt;db.dbname_collection.update({z:3},{$set:{x:22}})  局部更新 不会被覆盖
+
+更新不存在的数据，即自动创建 第三个参数 true 标示不存在的时候自动创建
+&gt; db.dbname_collection.update({x:3},{x:22},true)
+
+批量更新  第四个参数 true 批量更新
+&gt; db.dbname_collection.update({x:1},{$set:{x:22}},false,true)
+
+数据删除  必须传参，默认删除所有找的数据
+&gt; db.dbname_collection.remove({x:1})
+&gt; db.dbname_collection.drop()
+
 </code></pre>
 </div>
 
-<h2 id="section-2">黑洞</h2>
+<hr />
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#cat /etc/issue  
-#cat /etc/*-release 
-#uname -a
-#MemTotal=`free -m | grep Mem | awk '{print  $2}'`
-#df -h 
+<h2 id="mongodb-4">MongoDB索引</h2>
+
+<hr />
+
+<h4 id="section-5">内容简介</h4>
+
+<ol>
+  <li>索引的种类和使用</li>
+  <li>索引的匹配规则</li>
+  <li>如何建立合适的索引</li>
+  <li>索引建立的情况评估</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>查看索引
+&gt; db.dbname_collection.getIndexes()
+
+创建索引  参数也是文档  1代表正向排序 -1 代表逆向排序
+&gt; db.dbname_collection.ensureIndex({x:1})
+
+
 </code></pre>
 </div>
+
+<h4 id="section-6">索引的种类</h4>
+
+<ol>
+  <li>_id索引</li>
+  <li>单键索引</li>
+  <li>多键索引</li>
+  <li>复合索引</li>
+  <li>过期索引</li>
+  <li>全文索引</li>
+  <li>地理位置索引</li>
+</ol>
+
+<h5 id="id">_id索引</h5>
+<ul>
+  <li>_id索引是绝大多数集合默认建立的索引</li>
+  <li>对于每个插入的数据，MongoDB都会自动生成一条唯一的_id字段</li>
+</ul>
+
+<h5 id="section-7">单键索引</h5>
+<ul>
+  <li>单键索引是最普通的索引</li>
+  <li>与_id索引不同，单键索引不会自动创建</li>
+</ul>
+
+<h5 id="section-8">多键索引</h5>
+<ul>
+  <li>多键索引与单键索引创建形式相同，区别在于字段的值
+    <ul>
+      <li>单键索引：值为单一的值，例如字符串，数字或者日期</li>
+      <li>多键索引：值具有多个记录，例如数组<br />
+##### 复合索引</li>
+    </ul>
+  </li>
+  <li>当我们的查询条件不只有一个时，就需要建立复合索引
+    <ul>
+      <li>插入{x:1,y:2,z:3}-&gt;按照x与y的值查询-&gt;创建索引db.collection.ensureIndex({x:1,y:1})-&gt;使用{x:1,y:1}作为条件进行查询</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="section-9">过期索引</h5>
+<ul>
+  <li>过期索引：是在一段时间后会过期的索引</li>
+  <li>在索引过期后，相应的数据会被删除</li>
+  <li>这适合存储一些在一些时间后会失效的数据 比如用户的登陆信息，存储的日志</li>
+  <li>建立方法：db.collection.ensureIndex({time:1},{expireAfterSeconds:10}),第二个参数是过期时间的秒数</li>
+  <li>过期索引的限制
+    <ol>
+      <li>存储在过期索引字段的值必须是指定的时间类型，说明：必须是ISODate或者ISODate数组，不能使用时间戳，否则不能被自动删除</li>
+      <li>如果指定了ISODate数组，则按照最小的时间进行删除</li>
+      <li>过期索引不能是复合索引</li>
+      <li>删除时间是不精确的 说明：删除过程是由后台程序每60S跑一次，而且删除也需要一些时间，所以存在误差</li>
+    </ol>
+  </li>
+</ul>
+
+<h5 id="section-10">全文索引</h5>
+<ul>
+  <li>全文索引：对字符串与字符串数组创建全文可搜索的索引<br />
+适用情况{author:”“,title:”“,article:””}</li>
+  <li>建立方法<br />
+  db.articles.ensureIndex({key:”text”})<br />
+  db.articles.ensureIndex({key_1:”text”,key_2:”text”})<br />
+  db.articles.ensureIndex({“$**”:”text”})</li>
+  <li>如何创建全文索引	<br />
+  db.imooc_2.ensureIndex({“article”:”text”})</li>
+  <li>如何使用全文索引进行查询
+    <ol>
+      <li>db.articles.find({$text:{$search:”coffee”}})</li>
+      <li>db.articles.find({$text:{$search:”aa bb cc”}}) 查询 aa 或bb 或cc</li>
+      <li>db.articles.find({$text:{$search:”aa bb -cc”}}) 查询aa 或bb 不包含cc</li>
+      <li>db.articles.find({$text:{$search:”"aa" "bb" "cc"”}}) 且的关系 既包含aa也包含bb也包含cc</li>
+    </ol>
+  </li>
+  <li>
+    <p>全文索引的相似度</p>
+
+    <p>$meta操作符：{score:{$meta:”textScore”}}<br />
+写在查询条件后面可以返回结果的相似度与sort一起使用，可以达到很好的实用效果	db.articles.find({$text:{$search:”aa bb”}},{score:{$meta:”tetxScore”}}).sort({score:{$meta:”tetxScore”}})</p>
+  </li>
+  <li>全文索引的使用限制<br />
+1.每次查询，只能指定一个$text查询
+    <ol>
+      <li>$test查询不能出现在$nor查询中</li>
+      <li>查询中如果包含了$test,hint不再起作用<br />
+很可惜，MongoDB全文索引还不支持中文</li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="section-11">索引属性</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code>1. 创建索引的格式
+db,collection.ensureIndex({param},{param}) 
+其中第二个参数便是索引的属性
+比较重要的属性有 名字 唯一性 稀疏性 是否定时删除
+名字，name指定：db.collection.ensureIndex({},{name:""})
+唯一性，unique指定：db.collection.ensureIndex({},{unique:true/false})
+稀疏性，sparse指定：db.collection.ensureIndex({},{sparse:true/false}) 默认是不稀疏的
+是否定时删除，
+</code></pre>
+</div>
+
+<h5 id="section-12">地理位置索引</h5>
+<ul>
+  <li></li>
+</ul>
+
 
 
                 <hr>
@@ -230,28 +564,26 @@ echo 'hello word!';
                 </style>
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="/2016/03/24/my-first-blog"
-                    data-title="My First Blog"
-                    data-url="http://huangxuan.me/2016/03/24/my-first-blog/"
+                    data-thread-key="/2016/05/20/monogo-db-study"
+                    data-title="Monogo DB Study"
+                    data-url="http://huangxuan.me/2016/05/20/monogo-db-study/"
                     data-images="http://huangxuan.me/img/post-bg-os-metro.jpg"
-                    data-content="
-  宇宙，海洋，黑洞
-
-
-大海
-
-echo 'hello word!';
-
-
-宇宙
-
-echo 'hello black!';
+                    data-content="MonogoDB  学习笔记
 
 
 
-黑洞
+#入门篇
 
-#cat ... | 克洛弗的博客 | Clover Blog " >
+
+
+学习目标
+
+
+
+Mongo 概念
+
+
+  mongo MongoDB 索引 集合 复制集 分片 数据均... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -271,19 +603,12 @@ echo 'hello black!';
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2016/02/01/React-vs-Angular2/" data-toggle="tooltip" data-placement="top" title="React vs Angular 2：冰与火之歌「译」">
+                        <a href="/2016/03/24/my-first-blog/" data-toggle="tooltip" data-placement="top" title="My First Blog">
                         Previous<br>
-                        <span>React vs Angular 2：冰与火之歌「译」</span>
+                        <span>My First Blog</span>
                         </a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/2016/05/20/monogo-db-study/" data-toggle="tooltip" data-placement="top" title="Monogo DB Study">
-                        Next<br>
-                        <span>Monogo DB Study</span>
-                        </a>
-                    </li>
                     
                 </ul>
 
@@ -292,9 +617,9 @@ echo 'hello black!';
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="/2016/03/24/my-first-blog"
-                        data-title="My First Blog"
-                        data-url="http://huangxuan.me/2016/03/24/my-first-blog/" >
+                        data-thread-key="/2016/05/20/monogo-db-study"
+                        data-title="Monogo DB Study"
+                        data-url="http://huangxuan.me/2016/05/20/monogo-db-study/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
