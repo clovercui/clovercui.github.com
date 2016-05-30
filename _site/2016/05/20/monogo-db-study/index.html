@@ -169,7 +169,7 @@
                         
                         <a class="tag" href="/tags/#Clover" title="Clover">Clover</a>
                         
-                        <a class="tag" href="/tags/#MonogoBD" title="MonogoBD">MonogoBD</a>
+                        <a class="tag" href="/tags/#MonogoDB" title="MonogoDB">MonogoDB</a>
                         
                     </div>
                     <h1>Monogo DB Study</h1>
@@ -374,7 +374,8 @@
 
 <hr />
 
-<div class="highlighter-rouge"><pre class="highlight"><code>查看所有数据库
+<div class="highlighter-rouge"><pre class="highlight"><code>
+查看所有数据库
 &gt; show dbs
 
 切换数据库
@@ -443,7 +444,6 @@
 
 创建索引  参数也是文档  1代表正向排序 -1 代表逆向排序
 &gt; db.dbname_collection.ensureIndex({x:1})
-
 
 </code></pre>
 </div>
@@ -539,21 +539,72 @@
 </ul>
 
 <h4 id="section-11">索引属性</h4>
-<div class="highlighter-rouge"><pre class="highlight"><code>1. 创建索引的格式
-db,collection.ensureIndex({param},{param}) 
-其中第二个参数便是索引的属性
-比较重要的属性有 名字 唯一性 稀疏性 是否定时删除
-名字，name指定：db.collection.ensureIndex({},{name:""})
-唯一性，unique指定：db.collection.ensureIndex({},{unique:true/false})
-稀疏性，sparse指定：db.collection.ensureIndex({},{sparse:true/false}) 默认是不稀疏的
-是否定时删除，
-</code></pre>
-</div>
+<ol>
+  <li>创建索引的格式<br />
+ db,collection.ensureIndex({param},{param}) <br />
+ 其中第二个参数便是索引的属性</li>
+  <li>比较重要的属性有 名字 唯一性 稀疏性 是否定时删除
+    <ul>
+      <li>名字，name指定：db.collection.ensureIndex({},{name:””})</li>
+      <li>唯一性，unique指定：db.collection.ensureIndex({},{unique:true/false})</li>
+      <li>稀疏性，sparse指定：db.collection.ensureIndex({},{sparse:true/false}) 默认是不稀疏的<br />
+ db.collection.find({m:{$exists:true}})查询存在m的文档<br />
+ db.collection.ensureIndex({m:1},{sparse:true})</li>
+    </ul>
+
+    <p>db.collection.find({m:{$exists:false}})<br />
+ <strong>在选取索引  在稀疏索引上 查找是否存在 将不使用稀疏索引</strong><br />
+ 强制使用索引 db.collection.find({m:{$exists:false}}).hint(“m_1”)</p>
+
+    <ul>
+      <li>是否定时删除，expireAfterSeconds指定<br />
+ TTL，过期索引</li>
+    </ul>
+  </li>
+</ol>
 
 <h5 id="section-12">地理位置索引</h5>
 <ul>
-  <li></li>
+  <li>将一些点的位置存储在MongoDB中，创建索引后，可以按照位置来查找其他点
+    <ul>
+      <li>子分类:
+        <ol>
+          <li>2d索引，用于存储和查找平面上的点。</li>
+          <li>2dsphere索引，用于存储和查找球面上的点</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>查找方式
+    <ul>
+      <li>查找距离某个点一定距离的点</li>
+      <li>查找包含在某区域内的点</li>
+    </ul>
+  </li>
 </ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+2D索引：平面地理位置索引
+		创建方式:db.collection.ensureIndex({w:"2d"})
+		位置表示方式：经纬度[经度,维度]
+		取值范围：经度[-180,180]维度[-90,90]
+		db.collection.insert({w:[100,2]})
+		db.collection.find({w:{$near:[1,1]}})
+		near会返回100个离查询的点最近的点
+		db.collection.find({w:{$near:[1,1]，$maxDistance:10}})  
+		
+		查询方式：
+		（1）$near查询：查询距离某个点最近的点
+		（2）$geoWithin查询：查询某个形状内的点
+		
+		形状的标示：
+		1.$box:矩形，使用
+		{$box[[&lt;x1&gt;,&lt;y1&gt;],[&lt;x2&gt;,&lt;y2&gt;]]}  1.左边界 2.右边界
+		2.$center:圆形，使用
+		{$center:[[&lt;x1&gt;,&lt;y1&gt;],r]} 1.圆心位置 2.半径
+2dsphere: 
+</code></pre>
+</div>
 
 
 

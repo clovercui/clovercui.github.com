@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://huangxuan.me/</link>
     <atom:link href="http://huangxuan.me/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 30 May 2016 11:04:29 +0800</pubDate>
-    <lastBuildDate>Mon, 30 May 2016 11:04:29 +0800</lastBuildDate>
+    <pubDate>Mon, 30 May 2016 11:57:41 +0800</pubDate>
+    <lastBuildDate>Mon, 30 May 2016 11:57:41 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -190,7 +190,8 @@
 
 &lt;hr /&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;查看所有数据库
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+查看所有数据库
 &amp;gt; show dbs
 
 切换数据库
@@ -259,7 +260,6 @@
 
 创建索引  参数也是文档  1代表正向排序 -1 代表逆向排序
 &amp;gt; db.dbname_collection.ensureIndex({x:1})
-
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -355,21 +355,72 @@
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;section-11&quot;&gt;索引属性&lt;/h4&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 创建索引的格式
-db,collection.ensureIndex({param},{param}) 
-其中第二个参数便是索引的属性
-比较重要的属性有 名字 唯一性 稀疏性 是否定时删除
-名字，name指定：db.collection.ensureIndex({},{name:&quot;&quot;})
-唯一性，unique指定：db.collection.ensureIndex({},{unique:true/false})
-稀疏性，sparse指定：db.collection.ensureIndex({},{sparse:true/false}) 默认是不稀疏的
-是否定时删除，
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;ol&gt;
+  &lt;li&gt;创建索引的格式&lt;br /&gt;
+ db,collection.ensureIndex({param},{param}) &lt;br /&gt;
+ 其中第二个参数便是索引的属性&lt;/li&gt;
+  &lt;li&gt;比较重要的属性有 名字 唯一性 稀疏性 是否定时删除
+    &lt;ul&gt;
+      &lt;li&gt;名字，name指定：db.collection.ensureIndex({},{name:””})&lt;/li&gt;
+      &lt;li&gt;唯一性，unique指定：db.collection.ensureIndex({},{unique:true/false})&lt;/li&gt;
+      &lt;li&gt;稀疏性，sparse指定：db.collection.ensureIndex({},{sparse:true/false}) 默认是不稀疏的&lt;br /&gt;
+ db.collection.find({m:{$exists:true}})查询存在m的文档&lt;br /&gt;
+ db.collection.ensureIndex({m:1},{sparse:true})&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;db.collection.find({m:{$exists:false}})&lt;br /&gt;
+ &lt;strong&gt;在选取索引  在稀疏索引上 查找是否存在 将不使用稀疏索引&lt;/strong&gt;&lt;br /&gt;
+ 强制使用索引 db.collection.find({m:{$exists:false}}).hint(“m_1”)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;是否定时删除，expireAfterSeconds指定&lt;br /&gt;
+ TTL，过期索引&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h5 id=&quot;section-12&quot;&gt;地理位置索引&lt;/h5&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;将一些点的位置存储在MongoDB中，创建索引后，可以按照位置来查找其他点
+    &lt;ul&gt;
+      &lt;li&gt;子分类:
+        &lt;ol&gt;
+          &lt;li&gt;2d索引，用于存储和查找平面上的点。&lt;/li&gt;
+          &lt;li&gt;2dsphere索引，用于存储和查找球面上的点&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;查找方式
+    &lt;ul&gt;
+      &lt;li&gt;查找距离某个点一定距离的点&lt;/li&gt;
+      &lt;li&gt;查找包含在某区域内的点&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+2D索引：平面地理位置索引
+		创建方式:db.collection.ensureIndex({w:&quot;2d&quot;})
+		位置表示方式：经纬度[经度,维度]
+		取值范围：经度[-180,180]维度[-90,90]
+		db.collection.insert({w:[100,2]})
+		db.collection.find({w:{$near:[1,1]}})
+		near会返回100个离查询的点最近的点
+		db.collection.find({w:{$near:[1,1]，$maxDistance:10}})  
+		
+		查询方式：
+		（1）$near查询：查询距离某个点最近的点
+		（2）$geoWithin查询：查询某个形状内的点
+		
+		形状的标示：
+		1.$box:矩形，使用
+		{$box[[&amp;lt;x1&amp;gt;,&amp;lt;y1&amp;gt;],[&amp;lt;x2&amp;gt;,&amp;lt;y2&amp;gt;]]}  1.左边界 2.右边界
+		2.$center:圆形，使用
+		{$center:[[&amp;lt;x1&amp;gt;,&amp;lt;y1&amp;gt;],r]} 1.圆心位置 2.半径
+2dsphere: 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 +0800</pubDate>
@@ -378,7 +429,7 @@ db,collection.ensureIndex({param},{param})
         
         <category>Clover</category>
         
-        <category>MonogoBD</category>
+        <category>MonogoDB</category>
         
         
       </item>

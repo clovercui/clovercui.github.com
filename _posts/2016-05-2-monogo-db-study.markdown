@@ -8,7 +8,7 @@ header-img: "img/post-bg-os-metro.jpg"
 catalog: true
 tags:
     - Clover
-    - MonogoBD 
+    - MonogoDB 
 ---
 
 # MonogoDB  学习笔记
@@ -150,6 +150,7 @@ Sql 数据库 | NoSql数据库
 
 
 ```
+
 查看所有数据库
 > show dbs
 
@@ -219,7 +220,6 @@ Sql 数据库 | NoSql数据库
 创建索引  参数也是文档  1代表正向排序 -1 代表逆向排序
 > db.dbname_collection.ensureIndex({x:1})
 
-
 ```
 
 #### 索引的种类
@@ -284,18 +284,54 @@ Sql 数据库 | NoSql数据库
   很可惜，MongoDB全文索引还不支持中文
 
 #### 索引属性
-	1. 创建索引的格式
+1. 创建索引的格式
 	db,collection.ensureIndex({param},{param}) 
 	其中第二个参数便是索引的属性
-	比较重要的属性有 名字 唯一性 稀疏性 是否定时删除
-	名字，name指定：db.collection.ensureIndex({},{name:""})
-	唯一性，unique指定：db.collection.ensureIndex({},{unique:true/false})
-	稀疏性，sparse指定：db.collection.ensureIndex({},{sparse:true/false}) 默认是不稀疏的
-	是否定时删除，
+2. 比较重要的属性有 名字 唯一性 稀疏性 是否定时删除
+	* 名字，name指定：db.collection.ensureIndex({},{name:""})
+	* 唯一性，unique指定：db.collection.ensureIndex({},{unique:true/false})
+	* 稀疏性，sparse指定：db.collection.ensureIndex({},{sparse:true/false}) 默认是不稀疏的
+	db.collection.find({m:{$exists:true}})查询存在m的文档
+	db.collection.ensureIndex({m:1},{sparse:true})
+	
+	db.collection.find({m:{$exists:false}})
+	**在选取索引  在稀疏索引上 查找是否存在 将不使用稀疏索引**
+	强制使用索引 db.collection.find({m:{$exists:false}}).hint("m_1")
+	
+	* 是否定时删除，expireAfterSeconds指定
+	TTL，过期索引
 	 
 ##### 地理位置索引 
-* 
+* 将一些点的位置存储在MongoDB中，创建索引后，可以按照位置来查找其他点
+  * 子分类:
+  1. 2d索引，用于存储和查找平面上的点。
+  2. 2dsphere索引，用于存储和查找球面上的点
+* 查找方式
+  * 查找距离某个点一定距离的点  
+  * 查找包含在某区域内的点
 
+```
+
+2D索引：平面地理位置索引
+		创建方式:db.collection.ensureIndex({w:"2d"})
+		位置表示方式：经纬度[经度,维度]
+		取值范围：经度[-180,180]维度[-90,90]
+		db.collection.insert({w:[100,2]})
+		db.collection.find({w:{$near:[1,1]}})
+		near会返回100个离查询的点最近的点
+		db.collection.find({w:{$near:[1,1]，$maxDistance:10}})  
+		
+		查询方式：
+		（1）$near查询：查询距离某个点最近的点
+		（2）$geoWithin查询：查询某个形状内的点
+		
+		形状的标示：
+		1.$box:矩形，使用
+		{$box[[<x1>,<y1>],[<x2>,<y2>]]}  1.左边界 2.右边界
+		2.$center:圆形，使用
+		{$center:[[<x1>,<y1>],r]} 1.圆心位置 2.半径
+2dsphere: 
+```  
 
 
 
