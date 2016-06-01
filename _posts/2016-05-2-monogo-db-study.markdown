@@ -330,8 +330,135 @@ Sql 数据库 | NoSql数据库
 		{$box[[<x1>,<y1>],[<x2>,<y2>]]}  1.左边界 2.右边界
 		2.$center:圆形，使用
 		{$center:[[<x1>,<y1>],r]} 1.圆心位置 2.半径
+		3.$polygon:多边形，使用
+		{$polygon：[[<x1>,<y1>],[<x2>,<y2>],[<x3>,<y3>]]}
+		
+		db.collection.find({w:{$geoWithin:{$box:[[0,0],[3,3]]}}})
+		
+	geoNear查询
+	geoNear使用runCommand命令进行使用
+	{
+	geoNear:<collection>,
+	near:[x,y],
+	minDistance:(对2D索引无效)
+	MaxDistance:
+	num:
+	}
+	
+	db.runCommand({geoNear:"location",near:[1,2],maxDistance:10,num:1})
+	
+		
 2dsphere: 
+创建方式:db.collection.ensureIndex({w:"2dsphere"})
+位置表示方式
+GeoJson:描述一个点，一条直线，多边形等
+格式：{type:"",coordinates:[<coordinates>]}
+查询方式和2D索引查询方式类似
+支持$minDistance与$maxDistance
+
 ```  
+
+---
+
+## 索引构建情况分析
+
+---
+
+* 索引好处：加快索引相关的查询
+* 索引不好处：增加磁盘空间消耗，降低写入性能
+
+---
+* 如何评判当前索引构建情况
+	1. mongostat工具介绍
+	2. profile集合介绍
+	3. 日志介绍
+	4. explain分析
+
+##### mongostat工具
+ * mongostat查看mongodb运行状态的程序
+ * 使用说明	:mongostat -h 127.0.0.1:12345
+ 
+ * 字段说明:
+ 	* inserts
+ 	* query
+ 	* update
+ 	* delete
+ 	* getmore
+ 	* command
+ 	* flushes
+ 	* mapped
+ 	* vsize
+ 	* res
+ 	* non-mapped
+ 	* faults
+ 	* locked
+ 	* idx miss 索引情况
+ 	* qr|qw
+ 	* ar|aw
+ 	* netIn
+ 	* netOut
+ 	* conn
+ 	* set
+ 	* repl
+ 	
+##### profile集合
+ * db.getProfilingStatus()
+ * db.setProfilingLevel(2)
+
+ * db.system.profile.find().sort({$natural:-1}).limit(1)  
+ 
+##### 日志
+ * mongodb.conf 中 verbose=vvvvv    v越多代表日志越详细
+  
+##### explain
+* db.collection.find({x:1}).explain()
+
+
+---
+
+## MongoDB 安全
+
+---
+
+###安全概览
+1. 最安全的是物理隔离：不现实
+2. 网络隔离其次
+3. 防火墙再其次
+4. 用户名密码在最后
+
+---
+
+#### 开启权限验证
+1. auth开启
+mongodb.conf 设置  auth=true;
+
+2. keyfile开启
+
+##### MongoDB创建用户
+1. 创建语法：createUser(2.6之前为addUser)
+2. 
+```
+{
+user:"<name>",
+pwd:"<password>",
+sustomData:{<说明>},
+roles;[{role:"<role>",db:"database"}]
+}
+```
+3. 角色类型：内建类型（read,readWrite,dbAdmin,dbOwner,userAdmin）
+
+##### 用户角色详解
+
+1. 数据库角色（read,readWrite,dbAdmin,dbOwner,userAdmin）
+2. 集群角色（cluterAdmin,clusterManager）
+3. 备份角色（backup,restore）
+4. 其他特殊权限（DBAdminAnyDatabase） 
+
+
+
+
+	
+ 
 
 
 

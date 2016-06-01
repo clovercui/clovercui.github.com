@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://huangxuan.me/</link>
     <atom:link href="http://huangxuan.me/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 30 May 2016 13:25:02 +0800</pubDate>
-    <lastBuildDate>Mon, 30 May 2016 13:25:02 +0800</lastBuildDate>
+    <pubDate>Wed, 01 Jun 2016 15:37:50 +0800</pubDate>
+    <lastBuildDate>Wed, 01 Jun 2016 15:37:50 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -418,9 +418,156 @@
 		{$box[[&amp;lt;x1&amp;gt;,&amp;lt;y1&amp;gt;],[&amp;lt;x2&amp;gt;,&amp;lt;y2&amp;gt;]]}  1.左边界 2.右边界
 		2.$center:圆形，使用
 		{$center:[[&amp;lt;x1&amp;gt;,&amp;lt;y1&amp;gt;],r]} 1.圆心位置 2.半径
+		3.$polygon:多边形，使用
+		{$polygon：[[&amp;lt;x1&amp;gt;,&amp;lt;y1&amp;gt;],[&amp;lt;x2&amp;gt;,&amp;lt;y2&amp;gt;],[&amp;lt;x3&amp;gt;,&amp;lt;y3&amp;gt;]]}
+		
+		db.collection.find({w:{$geoWithin:{$box:[[0,0],[3,3]]}}})
+		
+	geoNear查询
+	geoNear使用runCommand命令进行使用
+	{
+	geoNear:&amp;lt;collection&amp;gt;,
+	near:[x,y],
+	minDistance:(对2D索引无效)
+	MaxDistance:
+	num:
+	}
+	
+	db.runCommand({geoNear:&quot;location&quot;,near:[1,2],maxDistance:10,num:1})
+	
+		
 2dsphere: 
+创建方式:db.collection.ensureIndex({w:&quot;2dsphere&quot;})
+位置表示方式
+GeoJson:描述一个点，一条直线，多边形等
+格式：{type:&quot;&quot;,coordinates:[&amp;lt;coordinates&amp;gt;]}
+查询方式和2D索引查询方式类似
+支持$minDistance与$maxDistance
+
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section-13&quot;&gt;索引构建情况分析&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;索引好处：加快索引相关的查询&lt;/li&gt;
+  &lt;li&gt;索引不好处：增加磁盘空间消耗，降低写入性能&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;如何评判当前索引构建情况
+    &lt;ol&gt;
+      &lt;li&gt;mongostat工具介绍&lt;/li&gt;
+      &lt;li&gt;profile集合介绍&lt;/li&gt;
+      &lt;li&gt;日志介绍&lt;/li&gt;
+      &lt;li&gt;explain分析&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;mongostat&quot;&gt;mongostat工具&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;mongostat查看mongodb运行状态的程序&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;使用说明	:mongostat -h 127.0.0.1:12345&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;字段说明:&lt;br /&gt;
+ 	* inserts&lt;br /&gt;
+ 	* query&lt;br /&gt;
+ 	* update&lt;br /&gt;
+ 	* delete&lt;br /&gt;
+ 	* getmore&lt;br /&gt;
+ 	* command&lt;br /&gt;
+ 	* flushes&lt;br /&gt;
+ 	* mapped&lt;br /&gt;
+ 	* vsize&lt;br /&gt;
+ 	* res&lt;br /&gt;
+ 	* non-mapped&lt;br /&gt;
+ 	* faults&lt;br /&gt;
+ 	* locked&lt;br /&gt;
+ 	* idx miss 索引情况&lt;br /&gt;
+ 	* qr|qw&lt;br /&gt;
+ 	* ar|aw&lt;br /&gt;
+ 	* netIn&lt;br /&gt;
+ 	* netOut&lt;br /&gt;
+ 	* conn&lt;br /&gt;
+ 	* set&lt;br /&gt;
+ 	* repl&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;profile&quot;&gt;profile集合&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;db.getProfilingStatus()&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;db.setProfilingLevel(2)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;db.system.profile.find().sort({$natural:-1}).limit(1)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;section-14&quot;&gt;日志&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;mongodb.conf 中 verbose=vvvvv    v越多代表日志越详细&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;explain&quot;&gt;explain&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;db.collection.find({x:1}).explain()&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;mongodb-&quot;&gt;MongoDB 安全&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;###安全概览&lt;br /&gt;
+1. 最安全的是物理隔离：不现实&lt;br /&gt;
+2. 网络隔离其次&lt;br /&gt;
+3. 防火墙再其次&lt;br /&gt;
+4. 用户名密码在最后&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section-15&quot;&gt;开启权限验证&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;auth开启&lt;br /&gt;
+mongodb.conf 设置  auth=true;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;keyfile开启&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;mongodb-5&quot;&gt;MongoDB创建用户&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;创建语法：createUser(2.6之前为addUser)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;user:&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;&amp;lt;name&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;password&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;sustomData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;说明&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;roles;[{role&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;role&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;database&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;角色类型：内建类型（read,readWrite,dbAdmin,dbOwner,userAdmin）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;section-16&quot;&gt;用户角色详解&lt;/h5&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;数据库角色（read,readWrite,dbAdmin,dbOwner,userAdmin）&lt;/li&gt;
+  &lt;li&gt;集群角色（cluterAdmin,clusterManager）&lt;/li&gt;
+  &lt;li&gt;备份角色（backup,restore）&lt;/li&gt;
+  &lt;li&gt;其他特殊权限（DBAdminAnyDatabase）&lt;/li&gt;
+&lt;/ol&gt;
 
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 +0800</pubDate>
