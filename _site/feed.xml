@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://huangxuan.me/</link>
     <atom:link href="http://huangxuan.me/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 20 Jun 2016 12:04:52 +0800</pubDate>
-    <lastBuildDate>Mon, 20 Jun 2016 12:04:52 +0800</lastBuildDate>
+    <pubDate>Mon, 20 Jun 2016 16:22:14 +0800</pubDate>
+    <lastBuildDate>Mon, 20 Jun 2016 16:22:14 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -15,7 +15,118 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;1.&lt;/p&gt;
+&lt;h2 id=&quot;section&quot;&gt;简介&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;最近几年来，关于持久化和数据查询的相关技术，其需求已经增长到了让人惊讶的程度。可以断言，关系型数据库再也不是放之四海皆准。换一句话说，围绕数据的解决方案不可能再只有唯一一种。&lt;/p&gt;
+
+&lt;p&gt;对于我来说，在众多新出现的解决方案和工具里，最让人兴奋的，无疑是Redis。为什么？首先是因为其让人不可思议的容易学习，只需要简短的几个小时学习时间，就能对Redis有个大概的认识。还有，Redis在处理一组特定的问题集的同时能保持相当的通用性。更准确地说就是，Redis不会尝试去解决关于数据的所有事情。在你足够了解Redis后，事情就会变得越来越清晰，什么是可行的，什么是不应该由Redis来处理的。作为一名开发人员，如此的经验当是相当的美妙。&lt;/p&gt;
+
+&lt;p&gt;当你能仅使用Redis去构建一个完整系统时，我想大多数人将会发现，Redis能使得他们的许多数据方案变得更为通用，不论是一个传统的关系型数据库，一个面向文档的系统，或是其它更多的东西。这是一种用来实现某些特定特性的解决方法。就类似于一个索引引擎，你不会在Lucene上构建整个程序，但当你需要足够好的搜索，为什么不使用它呢？这对你和你的用户都有好处。当然，关于Redis和索引引擎之间相似性的讨论到此为止。&lt;/p&gt;
+
+&lt;p&gt;本书的目的是向读者传授掌握Redis所需要的基本知识。我们将会注重于学习Redis的5种数据结构，并研究各种数据建模方法。我们还会接触到一些主要的管理细节和调试技巧。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;安装&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;windows&lt;/code&gt;:https://github.com/dmajkic/redis/downloads&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*nix和MacOSX平台&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ wget http://download.redis.io/releases/redis-3.2.0.tar.gz
+$ tar xzf redis-3.2.0.tar.gz
+$ cd redis-3.2.0
+$ make
+$ make install
+$ cp redis.conf /etc/
+$ cd /etc
+$ vim redis.conf
+修改daemonize yes---目的使进程在后台运行
+$ cd /usr/local/bin
+$./redis-server /etc/redis.conf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;检查是否启动成功&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;a) $ ps -ef&lt;/td&gt;
+      &lt;td&gt;grep redis&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;服务启动后通过 redis-cli链接&lt;br /&gt;
+进入命令行控制台&lt;/p&gt;
+
+&lt;p&gt;（当然，Redis同样可以通过套件管理程序来安装。例如，使用Homebrew的MaxOSX用户可以只键入brew install redis即可。）&lt;/p&gt;
+
+&lt;p&gt;如果你是通过源文件来安装，二进制可执行文件会被放置在src目录里。通过运行cd src可跳转到src目录。&lt;/p&gt;
+
+&lt;h2 id=&quot;redis-1&quot;&gt;运行和连接Redis&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;如果一切都工作正常，那Redis的二进制文件应该已经可以曼妙地跳跃于你的指尖之下。Redis只有少量的可执行文件，我们将着重于Redis的服务器和命令行界面（一个类DOS的客户端）。首先，让我们来运行服务器。在Windows平台，双击redis-server，在*nix/MacOSX平台则运行./redis-server.&lt;/p&gt;
+
+&lt;p&gt;如果你仔细看了启动信息，你会看到一个警告，指没能找到redis.conf文件。Redis将会采用内置的默认设置，这对于我们将要做的已经足够了。&lt;/p&gt;
+
+&lt;p&gt;然后，通过双击redis-cli（Windows平台）或者运行./redis-cli（*nix/MacOSX平台），启动Redis的控制台。控制台将会通过默认的端口（6379）来连接本地运行的服务器。&lt;/p&gt;
+
+&lt;p&gt;可以在命令行界面键入info命令来查看一切是不是都运行正常。你会很乐意看到这么一大组关键字-值（key-value）对的显示，这为我们查看服务器的状态提供了大量有效信息。&lt;/p&gt;
+
+&lt;p&gt;如果在上面的启动步骤里遇到什么问题，我建议你到&lt;code class=&quot;highlighter-rouge&quot;&gt;Redis的官方支持组&lt;/code&gt;里获取帮助。&lt;/p&gt;
+
+&lt;h2 id=&quot;redis-2&quot;&gt;驱动Redis&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;很快你就会发现，Redis的API就如一组定义明确的函数那般容易理解。Redis具有让人难以置信的简单性，其操作过程也同样如此。这意味着，无论你是使用命令行程序，或是使用你喜欢的语言来驱动，整体的感觉都不会相差多少。因此，相对于命令行程序，如果你更愿意通过一种编程语言去驱动Redis，你不会感觉到有任何适应的问题。如果真想如此，可以到Redis的&lt;a href=&quot;http://redis.io/clients&quot;&gt;客户端推荐页面&lt;/a&gt;下载适合的Redis载体。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;学习-基础知识&lt;/h2&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;是什么使Redis显得这么特别？Redis具体能解决什么类型的问题？要实际应用Redis，开发者必须储备什么知识？在我们能回答这么一些问题之前，我们需要明白Redis到底是什么。&lt;/p&gt;
+
+&lt;p&gt;Redis通常被人们认为是一种持久化的存储器关键字-值型存储（in-memory persistent key-value store）。我认为这种对Redis的描述并不太准确。Redis的确是将所有的数据存放于存储器（更多是是按位存储），而且也确实通过将数据写入磁盘来实现持久化，但是Redis的实际意义比单纯的关键字-值型存储要来得深远。纠正脑海里的这种误解观点非常关键，否则你对于Redis之道以及其应用的洞察力就会变得越发狭义。&lt;/p&gt;
+
+&lt;p&gt;事实是，Redis引入了5种不同的数据结构，只有一个是典型的关键字-值型结构。理解Redis的关键就在于搞清楚这5种数据结构，其工作的原理都是如何，有什么关联方法以及你能怎样应用这些数据结构去构建模型。首先，让我们来弄明白这些数据结构的实际意义。&lt;/p&gt;
+
+&lt;p&gt;应用上面提及的数据结构概念到我们熟悉的关系型数据库里，我们可以认为其引入了一个单独的数据结构——表格。表格既复杂又灵活，基于表格的存储和管理，没有多少东西是你不能进行建模的。然而，这种通用性并不是没有缺点。具体来说就是，事情并不是总能达到假设中的简单或者快速。相对于这种普遍适用（one-size-fits-all）的结构体系，我们可以使用更为专门化的结构体系。当然，因此可能有些事情我们会完成不了(至少，达不到很好的程度）。但话说回来，这样做就能确定我们可以获得想象中的简单性和速度吗？&lt;/p&gt;
+
+&lt;p&gt;针对特定类型的问题使用特定的数据结构？我们不就是这样进行编程的吗？你不会使用一个散列表去存储每份数据，也不会使用一个标量变量去存储。对我来说，这正是Redis的做法。如果你需要处理标量、列表、散列或者集合，为什么不直接就用标量、列表、散列和集合去存储他们？为什么不是直接调用&lt;code class=&quot;highlighter-rouge&quot;&gt;exists(key)&lt;/code&gt;去检测一个已存在的值，而是要调用其他比O(1)（常量时间查找，不会因为待处理元素的增长而变慢）慢的操作？&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;databases&quot;&gt;数据库（Databases）&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;与你熟悉的关系型数据库一致，Redis有着相同的数据库基本概念，即一个数据库包含一组数据。典型的数据库应用案例是，将一个程序的所有数据组织起来，使之与另一个程序的数据保持独立。&lt;/p&gt;
+
+&lt;p&gt;在Redis里，数据库简单的使用一个数字编号来进行辨认，默认数据库的数字编号是&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;。如果你想切换到一个不同的数据库，你可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;select&lt;/code&gt;命令来实现。在命令行界面里键入&lt;code class=&quot;highlighter-rouge&quot;&gt;select 1&lt;/code&gt;，Redis应该会回复一条&lt;code class=&quot;highlighter-rouge&quot;&gt;OK&lt;/code&gt;的信息，然后命令行界面里的提示符会变成类似&lt;code class=&quot;highlighter-rouge&quot;&gt;redis 127.0.0.1:6379[1]&amp;gt;&lt;/code&gt;这样。如果你想切换回默认数据库，只要在命令行界面键入&lt;code class=&quot;highlighter-rouge&quot;&gt;select 0&lt;/code&gt;即可。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;commands-keys-and-values&quot;&gt;命令、关键字和值（Commands, Keys and Values）&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;Redis不仅仅是一种简单的关键字-值型存储，从其核心概念来看，Redis的5种数据结构中的每一个都至少有一个关键字和一个值。在转入其它关于Redis的有用信息之前，我们必须理解关键字和值的概念。&lt;/p&gt;
+
+&lt;p&gt;关键字（Keys）是用来标识数据块。我们将会很常跟关键字打交道，不过在现在，明白关键字就是类似于&lt;code class=&quot;highlighter-rouge&quot;&gt;users:leto&lt;/code&gt;这样的表述就足够了。一般都能很好地理解到，这样关键字包含的信息是一个名为&lt;code class=&quot;highlighter-rouge&quot;&gt;leto&lt;/code&gt;的用户。这个关键字里的冒号没有任何特殊含义，对于Redis而言，使用分隔符来组织关键字是很常见的方法。&lt;/p&gt;
+
+&lt;p&gt;值（Values）是关联于关键字的实际值，可以是任何东西。有时候你会存储字符串，有时候是整数，还有时候你会存储序列化对象（使用JSON、XML或其他格式）。在大多数情况下，Redis会把值看做是一个字节序列，而不会关注它们实质上是什么。要注意，不同的Redis载体处理序列化会有所不同（一些会让你自己决定）。因此，在这本书里，我们将仅讨论字符串、整数和JSON。&lt;br /&gt;
+现在让我们活动一下手指吧。在命令行界面键入下面的命令：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;set users:leto &quot;{name: leto, planet: dune, likes: [spice]}&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这就是Redis命令的基本构成。首先我们要有一个确定的命令，在上面的语句里就是set。然后就是相应的参数，set命令接受两个参数，包括要设置的关键字，以及相应要设置的值。很多的情况是，命令接受一个关键字（当这种情况出现，其经常是第一个参数）。你能想到如何去获取这个值吗？我想你会说（当然一时拿不准也没什么）：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;get users:leto
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;关键字和值的是Redis的基本概念，而&lt;code class=&quot;highlighter-rouge&quot;&gt;get&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;set&lt;/code&gt;命令是对此最简单的使用。你可以创建更多的用户，去尝试不同类型的关键字以及不同的值，看看一些不同的组合。&lt;/p&gt;
 </description>
         <pubDate>Mon, 20 Jun 2016 00:00:00 +0800</pubDate>
         <link>http://huangxuan.me/2016/06/20/redis-study.markdownredis%E7%9A%84%E5%AD%A6%E4%B9%A0/</link>
