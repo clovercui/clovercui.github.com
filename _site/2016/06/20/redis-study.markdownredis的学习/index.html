@@ -12,7 +12,7 @@
 
     <title>Redis Study - 克洛弗的博客 | Clover Blog</title>
 
-    <link rel="canonical" href="http://huangxuan.me/2016/06/20/redis-study.markdownredis%E7%9A%84%E5%AD%A6%E4%B9%A0/">
+    <link rel="canonical" href="http://clover.htmhub.com/2016/06/20/redis-study.markdownredis%E7%9A%84%E5%AD%A6%E4%B9%A0/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -211,7 +211,7 @@
 <h2 id="section-1">安装</h2>
 <hr />
 
-<p><code class="highlighter-rouge">windows</code>:https://github.com/dmajkic/redis/downloads</p>
+<p><code class="highlighter-rouge">windows</code>:<a href="https://github.com/dmajkic/redis/downloads">https://github.com/dmajkic/redis/downloads</a></p>
 
 <p><code class="highlighter-rouge">*nix和MacOSX平台</code></p>
 
@@ -310,6 +310,17 @@ $./redis-server /etc/redis.conf
 
 <p>关键字和值的是Redis的基本概念，而<code class="highlighter-rouge">get</code>和<code class="highlighter-rouge">set</code>命令是对此最简单的使用。你可以创建更多的用户，去尝试不同类型的关键字以及不同的值，看看一些不同的组合。</p>
 
+<hr />
+
+<h3 id="querying">查询（Querying）</h3>
+<hr />
+
+<p>随着学习的持续深入，两件事情将变得清晰起来。对于Redis而言，关键字就是一切，而值是没有任何意义。更通俗来看就是，Redis不允许你通过值来进行查询。回到上面的例子，我们就不能查询生活在<code class="highlighter-rouge">dune</code>行星上的用户。</p>
+
+<p>对许多人来说，这会引起一些担忧。在我们生活的世界里，数据查询是如此的灵活和强大，而Redis的方式看起来是这么的原始和不高效。不要让这些扰乱你太久。要记住，Redis不是一种普遍使用（one-size-fits-all）的解决方案，确实存在这么一些事情是不应该由Redis来解决的（因为其查询的限制）。事实上，在考虑了这些情况后，你会找到新的方法去构建你的数据。</p>
+
+<p>很快，我们就能看到更多实际的用例。很重要的一点是，我们要明白关于Redis的这些基本事实。这能帮助我们弄清楚为什么值可以是任何东西，因为Redis从来不需要去读取或理解它们。而且，这也可以帮助我们理清思路，然后去思考如何在这个新世界里建立模型。</p>
+
 
                 <hr>
 
@@ -320,8 +331,8 @@ $./redis-server /etc/redis.conf
                     style="text-align: right"
                     data-thread-key="/2016/06/20/redis-study.markdownredis的学习"
                     data-title="Redis Study"
-                    data-url="http://huangxuan.me/2016/06/20/redis-study.markdownredis%E7%9A%84%E5%AD%A6%E4%B9%A0/"
-                    data-images="http://huangxuan.me/img/education_large_2x.jpg"
+                    data-url="http://clover.htmhub.com/2016/06/20/redis-study.markdownredis%E7%9A%84%E5%AD%A6%E4%B9%A0/"
+                    data-images="http://clover.htmhub.com/img/education_large_2x.jpg"
                     data-content="Redis的学习
 
 
@@ -365,7 +376,7 @@ $./redis-server /etc/redis.conf
                     <div class="ds-thread"
                         data-thread-key="/2016/06/20/redis-study.markdownredis的学习"
                         data-title="Redis Study"
-                        data-url="http://huangxuan.me/2016/06/20/redis-study.markdownredis%E7%9A%84%E5%AD%A6%E4%B9%A0/" >
+                        data-url="http://clover.htmhub.com/2016/06/20/redis-study.markdownredis%E7%9A%84%E5%AD%A6%E4%B9%A0/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->

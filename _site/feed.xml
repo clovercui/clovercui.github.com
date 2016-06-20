@@ -3,10 +3,10 @@
   <channel>
     <title>Clover Blog</title>
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
-    <link>http://huangxuan.me/</link>
-    <atom:link href="http://huangxuan.me/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 20 Jun 2016 16:22:14 +0800</pubDate>
-    <lastBuildDate>Mon, 20 Jun 2016 16:22:14 +0800</lastBuildDate>
+    <link>http://clover.htmhub.com/</link>
+    <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 20 Jun 2016 22:17:24 +0800</pubDate>
+    <lastBuildDate>Mon, 20 Jun 2016 22:17:24 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -29,7 +29,7 @@
 &lt;h2 id=&quot;section-1&quot;&gt;安装&lt;/h2&gt;
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;windows&lt;/code&gt;:https://github.com/dmajkic/redis/downloads&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;windows&lt;/code&gt;:&lt;a href=&quot;https://github.com/dmajkic/redis/downloads&quot;&gt;https://github.com/dmajkic/redis/downloads&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*nix和MacOSX平台&lt;/code&gt;&lt;/p&gt;
 
@@ -127,10 +127,21 @@ $./redis-server /etc/redis.conf
 &lt;/div&gt;
 
 &lt;p&gt;关键字和值的是Redis的基本概念，而&lt;code class=&quot;highlighter-rouge&quot;&gt;get&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;set&lt;/code&gt;命令是对此最简单的使用。你可以创建更多的用户，去尝试不同类型的关键字以及不同的值，看看一些不同的组合。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;querying&quot;&gt;查询（Querying）&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;随着学习的持续深入，两件事情将变得清晰起来。对于Redis而言，关键字就是一切，而值是没有任何意义。更通俗来看就是，Redis不允许你通过值来进行查询。回到上面的例子，我们就不能查询生活在&lt;code class=&quot;highlighter-rouge&quot;&gt;dune&lt;/code&gt;行星上的用户。&lt;/p&gt;
+
+&lt;p&gt;对许多人来说，这会引起一些担忧。在我们生活的世界里，数据查询是如此的灵活和强大，而Redis的方式看起来是这么的原始和不高效。不要让这些扰乱你太久。要记住，Redis不是一种普遍使用（one-size-fits-all）的解决方案，确实存在这么一些事情是不应该由Redis来解决的（因为其查询的限制）。事实上，在考虑了这些情况后，你会找到新的方法去构建你的数据。&lt;/p&gt;
+
+&lt;p&gt;很快，我们就能看到更多实际的用例。很重要的一点是，我们要明白关于Redis的这些基本事实。这能帮助我们弄清楚为什么值可以是任何东西，因为Redis从来不需要去读取或理解它们。而且，这也可以帮助我们理清思路，然后去思考如何在这个新世界里建立模型。&lt;/p&gt;
 </description>
         <pubDate>Mon, 20 Jun 2016 00:00:00 +0800</pubDate>
-        <link>http://huangxuan.me/2016/06/20/redis-study.markdownredis%E7%9A%84%E5%AD%A6%E4%B9%A0/</link>
-        <guid isPermaLink="true">http://huangxuan.me/2016/06/20/redis-study.markdownredis%E7%9A%84%E5%AD%A6%E4%B9%A0/</guid>
+        <link>http://clover.htmhub.com/2016/06/20/redis-study.markdownredis%E7%9A%84%E5%AD%A6%E4%B9%A0/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2016/06/20/redis-study.markdownredis%E7%9A%84%E5%AD%A6%E4%B9%A0/</guid>
         
         <category>Clover</category>
         
@@ -703,8 +714,8 @@ mongodb.conf 设置  auth=true;&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 +0800</pubDate>
-        <link>http://huangxuan.me/2016/05/20/monogo-db-study/</link>
-        <guid isPermaLink="true">http://huangxuan.me/2016/05/20/monogo-db-study/</guid>
+        <link>http://clover.htmhub.com/2016/05/20/monogo-db-study/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2016/05/20/monogo-db-study/</guid>
         
         <category>Clover</category>
         
@@ -741,8 +752,8 @@ echo &#39;hello word!&#39;;
 &lt;/div&gt;
 </description>
         <pubDate>Thu, 24 Mar 2016 00:00:00 +0800</pubDate>
-        <link>http://huangxuan.me/2016/03/24/my-first-blog/</link>
-        <guid isPermaLink="true">http://huangxuan.me/2016/03/24/my-first-blog/</guid>
+        <link>http://clover.htmhub.com/2016/03/24/my-first-blog/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2016/03/24/my-first-blog/</guid>
         
         <category>Clover</category>
         
@@ -992,8 +1003,8 @@ echo &#39;hello word!&#39;;
 本文由 &lt;a href=&quot;https://www.zhihu.com/people/li-ling-hao&quot;&gt;@李凌豪&lt;/a&gt; &lt;a href=&quot;https://www.zhihu.com/people/huxpro&quot;&gt;@黄玄&lt;/a&gt; 联合翻译，首次发布于&lt;a href=&quot;http://zhuanlan.zhihu.com/FrontendMagazine&quot;&gt;前端外刊评论 · 知乎专栏&lt;/a&gt;，转载请保留原文链接 ;)&lt;/p&gt;
 </description>
         <pubDate>Mon, 01 Feb 2016 20:00:00 +0800</pubDate>
-        <link>http://huangxuan.me/2016/02/01/React-vs-Angular2/</link>
-        <guid isPermaLink="true">http://huangxuan.me/2016/02/01/React-vs-Angular2/</guid>
+        <link>http://clover.htmhub.com/2016/02/01/React-vs-Angular2/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2016/02/01/React-vs-Angular2/</guid>
         
         <category>前端开发</category>
         
@@ -1135,8 +1146,8 @@ echo &#39;hello word!&#39;;
 &lt;p&gt;&lt;a href=&quot;http://lab.hakim.se/reveal-js&quot;&gt;Reveal.js&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 28 Dec 2015 00:00:00 +0800</pubDate>
-        <link>http://huangxuan.me/2015/12/28/css-sucks-2015/</link>
-        <guid isPermaLink="true">http://huangxuan.me/2015/12/28/css-sucks-2015/</guid>
+        <link>http://clover.htmhub.com/2015/12/28/css-sucks-2015/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2015/12/28/css-sucks-2015/</guid>
         
         <category>前端开发</category>
         
@@ -1483,8 +1494,8 @@ echo &#39;hello word!&#39;;
 译者 &lt;a href=&quot;http://weibo.com/huxpro&quot;&gt;黄玄&lt;/a&gt;，首次发布于 &lt;a href=&quot;http://huangxuan.me&quot;&gt;Hux Blog&lt;/a&gt;，转载请保留以上链接&lt;/p&gt;
 </description>
         <pubDate>Tue, 15 Dec 2015 00:00:00 +0800</pubDate>
-        <link>http://huangxuan.me/2015/12/15/ios9-safari-web/</link>
-        <guid isPermaLink="true">http://huangxuan.me/2015/12/15/ios9-safari-web/</guid>
+        <link>http://clover.htmhub.com/2015/12/15/ios9-safari-web/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2015/12/15/ios9-safari-web/</guid>
         
         <category>前端开发</category>
         
@@ -1672,8 +1683,8 @@ $(&#39;.className&#39;).click(function(){
 
 </description>
         <pubDate>Wed, 28 Oct 2015 20:00:00 +0800</pubDate>
-        <link>http://huangxuan.me/2015/10/28/how-designer-learn-fe/</link>
-        <guid isPermaLink="true">http://huangxuan.me/2015/10/28/how-designer-learn-fe/</guid>
+        <link>http://clover.htmhub.com/2015/10/28/how-designer-learn-fe/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2015/10/28/how-designer-learn-fe/</guid>
         
         <category>知乎</category>
         
@@ -1749,8 +1760,8 @@ $(&#39;.className&#39;).click(function(){
 
 </description>
         <pubDate>Tue, 22 Sep 2015 00:00:00 +0800</pubDate>
-        <link>http://huangxuan.me/2015/09/22/js-version/</link>
-        <guid isPermaLink="true">http://huangxuan.me/2015/09/22/js-version/</guid>
+        <link>http://clover.htmhub.com/2015/09/22/js-version/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2015/09/22/js-version/</guid>
         
         <category>前端开发</category>
         
@@ -1796,8 +1807,8 @@ $(&#39;.className&#39;).click(function(){
 &lt;p&gt;&lt;a href=&quot;http://lab.hakim.se/reveal-js&quot;&gt;Reveal.js&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 09 Jul 2015 00:00:00 +0800</pubDate>
-        <link>http://huangxuan.me/2015/07/09/js-module-7day/</link>
-        <guid isPermaLink="true">http://huangxuan.me/2015/07/09/js-module-7day/</guid>
+        <link>http://clover.htmhub.com/2015/07/09/js-module-7day/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2015/07/09/js-module-7day/</guid>
         
         <category>前端开发</category>
         
@@ -2038,8 +2049,8 @@ BAT 纷纷介入，行业进入了传说中的 BATX 格局：&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <pubDate>Mon, 15 Jun 2015 00:00:00 +0800</pubDate>
-        <link>http://huangxuan.me/2015/06/15/alitrip-strategy/</link>
-        <guid isPermaLink="true">http://huangxuan.me/2015/06/15/alitrip-strategy/</guid>
+        <link>http://clover.htmhub.com/2015/06/15/alitrip-strategy/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2015/06/15/alitrip-strategy/</guid>
         
         <category>产品设计</category>
         
