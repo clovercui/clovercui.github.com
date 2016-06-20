@@ -10,9 +10,9 @@
     <meta name="keyword"  content="克洛弗, Clover克洛弗, Clover, @Clover, 克洛弗的博客, Clover Blog, 博客, 个人网站, 互联网, 前端,后端, 设计, 产品, PHP, JAVA,服务器,LINUX">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>都 2015 年了，CSS 怎么还是这么糟糕 - 克洛弗的博客 | Clover Blog</title>
+    <title>Redis Study - 克洛弗的博客 | Clover Blog</title>
 
-    <link rel="canonical" href="http://huangxuan.me/2015/12/28/css-sucks-2015/">
+    <link rel="canonical" href="http://huangxuan.me/2016/06/20/redis-study.markdownredis%E7%9A%84%E5%AD%A6%E4%B9%A0/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -148,45 +148,42 @@
 
     <!-- Image to hack wechat -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="/img/home-bg.jpg" width="0" height="0"> -->
+<!-- <img src="/img/business_medium_2x.jpg" width="0" height="0"> -->
 
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-        /*background-image: url('/img/home-bg.jpg')*/
-        height: 500px;
-        overflow: hidden;
+        position: relative;
+        background-image: url('/img/business_medium_2x.jpg')
     }
-    header iframe{
-        width: 100%;
-        height: 100%;
-        border: 0;
-    }
+
+    
 </style>
 <header class="intro-header" >
-    <iframe src="http://huangxuan.me/css-sucks-2015/"/>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <div class="tags">
-                            
-                            <a class="tag" href="/tags/#前端开发" title="前端开发">前端开发</a>
-                            
-                            <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
-                            
-                        </div>
-                        <h1>都 2015 年了，CSS 怎么还是这么糟糕</h1>
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
                         
+                        <a class="tag" href="/tags/#Clover" title="Clover">Clover</a>
                         
-                        <h2 class="subheading">Keynote: CSS Still Sucks 2015</h2>
+                        <a class="tag" href="/tags/#Redis" title="Redis">Redis</a>
                         
-                        <span class="meta">Posted by Hux on December 28, 2015</span>
+                        <a class="tag" href="/tags/#DB" title="DB">DB</a>
+                        
                     </div>
+                    <h1>Redis Study</h1>
+                    
+                    
+                    <h2 class="subheading">Redis学习笔记</h2>
+                    
+                    <span class="meta">Posted by Clover on June 20, 2016</span>
                 </div>
             </div>
         </div>
-    </iframe>
+    </div>
 </header>
 
 <!-- Post Content -->
@@ -194,138 +191,16 @@
     <div class="container">
         <div class="row">
 
-            <!-- Post Container -->
-            <div class="post-container
+    <!-- Post Container -->
+            <div class="
                 col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1 ">
+                col-md-10 col-md-offset-1
+                post-container">
 
-				<blockquote>
-  <p>下滑这里查看更多内容</p>
-</blockquote>
+				<h1 id="redis">Redis的学习</h1>
 
-<h3 id="watch-slides-httphuangxuanmecss-sucks-2015"><a href="http://huangxuan.me/css-sucks-2015">Watch Slides →</a></h3>
+<hr />
 
-<p><img src="http://huangxuan.me/css-sucks-2015/attach/qrcode.png" width="350" height="350" /></p>
-
-<p><small class="img-hint">你也可以通过扫描二维码在手机上观看</small></p>
-
-<p>这个 Web Slides 开源在<a href="https://github.com/Huxpro/css-sucks-2015">我的 Github 上</a>，欢迎你帮助我完善这个展示文稿，你可以给我提 issue，可以 fork &amp; pull request。如果它能帮助到你了，希望你还能不吝啬 star 一下这个项目</p>
-
-<h3 id="catalog">Catalog</h3>
-
-<ul>
-  <li>Document Times
-    <ul>
-      <li>Frameworks</li>
-      <li>Style Guide
-        <ul>
-          <li><strong>OOCSS</strong></li>
-          <li><strong>SMACSS</strong></li>
-        </ul>
-      </li>
-      <li><strong>Pre-processer</strong></li>
-      <li><strong>PostCSS</strong></li>
-    </ul>
-  </li>
-  <li>Application Times
-    <ul>
-      <li><strong>Shadow DOM</strong></li>
-      <li><strong>CSS “4”</strong></li>
-      <li>Naming Convention
-        <ul>
-          <li><strong>BEM</strong></li>
-          <li><strong>SUIT</strong></li>
-        </ul>
-      </li>
-      <li><strong>CSS in JS</strong></li>
-      <li><strong>CSS Modules</strong>
-        <ul>
-          <li>Interoperable CSS</li>
-        </ul>
-      </li>
-      <li>PostCSS, again</li>
-    </ul>
-  </li>
-  <li>My Opinionated Proposal
-    <ul>
-      <li><strong>POCss</strong></li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="pocss-page-override-components-css">POCss: Page Override Components CSS</h2>
-
-<h3 id="scoping-components-brsmall-styleline-height2emcss-blocks-should-only-be-used-inside-a-component-of-the-same-namesmall">1. Scoping Components <br /><small style="line-height:2em;"><em>CSS Blocks should only be used inside a component of the same name.</em></small></h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// Component/index.scss
-</span><span class="nc">.ComponentName</span> <span class="p">{</span>
-    <span class="k">&amp;</span><span class="nt">--mofierName</span> <span class="p">{}</span>
-    <span class="k">&amp;</span><span class="nt">__decendentName</span> <span class="p">{</span>
-        <span class="k">&amp;</span><span class="nt">--modifierName</span> <span class="p">{}</span>
-    <span class="p">}</span>
-    <span class="nc">.isStateOfComponent</span> <span class="p">{}</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// Component/index.js</span>
-<span class="nx">require</span><span class="p">(</span><span class="s1">'./index.scss'</span><span class="p">);</span>
-</code></pre>
-</div>
-
-<p>CSS is <em>always bundled</em> with components<br />(from loading, mount to unmount)</p>
-
-<h3 id="components-can-be-overrode-by-pages-brsmall-styleline-height2emthere-is-always-requirements-to-rewrite-styles-of-components-in-pagessmall">2. Components can be Overrode by Pages <br /><small style="line-height:2em;"><em>There is always requirements to rewrite styles of components in pages</em></small></h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// Pages/PageA.scss
-</span><span class="nn">#PageA</span> <span class="p">{</span>
-    <span class="nc">.pagelet-name</span> <span class="p">{</span>
-        <span class="nc">.pagelet-descendent-name</span> <span class="p">{}</span>
-    <span class="p">}</span>
-    <span class="nc">.ComponentName</span><span class="p">{</span> <span class="cm">/* override */</span> <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// Pages/index.js</span>
-<span class="nx">require</span><span class="p">(</span><span class="s1">'./PageA.scss'</span><span class="p">);</span>
-</code></pre>
-</div>
-
-<ul>
-  <li><em>#Page</em> for absolutely scoping between pages</li>
-  <li><em>.pagelet-name</em> should be lowercase to prevent conflicting with components</li>
-</ul>
-
-<h3 id="why-poc">Why POC?</h3>
-
-<ul>
-  <li>
-    <p><strong>It’s technology-agnostic</strong><br />
-<small>
-  <em>One css framework can be played with whatever technology stacks</em><br />
-  <em>You can combined Scss, PostCSS and whatever you want</em>
-</small></p>
-  </li>
-  <li>
-    <p><strong>Solving problems, and easy</strong><br />
-<small>
-  <em>Makes reading and teamwork much easier</em><br />
-  <em>Get all benefit from BEM, SUITCSS and others</em>
-</small></p>
-  </li>
-  <li>
-    <p><strong>Leverage the power of cascading properly</strong><br />
-<small>
-  <em>Scoping components but allow reasonable overriding</em><br />
-  <em>It’s pragmatic, flexible and hitting the sweet spot</em>
-</small></p>
-  </li>
-</ul>
-
-<h3 id="thanks">Thanks</h3>
-
-<p><a href="http://lab.hakim.se/reveal-js">Reveal.js</a></p>
 
 
                 <hr>
@@ -335,20 +210,15 @@
                 </style>
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="/2015/12/28/css-sucks-2015" data-title="都 2015 年了，CSS 怎么还是这么糟糕"
-                    data-images="http://huangxuan.me/img/home-bg.jpg"
-                    data-content="
-  下滑这里查看更多内容
-
-
-Watch Slides →
+                    data-thread-key="/2016/06/20/redis-study.markdownredis的学习"
+                    data-title="Redis Study"
+                    data-url="http://huangxuan.me/2016/06/20/redis-study.markdownredis%E7%9A%84%E5%AD%A6%E4%B9%A0/"
+                    data-images="http://huangxuan.me/img/business_medium_2x.jpg"
+                    data-content="Redis的学习
 
 
 
-你也可以通过扫描二维码在手机上观看
-
-这个 Web Slides 开源在我的 Gith... | Hux Blog，@Hux黄玄 的个人博客"
-                    data-url="http://huangxuan.me/2015/12/28/css-sucks-2015/">
+ | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -361,26 +231,19 @@ Watch Slides →
                     </div>
                 <hr>
                 </div>
-                <!-- 多少 Share end-->
+                <!-- 多说 Share end-->
                 
 
 
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2015/12/15/ios9-safari-web/" data-toggle="tooltip" data-placement="top" title="iOS 9，为前端世界都带来了些什么？「译」">
+                        <a href="/2016/05/20/monogo-db-study/" data-toggle="tooltip" data-placement="top" title="Monogo DB Study">
                         Previous<br>
-                        <span>iOS 9，为前端世界都带来了些什么？「译」</span>
+                        <span>Monogo DB Study</span>
                         </a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/2016/02/01/React-vs-Angular2/" data-toggle="tooltip" data-placement="top" title="React vs Angular 2：冰与火之歌「译」">
-                        Next<br>
-                        <span>React vs Angular 2：冰与火之歌「译」</span>
-                        </a>
-                    </li>
                     
                 </ul>
 
@@ -389,9 +252,9 @@ Watch Slides →
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="/2015/12/28/css-sucks-2015"
-                        data-title="都 2015 年了，CSS 怎么还是这么糟糕"
-                        data-url="http://huangxuan.me/2015/12/28/css-sucks-2015/" >
+                        data-thread-key="/2016/06/20/redis-study.markdownredis的学习"
+                        data-title="Redis Study"
+                        data-url="http://huangxuan.me/2016/06/20/redis-study.markdownredis%E7%9A%84%E5%AD%A6%E4%B9%A0/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -399,12 +262,30 @@ Watch Slides →
 
                 
 
-            </div>
+            </div>  
 
-            <!-- Sidebar Container -->
-            <div class="sidebar-container
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
                 col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1 ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
                 <!-- Featured Tags -->
                 
@@ -412,124 +293,124 @@ Watch Slides →
                     <hr class="hidden-sm hidden-xs">
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
-                        
+        				
                             
-                                <a href="/tags/#知乎" title="知乎" rel="7">
+                				<a href="/tags/#知乎" title="知乎" rel="7">
                                     知乎
                                 </a>
                             
-                        
+        				
                             
-                        
+        				
                             
-                                <a href="/tags/#Android" title="Android" rel="2">
+                				<a href="/tags/#Android" title="Android" rel="2">
                                     Android
                                 </a>
                             
-                        
+        				
                             
-                                <a href="/tags/#交互设计" title="交互设计" rel="4">
+                				<a href="/tags/#交互设计" title="交互设计" rel="4">
                                     交互设计
                                 </a>
                             
-                        
+        				
                             
-                                <a href="/tags/#阿里巴巴" title="阿里巴巴" rel="3">
+                				<a href="/tags/#阿里巴巴" title="阿里巴巴" rel="3">
                                     阿里巴巴
                                 </a>
                             
-                        
+        				
                             
-                                <a href="/tags/#前端开发" title="前端开发" rel="8">
+                				<a href="/tags/#前端开发" title="前端开发" rel="8">
                                     前端开发
                                 </a>
                             
-                        
+        				
                             
-                                <a href="/tags/#职业病" title="职业病" rel="3">
+                				<a href="/tags/#职业病" title="职业病" rel="3">
                                     职业病
                                 </a>
                             
-                        
+        				
                             
-                                <a href="/tags/#生活" title="生活" rel="2">
+                				<a href="/tags/#生活" title="生活" rel="2">
                                     生活
                                 </a>
                             
-                        
+        				
                             
-                        
+        				
                             
-                        
+        				
                             
-                        
+        				
                             
-                                <a href="/tags/#hUX 随想录" title="hUX 随想录" rel="2">
+                				<a href="/tags/#hUX 随想录" title="hUX 随想录" rel="2">
                                     hUX 随想录
                                 </a>
                             
-                        
+        				
                             
-                        
+        				
                             
-                                <a href="/tags/#UX Design" title="UX Design" rel="3">
+                				<a href="/tags/#UX Design" title="UX Design" rel="3">
                                     UX Design
                                 </a>
                             
-                        
+        				
                             
-                                <a href="/tags/#OS" title="OS" rel="3">
+                				<a href="/tags/#OS" title="OS" rel="3">
                                     OS
                                 </a>
                             
-                        
+        				
                             
-                        
+        				
                             
-                        
+        				
                             
-                        
+        				
                             
-                        
+        				
                             
-                                <a href="/tags/#JavaScript" title="JavaScript" rel="5">
+                				<a href="/tags/#JavaScript" title="JavaScript" rel="5">
                                     JavaScript
                                 </a>
                             
-                        
+        				
                             
-                        
+        				
                             
-                        
+        				
                             
-                        
+        				
                             
-                        
+        				
                             
-                        
+        				
                             
-                                <a href="/tags/#译文" title="译文" rel="2">
+                				<a href="/tags/#译文" title="译文" rel="2">
                                     译文
                                 </a>
                             
-                        
+        				
                             
-                        
+        				
                             
-                                <a href="/tags/#Clover" title="Clover" rel="3">
+                				<a href="/tags/#Clover" title="Clover" rel="3">
                                     Clover
                                 </a>
                             
-                        
+        				
                             
-                        
+        				
                             
-                        
+        				
                             
-                        
+        				
                             
-                        
-                    </div>
+        				
+        			</div>
                 </section>
                 
 
@@ -564,28 +445,6 @@ Watch Slides →
     </div>
 </article>
 
-<!-- resize header to fullscreen keynotes -->
-<script>
-    var $header = document.getElementsByTagName("header")[0];
-    function resize(){
-        /*
-         * leave 85px to both
-         * - told/imply users that there has more content below
-         * - let user can scroll in mobile device, seeing the keynote-view is unscrollable
-         */
-        $header.style.height = (window.innerHeight-85) + 'px';
-    }
-    document.addEventListener('DOMContentLoaded', function(){
-        resize();
-    })
-    window.addEventListener('load', function(){
-        resize();
-    })
-    window.addEventListener('resize', function(){
-        resize();
-    })
-    resize();
-</script>
 
 
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -645,7 +504,6 @@ Watch Slides →
         }
     }
 </style>
-
 
 
     <!-- Footer -->
@@ -781,6 +639,50 @@ Watch Slides →
 
 
 <!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
 
 
 
