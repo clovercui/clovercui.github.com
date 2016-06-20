@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 20 Jun 2016 22:20:03 +0800</pubDate>
-    <lastBuildDate>Mon, 20 Jun 2016 22:20:03 +0800</lastBuildDate>
+    <pubDate>Mon, 20 Jun 2016 22:49:39 +0800</pubDate>
+    <lastBuildDate>Mon, 20 Jun 2016 22:49:39 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -48,14 +48,9 @@ $./redis-server /etc/redis.conf
 &lt;/div&gt;
 &lt;p&gt;检查是否启动成功&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;a) $ ps -ef&lt;/td&gt;
-      &lt;td&gt;grep redis&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ ps -ef | grep redis
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;服务启动后通过 redis-cli链接&lt;br /&gt;
 进入命令行控制台&lt;/p&gt;
@@ -140,8 +135,8 @@ $./redis-server /etc/redis.conf
 &lt;p&gt;很快，我们就能看到更多实际的用例。很重要的一点是，我们要明白关于Redis的这些基本事实。这能帮助我们弄清楚为什么值可以是任何东西，因为Redis从来不需要去读取或理解它们。而且，这也可以帮助我们理清思路，然后去思考如何在这个新世界里建立模型。&lt;/p&gt;
 </description>
         <pubDate>Mon, 20 Jun 2016 00:00:00 +0800</pubDate>
-        <link>http://clover.htmhub.com/2016/06/20/redis-study.markdownredis%E7%9A%84%E5%AD%A6%E4%B9%A0/</link>
-        <guid isPermaLink="true">http://clover.htmhub.com/2016/06/20/redis-study.markdownredis%E7%9A%84%E5%AD%A6%E4%B9%A0/</guid>
+        <link>http://clover.htmhub.com/2016/06/20/redis-study/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2016/06/20/redis-study/</guid>
         
         <category>Clover</category>
         

@@ -49,7 +49,9 @@ $./redis-server /etc/redis.conf
 ```
  检查是否启动成功
 
-a) $ ps -ef | grep redis
+`
+$ ps -ef | grep redis
+`
 
 服务启动后通过 redis-cli链接
 进入命令行控制台
