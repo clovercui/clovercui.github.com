@@ -5,9 +5,31 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 20 Jun 2016 22:49:39 +0800</pubDate>
-    <lastBuildDate>Mon, 20 Jun 2016 22:49:39 +0800</lastBuildDate>
+    <pubDate>Thu, 30 Jun 2016 14:29:58 +0800</pubDate>
+    <lastBuildDate>Thu, 30 Jun 2016 14:29:58 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>Gulp-Web前端自动化开发工具</title>
+        <description>&lt;h1 id=&quot;gulp-web&quot;&gt;Gulp-Web前端自动化开发工具&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+</description>
+        <pubDate>Thu, 30 Jun 2016 00:00:00 +0800</pubDate>
+        <link>http://clover.htmhub.com/2016/06/30/gulp-study/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2016/06/30/gulp-study/</guid>
+        
+        <category>Clover</category>
+        
+        <category>Web</category>
+        
+        <category>HTML</category>
+        
+        <category>Gulp</category>
+        
+        
+      </item>
     
       <item>
         <title>Redis Study</title>
@@ -1808,252 +1830,6 @@ $(&#39;.className&#39;).click(function(){
         <category>前端开发</category>
         
         <category>JavaScript</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>聊聊「阿里旅行 · 去啊」—— 行业与战略 </title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;本篇为该系列第一篇 —— 行业与战略，让我们聊聊行业、战略与格局。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
-
-&lt;p&gt;近几年，互联网产品从线上斗到了线下，互联网行业和传统行业的跨界融合屡见不鲜，“渗透传统行业”几乎成为了全行业下一轮创新的标配，新词“互联网+”也应运而生：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;将互联网行业的生产要素，深度融入经济、社会等各个领域，尝试改变一些传统的实体经济行业，创造出新的产品形态、商业模式和生态&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;O2O 领域已经有了非常多成功的案例：从最早的千团大战，到前年打车大战，再到餐饮 O2O……传统行业被撬动的同时，无数新的市场也在被发掘：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;金融： 蚂蚁金服、芝麻信用、京东白条&lt;/li&gt;
-  &lt;li&gt;通信： 微信电话本，阿里通信&lt;/li&gt;
-  &lt;li&gt;交通： 打车、租车、专车&lt;/li&gt;
-  &lt;li&gt;地产： 二手房、租房&lt;/li&gt;
-  &lt;li&gt;医疗、家电、教育、票务……&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;当然，还有我们的在线旅游行业，BAT 纷纷入局，盛况空前。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;正文&lt;/h2&gt;
-
-&lt;p&gt;历史总是现在与未来的明鉴，&lt;strong&gt;垂直领域互联网产品&lt;/strong&gt;更是与行业的历史紧密相连。想要用互联网产品解决传统行业的问题，就得先了解这个行业的发展规律，看看这个行业都经历过怎样的变革。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;传统老大：旅行社&lt;/h3&gt;
-
-&lt;p&gt;旅行社，一个耳熟能详的名字。在互联网的变革到来之前，旅游行业几乎就是旅行社的天下。&lt;/p&gt;
-
-&lt;p&gt;在行业术语里，旅行社被称为 &lt;strong&gt;TA：Travel Agency —— 旅游代理&lt;/strong&gt;。&lt;br /&gt;
-旅行社为你提供旅游信息，代理你办航班，定酒店，买门票，办签证，找导游。通过代理你的旅游消费行为，TA 从中获利。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.013.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;ota&quot;&gt;第一轮革命：兴起的电商与 OTA&lt;/h3&gt;
-
-&lt;p&gt;1995 年，中国互联网沸腾元年，北京上海接入 Internet 节点。&lt;br /&gt;
-1998 年，中国互联网电商元年，第一笔在线交易产生。&lt;br /&gt;
-1999 年，马云的阿里巴巴创办。同年，旅游行业未来的两大巨头，&lt;strong&gt;携程&lt;/strong&gt;、&lt;strong&gt;艺龙&lt;/strong&gt; 双双出世。&lt;/p&gt;
-
-&lt;p&gt;携程、艺龙利用互联网的体验优势，迅速占领了 TA 的市场，它们被称作 &lt;strong&gt;OTA：Online Travel Agency&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.014.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在他们诞生之初，其实都叫 XX旅行网。那为什么不说他们是做网站的，而说他们是做 TA 的呢？&lt;/p&gt;
-
-&lt;p&gt;这叫要引出本文涉及的第一个常见商业模式：&lt;/p&gt;
-
-&lt;h4 id=&quot;agency-&quot;&gt;Agency 模式&lt;/h4&gt;
-
-&lt;p&gt;Agency，即&lt;strong&gt;代理模式&lt;/strong&gt;。通过代理用户的消费行为，代理商就可以靠佣金的方式从中获利。&lt;br /&gt;
-举个例子：假设携程旅行网今天给某某酒店拉来了 100 个日间，那么这个酒店就要以 30元/日间 的方式给携程旅行网反多少的红利。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;佣金，说白了，就是中介费。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.016.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;了解了 Agency 模式，我们再回过来看携程、艺龙：&lt;br /&gt;
-虽然渠道改成了互联网，但其商业模式还是 TA 的那套玩法，它们其实是在和传统 TA 分同一块蛋糕。&lt;br /&gt;
-还是咨询、酒店、机票、旅游团、旅游套餐，只是&lt;strong&gt;你们在线下玩，我去线上玩了&lt;/strong&gt;，我有渠道优势。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;第二轮革命：比价搜索与去哪儿&lt;/h3&gt;
-
-&lt;p&gt;时光飞驰到 2005 年，单纯做线下已经满足不了很多传统 TA 们了，大家纷纷向携程、艺龙学习，进攻线上，转型 OTA 。&lt;/p&gt;
-
-&lt;p&gt;就在这样的格局下，&lt;strong&gt;去哪儿&lt;/strong&gt; 横空出世，一下占据了半壁江山：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.021.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;去哪儿做了一件什么事呢，它把这些 OTA 的数据全都爬过来，做了一个&lt;strong&gt;比价平台&lt;/strong&gt;。这样，用户就可以在去哪儿的网站上看看哪家 OTA 更便宜，然后用户就去消费哪家的服务。&lt;/p&gt;
-
-&lt;p&gt;所谓“比价平台”，本质上说，就是 &lt;strong&gt;Search Engine —— 搜索引擎&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.018.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这个这个玩法一下就厉害了：&lt;br /&gt;
-&lt;strong&gt;去哪儿挡在了用户和所有 OTA 之间，OTA 还是做原来的事情，而去哪儿则拿下了用户找 OTA 的过程&lt;/strong&gt;。同是搜索引擎的百度也是如此：百度自己并不生产内容，而是拿下了用户找内容的过程。&lt;/p&gt;
-
-&lt;p&gt;Let’s why search engine awesome：因为用户在互联网的信息海洋上找信息太难了，所以用户必须要靠搜索引擎来解决这个痛点，而搜索引擎自己也就成为了渠道：&lt;/p&gt;
-
-&lt;h4 id=&quot;channel-&quot;&gt;Channel 模式&lt;/h4&gt;
-
-&lt;p&gt;Channel，即&lt;strong&gt;渠道模式&lt;/strong&gt;。通过优化用户的体验路径，在用户和 B 方之前挡了一道，主要对 B 盈利。&lt;br /&gt;
-最常见的对 B 盈利方式就是广告：&lt;strong&gt;Pay for Performance&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.019.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;简单看一眼携程和去哪儿的收入占比就可以发现：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;携程主要靠来自酒店、机票的佣金盈利&lt;/li&gt;
-  &lt;li&gt;去哪儿则主要靠 PFP 广告盈利&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.020.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;通过去哪儿的比价平台，小 OTA 开始有机会通过价格战和大 OTA 周旋。去哪儿在给予了小 OTA 机会的同时也造就了自己，这和 2003 年淘宝 C2C 的崛起，颇有异曲同工之意。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;第 2.5 轮革命：尴尬的淘宝旅行&lt;/h3&gt;
-
-&lt;p&gt;为什么说淘宝旅行是 2.5 次革命呢，因为它想革，但没革上。&lt;br /&gt;
-为什么没有革上呢？&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;首先是切入时机太晚&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;阿里其实 2010 年就开始做淘宝旅行了，一直划分在淘宝网下，由那时的淘宝北研（淘宝 UED 北京研发）团队负责，这个团队吸纳了大批雅虎中国的精英，技术水平相当高。  &lt;br /&gt;
-可是 2010 年才切入这个市场实在是太晚了，携程、去哪儿的口碑和用户习惯早都养成好几年了，没人会去你淘宝上搜航班酒店，你有大入口也没有用。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;二是资源倾斜不足&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;2010 年还没有什么 &lt;strong&gt;互联网+&lt;/strong&gt; 的概念，结合传统行业也还没有现在这么热，淘宝做旅游这事用了多大力气推很难说，反正我是没听过。&lt;br /&gt;
-阿里同年的发展重心还是在其电商体系的完善上：&lt;strong&gt;淘宝商城&lt;/strong&gt; 启用独立域名，其 B2C 的模式刚好弥补了淘宝 C2C 的问题，这货就是后来的&lt;strong&gt;天猫&lt;/strong&gt;，我们可以比较一下两者在资源倾斜上的差异：&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;BU&lt;/th&gt;
-      &lt;th&gt;2008&lt;/th&gt;
-      &lt;th&gt;2010&lt;/th&gt;
-      &lt;th&gt;2011&lt;/th&gt;
-      &lt;th&gt;2012&lt;/th&gt;
-      &lt;th&gt;2013&lt;/th&gt;
-      &lt;th&gt;2014&lt;/th&gt;
-      &lt;th&gt;2015&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;天猫&lt;/td&gt;
-      &lt;td&gt;淘宝商城&lt;/td&gt;
-      &lt;td&gt;独立域名&lt;/td&gt;
-      &lt;td&gt;分拆&lt;/td&gt;
-      &lt;td&gt;更名天猫&lt;br /&gt;天猫事业部（1/7）&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;去啊&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;淘宝旅行&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;航旅事业部（1/25）&lt;/td&gt;
-      &lt;td&gt;分拆&lt;br /&gt;更名去啊&lt;/td&gt;
-      &lt;td&gt;独立域名&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;三是思路问题&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;淘宝旅行想怎么玩呢，它实际上就是想用淘宝/天猫的思路去做在线旅行，其实背后还是淘宝卖家和天猫卖家，只不过这次的商户换成 OTA 入驻了，然后大家开开心心像卖衣服一样去卖旅行产品。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.023.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;听上去很美，不但利用了阿里系的大量资源，还直接复刻了淘宝/天猫的牛逼模式 —— 平台模式&lt;/p&gt;
-
-&lt;h4 id=&quot;platform-&quot;&gt;Platform 模式&lt;/h4&gt;
-
-&lt;p&gt;Platform，即&lt;strong&gt;平台模式&lt;/strong&gt;，可以说是当今最叼的商业模式了，它相当于构建了一个完整的生态、市场环境，在这里整合买卖双方的资源。通过维护市场秩序、制定市场规则，让市场活跃，从而赚取场子费。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.026.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;想想看，每一笔交易都在你的地盘上发生，只要市场一直活跃，你就可以在其中&lt;strong&gt;双边、多边盈利&lt;/strong&gt;。什么竞价排名、广告平台、VIP 特权，盈利模式太丰富了&lt;/p&gt;
-
-&lt;p&gt;美梦做完了，回到淘宝旅行来。做平台是每个产品的梦想，肯定是对的。那么问题出在哪呢？&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;太不垂直了！&lt;/strong&gt; 旅游行业，极度要求信誉：去哪儿对接的都是 B 类商家（OTA，品牌连锁酒店，直销等），从根本上就保证了产品体验。淘宝旅行的产品则充斥着大量的小旅行社、个人之类的小卖家，严重影响购买体验。你能想象预定一间酒店发现下面十几二十页的卖家，选完卖家又要跟人在旺旺上扯半个小时么？价格便宜作为唯一的优势，是以严重牺牲产品购买体验为代价的，极为得不偿失。更何况，旅游产品的受众大部分还是消费能力较强的人群，更是看重商家/产品质量而不是价格了。&lt;/p&gt;
-
-&lt;h3 id=&quot;now&quot;&gt;第三轮革命：Now&lt;/h3&gt;
-
-&lt;p&gt;OK，经过这么一番折腾，第三次变革就来了。&lt;br /&gt;
-BAT 纷纷介入，行业进入了传说中的 BATX 格局：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.028.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;阿里最近动作频频，力推去啊不说，更是收购线下酒店软件石基，配合蚂蚁金服期下芝麻信用开展“酒店信用住”等业务&lt;br /&gt;
-百度早早投资去哪儿，两个搜索引擎起家的公司风格一脉相承。同时，百度也悄悄发布了百度旅行这样的试水产品&lt;br /&gt;
-腾讯入股艺龙，同程网等，也在尝试 QQ 旅游等产品&lt;/p&gt;
-
-&lt;p&gt;Update：不过，就在 2015.5 左右，携程宣布收购艺龙，非常戏剧性的局面啊……&lt;/p&gt;
-
-&lt;p&gt;为什么都要介入呢？&lt;br /&gt;
-一是互联网结合传统行业的大潮到来，大家都发现旅游行业是一个金矿，市场其实特别大……&lt;br /&gt;
-二是这个领域确实还有很多可以突破的商业模式存在，很多细分领域都开始有创业公司起来，整个行业的生态也越来越丰富：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.029.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这种时候，BAT 这样的土豪公司就想进来收网了 —— 砸钱也得砸出个平台来！&lt;br /&gt;
-所以，这一轮游戏一定能看到一次大洗牌（艺龙第一个就阵亡了）&lt;/p&gt;
-
-&lt;p&gt;那么，这轮革命怎么演变呢？&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;一是模式融合&lt;/strong&gt;，以前做 OTA 的做 OTA，做渠道的做渠道，尝试做平台的做平台。现在，大家都知道平台模式可能是更好的形态，纷纷开始进化了。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;都做 OTA，拿下各种牛逼直营，最典型的就是航班&lt;/li&gt;
-  &lt;li&gt;都做平台，尤其是质量相对比较高的 B2C 平台。然后尝试可能的 C2C 产品形态 （去啊的客栈是一个很好的尝试）&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.030.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;二是思路进化&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;从单一的购买/渠道业务转向服务平台。融合周边服务，拉上细分领域，外围行业一起玩&lt;/li&gt;
-  &lt;li&gt;强调用户体验与用户留存，强调&lt;strong&gt;一站式服务&lt;/strong&gt;、&lt;strong&gt;个性化服务&lt;/strong&gt; 等更极致的产品形态&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-alitrip-pd/post-alitrip-pd.031.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;而这些演变，正是 &lt;strong&gt;阿里旅行 · 去啊&lt;/strong&gt; 致力去做到的。从大版本 5.0 开始，淘宝旅行将 &lt;strong&gt;洗心革面&lt;/strong&gt;，去追求一个更极致，更垂直，体验更优秀的产品形态。&lt;/p&gt;
-
-&lt;p&gt;让我们一起见证去啊的成长，与在线旅游行业的变革吧！&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;em&gt;本篇完。&lt;/em&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;本文作者系前「阿里旅行 · 去啊」前端实习生，本文系业余时间学习之作。&lt;br /&gt;
-如有任何知识产权、版权问题或理论错误，还请指正。&lt;br /&gt;
-转载请注明原作者及以上信息。&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <pubDate>Mon, 15 Jun 2015 00:00:00 +0800</pubDate>
-        <link>http://clover.htmhub.com/2015/06/15/alitrip-strategy/</link>
-        <guid isPermaLink="true">http://clover.htmhub.com/2015/06/15/alitrip-strategy/</guid>
-        
-        <category>产品设计</category>
-        
-        <category>阿里巴巴</category>
-        
-        <category>在线旅行</category>
-        
-        <category>电子商务</category>
         
         
       </item>
