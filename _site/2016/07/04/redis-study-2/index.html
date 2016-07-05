@@ -293,9 +293,11 @@
 
         <div class="highlighter-rouge"><pre class="highlight"><code>  redis&gt; LPUSH key 1 (integer) 1
   redis&gt; GET key 
-  (error) WRONGTYPE Operation against a key holding the wrong kind of value    这里 错误 信息 开头 的“ WRONGTYPE” 就 表示 类型 错误， 这个 改进 使得 在调 试	
+  (error) WRONGTYPE Operation against a key holding the wrong kind of value 
 </code></pre>
         </div>
+
+        <p>这里 错误 信息 开头 的“ WRONGTYPE” 就 表示 类型 错误， 这个 改进 使得 在调 试</p>
       </li>
       <li>
         <p>整数回复</p>

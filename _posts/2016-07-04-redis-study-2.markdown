@@ -80,6 +80,7 @@ redis-cli是Redis自带的基于命令行的Redis客户端
 			redis> LPUSH key 1 (integer) 1
 			redis> GET key 
 			(error) WRONGTYPE Operation against a key holding the wrong kind of value 
+		
 		这里 错误 信息 开头 的“ WRONGTYPE” 就 表示 类型 错误， 这个 改进 使得 在调 试	
 		
 	* 整数回复	
