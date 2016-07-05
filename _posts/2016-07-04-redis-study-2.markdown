@@ -15,8 +15,9 @@ tags:
 
 >参考书籍：Redis入门指南（第二版）李子骅 编著 人民邮电出版社
 
-# 准备
-## 启动Redis 
+# 一.准备
+
+## I 启动Redis 
 
 1. 直接启动
 
@@ -31,7 +32,7 @@ tags:
 
 		# redis-server redis.conf
 		
-## 停止Redis
+## II 停止Redis
 
 * **Redis有可能正在将内存中的数据同步到硬盘中，强行终止Redis进程可能会导致数据 丢失。 正确停止Redis的方式应该是向Redis发送SHUTDOWN 命令**
 		
@@ -40,9 +41,9 @@ tags:
 * 当Redis收到shutdown命令后，会先断开所有的客户端连接，然后根据配置执行持久化，最后完成退出
 * Redis会妥善处理`sigterm`信号	,所以使用kill Redis进程的PID也可以正常结束Redis,效果与发送shutdown命令一样。
 
-## Redis命令行客户端
+## 二 Redis命令行客户端
 
 redis-cli是Redis自带的基于命令行的Redis客户端
 
-### 发送命令
+### I 发送命令
 
