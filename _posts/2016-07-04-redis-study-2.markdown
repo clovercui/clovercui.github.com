@@ -57,4 +57,31 @@ redis-cli是Redis自带的基于命令行的Redis客户端
 		
 		# redis-cli PING
 		PONG	
-	二是
+		
+	二是不附带参数运行redis-cli，这样会进入交互模式可以自由输入命令
+	
+		# redis-cli
+		redis 127.0.0.1:6379> PING
+		PONG
+		redis 127.0.0.1:6379> ECHO hi
+		"hi"
+2. 命令返回值
+	* 状态回复
+	
+		状态是最简单的一种回复如SET 会回复OK	
+	* 错误回复	
+		当出现命令不存在或命令格式有错误时Redis会返回错误回复（error replay）.错误回复以（error）开头，并在后面跟上错误信息。如执行一个不存在的命令：
+		
+			redis>ERRORCOMMEND
+			(error)ERR unknown command 'ERRORCOMMEND'
+			
+		在 2. 6 版本 时， 错误 信息 均 是以“ ERR” 开头， 而在 2. 8 版 以后， 部分 错误 信息 会 以 具体 的 错误 类型 开头， 如： 
+					
+			redis> LPUSH key 1 (integer) 1
+			redis> GET key 
+			(error) WRONGTYPE Operation against a key holding the wrong kind of value 
+		这里 错误 信息 开头 的“ WRONGTYPE” 就 表示 类型 错误， 这个 改进 使得 在调 试	
+		
+	* 整数回复	
+			
+			
