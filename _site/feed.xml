@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 05 Jul 2016 15:34:08 +0800</pubDate>
-    <lastBuildDate>Tue, 05 Jul 2016 15:34:08 +0800</lastBuildDate>
+    <pubDate>Tue, 05 Jul 2016 16:17:33 +0800</pubDate>
+    <lastBuildDate>Tue, 05 Jul 2016 16:17:33 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -15,9 +15,9 @@
   &lt;p&gt;参考书籍：Redis入门指南（第二版）李子骅 编著 人民邮电出版社&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h1 id=&quot;section&quot;&gt;一.准备&lt;/h1&gt;
+&lt;h1 id=&quot;section&quot;&gt;一、准备&lt;/h1&gt;
 
-&lt;h2 id=&quot;i-redis&quot;&gt;I 启动Redis&lt;/h2&gt;
+&lt;h2 id=&quot;redis&quot;&gt;1）启动Redis&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
@@ -43,7 +43,7 @@
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;ii-redis&quot;&gt;II 停止Redis&lt;/h2&gt;
+&lt;h2 id=&quot;redis-1&quot;&gt;2）停止Redis&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -57,12 +57,30 @@
   &lt;li&gt;Redis会妥善处理&lt;code class=&quot;highlighter-rouge&quot;&gt;sigterm&lt;/code&gt;信号	,所以使用kill Redis进程的PID也可以正常结束Redis,效果与发送shutdown命令一样。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;redis&quot;&gt;二 Redis命令行客户端&lt;/h2&gt;
+&lt;h2 id=&quot;redis-2&quot;&gt;3）Redis命令行客户端&lt;/h2&gt;
 
 &lt;p&gt;redis-cli是Redis自带的基于命令行的Redis客户端&lt;/p&gt;
 
-&lt;h3 id=&quot;i-&quot;&gt;I 发送命令&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;发送命令&lt;/p&gt;
 
+    &lt;p&gt;redis-cli向Redis发送命令有两种方式。&lt;/p&gt;
+
+    &lt;p&gt;一是将命令作为redis-cli的参数执行 ,&lt;code class=&quot;highlighter-rouge&quot;&gt;-h&lt;/code&gt;自定义地址 &lt;code class=&quot;highlighter-rouge&quot;&gt;-p&lt;/code&gt;自定义端口号&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; # redis-cli -h 127.0.0.1 -p 6379
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;redis提供&lt;code class=&quot;highlighter-rouge&quot;&gt;PING&lt;/code&gt;命令来测试客户端语Redis连接是否正常&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; # redis-cli PING
+ PONG	  二是
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 </description>
         <pubDate>Mon, 04 Jul 2016 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2016/07/04/redis-study-2/</link>

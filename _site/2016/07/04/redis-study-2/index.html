@@ -197,9 +197,9 @@
   <p>参考书籍：Redis入门指南（第二版）李子骅 编著 人民邮电出版社</p>
 </blockquote>
 
-<h1 id="section">一.准备</h1>
+<h1 id="section">一、准备</h1>
 
-<h2 id="i-redis">I 启动Redis</h2>
+<h2 id="redis">1）启动Redis</h2>
 
 <ol>
   <li>
@@ -225,7 +225,7 @@
   </li>
 </ol>
 
-<h2 id="ii-redis">II 停止Redis</h2>
+<h2 id="redis-1">2）停止Redis</h2>
 
 <ul>
   <li>
@@ -239,12 +239,30 @@
   <li>Redis会妥善处理<code class="highlighter-rouge">sigterm</code>信号	,所以使用kill Redis进程的PID也可以正常结束Redis,效果与发送shutdown命令一样。</li>
 </ul>
 
-<h2 id="redis">二 Redis命令行客户端</h2>
+<h2 id="redis-2">3）Redis命令行客户端</h2>
 
 <p>redis-cli是Redis自带的基于命令行的Redis客户端</p>
 
-<h3 id="i-">I 发送命令</h3>
+<ol>
+  <li>
+    <p>发送命令</p>
 
+    <p>redis-cli向Redis发送命令有两种方式。</p>
+
+    <p>一是将命令作为redis-cli的参数执行 ,<code class="highlighter-rouge">-h</code>自定义地址 <code class="highlighter-rouge">-p</code>自定义端口号</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> # redis-cli -h 127.0.0.1 -p 6379
+</code></pre>
+    </div>
+
+    <p>redis提供<code class="highlighter-rouge">PING</code>命令来测试客户端语Redis连接是否正常</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> # redis-cli PING
+ PONG	  二是
+</code></pre>
+    </div>
+  </li>
+</ol>
 
 
                 <hr>
@@ -262,9 +280,9 @@
   参考书籍：Redis入门指南（第二版）李子骅 编著 人民邮电出版社
 
 
-一.准备
+一、准备
 
-I 启动Redis
+1）启动Redis
 
 
   
