@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 04 Jul 2016 11:51:43 +0800</pubDate>
-    <lastBuildDate>Mon, 04 Jul 2016 11:51:43 +0800</lastBuildDate>
+    <pubDate>Tue, 05 Jul 2016 15:32:02 +0800</pubDate>
+    <lastBuildDate>Tue, 05 Jul 2016 15:32:02 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -15,24 +15,57 @@
   &lt;p&gt;参考书籍：Redis入门指南（第二版）李子骅 编著 人民邮电出版社&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;redis&quot;&gt;启动Redis&lt;/h2&gt;
+&lt;h1 id=&quot;section&quot;&gt;准备&lt;/h1&gt;
+&lt;p&gt;## 启动Redis&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
     &lt;p&gt;直接启动&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis-server
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; # redis-server
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;Redis 服务器 默认 会 使用 6379 端口 ,通过– port 参数 可以 自定义 端口&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; # redis-server --port 6380		
 &lt;/code&gt;&lt;/pre&gt;
     &lt;/div&gt;
   &lt;/li&gt;
+  &lt;li&gt;通过初始化脚本启动（略过）&lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;通过初始化脚本启动（略过）&lt;/p&gt;
+    &lt;p&gt;指定配置文件启动&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; # redis-server redis.conf
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h2 id=&quot;redis&quot;&gt;停止Redis&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Redis有可能正在将内存中的数据同步到硬盘中，强行终止Redis进程可能会导致数据 丢失。 正确停止Redis的方式应该是向Redis发送SHUTDOWN 命令&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  # redis-cli shutdown
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;当Redis收到shutdown命令后，会先断开所有的客户端连接，然后根据配置执行持久化，最后完成退出&lt;/li&gt;
+  &lt;li&gt;Redis会妥善处理&lt;code class=&quot;highlighter-rouge&quot;&gt;sigterm&lt;/code&gt;信号	,所以使用kill Redis进程的PID也可以正常结束Redis,效果与发送shutdown命令一样。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;redis-1&quot;&gt;Redis命令行客户端&lt;/h2&gt;
+
+&lt;p&gt;redis-cli是Redis自带的基于命令行的Redis客户端&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;发送命令&lt;/h3&gt;
+
 </description>
         <pubDate>Mon, 04 Jul 2016 00:00:00 +0800</pubDate>
-        <link>http://clover.htmhub.com/2016/07/04/redis-study/</link>
-        <guid isPermaLink="true">http://clover.htmhub.com/2016/07/04/redis-study/</guid>
+        <link>http://clover.htmhub.com/2016/07/04/redis-study-2/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2016/07/04/redis-study-2/</guid>
         
         <category>Clover</category>
         

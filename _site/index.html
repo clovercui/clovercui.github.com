@@ -173,7 +173,7 @@
             ">
     			
 <div class="post-preview">
-    <a href="/2016/07/04/redis-study/">
+    <a href="/2016/07/04/redis-study-2/">
         <h2 class="post-title">
             Redis Study 之二 入门指南
         </h2>
@@ -187,21 +187,24 @@
   参考书籍：Redis入门指南（第二版）李子骅 编著 人民邮电出版社
 
 
-启动Redis
+准备
+## 启动Redis
 
 
   
     直接启动
 
-     redis-server
+     # redis-server
+
+    
+
+    Redis 服务器 默认 会 使用 6379 端口 ,通过– port 参数 可以 自定义 端口
+
+     # redis-server --port 6380		
 
     
   
-  
-    通过初始化脚本启动（略过）
-  
-
-
+  通过初...
         </div>
     </a>
     <p class="post-meta">

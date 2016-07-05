@@ -12,7 +12,7 @@
 
     <title>Redis Study 之二 入门指南 - 克洛弗的博客 | Clover Blog</title>
 
-    <link rel="canonical" href="http://clover.htmhub.com/2016/07/04/redis-study/">
+    <link rel="canonical" href="http://clover.htmhub.com/2016/07/04/redis-study-2/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -197,20 +197,53 @@
   <p>参考书籍：Redis入门指南（第二版）李子骅 编著 人民邮电出版社</p>
 </blockquote>
 
-<h2 id="redis">启动Redis</h2>
+<h1 id="section">准备</h1>
+<p>## 启动Redis</p>
 
 <ol>
   <li>
     <p>直接启动</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis-server
+    <div class="highlighter-rouge"><pre class="highlight"><code> # redis-server
+</code></pre>
+    </div>
+
+    <p>Redis 服务器 默认 会 使用 6379 端口 ,通过– port 参数 可以 自定义 端口</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> # redis-server --port 6380		
 </code></pre>
     </div>
   </li>
+  <li>通过初始化脚本启动（略过）</li>
   <li>
-    <p>通过初始化脚本启动（略过）</p>
+    <p>指定配置文件启动</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> # redis-server redis.conf
+</code></pre>
+    </div>
   </li>
 </ol>
+
+<h2 id="redis">停止Redis</h2>
+
+<ul>
+  <li>
+    <p><strong>Redis有可能正在将内存中的数据同步到硬盘中，强行终止Redis进程可能会导致数据 丢失。 正确停止Redis的方式应该是向Redis发送SHUTDOWN 命令</strong></p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  # redis-cli shutdown
+</code></pre>
+    </div>
+  </li>
+  <li>当Redis收到shutdown命令后，会先断开所有的客户端连接，然后根据配置执行持久化，最后完成退出</li>
+  <li>Redis会妥善处理<code class="highlighter-rouge">sigterm</code>信号	,所以使用kill Redis进程的PID也可以正常结束Redis,效果与发送shutdown命令一样。</li>
+</ul>
+
+<h2 id="redis-1">Redis命令行客户端</h2>
+
+<p>redis-cli是Redis自带的基于命令行的Redis客户端</p>
+
+<h3 id="section-1">发送命令</h3>
+
 
 
                 <hr>
@@ -220,21 +253,22 @@
                 </style>
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="/2016/07/04/redis-study"
+                    data-thread-key="/2016/07/04/redis-study-2"
                     data-title="Redis Study 之二 入门指南"
-                    data-url="http://clover.htmhub.com/2016/07/04/redis-study/"
+                    data-url="http://clover.htmhub.com/2016/07/04/redis-study-2/"
                     data-images="http://clover.htmhub.com/img/post-bg-universe.jpg"
                     data-content="
   参考书籍：Redis入门指南（第二版）李子骅 编著 人民邮电出版社
 
 
-启动Redis
+准备
+## 启动Redis
 
 
   
     直接启动
 
-     redis-serv... | 克洛弗的博客 | Clover Blog " >
+     # re... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -268,9 +302,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="/2016/07/04/redis-study"
+                        data-thread-key="/2016/07/04/redis-study-2"
                         data-title="Redis Study 之二 入门指南"
-                        data-url="http://clover.htmhub.com/2016/07/04/redis-study/" >
+                        data-url="http://clover.htmhub.com/2016/07/04/redis-study-2/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
