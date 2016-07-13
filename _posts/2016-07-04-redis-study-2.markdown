@@ -86,5 +86,98 @@ redis-cli是Redis自带的基于命令行的Redis客户端
 		这里 错误 信息 开头 的“ WRONGTYPE” 就 表示 类型 错误， 这个 改进 使得 在调 试	
 		
 	* 整数回复	
+		Redis没有整数类型，但提供了用于整数操作的命令。整数回复以（integer）开头，并在后面跟上整数数据：
+			
+			redis> INCR foo
+			(integer) 1
+	* 字符串回复
+		字符串回复是最常见的一种回复类型，当请求一个字符串类型键的值或一个其他键中的某个元素时就会得到一个字符串。字符串回复以双引号包裹：
+		
+			redis> GET foo
+			"1"		
+	* 多行字符串回复
+		多行字符串回复中的每行字符串都以一个序号开头
+			
+			redis > KEYS *
+			1) "bar"
+			2) "foo"
+			
+## 4）配置
+
+通过`redis-server`的启动参数port设置了Redis的端口号，除此之外还有其他的配置选项，如开启持久化，日志级别等。由于配置选项多，redis支持通过配置文件来配置这些选		
+	
+	#redis-server /path/to/redis.conf
+	
+通过启动参数传递同名的配置选项会覆盖配置文件中相应的参数
+
+	#redis-server /path/to/redis.conf --loglevel warning
+	
+Redis提供了一个配置文件的模板redis.conf位于源代码目录
+
+还可以在运行时通过`CONFIG SET`	命令在不重启Redis的情况下动态修改部分Redis配置
+	
+	redis>CONFIG SET loglevel warning
+	OK		
+并不是所有的配置都可以使用CONFIG SET 命令修改		
+	
+## 4）多数据库
+每个 数据库 对外 都是 以 一个 从 0 开始 的 递增 数字 命名， Redis 默认 支持 16 个 数据库， 可以 通过 配置 参数 databases 来 修改 这一 数字。 客户 端 与 Redis 建立 连接 后 会 自动 选择 0 号 数据库， 不过 可以 随时 使用SELECT命令更换数据库，如要选择1号数据库：
+		
+		redis>SELECT 1
+		OK
+		redis[1] GET foo
+		(nil)
+redis不支持自定义数据库的名字		
+	
+	
+---
+
+# 一、入门
+
+## 1）字符串类型
+
+一个字符串类型键允许存储的数据的最大容量是512M。
+
+1. 赋值与取值
+		
+		SET key value
+		GET key  
+set和get是redis中最简单的两个命令
+
+	当键不存在时返回空结果
+
+2. 递增数字
+	
+		INCR key
+
+当存储的字符串是整数形式时，Redis提供了一个实用的命令INCR，其作用是让当键值递增，并返回递增后的值
+
+		redis>INCR num
+		(integer) 1
+		redis>INCR num
+		(integer) 2
+
+
+
+
+## 2）散列类型
+
+## 3）列表类型
+
+## 4）集合类型
+
+## 5）有序集合类型
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
 			
 			
