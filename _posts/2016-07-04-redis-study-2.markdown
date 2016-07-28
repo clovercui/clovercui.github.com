@@ -156,9 +156,77 @@ set和get是redis中最简单的两个命令
 		(integer) 1
 		redis>INCR num
 		(integer) 2
+当要操作的键不存在时默认键值为0，所以第一次递增后的结果是1.
 
-
-
+当键值不是整数是会提示错误
+		
+		redis> SET foo lorem
+		OK 
+		redis> INCR foo
+		(error) ERR value is not an integer or out of range
+3. 命令拾遗
+	
+	1).增加指定的整数
+	
+		INCRBY key increment
+		INCRBY通过 increment 参数指定一次增加的数值
+		redis> INCRBY bar 2
+		(integer)2
+		redis> INCRBY bar 3
+		(integer)5
+	
+	2).减少指定的整数
+	
+		DECR key
+		DECRBY key increment
+		redis> DECR bar 
+		(integer)4
+		
+	3).增加指定浮点数
+	INCRBYFLOAT key increment
+	
+	递增一个双精度浮点数	
+	
+		redis>INCRBYFLOAT bar 2.7
+		"6.7"
+		redis>INCRBYFLOAT bar 5E+4
+		"50006.69999999999999929"
+		
+	4).向尾部追加值
+	APPEND key value
+	
+	APPEND 作用是向键值的末尾追加value.如果键不存在则将该值设置为value,即相当于SET key value.返回值是追加后字符串的总长度
+		
+		redis>SET key hello
+		OK
+		redis>APPEND key " world!"
+		（integer）12
+	此时key的值是"hello world!"。APPEND命令的第二个参数加了双引号，原因是该参数包含空格，在redis-cli中输入需要双引号以示区分
+	
+	5).获取字符串长度
+	
+	STRLEN key
+	
+	STRLEN 命令返回键值的长度，如果键不存在返回0 
+	
+		redis>STRLEN key
+		(interger)12
+		redis>SET key 你好
+		OK
+		redis>STRLEN key
+		(interger)6
+		
+	前面提到字符串类型可以存储二进制数据，所以它可以存储任意编码的字符串。例子中接收到的是使用UTF-8编码的中文，由于你好的UTF-8编码的长度都是3，所以返回6。
+	
+	6).同时获得/设置多个键值	
+	
+	
+	
+	
+	
+	
+	
+			
 
 ## 2）散列类型
 
