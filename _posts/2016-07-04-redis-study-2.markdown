@@ -250,9 +250,13 @@ set和get是redis中最简单的两个命令
 1. 赋值与取值
 
 	HSET key field value
+	
 	HGET key field	
+	
 	HMSET key field value [field value ...]
+	
 	HMGET key field [field ...]
+	
 	HGETALL key
 	
 		redis> HSET car price 500
