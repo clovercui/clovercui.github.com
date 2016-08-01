@@ -593,11 +593,6 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 </code></pre>
     </div>
   </li>
-</ol>
-
-<hr />
-
-<ol>
   <li>
     <p>存储文章数据</p>
 
@@ -629,7 +624,37 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 </code></pre>
     </div>
   </li>
+  <li>
+    <p>命令拾遗</p>
+  </li>
 </ol>
+
+<p>1）只获取字段名或字段值</p>
+
+<p>HEKYS key</p>
+
+<p>HVALS key</p>
+
+<p>有时仅仅需要获取键中所有字段的名字而不需要字段值，那么可以使用HEKYS命令</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	redis&gt; HKEYS car 
+	1)"name"
+	2)"model" HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段值
+	
+	redis&gt; HVALS car
+	1)"BMW"
+	2)"C200"
+</code></pre>
+</div>
+
+<p>2)获取字段数量</p>
+
+<p>HLEN key</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>redis&gt; HLEN car
+(integer) 2 				
+</code></pre>
+</div>
 
 <h2 id="section-6">3）列表类型</h2>
 

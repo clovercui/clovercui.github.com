@@ -319,7 +319,7 @@ set和get是redis中最简单的两个命令
 		redis> HDEL car price		
 		(integer)0
 
----
+
 
 6. 存储文章数据
 
@@ -349,11 +349,41 @@ set和get是redis中最简单的两个命令
 		#删除旧的缩略名
 		HDEL slug.to.id ,$oldslug
 		
+7. 命令拾遗
 
+1）只获取字段名或字段值
 
+HEKYS key
+
+HVALS key
+
+有时仅仅需要获取键中所有字段的名字而不需要字段值，那么可以使用HEKYS命令
+	
+		redis> HKEYS car 
+		1)"name"
+		2)"model"
+HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段值
+		
+		redis> HVALS car
+		1)"BMW"
+		2)"C200"
+
+2)获取字段数量
+
+HLEN key
+
+	redis> HLEN car
+	(integer) 2 				
 
 
 ## 3）列表类型
+
+
+
+
+
+
+
 
 ## 4）集合类型
 
