@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 28 Jul 2016 11:53:41 +0800</pubDate>
-    <lastBuildDate>Thu, 28 Jul 2016 11:53:41 +0800</lastBuildDate>
+    <pubDate>Mon, 01 Aug 2016 14:33:47 +0800</pubDate>
+    <lastBuildDate>Mon, 01 Aug 2016 14:33:47 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -225,65 +225,225 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	redis&amp;gt; SET foo lorem
 	OK 
 	redis&amp;gt; INCR foo
-	(error) ERR value is not an integer or out of range 3. 命令拾遗
-
-1).增加指定的整数
-
-	INCRBY key increment
-	INCRBY通过 increment 参数指定一次增加的数值
-	redis&amp;gt; INCRBY bar 2
-	(integer)2
-	redis&amp;gt; INCRBY bar 3
-	(integer)5
-
-2).减少指定的整数
-
-	DECR key
-	DECRBY key increment
-	redis&amp;gt; DECR bar 
-	(integer)4
-	
-3).增加指定浮点数
-INCRBYFLOAT key increment
-
-递增一个双精度浮点数	
-
-	redis&amp;gt;INCRBYFLOAT bar 2.7
-	&quot;6.7&quot;
-	redis&amp;gt;INCRBYFLOAT bar 5E+4
-	&quot;50006.69999999999999929&quot;
-	
-4).向尾部追加值
-APPEND key value
-
-APPEND 作用是向键值的末尾追加value.如果键不存在则将该值设置为value,即相当于SET key value.返回值是追加后字符串的总长度
-	
-	redis&amp;gt;SET key hello
-	OK
-	redis&amp;gt;APPEND key &quot; world!&quot;
-	（integer）12
-此时key的值是&quot;hello world!&quot;。APPEND命令的第二个参数加了双引号，原因是该参数包含空格，在redis-cli中输入需要双引号以示区分
-
-5).获取字符串长度
-
-STRLEN key
-
-STRLEN 命令返回键值的长度，如果键不存在返回0 
-
-	redis&amp;gt;STRLEN key
-	(interger)12
-	redis&amp;gt;SET key 你好
-	OK
-	redis&amp;gt;STRLEN key
-	(interger)6
-	
-前面提到字符串类型可以存储二进制数据，所以它可以存储任意编码的字符串。例子中接收到的是使用UTF-8编码的中文，由于你好的UTF-8编码的长度都是3，所以返回6。
-
-6).同时获得/设置多个键值	
+	(error) ERR value is not an integer or out of range
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;命令拾遗&lt;/p&gt;
+
+    &lt;p&gt;1).增加指定的整数&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; INCRBY key increment
+ INCRBY通过 increment 参数指定一次增加的数值
+ redis&amp;gt; INCRBY bar 2
+ (integer)2
+ redis&amp;gt; INCRBY bar 3
+ (integer)5
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;2).减少指定的整数&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; DECR key
+ DECRBY key increment
+ redis&amp;gt; DECR bar 
+ (integer)4
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;3).增加指定浮点数&lt;br /&gt;
+ INCRBYFLOAT key increment&lt;/p&gt;
+
+    &lt;p&gt;递增一个双精度浮点数&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt;INCRBYFLOAT bar 2.7
+ &quot;6.7&quot;
+ redis&amp;gt;INCRBYFLOAT bar 5E+4
+ &quot;50006.69999999999999929&quot;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;4).向尾部追加值&lt;br /&gt;
+ APPEND key value&lt;/p&gt;
+
+    &lt;p&gt;APPEND 作用是向键值的末尾追加value.如果键不存在则将该值设置为value,即相当于SET key value.返回值是追加后字符串的总长度&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt;SET key hello
+ OK
+ redis&amp;gt;APPEND key &quot; world!&quot;
+ （integer）12  此时key的值是&quot;hello world!&quot;。APPEND命令的第二个参数加了双引号，原因是该参数包含空格，在redis-cli中输入需要双引号以示区分
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;5).获取字符串长度&lt;/p&gt;
+
+    &lt;p&gt;STRLEN key&lt;/p&gt;
+
+    &lt;p&gt;STRLEN 命令返回键值的长度，如果键不存在返回0&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt;STRLEN key
+ (interger)12
+ redis&amp;gt;SET key 你好
+ OK
+ redis&amp;gt;STRLEN key
+ (interger)6
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;前面提到字符串类型可以存储二进制数据，所以它可以存储任意编码的字符串。例子中接收到的是使用UTF-8编码的中文，由于你好的UTF-8编码的长度都是3，所以返回6。&lt;/p&gt;
+
+    &lt;p&gt;6).同时获得/设置多个键值&lt;/p&gt;
+
+    &lt;p&gt;MGET key[key …]&lt;/p&gt;
+
+    &lt;p&gt;MMSET key value [key value …]&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; MSET key1 v1 key2 v2 key3 v3
+ redis&amp;gt; GET key2
+ &quot;v2&quot;
+ redis &amp;gt; MGET key1 key3
+ 1)&quot;v1&quot;
+ 2)&quot;v3&quot;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;7). 位操作&lt;/p&gt;
+
+    &lt;p&gt;GETBIT key offset&lt;/p&gt;
+
+    &lt;p&gt;SETBIT key offset value&lt;/p&gt;
+
+    &lt;p&gt;BITCOUNT key [start] [key …]&lt;/p&gt;
+
+    &lt;p&gt;BITOP operation destkey key [key …]&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
 &lt;h2 id=&quot;section-5&quot;&gt;2）散列类型&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;赋值与取值&lt;/p&gt;
+
+    &lt;p&gt;HSET key field value&lt;br /&gt;
+ HGET key field	&lt;br /&gt;
+ HMSET key field value [field value …]&lt;br /&gt;
+ HMGET key field [field …]&lt;br /&gt;
+ HGETALL key&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; HSET car price 500
+ (interger)1
+ redis&amp;gt; HSET car name BMW
+ (interger)1
+ redis&amp;gt;HEGT car name
+ &quot;BMW&quot;  HSET命令方便之处在于不区分插入和更新操作，这意味着修改数据时不用事先判断字段是否存在来决定要执行的是插入操作还是更新操作。当执行的是插入操作时HSET会返回1，当执行的是更新操作是 HSET返回0。`当键本身不存在是，HSET命令还会自动创建`。
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;REDIS中每个键都属于一个明确的数据类型，如通过HSET命令建立的键都是散列类型，通过SET命令建立的键是字符串类型。使用一种数据类型的命令操作另外一种数据类型的键会提示错误“ERR Operation against a key holding the wrong kind of value”&lt;/code&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; HMGET car price name
+ 1)&quot;500&quot;
+ 2)&quot;BMW&quot;
+	
+ redis&amp;gt; HGETALL car  
+ 1)&quot;price&quot;
+ 2)&quot;500&quot;
+ 3)&quot;name&quot;
+ 4)&quot;BMW&quot;	
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;判断字段是否存在&lt;/p&gt;
+
+    &lt;p&gt;HEXISTS key field&lt;/p&gt;
+
+    &lt;p&gt;HEXISTS命令用来判断一个字段是否存在。如果存在则返回1，否则返回0（&lt;code class=&quot;highlighter-rouge&quot;&gt;如果键不存在也会返回0&lt;/code&gt;）。&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; 	redis&amp;gt;HEXISTS car model
+ 	(integer)0
+ 	redis&amp;gt;HSET car model C200
+ 	(integer)1
+ 	redis&amp;gt;HEXISTS car model
+ 	(integer)1
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;当字段不存在时赋值&lt;/p&gt;
+
+    &lt;p&gt;HSETNX key field value&lt;/p&gt;
+
+    &lt;p&gt;HSETNX 命令与HSET命令相似，区别在于如果字段已经存在，HSETNX命令不执行任何操作&lt;/p&gt;
+
+    &lt;p&gt;HSETNX 命令是原子操作，不用担心竞态条件&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;增加数字&lt;/p&gt;
+
+    &lt;p&gt;HINCRBY key field increment&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; HINCRBY person score 60
+ (integer)60  之前person键不存在，HINCARBY命令会自动建立该键并默认score字段在执行前的值为0.命令的返回值是增值后的字段值
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;删除字段&lt;/p&gt;
+
+    &lt;p&gt;HDELkey field [field]&lt;/p&gt;
+
+    &lt;p&gt;HDEL 命令可以删除一个或者多个字段，返回值是被删除的字段个数&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; HDEL car price
+ (integer)1
+ redis&amp;gt; HDEL car price		
+ (integer)0
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;存储文章数据&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; $postID=INCR posts:count
+ #判断用户输入的slug是否可用，如果可用则记录
+ $isSlugAvailable=HSETNX slug.to.id,$slug ,$postIID
+ if $isSlugAvailable is 0
+ #slug已经用过了需要提示更换slug
+ exit
+ HMSET post:$postID,title,$title,content,$content,slug,$slug,...
+ 这段代码使用了HSETNX命令原子的实现了HEXISTS和HSET两个命令以避免竞态条件。当用户访问文章时，我们从网址中得到文章的缩略名，并查询slug.to.id键来获取文章ID：
+ $postID=HGET slug.to.id,$slug
+ if not $postID
+ print 文章不存在
+ exit
+ $post=HGETALL post:$postID
+ print文章标题:$post.title
+ 需要注意的是如果要修改文章的缩略名一定不能忘了修改slug.to.id键对应的字段。
+ #判断新的slug是否可用，如果可用则记录
+ $isSlugAvailable=HSETNX slug.to.id ,$newSlug,42
+ if $isSlugAvailable is 0
+ exit
+ #获得旧的缩略名 
+ $oldSlug=HGET post:42,slug
+ #设置新的缩略名
+ HSET post:42,slug,$newSlug
+ #删除旧的缩略名
+ HDEL slug.to.id ,$oldslug
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;section-6&quot;&gt;3）列表类型&lt;/h2&gt;
 

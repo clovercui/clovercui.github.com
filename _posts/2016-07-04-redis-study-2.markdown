@@ -164,6 +164,7 @@ set和get是redis中最简单的两个命令
 		OK 
 		redis> INCR foo
 		(error) ERR value is not an integer or out of range
+		
 3. 命令拾遗
 	
 	1).增加指定的整数
@@ -218,17 +219,135 @@ set和get是redis中最简单的两个命令
 		
 	前面提到字符串类型可以存储二进制数据，所以它可以存储任意编码的字符串。例子中接收到的是使用UTF-8编码的中文，由于你好的UTF-8编码的长度都是3，所以返回6。
 	
-	6).同时获得/设置多个键值	
+	6).同时获得/设置多个键值
+		
+	MGET key[key ...]
 	
+	MMSET key value [key value ...]
+		
+		redis> MSET key1 v1 key2 v2 key3 v3
+		redis> GET key2
+		"v2"
+		redis > MGET key1 key3
+		1)"v1"
+		2)"v3"
+		 
+	7). 位操作
 	
+	GETBIT key offset
 	
+	SETBIT key offset value
 	
+	BITCOUNT key [start] [key ...]
 	
+	BITOP operation destkey key [key ...]
 	
-	
+---	
 			
 
 ## 2）散列类型
+
+1. 赋值与取值
+
+	HSET key field value
+	HGET key field	
+	HMSET key field value [field value ...]
+	HMGET key field [field ...]
+	HGETALL key
+	
+		redis> HSET car price 500
+		(interger)1
+		redis> HSET car name BMW
+		(interger)1
+		redis>HEGT car name
+		"BMW"
+	HSET命令方便之处在于不区分插入和更新操作，这意味着修改数据时不用事先判断字段是否存在来决定要执行的是插入操作还是更新操作。当执行的是插入操作时HSET会返回1，当执行的是更新操作是 HSET返回0。`当键本身不存在是，HSET命令还会自动创建`。
+		
+	`REDIS中每个键都属于一个明确的数据类型，如通过HSET命令建立的键都是散列类型，通过SET命令建立的键是字符串类型。使用一种数据类型的命令操作另外一种数据类型的键会提示错误“ERR Operation against a key holding the wrong kind of value”`	
+	
+		redis> HMGET car price name
+		1)"500"
+		2)"BMW"
+		
+		redis> HGETALL car  
+		1)"price"
+		2)"500"
+		3)"name"
+		4)"BMW"	
+ 
+2. 判断字段是否存在
+   
+   HEXISTS key field
+   
+   HEXISTS命令用来判断一个字段是否存在。如果存在则返回1，否则返回0（`如果键不存在也会返回0`）。
+   	 
+   	 	redis>HEXISTS car model
+   	 	(integer)0
+   	 	redis>HSET car model C200
+   	 	(integer)1
+   	 	redis>HEXISTS car model
+   	 	(integer)1
+
+3. 当字段不存在时赋值
+
+	HSETNX key field value
+
+	HSETNX 命令与HSET命令相似，区别在于如果字段已经存在，HSETNX命令不执行任何操作
+
+	HSETNX 命令是原子操作，不用担心竞态条件
+	
+4. 增加数字
+
+	HINCRBY key field increment
+	
+		redis> HINCRBY person score 60
+		(integer)60
+	之前person键不存在，HINCARBY命令会自动建立该键并默认score字段在执行前的值为0.命令的返回值是增值后的字段值
+	
+5. 删除字段
+
+	HDELkey field [field]
+	
+	HDEL 命令可以删除一个或者多个字段，返回值是被删除的字段个数
+		
+		redis> HDEL car price
+		(integer)1
+		redis> HDEL car price		
+		(integer)0
+
+---
+
+6. 存储文章数据
+
+		$postID=INCR posts:count
+		#判断用户输入的slug是否可用，如果可用则记录
+		$isSlugAvailable=HSETNX slug.to.id,$slug ,$postIID
+		if $isSlugAvailable is 0
+		#slug已经用过了需要提示更换slug
+		exit
+		HMSET post:$postID,title,$title,content,$content,slug,$slug,...
+		这段代码使用了HSETNX命令原子的实现了HEXISTS和HSET两个命令以避免竞态条件。当用户访问文章时，我们从网址中得到文章的缩略名，并查询slug.to.id键来获取文章ID：
+		$postID=HGET slug.to.id,$slug
+		if not $postID
+		print 文章不存在
+		exit
+		$post=HGETALL post:$postID
+		print文章标题:$post.title
+		需要注意的是如果要修改文章的缩略名一定不能忘了修改slug.to.id键对应的字段。
+		#判断新的slug是否可用，如果可用则记录
+		$isSlugAvailable=HSETNX slug.to.id ,$newSlug,42
+		if $isSlugAvailable is 0
+		exit
+		#获得旧的缩略名 
+		$oldSlug=HGET post:42,slug
+		#设置新的缩略名
+		HSET post:42,slug,$newSlug
+		#删除旧的缩略名
+		HDEL slug.to.id ,$oldslug
+		
+
+
+
 
 ## 3）列表类型
 
