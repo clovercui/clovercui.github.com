@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 05 Aug 2016 10:52:22 +0800</pubDate>
-    <lastBuildDate>Fri, 05 Aug 2016 10:52:22 +0800</lastBuildDate>
+    <pubDate>Fri, 05 Aug 2016 16:18:57 +0800</pubDate>
+    <lastBuildDate>Fri, 05 Aug 2016 16:18:57 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -696,6 +696,70 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;section-7&quot;&gt;4）集合类型&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;在集合中的每个元素都是不同的，且没有顺序。一个集合类型（set）键可以存储之多232-1个字符串&lt;/code&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;增加/删除元素&lt;/p&gt;
+
+    &lt;p&gt;SADD key member [member …]&lt;/p&gt;
+
+    &lt;p&gt;SREM key member [member …]&lt;/p&gt;
+
+    &lt;p&gt;SADD命令用来向集合中增加一个或多个元素，如果键不存在则自动创建。因为一个集合中不能有相同的元素，相同键的元素会被忽略执行&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; SADD letters a 
+ (integer) 1
+ redis&amp;gt; SADD letters a b c
+ (integer) 2
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;第二条SADD命令返回值为2是因为元素a已经存在，所以实际只加入了两个元素&lt;/p&gt;
+
+    &lt;p&gt;SREM命令用来从集合正删除一个或者多个元素，并返回删除成功的个数&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; SREM letters c d 
+ (integer) 1
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;获得集合中的所有元素&lt;/p&gt;
+
+    &lt;p&gt;SMEMBERS key&lt;/p&gt;
+
+    &lt;p&gt;SMEMBERS命令会返回集合中的所有元素&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; SMEMBERS letters
+ 1)&quot;b&quot;
+ 2)&quot;a&quot;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;判断元素是否在集合中&lt;/p&gt;
+
+    &lt;p&gt;SMEMBERS key member&lt;/p&gt;
+
+    &lt;p&gt;判断一个元素是否在集合中是一个时间复杂度为O(1)的操作，无论集合元素多少，都可以很快速的返回结果。当值存在时SMEMBERS命令返回1，不存在返回0&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; SMEMBERS letters a 
+ (integer) 1
+ redis&amp;gt; SMEMBERS letters d
+ (integer) 0
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;集合间运算&lt;/p&gt;
+
+    &lt;p&gt;SDIFF key [key …]&lt;br /&gt;
+ SINTER key [key …]&lt;br /&gt;
+ SUNION key [key …]&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;section-8&quot;&gt;5）有序集合类型&lt;/h2&gt;
 

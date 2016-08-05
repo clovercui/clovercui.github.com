@@ -551,6 +551,60 @@ HLEN key
 
 ## 4）集合类型
 
+
+`在集合中的每个元素都是不同的，且没有顺序。一个集合类型（set）键可以存储之多232-1个字符串`
+
+1. 增加/删除元素
+
+	SADD key member [member ...]
+	
+	SREM key member [member ...]
+	
+	SADD命令用来向集合中增加一个或多个元素，如果键不存在则自动创建。因为一个集合中不能有相同的元素，相同键的元素会被忽略执行
+	
+		redis> SADD letters a 
+		(integer) 1
+		redis> SADD letters a b c
+		(integer) 2
+	
+	第二条SADD命令返回值为2是因为元素a已经存在，所以实际只加入了两个元素
+
+	SREM命令用来从集合正删除一个或者多个元素，并返回删除成功的个数
+	
+		redis> SREM letters c d 
+		(integer) 1
+
+2. 获得集合中的所有元素
+
+	SMEMBERS key
+	
+	SMEMBERS命令会返回集合中的所有元素
+		
+		redis> SMEMBERS letters
+		1)"b"
+		2)"a"
+
+3. 判断元素是否在集合中
+
+	SMEMBERS key member
+	
+	判断一个元素是否在集合中是一个时间复杂度为O(1)的操作，无论集合元素多少，都可以很快速的返回结果。当值存在时SMEMBERS命令返回1，不存在返回0
+	
+		redis> SMEMBERS letters a 
+		(integer) 1
+		redis> SMEMBERS letters d
+		(integer) 0
+
+4. 集合间运算
+
+	SDIFF key [key ...]
+	SINTER key [key ...]
+	SUNION key [key ...]		
+
+
+
+
+
 ## 5）有序集合类型
 
 

@@ -879,6 +879,70 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 
 <h2 id="section-7">4）集合类型</h2>
 
+<p><code class="highlighter-rouge">在集合中的每个元素都是不同的，且没有顺序。一个集合类型（set）键可以存储之多232-1个字符串</code></p>
+
+<ol>
+  <li>
+    <p>增加/删除元素</p>
+
+    <p>SADD key member [member …]</p>
+
+    <p>SREM key member [member …]</p>
+
+    <p>SADD命令用来向集合中增加一个或多个元素，如果键不存在则自动创建。因为一个集合中不能有相同的元素，相同键的元素会被忽略执行</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; SADD letters a 
+ (integer) 1
+ redis&gt; SADD letters a b c
+ (integer) 2
+</code></pre>
+    </div>
+
+    <p>第二条SADD命令返回值为2是因为元素a已经存在，所以实际只加入了两个元素</p>
+
+    <p>SREM命令用来从集合正删除一个或者多个元素，并返回删除成功的个数</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; SREM letters c d 
+ (integer) 1
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>获得集合中的所有元素</p>
+
+    <p>SMEMBERS key</p>
+
+    <p>SMEMBERS命令会返回集合中的所有元素</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; SMEMBERS letters
+ 1)"b"
+ 2)"a"
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>判断元素是否在集合中</p>
+
+    <p>SMEMBERS key member</p>
+
+    <p>判断一个元素是否在集合中是一个时间复杂度为O(1)的操作，无论集合元素多少，都可以很快速的返回结果。当值存在时SMEMBERS命令返回1，不存在返回0</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; SMEMBERS letters a 
+ (integer) 1
+ redis&gt; SMEMBERS letters d
+ (integer) 0
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>集合间运算</p>
+
+    <p>SDIFF key [key …]<br />
+ SINTER key [key …]<br />
+ SUNION key [key …]</p>
+  </li>
+</ol>
+
 <h2 id="section-8">5）有序集合类型</h2>
 
 
