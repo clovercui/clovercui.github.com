@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 01 Aug 2016 14:54:42 +0800</pubDate>
-    <lastBuildDate>Mon, 01 Aug 2016 14:54:42 +0800</lastBuildDate>
+    <pubDate>Fri, 05 Aug 2016 10:52:22 +0800</pubDate>
+    <lastBuildDate>Fri, 05 Aug 2016 10:52:22 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -475,6 +475,225 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 &lt;/div&gt;
 
 &lt;h2 id=&quot;section-6&quot;&gt;3）列表类型&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;向列表两端增加元素&lt;/p&gt;
+
+    &lt;p&gt;LPUSH key value [value …]&lt;/p&gt;
+
+    &lt;p&gt;RPUSH key value [value …]&lt;/p&gt;
+
+    &lt;p&gt;LPUSH命令用来向列表左边增加元素，返回值表示增加元素后列表的长度&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; LPUSH numbers 1
+ (integer) 1
+	
+ [1]
+	
+ redis&amp;gt; LPUSH numbers 2 3 
+ (integer) 3
+	
+ [ 3 2 1 ]
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;LPUSH 会向列表左边先加入 2 再加入 3&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; RPUSH numbers 0 -1
+ (integer) 5
+	
+ [3 2 1 0 -1]	
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;从列表两端弹出元素&lt;/p&gt;
+
+    &lt;p&gt;LPOP key&lt;/p&gt;
+
+    &lt;p&gt;RPOP key&lt;/p&gt;
+
+    &lt;p&gt;有进有出，LPOP可以从列表左边弹出一个元素。LPOP命令执行两步操作：第一步是将列表左边的元素从列表移除，第二步是返回被移除的元素值&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; LPOP numbers
+ &quot;3&quot;
+
+ redis&amp;gt; RPOP numbers
+ &quot;-1&quot;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;结合上面提到的4个命令可以使用列表类型来模拟栈和队列的操作&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;栈：LPUSH和LPOP   RPUSH和RPOP&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;队列：LPUSH和RPOP  RPUSH和LPOP &lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;获取列表中元素的个数&lt;/p&gt;
+
+    &lt;p&gt;LLEN key&lt;/p&gt;
+
+    &lt;p&gt;当键不存在时LLEN会返回0&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt;LLEN numbers
+ (integer) 3
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;LLEN功能类似SQL语句 SELECT COUNT(*) FROM table_name 但是LLEN的时间复杂度为O(1) ,使用时Redis会直接读取现成的值，而不需要统计&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;获取列表片段&lt;/p&gt;
+
+    &lt;p&gt;LRANGE key start stop&lt;/p&gt;
+
+    &lt;p&gt;返回索引从start到stop之间的所有元素（包含两端的元素），起始索引为0&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; LRANGE numbers 0 2
+ 1)&quot;2&quot;
+ 2)&quot;1&quot;
+ 3)&quot;0&quot;  LRANGE在取得列表片段的同时不会像LPOP一样删除该片段
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;LRANGE也支持负索引 表示从右边开始计算序数&lt;br /&gt;
+ -1 表示最右边第一个元素 -2便是最右边第二个元素&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; LRANGE nubmers -2 -1
+ 1)&quot;1&quot;
+ 2)&quot;0&quot;	
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;显然，LRANGE numbers 0 -1 可以获取列表中所有元素&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;特殊情况&lt;/code&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;如果start的索引位置比stop的索引位置靠后，返回空列表&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;如果stop大于实际的索引范围，则返回到列表最右边的元素&lt;/p&gt;
+
+        &lt;p&gt;redis&amp;gt; LRANGE nubmers 1 999&lt;br /&gt;
+  1)”1”&lt;br /&gt;
+  2)”0”&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;删除列表中指定的值&lt;/p&gt;
+
+    &lt;p&gt;LREM key count value&lt;/p&gt;
+
+    &lt;p&gt;LREM 会删除列表前count个值为value的元素，返回值是实际删除的元素个数，根据count值的不同，LREM执行方式有差异&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;当count&amp;gt;0时，LREM会从列表左边开始删除前count个值为value的元素&lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;当count&amp;lt;0时，LREM会从列表右边开始删除&lt;/td&gt;
+              &lt;td&gt;count&lt;/td&gt;
+              &lt;td&gt;个值为value的值&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+      &lt;li&gt;当count=0时，LREM会删除所有值为value的元素&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;命令拾遗&lt;/p&gt;
+
+    &lt;p&gt;1.获得/设置指定索引的元素值&lt;/p&gt;
+
+    &lt;p&gt;LINDEX key index&lt;/p&gt;
+
+    &lt;p&gt;LSET key index value&lt;/p&gt;
+
+    &lt;p&gt;LINDEX 返回指定索引的元素&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; LINDEX numbers 0
+ &quot;2&quot;
+ redis&amp;gt; LINDEX numbers -1
+ &quot;0&quot;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;LSET是另一个通过索引操作列表的命令,它会将索引为index的元素赋值为value.例如&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; LSET nubmers 1 7 
+ OK 
+ redis&amp;gt; LINDEX nubmers 1
+ &quot;7&quot;			
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;2.只保留列表指定片段&lt;/p&gt;
+
+    &lt;p&gt;LTRIM key start end&lt;/p&gt;
+
+    &lt;p&gt;LTRIM命令可以删除指定索引范围之外的所有元素，其指定列表范围的方法和LRANGE命令&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; LRANGE numbers 0 -1
+ 1)&quot;1&quot;
+ 2)&quot;2&quot;
+ 3)&quot;7&quot;
+ 4)&quot;3&quot;
+ &quot;0&quot;
+ redis&amp;gt; LTRIM numbers 1 2
+ OK
+ redis&amp;gt; LRANGE numbers 0 1
+ 1)&quot;2&quot;
+ 2)&quot;7&quot;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;LTRIM命令常和LPUSH命令一起来使用用来限制列表中元素的数量，比如日志只保留100条&lt;/p&gt;
+
+    &lt;p&gt;LPUSHlogs $newlog&lt;/p&gt;
+
+    &lt;p&gt;LTROM logs 0 99&lt;/p&gt;
+
+    &lt;p&gt;3.向列表中插入元素&lt;/p&gt;
+
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;LINSERT key BEFORE&lt;/td&gt;
+          &lt;td&gt;AFTER pivot value&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+
+    &lt;p&gt;LINSERT 命令首先会在列表从左到右查找值为pivot的元素，然后根据BEFORE还是AFTER来决定将value插入到该元素的前面还是后面&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; redis&amp;gt; LRANGE numbers 0 -1
+ 1)&quot;2&quot;
+ 2)&quot;7&quot;
+ 3)&quot;0&quot;
+ redis&amp;gt; LINSERT numbers AFTER 7 3
+ (integer) 4
+ redis&amp;gt; LRANGE numbers 0 -1
+ 1)&quot;2&quot;
+ 2)&quot;7&quot;
+ 3)&quot;3&quot;
+ 4)&quot;0&quot;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;4.将元素从一个列表转到另一个列表&lt;/p&gt;
+
+    &lt;p&gt;RPOPLPUSH source destination&lt;/p&gt;
+
+    &lt;p&gt;RPOPLPUSH功能：先执行RPOP命令再执行LPUSH命令。RPOPLPUSH命令会先从source列表类型键的右边弹出一个元素，然后将其加入到destination列表类型键的左边，并返回这个元素的值，整个过程是原子的。&lt;/p&gt;
+
+    &lt;p&gt;当把列表类型作为队列使用时，RPOPLPUSH命令可以很直观的在多个队列中传递数据。当source和destination相同时，RPOPLPUSH命令会不断地将对尾的元素移到队首，借助这个特性我们可以实现一个网站监控系统：使用一个队列存储需要监控的网址，然后监控程序不断地使用RPOPLPUSH命令循环取出一个网址来测试可用性。RPOPLPUSH的好处在于在程序执行过程中仍然可以不断的向网址列表中加入新网址，整个系统易扩展，允许多个客户端同时处理队列&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;section-7&quot;&gt;4）集合类型&lt;/h2&gt;
 

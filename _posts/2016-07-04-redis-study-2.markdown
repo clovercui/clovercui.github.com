@@ -378,12 +378,176 @@ HLEN key
 
 ## 3）列表类型
 
+1. 向列表两端增加元素
+
+	LPUSH key value [value ...]
+	
+	RPUSH key value [value ...]
+	
+	LPUSH命令用来向列表左边增加元素，返回值表示增加元素后列表的长度
+	
+		redis> LPUSH numbers 1
+		(integer) 1
+		
+		[1]
+		
+		redis> LPUSH numbers 2 3 
+		(integer) 3
+		
+		[ 3 2 1 ]
+	
+	LPUSH 会向列表左边先加入 2 再加入 3
+		
+		redis> RPUSH numbers 0 -1
+		(integer) 5
+		
+		[3 2 1 0 -1]	
+
+2. 从列表两端弹出元素
+
+	LPOP key
+
+	RPOP key 
+
+	有进有出，LPOP可以从列表左边弹出一个元素。LPOP命令执行两步操作：第一步是将列表左边的元素从列表移除，第二步是返回被移除的元素值
+
+		redis> LPOP numbers
+		"3"
+	
+		redis> RPOP numbers
+		"-1"
+
+	`结合上面提到的4个命令可以使用列表类型来模拟栈和队列的操作`
+
+	`栈：LPUSH和LPOP   RPUSH和RPOP`
+
+	`队列：LPUSH和RPOP  RPUSH和LPOP `	
 
 
 
+3. 获取列表中元素的个数
 
+	LLEN key
 
+	当键不存在时LLEN会返回0
 
+		redis>LLEN numbers
+		(integer) 3
+	
+	LLEN功能类似SQL语句 SELECT COUNT(*) FROM table_name 但是LLEN的时间复杂度为O(1) ,使用时Redis会直接读取现成的值，而不需要统计
+	
+4. 获取列表片段
+
+	LRANGE key start stop
+	
+	返回索引从start到stop之间的所有元素（包含两端的元素），起始索引为0
+	
+		redis> LRANGE numbers 0 2
+		1)"2"
+		2)"1"
+		3)"0"
+	LRANGE在取得列表片段的同时不会像LPOP一样删除该片段
+	
+	LRANGE也支持负索引 表示从右边开始计算序数
+	-1 表示最右边第一个元素 -2便是最右边第二个元素
+	
+		redis> LRANGE nubmers -2 -1
+		1)"1"
+		2)"0"	
+	
+	显然，LRANGE numbers 0 -1 可以获取列表中所有元素
+	
+	`特殊情况`
+	
+	* 如果start的索引位置比stop的索引位置靠后，返回空列表
+	* 如果stop大于实际的索引范围，则返回到列表最右边的元素
+	
+		redis> LRANGE nubmers 1 999
+		1)"1"
+		2)"0"
+	
+5. 删除列表中指定的值
+		
+	LREM key count value
+	
+	LREM 会删除列表前count个值为value的元素，返回值是实际删除的元素个数，根据count值的不同，LREM执行方式有差异
+	
+	* 当count>0时，LREM会从列表左边开始删除前count个值为value的元素
+	* 当count<0时，LREM会从列表右边开始删除|count|个值为value的值
+	* 当count=0时，LREM会删除所有值为value的元素
+
+6. 命令拾遗
+
+	1.获得/设置指定索引的元素值
+	
+	LINDEX key index
+	
+	LSET key index value
+	
+	LINDEX 返回指定索引的元素
+		
+		redis> LINDEX numbers 0
+		"2"
+		redis> LINDEX numbers -1
+		"0"
+		
+	LSET是另一个通过索引操作列表的命令,它会将索引为index的元素赋值为value.例如
+		
+		redis> LSET nubmers 1 7 
+		OK 
+		redis> LINDEX nubmers 1
+		"7"			
+		
+	2.只保留列表指定片段
+	
+	LTRIM key start end
+	
+	LTRIM命令可以删除指定索引范围之外的所有元素，其指定列表范围的方法和LRANGE命令
+	
+		redis> LRANGE numbers 0 -1
+		1)"1"
+		2)"2"
+		3)"7"
+		4)"3"
+		"0"
+		redis> LTRIM numbers 1 2
+		OK
+		redis> LRANGE numbers 0 1
+		1)"2"
+		2)"7"
+		
+	LTRIM命令常和LPUSH命令一起来使用用来限制列表中元素的数量，比如日志只保留100条
+	
+	LPUSHlogs $newlog
+	
+	LTROM logs 0 99
+	
+	3.向列表中插入元素
+	
+	LINSERT key BEFORE | AFTER pivot value
+	
+	LINSERT 命令首先会在列表从左到右查找值为pivot的元素，然后根据BEFORE还是AFTER来决定将value插入到该元素的前面还是后面
+	
+		redis> LRANGE numbers 0 -1
+		1)"2"
+		2)"7"
+		3)"0"
+		redis> LINSERT numbers AFTER 7 3
+		(integer) 4
+		redis> LRANGE numbers 0 -1
+		1)"2"
+		2)"7"
+		3)"3"
+		4)"0"
+		
+	4.将元素从一个列表转到另一个列表
+	
+	RPOPLPUSH source destination
+	
+	RPOPLPUSH功能：先执行RPOP命令再执行LPUSH命令。RPOPLPUSH命令会先从source列表类型键的右边弹出一个元素，然后将其加入到destination列表类型键的左边，并返回这个元素的值，整个过程是原子的。
+	
+	当把列表类型作为队列使用时，RPOPLPUSH命令可以很直观的在多个队列中传递数据。当source和destination相同时，RPOPLPUSH命令会不断地将对尾的元素移到队首，借助这个特性我们可以实现一个网站监控系统：使用一个队列存储需要监控的网址，然后监控程序不断地使用RPOPLPUSH命令循环取出一个网址来测试可用性。RPOPLPUSH的好处在于在程序执行过程中仍然可以不断的向网址列表中加入新网址，整个系统易扩展，允许多个客户端同时处理队列
+		
 
 ## 4）集合类型
 
