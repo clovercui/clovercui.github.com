@@ -130,7 +130,7 @@ char *allow_networkcards[] = {
   expire = ""
   ```
 
-3. 执行编译过程
+3. 执行编译过程 
 
 `php  php-beast-master/tools/encode_files.php`
 
