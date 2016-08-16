@@ -114,7 +114,8 @@ char *allow_networkcards[] = {
 ### 使用过程
 
 ---
-1.安装好php-beast喝php扩展
+
+1. 安装好php-beast喝php扩展
 
 2. 编写 php-beast-master/tools/configure.ini
 
@@ -131,6 +132,7 @@ expire = ""
 
 
 3. 执行编译过程
+
 `php  php-beast-master/tools/encode_files.php`
 
 此时会将配置好的代码加密，解密过程是通过 beast.so 在线解密的。PHP文件可以正常访问。

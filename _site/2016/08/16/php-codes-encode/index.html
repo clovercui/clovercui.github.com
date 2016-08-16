@@ -297,10 +297,14 @@ char *allow_networkcards[] = {
 <h3 id="section-1">使用过程</h3>
 
 <hr />
-<p>1.安装好php-beast喝php扩展</p>
 
 <ol>
-  <li>编写 php-beast-master/tools/configure.ini</li>
+  <li>
+    <p>安装好php-beast喝php扩展</p>
+  </li>
+  <li>
+    <p>编写 php-beast-master/tools/configure.ini</p>
+  </li>
 </ol>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>; source path
@@ -315,9 +319,10 @@ expire = ""
 </div>
 
 <ol>
-  <li>执行编译过程<br />
-<code class="highlighter-rouge">php  php-beast-master/tools/encode_files.php</code></li>
+  <li>执行编译过程</li>
 </ol>
+
+<p><code class="highlighter-rouge">php  php-beast-master/tools/encode_files.php</code></p>
 
 <p>此时会将配置好的代码加密，解密过程是通过 beast.so 在线解密的。PHP文件可以正常访问。</p>
 
