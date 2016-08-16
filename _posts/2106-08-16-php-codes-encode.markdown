@@ -119,17 +119,16 @@ char *allow_networkcards[] = {
 
 2. 编写 php-beast-master/tools/configure.ini
 
-```
-; source path
-src_path = "/home/wwwroot/demo9.htmhub.com.bak"
+  ```
+  ; source path
+  src_path = "/home/wwwroot/demo9.htmhub.com.bak"
 
-; destination path
-dst_path = "/home/wwwroot/demo9.htmhub.com"
+  ; destination path
+  dst_path = "/home/wwwroot/demo9.htmhub.com"
 
-; expire time
-expire = ""
-```
-
+  ; expire time
+  expire = ""
+  ```
 
 3. 执行编译过程
 
