@@ -193,7 +193,11 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<pre><code>
+				<blockquote>
+  <p>https://github.com/liexusong/php-beast</p>
+</blockquote>
+
+<pre><code>
   _____  _    _ _____    ____  ______           _____ _______
  |  __ \| |  | |  __ \  |  _ \|  ____|   /\    / ____|__   __|
  | |__) | |__| | |__) | | |_)/| |__     /  \  | (___    | |
@@ -215,7 +219,7 @@ $ wget https://github.com/liexusong/php-beast/archive/master.zip
 $ unzip master.zip
 $ cd php-beast-master
 $ phpize
-$ ./configure
+$ ./configure --with-php-config=/usr/local/php/bin/php-config
 $ sudo make &amp;&amp; make install
 
 编译好之后修改php.ini配置文件, 加入配置项: extension=beast.so, 重启php-fpm
@@ -290,6 +294,33 @@ char *allow_networkcards[] = {
 
 <hr />
 
+<h3 id="section-1">使用过程</h3>
+
+<hr />
+<p>1.安装好php-beast喝php扩展</p>
+
+<ol>
+  <li>编写 php-beast-master/tools/configure.ini</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>; source path
+src_path = "/home/wwwroot/demo9.htmhub.com.bak"
+
+; destination path
+dst_path = "/home/wwwroot/demo9.htmhub.com"
+
+; expire time
+expire = ""
+</code></pre>
+</div>
+
+<ol>
+  <li>执行编译过程<br />
+<code class="highlighter-rouge">php  php-beast-master/tools/encode_files.php</code></li>
+</ol>
+
+<p>此时会将配置好的代码加密，解密过程是通过 beast.so 在线解密的。PHP文件可以正常访问。</p>
+
 
                 <hr>
 
@@ -303,8 +334,11 @@ char *allow_networkcards[] = {
                     data-url="http://clover.htmhub.com/2016/08/16/php-codes-encode/"
                     data-images="http://clover.htmhub.com/img/contact-bg.jpg"
                     data-content="
-  _____  _    _ _____    ____  ______           _____ _______
- |  __ \| |  |... | 克洛弗的博客 | Clover Blog " >
+  https://github.com/liexusong/php-beast
+
+
+
+  _____  _    _ _____    ____  _... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>

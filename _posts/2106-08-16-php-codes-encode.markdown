@@ -12,6 +12,7 @@ tags:
     - PHP
 
 ---
+> https://github.com/liexusong/php-beast
 
 <pre><code>
   _____  _    _ _____    ____  ______           _____ _______
@@ -35,7 +36,7 @@ $ wget https://github.com/liexusong/php-beast/archive/master.zip
 $ unzip master.zip
 $ cd php-beast-master
 $ phpize
-$ ./configure
+$ ./configure --with-php-config=/usr/local/php/bin/php-config
 $ sudo make && make install
 
 编译好之后修改php.ini配置文件, 加入配置项: extension=beast.so, 重启php-fpm
@@ -109,3 +110,27 @@ char *allow_networkcards[] = {
 *3.* 使用 `php-beast` 时最好不要使用默认的加密key，因为扩展是开源的，如果使用默认加密key的话，很容易被人发现。所以最好编译的时候修改加密的key，`aes模块` 可以在 `aes_algo_handler.c` 文件修改，而 `des模块` 可以在 `des_algo_handler.c` 文件修改。
 
 ------------------------------
+
+### 使用过程
+
+---
+1.安装好php-beast喝php扩展
+
+2. 编写 php-beast-master/tools/configure.ini
+
+```
+; source path
+src_path = "/home/wwwroot/demo9.htmhub.com.bak"
+
+; destination path
+dst_path = "/home/wwwroot/demo9.htmhub.com"
+
+; expire time
+expire = ""
+```
+
+
+3. 执行编译过程
+`php  php-beast-master/tools/encode_files.php`
+
+此时会将配置好的代码加密，解密过程是通过 beast.so 在线解密的。PHP文件可以正常访问。
