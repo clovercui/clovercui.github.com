@@ -5,9 +5,170 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 05 Aug 2016 16:18:57 +0800</pubDate>
-    <lastBuildDate>Fri, 05 Aug 2016 16:18:57 +0800</lastBuildDate>
+    <pubDate>Tue, 16 Aug 2016 14:33:06 +0800</pubDate>
+    <lastBuildDate>Tue, 16 Aug 2016 14:33:06 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>PHP源码加密模块 php-beast</title>
+        <description>&lt;pre&gt;&lt;code&gt;
+  _____  _    _ _____    ____  ______           _____ _______
+ |  __ \| |  | |  __ \  |  _ \|  ____|   /\    / ____|__   __|
+ | |__) | |__| | |__) | | |_)/| |__     /  \  | (___    | |
+ |  ___/|  __  |  ___/  |  _ ||  __|   / /\ \  \___ \   | |
+ | |    | |  | | |      | |_)\| |____ / ____ \ ____) |  | |
+ |_|    |_|  |_|_|      |____/|______/_/    \_\_____/   |_|
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;
+此模块可以用于商业用途, 版权归原作者.&lt;br /&gt;
+QQ交流群：239243332
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;b&gt;php-beast可以自定义加密模块，加密模块编写教程: &lt;a href=&quot;https://github.com/liexusong/php-beast/wiki/%E5%8A%A0%E5%AF%86%E6%A8%A1%E5%9D%97%E7%BC%96%E5%86%99%E6%95%99%E7%A8%8B&quot;&gt;点击&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;h3&gt;编译安装如下:&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;
+$ wget https://github.com/liexusong/php-beast/archive/master.zip
+$ unzip master.zip
+$ cd php-beast-master
+$ phpize
+$ ./configure
+$ sudo make &amp;amp;&amp;amp; make install
+
+编译好之后修改php.ini配置文件, 加入配置项: extension=beast.so, 重启php-fpm
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;温馨提示: 可以设置较大的缓存提高效率&lt;/pre&gt;
+
+&lt;p&gt;&lt;b&gt;使用php-beast的性能：&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://git.oschina.net/liexusong/php-beast/raw/master/images/beast1.png?dir=0&amp;amp;filepath=images/beast1.png&amp;amp;oid=645b87003dada2eac4f1a9fcfd353aa0423f5711&amp;amp;sha=7ec2a0ddc7780b2bab538d9f49d8b262f1bc37b7&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;不使用php-beast的性能：&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://git.oschina.net/liexusong/php-beast/raw/master/images/beast2.png?dir=0&amp;amp;filepath=images/beast2.png&amp;amp;oid=3f07cff6dca34b22d8933ab0ea1740a0e4f37e34&amp;amp;sha=7ec2a0ddc7780b2bab538d9f49d8b262f1bc37b7&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;配置项:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+ beast.cache_size = size
+ beast.log_file = &quot;path_to_log&quot;
+ beast.enable = On
+ beast.encrypt_handler = &quot;des-algo&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;支持的模块有：&lt;/p&gt;
+&lt;pre&gt;
+ 1. AES
+ 2. DES
+ 3. Base64
+&lt;/pre&gt;
+
+&lt;p&gt;通过测试环境:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+ Nginx + Fastcgi + (PHP-5.2.x ~ PHP-5.6.x)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;注意&lt;/h3&gt;
+&lt;p&gt;如果出现502错误，一般是由于GCC版本太低导致，请先升级GCC再安装本模块。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;怎么加密项目&lt;/h2&gt;
+&lt;p&gt;安装完 &lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 后可以使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;tools&lt;/code&gt; 目录下的 &lt;code class=&quot;highlighter-rouge&quot;&gt;encode_files.php&lt;/code&gt; 来加密你的项目。使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;encode_files.php&lt;/code&gt; 之前先修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;tools&lt;/code&gt; 目录下的 &lt;code class=&quot;highlighter-rouge&quot;&gt;configure.ini&lt;/code&gt; 文件，如下：&lt;br /&gt;
+```ini&lt;br /&gt;
+; source path&lt;br /&gt;
+src_path = “”&lt;/p&gt;
+
+&lt;p&gt;; destination path&lt;br /&gt;
+dst_path = “”&lt;/p&gt;
+
+&lt;p&gt;; expire time&lt;br /&gt;
+expire = “”&lt;br /&gt;
+```&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;src_path&lt;/code&gt; 是要加密项目的路径，&lt;code class=&quot;highlighter-rouge&quot;&gt;dst_path&lt;/code&gt; 是保存加密后项目的路径，&lt;code class=&quot;highlighter-rouge&quot;&gt;expire&lt;/code&gt; 是设置项目可使用的时间 (&lt;code class=&quot;highlighter-rouge&quot;&gt;expire&lt;/code&gt; 的格式是：&lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-mm-dd HH:ii:ss&lt;/code&gt;)。&lt;br /&gt;
+修改完 &lt;code class=&quot;highlighter-rouge&quot;&gt;configure.ini&lt;/code&gt; 文件后就可以使用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;php encode_files.php&lt;/code&gt; 开始加密项目。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;php-beast&quot;&gt;制定自己的php-beast&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 有多个地方可以定制的，以下一一列出：&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;1.&lt;/em&gt; 使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;header.c&lt;/code&gt; 文件可以修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 加密后的文件头结构，这样网上的解密软件就不能认识我们的加密文件，就不能进行解密，增加加密的安全性。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;2.&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 提供只能在指定的机器上运行的功能。要使用此功能可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;networkcards.c&lt;/code&gt; 文件添加能够运行机器的网卡号，例如：&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;c
+char *allow_networkcards[] = {
+	&quot;fa:16:3e:08:88:01&quot;,
+    NULL,
+};
+&lt;/code&gt;&lt;br /&gt;
+这样设置之后，&lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 扩展就只能在 &lt;code class=&quot;highlighter-rouge&quot;&gt;fa:16:3e:08:88:01&lt;/code&gt; 这台机器上运行。另外要注意的是，由于有些机器网卡名可能不一样，所以如果你的网卡名不是 &lt;code class=&quot;highlighter-rouge&quot;&gt;eth0&lt;/code&gt; 的话，可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;php.ini&lt;/code&gt; 中添加配置项： &lt;code class=&quot;highlighter-rouge&quot;&gt;beast.networkcard = &quot;xxx&quot;&lt;/code&gt; 其中 &lt;code class=&quot;highlighter-rouge&quot;&gt;xxx&lt;/code&gt; 就是你的网卡名，也可以配置多张网卡，如：&lt;code class=&quot;highlighter-rouge&quot;&gt;beast.networkcard = &quot;eth0,eth1,eth2&quot;&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;3.&lt;/em&gt; 使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 时最好不要使用默认的加密key，因为扩展是开源的，如果使用默认加密key的话，很容易被人发现。所以最好编译的时候修改加密的key，&lt;code class=&quot;highlighter-rouge&quot;&gt;aes模块&lt;/code&gt; 可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;aes_algo_handler.c&lt;/code&gt; 文件修改，而 &lt;code class=&quot;highlighter-rouge&quot;&gt;des模块&lt;/code&gt; 可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;des_algo_handler.c&lt;/code&gt; 文件修改。&lt;/p&gt;
+
+&lt;hr /&gt;
+</description>
+        <pubDate>Tue, 16 Aug 2016 00:00:00 +0800</pubDate>
+        <link>http://clover.htmhub.com/2016/08/16/php-codes-encode/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2016/08/16/php-codes-encode/</guid>
+        
+        <category>Clover</category>
+        
+        <category>Linux</category>
+        
+        <category>PHP</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Linux文件加密之ccrypt</title>
+        <description>&lt;p&gt;#ccrypt&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ccrypt是为了取代UNIX crypt而设计的，这个实用工具可用于文件和数据流加密及解密。它使用Rijndael密码&lt;/code&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;## 安装&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install ccrypt
+# yum install ccrypt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;## 使用&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;加密文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ccencrypt filename
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;输入两次密码&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;解密文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ccdecrypt filename
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;提供加密时输入的同一个密码才能解密&lt;/p&gt;
+
+&lt;p&gt;它使用ccencrypt来加密、使用ccdecrypt来解密。一定要注意，加密时，原始文件(tecmint.txt)换成了tecmint.txt.cpt;解密时，加密文件(tecmint.txt.cpt)换成了原始文件(tecmint.txt)。你可以使用ls命令来予以核查&lt;/p&gt;
+</description>
+        <pubDate>Tue, 16 Aug 2016 00:00:00 +0800</pubDate>
+        <link>http://clover.htmhub.com/2016/08/16/linux-file-encode/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2016/08/16/linux-file-encode/</guid>
+        
+        <category>Clover</category>
+        
+        <category>Linux</category>
+        
+        
+      </item>
     
       <item>
         <title>Redis Study 之二 入门指南</title>
@@ -758,6 +919,8 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
     &lt;p&gt;SDIFF key [key …]&lt;br /&gt;
  SINTER key [key …]&lt;br /&gt;
  SUNION key [key …]&lt;/p&gt;
+
+    &lt;p&gt;SDIFF用来对多个集合执行差集运算&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
@@ -2976,270 +3139,6 @@ echo &#39;hello word!&#39;;
         <category>iOS</category>
         
         <category>译文</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>「知乎」设计师如何学习前端？</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;这篇文章转载自&lt;a href=&quot;https://www.zhihu.com/question/21921588/answer/69680480&quot;&gt;我在知乎上的回答&lt;/a&gt;，也被刊登于&lt;a href=&quot;http://www.uisdc.com/head-first-front-end&quot;&gt;优秀网页设计&lt;/a&gt;等多个网站上 ;)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div&gt;
-    &lt;br /&gt;笔者的经历在知乎就可以看到，大学专业是数字媒体艺术，大一实习过动效设计师，大二拿到了人生第一个大公司 offer 是阿里的交互设计，后来转岗到淘宝旅行的前端团队，现在在微信电影票做前端研发。
-    &lt;br /&gt;
-    &lt;br /&gt;也是走过了不少野路子，不过还好有小右哥 &lt;a data-hash=&quot;cfdec6226ece879d2571fbc274372e9f&quot; href=&quot;//www.zhihu.com/people/cfdec6226ece879d2571fbc274372e9f&quot; class=&quot;member_mention&quot; data-editable=&quot;true&quot; data-title=&quot;@尤雨溪&quot; data-tip=&quot;p$b$cfdec6226ece879d2571fbc274372e9f&quot;&gt;@尤雨溪&lt;/a&gt; 这样艺术/设计转前端的大神在前面做典范，也证明这条路是玩的通的 ;)
-    &lt;br /&gt;
-    &lt;br /&gt;接下来就说说自己的学习建议吧，一个小教程，也是自己走过的流程，仅供参考哈
-    &lt;br /&gt;
-    &lt;br /&gt;------------
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;背景篇&lt;/b&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;在这个时代学习新东西，一定要善于使用 Bing/Google 等搜索引擎…网络上的资源非常丰富，自学能力也尤为重要，尤其是对于学习技术！
-    &lt;br /&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;入门篇（HTML/CSS）&lt;/b&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;说起设计师希望学前端的初衷，大概还是因为各种华丽的网页特效/交互太过吸引人，这种感觉大概就是：“Hey，我的设计可以做成网页访问了呢！”
-    &lt;br /&gt;好在，“展示”对于前端技术来说反而是最简单的部分。所以，放下你对“编程”两个字的恐惧，&lt;b&gt;从“称不上是编程语言”的 HTML/CSS 开始，先做点有成就感的东西出来吧！&lt;/b&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;对于设计师来说，最有成就感的一定是“可以看到的东西”，而 HTML/CSS 正是用来干这个的，HTML 就是一堆非常简单的标签，而 CSS 无非就是把你画画的流程用&lt;b&gt;英语&lt;/b&gt;按一定的格式写出来而已：
-    &lt;br /&gt;
-    &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;p&amp;gt; p is paragraph! &amp;lt;/p&amp;gt;
-
-&amp;lt;style&amp;gt;
-p { color: red;}
-&amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;是不是非常容易，就跟读英语一样！
-    &lt;br /&gt;接下来，你就需要开始自学啦，比如常用 HTML 标签的意思，各种 CSS 的属性，还有 CSS 的盒模型、优先级、选择器……放心，它们都很容易；能玩得转 PS/AI/Flash/Axure/AE/Sketch 的设计师们，学这个洒洒水啦
-    &lt;br /&gt;
-    &lt;br /&gt;推荐几个资源：
-    &lt;br /&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&quot;//link.zhihu.com/?target=http%3A//www.w3school.com.cn/&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;w3school 在线教程&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt; (中文，一个很 Low 但是又很好的入门学习网站）
-            &lt;br /&gt;
-        &lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;//link.zhihu.com/?target=http%3A//www.codecademy.com/&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;Learn to code&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt; (Codecademy，如果你英文 OK，&lt;b&gt;强烈建议&lt;/b&gt;你使用它进行交互式的学习！里面从 HTML/CSS 到搭建网站的课程都有，免费，生动直观）
-            &lt;br /&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;br /&gt;&lt;b&gt;这个阶段的练习主要是“临摹”：用代码画出你想画的网站，越多越好。&lt;/b&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;对于书，我&lt;b&gt;非常不推荐&lt;/b&gt;上来就去看各种厚厚的入门/指南书，没必要！这一个阶段应该快速上手，培养兴趣，培养成就感。先做出可以看的东西再说，掌握常用的 HTML/CSS 就够用了
-    &lt;br /&gt;
-    &lt;br /&gt;如果完成的好，这个阶段过后你大概就可以写出一些简单又好看的“静态网页”了，比如这个作品集/简历：&lt;a href=&quot;//link.zhihu.com/?target=http%3A//huangxuan.me/portfolio/&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;Portfolio - 黄玄的博客&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt; （好久没更新了…丢人现眼）
-    &lt;br /&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;入门篇（JavaScript/jQuery）&lt;/b&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;想要在网页上实现一些交互效果，比如轮播图、点击按钮后播放动画？那你就必须要开始学习 JavaScript 了！JavaScript 是一门完整、强大并且非常热门的编程语言，你在浏览器里看到的所有交互或者高级功能都是由它在背后支撑的！
-    &lt;br /&gt;
-    &lt;br /&gt;举个小栗子：
-    &lt;br /&gt;
-    &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot;&gt;alert(&quot;Hello World!&quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;就这一行，就可以在浏览器里弹出 Hello World 啦！
-    &lt;br /&gt;
-    &lt;br /&gt;在了解一些基础的 JavaScript 概念（变量、函数、基本类型）后，我们可以直接去学习 jQuery，你不用知道它具体是什么（它是一个 JavaScript 代码库），你只要知道它可以显著地降低你编写交互的难度就好了：
-    &lt;br /&gt;
-
-```
-$(&#39;.className&#39;).click(function(){
-    alert(&quot;Hello jQuery&quot;)
-})
-```
-
-通过 jQuery，我们可以继续使用在 CSS 中学到的“选择器”
-    &lt;br /&gt;
-    &lt;br /&gt;对于没有编程基础的人来说，想要完全掌握它们两并不容易。作为设计师，很多时候我们可以先不必深究它们的原理，而是尝试直接应用它！这样成就感会来得很快，并且你可以通过实际应用更加理解 JavaScript 是用来做什么的。
-    &lt;br /&gt;
-    &lt;br /&gt;我仍然推荐你使用 &lt;a href=&quot;//link.zhihu.com/?target=http%3A//www.w3school.com.cn/&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;w3school 在线教程&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt; 与 &lt;a href=&quot;//link.zhihu.com/?target=http%3A//www.codecademy.com/&quot; class=&quot; external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;&lt;span class=&quot;invisible&quot;&gt;http://www.&lt;/span&gt;&lt;span class=&quot;visible&quot;&gt;codecademy.com/&lt;/span&gt;&lt;span class=&quot;invisible&quot;&gt;&lt;/span&gt;&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt; 进行学习。另外，你可以看一看诸如《&lt;a href=&quot;//link.zhihu.com/?target=http%3A//book.douban.com/subject/10792216/&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;锋利的jQuery (豆瓣)&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt;》 这一类非常实用的书籍，可以让你很快上手做出一些简单的效果来！
-    &lt;br /&gt;
-    &lt;br /&gt;如果学习得顺利，你还可以尝试使用各种丰富的 jQuery 插件，你会发现写出支持用户交互的网站也没有那么困难～很多看上去很复杂的功能（比如轮播图、灯箱、下拉菜单），搜一搜然后看看文档（教程）、改改示例代码就好了。
-    &lt;br /&gt;
-    &lt;br /&gt;比如说，配合 &lt;a href=&quot;//link.zhihu.com/?target=https%3A//github.com/Huxpro/jquery.HSlider&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;Huxpro/jquery.HSlider · GitHub&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt; 这样的轮播图插件，你可以很轻松的写出 &lt;a href=&quot;//link.zhihu.com/?target=http%3A//huangxuan.me/jquery.HSlider/&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;HSlider | Demo&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt; 这样的网页相册或者 &lt;a href=&quot;//link.zhihu.com/?target=http%3A//huangxuan.me/jquery.HSlider/demo-weather-app/&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;HSlider | Weather&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt; 这样的手机端 App 原型～
-    &lt;br /&gt;
-    &lt;br /&gt;最后，我想推荐下 &lt;a href=&quot;//link.zhihu.com/?target=http%3A//getbootstrap.com/&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;Bootstrap · The world&#39;s most popular mobile-first and respons&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt; ，这是世界上最知名的前端 UI 框架之一，提供了大量 CSS 样式与 jQuery 插件。它非常容易学习并且中英文教程都非常健全，你并不需要理解它背后的工作原理就能很好的使用它，让你快速达到“可以建站的水平”。有余力的话，你不但可以学习如何使用它，还可以学习它背后的设计思想。
-    &lt;br /&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;转职方向一：前端重构 （Web Rebuild）&lt;/b&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;业内通常把专精 HTML/CSS 的前端从业人员称为重构，而对于注重视觉效果的设计师来说，在掌握基本的 HTML/CSS 后，就可以朝着这个方向发展了。
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;到了这个阶段，你不但要知道怎么写页面，还要知道它们都是为什么，并且知道怎么做更好。这对你理解 Web 世界非常有帮助，并且能帮助你做出更“系统化”的设计。&lt;/b&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;CSS 的学问很多，你需要开始理解文档流、浮动流等各种定位的方式与原理，理解 CSS 的继承复用思想、理解浏览器的差异、兼容、优雅降级……这里强烈推荐一本书：《&lt;a href=&quot;//link.zhihu.com/?target=http%3A//book.douban.com/subject/4736167/&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;精通CSS（第2版） (豆瓣)&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt;》，虽然前端技术突飞猛进，但这本书的思想永远不会过时。
-    &lt;br /&gt;
-    &lt;br /&gt;HTML 方面，要开始注重语义化、可访问性与结构的合理，你要开始学习“结构与样式的分离”，这里有一本神书将这种分离做到了极致：《&lt;a href=&quot;//link.zhihu.com/?target=http%3A//book.douban.com/subject/2052176/&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;CSS禅意花园 (豆瓣)&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt;》
-    &lt;br /&gt;
-    &lt;br /&gt;另外，各种炫酷屌的 CSS 3 属性你一定会喜欢：你可以用媒体查询做响应式网页设计，你可以用 transiton 和 animation 做补间动画与关键帧动画，用 transform 做缩放、旋转、3D变换，还有圆角、渐变、阴影、弹性盒！样样都是设计师的神器！
-    &lt;br /&gt;
-    &lt;br /&gt;如果你还掌握了 &lt;b&gt;入门篇（JavaScript/jQuery）&lt;/b&gt;的知识，那么&lt;b&gt;恭喜你！你已经可以做出很多有趣的网页了！&lt;/b&gt;很多 minisite 或者微信上的“H5” 小广告，这个程度的你已经可以轻松完成了！
-    &lt;br /&gt;
-    &lt;br /&gt;配合上你的设计功力，你可以开始尝试创作一些好玩的东西，比如这种富含交互和动画的网站 &lt;a href=&quot;//link.zhihu.com/?target=http%3A//huangxuan.me/senova/&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;绅宝 SENOVA&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt; ，它仍然是基于 &lt;a href=&quot;//link.zhihu.com/?target=https%3A//github.com/Huxpro/jquery.HSlider&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;Huxpro/jquery.HSlider · GitHub&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt; 实现的！或者给自己做个小小的个人网站试试
-    &lt;br /&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;转职方向二：前端工程师（Front-end Engineer）&lt;/b&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;如果你觉得上述的这些都还满足不了你，你渴望做出更多了不起的交互，甚至你已经喜欢上了编程，想要转行做工程师，或者成为一名全栈设计师，那么你可以朝着这个方向继续发展！
-    &lt;br /&gt;
-    &lt;br /&gt;这个阶段的最大难度，是你必须&lt;b&gt;学会像一名软件工程师一样思考&lt;/b&gt;。你需要踏踏实实学习编程语言，深入理解作用域、对象、类、封装、继承、面向对象编程、事件侦听、事件冒泡等一大堆编程概念，你还需要了解浏览器，学习 DOM、BOM、CSSOM 的 API，你甚至还需要学习一些网络原理，包括域名、URL、DNS、HTTP 请求都是什么…
-    &lt;br /&gt;
-    &lt;br /&gt;你可能会被这一大堆名词吓到。确实，想要搞定他们并不容易。但是，你要相信只要你肯花功夫它们也没有那么难，而更重要的是，如果你能拿下他们，你所收获的并不只是这些而已，而是真正跨过了一道大坎 —— &lt;b&gt;你的世界将因此打开， 你看待世界的方式将因此改变&lt;/b&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;对于这个阶段，你可以继续在 &lt;a href=&quot;//link.zhihu.com/?target=http%3A//www.codecademy.com/&quot; class=&quot; external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;&lt;span class=&quot;invisible&quot;&gt;http://www.&lt;/span&gt;&lt;span class=&quot;visible&quot;&gt;codecademy.com/&lt;/span&gt;&lt;span class=&quot;invisible&quot;&gt;&lt;/span&gt;&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt; 上学习，但是 w3school 已经不够用了，遇到不会的语法，我推荐你查阅 &lt;a href=&quot;//link.zhihu.com/?target=https%3A//developer.mozilla.org/zh-CN/&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;Mozilla 开发者网络&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt;，这是少数中英文都有的非常专业且友好的网站。
-    &lt;br /&gt;
-    &lt;br /&gt;同时，你可能需要看一些书本来帮助你学习 JavaScript ：
-    &lt;br /&gt;
-    &lt;ul&gt;
-        &lt;li&gt; 《&lt;a href=&quot;//link.zhihu.com/?target=http%3A//book.douban.com/subject/10546125/&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;JavaScript高级程序设计（第3版） (豆瓣)&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt; 》或 《&lt;a href=&quot;//link.zhihu.com/?target=http%3A//book.douban.com/subject/2228378/&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;JavaScript权威指南 (豆瓣)&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt;》，大而全的书只需要一本就够了&lt;/li&gt;
-        &lt;li&gt;如果上面这本你觉得太难，你可以先看 《&lt;a href=&quot;//link.zhihu.com/?target=http%3A//book.douban.com/subject/6038371/&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;JavaScript DOM编程艺术 （第2版） (豆瓣)&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt;》来过渡一下，这本书比较容易，它会教给你 “优雅降级、渐进增强”的优秀思想&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;br /&gt;如果你能顺利得渡过了这个阶段，我想你已经能做出很多令你自豪的网站了！试着向身边的工程师朋友询问如何购买域名、配置简单的静态服务器，或者搜搜“Github Pages”，然后把你的作品挂在网络上让大家欣赏吧！
-    &lt;br /&gt;
-    &lt;br /&gt;你还可以试着用 JavaScript 写写小游戏，这不但能锻炼你的编程水平还非常有趣～比如这是我刚学 JS 不久后 hack 一晚的产物 —— 用 DOM 实现的打飞机：&lt;a href=&quot;//link.zhihu.com/?target=http%3A//huangxuan.me/aircraft&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;Hux - Aircraft&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt; （不支持手机）
-    &lt;br /&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;入行篇&lt;/b&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;如果你能完成上述所有的学习，你已经是一名非常出色的前端学徒了！对于只是想要丰富技能的设计师或者产品经理来说，接下来的内容可能会让你感到不适 ;(
-    &lt;br /&gt;但如果你铁了心想要真正入行进入大公司从事专职前端开发的工作，那么你可以接着往下看：
-    &lt;br /&gt;
-    &lt;br /&gt;近几年的前端技术发展迅猛，前端工程师早已不是切切图写写页面做点特效就完事的职位，你需要具备相当完善的工程师素质与计算机知识，成为一名真正的工程师。
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;你需要非常了解 JavaScript 这门语言&lt;/b&gt;，包括 闭包、IIFE、this、prototype 及一些底层实现（ES、VO、AO）、熟悉常用的设计模式与 JavaScript 范式（比如实现类与私有属性）。另外，新的 ES6 已经问世，包括 class, module, arrow function 等等
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;你需要非常了解前端常用的网络及后端知识&lt;/b&gt;，包括 Ajax、JSON、HTTP 请求、GET/POST 差异、RESTful、URL hash/query、webSocket、常用的跨域方式（JSONP/CORS、HTTP 强缓存/协商缓存，以及如何利用 CDN 、静态网站/动态网站区别、服务器端渲染/前端渲染区别等等
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;你需要学习使用进阶的 CSS&lt;/b&gt;，包括熟悉 CSS 3，使用 Scss/Less 等编译到 CSS 的语言，使用 autoprefixer 等 PostCSS 工具，了解 CSS 在 Scope/Namespace 上的缺陷，你还可以学习 CSS Modules、CSS in JS 这些有趣的新玩意
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;你需要非常了解前端的模块化规范&lt;/b&gt;，可能在你学习到这里的时候，Require.js/AMD 已经再见了，但是 CommonJS 与 ES6 Modules 你必须要了解。（你可以观看我的分享《&lt;a href=&quot;//link.zhihu.com/?target=http%3A//huangxuan.me/js-module-7day/%23/&quot; class=&quot; wrap external&quot; target=&quot;_blank&quot; rel=&quot;nofollow noreferrer&quot;&gt;JavaScript Modularization Seven Day&lt;i class=&quot;icon-external&quot;&gt;&lt;/i&gt;&lt;/a&gt;》 来学习 JS 模块化的历史）
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;你需要熟悉 Git 与 Shell 的使用&lt;/b&gt;，包括基于 git 的版本管理、分支管理与团队协作，包括简单的 Linux/Unix 命令、你要知道大部分程序员的工作可以通过 shell 更快更酷的完成，并且很多“软件”只能通过 shell 来使用。你还可以把你的代码放到 github 上与人分享，并且学习 github 上其他优秀的开源代码
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;你需要熟悉并且习惯使用 Node&lt;/b&gt;，包括了解 npm、使用 Grunt/Gulp/Browserify/Webpack 优化你的工作流、对你的代码进行打包、混淆、压缩、发布，你还可以使用 Express/Koa 配合 MongoDB/Redis 涉足到后端领域，或者尝试用 Node 做后端渲染优化你的首屏体验
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;你需要了解各种 HTML 5 的新 API&lt;/b&gt;，包括 &amp;lt;video&amp;gt;/&amp;lt;audio&amp;gt;，包括 Canvas，webGL、File API、App Cache、localStorage、IndexedDB、Drag &amp;amp; Drop、更高级的 DOM API、Fetch API 等等
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;你需要学习 JavaScript 的单线程与异步编程方法&lt;/b&gt;，因为它们非常非常常用、包括 setTimeout/setInterval，回调与回调地狱、事件与event loop、还有 Promise 甚至 Async/Await
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;你需要非常了解浏览器&lt;/b&gt;，包括主流浏览器的名称、内核与差异、包括私有属性与 -webkit- 等厂商前缀，你需要学习如何使用 Chrome DevTool，你需要了解浏览器渲染的 reflow/repaint 来避免 Jank 并进行有针对性的性能优化
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;你需要专门学习 Mobile Web&lt;/b&gt;，因为移动互联网是趋势。包括 viewport、CSS pixel、 touch 事件、iOS/Android 浏览器的差异与兼容、移动端的性能优化、300ms delay 等等…你还需要知道 Hybrid 是什么，包括 Cordova/Phonegap，更复杂的比如和 iOS/Android 通信的机制，比如 URI Scheme 或者 JS Bridge
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;你需要学习一些&lt;/b&gt;&lt;b&gt;非常火热的前端框架/库&lt;/b&gt;，他们不但能帮助你更快的进行开发、更重要的是他们背后所蕴含的思想。包括 Backbone、Angular、Vue、React、Polymer 等等、了解它们背后的双向数据绑定、单向数据流、MVC/MVVM/Flux 思想、Web Component 与组件化等等
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;你需要学习如何构建 web 单页应用&lt;/b&gt;，这是 web 的未来，包括利用 history API 或者 hash 实现路由，包括基于 Ajax + 模版引擎或者其他技术的前端渲染、包括组织较为复杂的软件设计等等
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;我还建议你学习更多的计算机知识&lt;/b&gt;，它们能对你的代码能起到潜移默化的作用，包括简单的计算机体系结构、更广泛的编程知识（面向对象/函数式等）、栈、堆、数组、队列、哈希表、树、图等数据结构、时间复杂度与空间复杂度以及简单的算法等等
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;你需要了解业内的大神并阅读它们的博客/知乎/微博&lt;/b&gt;，比如 &lt;a data-hash=&quot;cfdec6226ece879d2571fbc274372e9f&quot; href=&quot;//www.zhihu.com/people/cfdec6226ece879d2571fbc274372e9f&quot; class=&quot;member_mention&quot; data-editable=&quot;true&quot; data-title=&quot;@尤雨溪&quot; data-tip=&quot;p$b$cfdec6226ece879d2571fbc274372e9f&quot;&gt;@尤雨溪&lt;/a&gt;&lt;a data-hash=&quot;3ec3b166992a5a90a1083945d2490d38&quot; href=&quot;//www.zhihu.com/people/3ec3b166992a5a90a1083945d2490d38&quot; class=&quot;member_mention&quot; data-editable=&quot;true&quot; data-title=&quot;@贺师俊&quot; data-tip=&quot;p$b$3ec3b166992a5a90a1083945d2490d38&quot;&gt;@贺师俊&lt;/a&gt;&lt;a data-hash=&quot;3212f9044005e9306aab1b61e74e7ae6&quot; href=&quot;//www.zhihu.com/people/3212f9044005e9306aab1b61e74e7ae6&quot; class=&quot;member_mention&quot; data-editable=&quot;true&quot; data-title=&quot;@张云龙&quot; data-tip=&quot;p$b$3212f9044005e9306aab1b61e74e7ae6&quot;&gt;@张云龙&lt;/a&gt;&lt;a data-hash=&quot;c5198d4e9c0145aee04dd53cc6590edd&quot; href=&quot;//www.zhihu.com/people/c5198d4e9c0145aee04dd53cc6590edd&quot; class=&quot;member_mention&quot; data-editable=&quot;true&quot; data-title=&quot;@徐飞&quot; data-tip=&quot;p$b$c5198d4e9c0145aee04dd53cc6590edd&quot;&gt;@徐飞&lt;/a&gt;&lt;a data-hash=&quot;20fdd386a6e59d178b8fe14e2863cb40&quot; href=&quot;//www.zhihu.com/people/20fdd386a6e59d178b8fe14e2863cb40&quot; class=&quot;member_mention&quot; data-editable=&quot;true&quot; data-title=&quot;@张克军&quot; data-tip=&quot;p$b$20fdd386a6e59d178b8fe14e2863cb40&quot;&gt;@张克军&lt;/a&gt;&lt;a data-hash=&quot;c11336b8607d86bc9090bed90757a34c&quot; href=&quot;//www.zhihu.com/people/c11336b8607d86bc9090bed90757a34c&quot; class=&quot;member_mention&quot; data-editable=&quot;true&quot; data-title=&quot;@玉伯&quot; data-tip=&quot;p$b$c11336b8607d86bc9090bed90757a34c&quot;&gt;@玉伯&lt;/a&gt;&lt;a data-hash=&quot;64458d15a75902cd0425732b7b757705&quot; href=&quot;//www.zhihu.com/people/64458d15a75902cd0425732b7b757705&quot; class=&quot;member_mention&quot; data-editable=&quot;true&quot; data-title=&quot;@拔赤&quot; data-tip=&quot;p$b$64458d15a75902cd0425732b7b757705&quot;&gt;@拔赤&lt;/a&gt;&lt;a data-hash=&quot;0d9b98af12015c94cff646a6fc0773b5&quot; href=&quot;//www.zhihu.com/people/0d9b98af12015c94cff646a6fc0773b5&quot; class=&quot;member_mention&quot; data-editable=&quot;true&quot; data-title=&quot;@寸志&quot; data-tip=&quot;p$b$0d9b98af12015c94cff646a6fc0773b5&quot;&gt;@寸志&lt;/a&gt;&lt;a data-hash=&quot;790dccce26904cdcd11b0fad3bac37b7&quot; href=&quot;//www.zhihu.com/people/790dccce26904cdcd11b0fad3bac37b7&quot; class=&quot;member_mention&quot; data-editable=&quot;true&quot; data-title=&quot;@题叶&quot; data-tip=&quot;p$b$790dccce26904cdcd11b0fad3bac37b7&quot;&gt;@题叶&lt;/a&gt;&lt;a data-hash=&quot;85de6407f2219137df29b4249b91cfd5&quot; href=&quot;//www.zhihu.com/people/85de6407f2219137df29b4249b91cfd5&quot; class=&quot;member_mention&quot; data-editable=&quot;true&quot; data-title=&quot;@郭达峰&quot; data-tip=&quot;p$b$85de6407f2219137df29b4249b91cfd5&quot;&gt;@郭达峰&lt;/a&gt; 等等等等，很多思想和新东西只有从他们身上才能学到。我还推荐你多参加技术交流会，多认识一些可以一起学习的小伙伴，你们可以互相交流并且一起成长
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;你需要具备很强的自学能力、对技术有热情并且不断跟进&lt;/b&gt;。因为 JavaScript/前端的社区非常非常活跃，有太多的新东西需要你自己来发现与学习：比如 Universal JavaScript、Isomorphic JavaScript、前端测试、HTML5 页游、WebRTC、WebSocket、CSS 4、SVG、HTTP/2、ES 7、React Native、Babel、TypeScript、Electron 等等等等…
-    &lt;br /&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;虽然一下扯得有点多，但这些确实就是你未来将会遇到的。你并不需要全部掌握它们，但是却多多益善；你也可以专精在某几个方面，这已经足以让你成为非常专业的前端工程师。
-    &lt;br /&gt;
-    &lt;br /&gt;&lt;b&gt;所以，如果你自认为涵盖了上述要求的 40%，欢迎简历发 huangxuan@wepiao.com ，实习/全职皆可～&lt;/b&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;
-    &lt;br /&gt;咦，这个结尾怪怪的……
-
-&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 28 Oct 2015 20:00:00 +0800</pubDate>
-        <link>http://clover.htmhub.com/2015/10/28/how-designer-learn-fe/</link>
-        <guid isPermaLink="true">http://clover.htmhub.com/2015/10/28/how-designer-learn-fe/</guid>
-        
-        <category>知乎</category>
-        
-        <category>前端开发</category>
-        
-        <category>UX Design</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>ES5, ES6, ES2016, ES.Next: JavaScript 的版本是怎么回事？「译」</title>
-        <description>&lt;p&gt;JavaScript 有着很奇怪的命名史。&lt;/p&gt;
-
-&lt;p&gt;1995 年，它作为网景浏览器（Netscape Navigator）的一部分首次发布，网景给这个新语言命名为 LiveScript。一年后，为了搭上当时媒体热炒 Java 的顺风车，临时改名为了 JavaScript &lt;em&gt;（当然，Java 和 JavaScript 的关系，就和雷锋和雷锋塔一样 —— 并没有什么关系）&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/in-post/post-js-version/javascript-java.jpg&quot; alt=&quot;java-javascript&quot; /&gt;&lt;br /&gt;
-&lt;small class=&quot;img-hint&quot;&gt;歪果仁的笑话怎么一点都不好笑&lt;/small&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;译者注：&lt;a href=&quot;https://en.wikipedia.org/wiki/JavaScript#History&quot;&gt;wikipedia 的 JavaScript 词条&lt;/a&gt; 更详细的叙述了这段历史&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;1996 年，网景将 JavaScript 提交给 &lt;a href=&quot;http://www.ecma-international.org/&quot;&gt;ECMA International（欧洲计算机制造商协会）&lt;/a&gt; 进行标准化，并最终确定出新的语言标准，它就是 ECMAScript。自此，ECMAScript 成为所有 JavaScript 实现的基础，不过，由于 JavaScript 名字的历史原因和市场原因（很显然 ECMAScript 这个名字并不令人喜欢……），现实中我们只用 ECMAScript 称呼标准，平时都还是使用 JavaScript 来称呼这个语言。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;术语（译者注）：&lt;/p&gt;
-
-  &lt;ul&gt;
-    &lt;li&gt;&lt;em&gt;标准（Standard）&lt;/em&gt;： 用于定义与其他事物区别的一套规则&lt;/li&gt;
-    &lt;li&gt;&lt;em&gt;实现（Implementation）&lt;/em&gt;： 某个标准的具体实施/真实实践&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;不过，JavaScript 开发者们并不怎么在乎这些，因为在诞生之后的 15 年里，ECMAScript 并没有多少变化，而且现实中的很多实现都已经和标准大相径庭。其实在第一版的 ECMAScript 发布后，很快又跟进发布了两个版本，但是自从 1999 年 ECMAScript 3 发布后，十年内都没有任何改动被成功添加到官方规范里。取而代之的，是各大浏览器厂商们争先进行自己的语言拓展，web 开发者们别无选择只能去尝试并且支持这些 API。即使是在 2009 年 ECMAScript 5 发布之后，仍然用了数年这些新规范才得到了浏览器的广泛支持，可是大部分开发者还是写着 ECMAScript 3 风格的代码，并不觉得有必要去了解这些规范。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;译者注：&lt;a href=&quot;https://en.wikipedia.org/wiki/ECMAScript#4th_Edition_.28abandoned.29&quot;&gt;ECMAScript 第四版草案&lt;/a&gt;由于太过激进而被抛弃，Adobe 的 &lt;a href=&quot;https://en.wikipedia.org/wiki/ActionScript&quot;&gt;ActionScript 3.0&lt;/a&gt; 是 ECMAScript edition 4 的唯一实现（ Flash 差点就统一 Web 了）&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;到了 2012 年，事情突然开始有了转变。大家开始推动停止对旧版本 IE 浏览器的支持，用 ECMAScript 5 (ES5) 风格来编写代码也变得更加可行。与此同时，一个新的 ECMAScript 规范也开始启动。到了这时，大家开始逐渐习惯以对 ECMAScript 规范的版本支持程度来形容各种 JavaScript 实现。在正式被指名为 ECMAScript 第 6 版 (ES6) 之前，这个新的标准原本被称为 ES.Harmony（和谐）。2015 年，负责制定 ECMAScript 规范草案的委员会 TC39 决定将定义新标准的制度改为一年一次，这意味着每个新特性一旦被批准就可以添加，而不像以往一样，规范只有在整个草案完成，所有特性都没问题后才能被定稿。因此，ECMAScript 第 6 版在六月份公布之前，又被重命名为了 ECMAScript 2015（ES2015）&lt;/p&gt;
-
-&lt;p&gt;目前，仍然有很多新的 JavaScript 特性或语法正在提议中，包括 &lt;a href=&quot;https://github.com/wycats/javascript-decorators&quot;&gt;decorators（装饰者）&lt;/a&gt;，&lt;a href=&quot;https://github.com/lukehoban/ecmascript-asyncawait&quot;&gt;async-await（async-await 异步编程模型）&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/jeffmo/es-class-properties&quot;&gt;static class properties（静态类属性）&lt;/a&gt;。它们通常被称为 ES7，ES2016 或者 ES.Next 的特性，不过实际上它们只能被称作提案或者说可能性，毕竟 ES2016 的规范还没有完成，有可能全部都会引入，也有可能一个都没有。TC39 把一个提案分为 4 个阶段，你可以在 &lt;a href=&quot;https://babeljs.io/docs/usage/experimental/&quot;&gt;Babel 的官网&lt;/a&gt; 上查看各个提案目前都在哪个阶段了。&lt;/p&gt;
-
-&lt;p&gt;所以，我们该如何使用这一大堆术语呢？下面的列表或许能帮助到你：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;ECMAScript&lt;/strong&gt;：一个由 ECMA International 进行标准化，TC39 委员会进行监督的语言。通常用于指代标准本身。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;JavaScript&lt;/strong&gt;：ECMAScript 标准的各种实现的最常用称呼。这个术语并不局限于某个特定版本的 ECMAScript 规范，并且可能被用于任何不同程度的任意版本的 ECMAScript 的实现。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ECMAScript 5 (ES5)&lt;/strong&gt;：ECMAScript 的第五版修订，于 2009 年完成标准化。这个规范在所有现代浏览器中都相当完全的实现了。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ECMAScript 6 (ES6) / ECMAScript 2015 (ES2015)&lt;/strong&gt;：ECMAScript 的第六版修订，于 2015 年完成标准化。这个标准被部分实现于大部分现代浏览器。可以查阅&lt;a href=&quot;http://kangax.github.io/compat-table/es6/&quot;&gt;这张兼容性表&lt;/a&gt;来查看不同浏览器和工具的实现情况。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ECMAScript 2016&lt;/strong&gt;：预计的第七版 ECMAScript 修订，计划于明年夏季发布。这份规范具体将包含哪些特性还没有最终确定&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ECMAScript Proposals&lt;/strong&gt;：被考虑加入未来版本 ECMAScript 标准的特性与语法提案，他们需要经历五个阶段：Strawman（稻草人），Proposal（提议），Draft（草案），Candidate（候选）以及 Finished （完成）。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;在这整个 Blog 中，我将把目前的 ECMAScript 版本称作 ES6（因为这是大部分开发者最习以为常的），把明年的规范称作 ES2016（因为，与 ES6/ES2015 不同，这个名字将在整个标准化过程中沿用）并且将那些还没有成为 ECMAScript 定稿或草案的未来语言概念称为 ECMAScript 提案或者 JavaScript 提案。我将尽我所能在任何可能引起困惑的场合沿用这篇文章。&lt;/p&gt;
-
-&lt;h4 id=&quot;section&quot;&gt;一些资源&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;TC39 的 &lt;a href=&quot;https://github.com/tc39/ecma262&quot;&gt;Github 仓库&lt;/a&gt;上可以看到所有目前公开的提案&lt;/li&gt;
-  &lt;li&gt;如果你还不熟悉 ES6，Babel 有一个&lt;a href=&quot;https://babeljs.io/docs/learn-es2015/&quot;&gt;很不错的特性概览&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;如果你希望深入 ES6，这里有两本很不错的书： Axel Rauschmayer 的 &lt;a href=&quot;http://exploringjs.com/&quot;&gt;Exploring ES6&lt;/a&gt;和 Nicholas Zakas 的 &lt;a href=&quot;https://leanpub.com/understandinges6&quot;&gt;Understanding ECMAScript 6&lt;/a&gt;。Axel 的博客 &lt;a href=&quot;http://www.2ality.com/&quot;&gt;2ality&lt;/a&gt; 也是很不错的 ES6 资源&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img class=&quot;shadow&quot; width=&quot;320&quot; src=&quot;/img/in-post/post-js-version/keep-calm-and-learn-javascript.png&quot; /&gt;&lt;br /&gt;
-&lt;small class=&quot;img-hint&quot;&gt;来学 JavaScript 吧！&lt;/small&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;section-1&quot;&gt;著作权声明&lt;/h4&gt;
-
-&lt;p&gt;本文译自 &lt;a href=&quot;http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/&quot;&gt;ES5, ES6, ES2016, ES.Next: What’s going on with JavaScript versioning?&lt;/a&gt;   &lt;br /&gt;
-译者 &lt;a href=&quot;http://weibo.com/huxpro&quot;&gt;黄玄&lt;/a&gt;，首次发布于 &lt;a href=&quot;http://huangxuan.me&quot;&gt;Hux Blog&lt;/a&gt;，转载请保留以上链接&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 22 Sep 2015 00:00:00 +0800</pubDate>
-        <link>http://clover.htmhub.com/2015/09/22/js-version/</link>
-        <guid isPermaLink="true">http://clover.htmhub.com/2015/09/22/js-version/</guid>
-        
-        <category>前端开发</category>
-        
-        <category>JavaScript</category>
-        
-        <category>翻译</category>
         
         
       </item>

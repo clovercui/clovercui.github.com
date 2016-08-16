@@ -601,6 +601,8 @@ HLEN key
 	SINTER key [key ...]
 	SUNION key [key ...]		
 
+	SDIFF用来对多个集合执行差集运算
+	
 
 
 
