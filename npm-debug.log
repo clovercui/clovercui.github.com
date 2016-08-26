@@ -1,0 +1,119 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'jsbin' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.2
+4 verbose install initial load of /usr/local/lib/package.json
+5 verbose readDependencies loading dependencies from /usr/local/lib/package.json
+6 silly cache add args [ 'jsbin', null ]
+7 verbose cache add spec jsbin
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: 'jsbin',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'jsbin',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 silly addNamed jsbin@*
+10 verbose addNamed "*" is a valid semver range for jsbin
+11 silly addNameRange { name: 'jsbin', range: '*', hasData: false }
+12 silly mapToRegistry name jsbin
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/jsbin
+16 verbose addNameRange registry:https://registry.npmjs.org/jsbin not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/jsbin
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 17:13:49
+20 verbose request id 16f4e71edeb3d2a6
+21 http request GET https://registry.npmjs.org/jsbin
+22 http 200 https://registry.npmjs.org/jsbin
+23 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+23 verbose headers   etag: '"ASSLMDW1THQSHLQ93H78KCQW9"',
+23 verbose headers   'content-type': 'application/json',
+23 verbose headers   'content-encoding': 'gzip',
+23 verbose headers   'cache-control': 'max-age=300',
+23 verbose headers   'content-length': '4747',
+23 verbose headers   'accept-ranges': 'bytes',
+23 verbose headers   date: 'Tue, 16 Aug 2016 09:13:51 GMT',
+23 verbose headers   via: '1.1 varnish',
+23 verbose headers   age: '0',
+23 verbose headers   connection: 'keep-alive',
+23 verbose headers   'x-served-by': 'cache-ams4423-AMS',
+23 verbose headers   'x-cache': 'MISS',
+23 verbose headers   'x-cache-hits': '0',
+23 verbose headers   'x-timer': 'S1471338831.268039,VS0,VE179',
+23 verbose headers   vary: 'Accept-Encoding' }
+24 silly get cb [ 200,
+24 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+24 silly get     etag: '"ASSLMDW1THQSHLQ93H78KCQW9"',
+24 silly get     'content-type': 'application/json',
+24 silly get     'content-encoding': 'gzip',
+24 silly get     'cache-control': 'max-age=300',
+24 silly get     'content-length': '4747',
+24 silly get     'accept-ranges': 'bytes',
+24 silly get     date: 'Tue, 16 Aug 2016 09:13:51 GMT',
+24 silly get     via: '1.1 varnish',
+24 silly get     age: '0',
+24 silly get     connection: 'keep-alive',
+24 silly get     'x-served-by': 'cache-ams4423-AMS',
+24 silly get     'x-cache': 'MISS',
+24 silly get     'x-cache-hits': '0',
+24 silly get     'x-timer': 'S1471338831.268039,VS0,VE179',
+24 silly get     vary: 'Accept-Encoding' } ]
+25 verbose get saving jsbin to /Users/ruoya/.npm/registry.npmjs.org/jsbin/.cache.json
+26 silly addNameRange number 2 { name: 'jsbin', range: '*', hasData: true }
+27 silly addNameRange versions [ 'jsbin',
+27 silly addNameRange   [ '3.0.0',
+27 silly addNameRange     '3.0.1',
+27 silly addNameRange     '3.0.2',
+27 silly addNameRange     '3.0.18',
+27 silly addNameRange     '3.0.23',
+27 silly addNameRange     '3.2.17',
+27 silly addNameRange     '3.0.0-dev0',
+27 silly addNameRange     '3.11.4',
+27 silly addNameRange     '3.11.5',
+27 silly addNameRange     '3.11.6',
+27 silly addNameRange     '3.11.23' ] ]
+28 silly addNamed jsbin@3.11.23
+29 verbose addNamed "3.11.23" is a plain semver version for jsbin
+30 silly mapToRegistry name jsbin
+31 silly mapToRegistry using default registry
+32 silly mapToRegistry registry https://registry.npmjs.org/
+33 silly mapToRegistry uri https://registry.npmjs.org/jsbin
+34 verbose addRemoteTarball https://registry.npmjs.org/jsbin/-/jsbin-3.11.23.tgz not in flight; adding
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/jsbin/-/jsbin-3.11.23.tgz',
+35 verbose addRemoteTarball   '65adba02baca30827585b76685f7e7c70d7447cc' ]
+36 info retry fetch attempt 1 at 17:13:52
+37 info attempt registry request try #1 at 17:13:52
+38 http fetch GET https://registry.npmjs.org/jsbin/-/jsbin-3.11.23.tgz
+39 http fetch 200 https://registry.npmjs.org/jsbin/-/jsbin-3.11.23.tgz
+40 info retry will retry, error on last attempt: Error: read ECONNRESET
+41 info retry will retry, error on last attempt: Error: read ECONNRESET
+42 silly fetchAndShaCheck shasum 65adba02baca30827585b76685f7e7c70d7447cc
+43 verbose stack Error: shasum check failed for /var/folders/zd/_6t0pfpn1hl2ytvb0k1qsr4w0000gn/T/npm-5371-ac158ba4/registry.npmjs.org/jsbin/-/jsbin-3.11.23.tgz
+43 verbose stack Expected: 65adba02baca30827585b76685f7e7c70d7447cc
+43 verbose stack Actual:   4ee6c4a2a6a225e9c90520f59eff2efcc94ba1fe
+43 verbose stack From:     https://registry.npmjs.org/jsbin/-/jsbin-3.11.23.tgz
+43 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/sha/index.js:25:8
+43 verbose stack     at ReadStream.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/sha/index.js:72:7)
+43 verbose stack     at emitNone (events.js:72:20)
+43 verbose stack     at ReadStream.emit (events.js:166:7)
+43 verbose stack     at endReadableNT (_stream_readable.js:905:12)
+43 verbose stack     at doNTCallback2 (node.js:441:9)
+43 verbose stack     at process._tickCallback (node.js:355:17)
+44 verbose cwd /Users/ruoya/Sites/clover.htmhub.com
+45 error Darwin 15.4.0
+46 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "-g" "jsbin"
+47 error node v4.2.2
+48 error npm  v2.14.7
+49 error shasum check failed for /var/folders/zd/_6t0pfpn1hl2ytvb0k1qsr4w0000gn/T/npm-5371-ac158ba4/registry.npmjs.org/jsbin/-/jsbin-3.11.23.tgz
+49 error Expected: 65adba02baca30827585b76685f7e7c70d7447cc
+49 error Actual:   4ee6c4a2a6a225e9c90520f59eff2efcc94ba1fe
+49 error From:     https://registry.npmjs.org/jsbin/-/jsbin-3.11.23.tgz
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]

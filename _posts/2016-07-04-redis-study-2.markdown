@@ -20,9 +20,9 @@ tags:
 ## 1）启动Redis 
 
 1. 直接启动
-
+		``` bash
 		# redis-server
-		
+		```
 	Redis 服务器 默认 会 使用 6379 端口 ,通过-- port 参数 可以 自定义 端口
 
 		# redis-server --port 6380		
