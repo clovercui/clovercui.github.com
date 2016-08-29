@@ -605,7 +605,7 @@ HLEN key
 	
 	集合A与集合B的差集表示A-B，代表所有属于A且不属于B的元素构成的集合
 	
-	``` bash
+	```
 	redis > SADD setA 1 2 3
 	(integer) 3
 	redis > SADD setB 2 3 4
@@ -699,8 +699,8 @@ HLEN key
 	由于集合是无序的，所以SPOP会从集合中随机选择一个元素弹出
 	
 	```
-	redis >SOPO letters
-	"b"
+	redis >SOPO letters	
+	"b"	
 	redis > SMEMBERS letters
 	1)"a"
 	2)"c"

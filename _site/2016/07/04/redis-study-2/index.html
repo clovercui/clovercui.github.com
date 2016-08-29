@@ -945,7 +945,7 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 
     <p>集合A与集合B的差集表示A-B，代表所有属于A且不属于B的元素构成的集合</p>
 
-    <p><code class="highlighter-rouge">bash
+    <p><code class="highlighter-rouge">
  redis &gt; SADD setA 1 2 3
  (integer) 3
  redis &gt; SADD setB 2 3 4
@@ -1060,8 +1060,8 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
     <p>由于集合是无序的，所以SPOP会从集合中随机选择一个元素弹出</p>
 
     <p><code class="highlighter-rouge">
- redis &gt;SOPO letters
- "b"
+ redis &gt;SOPO letters	
+ "b"	
  redis &gt; SMEMBERS letters
  1)"a"
  2)"c"
