@@ -616,70 +616,70 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 
 	* SDIFF用来对多个集合执行差集运算.
 	
-	集合A与集合B的差集表示A-B，代表所有属于A且不属于B的元素构成的集合
+		集合A与集合B的差集表示A-B，代表所有属于A且不属于B的元素构成的集合
 	
-	```
-	redis > SADD setA 1 2 3
-	(integer) 3
-	redis > SADD setB 2 3 4
-	(integer) 3
-	redis > SDIFF setA set B 
-	1）"1"
-	redis > SDIFF setB setA 
-	1) "4" 
-	```
+		```
+		redis > SADD setA 1 2 3
+		(integer) 3
+		redis > SADD setB 2 3 4
+		(integer) 3
+		redis > SDIFF setA set B 
+		1）"1"
+		redis > SDIFF setB setA 
+		1) "4" 
+		```
 	
-	SDIFF支持同时传入多个键
+		SDIFF支持同时传入多个键
 	
-	`redis > SDIFF setA setB setC` 
+		`redis > SDIFF setA setB setC` 
 	
-	计算顺序是先计算setA-setB,在计算结果与setC差集。
+		计算顺序是先计算setA-setB,在计算结果与setC差集。
 	
 	* SINTER命令用来对多个集合执行交集运算。
 	
-	集合A与集合B的交集表示为A∩B，代表所有属于A且属于B的元素构成的集合
+		集合A与集合B的交集表示为A∩B，代表所有属于A且属于B的元素构成的集合
 	
-	```
-	redis > SADD setA 1 2 3
-	(integer) 3
-	redis > SADD setB 2 3 4
-	(integer) 3
-	redis > SINTER setA setB
-	1)"2"
-	2)"3"
-	```
+		```
+		redis > SADD setA 1 2 3
+		(integer) 3
+		redis > SADD setB 2 3 4
+		(integer) 3
+		redis > SINTER setA setB
+		1)"2"
+		2)"3"
+		```
 
 	* SUNION 命令用来对多个集合执行并集运算
 	
-	集合A与集合B的并集表示为A∪B，代表所有属于A或者属于B的元素构成的集合
+		集合A与集合B的并集表示为A∪B，代表所有属于A或者属于B的元素构成的集合
 	
-	```
-	redis > SADD setA 1 2 3
-	(integer) 3
-	redis > SADD setB 2 3 4
-	(integer) 3
-	redis > SINTER setA setB
-	1)"1"
-	2)"2"
-	3)"3"
-	4)"4"
-	```
+		```
+		redis > SADD setA 1 2 3
+		(integer) 3
+		redis > SADD setB 2 3 4
+		(integer) 3
+		redis > SINTER setA setB
+		1)"1"
+		2)"2"
+		3)"3"
+		4)"4"
+		```
 
 5. 命令拾遗
 
 	* 获得集合中元素个数
 	
-	`SCARD key`
+		`SCARD key`
 	
-	SCARD命令用来获得集合中的元素个数
+		SCARD命令用来获得集合中的元素个数
 	
-	```
-	redis > SMEMBERS letters
-	1)"b"
-	2)"2"
-	redis > SCARD letters
-	(integer)2
-	```
+		```
+		redis > SMEMBERS letters
+		1)"b"
+		2)"2"
+		redis > SCARD letters
+		(integer)2
+		```
 	
 	* 进行集合运算并将结果存储
 	
@@ -689,20 +689,20 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 	
 		`SUNINONSTORE destination key [key ...]`
 	 
-	结果存储在 destination的键中
+		结果存储在 destination的键中
 	
 	* 随机获得集合中的元素
 	
 		`SRANDMEMBER key	[count]`
 	
-	SRANDMEMBER 命令用来随机从集合中获取一个元素
+		SRANDMEMBER 命令用来随机从集合中获取一个元素
 	
-	```
-	redis > SRANDMEMBER letters
-	"a"
-	redis > SRANDMEMBER letters
-	"b"
-	```
+		```
+		redis > SRANDMEMBER letters
+		"a"
+		redis > SRANDMEMBER letters
+		"b"
+		```
 	
 	count来控制一次获取多个元素
 	
@@ -714,16 +714,16 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 	
 		`SPOP key `
 	
-	由于集合是无序的，所以SPOP会从集合中随机选择一个元素弹出
+		由于集合是无序的，所以SPOP会从集合中随机选择一个元素弹出
 	
-	```
-	redis >SOPO letters	
-	"b"	
-	redis > SMEMBERS letters
-	1)"a"
-	2)"c"
-	3)"d"
-	```	
+		```
+		redis >SOPO letters	
+		"b"	
+		redis > SMEMBERS letters
+		1)"a"
+		2)"c"
+		3)"d"
+		```	
 	
 	
 ## 5）有序集合类型

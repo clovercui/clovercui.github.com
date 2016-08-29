@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 29 Aug 2016 16:04:09 +0800</pubDate>
-    <lastBuildDate>Mon, 29 Aug 2016 16:04:09 +0800</lastBuildDate>
+    <pubDate>Mon, 29 Aug 2016 16:06:32 +0800</pubDate>
+    <lastBuildDate>Mon, 29 Aug 2016 16:06:32 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -775,71 +775,71 @@ redis&amp;gt; SMEMBERS letters d
 &lt;/ol&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;* SDIFF用来对多个集合执行差集运算.
 
-集合A与集合B的差集表示A-B，代表所有属于A且不属于B的元素构成的集合
+    集合A与集合B的差集表示A-B，代表所有属于A且不属于B的元素构成的集合
 
-```
-redis &amp;gt; SADD setA 1 2 3
-(integer) 3
-redis &amp;gt; SADD setB 2 3 4
-(integer) 3
-redis &amp;gt; SDIFF setA set B 
-1）&quot;1&quot;
-redis &amp;gt; SDIFF setB setA 
-1) &quot;4&quot; 
-```
+    ```
+    redis &amp;gt; SADD setA 1 2 3
+    (integer) 3
+    redis &amp;gt; SADD setB 2 3 4
+    (integer) 3
+    redis &amp;gt; SDIFF setA set B 
+    1）&quot;1&quot;
+    redis &amp;gt; SDIFF setB setA 
+    1) &quot;4&quot; 
+    ```
 
-SDIFF支持同时传入多个键
+    SDIFF支持同时传入多个键
 
-`redis &amp;gt; SDIFF setA setB setC` 
+    `redis &amp;gt; SDIFF setA setB setC` 
 
-计算顺序是先计算setA-setB,在计算结果与setC差集。
+    计算顺序是先计算setA-setB,在计算结果与setC差集。
 
 * SINTER命令用来对多个集合执行交集运算。
 
-集合A与集合B的交集表示为A∩B，代表所有属于A且属于B的元素构成的集合
+    集合A与集合B的交集表示为A∩B，代表所有属于A且属于B的元素构成的集合
 
-```
-redis &amp;gt; SADD setA 1 2 3
-(integer) 3
-redis &amp;gt; SADD setB 2 3 4
-(integer) 3
-redis &amp;gt; SINTER setA setB
-1)&quot;2&quot;
-2)&quot;3&quot;
-```
+    ```
+    redis &amp;gt; SADD setA 1 2 3
+    (integer) 3
+    redis &amp;gt; SADD setB 2 3 4
+    (integer) 3
+    redis &amp;gt; SINTER setA setB
+    1)&quot;2&quot;
+    2)&quot;3&quot;
+    ```
 
 * SUNION 命令用来对多个集合执行并集运算
 
-集合A与集合B的并集表示为A∪B，代表所有属于A或者属于B的元素构成的集合
+    集合A与集合B的并集表示为A∪B，代表所有属于A或者属于B的元素构成的集合
 
-```
-redis &amp;gt; SADD setA 1 2 3
-(integer) 3
-redis &amp;gt; SADD setB 2 3 4
-(integer) 3
-redis &amp;gt; SINTER setA setB
-1)&quot;1&quot;
-2)&quot;2&quot;
-3)&quot;3&quot;
-4)&quot;4&quot;
-```
+    ```
+    redis &amp;gt; SADD setA 1 2 3
+    (integer) 3
+    redis &amp;gt; SADD setB 2 3 4
+    (integer) 3
+    redis &amp;gt; SINTER setA setB
+    1)&quot;1&quot;
+    2)&quot;2&quot;
+    3)&quot;3&quot;
+    4)&quot;4&quot;
+    ```
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ol&gt;
 &lt;li&gt;命令拾遗&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;* 获得集合中元素个数
 
-`SCARD key`
+    `SCARD key`
 
-SCARD命令用来获得集合中的元素个数
+    SCARD命令用来获得集合中的元素个数
 
-```
-redis &amp;gt; SMEMBERS letters
-1)&quot;b&quot;
-2)&quot;2&quot;
-redis &amp;gt; SCARD letters
-(integer)2
-```
+    ```
+    redis &amp;gt; SMEMBERS letters
+    1)&quot;b&quot;
+    2)&quot;2&quot;
+    redis &amp;gt; SCARD letters
+    (integer)2
+    ```
 
 * 进行集合运算并将结果存储
 
@@ -849,20 +849,20 @@ redis &amp;gt; SCARD letters
 
     `SUNINONSTORE destination key [key ...]`
 
-结果存储在 destination的键中
+    结果存储在 destination的键中
 
 * 随机获得集合中的元素
 
     `SRANDMEMBER key    [count]`
 
-SRANDMEMBER 命令用来随机从集合中获取一个元素
+    SRANDMEMBER 命令用来随机从集合中获取一个元素
 
-```
-redis &amp;gt; SRANDMEMBER letters
-&quot;a&quot;
-redis &amp;gt; SRANDMEMBER letters
-&quot;b&quot;
-```
+    ```
+    redis &amp;gt; SRANDMEMBER letters
+    &quot;a&quot;
+    redis &amp;gt; SRANDMEMBER letters
+    &quot;b&quot;
+    ```
 
 count来控制一次获取多个元素
 
@@ -874,16 +874,16 @@ count来控制一次获取多个元素
 
     `SPOP key `
 
-由于集合是无序的，所以SPOP会从集合中随机选择一个元素弹出
+    由于集合是无序的，所以SPOP会从集合中随机选择一个元素弹出
 
-```
-redis &amp;gt;SOPO letters 
-&quot;b&quot; 
-redis &amp;gt; SMEMBERS letters
-1)&quot;a&quot;
-2)&quot;c&quot;
-3)&quot;d&quot;
-``` 
+    ```
+    redis &amp;gt;SOPO letters 
+    &quot;b&quot; 
+    redis &amp;gt; SMEMBERS letters
+    1)&quot;a&quot;
+    2)&quot;c&quot;
+    3)&quot;d&quot;
+    ``` 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;5）有序集合类型&lt;/h2&gt;
 
