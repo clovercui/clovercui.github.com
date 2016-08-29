@@ -766,30 +766,27 @@ redis&gt; SMEMBERS letters d
 
 <p><code>SINTER key [key ...]</code></p>
 
-<p><code>SUNION key [key ...]</code>  </p></li>
+<p><code>SUNION key [key ...]</code>  </p>
+
+<p>SDIFF用来对多个集合执行差集运算.</p>
+
+<p>集合A与集合B的差集表示A-B，代表所有属于A且不属于B的元素构成的集合</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis &gt; SADD setA 1 2 3
+(integer) 3
+redis &gt; SADD setB 2 3 4
+(integer) 3
+redis &gt; SDIFF setA set B 
+1）"1"
+redis &gt; SDIFF setB setA 
+1) "4" 
+</code></pre></div>
+<p>SDIFF支持同时传入多个键</p>
+
+<p><code>redis &gt; SDIFF setA setB setC</code> </p>
+
+<p>计算顺序是先计算setA-setB,在计算结果与setC差集。</p></li>
 </ol>
-<div class="highlight"><pre><code class="language-" data-lang="">- SDIFF用来对多个集合执行差集运算.
-
-    集合A与集合B的差集表示A-B，代表所有属于A且不属于B的元素构成的集合
-
-    ```
-    redis &gt; SADD setA 1 2 3
-    (integer) 3
-    redis &gt; SADD setB 2 3 4
-    (integer) 3
-    redis &gt; SDIFF setA set B 
-    1）"1"
-    redis &gt; SDIFF setB setA 
-    1) "4" 
-    ```
-
-    SDIFF支持同时传入多个键
-
-    `redis &gt; SDIFF setA setB setC` 
-
-    计算顺序是先计算setA-setB,在计算结果与setC差集。
-
-- SINTER命令用来对多个集合执行交集运算。
+<div class="highlight"><pre><code class="language-" data-lang="">- SINTER命令用来对多个集合执行交集运算。
 
     集合A与集合B的交集表示为A∩B，代表所有属于A且属于B的元素构成的集合
 

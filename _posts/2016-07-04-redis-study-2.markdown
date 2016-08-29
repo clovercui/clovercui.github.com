@@ -614,26 +614,26 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 	
 	`SUNION key [key ...]`	
 
-	- SDIFF用来对多个集合执行差集运算.
+	SDIFF用来对多个集合执行差集运算.
 	
-		集合A与集合B的差集表示A-B，代表所有属于A且不属于B的元素构成的集合
+	集合A与集合B的差集表示A-B，代表所有属于A且不属于B的元素构成的集合
 	
-		```
-		redis > SADD setA 1 2 3
-		(integer) 3
-		redis > SADD setB 2 3 4
-		(integer) 3
-		redis > SDIFF setA set B 
-		1）"1"
-		redis > SDIFF setB setA 
-		1) "4" 
-		```
+	```
+	redis > SADD setA 1 2 3
+	(integer) 3
+	redis > SADD setB 2 3 4
+	(integer) 3
+	redis > SDIFF setA set B 
+	1）"1"
+	redis > SDIFF setB setA 
+	1) "4" 
+	```
 	
-		SDIFF支持同时传入多个键
+	SDIFF支持同时传入多个键
 	
-		`redis > SDIFF setA setB setC` 
+	`redis > SDIFF setA setB setC` 
 	
-		计算顺序是先计算setA-setB,在计算结果与setC差集。
+	计算顺序是先计算setA-setB,在计算结果与setC差集。
 	
 	- SINTER命令用来对多个集合执行交集运算。
 	
