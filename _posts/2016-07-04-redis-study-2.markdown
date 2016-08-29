@@ -390,6 +390,7 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 	
 	LPUSH命令用来向列表左边增加元素，返回值表示增加元素后列表的长度
 	
+	```
 		redis> LPUSH numbers 1
 		(integer) 1
 		
@@ -399,14 +400,16 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 		(integer) 3
 		
 		[ 3 2 1 ]
+	```
 	
 	LPUSH 会向列表左边先加入 2 再加入 3
-		
+	
+	```	
 		redis> RPUSH numbers 0 -1
 		(integer) 5
-		
 		[3 2 1 0 -1]	
-
+	```
+	
 2. 从列表两端弹出元素
 
 	`LPOP key`
@@ -414,13 +417,14 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 	`RPOP key `
 
 	有进有出，LPOP可以从列表左边弹出一个元素。LPOP命令执行两步操作：第一步是将列表左边的元素从列表移除，第二步是返回被移除的元素值
-
+	
+	```
 		redis> LPOP numbers
 		"3"
-	
 		redis> RPOP numbers
 		"-1"
-
+	```
+	
 	`结合上面提到的4个命令可以使用列表类型来模拟栈和队列的操作`
 
 	`栈：LPUSH和LPOP   RPUSH和RPOP`
@@ -434,9 +438,11 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 	`LLEN key`
 
 	当键不存在时LLEN会返回0
-
+	
+	```
 		redis>LLEN numbers
 		(integer) 3
+	```
 	
 	LLEN功能类似SQL语句 SELECT COUNT(*) FROM table_name 但是LLEN的时间复杂度为O(1) ,使用时Redis会直接读取现成的值，而不需要统计
 	
@@ -446,29 +452,37 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 	
 	返回索引从start到stop之间的所有元素（包含两端的元素），起始索引为0
 	
+	```
 		redis> LRANGE numbers 0 2
 		1)"2"
 		2)"1"
 		3)"0"
+	```
+	
 	LRANGE在取得列表片段的同时不会像LPOP一样删除该片段
 	
 	LRANGE也支持负索引 表示从右边开始计算序数
 	-1 表示最右边第一个元素 -2便是最右边第二个元素
 	
+	```
 		redis> LRANGE nubmers -2 -1
 		1)"1"
 		2)"0"	
+	```
 	
 	显然，LRANGE numbers 0 -1 可以获取列表中所有元素
 	
 	`特殊情况`
 	
 	* 如果start的索引位置比stop的索引位置靠后，返回空列表
+	
 	* 如果stop大于实际的索引范围，则返回到列表最右边的元素
 	
+	```
 		redis> LRANGE nubmers 1 999
 		1)"1"
 		2)"0"
+	```
 	
 5. 删除列表中指定的值
 		
@@ -477,23 +491,27 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 	LREM 会删除列表前count个值为value的元素，返回值是实际删除的元素个数，根据count值的不同，LREM执行方式有差异
 	
 	* 当count>0时，LREM会从列表左边开始删除前count个值为value的元素
+	
 	* 当count<0时，LREM会从列表右边开始删除|count|个值为value的值
+	
 	* 当count=0时，LREM会删除所有值为value的元素
 
 6. 命令拾遗
 
-	1.获得/设置指定索引的元素值
+	`1.`获得/设置指定索引的元素值
 	
 	`LINDEX key index`
 	
 	`LSET key index value`
 	
 	`LINDEX 返回指定索引的元素`
-		
+	
+	```	
 		redis> LINDEX numbers 0
 		"2"
 		redis> LINDEX numbers -1
 		"0"
+	```
 		
 	LSET是另一个通过索引操作列表的命令,它会将索引为index的元素赋值为value.例如
 		
@@ -502,12 +520,13 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 		redis> LINDEX nubmers 1
 		"7"			
 		
-	2.只保留列表指定片段
+	`2.`只保留列表指定片段
 	
 	`LTRIM key start end`
 	
 	LTRIM命令可以删除指定索引范围之外的所有元素，其指定列表范围的方法和LRANGE命令
 	
+	```
 		redis> LRANGE numbers 0 -1
 		1)"1"
 		2)"2"
@@ -519,19 +538,21 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 		redis> LRANGE numbers 0 1
 		1)"2"
 		2)"7"
-		
+	```	
+	
 	LTRIM命令常和LPUSH命令一起来使用用来限制列表中元素的数量，比如日志只保留100条
 	
 	LPUSHlogs $newlog
 	
 	LTROM logs 0 99
 	
-	3.向列表中插入元素
+	`3.`向列表中插入元素
 	
 	`LINSERT key BEFORE | AFTER pivot value`
 	
 	LINSERT 命令首先会在列表从左到右查找值为pivot的元素，然后根据BEFORE还是AFTER来决定将value插入到该元素的前面还是后面
 	
+	```
 		redis> LRANGE numbers 0 -1
 		1)"2"
 		2)"7"
@@ -543,6 +564,7 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 		2)"7"
 		3)"3"
 		4)"0"
+	```
 		
 	4.将元素从一个列表转到另一个列表
 	
@@ -614,7 +636,7 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 	
 	`SUNION key [key ...]`	
 
-	SDIFF用来对多个集合执行差集运算.
+	`1.`SDIFF用来对多个集合执行差集运算.
 	
 	集合A与集合B的差集表示A-B，代表所有属于A且不属于B的元素构成的集合
 	
@@ -629,7 +651,7 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 	1) "4" 
 	```
 	
-	SDIFF支持同时传入多个键
+	`2.`SDIFF支持同时传入多个键
 	
 	`redis > SDIFF setA setB setC` 
 	
@@ -649,7 +671,7 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 	2)"3"
 	```
 
-	SUNION 命令用来对多个集合执行并集运算
+	`3.`SUNION 命令用来对多个集合执行并集运算
 	
 	集合A与集合B的并集表示为A∪B，代表所有属于A或者属于B的元素构成的集合
 	
@@ -667,7 +689,7 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 
 5. 命令拾遗
 
-	获得集合中元素个数
+	`1.`获得集合中元素个数
 	
 	`SCARD key`
 	
@@ -691,7 +713,7 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 	 
 	结果存储在 destination的键中
 	
-	随机获得集合中的元素
+	`2.`随机获得集合中的元素
 	
 	`SRANDMEMBER key	[count]`
 	
@@ -710,7 +732,7 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 	
 	2）当count为负数时，随机获取|count|个元素，这些元素`有可能相同`
 	
-	从集合中弹出一个元素
+	`3.`从集合中弹出一个元素
 	
 	`SPOP key `
 	
