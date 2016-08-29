@@ -784,99 +784,85 @@ redis &gt; SDIFF setB setA
 
 <p><code>redis &gt; SDIFF setA setB setC</code> </p>
 
-<p>计算顺序是先计算setA-setB,在计算结果与setC差集。</p></li>
-</ol>
-<div class="highlight"><pre><code class="language-" data-lang="">- SINTER命令用来对多个集合执行交集运算。
+<p>计算顺序是先计算setA-setB,在计算结果与setC差集。</p>
 
-    集合A与集合B的交集表示为A∩B，代表所有属于A且属于B的元素构成的集合
+<p>SINTER命令用来对多个集合执行交集运算。</p>
 
-    ```
-    redis &gt; SADD setA 1 2 3
-    (integer) 3
-    redis &gt; SADD setB 2 3 4
-    (integer) 3
-    redis &gt; SINTER setA setB
-    1)"2"
-    2)"3"
-    ```
-
-- SUNION 命令用来对多个集合执行并集运算
-
-    集合A与集合B的并集表示为A∪B，代表所有属于A或者属于B的元素构成的集合
-
-    ```
-    redis &gt; SADD setA 1 2 3
-    (integer) 3
-    redis &gt; SADD setB 2 3 4
-    (integer) 3
-    redis &gt; SINTER setA setB
-    1)"1"
-    2)"2"
-    3)"3"
-    4)"4"
-    ```
+<p>集合A与集合B的交集表示为A∩B，代表所有属于A且属于B的元素构成的集合</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis &gt; SADD setA 1 2 3
+(integer) 3
+redis &gt; SADD setB 2 3 4
+(integer) 3
+redis &gt; SINTER setA setB
+1)"2"
+2)"3"
 </code></pre></div>
-<ol>
-<li>命令拾遗</li>
-</ol>
-<div class="highlight"><pre><code class="language-" data-lang="">* 获得集合中元素个数
+<p>SUNION 命令用来对多个集合执行并集运算</p>
 
-    `SCARD key`
+<p>集合A与集合B的并集表示为A∪B，代表所有属于A或者属于B的元素构成的集合</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis &gt; SADD setA 1 2 3
+(integer) 3
+redis &gt; SADD setB 2 3 4
+(integer) 3
+redis &gt; SINTER setA setB
+1)"1"
+2)"2"
+3)"3"
+4)"4"
+</code></pre></div></li>
+<li><p>命令拾遗</p>
 
-    SCARD命令用来获得集合中的元素个数
+<p>获得集合中元素个数</p>
 
-    ```
-    redis &gt; SMEMBERS letters
-    1)"b"
-    2)"2"
-    redis &gt; SCARD letters
-    (integer)2
-    ```
+<p><code>SCARD key</code></p>
 
-* 进行集合运算并将结果存储
-
-    `SDIFFSTORE destination key  [key ...]`
-
-    `SINTERSTORE destination key [key ...]`
-
-    `SUNINONSTORE destination key [key ...]`
-
-    结果存储在 destination的键中
-
-* 随机获得集合中的元素
-
-    `SRANDMEMBER key    [count]`
-
-    SRANDMEMBER 命令用来随机从集合中获取一个元素
-
-    ```
-    redis &gt; SRANDMEMBER letters
-    "a"
-    redis &gt; SRANDMEMBER letters
-    "b"
-    ```
-
-count来控制一次获取多个元素
-
-    1）当count为正数时，随机获取count个数不重复的数，大于元素总个数，返回全部
-
-    2）当count为负数时，随机获取|count|个元素，这些元素`有可能相同`
-
-* 从集合中弹出一个元素
-
-    `SPOP key `
-
-    由于集合是无序的，所以SPOP会从集合中随机选择一个元素弹出
-
-    ```
-    redis &gt;SOPO letters 
-    "b" 
-    redis &gt; SMEMBERS letters
-    1)"a"
-    2)"c"
-    3)"d"
-    ``` 
+<p>SCARD命令用来获得集合中的元素个数</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis &gt; SMEMBERS letters
+1)"b"
+2)"2"
+redis &gt; SCARD letters
+(integer)2
 </code></pre></div>
+<p>进行集合运算并将结果存储</p>
+
+<p><code>SDIFFSTORE destination key  [key ...]</code></p>
+
+<p><code>SINTERSTORE destination key [key ...]</code></p>
+
+<p><code>SUNINONSTORE destination key [key ...]</code></p>
+
+<p>结果存储在 destination的键中</p>
+
+<p>随机获得集合中的元素</p>
+
+<p><code>SRANDMEMBER key    [count]</code></p>
+
+<p>SRANDMEMBER 命令用来随机从集合中获取一个元素</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis &gt; SRANDMEMBER letters
+"a"
+redis &gt; SRANDMEMBER letters
+"b"
+</code></pre></div>
+<p>count来控制一次获取多个元素</p>
+
+<p>1）当count为正数时，随机获取count个数不重复的数，大于元素总个数，返回全部</p>
+
+<p>2）当count为负数时，随机获取|count|个元素，这些元素<code>有可能相同</code></p>
+
+<p>从集合中弹出一个元素</p>
+
+<p><code>SPOP key</code></p>
+
+<p>由于集合是无序的，所以SPOP会从集合中随机选择一个元素弹出</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis &gt;SOPO letters 
+"b" 
+redis &gt; SMEMBERS letters
+1)"a"
+2)"c"
+3)"d"
+</code></pre></div></li>
+</ol>
+
 <h2>5）有序集合类型</h2>
 
 <p><code>在集合的基础上有序集合类型为集合中的每个元素都关联了一个分数，这使得我们不仅可以完成插入、删除和判断元素是否存在等集合类型支持的操作，还能够获得分数最高（或最低）的前N个元素</code></p>
