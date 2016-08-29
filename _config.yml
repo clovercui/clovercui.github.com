@@ -23,7 +23,6 @@ github_username:    clovercui
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 highlighter: rouge
-fenced_code_blocks: true #代码换行
 permalink: pretty
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
@@ -44,8 +43,15 @@ gems: [jekyll-paginate]
 markdown: kramdown
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
-
-
+# fenced_code_blocks: true
+ auto_ids:       true
+# footnote_nr:    1
+# entity_output:  as_char
+# toc_levels:     1..6
+# smart_quotes:   lsquo,rsquo,ldquo,rdquo
+# input:          GFM
+# hard_wrap:      false
+# footnote_nr:    1
 
 # Disqus settings
 #disqus_username: _your_disqus_short_name_
