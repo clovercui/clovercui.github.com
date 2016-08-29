@@ -768,7 +768,7 @@ redis&gt; SMEMBERS letters d
 
 <p><code>SUNION key [key ...]</code>  </p></li>
 </ol>
-<div class="highlight"><pre><code class="language-" data-lang="">* SDIFF用来对多个集合执行差集运算.
+<div class="highlight"><pre><code class="language-" data-lang="">- SDIFF用来对多个集合执行差集运算.
 
     集合A与集合B的差集表示A-B，代表所有属于A且不属于B的元素构成的集合
 
@@ -789,7 +789,7 @@ redis&gt; SMEMBERS letters d
 
     计算顺序是先计算setA-setB,在计算结果与setC差集。
 
-* SINTER命令用来对多个集合执行交集运算。
+- SINTER命令用来对多个集合执行交集运算。
 
     集合A与集合B的交集表示为A∩B，代表所有属于A且属于B的元素构成的集合
 
@@ -803,7 +803,7 @@ redis&gt; SMEMBERS letters d
     2)"3"
     ```
 
-* SUNION 命令用来对多个集合执行并集运算
+- SUNION 命令用来对多个集合执行并集运算
 
     集合A与集合B的并集表示为A∪B，代表所有属于A或者属于B的元素构成的集合
 
