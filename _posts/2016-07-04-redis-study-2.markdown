@@ -767,9 +767,9 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 	
 	`ZSCORE key member`
 	
-	```
-	ZSCORE scoreboard Tom
 	
+	```
+	ZSCORE scoreboard Tom 
 	"89"
 	```
 		
