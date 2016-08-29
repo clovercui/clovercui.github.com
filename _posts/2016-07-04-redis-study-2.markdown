@@ -809,8 +809,89 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 		
 3. 获得排名在某个范围的元素列表	
 
+	`ZRANGE key start stop [WITHSCORES]`
+	
+	`ZREVRANGE key start stop [WITHSCORES]`
+	
+	ZRANGE命令会按照元素分数从小到大的顺序返回索引从start 到 stop的所以元素（包含两端的元素）。ZRANGE和LRANGE类似，索引都是从0开始，负值代表从后向前查找（-1表示最后一个元素）
+	
+	```
+	redis> ZRANGE scoreboard 0 2
+	1)"Peter"
+	2)"Tom"
+	3)"David"
+	redis> ZRANGE scoreboard 1 -1
+	1)"Tom"
+	2)"David"
+	```
+	如果需要同时获得元素的分数的话可以在尾部加上 WITHSCORES 参数
+	
+	```
+	redis> ZRANGE scoreboard 0 -1 WITHSCORES
+	1)"Peter"
+	2)"76"
+	3)"Tom"
+	4)"89"
+	5)"David"
+	6)"100"
+	```
+	
+	ZRANGE命令的时间复杂度为O(log n+m)(其中n为有序集合的基数，m为返回元素的个数)
+	
+	分数相同的按照字典顺序排列
+	
+4. 获取指定分数范围的元素
 
+	`ZRANGEBYSCORE key min max [WITHSCORES] [LIMIT offset count]`
+	
+	该命令返回按照分数从小到大顺序返回分数在 min 和max之间的（包含min,max）元素
+	
+	```
+	redis> ZRANGEBYSCORE scoreboard 80 100
+	1)"Tom"
+	2)"David"
+	```	
+	
+	如果不包含端点 加上  "(" 符号
+	
+	```
+	redis> ZRANGEBYSCORE scoreboard 80 (100
+	1)"Tom"
+	```	
+	
+	大于80分
+	
+	```
+	redis> ZRANGEBYSCORE scoreboard (80 +inf
+	1)"Tom"
+	```	
+    
+	小于80分
 
+	```
+	redis> ZRANGEBYSCORE scoreboard -inf (80
+	1)"Tom"
+	```	
+
+	LIMIT offset count 用法和 sql类似获得元素列表基础上向后偏移offset个元素，并只获取前count个元素
+	
+5. 增加某个元素的分数
+
+	`ZINCRBY key increment member`
+	
+	ZINCRBY 可以增加一个元素的分数，返回增加后的分数
+	
+	```
+	redis > ZINCRBY scoreborad 4 Jerry
+	"60"
+	```	
+	increment 也可以是个负数表示减分
+	
+	```
+	redis > ZINCRBY scoreborad -4 Jerry
+	"56"
+	```
+	如果元素不存在，先会建立它并将它的分数赋值为0再执行操作。
 
 	
 	

@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 29 Aug 2016 16:16:40 +0800</pubDate>
-    <lastBuildDate>Mon, 29 Aug 2016 16:16:40 +0800</lastBuildDate>
+    <pubDate>Mon, 29 Aug 2016 17:56:32 +0800</pubDate>
+    <lastBuildDate>Mon, 29 Aug 2016 17:56:32 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -913,7 +913,68 @@ redis&amp;gt; ZADD testboard -inf d
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;ZSCORE scoreboard Tom 
 &quot;89&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;获得排名在某个范围的元素列表   &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;获得排名在某个范围的元素列表   &lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ZRANGE key start stop [WITHSCORES]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ZREVRANGE key start stop [WITHSCORES]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;ZRANGE命令会按照元素分数从小到大的顺序返回索引从start 到 stop的所以元素（包含两端的元素）。ZRANGE和LRANGE类似，索引都是从0开始，负值代表从后向前查找（-1表示最后一个元素）&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;redis&amp;gt; ZRANGE scoreboard 0 2
+1)&quot;Peter&quot;
+2)&quot;Tom&quot;
+3)&quot;David&quot;
+redis&amp;gt; ZRANGE scoreboard 1 -1
+1)&quot;Tom&quot;
+2)&quot;David&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果需要同时获得元素的分数的话可以在尾部加上 WITHSCORES 参数&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;redis&amp;gt; ZRANGE scoreboard 0 -1 WITHSCORES
+1)&quot;Peter&quot;
+2)&quot;76&quot;
+3)&quot;Tom&quot;
+4)&quot;89&quot;
+5)&quot;David&quot;
+6)&quot;100&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ZRANGE命令的时间复杂度为O(log n+m)(其中n为有序集合的基数，m为返回元素的个数)&lt;/p&gt;
+
+&lt;p&gt;分数相同的按照字典顺序排列&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;获取指定分数范围的元素&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ZRANGEBYSCORE key min max [WITHSCORES] [LIMIT offset count]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;该命令返回按照分数从小到大顺序返回分数在 min 和max之间的（包含min,max）元素&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;redis&amp;gt; ZRANGEBYSCORE scoreboard 80 100
+1)&quot;Tom&quot;
+2)&quot;David&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果不包含端点 加上  &amp;quot;(&amp;quot; 符号&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;redis&amp;gt; ZRANGEBYSCORE scoreboard 80 (100
+1)&quot;Tom&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;大于80分&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;redis&amp;gt; ZRANGEBYSCORE scoreboard (80 +inf
+1)&quot;Tom&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;小于80分&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;redis&amp;gt; ZRANGEBYSCORE scoreboard -inf (80
+1)&quot;Tom&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;LIMIT offset count 用法和 sql类似获得元素列表基础上向后偏移offset个元素，并只获取前count个元素&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;增加某个元素的分数&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ZINCRBY key increment member&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;ZINCRBY 可以增加一个元素的分数，返回增加后的分数&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;redis &amp;gt; ZINCRBY scoreborad 4 Jerry
+&quot;60&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;increment 也可以是个负数表示减分&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;redis &amp;gt; ZINCRBY scoreborad -4 Jerry
+&quot;56&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果元素不存在，先会建立它并将它的分数赋值为0再执行操作。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         <pubDate>Mon, 04 Jul 2016 00:00:00 +0800</pubDate>

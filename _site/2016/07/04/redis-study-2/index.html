@@ -908,7 +908,68 @@ redis&gt; ZADD testboard -inf d
 <div class="highlight"><pre><code class="language-" data-lang="">ZSCORE scoreboard Tom 
 "89"
 </code></pre></div></li>
-<li><p>获得排名在某个范围的元素列表   </p></li>
+<li><p>获得排名在某个范围的元素列表   </p>
+
+<p><code>ZRANGE key start stop [WITHSCORES]</code></p>
+
+<p><code>ZREVRANGE key start stop [WITHSCORES]</code></p>
+
+<p>ZRANGE命令会按照元素分数从小到大的顺序返回索引从start 到 stop的所以元素（包含两端的元素）。ZRANGE和LRANGE类似，索引都是从0开始，负值代表从后向前查找（-1表示最后一个元素）</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; ZRANGE scoreboard 0 2
+1)"Peter"
+2)"Tom"
+3)"David"
+redis&gt; ZRANGE scoreboard 1 -1
+1)"Tom"
+2)"David"
+</code></pre></div>
+<p>如果需要同时获得元素的分数的话可以在尾部加上 WITHSCORES 参数</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; ZRANGE scoreboard 0 -1 WITHSCORES
+1)"Peter"
+2)"76"
+3)"Tom"
+4)"89"
+5)"David"
+6)"100"
+</code></pre></div>
+<p>ZRANGE命令的时间复杂度为O(log n+m)(其中n为有序集合的基数，m为返回元素的个数)</p>
+
+<p>分数相同的按照字典顺序排列</p></li>
+<li><p>获取指定分数范围的元素</p>
+
+<p><code>ZRANGEBYSCORE key min max [WITHSCORES] [LIMIT offset count]</code></p>
+
+<p>该命令返回按照分数从小到大顺序返回分数在 min 和max之间的（包含min,max）元素</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; ZRANGEBYSCORE scoreboard 80 100
+1)"Tom"
+2)"David"
+</code></pre></div>
+<p>如果不包含端点 加上  &quot;(&quot; 符号</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; ZRANGEBYSCORE scoreboard 80 (100
+1)"Tom"
+</code></pre></div>
+<p>大于80分</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; ZRANGEBYSCORE scoreboard (80 +inf
+1)"Tom"
+</code></pre></div>
+<p>小于80分</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; ZRANGEBYSCORE scoreboard -inf (80
+1)"Tom"
+</code></pre></div>
+<p>LIMIT offset count 用法和 sql类似获得元素列表基础上向后偏移offset个元素，并只获取前count个元素</p></li>
+<li><p>增加某个元素的分数</p>
+
+<p><code>ZINCRBY key increment member</code></p>
+
+<p>ZINCRBY 可以增加一个元素的分数，返回增加后的分数</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis &gt; ZINCRBY scoreborad 4 Jerry
+"60"
+</code></pre></div>
+<p>increment 也可以是个负数表示减分</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis &gt; ZINCRBY scoreborad -4 Jerry
+"56"
+</code></pre></div>
+<p>如果元素不存在，先会建立它并将它的分数赋值为0再执行操作。</p></li>
 </ol>
 
 
