@@ -901,9 +901,8 @@ redis &gt; SMEMBERS letters
 </code></pre></div><div class="highlight"><pre><code class="language-" data-lang="">redis&gt; ZADD scoreboard  76 Peter 
 (integer)0
 </code></pre></div>
-<p>分数不仅可以是整数，还支持双精度浮点数
-<code>
-redis&gt; ZADD testboard 17E+307 a
+<p>分数不仅可以是整数，还支持双精度浮点数</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; ZADD testboard 17E+307 a
 (integer)1
 redis&gt; ZADD testboard 1.5 b
 (integer)1
@@ -911,8 +910,7 @@ redis&gt; ZADD testboard +inf c
 (integer)1
 redis&gt; ZADD testboard -inf d
 (integer)1
-</code></p>
-
+</code></pre></div>
 <p>其中+inf和-inf分别表示正无穷和负无穷</p></li>
 <li><p>获得元素的分数</p>
 
