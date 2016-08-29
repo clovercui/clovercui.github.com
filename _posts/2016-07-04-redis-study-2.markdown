@@ -140,8 +140,10 @@ redis不支持自定义数据库的名字
 
 1. 赋值与取值
 		
-		SET key value
-		GET key  
+	`SET key value`
+	
+	`GET key  `
+		
 set和get是redis中最简单的两个命令
 
 	当键不存在时返回空结果
@@ -184,7 +186,8 @@ set和get是redis中最简单的两个命令
 		(integer)4
 		
 	3).增加指定浮点数
-	INCRBYFLOAT key increment
+	
+	`INCRBYFLOAT key increment`
 	
 	递增一个双精度浮点数	
 	
@@ -194,7 +197,8 @@ set和get是redis中最简单的两个命令
 		"50006.69999999999999929"
 		
 	4).向尾部追加值
-	APPEND key value
+	
+	`APPEND key value`
 	
 	APPEND 作用是向键值的末尾追加value.如果键不存在则将该值设置为value,即相当于SET key value.返回值是追加后字符串的总长度
 		
@@ -206,7 +210,7 @@ set和get是redis中最简单的两个命令
 	
 	5).获取字符串长度
 	
-	STRLEN key
+	`STRLEN key`
 	
 	STRLEN 命令返回键值的长度，如果键不存在返回0 
 	
@@ -221,9 +225,9 @@ set和get是redis中最简单的两个命令
 	
 	6).同时获得/设置多个键值
 		
-	MGET key[key ...]
+	`MGET key[key ...]`
 	
-	MMSET key value [key value ...]
+	`MMSET key value [key value ...]`
 		
 		redis> MSET key1 v1 key2 v2 key3 v3
 		redis> GET key2
@@ -234,13 +238,13 @@ set和get是redis中最简单的两个命令
 		 
 	7). 位操作
 	
-	GETBIT key offset
+	`GETBIT key offset`
 	
-	SETBIT key offset value
+	`SETBIT key offset value`
 	
-	BITCOUNT key [start] [key ...]
+	`BITCOUNT key [start] [key ...]`
 	
-	BITOP operation destkey key [key ...]
+	`BITOP operation destkey key [key ...]`
 	
 ---	
 			
@@ -249,15 +253,15 @@ set和get是redis中最简单的两个命令
 
 1. 赋值与取值
 
-	HSET key field value
+	`HSET key field value`
 	
-	HGET key field	
+	`HGET key field	`
 	
-	HMSET key field value [field value ...]
+	`HMSET key field value [field value ...]`
 	
-	HMGET key field [field ...]
+	`HMGET key field [field ...]`
 	
-	HGETALL key
+	`HGETALL key`
 	
 		redis> HSET car price 500
 		(interger)1
@@ -281,7 +285,7 @@ set和get是redis中最简单的两个命令
  
 2. 判断字段是否存在
    
-   HEXISTS key field
+   `HEXISTS key field`
    
    HEXISTS命令用来判断一个字段是否存在。如果存在则返回1，否则返回0（`如果键不存在也会返回0`）。
    	 
@@ -294,7 +298,7 @@ set和get是redis中最简单的两个命令
 
 3. 当字段不存在时赋值
 
-	HSETNX key field value
+	`HSETNX key field value`
 
 	HSETNX 命令与HSET命令相似，区别在于如果字段已经存在，HSETNX命令不执行任何操作
 
@@ -302,7 +306,7 @@ set和get是redis中最简单的两个命令
 	
 4. 增加数字
 
-	HINCRBY key field increment
+	`HINCRBY key field increment`
 	
 		redis> HINCRBY person score 60
 		(integer)60
@@ -310,7 +314,7 @@ set和get是redis中最简单的两个命令
 	
 5. 删除字段
 
-	HDELkey field [field]
+	`HDELkey field [field]`
 	
 	HDEL 命令可以删除一个或者多个字段，返回值是被删除的字段个数
 		
@@ -353,9 +357,9 @@ set和get是redis中最简单的两个命令
 
 1）只获取字段名或字段值
 
-HEKYS key
+`HEKYS key`
 
-HVALS key
+`HVALS key`
 
 有时仅仅需要获取键中所有字段的名字而不需要字段值，那么可以使用HEKYS命令
 	
@@ -370,7 +374,7 @@ HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段�
 
 2)获取字段数量
 
-HLEN key
+`HLEN key`
 
 	redis> HLEN car
 	(integer) 2 				
@@ -380,9 +384,9 @@ HLEN key
 
 1. 向列表两端增加元素
 
-	LPUSH key value [value ...]
+	`LPUSH key value [value ...]`
 	
-	RPUSH key value [value ...]
+	`RPUSH key value [value ...]`
 	
 	LPUSH命令用来向列表左边增加元素，返回值表示增加元素后列表的长度
 	
@@ -405,9 +409,9 @@ HLEN key
 
 2. 从列表两端弹出元素
 
-	LPOP key
+	`LPOP key`
 
-	RPOP key 
+	`RPOP key `
 
 	有进有出，LPOP可以从列表左边弹出一个元素。LPOP命令执行两步操作：第一步是将列表左边的元素从列表移除，第二步是返回被移除的元素值
 
@@ -427,7 +431,7 @@ HLEN key
 
 3. 获取列表中元素的个数
 
-	LLEN key
+	`LLEN key`
 
 	当键不存在时LLEN会返回0
 
@@ -438,7 +442,7 @@ HLEN key
 	
 4. 获取列表片段
 
-	LRANGE key start stop
+	`LRANGE key start stop`
 	
 	返回索引从start到stop之间的所有元素（包含两端的元素），起始索引为0
 	
@@ -468,7 +472,7 @@ HLEN key
 	
 5. 删除列表中指定的值
 		
-	LREM key count value
+	`LREM key count value`
 	
 	LREM 会删除列表前count个值为value的元素，返回值是实际删除的元素个数，根据count值的不同，LREM执行方式有差异
 	
@@ -480,11 +484,11 @@ HLEN key
 
 	1.获得/设置指定索引的元素值
 	
-	LINDEX key index
+	`LINDEX key index`
 	
-	LSET key index value
+	`LSET key index value`
 	
-	LINDEX 返回指定索引的元素
+	`LINDEX 返回指定索引的元素`
 		
 		redis> LINDEX numbers 0
 		"2"
@@ -500,7 +504,7 @@ HLEN key
 		
 	2.只保留列表指定片段
 	
-	LTRIM key start end
+	`LTRIM key start end`
 	
 	LTRIM命令可以删除指定索引范围之外的所有元素，其指定列表范围的方法和LRANGE命令
 	
@@ -524,7 +528,7 @@ HLEN key
 	
 	3.向列表中插入元素
 	
-	LINSERT key BEFORE | AFTER pivot value
+	`LINSERT key BEFORE | AFTER pivot value`
 	
 	LINSERT 命令首先会在列表从左到右查找值为pivot的元素，然后根据BEFORE还是AFTER来决定将value插入到该元素的前面还是后面
 	
@@ -542,7 +546,7 @@ HLEN key
 		
 	4.将元素从一个列表转到另一个列表
 	
-	RPOPLPUSH source destination
+	`RPOPLPUSH source destination`
 	
 	RPOPLPUSH功能：先执行RPOP命令再执行LPUSH命令。RPOPLPUSH命令会先从source列表类型键的右边弹出一个元素，然后将其加入到destination列表类型键的左边，并返回这个元素的值，整个过程是原子的。
 	
@@ -556,9 +560,9 @@ HLEN key
 
 1. 增加/删除元素
 
-	SADD key member [member ...]
+	`SADD key member [member ...]`
 	
-	SREM key member [member ...]
+	`SREM key member [member ...]`
 	
 	SADD命令用来向集合中增加一个或多个元素，如果键不存在则自动创建。因为一个集合中不能有相同的元素，相同键的元素会被忽略执行
 	
@@ -576,7 +580,7 @@ HLEN key
 
 2. 获得集合中的所有元素
 
-	SMEMBERS key
+	`SMEMBERS key`
 	
 	SMEMBERS命令会返回集合中的所有元素
 		
@@ -586,7 +590,7 @@ HLEN key
 
 3. 判断元素是否在集合中
 
-	SMEMBERS key member
+	`SMEMBERS key member`
 	
 	判断一个元素是否在集合中是一个时间复杂度为O(1)的操作，无论集合元素多少，都可以很快速的返回结果。当值存在时SMEMBERS命令返回1，不存在返回0
 	
@@ -597,9 +601,11 @@ HLEN key
 
 4. 集合间运算
 
-	SDIFF key [key ...]
-	SINTER key [key ...]
-	SUNION key [key ...]		
+	`SDIFF key [key ...]`
+	
+	`SINTER key [key ...]`
+	
+	`SUNION key [key ...]`	
 
 	* SDIFF用来对多个集合执行差集运算.
 	
@@ -652,9 +658,10 @@ HLEN key
 
 	* 获得集合中元素个数
 	
-	SCARD key
+		`SCARD key`
 	
 	SCARD命令用来获得集合中的元素个数
+	
 	```
 	redis > SMEMBERS letters
 	1)"b"
@@ -665,17 +672,17 @@ HLEN key
 
 	* 进行集合运算并将结果存储
 	
-	SDIFFSTORE destination key  [key ...]
+		`SDIFFSTORE destination key  [key ...]`
 	
-	SINTERSTORE destination key [key ...]
+		`SINTERSTORE destination key [key ...]`
 	
-	SUNINONSTORE destination key [key ...]
+		`SUNINONSTORE destination key [key ...]`
 	 
 	结果存储在 destination的键中
 	
 	* 随机获得集合中的元素
 	
-	SRANDMEMBER key	[count]
+		`SRANDMEMBER key	[count]`
 	
 	SRANDMEMBER 命令用来随机从集合中获取一个元素
 	
@@ -688,13 +695,13 @@ HLEN key
 	
 	count来控制一次获取多个元素
 	
-	1）当count为正数时，随机获取count个数不重复的数，大于元素总个数，返回全部
+		1）当count为正数时，随机获取count个数不重复的数，大于元素总个数，返回全部
 	
-	2）当count为负数时，随机获取|count|个元素，这些元素`有可能相同`
+		2）当count为负数时，随机获取|count|个元素，这些元素`有可能相同`
 	
 	* 从集合中弹出一个元素
 	
-	SPOP key 
+		`SPOP key `
 	
 	由于集合是无序的，所以SPOP会从集合中随机选择一个元素弹出
 	
@@ -714,18 +721,27 @@ HLEN key
 
 有序集合类型在某些方面和列表类型有些相似
 
-* （1）二者都是有序的
-* （2）二者都可以获得某一范围的元素
+	* （1）二者都是有序的
+	* （2）二者都可以获得某一范围的元素
 
 但是二者有很大的区别，使得他们的应用场景也不相同
 
-* （1）列表类型通过链表实现，获取靠近两端的元素极快，当元素增多时，访问中间元素的速度会变慢，所以他更加适合实现如“新鲜事”“日志”这样很少访问中间元素的应用
-* （2）有序集合类型是使用散列表和跳跃表实现的，即使读取中间部分的 数据也很快（时间复杂度是O(log(N))）
-* （3）列表中不能简单的调整某个元素的位置，但是有序集合可以（通过更改元素的分数）
-* （4）`有序集合比列表类型更消耗内存`
+	* （1）列表类型通过链表实现，获取靠近两端的元素极快，当元素增多时，访问中间元素的速度会变慢，所以他更加适合实现如“新鲜事”“日志”这样很少访问中间元素的应用
+	* （2）有序集合类型是使用散列表和跳跃表实现的，即使读取中间部分的 数据也很快（时间复杂度是O(log(N))）
+	* （3）列表中不能简单的调整某个元素的位置，但是有序集合可以（通过更改元素的分数）
+	* （4）`有序集合比列表类型更消耗内存`
+
 
 
 1. 增加元素
+
+	`ZADD key score member [score member...]`
+	
+	ZADD命令用来向有序集合中添加一个元素和该元素的分数，如果该元素已经存在则会用新的分数替换原有的分数。ZADD返回的是新加入到元素集合中的个数（不包含之前已经存在的元素）
+	
+	
+
+
 
 
 

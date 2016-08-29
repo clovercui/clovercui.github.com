@@ -375,13 +375,19 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
   <li>
     <p>赋值与取值</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> SET key value
- GET key   set和get是redis中最简单的两个命令
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">SET key value</code></p>
 
-    <p>当键不存在时返回空结果</p>
+    <p><code class="highlighter-rouge">GET key  </code></p>
   </li>
+</ol>
+
+<p>set和get是redis中最简单的两个命令</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>当键不存在时返回空结果
+</code></pre>
+</div>
+
+<ol>
   <li>
     <p>递增数字</p>
 
@@ -433,8 +439,9 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 </code></pre>
     </div>
 
-    <p>3).增加指定浮点数<br />
- INCRBYFLOAT key increment</p>
+    <p>3).增加指定浮点数</p>
+
+    <p><code class="highlighter-rouge">INCRBYFLOAT key increment</code></p>
 
     <p>递增一个双精度浮点数</p>
 
@@ -445,8 +452,9 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 </code></pre>
     </div>
 
-    <p>4).向尾部追加值<br />
- APPEND key value</p>
+    <p>4).向尾部追加值</p>
+
+    <p><code class="highlighter-rouge">APPEND key value</code></p>
 
     <p>APPEND 作用是向键值的末尾追加value.如果键不存在则将该值设置为value,即相当于SET key value.返回值是追加后字符串的总长度</p>
 
@@ -459,7 +467,7 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 
     <p>5).获取字符串长度</p>
 
-    <p>STRLEN key</p>
+    <p><code class="highlighter-rouge">STRLEN key</code></p>
 
     <p>STRLEN 命令返回键值的长度，如果键不存在返回0</p>
 
@@ -476,9 +484,9 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 
     <p>6).同时获得/设置多个键值</p>
 
-    <p>MGET key[key …]</p>
+    <p><code class="highlighter-rouge">MGET key[key ...]</code></p>
 
-    <p>MMSET key value [key value …]</p>
+    <p><code class="highlighter-rouge">MMSET key value [key value ...]</code></p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; MSET key1 v1 key2 v2 key3 v3
  redis&gt; GET key2
@@ -491,13 +499,13 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 
     <p>7). 位操作</p>
 
-    <p>GETBIT key offset</p>
+    <p><code class="highlighter-rouge">GETBIT key offset</code></p>
 
-    <p>SETBIT key offset value</p>
+    <p><code class="highlighter-rouge">SETBIT key offset value</code></p>
 
-    <p>BITCOUNT key [start] [key …]</p>
+    <p><code class="highlighter-rouge">BITCOUNT key [start] [key ...]</code></p>
 
-    <p>BITOP operation destkey key [key …]</p>
+    <p><code class="highlighter-rouge">BITOP operation destkey key [key ...]</code></p>
   </li>
 </ol>
 
@@ -509,15 +517,15 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
   <li>
     <p>赋值与取值</p>
 
-    <p>HSET key field value</p>
+    <p><code class="highlighter-rouge">HSET key field value</code></p>
 
-    <p>HGET key field</p>
+    <p><code class="highlighter-rouge">HGET key field	</code></p>
 
-    <p>HMSET key field value [field value …]</p>
+    <p><code class="highlighter-rouge">HMSET key field value [field value ...]</code></p>
 
-    <p>HMGET key field [field …]</p>
+    <p><code class="highlighter-rouge">HMGET key field [field ...]</code></p>
 
-    <p>HGETALL key</p>
+    <p><code class="highlighter-rouge">HGETALL key</code></p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; HSET car price 500
  (interger)1
@@ -545,7 +553,7 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
   <li>
     <p>判断字段是否存在</p>
 
-    <p>HEXISTS key field</p>
+    <p><code class="highlighter-rouge">HEXISTS key field</code></p>
 
     <p>HEXISTS命令用来判断一个字段是否存在。如果存在则返回1，否则返回0（<code class="highlighter-rouge">如果键不存在也会返回0</code>）。</p>
 
@@ -561,7 +569,7 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
   <li>
     <p>当字段不存在时赋值</p>
 
-    <p>HSETNX key field value</p>
+    <p><code class="highlighter-rouge">HSETNX key field value</code></p>
 
     <p>HSETNX 命令与HSET命令相似，区别在于如果字段已经存在，HSETNX命令不执行任何操作</p>
 
@@ -570,7 +578,7 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
   <li>
     <p>增加数字</p>
 
-    <p>HINCRBY key field increment</p>
+    <p><code class="highlighter-rouge">HINCRBY key field increment</code></p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; HINCRBY person score 60
  (integer)60  之前person键不存在，HINCARBY命令会自动建立该键并默认score字段在执行前的值为0.命令的返回值是增值后的字段值
@@ -580,7 +588,7 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
   <li>
     <p>删除字段</p>
 
-    <p>HDELkey field [field]</p>
+    <p><code class="highlighter-rouge">HDELkey field [field]</code></p>
 
     <p>HDEL 命令可以删除一个或者多个字段，返回值是被删除的字段个数</p>
 
@@ -629,9 +637,9 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 
 <p>1）只获取字段名或字段值</p>
 
-<p>HEKYS key</p>
+<p><code class="highlighter-rouge">HEKYS key</code></p>
 
-<p>HVALS key</p>
+<p><code class="highlighter-rouge">HVALS key</code></p>
 
 <p>有时仅仅需要获取键中所有字段的名字而不需要字段值，那么可以使用HEKYS命令</p>
 
@@ -647,7 +655,7 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 
 <p>2)获取字段数量</p>
 
-<p>HLEN key</p>
+<p><code class="highlighter-rouge">HLEN key</code></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>redis&gt; HLEN car
 (integer) 2 				
@@ -660,9 +668,9 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
   <li>
     <p>向列表两端增加元素</p>
 
-    <p>LPUSH key value [value …]</p>
+    <p><code class="highlighter-rouge">LPUSH key value [value ...]</code></p>
 
-    <p>RPUSH key value [value …]</p>
+    <p><code class="highlighter-rouge">RPUSH key value [value ...]</code></p>
 
     <p>LPUSH命令用来向列表左边增加元素，返回值表示增加元素后列表的长度</p>
 
@@ -690,9 +698,9 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
   <li>
     <p>从列表两端弹出元素</p>
 
-    <p>LPOP key</p>
+    <p><code class="highlighter-rouge">LPOP key</code></p>
 
-    <p>RPOP key</p>
+    <p><code class="highlighter-rouge">RPOP key </code></p>
 
     <p>有进有出，LPOP可以从列表左边弹出一个元素。LPOP命令执行两步操作：第一步是将列表左边的元素从列表移除，第二步是返回被移除的元素值</p>
 
@@ -713,7 +721,7 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
   <li>
     <p>获取列表中元素的个数</p>
 
-    <p>LLEN key</p>
+    <p><code class="highlighter-rouge">LLEN key</code></p>
 
     <p>当键不存在时LLEN会返回0</p>
 
@@ -727,7 +735,7 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
   <li>
     <p>获取列表片段</p>
 
-    <p>LRANGE key start stop</p>
+    <p><code class="highlighter-rouge">LRANGE key start stop</code></p>
 
     <p>返回索引从start到stop之间的所有元素（包含两端的元素），起始索引为0</p>
 
@@ -765,7 +773,7 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
   <li>
     <p>删除列表中指定的值</p>
 
-    <p>LREM key count value</p>
+    <p><code class="highlighter-rouge">LREM key count value</code></p>
 
     <p>LREM 会删除列表前count个值为value的元素，返回值是实际删除的元素个数，根据count值的不同，LREM执行方式有差异</p>
 
@@ -790,11 +798,11 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 
     <p>1.获得/设置指定索引的元素值</p>
 
-    <p>LINDEX key index</p>
+    <p><code class="highlighter-rouge">LINDEX key index</code></p>
 
-    <p>LSET key index value</p>
+    <p><code class="highlighter-rouge">LSET key index value</code></p>
 
-    <p>LINDEX 返回指定索引的元素</p>
+    <p><code class="highlighter-rouge">LINDEX 返回指定索引的元素</code></p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; LINDEX numbers 0
  "2"
@@ -814,7 +822,7 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 
     <p>2.只保留列表指定片段</p>
 
-    <p>LTRIM key start end</p>
+    <p><code class="highlighter-rouge">LTRIM key start end</code></p>
 
     <p>LTRIM命令可以删除指定索引范围之外的所有元素，其指定列表范围的方法和LRANGE命令</p>
 
@@ -840,14 +848,7 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 
     <p>3.向列表中插入元素</p>
 
-    <table>
-      <tbody>
-        <tr>
-          <td>LINSERT key BEFORE</td>
-          <td>AFTER pivot value</td>
-        </tr>
-      </tbody>
-    </table>
+    <p><code class="highlighter-rouge">LINSERT key BEFORE | AFTER pivot value</code></p>
 
     <p>LINSERT 命令首先会在列表从左到右查找值为pivot的元素，然后根据BEFORE还是AFTER来决定将value插入到该元素的前面还是后面</p>
 
@@ -867,7 +868,7 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 
     <p>4.将元素从一个列表转到另一个列表</p>
 
-    <p>RPOPLPUSH source destination</p>
+    <p><code class="highlighter-rouge">RPOPLPUSH source destination</code></p>
 
     <p>RPOPLPUSH功能：先执行RPOP命令再执行LPUSH命令。RPOPLPUSH命令会先从source列表类型键的右边弹出一个元素，然后将其加入到destination列表类型键的左边，并返回这个元素的值，整个过程是原子的。</p>
 
@@ -883,9 +884,9 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
   <li>
     <p>增加/删除元素</p>
 
-    <p>SADD key member [member …]</p>
+    <p><code class="highlighter-rouge">SADD key member [member ...]</code></p>
 
-    <p>SREM key member [member …]</p>
+    <p><code class="highlighter-rouge">SREM key member [member ...]</code></p>
 
     <p>SADD命令用来向集合中增加一个或多个元素，如果键不存在则自动创建。因为一个集合中不能有相同的元素，相同键的元素会被忽略执行</p>
 
@@ -908,7 +909,7 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
   <li>
     <p>获得集合中的所有元素</p>
 
-    <p>SMEMBERS key</p>
+    <p><code class="highlighter-rouge">SMEMBERS key</code></p>
 
     <p>SMEMBERS命令会返回集合中的所有元素</p>
 
@@ -921,7 +922,7 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
   <li>
     <p>判断元素是否在集合中</p>
 
-    <p>SMEMBERS key member</p>
+    <p><code class="highlighter-rouge">SMEMBERS key member</code></p>
 
     <p>判断一个元素是否在集合中是一个时间复杂度为O(1)的操作，无论集合元素多少，都可以很快速的返回结果。当值存在时SMEMBERS命令返回1，不存在返回0</p>
 
@@ -935,9 +936,11 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
   <li>
     <p>集合间运算</p>
 
-    <p>SDIFF key [key …]<br />
- SINTER key [key …]<br />
- SUNION key [key …]</p>
+    <p><code class="highlighter-rouge">SDIFF key [key ...]</code></p>
+
+    <p><code class="highlighter-rouge">SINTER key [key ...]</code></p>
+
+    <p><code class="highlighter-rouge">SUNION key [key ...]</code></p>
 
     <ul>
       <li>SDIFF用来对多个集合执行差集运算.</li>
@@ -996,13 +999,16 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
     <p>命令拾遗</p>
 
     <ul>
-      <li>获得集合中元素个数</li>
+      <li>
+        <p>获得集合中元素个数</p>
+
+        <p><code class="highlighter-rouge">SCARD key</code></p>
+      </li>
     </ul>
 
-    <p>SCARD key</p>
+    <p>SCARD命令用来获得集合中的元素个数</p>
 
-    <p>SCARD命令用来获得集合中的元素个数<br />
- <code class="highlighter-rouge">
+    <p><code class="highlighter-rouge">
  redis &gt; SMEMBERS letters
  1)"b"
  2)"2"
@@ -1011,22 +1017,26 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 </code></p>
 
     <ul>
-      <li>进行集合运算并将结果存储</li>
+      <li>
+        <p>进行集合运算并将结果存储</p>
+
+        <p><code class="highlighter-rouge">SDIFFSTORE destination key  [key ...]</code></p>
+
+        <p><code class="highlighter-rouge">SINTERSTORE destination key [key ...]</code></p>
+
+        <p><code class="highlighter-rouge">SUNINONSTORE destination key [key ...]</code></p>
+      </li>
     </ul>
-
-    <p>SDIFFSTORE destination key  [key …]</p>
-
-    <p>SINTERSTORE destination key [key …]</p>
-
-    <p>SUNINONSTORE destination key [key …]</p>
 
     <p>结果存储在 destination的键中</p>
 
     <ul>
-      <li>随机获得集合中的元素</li>
-    </ul>
+      <li>
+        <p>随机获得集合中的元素</p>
 
-    <p>SRANDMEMBER key	[count]</p>
+        <p><code class="highlighter-rouge">SRANDMEMBER key	[count]</code></p>
+      </li>
+    </ul>
 
     <p>SRANDMEMBER 命令用来随机从集合中获取一个元素</p>
 
@@ -1039,23 +1049,19 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 
     <p>count来控制一次获取多个元素</p>
 
-    <p>1）当count为正数时，随机获取count个数不重复的数，大于元素总个数，返回全部</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code> 1）当count为正数时，随机获取count个数不重复的数，大于元素总个数，返回全部
 
-    <table>
-      <tbody>
-        <tr>
-          <td>2）当count为负数时，随机获取</td>
-          <td>count</td>
-          <td>个元素，这些元素<code class="highlighter-rouge">有可能相同</code></td>
-        </tr>
-      </tbody>
-    </table>
+ 2）当count为负数时，随机获取|count|个元素，这些元素`有可能相同`
+</code></pre>
+    </div>
 
     <ul>
-      <li>从集合中弹出一个元素</li>
-    </ul>
+      <li>
+        <p>从集合中弹出一个元素</p>
 
-    <p>SPOP key</p>
+        <p><code class="highlighter-rouge">SPOP key </code></p>
+      </li>
+    </ul>
 
     <p>由于集合是无序的，所以SPOP会从集合中随机选择一个元素弹出</p>
 
@@ -1076,22 +1082,28 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 
 <p>有序集合类型在某些方面和列表类型有些相似</p>
 
-<ul>
-  <li>（1）二者都是有序的</li>
-  <li>（2）二者都可以获得某一范围的元素</li>
-</ul>
+<div class="highlighter-rouge"><pre class="highlight"><code>* （1）二者都是有序的
+* （2）二者都可以获得某一范围的元素
+</code></pre>
+</div>
 
 <p>但是二者有很大的区别，使得他们的应用场景也不相同</p>
 
-<ul>
-  <li>（1）列表类型通过链表实现，获取靠近两端的元素极快，当元素增多时，访问中间元素的速度会变慢，所以他更加适合实现如“新鲜事”“日志”这样很少访问中间元素的应用</li>
-  <li>（2）有序集合类型是使用散列表和跳跃表实现的，即使读取中间部分的 数据也很快（时间复杂度是O(log(N))）</li>
-  <li>（3）列表中不能简单的调整某个元素的位置，但是有序集合可以（通过更改元素的分数）</li>
-  <li>（4）<code class="highlighter-rouge">有序集合比列表类型更消耗内存</code></li>
-</ul>
+<div class="highlighter-rouge"><pre class="highlight"><code>* （1）列表类型通过链表实现，获取靠近两端的元素极快，当元素增多时，访问中间元素的速度会变慢，所以他更加适合实现如“新鲜事”“日志”这样很少访问中间元素的应用
+* （2）有序集合类型是使用散列表和跳跃表实现的，即使读取中间部分的 数据也很快（时间复杂度是O(log(N))）
+* （3）列表中不能简单的调整某个元素的位置，但是有序集合可以（通过更改元素的分数）
+* （4）`有序集合比列表类型更消耗内存`
+</code></pre>
+</div>
 
 <ol>
-  <li>增加元素</li>
+  <li>
+    <p>增加元素</p>
+
+    <p><code class="highlighter-rouge">ZADD key score member [score member...]</code></p>
+
+    <p>ZADD命令用来向有序集合中添加一个元素和该元素的分数，如果该元素已经存在则会用新的分数替换原有的分数。ZADD返回的是新加入到元素集合中的个数（不包含之前已经存在的元素）</p>
+  </li>
 </ol>
 
 
