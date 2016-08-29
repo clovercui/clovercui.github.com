@@ -365,7 +365,7 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 
 <hr />
 
-<h1 id="section-3">一、入门</h1>
+<h1 id="section-3">二、入门</h1>
 
 <h2 id="section-4">1）字符串类型</h2>
 
@@ -1103,6 +1103,43 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
     <p><code class="highlighter-rouge">ZADD key score member [score member...]</code></p>
 
     <p>ZADD命令用来向有序集合中添加一个元素和该元素的分数，如果该元素已经存在则会用新的分数替换原有的分数。ZADD返回的是新加入到元素集合中的个数（不包含之前已经存在的元素）</p>
+
+    <p><code class="highlighter-rouge">
+ redis&gt; ZADD scoreboard 89 Tom 67 Peter 100 David
+ (integer)3
+</code></p>
+
+    <p><code class="highlighter-rouge">
+ redis&gt; ZADD scoreboard  76 Peter 
+ (integer)0
+</code></p>
+
+    <p>分数不仅可以是整数，还支持双精度浮点数<br />
+ <code class="highlighter-rouge">
+ redis&gt; ZADD testboard 17E+307 a
+ (integer)1
+ redis&gt; ZADD testboard 1.5 b
+ (integer)1
+ redis&gt; ZADD testboard +inf c
+ (integer)1
+ redis&gt; ZADD testboard -inf d
+ (integer)1
+</code></p>
+
+    <p>其中+inf和-inf分别表示正无穷和负无穷</p>
+  </li>
+  <li>
+    <p>获得元素的分数</p>
+
+    <p><code class="highlighter-rouge">ZSCORE key member</code></p>
+
+    <p><code class="highlighter-rouge">
+ ZSCORE scoreboard Tom
+ "89"
+</code></p>
+  </li>
+  <li>
+    <p>获得排名在某个范围的元素列表</p>
   </li>
 </ol>
 
