@@ -194,955 +194,734 @@
                 post-container">
 
 				<blockquote>
-  <p>参考书籍：Redis入门指南（第二版）李子骅 编著 人民邮电出版社</p>
+<p>参考书籍：Redis入门指南（第二版）李子骅 编著 人民邮电出版社</p>
 </blockquote>
 
-<h1 id="section">一、准备</h1>
+<h1>一、准备</h1>
 
-<h2 id="redis">1）启动Redis</h2>
+<h2>1）启动Redis</h2>
 
 <ol>
-  <li>
-    <p>直接启动<br />
-     <code class="highlighter-rouge">bash
-     # redis-server
-    </code><br />
- Redis 服务器 默认 会 使用 6379 端口 ,通过– port 参数 可以 自定义 端口</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> # redis-server --port 6380		
-</code></pre>
-    </div>
-  </li>
-  <li>通过初始化脚本启动（略过）</li>
-  <li>
-    <p>指定配置文件启动</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> # redis-server redis.conf
-</code></pre>
-    </div>
-  </li>
+<li><p>直接启动
+    <code>bash
+    # redis-server
+</code>
+Redis 服务器 默认 会 使用 6379 端口 ,通过-- port 参数 可以 自定义 端口</p>
+<div class="highlight"><pre><code class="language-" data-lang=""># redis-server --port 6380      
+</code></pre></div></li>
+<li><p>通过初始化脚本启动（略过）      </p></li>
+<li><p>指定配置文件启动</p>
+<div class="highlight"><pre><code class="language-" data-lang=""># redis-server redis.conf
+</code></pre></div></li>
 </ol>
 
-<h2 id="redis-1">2）停止Redis</h2>
+<h2>2）停止Redis</h2>
 
 <ul>
-  <li>
-    <p><strong>Redis有可能正在将内存中的数据同步到硬盘中，强行终止Redis进程可能会导致数据 丢失。 正确停止Redis的方式应该是向Redis发送SHUTDOWN 命令</strong></p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>  # redis-cli shutdown
-</code></pre>
-    </div>
-  </li>
-  <li>当Redis收到shutdown命令后，会先断开所有的客户端连接，然后根据配置执行持久化，最后完成退出</li>
-  <li>Redis会妥善处理<code class="highlighter-rouge">sigterm</code>信号	,所以使用kill Redis进程的PID也可以正常结束Redis,效果与发送shutdown命令一样。</li>
+<li><p><strong>Redis有可能正在将内存中的数据同步到硬盘中，强行终止Redis进程可能会导致数据 丢失。 正确停止Redis的方式应该是向Redis发送SHUTDOWN 命令</strong></p>
+<div class="highlight"><pre><code class="language-" data-lang=""># redis-cli shutdown
+</code></pre></div></li>
+<li><p>当Redis收到shutdown命令后，会先断开所有的客户端连接，然后根据配置执行持久化，最后完成退出</p></li>
+<li><p>Redis会妥善处理<code>sigterm</code>信号   ,所以使用kill Redis进程的PID也可以正常结束Redis,效果与发送shutdown命令一样。</p></li>
 </ul>
 
-<h2 id="redis-2">3）Redis命令行客户端</h2>
+<h2>3）Redis命令行客户端</h2>
 
 <p>redis-cli是Redis自带的基于命令行的Redis客户端</p>
 
 <ol>
-  <li>
-    <p>发送命令</p>
+<li><p>发送命令</p>
 
-    <p>redis-cli向Redis发送命令有两种方式。</p>
+<p>redis-cli向Redis发送命令有两种方式。</p>
 
-    <p>一是将命令作为redis-cli的参数执行 ,<code class="highlighter-rouge">-h</code>自定义地址 <code class="highlighter-rouge">-p</code>自定义端口号</p>
+<p>一是将命令作为redis-cli的参数执行 ,<code>-h</code>自定义地址 <code>-p</code>自定义端口号</p>
+<div class="highlight"><pre><code class="language-" data-lang=""># redis-cli -h 127.0.0.1 -p 6379
+</code></pre></div>
+<p>redis提供<code>PING</code>命令来测试客户端语Redis连接是否正常</p>
+<div class="highlight"><pre><code class="language-" data-lang=""># redis-cli PING
+PONG    
+</code></pre></div>
+<p>二是不附带参数运行redis-cli，这样会进入交互模式可以自由输入命令</p>
+<div class="highlight"><pre><code class="language-" data-lang=""># redis-cli
+redis 127.0.0.1:6379&gt; PING
+PONG
+redis 127.0.0.1:6379&gt; ECHO hi
+"hi"
+</code></pre></div></li>
+<li><p>命令返回值</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> # redis-cli -h 127.0.0.1 -p 6379
-</code></pre>
-    </div>
+<ul>
+<li><p>状态回复</p>
 
-    <p>redis提供<code class="highlighter-rouge">PING</code>命令来测试客户端语Redis连接是否正常</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> # redis-cli PING
- PONG	
-</code></pre>
-    </div>
-
-    <p>二是不附带参数运行redis-cli，这样会进入交互模式可以自由输入命令</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> # redis-cli
- redis 127.0.0.1:6379&gt; PING
- PONG
- redis 127.0.0.1:6379&gt; ECHO hi
- "hi"
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>命令返回值</p>
-    <ul>
-      <li>
-        <p>状态回复</p>
-
-        <p>状态是最简单的一种回复如SET 会回复OK</p>
-      </li>
-      <li>
-        <p>错误回复</p>
-
-        <p>当出现命令不存在或命令格式有错误时Redis会返回错误回复（error replay）.错误回复以（error）开头，并在后面跟上错误信息。如执行一个不存在的命令：</p>
-
-        <div class="highlighter-rouge"><pre class="highlight"><code>  redis&gt;ERRORCOMMEND
-  (error)ERR unknown command 'ERRORCOMMEND'
-</code></pre>
-        </div>
-
-        <p>在 2. 6 版本 时， 错误 信息 均 是以“ ERR” 开头， 而在 2. 8 版 以后， 部分 错误 信息 会 以 具体 的 错误 类型 开头， 如：</p>
-
-        <div class="highlighter-rouge"><pre class="highlight"><code>  redis&gt; LPUSH key 1 (integer) 1
-  redis&gt; GET key 
-  (error) WRONGTYPE Operation against a key holding the wrong kind of value 
-</code></pre>
-        </div>
-
-        <p>这里 错误 信息 开头 的“ WRONGTYPE” 就 表示 类型 错误， 这个 改进 使得 在调 试</p>
-      </li>
-      <li>
-        <p>整数回复	<br />
-  Redis没有整数类型，但提供了用于整数操作的命令。整数回复以（integer）开头，并在后面跟上整数数据：</p>
-
-        <div class="highlighter-rouge"><pre class="highlight"><code>  redis&gt; INCR foo
-  (integer) 1
-</code></pre>
-        </div>
-      </li>
-      <li>
-        <p>字符串回复<br />
-  字符串回复是最常见的一种回复类型，当请求一个字符串类型键的值或一个其他键中的某个元素时就会得到一个字符串。字符串回复以双引号包裹：</p>
-
-        <div class="highlighter-rouge"><pre class="highlight"><code>  redis&gt; GET foo
-  "1"		
-</code></pre>
-        </div>
-      </li>
-      <li>
-        <p>多行字符串回复<br />
-  多行字符串回复中的每行字符串都以一个序号开头</p>
-
-        <div class="highlighter-rouge"><pre class="highlight"><code>  redis &gt; KEYS *
-  1) "bar"
-  2) "foo"
-</code></pre>
-        </div>
-      </li>
-    </ul>
-  </li>
+<p>状态是最简单的一种回复如SET 会回复OK </p></li>
+</ul></li>
 </ol>
+<div class="highlight"><pre><code class="language-" data-lang="">* 错误回复
 
-<h2 id="section-1">4）配置</h2>
+    当出现命令不存在或命令格式有错误时Redis会返回错误回复（error replay）.错误回复以（error）开头，并在后面跟上错误信息。如执行一个不存在的命令：
 
-<p>通过<code class="highlighter-rouge">redis-server</code>的启动参数port设置了Redis的端口号，除此之外还有其他的配置选项，如开启持久化，日志级别等。由于配置选项多，redis支持通过配置文件来配置这些选</p>
+        redis&gt;ERRORCOMMEND
+        (error)ERR unknown command 'ERRORCOMMEND'
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#redis-server /path/to/redis.conf
-</code></pre>
-</div>
+    在 2. 6 版本 时， 错误 信息 均 是以“ ERR” 开头， 而在 2. 8 版 以后， 部分 错误 信息 会 以 具体 的 错误 类型 开头， 如： 
 
+        redis&gt; LPUSH key 1 (integer) 1
+        redis&gt; GET key 
+        (error) WRONGTYPE Operation against a key holding the wrong kind of value 
+
+    这里 错误 信息 开头 的“ WRONGTYPE” 就 表示 类型 错误， 这个 改进 使得 在调 试 
+
+* 整数回复  
+    Redis没有整数类型，但提供了用于整数操作的命令。整数回复以（integer）开头，并在后面跟上整数数据：
+
+        redis&gt; INCR foo
+        (integer) 1
+* 字符串回复
+    字符串回复是最常见的一种回复类型，当请求一个字符串类型键的值或一个其他键中的某个元素时就会得到一个字符串。字符串回复以双引号包裹：
+
+        redis&gt; GET foo
+        "1"     
+* 多行字符串回复
+    多行字符串回复中的每行字符串都以一个序号开头
+
+        redis &gt; KEYS *
+        1) "bar"
+        2) "foo"
+</code></pre></div>
+<h2>4）配置</h2>
+
+<p>通过<code>redis-server</code>的启动参数port设置了Redis的端口号，除此之外还有其他的配置选项，如开启持久化，日志级别等。由于配置选项多，redis支持通过配置文件来配置这些选        </p>
+<div class="highlight"><pre><code class="language-" data-lang="">#redis-server /path/to/redis.conf
+</code></pre></div>
 <p>通过启动参数传递同名的配置选项会覆盖配置文件中相应的参数</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>#redis-server /path/to/redis.conf --loglevel warning
-</code></pre>
-</div>
-
+<div class="highlight"><pre><code class="language-" data-lang="">#redis-server /path/to/redis.conf --loglevel warning
+</code></pre></div>
 <p>Redis提供了一个配置文件的模板redis.conf位于源代码目录</p>
 
-<p>还可以在运行时通过<code class="highlighter-rouge">CONFIG SET</code>	命令在不重启Redis的情况下动态修改部分Redis配置</p>
+<p>还可以在运行时通过<code>CONFIG SET</code> 命令在不重启Redis的情况下动态修改部分Redis配置</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt;CONFIG SET loglevel warning
+OK      
+</code></pre></div>
+<p>并不是所有的配置都可以使用CONFIG SET 命令修改      </p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>redis&gt;CONFIG SET loglevel warning
-OK		 并不是所有的配置都可以使用CONFIG SET 命令修改		
-</code></pre>
-</div>
+<h2>4）多数据库</h2>
 
-<h2 id="section-2">4）多数据库</h2>
 <p>每个 数据库 对外 都是 以 一个 从 0 开始 的 递增 数字 命名， Redis 默认 支持 16 个 数据库， 可以 通过 配置 参数 databases 来 修改 这一 数字。 客户 端 与 Redis 建立 连接 后 会 自动 选择 0 号 数据库， 不过 可以 随时 使用SELECT命令更换数据库，如要选择1号数据库：</p>
+<div class="highlight"><pre><code class="language-" data-lang="">    redis&gt;SELECT 1
+    OK
+    redis[1] GET foo
+    (nil)
+</code></pre></div>
+<p>redis不支持自定义数据库的名字       </p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>	redis&gt;SELECT 1
-	OK
-	redis[1] GET foo
-	(nil) redis不支持自定义数据库的名字		
-</code></pre>
-</div>
+<hr>
 
-<hr />
+<h1>二、入门</h1>
 
-<h1 id="section-3">二、入门</h1>
-
-<h2 id="section-4">1）字符串类型</h2>
+<h2>1）字符串类型</h2>
 
 <p>一个字符串类型键允许存储的数据的最大容量是512M。</p>
 
 <ol>
-  <li>
-    <p>赋值与取值</p>
+<li><p>赋值与取值</p>
 
-    <p><code class="highlighter-rouge">SET key value</code></p>
+<p><code>SET key value</code></p>
 
-    <p><code class="highlighter-rouge">GET key  </code></p>
-  </li>
+<p><code>GET key</code></p></li>
 </ol>
 
 <p>set和get是redis中最简单的两个命令</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>当键不存在时返回空结果
-</code></pre>
-</div>
-
+<div class="highlight"><pre><code class="language-" data-lang="">当键不存在时返回空结果
+</code></pre></div>
 <ol>
-  <li>
-    <p>递增数字</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> INCR key
-</code></pre>
-    </div>
-  </li>
+<li><p>递增数字</p>
+<div class="highlight"><pre><code class="language-" data-lang="">INCR key
+</code></pre></div></li>
 </ol>
 
 <p>当存储的字符串是整数形式时，Redis提供了一个实用的命令INCR，其作用是让当键值递增，并返回递增后的值</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	redis&gt;INCR num
-	(integer) 1
-	redis&gt;INCR num
-	(integer) 2 当要操作的键不存在时默认键值为0，所以第一次递增后的结果是1.
-</code></pre>
-</div>
+<div class="highlight"><pre><code class="language-" data-lang="">    redis&gt;INCR num
+    (integer) 1
+    redis&gt;INCR num
+    (integer) 2
+</code></pre></div>
+<p>当要操作的键不存在时默认键值为0，所以第一次递增后的结果是1.</p>
 
 <p>当键值不是整数是会提示错误</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	redis&gt; SET foo lorem
-	OK 
-	redis&gt; INCR foo
-	(error) ERR value is not an integer or out of range
-</code></pre>
-</div>
-
+<div class="highlight"><pre><code class="language-" data-lang="">    redis&gt; SET foo lorem
+    OK 
+    redis&gt; INCR foo
+    (error) ERR value is not an integer or out of range
+</code></pre></div>
 <ol>
-  <li>
-    <p>命令拾遗</p>
+<li><p>命令拾遗</p>
 
-    <p>1).增加指定的整数</p>
+<p>1).增加指定的整数</p>
+<div class="highlight"><pre><code class="language-" data-lang="">INCRBY key increment
+INCRBY通过 increment 参数指定一次增加的数值
+redis&gt; INCRBY bar 2
+(integer)2
+redis&gt; INCRBY bar 3
+(integer)5
+</code></pre></div>
+<p>2).减少指定的整数</p>
+<div class="highlight"><pre><code class="language-" data-lang="">DECR key
+DECRBY key increment
+redis&gt; DECR bar 
+(integer)4
+</code></pre></div>
+<p>3).增加指定浮点数</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> INCRBY key increment
- INCRBY通过 increment 参数指定一次增加的数值
- redis&gt; INCRBY bar 2
- (integer)2
- redis&gt; INCRBY bar 3
- (integer)5
-</code></pre>
-    </div>
+<p><code>INCRBYFLOAT key increment</code></p>
 
-    <p>2).减少指定的整数</p>
+<p>递增一个双精度浮点数  </p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt;INCRBYFLOAT bar 2.7
+"6.7"
+redis&gt;INCRBYFLOAT bar 5E+4
+"50006.69999999999999929"
+</code></pre></div>
+<p>4).向尾部追加值</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> DECR key
- DECRBY key increment
- redis&gt; DECR bar 
- (integer)4
-</code></pre>
-    </div>
+<p><code>APPEND key value</code></p>
 
-    <p>3).增加指定浮点数</p>
+<p>APPEND 作用是向键值的末尾追加value.如果键不存在则将该值设置为value,即相当于SET key value.返回值是追加后字符串的总长度</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt;SET key hello
+OK
+redis&gt;APPEND key " world!"
+（integer）12
+</code></pre></div>
+<p>此时key的值是&quot;hello world!&quot;。APPEND命令的第二个参数加了双引号，原因是该参数包含空格，在redis-cli中输入需要双引号以示区分</p>
 
-    <p><code class="highlighter-rouge">INCRBYFLOAT key increment</code></p>
+<p>5).获取字符串长度</p>
 
-    <p>递增一个双精度浮点数</p>
+<p><code>STRLEN key</code></p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt;INCRBYFLOAT bar 2.7
- "6.7"
- redis&gt;INCRBYFLOAT bar 5E+4
- "50006.69999999999999929"
-</code></pre>
-    </div>
+<p>STRLEN 命令返回键值的长度，如果键不存在返回0 </p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt;STRLEN key
+(interger)12
+redis&gt;SET key 你好
+OK
+redis&gt;STRLEN key
+(interger)6
+</code></pre></div>
+<p>前面提到字符串类型可以存储二进制数据，所以它可以存储任意编码的字符串。例子中接收到的是使用UTF-8编码的中文，由于你好的UTF-8编码的长度都是3，所以返回6。</p>
 
-    <p>4).向尾部追加值</p>
+<p>6).同时获得/设置多个键值</p>
 
-    <p><code class="highlighter-rouge">APPEND key value</code></p>
+<p><code>MGET key[key ...]</code></p>
 
-    <p>APPEND 作用是向键值的末尾追加value.如果键不存在则将该值设置为value,即相当于SET key value.返回值是追加后字符串的总长度</p>
+<p><code>MMSET key value [key value ...]</code></p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; MSET key1 v1 key2 v2 key3 v3
+redis&gt; GET key2
+"v2"
+redis &gt; MGET key1 key3
+1)"v1"
+2)"v3"
+</code></pre></div>
+<p>7). 位操作</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt;SET key hello
- OK
- redis&gt;APPEND key " world!"
- （integer）12  此时key的值是"hello world!"。APPEND命令的第二个参数加了双引号，原因是该参数包含空格，在redis-cli中输入需要双引号以示区分
-</code></pre>
-    </div>
+<p><code>GETBIT key offset</code></p>
 
-    <p>5).获取字符串长度</p>
+<p><code>SETBIT key offset value</code></p>
 
-    <p><code class="highlighter-rouge">STRLEN key</code></p>
+<p><code>BITCOUNT key [start] [key ...]</code></p>
 
-    <p>STRLEN 命令返回键值的长度，如果键不存在返回0</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt;STRLEN key
- (interger)12
- redis&gt;SET key 你好
- OK
- redis&gt;STRLEN key
- (interger)6
-</code></pre>
-    </div>
-
-    <p>前面提到字符串类型可以存储二进制数据，所以它可以存储任意编码的字符串。例子中接收到的是使用UTF-8编码的中文，由于你好的UTF-8编码的长度都是3，所以返回6。</p>
-
-    <p>6).同时获得/设置多个键值</p>
-
-    <p><code class="highlighter-rouge">MGET key[key ...]</code></p>
-
-    <p><code class="highlighter-rouge">MMSET key value [key value ...]</code></p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; MSET key1 v1 key2 v2 key3 v3
- redis&gt; GET key2
- "v2"
- redis &gt; MGET key1 key3
- 1)"v1"
- 2)"v3"
-</code></pre>
-    </div>
-
-    <p>7). 位操作</p>
-
-    <p><code class="highlighter-rouge">GETBIT key offset</code></p>
-
-    <p><code class="highlighter-rouge">SETBIT key offset value</code></p>
-
-    <p><code class="highlighter-rouge">BITCOUNT key [start] [key ...]</code></p>
-
-    <p><code class="highlighter-rouge">BITOP operation destkey key [key ...]</code></p>
-  </li>
+<p><code>BITOP operation destkey key [key ...]</code></p></li>
 </ol>
 
-<hr />
+<hr>
 
-<h2 id="section-5">2）散列类型</h2>
+<h2>2）散列类型</h2>
 
 <ol>
-  <li>
-    <p>赋值与取值</p>
+<li><p>赋值与取值</p>
 
-    <p><code class="highlighter-rouge">HSET key field value</code></p>
+<p><code>HSET key field value</code></p>
 
-    <p><code class="highlighter-rouge">HGET key field	</code></p>
+<p><code>HGET key field</code></p>
 
-    <p><code class="highlighter-rouge">HMSET key field value [field value ...]</code></p>
+<p><code>HMSET key field value [field value ...]</code></p>
 
-    <p><code class="highlighter-rouge">HMGET key field [field ...]</code></p>
+<p><code>HMGET key field [field ...]</code></p>
 
-    <p><code class="highlighter-rouge">HGETALL key</code></p>
+<p><code>HGETALL key</code></p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; HSET car price 500
+(interger)1
+redis&gt; HSET car name BMW
+(interger)1
+redis&gt;HEGT car name
+"BMW"
+</code></pre></div>
+<p>HSET命令方便之处在于不区分插入和更新操作，这意味着修改数据时不用事先判断字段是否存在来决定要执行的是插入操作还是更新操作。当执行的是插入操作时HSET会返回1，当执行的是更新操作是 HSET返回0。<code>当键本身不存在是，HSET命令还会自动创建</code>。</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; HSET car price 500
- (interger)1
- redis&gt; HSET car name BMW
- (interger)1
- redis&gt;HEGT car name
- "BMW"  HSET命令方便之处在于不区分插入和更新操作，这意味着修改数据时不用事先判断字段是否存在来决定要执行的是插入操作还是更新操作。当执行的是插入操作时HSET会返回1，当执行的是更新操作是 HSET返回0。`当键本身不存在是，HSET命令还会自动创建`。
-</code></pre>
-    </div>
+<p><code>REDIS中每个键都属于一个明确的数据类型，如通过HSET命令建立的键都是散列类型，通过SET命令建立的键是字符串类型。使用一种数据类型的命令操作另外一种数据类型的键会提示错误“ERR Operation against a key holding the wrong kind of value”</code> </p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; HMGET car price name
+1)"500"
+2)"BMW"
 
-    <p><code class="highlighter-rouge">REDIS中每个键都属于一个明确的数据类型，如通过HSET命令建立的键都是散列类型，通过SET命令建立的键是字符串类型。使用一种数据类型的命令操作另外一种数据类型的键会提示错误“ERR Operation against a key holding the wrong kind of value”</code></p>
+redis&gt; HGETALL car  
+1)"price"
+2)"500"
+3)"name"
+4)"BMW" 
+</code></pre></div></li>
+<li><p>判断字段是否存在</p></li>
+</ol>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; HMGET car price name
- 1)"500"
- 2)"BMW"
-	
- redis&gt; HGETALL car  
- 1)"price"
- 2)"500"
- 3)"name"
- 4)"BMW"	
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>判断字段是否存在</p>
+<p><code>HEXISTS key field</code></p>
 
-    <p><code class="highlighter-rouge">HEXISTS key field</code></p>
+<p>HEXISTS命令用来判断一个字段是否存在。如果存在则返回1，否则返回0（<code>如果键不存在也会返回0</code>）。</p>
+<div class="highlight"><pre><code class="language-" data-lang="">    redis&gt;HEXISTS car model
+    (integer)0
+    redis&gt;HSET car model C200
+    (integer)1
+    redis&gt;HEXISTS car model
+    (integer)1
+</code></pre></div>
+<ol>
+<li><p>当字段不存在时赋值</p>
 
-    <p>HEXISTS命令用来判断一个字段是否存在。如果存在则返回1，否则返回0（<code class="highlighter-rouge">如果键不存在也会返回0</code>）。</p>
+<p><code>HSETNX key field value</code></p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> 	redis&gt;HEXISTS car model
- 	(integer)0
- 	redis&gt;HSET car model C200
- 	(integer)1
- 	redis&gt;HEXISTS car model
- 	(integer)1
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>当字段不存在时赋值</p>
+<p>HSETNX 命令与HSET命令相似，区别在于如果字段已经存在，HSETNX命令不执行任何操作</p>
 
-    <p><code class="highlighter-rouge">HSETNX key field value</code></p>
+<p>HSETNX 命令是原子操作，不用担心竞态条件</p></li>
+<li><p>增加数字</p>
 
-    <p>HSETNX 命令与HSET命令相似，区别在于如果字段已经存在，HSETNX命令不执行任何操作</p>
+<p><code>HINCRBY key field increment</code></p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; HINCRBY person score 60
+(integer)60
+</code></pre></div>
+<p>之前person键不存在，HINCARBY命令会自动建立该键并默认score字段在执行前的值为0.命令的返回值是增值后的字段值</p></li>
+<li><p>删除字段</p>
 
-    <p>HSETNX 命令是原子操作，不用担心竞态条件</p>
-  </li>
-  <li>
-    <p>增加数字</p>
+<p><code>HDELkey field [field]</code></p>
 
-    <p><code class="highlighter-rouge">HINCRBY key field increment</code></p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; HINCRBY person score 60
- (integer)60  之前person键不存在，HINCARBY命令会自动建立该键并默认score字段在执行前的值为0.命令的返回值是增值后的字段值
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>删除字段</p>
-
-    <p><code class="highlighter-rouge">HDELkey field [field]</code></p>
-
-    <p>HDEL 命令可以删除一个或者多个字段，返回值是被删除的字段个数</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; HDEL car price
- (integer)1
- redis&gt; HDEL car price		
- (integer)0
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>存储文章数据</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> $postID=INCR posts:count
- #判断用户输入的slug是否可用，如果可用则记录
- $isSlugAvailable=HSETNX slug.to.id,$slug ,$postIID
- if $isSlugAvailable is 0
- #slug已经用过了需要提示更换slug
- exit
- HMSET post:$postID,title,$title,content,$content,slug,$slug,...
- 这段代码使用了HSETNX命令原子的实现了HEXISTS和HSET两个命令以避免竞态条件。当用户访问文章时，我们从网址中得到文章的缩略名，并查询slug.to.id键来获取文章ID：
- $postID=HGET slug.to.id,$slug
- if not $postID
- print 文章不存在
- exit
- $post=HGETALL post:$postID
- print文章标题:$post.title
- 需要注意的是如果要修改文章的缩略名一定不能忘了修改slug.to.id键对应的字段。
- #判断新的slug是否可用，如果可用则记录
- $isSlugAvailable=HSETNX slug.to.id ,$newSlug,42
- if $isSlugAvailable is 0
- exit
- #获得旧的缩略名 
- $oldSlug=HGET post:42,slug
- #设置新的缩略名
- HSET post:42,slug,$newSlug
- #删除旧的缩略名
- HDEL slug.to.id ,$oldslug
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>命令拾遗</p>
-  </li>
+<p>HDEL 命令可以删除一个或者多个字段，返回值是被删除的字段个数</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; HDEL car price
+(integer)1
+redis&gt; HDEL car price       
+(integer)0
+</code></pre></div></li>
+<li><p>存储文章数据</p>
+<div class="highlight"><pre><code class="language-" data-lang="">$postID=INCR posts:count
+#判断用户输入的slug是否可用，如果可用则记录
+$isSlugAvailable=HSETNX slug.to.id,$slug ,$postIID
+if $isSlugAvailable is 0
+#slug已经用过了需要提示更换slug
+exit
+HMSET post:$postID,title,$title,content,$content,slug,$slug,...
+这段代码使用了HSETNX命令原子的实现了HEXISTS和HSET两个命令以避免竞态条件。当用户访问文章时，我们从网址中得到文章的缩略名，并查询slug.to.id键来获取文章ID：
+$postID=HGET slug.to.id,$slug
+if not $postID
+print 文章不存在
+exit
+$post=HGETALL post:$postID
+print文章标题:$post.title
+需要注意的是如果要修改文章的缩略名一定不能忘了修改slug.to.id键对应的字段。
+#判断新的slug是否可用，如果可用则记录
+$isSlugAvailable=HSETNX slug.to.id ,$newSlug,42
+if $isSlugAvailable is 0
+exit
+#获得旧的缩略名 
+$oldSlug=HGET post:42,slug
+#设置新的缩略名
+HSET post:42,slug,$newSlug
+#删除旧的缩略名
+HDEL slug.to.id ,$oldslug
+</code></pre></div></li>
+<li><p>命令拾遗</p></li>
 </ol>
 
 <p>1）只获取字段名或字段值</p>
 
-<p><code class="highlighter-rouge">HEKYS key</code></p>
+<p><code>HEKYS key</code></p>
 
-<p><code class="highlighter-rouge">HVALS key</code></p>
+<p><code>HVALS key</code></p>
 
 <p>有时仅仅需要获取键中所有字段的名字而不需要字段值，那么可以使用HEKYS命令</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	redis&gt; HKEYS car 
-	1)"name"
-	2)"model" HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段值
-	
-	redis&gt; HVALS car
-	1)"BMW"
-	2)"C200"
-</code></pre>
-</div>
-
+<div class="highlight"><pre><code class="language-" data-lang="">    redis&gt; HKEYS car 
+    1)"name"
+    2)"model"
+</code></pre></div>
+<p>HVALS 命令与HEKYS命令相对应，HVALS命令用来获得键中所有字段值</p>
+<div class="highlight"><pre><code class="language-" data-lang="">    redis&gt; HVALS car
+    1)"BMW"
+    2)"C200"
+</code></pre></div>
 <p>2)获取字段数量</p>
 
-<p><code class="highlighter-rouge">HLEN key</code></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>redis&gt; HLEN car
-(integer) 2 				
-</code></pre>
-</div>
-
-<h2 id="section-6">3）列表类型</h2>
+<p><code>HLEN key</code></p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; HLEN car
+(integer) 2                 
+</code></pre></div>
+<h2>3）列表类型</h2>
 
 <ol>
-  <li>
-    <p>向列表两端增加元素</p>
+<li><p>向列表两端增加元素</p>
 
-    <p><code class="highlighter-rouge">LPUSH key value [value ...]</code></p>
+<p><code>LPUSH key value [value ...]</code></p>
 
-    <p><code class="highlighter-rouge">RPUSH key value [value ...]</code></p>
+<p><code>RPUSH key value [value ...]</code></p>
 
-    <p>LPUSH命令用来向列表左边增加元素，返回值表示增加元素后列表的长度</p>
+<p>LPUSH命令用来向列表左边增加元素，返回值表示增加元素后列表的长度</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; LPUSH numbers 1
+(integer) 1
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; LPUSH numbers 1
- (integer) 1
-	
- [1]
-	
- redis&gt; LPUSH numbers 2 3 
- (integer) 3
-	
- [ 3 2 1 ]
-</code></pre>
-    </div>
+[1]
 
-    <p>LPUSH 会向列表左边先加入 2 再加入 3</p>
+redis&gt; LPUSH numbers 2 3 
+(integer) 3
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; RPUSH numbers 0 -1
- (integer) 5
-	
- [3 2 1 0 -1]	
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>从列表两端弹出元素</p>
+[ 3 2 1 ]
+</code></pre></div>
+<p>LPUSH 会向列表左边先加入 2 再加入 3</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; RPUSH numbers 0 -1
+(integer) 5
 
-    <p><code class="highlighter-rouge">LPOP key</code></p>
+[3 2 1 0 -1]    
+</code></pre></div></li>
+<li><p>从列表两端弹出元素</p>
 
-    <p><code class="highlighter-rouge">RPOP key </code></p>
+<p><code>LPOP key</code></p>
 
-    <p>有进有出，LPOP可以从列表左边弹出一个元素。LPOP命令执行两步操作：第一步是将列表左边的元素从列表移除，第二步是返回被移除的元素值</p>
+<p><code>RPOP key</code></p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; LPOP numbers
- "3"
+<p>有进有出，LPOP可以从列表左边弹出一个元素。LPOP命令执行两步操作：第一步是将列表左边的元素从列表移除，第二步是返回被移除的元素值</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; LPOP numbers
+"3"
 
- redis&gt; RPOP numbers
- "-1"
-</code></pre>
-    </div>
+redis&gt; RPOP numbers
+"-1"
+</code></pre></div>
+<p><code>结合上面提到的4个命令可以使用列表类型来模拟栈和队列的操作</code></p>
 
-    <p><code class="highlighter-rouge">结合上面提到的4个命令可以使用列表类型来模拟栈和队列的操作</code></p>
+<p><code>栈：LPUSH和LPOP   RPUSH和RPOP</code></p>
 
-    <p><code class="highlighter-rouge">栈：LPUSH和LPOP   RPUSH和RPOP</code></p>
+<p><code>队列：LPUSH和RPOP  RPUSH和LPOP</code>  </p></li>
+<li><p>获取列表中元素的个数</p>
 
-    <p><code class="highlighter-rouge">队列：LPUSH和RPOP  RPUSH和LPOP </code></p>
-  </li>
-  <li>
-    <p>获取列表中元素的个数</p>
+<p><code>LLEN key</code></p>
 
-    <p><code class="highlighter-rouge">LLEN key</code></p>
+<p>当键不存在时LLEN会返回0</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt;LLEN numbers
+(integer) 3
+</code></pre></div>
+<p>LLEN功能类似SQL语句 SELECT COUNT(*) FROM table_name 但是LLEN的时间复杂度为O(1) ,使用时Redis会直接读取现成的值，而不需要统计</p></li>
+<li><p>获取列表片段</p>
 
-    <p>当键不存在时LLEN会返回0</p>
+<p><code>LRANGE key start stop</code></p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt;LLEN numbers
- (integer) 3
-</code></pre>
-    </div>
+<p>返回索引从start到stop之间的所有元素（包含两端的元素），起始索引为0</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; LRANGE numbers 0 2
+1)"2"
+2)"1"
+3)"0"
+</code></pre></div>
+<p>LRANGE在取得列表片段的同时不会像LPOP一样删除该片段</p>
 
-    <p>LLEN功能类似SQL语句 SELECT COUNT(*) FROM table_name 但是LLEN的时间复杂度为O(1) ,使用时Redis会直接读取现成的值，而不需要统计</p>
-  </li>
-  <li>
-    <p>获取列表片段</p>
+<p>LRANGE也支持负索引 表示从右边开始计算序数
+-1 表示最右边第一个元素 -2便是最右边第二个元素</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; LRANGE nubmers -2 -1
+1)"1"
+2)"0"   
+</code></pre></div>
+<p>显然，LRANGE numbers 0 -1 可以获取列表中所有元素</p>
 
-    <p><code class="highlighter-rouge">LRANGE key start stop</code></p>
+<p><code>特殊情况</code></p></li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">* 如果start的索引位置比stop的索引位置靠后，返回空列表
+* 如果stop大于实际的索引范围，则返回到列表最右边的元素
 
-    <p>返回索引从start到stop之间的所有元素（包含两端的元素），起始索引为0</p>
+    redis&gt; LRANGE nubmers 1 999
+    1)"1"
+    2)"0"
+</code></pre></div>
+<ol>
+<li><p>删除列表中指定的值</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; LRANGE numbers 0 2
- 1)"2"
- 2)"1"
- 3)"0"  LRANGE在取得列表片段的同时不会像LPOP一样删除该片段
-</code></pre>
-    </div>
+<p><code>LREM key count value</code></p>
 
-    <p>LRANGE也支持负索引 表示从右边开始计算序数<br />
- -1 表示最右边第一个元素 -2便是最右边第二个元素</p>
+<p>LREM 会删除列表前count个值为value的元素，返回值是实际删除的元素个数，根据count值的不同，LREM执行方式有差异</p></li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">* 当count&gt;0时，LREM会从列表左边开始删除前count个值为value的元素
+* 当count&lt;0时，LREM会从列表右边开始删除|count|个值为value的值
+* 当count=0时，LREM会删除所有值为value的元素
+</code></pre></div>
+<ol>
+<li><p>命令拾遗</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; LRANGE nubmers -2 -1
- 1)"1"
- 2)"0"	
-</code></pre>
-    </div>
+<p>1.获得/设置指定索引的元素值</p>
 
-    <p>显然，LRANGE numbers 0 -1 可以获取列表中所有元素</p>
+<p><code>LINDEX key index</code></p>
 
-    <p><code class="highlighter-rouge">特殊情况</code></p>
+<p><code>LSET key index value</code></p>
 
-    <ul>
-      <li>如果start的索引位置比stop的索引位置靠后，返回空列表</li>
-      <li>
-        <p>如果stop大于实际的索引范围，则返回到列表最右边的元素</p>
+<p><code>LINDEX 返回指定索引的元素</code></p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; LINDEX numbers 0
+"2"
+redis&gt; LINDEX numbers -1
+"0"
+</code></pre></div>
+<p>LSET是另一个通过索引操作列表的命令,它会将索引为index的元素赋值为value.例如</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; LSET nubmers 1 7 
+OK 
+redis&gt; LINDEX nubmers 1
+"7"         
+</code></pre></div>
+<p>2.只保留列表指定片段</p>
 
-        <p>redis&gt; LRANGE nubmers 1 999<br />
-  1)”1”<br />
-  2)”0”</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>删除列表中指定的值</p>
+<p><code>LTRIM key start end</code></p>
 
-    <p><code class="highlighter-rouge">LREM key count value</code></p>
+<p>LTRIM命令可以删除指定索引范围之外的所有元素，其指定列表范围的方法和LRANGE命令</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; LRANGE numbers 0 -1
+1)"1"
+2)"2"
+3)"7"
+4)"3"
+"0"
+redis&gt; LTRIM numbers 1 2
+OK
+redis&gt; LRANGE numbers 0 1
+1)"2"
+2)"7"
+</code></pre></div>
+<p>LTRIM命令常和LPUSH命令一起来使用用来限制列表中元素的数量，比如日志只保留100条</p>
 
-    <p>LREM 会删除列表前count个值为value的元素，返回值是实际删除的元素个数，根据count值的不同，LREM执行方式有差异</p>
+<p>LPUSHlogs $newlog</p>
 
-    <ul>
-      <li>当count&gt;0时，LREM会从列表左边开始删除前count个值为value的元素</li>
-      <li>
-        <table>
-          <tbody>
-            <tr>
-              <td>当count&lt;0时，LREM会从列表右边开始删除</td>
-              <td>count</td>
-              <td>个值为value的值</td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-      <li>当count=0时，LREM会删除所有值为value的元素</li>
-    </ul>
-  </li>
-  <li>
-    <p>命令拾遗</p>
+<p>LTROM logs 0 99</p>
 
-    <p>1.获得/设置指定索引的元素值</p>
+<p>3.向列表中插入元素</p>
 
-    <p><code class="highlighter-rouge">LINDEX key index</code></p>
+<p><code>LINSERT key BEFORE | AFTER pivot value</code></p>
 
-    <p><code class="highlighter-rouge">LSET key index value</code></p>
+<p>LINSERT 命令首先会在列表从左到右查找值为pivot的元素，然后根据BEFORE还是AFTER来决定将value插入到该元素的前面还是后面</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; LRANGE numbers 0 -1
+1)"2"
+2)"7"
+3)"0"
+redis&gt; LINSERT numbers AFTER 7 3
+(integer) 4
+redis&gt; LRANGE numbers 0 -1
+1)"2"
+2)"7"
+3)"3"
+4)"0"
+</code></pre></div>
+<p>4.将元素从一个列表转到另一个列表</p>
 
-    <p><code class="highlighter-rouge">LINDEX 返回指定索引的元素</code></p>
+<p><code>RPOPLPUSH source destination</code></p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; LINDEX numbers 0
- "2"
- redis&gt; LINDEX numbers -1
- "0"
-</code></pre>
-    </div>
+<p>RPOPLPUSH功能：先执行RPOP命令再执行LPUSH命令。RPOPLPUSH命令会先从source列表类型键的右边弹出一个元素，然后将其加入到destination列表类型键的左边，并返回这个元素的值，整个过程是原子的。</p>
 
-    <p>LSET是另一个通过索引操作列表的命令,它会将索引为index的元素赋值为value.例如</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; LSET nubmers 1 7 
- OK 
- redis&gt; LINDEX nubmers 1
- "7"			
-</code></pre>
-    </div>
-
-    <p>2.只保留列表指定片段</p>
-
-    <p><code class="highlighter-rouge">LTRIM key start end</code></p>
-
-    <p>LTRIM命令可以删除指定索引范围之外的所有元素，其指定列表范围的方法和LRANGE命令</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; LRANGE numbers 0 -1
- 1)"1"
- 2)"2"
- 3)"7"
- 4)"3"
- "0"
- redis&gt; LTRIM numbers 1 2
- OK
- redis&gt; LRANGE numbers 0 1
- 1)"2"
- 2)"7"
-</code></pre>
-    </div>
-
-    <p>LTRIM命令常和LPUSH命令一起来使用用来限制列表中元素的数量，比如日志只保留100条</p>
-
-    <p>LPUSHlogs $newlog</p>
-
-    <p>LTROM logs 0 99</p>
-
-    <p>3.向列表中插入元素</p>
-
-    <p><code class="highlighter-rouge">LINSERT key BEFORE | AFTER pivot value</code></p>
-
-    <p>LINSERT 命令首先会在列表从左到右查找值为pivot的元素，然后根据BEFORE还是AFTER来决定将value插入到该元素的前面还是后面</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; LRANGE numbers 0 -1
- 1)"2"
- 2)"7"
- 3)"0"
- redis&gt; LINSERT numbers AFTER 7 3
- (integer) 4
- redis&gt; LRANGE numbers 0 -1
- 1)"2"
- 2)"7"
- 3)"3"
- 4)"0"
-</code></pre>
-    </div>
-
-    <p>4.将元素从一个列表转到另一个列表</p>
-
-    <p><code class="highlighter-rouge">RPOPLPUSH source destination</code></p>
-
-    <p>RPOPLPUSH功能：先执行RPOP命令再执行LPUSH命令。RPOPLPUSH命令会先从source列表类型键的右边弹出一个元素，然后将其加入到destination列表类型键的左边，并返回这个元素的值，整个过程是原子的。</p>
-
-    <p>当把列表类型作为队列使用时，RPOPLPUSH命令可以很直观的在多个队列中传递数据。当source和destination相同时，RPOPLPUSH命令会不断地将对尾的元素移到队首，借助这个特性我们可以实现一个网站监控系统：使用一个队列存储需要监控的网址，然后监控程序不断地使用RPOPLPUSH命令循环取出一个网址来测试可用性。RPOPLPUSH的好处在于在程序执行过程中仍然可以不断的向网址列表中加入新网址，整个系统易扩展，允许多个客户端同时处理队列</p>
-  </li>
+<p>当把列表类型作为队列使用时，RPOPLPUSH命令可以很直观的在多个队列中传递数据。当source和destination相同时，RPOPLPUSH命令会不断地将对尾的元素移到队首，借助这个特性我们可以实现一个网站监控系统：使用一个队列存储需要监控的网址，然后监控程序不断地使用RPOPLPUSH命令循环取出一个网址来测试可用性。RPOPLPUSH的好处在于在程序执行过程中仍然可以不断的向网址列表中加入新网址，整个系统易扩展，允许多个客户端同时处理队列</p></li>
 </ol>
 
-<h2 id="section-7">4）集合类型</h2>
+<h2>4）集合类型</h2>
 
-<p><code class="highlighter-rouge">在集合中的每个元素都是不同的，且没有顺序。一个集合类型（set）键可以存储之多232-1个字符串</code></p>
+<p><code>在集合中的每个元素都是不同的，且没有顺序。一个集合类型（set）键可以存储之多232-1个字符串</code></p>
 
 <ol>
-  <li>
-    <p>增加/删除元素</p>
+<li><p>增加/删除元素</p>
 
-    <p><code class="highlighter-rouge">SADD key member [member ...]</code></p>
+<p><code>SADD key member [member ...]</code></p>
 
-    <p><code class="highlighter-rouge">SREM key member [member ...]</code></p>
+<p><code>SREM key member [member ...]</code></p>
 
-    <p>SADD命令用来向集合中增加一个或多个元素，如果键不存在则自动创建。因为一个集合中不能有相同的元素，相同键的元素会被忽略执行</p>
+<p>SADD命令用来向集合中增加一个或多个元素，如果键不存在则自动创建。因为一个集合中不能有相同的元素，相同键的元素会被忽略执行</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; SADD letters a 
+(integer) 1
+redis&gt; SADD letters a b c
+(integer) 2
+</code></pre></div>
+<p>第二条SADD命令返回值为2是因为元素a已经存在，所以实际只加入了两个元素</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; SADD letters a 
- (integer) 1
- redis&gt; SADD letters a b c
- (integer) 2
-</code></pre>
-    </div>
+<p>SREM命令用来从集合正删除一个或者多个元素，并返回删除成功的个数</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; SREM letters c d 
+(integer) 1
+</code></pre></div></li>
+<li><p>获得集合中的所有元素</p>
 
-    <p>第二条SADD命令返回值为2是因为元素a已经存在，所以实际只加入了两个元素</p>
+<p><code>SMEMBERS key</code></p>
 
-    <p>SREM命令用来从集合正删除一个或者多个元素，并返回删除成功的个数</p>
+<p>SMEMBERS命令会返回集合中的所有元素</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; SMEMBERS letters
+1)"b"
+2)"a"
+</code></pre></div></li>
+<li><p>判断元素是否在集合中</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; SREM letters c d 
- (integer) 1
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>获得集合中的所有元素</p>
+<p><code>SMEMBERS key member</code></p>
 
-    <p><code class="highlighter-rouge">SMEMBERS key</code></p>
+<p>判断一个元素是否在集合中是一个时间复杂度为O(1)的操作，无论集合元素多少，都可以很快速的返回结果。当值存在时SMEMBERS命令返回1，不存在返回0</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; SMEMBERS letters a 
+(integer) 1
+redis&gt; SMEMBERS letters d
+(integer) 0
+</code></pre></div></li>
+<li><p>集合间运算</p>
 
-    <p>SMEMBERS命令会返回集合中的所有元素</p>
+<p><code>SDIFF key [key ...]</code></p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; SMEMBERS letters
- 1)"b"
- 2)"a"
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>判断元素是否在集合中</p>
+<p><code>SINTER key [key ...]</code></p>
 
-    <p><code class="highlighter-rouge">SMEMBERS key member</code></p>
-
-    <p>判断一个元素是否在集合中是一个时间复杂度为O(1)的操作，无论集合元素多少，都可以很快速的返回结果。当值存在时SMEMBERS命令返回1，不存在返回0</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> redis&gt; SMEMBERS letters a 
- (integer) 1
- redis&gt; SMEMBERS letters d
- (integer) 0
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>集合间运算</p>
-
-    <p><code class="highlighter-rouge">SDIFF key [key ...]</code></p>
-
-    <p><code class="highlighter-rouge">SINTER key [key ...]</code></p>
-
-    <p><code class="highlighter-rouge">SUNION key [key ...]</code></p>
-
-    <ul>
-      <li>SDIFF用来对多个集合执行差集运算.</li>
-    </ul>
-
-    <p>集合A与集合B的差集表示A-B，代表所有属于A且不属于B的元素构成的集合</p>
-
-    <p><code class="highlighter-rouge">
- redis &gt; SADD setA 1 2 3
- (integer) 3
- redis &gt; SADD setB 2 3 4
- (integer) 3
- redis &gt; SDIFF setA set B 
- 1）"1"
- redis &gt; SDIFF setB setA 
- 1) "4" 
-</code></p>
-
-    <p>SDIFF支持同时传入多个键<br />
- <code class="highlighter-rouge">redis &gt; SDIFF setA setB setC</code> 计算顺序是先计算setA-setB,在计算结果与setC差集。</p>
-
-    <ul>
-      <li>SINTER命令用来对多个集合执行交集运算。</li>
-    </ul>
-
-    <p>集合A与集合B的交集表示为A∩B，代表所有属于A且属于B的元素构成的集合</p>
-
-    <p><code class="highlighter-rouge">
- redis &gt; SADD setA 1 2 3
- (integer) 3
- redis &gt; SADD setB 2 3 4
- (integer) 3
- redis &gt; SINTER setA setB
- 1)"2"
- 2)"3"
-</code></p>
-
-    <ul>
-      <li>SUNION 命令用来对多个集合执行并集运算</li>
-    </ul>
-
-    <p>集合A与集合B的并集表示为A∪B，代表所有属于A或者属于B的元素构成的集合<br />
- <code class="highlighter-rouge">
- redis &gt; SADD setA 1 2 3
- (integer) 3
- redis &gt; SADD setB 2 3 4
- (integer) 3
- redis &gt; SINTER setA setB
- 1)"1"
- 2)"2"
- 3)"3"
- 4)"4"
-</code></p>
-  </li>
-  <li>
-    <p>命令拾遗</p>
-
-    <ul>
-      <li>
-        <p>获得集合中元素个数</p>
-
-        <p><code class="highlighter-rouge">SCARD key</code></p>
-      </li>
-    </ul>
-
-    <p>SCARD命令用来获得集合中的元素个数</p>
-
-    <p><code class="highlighter-rouge">
- redis &gt; SMEMBERS letters
- 1)"b"
- 2)"2"
- redis &gt; SCARD letters
- (integer)2
-</code></p>
-
-    <ul>
-      <li>
-        <p>进行集合运算并将结果存储</p>
-
-        <p><code class="highlighter-rouge">SDIFFSTORE destination key  [key ...]</code></p>
-
-        <p><code class="highlighter-rouge">SINTERSTORE destination key [key ...]</code></p>
-
-        <p><code class="highlighter-rouge">SUNINONSTORE destination key [key ...]</code></p>
-      </li>
-    </ul>
-
-    <p>结果存储在 destination的键中</p>
-
-    <ul>
-      <li>
-        <p>随机获得集合中的元素</p>
-
-        <p><code class="highlighter-rouge">SRANDMEMBER key	[count]</code></p>
-      </li>
-    </ul>
-
-    <p>SRANDMEMBER 命令用来随机从集合中获取一个元素</p>
-
-    <p><code class="highlighter-rouge">
- redis &gt; SRANDMEMBER letters
- "a"
- redis &gt; SRANDMEMBER letters
- "b"
-</code></p>
-
-    <p>count来控制一次获取多个元素</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> 1）当count为正数时，随机获取count个数不重复的数，大于元素总个数，返回全部
-
- 2）当count为负数时，随机获取|count|个元素，这些元素`有可能相同`
-</code></pre>
-    </div>
-
-    <ul>
-      <li>
-        <p>从集合中弹出一个元素</p>
-
-        <p><code class="highlighter-rouge">SPOP key </code></p>
-      </li>
-    </ul>
-
-    <p>由于集合是无序的，所以SPOP会从集合中随机选择一个元素弹出</p>
-
-    <p><code class="highlighter-rouge">
- redis &gt;SOPO letters	
- "b"	
- redis &gt; SMEMBERS letters
- 1)"a"
- 2)"c"
- 3)"d"
-</code></p>
-  </li>
+<p><code>SUNION key [key ...]</code>  </p></li>
 </ol>
+<div class="highlight"><pre><code class="language-" data-lang="">* SDIFF用来对多个集合执行差集运算.
 
-<h2 id="section-8">5）有序集合类型</h2>
+集合A与集合B的差集表示A-B，代表所有属于A且不属于B的元素构成的集合
 
-<p><code class="highlighter-rouge">在集合的基础上有序集合类型为集合中的每个元素都关联了一个分数，这使得我们不仅可以完成插入、删除和判断元素是否存在等集合类型支持的操作，还能够获得分数最高（或最低）的前N个元素</code></p>
+```
+redis &gt; SADD setA 1 2 3
+(integer) 3
+redis &gt; SADD setB 2 3 4
+(integer) 3
+redis &gt; SDIFF setA set B 
+1）"1"
+redis &gt; SDIFF setB setA 
+1) "4" 
+```
+
+SDIFF支持同时传入多个键
+`redis &gt; SDIFF setA setB setC` 计算顺序是先计算setA-setB,在计算结果与setC差集。
+
+* SINTER命令用来对多个集合执行交集运算。
+
+集合A与集合B的交集表示为A∩B，代表所有属于A且属于B的元素构成的集合
+
+```
+redis &gt; SADD setA 1 2 3
+(integer) 3
+redis &gt; SADD setB 2 3 4
+(integer) 3
+redis &gt; SINTER setA setB
+1)"2"
+2)"3"
+```
+
+* SUNION 命令用来对多个集合执行并集运算
+
+集合A与集合B的并集表示为A∪B，代表所有属于A或者属于B的元素构成的集合
+```
+redis &gt; SADD setA 1 2 3
+(integer) 3
+redis &gt; SADD setB 2 3 4
+(integer) 3
+redis &gt; SINTER setA setB
+1)"1"
+2)"2"
+3)"3"
+4)"4"
+```
+</code></pre></div>
+<ol>
+<li>命令拾遗</li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">* 获得集合中元素个数
+
+    `SCARD key`
+
+SCARD命令用来获得集合中的元素个数
+
+```
+redis &gt; SMEMBERS letters
+1)"b"
+2)"2"
+redis &gt; SCARD letters
+(integer)2
+```
+
+* 进行集合运算并将结果存储
+
+    `SDIFFSTORE destination key  [key ...]`
+
+    `SINTERSTORE destination key [key ...]`
+
+    `SUNINONSTORE destination key [key ...]`
+
+结果存储在 destination的键中
+
+* 随机获得集合中的元素
+
+    `SRANDMEMBER key    [count]`
+
+SRANDMEMBER 命令用来随机从集合中获取一个元素
+
+```
+redis &gt; SRANDMEMBER letters
+"a"
+redis &gt; SRANDMEMBER letters
+"b"
+```
+
+count来控制一次获取多个元素
+
+    1）当count为正数时，随机获取count个数不重复的数，大于元素总个数，返回全部
+
+    2）当count为负数时，随机获取|count|个元素，这些元素`有可能相同`
+
+* 从集合中弹出一个元素
+
+    `SPOP key `
+
+由于集合是无序的，所以SPOP会从集合中随机选择一个元素弹出
+
+```
+redis &gt;SOPO letters 
+"b" 
+redis &gt; SMEMBERS letters
+1)"a"
+2)"c"
+3)"d"
+``` 
+</code></pre></div>
+<h2>5）有序集合类型</h2>
+
+<p><code>在集合的基础上有序集合类型为集合中的每个元素都关联了一个分数，这使得我们不仅可以完成插入、删除和判断元素是否存在等集合类型支持的操作，还能够获得分数最高（或最低）的前N个元素</code></p>
 
 <p>有序集合类型在某些方面和列表类型有些相似</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>* （1）二者都是有序的
+<div class="highlight"><pre><code class="language-" data-lang="">* （1）二者都是有序的
 * （2）二者都可以获得某一范围的元素
-</code></pre>
-</div>
-
+</code></pre></div>
 <p>但是二者有很大的区别，使得他们的应用场景也不相同</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>* （1）列表类型通过链表实现，获取靠近两端的元素极快，当元素增多时，访问中间元素的速度会变慢，所以他更加适合实现如“新鲜事”“日志”这样很少访问中间元素的应用
+<div class="highlight"><pre><code class="language-" data-lang="">* （1）列表类型通过链表实现，获取靠近两端的元素极快，当元素增多时，访问中间元素的速度会变慢，所以他更加适合实现如“新鲜事”“日志”这样很少访问中间元素的应用
 * （2）有序集合类型是使用散列表和跳跃表实现的，即使读取中间部分的 数据也很快（时间复杂度是O(log(N))）
 * （3）列表中不能简单的调整某个元素的位置，但是有序集合可以（通过更改元素的分数）
 * （4）`有序集合比列表类型更消耗内存`
-</code></pre>
-</div>
-
+</code></pre></div>
 <ol>
-  <li>
-    <p>增加元素</p>
+<li><p>增加元素</p>
 
-    <p><code class="highlighter-rouge">ZADD key score member [score member...]</code></p>
+<p><code>ZADD key score member [score member...]</code></p>
 
-    <p>ZADD命令用来向有序集合中添加一个元素和该元素的分数，如果该元素已经存在则会用新的分数替换原有的分数。ZADD返回的是新加入到元素集合中的个数（不包含之前已经存在的元素）</p>
-
-    <p><code class="highlighter-rouge">
- redis&gt; ZADD scoreboard 89 Tom 67 Peter 100 David
- (integer)3
+<p>ZADD命令用来向有序集合中添加一个元素和该元素的分数，如果该元素已经存在则会用新的分数替换原有的分数。ZADD返回的是新加入到元素集合中的个数（不包含之前已经存在的元素）</p>
+<div class="highlight"><pre><code class="language-" data-lang="">redis&gt; ZADD scoreboard 89 Tom 67 Peter 100 David
+(integer)3
+</code></pre></div><div class="highlight"><pre><code class="language-" data-lang="">redis&gt; ZADD scoreboard  76 Peter 
+(integer)0
+</code></pre></div>
+<p>分数不仅可以是整数，还支持双精度浮点数
+<code>
+redis&gt; ZADD testboard 17E+307 a
+(integer)1
+redis&gt; ZADD testboard 1.5 b
+(integer)1
+redis&gt; ZADD testboard +inf c
+(integer)1
+redis&gt; ZADD testboard -inf d
+(integer)1
 </code></p>
 
-    <p><code class="highlighter-rouge">
- redis&gt; ZADD scoreboard  76 Peter 
- (integer)0
-</code></p>
+<p>其中+inf和-inf分别表示正无穷和负无穷</p></li>
+<li><p>获得元素的分数</p>
 
-    <p>分数不仅可以是整数，还支持双精度浮点数<br />
- <code class="highlighter-rouge">
- redis&gt; ZADD testboard 17E+307 a
- (integer)1
- redis&gt; ZADD testboard 1.5 b
- (integer)1
- redis&gt; ZADD testboard +inf c
- (integer)1
- redis&gt; ZADD testboard -inf d
- (integer)1
-</code></p>
-
-    <p>其中+inf和-inf分别表示正无穷和负无穷</p>
-  </li>
-  <li>
-    <p>获得元素的分数</p>
-
-    <p><code class="highlighter-rouge">ZSCORE key member</code></p>
-
-    <p><code class="highlighter-rouge">
- ZSCORE scoreboard Tom 
- "89"
-</code></p>
-  </li>
-  <li>
-    <p>获得排名在某个范围的元素列表</p>
-  </li>
+<p><code>ZSCORE key member</code></p>
+<div class="highlight"><pre><code class="language-" data-lang="">ZSCORE scoreboard Tom 
+"89"
+</code></pre></div></li>
+<li><p>获得排名在某个范围的元素列表   </p></li>
 </ol>
-
 
 
                 <hr>
@@ -1157,7 +936,7 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
                     data-url="http://clover.htmhub.com/2016/07/04/redis-study-2/"
                     data-images="http://clover.htmhub.com/img/post-bg-universe.jpg"
                     data-content="
-  参考书籍：Redis入门指南（第二版）李子骅 编著 人民邮电出版社
+参考书籍：Redis入门指南（第二版）李子骅 编著 人民邮电出版社
 
 
 一、准备
@@ -1165,9 +944,9 @@ OK		 并不是所有的配置都可以使用CONFIG SET 命令修改
 1）启动Redis
 
 
-  
-    直接启动
-     bas... | 克洛弗的博客 | Clover Blog " >
+直接启动
+    bash
+    # re... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
