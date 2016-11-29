@@ -306,6 +306,70 @@ CountPriceByJKL类继承于CountPrice类，CountPriceByJKL重写了Count()方法
 
 <h2>-迪米特法则（最少知道原则）</h2>
 
+<ul>
+<li><strong>定义</strong>：一个对象应该对其他对象保持最少的了解</li>
+<li><p><strong>场景</strong>：类与类之间的关系越密切，耦合度越大，当一个类发生改变时，对另一个类的影响也越大</p>
+
+<p>简单的理解就是高内聚，一个类尽量减少对其他对象的依赖，并且这个类的方法和属性能用私有的就尽量私有化</p></li>
+<li><p><strong>注意</strong>:  </p>
+
+<ul>
+<li>1)<code>只与直接的朋友通信，不要和陌生人说话</code></li>
+<li>2)过分的使用该原则，将导致系统复杂度变大。所以在采用迪米特法则时要反复权衡，既做到结构清晰，又要高内聚低耦合</li>
+</ul></li>
+</ul>
+
+<h2>-开闭原则</h2>
+
+<ul>
+<li><strong>定义</strong>：一个软件实体如类、模块和函数应该<code>对扩展开放，对修改关闭</code></li>
+<li><strong>场景</strong>：在软件的生命周期内，因为变化、升级和维护等原因需要对软件原有代码进行修改时，可能会给旧代码中引入错误，也可能会使我们不得不对整个功能进行重构，并且需要原有代码经过重新测试</li>
+<li><strong>建议</strong>: 当软件需求变化时，尽量通过扩展软件实体的行为来实现变化，而不是通过修改已有的代码来实现变化</li>
+</ul>
+
+<h1>设计模式分类</h1>
+
+<p>一般将面向对象设计模式分为三类 <code>创建型</code>、<code>结构型</code>、<code>行为型</code>三种。 </p>
+
+<ul>
+<li><p><code>创建型</code> ：创建对象时，不再由我们直接实例化对象；而是根据特定场景，由程序来确定创建对象的方式，从而保证更大的性能、更好的<code>架构</code>优势。创建型模式主要有</p>
+
+<ul>
+<li><code>简单工厂模式（并不是23种设计模式之一）</code></li>
+<li><code>工厂方法</code></li>
+<li><code>抽象工厂模式</code></li>
+<li><code>单例模式</code></li>
+<li><code>生成器模式</code></li>
+<li><code>原型模式</code></li>
+</ul></li>
+<li><p><code>结构型</code> ：用于帮助将多个对象组织成更大的结构。结构型模式主要有</p>
+
+<ul>
+<li><code>适配器模式</code></li>
+<li><code>桥接模式</code></li>
+<li><code>组合器模式</code></li>
+<li><code>装饰器模式</code></li>
+<li><code>门面模式</code></li>
+<li><code>亨元模式</code></li>
+<li><code>代理模式</code></li>
+</ul></li>
+<li><p><code>行为型</code> ：用于帮助系统间各对象的通信，以及如何控制复杂系统中流程。行为型模式主要有</p>
+
+<ul>
+<li><code>命令模式</code></li>
+<li><code>解释器模式</code></li>
+<li><code>迭代器模式</code></li>
+<li><code>中介者模式</code></li>
+<li><code>备忘录模式</code></li>
+<li><code>观察者模式</code></li>
+<li><code>状态模式</code></li>
+<li><code>策略模式</code></li>
+<li><code>模板模式</code></li>
+<li><code>访问者模式</code></li>
+<li><code>职责链模式</code></li>
+</ul></li>
+</ul>
+
 
                 <hr>
 
