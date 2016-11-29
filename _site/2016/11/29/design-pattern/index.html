@@ -256,6 +256,41 @@
 </ul></li>
 </ul>
 
+<h2>-里氏替换原则</h2>
+
+<ul>
+<li><strong>定义</strong>：所有引用基类的地方必须能透明地使用其子类的对象，也就是说<code>子类可以扩展父类的功能，但不能改变父类原有的功能</code></li>
+<li><strong>场景</strong>：有一功能P1，由类A完成。现需要将功能P1进行扩展，扩展后的功能为P，其中P由原有功能P1与新功能P2组成。新功能P由类A的子类B来完成，则子类B在完成新功能P2的同时，有可能会导致原有功能P1发生故障，如下图 <img src="http://clover.htmhub.com/img/phpdesign/20150406224441455.jpeg" alt="p2">
+CountPriceByJKL类继承于CountPrice类，CountPriceByJKL重写了Count()方法，这样可能影响到原来Count方法的功能。
+
+<ul>
+<li><strong>修改</strong>: 当使用继承时，遵循里氏替换原则。类B继承类A时，除添加新的方法完成新增功能P2外，尽量不要重写父类A的方法，也尽量不要重载父类A的方法。</li>
+</ul></li>
+</ul>
+
+<h2>-依赖倒置原则</h2>
+
+<ul>
+<li><p><strong>定义</strong>：高层模块不应该依赖低层模块，二者都应该依赖其抽象；抽象不应该依赖细节；细节应该依赖抽象</p>
+
+<p>此处理解起来是最困难的，一般会在项目框架的搭建的时候用到，例如，业务逻辑层相对于数据层是高层模块，因为业务逻辑层需要调用数据层去连接数据库，但是要做到可扩展高复用，尽量不要让业务逻辑层依赖数据层，可以在数据层抽象出一个接口，让业务逻辑层依赖于这个抽象接口</p></li>
+<li><p><strong>场景</strong>：类A（高层模块）直接依赖类B（低层模块），假如要将类A改为依赖类C（低层模块），则必须通过修改类A的代码来达成。这种场景下，类A一般是高层模块，负责复杂的业务逻辑；类B和类C是低层模块，负责基本的原子操作；假如修改类A，会给程序带来不必要的风险。<img src="http://clover.htmhub.com/img/phpdesign/20150406225436362.jpeg" alt="p2"></p>
+
+<p>AutoSystem类直接依赖于HondaCar与FordCar两个类，这样就产生了一个高耦合，AutoSystem类想操控HondaCar或者FordCar必须直接创建相应对象。</p></li>
+<li><p><strong>修改</strong>: 将类A修改为依赖接口I，类B和类C各自实现接口I，类A通过接口I间接与类B或者类C发生联系，则会大大降低修改类A的几率，如下图：<img src="http://clover.htmhub.com/img/phpdesign/20150406225842955.jpeg" alt="p2"></p>
+
+<p>经过此番修改，Honda与Ford实现ICar接口，提供了Run、Stop以及Turn功能方法，AutoSystem依赖ICar接口，这样迫使AutoSystem依赖抽象接口，这就使得AutoSystem类能够应对更多的需求变化。</p></li>
+<li><p><strong>优点</strong>: </p>
+
+<ul>
+<li>1)低层模块尽量都要有抽象类或接口，或者两者都有</li>
+<li>2)变量的声明类型尽量是抽象类或接口</li>
+<li>3)使用继承时遵循里氏替换原则 </li>
+</ul></li>
+</ul>
+
+<h2>-接口隔离原则</h2>
+
 
                 <hr>
 

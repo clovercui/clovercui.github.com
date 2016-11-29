@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 29 Nov 2016 14:30:29 +0800</pubDate>
-    <lastBuildDate>Tue, 29 Nov 2016 14:30:29 +0800</lastBuildDate>
+    <pubDate>Tue, 29 Nov 2016 14:46:59 +0800</pubDate>
+    <lastBuildDate>Tue, 29 Nov 2016 14:46:59 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -73,6 +73,41 @@
 &lt;li&gt;3)变更引起的风险降低，变更是必然的&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2&gt;-里氏替换原则&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：所有引用基类的地方必须能透明地使用其子类的对象，也就是说&lt;code&gt;子类可以扩展父类的功能，但不能改变父类原有的功能&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;场景&lt;/strong&gt;：有一功能P1，由类A完成。现需要将功能P1进行扩展，扩展后的功能为P，其中P由原有功能P1与新功能P2组成。新功能P由类A的子类B来完成，则子类B在完成新功能P2的同时，有可能会导致原有功能P1发生故障，如下图 &lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406224441455.jpeg&quot; alt=&quot;p2&quot;&gt;
+CountPriceByJKL类继承于CountPrice类，CountPriceByJKL重写了Count()方法，这样可能影响到原来Count方法的功能。
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;修改&lt;/strong&gt;: 当使用继承时，遵循里氏替换原则。类B继承类A时，除添加新的方法完成新增功能P2外，尽量不要重写父类A的方法，也尽量不要重载父类A的方法。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;-依赖倒置原则&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：高层模块不应该依赖低层模块，二者都应该依赖其抽象；抽象不应该依赖细节；细节应该依赖抽象&lt;/p&gt;
+
+&lt;p&gt;此处理解起来是最困难的，一般会在项目框架的搭建的时候用到，例如，业务逻辑层相对于数据层是高层模块，因为业务逻辑层需要调用数据层去连接数据库，但是要做到可扩展高复用，尽量不要让业务逻辑层依赖数据层，可以在数据层抽象出一个接口，让业务逻辑层依赖于这个抽象接口&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;场景&lt;/strong&gt;：类A（高层模块）直接依赖类B（低层模块），假如要将类A改为依赖类C（低层模块），则必须通过修改类A的代码来达成。这种场景下，类A一般是高层模块，负责复杂的业务逻辑；类B和类C是低层模块，负责基本的原子操作；假如修改类A，会给程序带来不必要的风险。&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406225436362.jpeg&quot; alt=&quot;p2&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;AutoSystem类直接依赖于HondaCar与FordCar两个类，这样就产生了一个高耦合，AutoSystem类想操控HondaCar或者FordCar必须直接创建相应对象。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;修改&lt;/strong&gt;: 将类A修改为依赖接口I，类B和类C各自实现接口I，类A通过接口I间接与类B或者类C发生联系，则会大大降低修改类A的几率，如下图：&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406225842955.jpeg&quot; alt=&quot;p2&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;经过此番修改，Honda与Ford实现ICar接口，提供了Run、Stop以及Turn功能方法，AutoSystem依赖ICar接口，这样迫使AutoSystem依赖抽象接口，这就使得AutoSystem类能够应对更多的需求变化。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;优点&lt;/strong&gt;: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1)低层模块尽量都要有抽象类或接口，或者两者都有&lt;/li&gt;
+&lt;li&gt;2)变量的声明类型尽量是抽象类或接口&lt;/li&gt;
+&lt;li&gt;3)使用继承时遵循里氏替换原则 &lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;-接口隔离原则&lt;/h2&gt;
 </description>
         <pubDate>Tue, 29 Nov 2016 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2016/11/29/design-pattern/</link>
