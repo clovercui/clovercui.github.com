@@ -51,5 +51,5 @@ tags:
 * 迪米特法则
 * 开闭原则
 
-![六大原则](img/phpdesign/20150406222929184.jpeg)
+![六大原则](http://clover.htmhub.com/img/phpdesign/20150406222929184.jpeg)
 
