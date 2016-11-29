@@ -43,6 +43,9 @@ tags:
  对应23种面向对象设计模式PPT：
 
   [23种常用面向对象设计模式](http://pan.baidu.com/s/1i3zksE5)
+  
+  [UML类图总结](http://blog.csdn.net/dragonpeng2008/article/details/6836448)
+  
 
 # 设计模式-六大原则
 
