@@ -10,9 +10,9 @@
     <meta name="keyword"  content="克洛弗, Clover克洛弗, Clover, @Clover, 克洛弗的博客, Clover Blog, 博客, 个人网站, 互联网, 前端,后端, 设计, 产品, PHP, JAVA,服务器,LINUX">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>PHP源码加密模块 php-beast - 克洛弗的博客 | Clover Blog</title>
+    <title>PHP设计模式 - 克洛弗的博客 | Clover Blog</title>
 
-    <link rel="canonical" href="http://clover.htmhub.com/2016/08/16/php-codes-encode/">
+    <link rel="canonical" href="http://clover.htmhub.com/2016/11/29/design-pattern/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -165,17 +165,17 @@
                         
                         <a class="tag" href="/tags/#Clover" title="Clover">Clover</a>
                         
-                        <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
+                        <a class="tag" href="/tags/#设计模式" title="设计模式">设计模式</a>
                         
                         <a class="tag" href="/tags/#PHP" title="PHP">PHP</a>
                         
                     </div>
-                    <h1>PHP源码加密模块 php-beast</h1>
+                    <h1>PHP设计模式</h1>
                     
                     
-                    <h2 class="subheading"></h2>
+                    <h2 class="subheading">复习篇</h2>
                     
-                    <span class="meta">Posted by Clover on August 16, 2016</span>
+                    <span class="meta">Posted by Clover on November 29, 2016</span>
                 </div>
             </div>
         </div>
@@ -194,133 +194,51 @@
                 post-container">
 
 				<blockquote>
-<p>https://github.com/liexusong/php-beast</p>
+<p>参考资料《大话设计模式》
+作者程杰
+参考 http://blog.csdn.net/jhq0113/article/details/44906491</p>
 </blockquote>
 
-<pre><code>
-  _____  _    _ _____    ____  ______           _____ _______
- |  __ \| |  | |  __ \  |  _ \|  ____|   /\    / ____|__   __|
- | |__) | |__| | |__) | | |_)/| |__     /  \  | (___    | |
- |  ___/|  __  |  ___/  |  _ ||  __|   / /\ \  \___ \   | |
- | |    | |  | | |      | |_)\| |____ / ____ \ ____) |  | |
- |_|    |_|  |_|_|      |____/|______/_/    \_\_____/   |_|
-</code></pre>
+<h1>设计模式-概述</h1>
 
-<pre>
-此模块可以用于商业用途, 版权归原作者.<br/>
-QQ交流群：239243332
-</pre>
+<h2>什么是设计模式</h2>
 
-<p><b>php-beast可以自定义加密模块，加密模块编写教程: <a href="https://github.com/liexusong/php-beast/wiki/%E5%8A%A0%E5%AF%86%E6%A8%A1%E5%9D%97%E7%BC%96%E5%86%99%E6%95%99%E7%A8%8B">点击</a></b></p>
+<p>设计模式（Design Pattern）是一套<strong>被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结</strong>。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。</p>
 
-<h3>编译安装如下:</h3>
-
-<pre><code>
-$ wget https://github.com/liexusong/php-beast/archive/master.zip
-$ unzip master.zip
-$ cd php-beast-master
-$ phpize
-$ ./configure --with-php-config=/usr/local/php/bin/php-config
-$ sudo make && make install
-
-编译好之后修改php.ini配置文件, 加入配置项: extension=beast.so, 重启php-fpm
-</code></pre>
-
-<pre>温馨提示: 可以设置较大的缓存提高效率</pre>
-
-<p><b>使用php-beast的性能：</b><br/><br/>
-<img src="http://git.oschina.net/liexusong/php-beast/raw/master/images/beast1.png?dir=0&filepath=images/beast1.png&oid=645b87003dada2eac4f1a9fcfd353aa0423f5711&sha=7ec2a0ddc7780b2bab538d9f49d8b262f1bc37b7" /></p>
-
-<p><b>不使用php-beast的性能：</b><br/><br/>
-<img src="http://git.oschina.net/liexusong/php-beast/raw/master/images/beast2.png?dir=0&filepath=images/beast2.png&oid=3f07cff6dca34b22d8933ab0ea1740a0e4f37e34&sha=7ec2a0ddc7780b2bab538d9f49d8b262f1bc37b7" /></p>
-
-配置项:
-<pre><code>
- beast.cache_size = size
- beast.log_file = "path_to_log"
- beast.enable = On
- beast.encrypt_handler = "des-algo"
-</code></pre>
-
-支持的模块有：
-<pre>
- 1. AES
- 2. DES
- 3. Base64
-</pre>
-
-<p>通过测试环境:
-<pre><code>
- Nginx + Fastcgi + (PHP-5.2.x ~ PHP-5.6.x)
-</code></pre></p>
-
-<h3>注意</h3>
-
-<p>如果出现502错误，一般是由于GCC版本太低导致，请先升级GCC再安装本模块。</p>
-
-<hr>
-
-<h2>怎么加密项目</h2>
-
-<p>安装完 <code>php-beast</code> 后可以使用 <code>tools</code> 目录下的 <code>encode_files.php</code> 来加密你的项目。使用 <code>encode_files.php</code> 之前先修改 <code>tools</code> 目录下的 <code>configure.ini</code> 文件，如下：
-```ini
-; source path
-src_path = &quot;&quot;</p>
-
-<p>; destination path
-dst_path = &quot;&quot;</p>
-
-<p>; expire time
-expire = &quot;&quot;
-``<code>
-</code>src<em>path<code>是要加密项目的路径，</code>dst</em>path<code>是保存加密后项目的路径，</code>expire<code>是设置项目可使用的时间 (</code>expire<code>的格式是：</code>YYYY-mm-dd HH:ii:ss<code>)。
-修改完</code>configure.ini<code>文件后就可以使用命令</code>php encode_files.php` 开始加密项目。</p>
-
-<hr>
-
-<h2>制定自己的php-beast</h2>
-
-<p><code>php-beast</code> 有多个地方可以定制的，以下一一列出：</p>
-
-<p><em>1.</em> 使用 <code>header.c</code> 文件可以修改 <code>php-beast</code> 加密后的文件头结构，这样网上的解密软件就不能认识我们的加密文件，就不能进行解密，增加加密的安全性。</p>
-
-<p><em>2.</em> <code>php-beast</code> 提供只能在指定的机器上运行的功能。要使用此功能可以在 <code>networkcards.c</code> 文件添加能够运行机器的网卡号，例如：
-<code>c
-char *allow_networkcards[] = {
-    &quot;fa:16:3e:08:88:01&quot;,
-    NULL,
-};
-</code>
-这样设置之后，<code>php-beast</code> 扩展就只能在 <code>fa:16:3e:08:88:01</code> 这台机器上运行。另外要注意的是，由于有些机器网卡名可能不一样，所以如果你的网卡名不是 <code>eth0</code> 的话，可以在 <code>php.ini</code> 中添加配置项： <code>beast.networkcard = &quot;xxx&quot;</code> 其中 <code>xxx</code> 就是你的网卡名，也可以配置多张网卡，如：<code>beast.networkcard = &quot;eth0,eth1,eth2&quot;</code>。</p>
-
-<p><em>3.</em> 使用 <code>php-beast</code> 时最好不要使用默认的加密key，因为扩展是开源的，如果使用默认加密key的话，很容易被人发现。所以最好编译的时候修改加密的key，<code>aes模块</code> 可以在 <code>aes_algo_handler.c</code> 文件修改，而 <code>des模块</code> 可以在 <code>des_algo_handler.c</code> 文件修改。</p>
-
-<hr>
-
-<h3>使用过程</h3>
-
-<hr>
+<h2>设计模式的优点</h2>
 
 <ol>
-<li><p>安装好php-beast喝php扩展</p></li>
-<li><p>编写 php-beast-master/tools/configure.ini</p></li>
-</ol>
-<div class="highlight"><pre><code class="language-" data-lang="">  ; source path
-  src_path = "/home/wwwroot/demo9.htmhub.com.bak"
-
-  ; destination path
-  dst_path = "/home/wwwroot/demo9.htmhub.com"
-
-  ; expire time
-  expire = ""
-</code></pre></div>
-<ol>
-<li>执行编译过程 </li>
+<li><strong>复用解决方案</strong>：设计模式本身就是对某一类问题的通用解决方案，是更高级别的复用，已经超出了代码复用</li>
+<li><strong>确定通用术语</strong>：开发中的交流和协作都需要共同的词汇其础和对问题的共识.</li>
+<li><strong>代码更易于修改与维护</strong>：因为设计模式都是久经考验的解决方案,它们的结构都是经过长期的发展形成的，善于应对变化，设计模式本身也是对变化点的封装</li>
+<li><strong>模式有助于提高思考层次</strong>。学习模式后,就算不用模式中的方法，也会更好的采取更好的策略去解决问题</li>
 </ol>
 
-<p><code>php  php-beast-master/tools/encode_files.php</code></p>
+<h2>资源</h2>
 
-<p>此时会将配置好的代码加密，解密过程是通过 beast.so 在线解密的。PHP文件可以正常访问。</p>
+<p>更多详情敬请关注我的视频课程：
+ <a href="http://edu.csdn.net/course/detail/602">PHP面向对象设计模式</a></p>
+
+<p>分享一个我在公司内部培训的资料，C#实例源代码及类图：</p>
+
+<p><a href="http://pan.baidu.com/s/1qWOE5dy">设计模式源代码及UML类图</a></p>
+
+<p>对应23种面向对象设计模式PPT：</p>
+
+<p><a href="http://pan.baidu.com/s/1i3zksE5">23种常用面向对象设计模式</a></p>
+
+<h1>设计模式-六大原则</h1>
+
+<ul>
+<li>单一职责</li>
+<li>里氏替换</li>
+<li>依赖倒置</li>
+<li>接口隔离</li>
+<li>迪米特法则</li>
+<li>开闭原则</li>
+</ul>
+
+<p><img src="img/phpdesign/20150406222929184.jpeg" alt="六大原则"></p>
 
 
                 <hr>
@@ -330,16 +248,16 @@ char *allow_networkcards[] = {
                 </style>
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="/2016/08/16/php-codes-encode"
-                    data-title="PHP源码加密模块 php-beast"
-                    data-url="http://clover.htmhub.com/2016/08/16/php-codes-encode/"
+                    data-thread-key="/2016/11/29/design-pattern"
+                    data-title="PHP设计模式"
+                    data-url="http://clover.htmhub.com/2016/11/29/design-pattern/"
                     data-images="http://clover.htmhub.com/img/contact-bg.jpg"
                     data-content="
-https://github.com/liexusong/php-beast
+参考资料《大话设计模式》
+作者程杰
+参考 http://blog.csdn.net/jhq0113/article/details/44906491
 
-
-
-  _____  _    _ _____    ____  ___... | 克洛弗的博客 | Clover Blog " >
+... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -359,19 +277,12 @@ https://github.com/liexusong/php-beast
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2016/08/16/linux-file-encode/" data-toggle="tooltip" data-placement="top" title="Linux文件加密之ccrypt">
+                        <a href="/2016/08/16/php-codes-encode/" data-toggle="tooltip" data-placement="top" title="PHP源码加密模块 php-beast">
                         Previous<br>
-                        <span>Linux文件加密之ccrypt</span>
+                        <span>PHP源码加密模块 php-beast</span>
                         </a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/2016/11/29/design-pattern/" data-toggle="tooltip" data-placement="top" title="PHP设计模式">
-                        Next<br>
-                        <span>PHP设计模式</span>
-                        </a>
-                    </li>
                     
                 </ul>
 
@@ -380,9 +291,9 @@ https://github.com/liexusong/php-beast
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="/2016/08/16/php-codes-encode"
-                        data-title="PHP源码加密模块 php-beast"
-                        data-url="http://clover.htmhub.com/2016/08/16/php-codes-encode/" >
+                        data-thread-key="/2016/11/29/design-pattern"
+                        data-title="PHP设计模式"
+                        data-url="http://clover.htmhub.com/2016/11/29/design-pattern/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
