@@ -4,7 +4,7 @@ title:      "PHP设计模式-Part1 理论篇"
 subtitle:   "概述和六大原则"
 date:       2016-11-29
 author:     "Clover"
-header-img: "img/contact-bg.jpg"
+header-img: "img/post-bg-js-module.jpg"
 catalog: true
 tags:
     - Clover
@@ -15,6 +15,7 @@ tags:
 
 > 参考资料《大话设计模式》
 > 作者程杰
+
 > 参考 http://blog.csdn.net/jhq0113/article/details/44906491
 
 # 设计模式-概述
