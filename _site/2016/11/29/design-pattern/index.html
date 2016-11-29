@@ -10,7 +10,7 @@
     <meta name="keyword"  content="克洛弗, Clover克洛弗, Clover, @Clover, 克洛弗的博客, Clover Blog, 博客, 个人网站, 互联网, 前端,后端, 设计, 产品, PHP, JAVA,服务器,LINUX">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>PHP设计模式 - 克洛弗的博客 | Clover Blog</title>
+    <title>PHP设计模式-Part1 理论篇 - 克洛弗的博客 | Clover Blog</title>
 
     <link rel="canonical" href="http://clover.htmhub.com/2016/11/29/design-pattern/">
 
@@ -170,10 +170,10 @@
                         <a class="tag" href="/tags/#PHP" title="PHP">PHP</a>
                         
                     </div>
-                    <h1>PHP设计模式</h1>
+                    <h1>PHP设计模式-Part1 理论篇</h1>
                     
                     
-                    <h2 class="subheading">复习篇</h2>
+                    <h2 class="subheading">概述和六大原则</h2>
                     
                     <span class="meta">Posted by Clover on November 29, 2016</span>
                 </div>
@@ -203,7 +203,7 @@
 
 <h2>-什么是设计模式</h2>
 
-<p>设计模式（Design Pattern）是一套<code>被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结*</code>。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。</p>
+<p>设计模式（Design Pattern）是一套<code>被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结</code>。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。</p>
 
 <h2>-设计模式的优点</h2>
 
@@ -291,6 +291,21 @@ CountPriceByJKL类继承于CountPrice类，CountPriceByJKL重写了Count()方法
 
 <h2>-接口隔离原则</h2>
 
+<ul>
+<li><strong>定义</strong>：客户端不应该依赖它不需要的接口；一个类对另一个类的依赖应该建立在最小的接口上。</li>
+<li><strong>场景</strong>：类A通过接口I依赖类B，类C通过接口I依赖类D，如果接口I对于类A和类B来说不是最小接口，则类B和类D必须去实现他们不需要的方法，如下图：<img src="http://clover.htmhub.com/img/phpdesign/20150406231050132.jpeg" alt="p2"></li>
+<li><strong>修改</strong>:将臃肿的接口I拆分为独立的几个接口，类A和类C分别与他们需要的接口建立依赖关系。也就是采用接口隔离原则<img src="http://clover.htmhub.com/img/phpdesign/20150406231127388.jpeg" alt="p2"></li>
+<li><strong>注意</strong>: 
+
+<ul>
+<li>1)<code>接口尽量小，但是要有限度</code>。对接口进行细化可以提高程序设计灵活性 ，是不争的事实，但是如果过小，则会造成接口数量过多，使设计复杂化。所以一定要适度。</li>
+<li>2)为依赖接口的类定制服务，只暴露给调用的类它需要的方法，它不需要的方法则隐藏起来。只有专注地为一个模块提供定制服务，才能建立最小的依赖关系</li>
+<li>3)提高内聚，减少对外交互。使接口用<code>最少的方法去完成最多</code>的事情</li>
+</ul></li>
+</ul>
+
+<h2>-迪米特法则（最少知道原则）</h2>
+
 
                 <hr>
 
@@ -300,7 +315,7 @@ CountPriceByJKL类继承于CountPrice类，CountPriceByJKL重写了Count()方法
                 <div class="ds-share"
                     style="text-align: right"
                     data-thread-key="/2016/11/29/design-pattern"
-                    data-title="PHP设计模式"
+                    data-title="PHP设计模式-Part1 理论篇"
                     data-url="http://clover.htmhub.com/2016/11/29/design-pattern/"
                     data-images="http://clover.htmhub.com/img/contact-bg.jpg"
                     data-content="
@@ -343,7 +358,7 @@ CountPriceByJKL类继承于CountPrice类，CountPriceByJKL重写了Count()方法
                 <div class="comment">
                     <div class="ds-thread"
                         data-thread-key="/2016/11/29/design-pattern"
-                        data-title="PHP设计模式"
+                        data-title="PHP设计模式-Part1 理论篇"
                         data-url="http://clover.htmhub.com/2016/11/29/design-pattern/" >
                     </div>
                 </div>
