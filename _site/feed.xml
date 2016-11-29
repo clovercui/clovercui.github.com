@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 29 Nov 2016 14:15:24 +0800</pubDate>
-    <lastBuildDate>Tue, 29 Nov 2016 14:15:24 +0800</lastBuildDate>
+    <pubDate>Tue, 29 Nov 2016 14:24:02 +0800</pubDate>
+    <lastBuildDate>Tue, 29 Nov 2016 14:24:02 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -19,11 +19,11 @@
 
 &lt;h1&gt;设计模式-概述&lt;/h1&gt;
 
-&lt;h2&gt;什么是设计模式&lt;/h2&gt;
+&lt;h2&gt;-什么是设计模式&lt;/h2&gt;
 
 &lt;p&gt;设计模式（Design Pattern）是一套&lt;strong&gt;被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结&lt;/strong&gt;。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。&lt;/p&gt;
 
-&lt;h2&gt;设计模式的优点&lt;/h2&gt;
+&lt;h2&gt;-设计模式的优点&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;复用解决方案&lt;/strong&gt;：设计模式本身就是对某一类问题的通用解决方案，是更高级别的复用，已经超出了代码复用&lt;/li&gt;
@@ -32,10 +32,11 @@
 &lt;li&gt;&lt;strong&gt;模式有助于提高思考层次&lt;/strong&gt;。学习模式后,就算不用模式中的方法，也会更好的采取更好的策略去解决问题&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2&gt;资源&lt;/h2&gt;
+&lt;h2&gt;-资源&lt;/h2&gt;
 
-&lt;p&gt;更多详情敬请关注我的视频课程：
- &lt;a href=&quot;http://edu.csdn.net/course/detail/602&quot;&gt;PHP面向对象设计模式&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;更多详情敬请关注我的视频课程：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://edu.csdn.net/course/detail/602&quot;&gt;PHP面向对象设计模式&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;分享一个我在公司内部培训的资料，C#实例源代码及类图：&lt;/p&gt;
 
@@ -48,15 +49,22 @@
 &lt;h1&gt;设计模式-六大原则&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;单一职责&lt;/li&gt;
-&lt;li&gt;里氏替换&lt;/li&gt;
-&lt;li&gt;依赖倒置&lt;/li&gt;
-&lt;li&gt;接口隔离&lt;/li&gt;
-&lt;li&gt;迪米特法则&lt;/li&gt;
-&lt;li&gt;开闭原则&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;单一职责&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;里氏替换&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;依赖倒置&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;接口隔离&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;迪米特法则&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;开闭原则&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406222929184.jpeg&quot; alt=&quot;六大原则&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;-单一职责&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：&lt;code&gt;不要存在多于一个导致类变更的原因。&lt;/code&gt;通俗的说，即一个类只负责一项职责。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;场景&lt;/strong&gt;：类T负责两个不同的职责：职责P1，职责P2。当由于职责P1需求发生改变而需要修改类T时，有可能会导致原本运行正常的职责P2功能发生故障，关系如下图：&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406223705732.jpeg&quot; alt=&quot;p1&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Tue, 29 Nov 2016 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2016/11/29/design-pattern/</link>

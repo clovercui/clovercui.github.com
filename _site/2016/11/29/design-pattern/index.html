@@ -201,11 +201,11 @@
 
 <h1>设计模式-概述</h1>
 
-<h2>什么是设计模式</h2>
+<h2>-什么是设计模式</h2>
 
 <p>设计模式（Design Pattern）是一套<strong>被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结</strong>。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。</p>
 
-<h2>设计模式的优点</h2>
+<h2>-设计模式的优点</h2>
 
 <ol>
 <li><strong>复用解决方案</strong>：设计模式本身就是对某一类问题的通用解决方案，是更高级别的复用，已经超出了代码复用</li>
@@ -214,10 +214,11 @@
 <li><strong>模式有助于提高思考层次</strong>。学习模式后,就算不用模式中的方法，也会更好的采取更好的策略去解决问题</li>
 </ol>
 
-<h2>资源</h2>
+<h2>-资源</h2>
 
-<p>更多详情敬请关注我的视频课程：
- <a href="http://edu.csdn.net/course/detail/602">PHP面向对象设计模式</a></p>
+<p>更多详情敬请关注我的视频课程：</p>
+
+<p><a href="http://edu.csdn.net/course/detail/602">PHP面向对象设计模式</a></p>
 
 <p>分享一个我在公司内部培训的资料，C#实例源代码及类图：</p>
 
@@ -230,15 +231,22 @@
 <h1>设计模式-六大原则</h1>
 
 <ul>
-<li>单一职责</li>
-<li>里氏替换</li>
-<li>依赖倒置</li>
-<li>接口隔离</li>
-<li>迪米特法则</li>
-<li>开闭原则</li>
+<li><code>单一职责</code></li>
+<li><code>里氏替换</code></li>
+<li><code>依赖倒置</code></li>
+<li><code>接口隔离</code></li>
+<li><code>迪米特法则</code></li>
+<li><code>开闭原则</code></li>
 </ul>
 
 <p><img src="http://clover.htmhub.com/img/phpdesign/20150406222929184.jpeg" alt="六大原则"></p>
+
+<h2>-单一职责</h2>
+
+<ul>
+<li><p><strong>定义</strong>：<code>不要存在多于一个导致类变更的原因。</code>通俗的说，即一个类只负责一项职责。</p></li>
+<li><p><strong>场景</strong>：类T负责两个不同的职责：职责P1，职责P2。当由于职责P1需求发生改变而需要修改类T时，有可能会导致原本运行正常的职责P2功能发生故障，关系如下图：<img src="http://clover.htmhub.com/img/phpdesign/20150406223705732.jpeg" alt="p1"></p></li>
+</ul>
 
 
                 <hr>
