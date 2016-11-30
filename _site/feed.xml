@@ -5,9 +5,216 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 29 Nov 2016 16:07:11 +0800</pubDate>
-    <lastBuildDate>Tue, 29 Nov 2016 16:07:11 +0800</lastBuildDate>
+    <pubDate>Wed, 30 Nov 2016 11:01:01 +0800</pubDate>
+    <lastBuildDate>Wed, 30 Nov 2016 11:01:01 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>PHP设计模式-Part2 创建型</title>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;参考资料《大话设计模式》
+作者程杰&lt;/p&gt;
+
+&lt;p&gt;参考 http://blog.csdn.net/jhq0113/article/details/44906491&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1&gt;设计模式-创建型&lt;/h1&gt;
+
+&lt;h2&gt;1.简单工厂模式&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;简单工厂模式&lt;/code&gt;:不属于23种常用面向对象设计模式之一。简单工厂模式是由&lt;code&gt;一个工厂对象决定创建出哪一种产品类的实例&lt;/code&gt;。简单工厂模式是工厂模式家族中最简单实用的模式，可以理解为是不同工厂模式的一个特殊实现。其实质是由一个工厂类&lt;code&gt;根据传入的参数，动态决定应该创建哪一个产品类&lt;/code&gt;（这些产品类继承自一个父类或接口）的实例
+&lt;img src=&quot;http://clover.htmhub.com/img/20150409224555911.jpeg&quot; alt=&quot;pp&quot;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;角色和职责&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;工厂(SimpleFactory)角色&lt;/code&gt;：简单工厂模式的核心，它负责实现创建所有实例的内部逻辑。&lt;code&gt;工厂类可以被外界直接调用，创建所需的产品对象&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;抽象产品（IProduct）角色&lt;/code&gt;:简单工厂模式所创建的所有对象的父类，它负责描述所有实例所共有的公共接口。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;具体产品（Concrete Product）角色&lt;/code&gt;:是简单工厂模式的创建目标，所有创建的对象都是充当这个角色的某个具体类的实例&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;需求&lt;/strong&gt;：根据提供相应的属性值由简单工厂创建具有相应特性的产品对象&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;代码示例&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;    &lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;  
+    &lt;span class=&quot;sd&quot;&gt;/** 
+     * Created by PhpStorm. 
+     * User: Jiang 
+     * Date: 2015/4/9 
+     * Time: 21:48 
+     */&lt;/span&gt;  
+
+    &lt;span class=&quot;sd&quot;&gt;/**抽象产品角色 
+     * Interface IProduct   产品接口 
+     */&lt;/span&gt;  
+    &lt;span class=&quot;k&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IProduct&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+        &lt;span class=&quot;sd&quot;&gt;/**X轴旋转 
+         * @return mixed 
+         */&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;XRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
+
+        &lt;span class=&quot;sd&quot;&gt;/**Y轴旋转 
+         * @return mixed 
+         */&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;YRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+
+    &lt;span class=&quot;sd&quot;&gt;/**具体产品角色 
+     * Class XProduct        X轴旋转产品 
+     */&lt;/span&gt;  
+    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XProduct&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IProduct&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+
+        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+            &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+            &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+
+        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;XRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;您好，我是X轴旋转产品，X轴转转转。。。。。。&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+
+        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;YRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;抱歉，我是X轴旋转产品，我没有Y轴。。。。。。&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+
+    &lt;span class=&quot;sd&quot;&gt;/**具体产品角色 
+     * Class YProduct        Y轴旋转产品 
+     */&lt;/span&gt;  
+    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;YProduct&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IProduct&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+
+        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+            &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+            &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+
+        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;XRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;抱歉，我是Y轴旋转产品，我没有X轴。。。。。。&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+
+        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;YRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;您好，我是Y轴旋转产品，Y轴转转转。。。。。。&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+
+    &lt;span class=&quot;sd&quot;&gt;/**具体产品角色 
+     * Class XYProduct        XY轴都可旋转产品 
+     */&lt;/span&gt;  
+    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XYProduct&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IProduct&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+
+        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+            &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+            &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+
+        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;XRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;您好，我是XY轴都可旋转产品，X轴转转转。。。。。。&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+
+        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;YRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;您好，我是XY轴都可旋转产品，Y轴转转转。。。。。。&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+
+    &lt;span class=&quot;sd&quot;&gt;/**工厂角色 
+     * Class ProductFactory 
+     */&lt;/span&gt;  
+    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ProductFactory&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;GetInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;===&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;XProduct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;elseif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;===&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;YProduct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;elseif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;XYProduct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;  
+            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;代码示例&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;        &lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;  
+    &lt;span class=&quot;sd&quot;&gt;/** 
+     * Created by PhpStorm. 
+     * User: Jiang 
+     * Date: 2015/4/9 
+     * Time: 21:54 
+     */&lt;/span&gt;  
+    &lt;span class=&quot;k&quot;&gt;require_once&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;./SimpleFactory/SimpleFactory.php&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+
+    &lt;span class=&quot;nb&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Content-Type:text/html;charset=utf-8&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
+
+    &lt;span class=&quot;nv&quot;&gt;$pro&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
+    &lt;span class=&quot;nv&quot;&gt;$pro&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ProductFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;GetInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
+    &lt;span class=&quot;nv&quot;&gt;$pro&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ProductFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;GetInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
+    &lt;span class=&quot;nv&quot;&gt;$pro&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ProductFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;GetInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
+    &lt;span class=&quot;nv&quot;&gt;$pro&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ProductFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;GetInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
+
+    &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$pro&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;br/&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+            &lt;span class=&quot;nv&quot;&gt;$v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;XRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;br/&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+            &lt;span class=&quot;nv&quot;&gt;$v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;YRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;非法产品！&amp;lt;br/&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;hr/&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;用浏览器访问测试代码，我们可以发现创建的对象依次是YProduct,XProduct,XYProduct,null。简单工厂的核心代码在于工厂(ProductFactory)这个角色，这里根据传入的xMax与yMax值去创建不同的对象，这便是简单工厂的实质，而且我们在测试调用客户端根本不知道具体的产品类是什么样，这样就做到了调用与创建的分离&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;优点&lt;/strong&gt;：让对象的调用者和对象创建过程分离，当对象调用者需要对象时，直接向工厂请求即可。从而&lt;code&gt;避免了对象的调用者与对象的实现类以硬编码方式耦合，以提高系统的可维护性、可扩展性。&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;缺点&lt;/strong&gt;：当产品修改时，工厂类也要做相应的修改，比如要增加一种操作类，如求M数的N次方，就得改case,修改原有类，&lt;code&gt;违背了开放-封闭原则&lt;/code&gt;。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 29 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://clover.htmhub.com/2016/11/29/design-pattern-2/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2016/11/29/design-pattern-2/</guid>
+        
+        <category>Clover</category>
+        
+        <category>设计模式</category>
+        
+        <category>PHP</category>
+        
+        
+      </item>
     
       <item>
         <title>PHP设计模式-Part1 理论篇</title>
@@ -2672,129 +2879,6 @@ echo &amp;#39;hello word!&amp;#39;;
         <category>JavaScript</category>
         
         <category>译文</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>都 2015 年了，CSS 怎么还是这么糟糕</title>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;下滑这里查看更多内容&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3&gt;&lt;a href=&quot;http://huangxuan.me/css-sucks-2015&quot;&gt;Watch Slides →&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://huangxuan.me/css-sucks-2015/attach/qrcode.png&quot; width=&quot;350&quot; height=&quot;350&quot;/&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;small class=&quot;img-hint&quot;&gt;你也可以通过扫描二维码在手机上观看&lt;/small&gt;&lt;/p&gt;
-
-&lt;p&gt;这个 Web Slides 开源在&lt;a href=&quot;https://github.com/Huxpro/css-sucks-2015&quot;&gt;我的 Github 上&lt;/a&gt;，欢迎你帮助我完善这个展示文稿，你可以给我提 issue，可以 fork &amp;amp; pull request。如果它能帮助到你了，希望你还能不吝啬 star 一下这个项目&lt;/p&gt;
-
-&lt;h3&gt;Catalog&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Document Times
-
-&lt;ul&gt;
-&lt;li&gt;Frameworks&lt;/li&gt;
-&lt;li&gt;Style Guide
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;OOCSS&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;SMACSS&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Pre-processer&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;PostCSS&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Application Times
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Shadow DOM&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;CSS &amp;quot;4&amp;quot;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Naming Convention
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;BEM&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;SUIT&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;CSS in JS&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;CSS Modules&lt;/strong&gt;&lt;br&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Interoperable CSS&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;PostCSS, again&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;My Opinionated Proposal
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;POCss&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;POCss: Page Override Components CSS&lt;/h2&gt;
-
-&lt;h3&gt;1. Scoping Components &lt;br&gt;&lt;small style=&quot;line-height:2em;&quot;&gt;&lt;em&gt;CSS Blocks should only be used inside a component of the same name.&lt;/em&gt;&lt;/small&gt;&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Component/index.scss
-&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.ComponentName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--mofierName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;__decendentName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;--modifierName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;.isStateOfComponent&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Component/index.js&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;./index.scss&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;CSS is &lt;em&gt;always bundled&lt;/em&gt; with components&lt;br&gt;(from loading, mount to unmount)&lt;/p&gt;
-
-&lt;h3&gt;2. Components can be Overrode by Pages &lt;br&gt;&lt;small style=&quot;line-height:2em;&quot;&gt;&lt;em&gt;There is always requirements to rewrite styles of components in pages&lt;/em&gt;&lt;/small&gt;&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Pages/PageA.scss
-&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;#PageA&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;.pagelet-name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nc&quot;&gt;.pagelet-descendent-name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;.ComponentName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* override */&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Pages/index.js&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;./PageA.scss&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;#Page&lt;/em&gt; for absolutely scoping between pages&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;.pagelet-name&lt;/em&gt; should be lowercase to prevent conflicting with components&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Why POC?&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;It&amp;#39;s technology-agnostic&lt;/strong&gt;
-&lt;small&gt;
-&lt;em&gt;One css framework can be played with whatever technology stacks&lt;/em&gt;&lt;br&gt;
-&lt;em&gt;You can combined Scss, PostCSS and whatever you want&lt;/em&gt;
-&lt;/small&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Solving problems, and easy&lt;/strong&gt;
-&lt;small&gt;
-&lt;em&gt;Makes reading and teamwork much easier&lt;/em&gt;&lt;br&gt;
-&lt;em&gt;Get all benefit from BEM, SUITCSS and others&lt;/em&gt;
-&lt;/small&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Leverage the power of cascading properly&lt;/strong&gt;
-&lt;small&gt;
-&lt;em&gt;Scoping components but allow reasonable overriding&lt;/em&gt;&lt;br&gt;
-&lt;em&gt;It&amp;#39;s pragmatic, flexible and hitting the sweet spot&lt;/em&gt;
-&lt;/small&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Thanks&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://lab.hakim.se/reveal-js&quot;&gt;Reveal.js&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 28 Dec 2015 00:00:00 +0800</pubDate>
-        <link>http://clover.htmhub.com/2015/12/28/css-sucks-2015/</link>
-        <guid isPermaLink="true">http://clover.htmhub.com/2015/12/28/css-sucks-2015/</guid>
-        
-        <category>前端开发</category>
-        
-        <category>CSS</category>
         
         
       </item>
