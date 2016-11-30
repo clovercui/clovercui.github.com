@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 30 Nov 2016 11:01:01 +0800</pubDate>
-    <lastBuildDate>Wed, 30 Nov 2016 11:01:01 +0800</lastBuildDate>
+    <pubDate>Wed, 30 Nov 2016 11:03:54 +0800</pubDate>
+    <lastBuildDate>Wed, 30 Nov 2016 11:03:54 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -23,7 +23,7 @@
 &lt;h2&gt;1.简单工厂模式&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;简单工厂模式&lt;/code&gt;:不属于23种常用面向对象设计模式之一。简单工厂模式是由&lt;code&gt;一个工厂对象决定创建出哪一种产品类的实例&lt;/code&gt;。简单工厂模式是工厂模式家族中最简单实用的模式，可以理解为是不同工厂模式的一个特殊实现。其实质是由一个工厂类&lt;code&gt;根据传入的参数，动态决定应该创建哪一个产品类&lt;/code&gt;（这些产品类继承自一个父类或接口）的实例
-&lt;img src=&quot;http://clover.htmhub.com/img/20150409224555911.jpeg&quot; alt=&quot;pp&quot;&gt;&lt;/p&gt;
+&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150409224555911.jpeg&quot; alt=&quot;pp&quot;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;角色和职责&lt;/strong&gt;：&lt;/p&gt;
