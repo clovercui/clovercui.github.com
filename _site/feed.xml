@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 30 Nov 2016 11:03:54 +0800</pubDate>
-    <lastBuildDate>Wed, 30 Nov 2016 11:03:54 +0800</lastBuildDate>
+    <pubDate>Wed, 30 Nov 2016 11:25:01 +0800</pubDate>
+    <lastBuildDate>Wed, 30 Nov 2016 11:25:01 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -201,6 +201,126 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;优点&lt;/strong&gt;：让对象的调用者和对象创建过程分离，当对象调用者需要对象时，直接向工厂请求即可。从而&lt;code&gt;避免了对象的调用者与对象的实现类以硬编码方式耦合，以提高系统的可维护性、可扩展性。&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;缺点&lt;/strong&gt;：当产品修改时，工厂类也要做相应的修改，比如要增加一种操作类，如求M数的N次方，就得改case,修改原有类，&lt;code&gt;违背了开放-封闭原则&lt;/code&gt;。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;2.工厂方法&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;具体案例&lt;/strong&gt;：请MM去麦当劳吃汉堡，不同的MM有不同的口味，要每个都记住是一件烦人的事情，我们一般采用FactoryMethod模式，带着MM到服务员那儿，说“要一个汉堡”，具体要什么样的汉堡呢，让MM直接跟服务员说就行了&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;工厂方法模式核心工厂类不再负责所有产品的创建，而是将具体创建的工作交给子类去做，成为一个抽象工厂角色，仅负责给出具体工厂类必须实现的接口，而不接触哪一个产品类应当被实例化这种细节，如下图：&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150416222830823.jpeg&quot; alt=&quot;ww&quot;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;角色和职责&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;抽象工厂角色（IServerFactory）&lt;/code&gt;：是工厂方法模式的核心，与应用程序无关。任何在模式中创建的对象的工厂类必须实现这个接口&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;具体工厂角色(ChickenLegBaoFactory)&lt;/code&gt;:这是实现抽象工厂接口的具体工厂类，包含与应用程序密切相关的逻辑，并且受到应用程序调用以创建产品对象&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;抽象产品角色(IHanbao)&lt;/code&gt;:工厂方法模式所创建的对象的超类型，也就是产品对象的共同父类或共同拥有的接口&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;具体产品角色(ChickenLegBao)&lt;/code&gt;:这个角色实现了抽象产品角色所定义的接口。某具体产品有专门的具体工厂创建，它们之间往往一一对应&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;代码示例&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;    &lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;  
+    &lt;span class=&quot;sd&quot;&gt;/** 
+     * Created by PhpStorm. 
+     * User: Jiang 
+     * Date: 2015/4/16 
+     * Time: 22:12 
+     */&lt;/span&gt;  
+
+    &lt;span class=&quot;sd&quot;&gt;/**抽象产品角色       汉堡 
+     * Interface IHanbao 
+     */&lt;/span&gt;  
+    &lt;span class=&quot;k&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IHanbao&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Allay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+
+    &lt;span class=&quot;sd&quot;&gt;/**具体产品角色         肉松汉堡 
+     * Class RouSongBao 
+     */&lt;/span&gt;  
+    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RouSongBao&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IHanbao&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Allay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;I am 肉松汉堡，小的给主人解饿了！&amp;lt;br/&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+
+    &lt;span class=&quot;sd&quot;&gt;/**鸡肉汉堡 
+     * Class ChickenBao 
+     */&lt;/span&gt;  
+    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ChickenBao&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IHanbao&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Allay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;I am 鸡肉汉堡，小的给主人解饿了！&amp;lt;br/&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+
+    &lt;span class=&quot;sd&quot;&gt;/**抽象工厂角色 
+     * Interface IServerFactory 
+     */&lt;/span&gt;  
+    &lt;span class=&quot;k&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IServerFactory&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MakeHanbao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+
+    &lt;span class=&quot;sd&quot;&gt;/**具体工厂角色     肉松汉堡工厂 
+     * Class RouSongFactory 
+     */&lt;/span&gt;  
+    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RouSongFactory&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IServerFactory&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+
+        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MakeHanbao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;RouSongBao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+
+    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ChickenFactory&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IServerFactory&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+
+        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MakeHanbao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ChickenBao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;测试代码&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;    header(&quot;Content-Type:text/html;charset=utf-8&quot;);  
+    //------------------------工厂方式测试代码------------------  
+    require_once &quot;./FactoryMethod/FactoryMethod.php&quot;;  
+
+    //-----------------餐厅厨师-----------  
+    $chickenFactory=new ChickenFactory();  
+    $rouSongFactory=new RouSongFactory();  
+
+    //-----------点餐------------  
+    $chicken1=$chickenFactory-&amp;gt;MakeHanbao();  
+    $chicken2=$chickenFactory-&amp;gt;MakeHanbao();  
+    $rouSong1=$rouSongFactory-&amp;gt;MakeHanbao();  
+    $rouSong2=$rouSongFactory-&amp;gt;MakeHanbao();  
+
+    //------------------顾客吃饭---------  
+    $chicken1-&amp;gt;Allay();  
+    $chicken2-&amp;gt;Allay();  
+    $rouSong1-&amp;gt;Allay();  
+    $rouSong2-&amp;gt;Allay();  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;用浏览器运行测试代码我们可以发现，顾客都享用了自己的食物&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;优点&lt;/strong&gt;:&lt;code&gt;克服了简单工厂模式违背开放-封闭的原则&lt;/code&gt;，保持了封装对象创建过程的优点 &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;缺点&lt;/strong&gt;：当增加产品时，就得增加一个产品工厂的类，增加额外的开发量。避免不了分支判断的问题&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;简单工厂模式与工厂方法模式的比较&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1.结构复杂度&lt;/code&gt;:简单工厂模式要占优。简单工厂模式只需一个工厂类，而工厂方法模式的工厂类随着产品类个数增加而增加，从而增加了结构的复杂程度。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2.代码复杂度&lt;/code&gt; :代码复杂度和结构复杂度是一对矛盾，既然简单工厂模式在结构方面相对简洁，那么它在代码方面肯定是比工厂方法模式复杂的了。简单工厂模式的工厂类随着产品类的增加需要增加很多方法（或代码），而工厂方法模式每个具体工厂类只完成单一任务，代码简洁。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;3.管理上的难度&lt;/code&gt;:假如某个具体产品类需要进行一定的修改，很可能需要修改对应的工厂类。当同时需要修改多个产品类的时候，对工厂类的修改会变得相当麻烦。反而简单工厂没有这些麻烦，当多个产品类需要修改是，简单工厂模式仍然仅仅需要修改唯一的工厂类。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Tue, 29 Nov 2016 00:00:00 +0800</pubDate>
