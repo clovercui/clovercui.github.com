@@ -1,0 +1,31 @@
+---
+layout:     post
+title:      "Linux命令行基础"
+subtitle:   "Linux CLI"
+date:       2017-02-28
+author:     "Clover"
+header-img: "img/education_large_2x.jpg"
+catalog: true
+tags:
+    - Clover
+    - Linux
+
+---
+# Linux命令行基础
+
+## 一些名词
+
+`「图形界面」`、`「命令行」`、`「终端」`、`「shell」`、`「bash」`
+
+## 安装使用
+
+* Windws: 安装git, 打开 gitbash
+* Linux 打开终端
+* Mac 打开终端
+
+## 基本命令
+
+* 查看当前完整路径
+```bash
+pwd
+```
