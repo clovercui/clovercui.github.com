@@ -68,10 +68,52 @@ tags:
     rm -rf node_modules
     ```
     
+* `重命名文件`
+
+	```bash
+    mv readme.md README.md
+    ```
     
+* 创建文件夹
+
+	```bash
+    mkdir projects
+    ```
     
-    
-    
+## 文件路径
+
+* `根目录`
+
+	```bash
+    cd /
+    ```
+
+* `家目录`
+	
+    ```bash
+    cd ~
+	pwd
+    ```
+* `当前目录`
+
+	```bash
+    cd books
+	cd ./books
+    ```
+
+* `上级目录`
+
+	```bash
+    cd ..
+	cd ../css
+    ```
+## 编辑器VIM
+
+1. `vim a.md` 初始进入编辑器命令模式
+2. `i` 进入编辑模式
+3. 键盘左上角`esc` 进入命令命令模式
+4. `:wq` 保存退出
+5. `:q!` 不保存强制退出
     
     
     
