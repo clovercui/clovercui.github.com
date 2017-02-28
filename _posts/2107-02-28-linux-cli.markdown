@@ -51,13 +51,31 @@ tags:
     cd ../css
     cd ~/Desktop
     ```
+
 * `创建文件`
 	
     ```bash
     touch readme.md
     ```
 
+* `删除文件`
 
+	```bash
+    #创建readme.md
+    rm readme.md 
+
+    #删除node_modules文件夹，不提示
+    rm -rf node_modules
+    ```
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 
