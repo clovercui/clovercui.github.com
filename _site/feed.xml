@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 28 Feb 2017 11:53:03 +0800</pubDate>
-    <lastBuildDate>Tue, 28 Feb 2017 11:53:03 +0800</lastBuildDate>
+    <pubDate>Tue, 28 Feb 2017 11:55:09 +0800</pubDate>
+    <lastBuildDate>Tue, 28 Feb 2017 11:55:09 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -28,10 +28,10 @@
 &lt;h2&gt;基本命令&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;查看当前完整路径&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;查看当前完整路径&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;查看当前目录下文件&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;查看当前目录下文件&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# 不包括隐藏文件&lt;/span&gt;
 ls
 
@@ -40,6 +40,15 @@ ls -a
 
 &lt;span class=&quot;c&quot;&gt;# 查看当前目录下所有文件(包括隐藏文件)的详细信息&lt;/span&gt;
 ls -al
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;切换目录&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /c/project
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;code
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ../css
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/Desktop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;创建文件&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;touch readme.md
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
