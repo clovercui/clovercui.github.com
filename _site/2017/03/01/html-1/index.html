@@ -234,26 +234,55 @@ meta标签的name属性语法格式是：<code>＜meta name=&quot;参数&quot; c
 其中name属性主要有以下几种参数：</p>
 
 <ul>
-<li><p>Keywords(关键字)</p>
+<li><p><code>Keywords(关键字)</code></p>
 
 <p>说明：keywords用来告诉搜索引擎你网页的关键字是什么</p>
 
 <p>举例：＜meta name =&quot;keywords&quot; content=&quot;science,education,culture,politics,ecnomics，relationships, entertaiment, human&quot;＞</p></li>
-<li><p>description(网站内容描述)</p>
+<li><p><code>description(网站内容描述)</code></p>
 
 <p>说明：description用来告诉搜索引擎你的网站主要内容。</p>
 
 <p>举例：＜meta name=&quot;description&quot; content=&quot;This page is about the meaning of science, education,culture.&quot;＞</p></li>
-<li><p>robots(机器人向导)
+<li><p><code>robots(机器人向导)</code>
 　　
 说明：robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。</p>
 
 <p>举例：＜meta name=&quot;robots&quot; content=&quot;none&quot;＞</p></li>
-<li><p>author(作者)</p>
+<li><p><code>author(作者)</code></p>
 
 <p>说明：标注网页的作者</p>
 
 <p>举例：＜meta name=&quot;author&quot; content=&quot;root,root@21cn.com&quot;＞</p></li>
+</ul></li>
+<li><p>http-equiv属性
+http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值.
+meta标签的http-equiv属性语法格式是：＜meta http-equiv=&quot;参数&quot; content=&quot;参数变量值&quot;＞ ；其中http-equiv属性主要有以下几种参数</p>
+
+<ul>
+<li><code>Expires(期限)</code>
+说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。
+用法：＜meta http-equiv=&quot;expires&quot; content=&quot;Fri, 12 Jan 2001 18:18:18 GMT&quot;＞
+注意：必须使用GMT的时间格式。</li>
+<li>Pragma(cache模式)
+说明：禁止浏览器从本地计算机的缓存中访问页面内容。
+用法：＜meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;＞
+注意：这样设定，访问者将无法脱机浏览。</li>
+<li>Refresh(刷新)
+说明：自动刷新并指向新页面。
+用法：＜meta http-equiv=&quot;Refresh&quot; content=&quot;2；URL=http://www.root.net&quot;＞
+注意：其中的2是指停留2秒钟后自动刷新到URL网址。</li>
+<li>Set-Cookie(cookie设定)
+说明：如果网页过期，那么存盘的cookie将被删除。
+用法：＜meta http-equiv=&quot;Set-Cookie&quot; content=&quot;cookievalue=xxx; expires=Friday, 12-Jan-2001 18:18:18 GMT； path=/&quot;＞
+注意：必须使用GMT的时间格式。</li>
+<li>Window-target(显示窗口的设定)
+说明：强制页面在当前窗口以独立页面显示。
+用法：＜meta http-equiv=&quot;Window-target&quot; content=&quot;_top&quot;＞
+注意：用来防止别人在框架里调用自己的页面。</li>
+<li>content-Type(显示字符集的设定)
+说明：设定页面使用的字符集。
+用法：＜meta http-equiv=&quot;content-Type&quot; content=&quot;text/html; charset=gb2312&quot;＞</li>
 </ul></li>
 </ul>
 
