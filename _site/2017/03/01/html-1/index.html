@@ -255,34 +255,51 @@ meta标签的name属性语法格式是：<code>＜meta name=&quot;参数&quot; c
 
 <p>举例：＜meta name=&quot;author&quot; content=&quot;root,root@21cn.com&quot;＞</p></li>
 </ul></li>
-<li><p>http-equiv属性
+<li><p><code>http-equiv属性</code>
 http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值.
 meta标签的http-equiv属性语法格式是：＜meta http-equiv=&quot;参数&quot; content=&quot;参数变量值&quot;＞ ；其中http-equiv属性主要有以下几种参数</p>
 
 <ul>
-<li><code>Expires(期限)</code>
-说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。
-用法：＜meta http-equiv=&quot;expires&quot; content=&quot;Fri, 12 Jan 2001 18:18:18 GMT&quot;＞
-注意：必须使用GMT的时间格式。</li>
-<li>Pragma(cache模式)
-说明：禁止浏览器从本地计算机的缓存中访问页面内容。
-用法：＜meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;＞
-注意：这样设定，访问者将无法脱机浏览。</li>
-<li>Refresh(刷新)
-说明：自动刷新并指向新页面。
-用法：＜meta http-equiv=&quot;Refresh&quot; content=&quot;2；URL=http://www.root.net&quot;＞
-注意：其中的2是指停留2秒钟后自动刷新到URL网址。</li>
-<li>Set-Cookie(cookie设定)
-说明：如果网页过期，那么存盘的cookie将被删除。
-用法：＜meta http-equiv=&quot;Set-Cookie&quot; content=&quot;cookievalue=xxx; expires=Friday, 12-Jan-2001 18:18:18 GMT； path=/&quot;＞
-注意：必须使用GMT的时间格式。</li>
-<li>Window-target(显示窗口的设定)
-说明：强制页面在当前窗口以独立页面显示。
-用法：＜meta http-equiv=&quot;Window-target&quot; content=&quot;_top&quot;＞
-注意：用来防止别人在框架里调用自己的页面。</li>
-<li>content-Type(显示字符集的设定)
-说明：设定页面使用的字符集。
-用法：＜meta http-equiv=&quot;content-Type&quot; content=&quot;text/html; charset=gb2312&quot;＞</li>
+<li><p><code>Expires(期限)</code></p>
+
+<p>说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。</p>
+
+<p>用法：＜meta http-equiv=&quot;expires&quot; content=&quot;Fri, 12 Jan 2001 18:18:18 GMT&quot;＞</p>
+
+<p>注意：必须使用GMT的时间格式。</p></li>
+<li><p><code>Pragma(cache模式)</code></p>
+
+<p>说明：禁止浏览器从本地计算机的缓存中访问页面内容。</p>
+
+<p>用法：＜meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;＞</p>
+
+<p>注意：这样设定，访问者将无法脱机浏览。</p></li>
+<li><p><code>Refresh(刷新)</code></p>
+
+<p>说明：自动刷新并指向新页面。</p>
+
+<p>用法：＜meta http-equiv=&quot;Refresh&quot; content=&quot;2；URL=http://www.root.net&quot;＞</p>
+
+<p>注意：其中的2是指停留2秒钟后自动刷新到URL网址。</p></li>
+<li><p><code>Set-Cookie(cookie设定)</code></p>
+
+<p>说明：如果网页过期，那么存盘的cookie将被删除。</p>
+
+<p>用法：＜meta http-equiv=&quot;Set-Cookie&quot; content=&quot;cookievalue=xxx; expires=Friday, 12-Jan-2001 18:18:18 GMT； path=/&quot;＞</p>
+
+<p>注意：必须使用GMT的时间格式。</p></li>
+<li><p><code>Window-target(显示窗口的设定)</code></p>
+
+<p>说明：强制页面在当前窗口以独立页面显示。</p>
+
+<p>用法：＜meta http-equiv=&quot;Window-target&quot; content=&quot;_top&quot;＞</p>
+
+<p>注意：用来防止别人在框架里调用自己的页面。</p></li>
+<li><p><code>content-Type(显示字符集的设定)</code></p>
+
+<p>说明：设定页面使用的字符集。</p>
+
+<p>用法：＜meta http-equiv=&quot;content-Type&quot; content=&quot;text/html; charset=gb2312&quot;＞</p></li>
 </ul></li>
 </ul>
 
