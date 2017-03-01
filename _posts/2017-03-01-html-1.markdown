@@ -121,4 +121,7 @@ http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器
 
 ## `<meta http-equiv="X-UA-compatible" content="IE=edge,chrome=1">有什么作用`
 
+`A:`这个属性主要是设置浏览器优先使用什么模式来渲染页面的.
+以上代码IE=edge告诉IE使用最新的edge引擎渲染网页，chrome=1则可以激活Chrome Frame
+
 ## `常见的浏览器有哪些，什么内核`
