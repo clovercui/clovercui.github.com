@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 01 Mar 2017 15:39:05 +0800</pubDate>
-    <lastBuildDate>Wed, 01 Mar 2017 15:39:05 +0800</lastBuildDate>
+    <pubDate>Wed, 01 Mar 2017 15:40:23 +0800</pubDate>
+    <lastBuildDate>Wed, 01 Mar 2017 15:40:23 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -138,6 +138,13 @@ meta标签的http-equiv属性语法格式是：＜meta http-equiv=&amp;quot;参�
 以上代码IE=edge告诉IE使用最新的edge引擎渲染网页，chrome=1则可以激活Chrome Frame&lt;/p&gt;
 
 &lt;h2&gt;&lt;code&gt;常见的浏览器有哪些，什么内核&lt;/code&gt;&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;使用&lt;code&gt;Trident&lt;/code&gt;的是internet explorer，国产的绝大部分浏览器。Trident是就是ie内核&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;Gecko&lt;/code&gt;的是Mozilla Firefox，使用 Gecko 内核的浏览器也有不少，如 Netscape MozillaSuite/SeaMonkey 等&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;Presto&lt;/code&gt;的是opera，这是目前公认网页浏览速度最快的浏览器内核&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;WebKit&lt;/code&gt;的有苹果的safari，谷歌的chrome，还有国产的大部分双核浏览器其中一核就是WebKit&lt;/li&gt;
+&lt;/ol&gt;
 </description>
         <pubDate>Wed, 01 Mar 2017 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2017/03/01/html-1/</link>

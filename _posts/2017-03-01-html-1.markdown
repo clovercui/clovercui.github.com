@@ -134,3 +134,8 @@ http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器
 以上代码IE=edge告诉IE使用最新的edge引擎渲染网页，chrome=1则可以激活Chrome Frame
 
 ## `常见的浏览器有哪些，什么内核`
+
+1. 使用`Trident`的是internet explorer，国产的绝大部分浏览器。Trident是就是ie内核
+2. 使用`Gecko`的是Mozilla Firefox，使用 Gecko 内核的浏览器也有不少，如 Netscape MozillaSuite/SeaMonkey 等
+3. 使用`Presto`的是opera，这是目前公认网页浏览速度最快的浏览器内核
+4. 使用`WebKit`的有苹果的safari，谷歌的chrome，还有国产的大部分双核浏览器其中一核就是WebKit
