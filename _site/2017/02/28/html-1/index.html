@@ -10,9 +10,9 @@
     <meta name="keyword"  content="克洛弗, Clover克洛弗, Clover, @Clover, 克洛弗的博客, Clover Blog, 博客, 个人网站, 互联网, 前端,后端, 设计, 产品, PHP, JAVA,服务器,LINUX">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>My First Blog - 克洛弗的博客 | Clover Blog</title>
+    <title>Html基础-1 - 克洛弗的博客 | Clover Blog</title>
 
-    <link rel="canonical" href="http://clover.htmhub.com/2016/03/24/my-first-blog/">
+    <link rel="canonical" href="http://clover.htmhub.com/2017/02/28/html-1/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -144,13 +144,13 @@
 
     <!-- Image to hack wechat -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="/img/post-bg-os-metro.jpg" width="0" height="0"> -->
+<!-- <img src="/img/education_large_2x.jpg" width="0" height="0"> -->
 
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
         position: relative;
-        background-image: url('/img/post-bg-os-metro.jpg')
+        background-image: url('/img/education_large_2x.jpg')
     }
 
     
@@ -165,17 +165,17 @@
                         
                         <a class="tag" href="/tags/#Clover" title="Clover">Clover</a>
                         
-                        <a class="tag" href="/tags/#OS" title="OS">OS</a>
+                        <a class="tag" href="/tags/#前端" title="前端">前端</a>
                         
-                        <a class="tag" href="/tags/#Blog" title="Blog">Blog</a>
+                        <a class="tag" href="/tags/#Html" title="Html">Html</a>
                         
                     </div>
-                    <h1>My First Blog</h1>
+                    <h1>Html基础-1</h1>
                     
                     
-                    <h2 class="subheading">我的第一个blog</h2>
+                    <h2 class="subheading"></h2>
                     
-                    <span class="meta">Posted by Clover on March 24, 2016</span>
+                    <span class="meta">Posted by Clover on February 28, 2017</span>
                 </div>
             </div>
         </div>
@@ -193,26 +193,39 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<blockquote>
-<p>宇宙，海洋，黑洞</p>
-</blockquote>
+				<h1>HTML1</h1>
 
-<h2>大海</h2>
+<h2><code>网页乱码的问题是如何产生的？怎样解决?</code></h2>
 
-<p><code>
-echo &#39;hello word!&#39;;
-</code></p>
+<p><code>A:</code>造成html网页乱码原因主要是html源代码内中文字内容与html编码不同造成。解决办法：保持文件的编写字符集和网页设置的字符集保持一致 如使用UTF-8编写的文件，网页头设置为<code>&lt;meta charset=&quot;utf-8&quot;&gt;</code></p>
 
-<h2>宇宙</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">echo 'hello black!';
-</code></pre></div>
-<h2>黑洞</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">#cat /etc/issue  
-#cat /etc/*-release 
-#uname -a
-#MemTotal=`free -m | grep Mem | awk '{print  $2}'`
-#df -h 
-</code></pre></div>
+<h2><code>颜色有几种写法， 红色、 绿色、蓝色、白色、黑色如何表示？ 透明黑色如何表示？#ccc的颜色#eee的颜色？ #333的颜色？</code></h2>
+
+<p><code>A:</code></p>
+
+<h2><code>&lt;!doctype html&gt; 的作用是什么</code></h2>
+
+<p><code>A:</code>告知浏览器以Html5的标准来解析页面，Html5相对宽松，没有严格模式和混杂模式之分。</p>
+
+<h2><code>严格模式和混杂模式指什么</code></h2>
+
+<p><code>A:</code>&lt;!DOCTYPE&gt;声明叫做文件类型定义（DTD），声明的作用为了告诉浏览器该文件的类型。让浏览器解析器知道应该用哪个规范来解析文档。&lt;!DOCTYPE&gt;声明必须在 HTML 文档的第一行，这并不是一个 HTML 标签。
+<code>严格模式：</code>又称标准模式，是指浏览器按照 W3C 标准解析代码.
+<code>混杂模式：</code>又称怪异模式或兼容模式，是指浏览器用自己的方式解析代码。</p>
+
+<ol>
+<li>如果文档包含严格的 DOCTYPE ，那么它一般以严格模式呈现。（严格 DTD ——严格模式） </li>
+<li>包含过渡 DTD 和 URI 的 DOCTYPE ，也以严格模式呈现，但有过渡 DTD 而没有 URI （统一资源标识符，就是声明最后的地址）会导致页面以混杂模式呈现。（有 URI 的过渡 DTD ——严格模式；没有 URI 的过渡 DTD ——混杂模式） </li>
+<li>DOCTYPE 不存在或形式不正确会导致文档以混杂模式呈现。（DTD不存在或者格式不正确——混杂模式）</li>
+<li>HTML5 没有 DTD ，因此也就没有严格模式与混杂模式的区别，HTML5 有相对宽松的语法，实现时，已经尽可能大的实现了向后兼容。（ HTML5 没有严格和混杂之分）</li>
+</ol>
+
+<h2><code>meta 有什么作用，常见的值有哪些</code></h2>
+
+<h2><code>&lt;meta http-equiv=&quot;X-UA-compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;有什么作用</code></h2>
+
+<h2><code>常见的浏览器有哪些，什么内核</code></h2>
+
 
                 <hr>
 
@@ -221,25 +234,15 @@ echo &#39;hello word!&#39;;
                 </style>
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="/2016/03/24/my-first-blog"
-                    data-title="My First Blog"
-                    data-url="http://clover.htmhub.com/2016/03/24/my-first-blog/"
-                    data-images="http://clover.htmhub.com/img/post-bg-os-metro.jpg"
-                    data-content="
-宇宙，海洋，黑洞
+                    data-thread-key="/2017/02/28/html-1"
+                    data-title="Html基础-1"
+                    data-url="http://clover.htmhub.com/2017/02/28/html-1/"
+                    data-images="http://clover.htmhub.com/img/education_large_2x.jpg"
+                    data-content="HTML1
 
+网页乱码的问题是如何产生的？怎样解决?
 
-大海
-
-
-echo &#39;hello word!&#39;;
-
-
-宇宙
-echo 'hello black!';
-
-黑洞
-#c... | 克洛弗的博客 | Clover Blog " >
+A:造成html网页乱码原因主要是html源代码内中文字内容与html编码不同造成。解决办法：保持... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -259,17 +262,17 @@ echo 'hello black!';
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2016/02/01/React-vs-Angular2/" data-toggle="tooltip" data-placement="top" title="React vs Angular 2：冰与火之歌「译」">
+                        <a href="/2016/11/29/design-pattern-2/" data-toggle="tooltip" data-placement="top" title="PHP设计模式-Part2 创建型">
                         Previous<br>
-                        <span>React vs Angular 2：冰与火之歌「译」</span>
+                        <span>PHP设计模式-Part2 创建型</span>
                         </a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2016/05/20/monogo-db-study/" data-toggle="tooltip" data-placement="top" title="Monogo DB Study">
+                        <a href="/2017/02/28/linux-cli/" data-toggle="tooltip" data-placement="top" title="Linux命令行基础">
                         Next<br>
-                        <span>Monogo DB Study</span>
+                        <span>Linux命令行基础</span>
                         </a>
                     </li>
                     
@@ -280,9 +283,9 @@ echo 'hello black!';
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="/2016/03/24/my-first-blog"
-                        data-title="My First Blog"
-                        data-url="http://clover.htmhub.com/2016/03/24/my-first-blog/" >
+                        data-thread-key="/2017/02/28/html-1"
+                        data-title="Html基础-1"
+                        data-url="http://clover.htmhub.com/2017/02/28/html-1/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->

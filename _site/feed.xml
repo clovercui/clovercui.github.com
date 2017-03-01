@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 28 Feb 2017 17:54:05 +0800</pubDate>
-    <lastBuildDate>Tue, 28 Feb 2017 17:54:05 +0800</lastBuildDate>
+    <pubDate>Wed, 01 Mar 2017 14:02:45 +0800</pubDate>
+    <lastBuildDate>Wed, 01 Mar 2017 14:02:45 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -101,6 +101,54 @@ rm -rf node_modules
         <category>Clover</category>
         
         <category>Linux</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Html基础-1</title>
+        <description>&lt;h1&gt;HTML1&lt;/h1&gt;
+
+&lt;h2&gt;&lt;code&gt;网页乱码的问题是如何产生的？怎样解决?&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;造成html网页乱码原因主要是html源代码内中文字内容与html编码不同造成。解决办法：保持文件的编写字符集和网页设置的字符集保持一致 如使用UTF-8编写的文件，网页头设置为&lt;code&gt;&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2&gt;&lt;code&gt;颜色有几种写法， 红色、 绿色、蓝色、白色、黑色如何表示？ 透明黑色如何表示？#ccc的颜色#eee的颜色？ #333的颜色？&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2&gt;&lt;code&gt;&amp;lt;!doctype html&amp;gt; 的作用是什么&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;告知浏览器以Html5的标准来解析页面，Html5相对宽松，没有严格模式和混杂模式之分。&lt;/p&gt;
+
+&lt;h2&gt;&lt;code&gt;严格模式和混杂模式指什么&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&amp;lt;!DOCTYPE&amp;gt;声明叫做文件类型定义（DTD），声明的作用为了告诉浏览器该文件的类型。让浏览器解析器知道应该用哪个规范来解析文档。&amp;lt;!DOCTYPE&amp;gt;声明必须在 HTML 文档的第一行，这并不是一个 HTML 标签。
+&lt;code&gt;严格模式：&lt;/code&gt;又称标准模式，是指浏览器按照 W3C 标准解析代码.
+&lt;code&gt;混杂模式：&lt;/code&gt;又称怪异模式或兼容模式，是指浏览器用自己的方式解析代码。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;如果文档包含严格的 DOCTYPE ，那么它一般以严格模式呈现。（严格 DTD ——严格模式） &lt;/li&gt;
+&lt;li&gt;包含过渡 DTD 和 URI 的 DOCTYPE ，也以严格模式呈现，但有过渡 DTD 而没有 URI （统一资源标识符，就是声明最后的地址）会导致页面以混杂模式呈现。（有 URI 的过渡 DTD ——严格模式；没有 URI 的过渡 DTD ——混杂模式） &lt;/li&gt;
+&lt;li&gt;DOCTYPE 不存在或形式不正确会导致文档以混杂模式呈现。（DTD不存在或者格式不正确——混杂模式）&lt;/li&gt;
+&lt;li&gt;HTML5 没有 DTD ，因此也就没有严格模式与混杂模式的区别，HTML5 有相对宽松的语法，实现时，已经尽可能大的实现了向后兼容。（ HTML5 没有严格和混杂之分）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;&lt;code&gt;meta 有什么作用，常见的值有哪些&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2&gt;&lt;code&gt;&amp;lt;meta http-equiv=&amp;quot;X-UA-compatible&amp;quot; content=&amp;quot;IE=edge,chrome=1&amp;quot;&amp;gt;有什么作用&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2&gt;&lt;code&gt;常见的浏览器有哪些，什么内核&lt;/code&gt;&lt;/h2&gt;
+</description>
+        <pubDate>Tue, 28 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://clover.htmhub.com/2017/02/28/html-1/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2017/02/28/html-1/</guid>
+        
+        <category>Clover</category>
+        
+        <category>前端</category>
+        
+        <category>Html</category>
         
         
       </item>
@@ -2830,41 +2878,6 @@ roles;[{role:&amp;quot;&amp;lt;role&amp;gt;&amp;quot;,db:&amp;quot;database&amp;
         <category>Clover</category>
         
         <category>MonogoDB</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>My First Blog</title>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;宇宙，海洋，黑洞&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2&gt;大海&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;
-echo &amp;#39;hello word!&amp;#39;;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2&gt;宇宙&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;echo &#39;hello black!&#39;;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;黑洞&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;#cat /etc/issue  
-#cat /etc/*-release 
-#uname -a
-#MemTotal=`free -m | grep Mem | awk &#39;{print  $2}&#39;`
-#df -h 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-        <pubDate>Thu, 24 Mar 2016 00:00:00 +0800</pubDate>
-        <link>http://clover.htmhub.com/2016/03/24/my-first-blog/</link>
-        <guid isPermaLink="true">http://clover.htmhub.com/2016/03/24/my-first-blog/</guid>
-        
-        <category>Clover</category>
-        
-        <category>OS</category>
-        
-        <category>Blog</category>
         
         
       </item>
