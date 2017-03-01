@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 01 Mar 2017 15:23:02 +0800</pubDate>
-    <lastBuildDate>Wed, 01 Mar 2017 15:23:02 +0800</lastBuildDate>
+    <pubDate>Wed, 01 Mar 2017 15:24:39 +0800</pubDate>
+    <lastBuildDate>Wed, 01 Mar 2017 15:24:39 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -46,87 +46,81 @@
 &lt;p&gt;&lt;code&gt;A:&lt;/code&gt;meta标签共有两个属性，它们分别是&lt;code&gt;http-equiv&lt;/code&gt;属性和&lt;code&gt;name&lt;/code&gt;属性，不同的属性又有不同的参数值，这些不同的参数值就实现了不同的网页功能。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;name属性&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;name属性&lt;/code&gt;
+name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。
+meta标签的name属性语法格式是：&lt;code&gt;＜meta name=&amp;quot;参数&amp;quot; content=&amp;quot;具体的参数值&amp;quot;＞&lt;/code&gt; 。
+其中name属性主要有以下几种参数：&lt;/p&gt;
 
-&lt;p&gt;name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。
-    meta标签的name属性语法格式是：&lt;code&gt;＜meta name=&amp;quot;参数&amp;quot; content=&amp;quot;具体的参数值&amp;quot;＞&lt;/code&gt; 。
-    其中name属性主要有以下几种参数：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;* `Keywords(关键字)`
-
-    说明：keywords用来告诉搜索引擎你网页的关键字是什么
-
-    举例：＜meta name =&quot;keywords&quot; content=&quot;science,education,culture,politics,ecnomics，relationships, entertaiment, human&quot;＞
-
-* `description(网站内容描述)`
-
-    说明：description用来告诉搜索引擎你的网站主要内容。
-
-    举例：＜meta name=&quot;description&quot; content=&quot;This page is about the meaning of science, education,culture.&quot;＞
-
-* `robots(机器人向导)`
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;　　
-        说明：robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;    举例：＜meta name=&quot;robots&quot; content=&quot;none&quot;＞
-* `author(作者)`
-
-    说明：标注网页的作者
-
-    举例：＜meta name=&quot;author&quot; content=&quot;root,root@21cn.com&quot;＞
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;http-equiv属性&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Keywords(关键字)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;说明：keywords用来告诉搜索引擎你网页的关键字是什么&lt;/p&gt;
+
+&lt;p&gt;举例：＜meta name =&amp;quot;keywords&amp;quot; content=&amp;quot;science,education,culture,politics,ecnomics，relationships, entertaiment, human&amp;quot;＞&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;description(网站内容描述)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;说明：description用来告诉搜索引擎你的网站主要内容。&lt;/p&gt;
+
+&lt;p&gt;举例：＜meta name=&amp;quot;description&amp;quot; content=&amp;quot;This page is about the meaning of science, education,culture.&amp;quot;＞&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;robots(机器人向导)&lt;/code&gt;
+　　
+说明：robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。&lt;/p&gt;
+
+&lt;p&gt;举例：＜meta name=&amp;quot;robots&amp;quot; content=&amp;quot;none&amp;quot;＞&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;author(作者)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;说明：标注网页的作者&lt;/p&gt;
+
+&lt;p&gt;举例：＜meta name=&amp;quot;author&amp;quot; content=&amp;quot;root,root@21cn.com&amp;quot;＞&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;http-equiv属性&lt;/code&gt;
+http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值.
+meta标签的http-equiv属性语法格式是：＜meta http-equiv=&amp;quot;参数&amp;quot; content=&amp;quot;参数变量值&amp;quot;＞ ；其中http-equiv属性主要有以下几种参数&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Expires(期限)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。&lt;/p&gt;
+
+&lt;p&gt;用法：＜meta http-equiv=&amp;quot;expires&amp;quot; content=&amp;quot;Fri, 12 Jan 2001 18:18:18 GMT&amp;quot;＞&lt;/p&gt;
+
+&lt;p&gt;注意：必须使用GMT的时间格式。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Pragma(cache模式)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;说明：禁止浏览器从本地计算机的缓存中访问页面内容。&lt;/p&gt;
+
+&lt;p&gt;用法：＜meta http-equiv=&amp;quot;Pragma&amp;quot; content=&amp;quot;no-cache&amp;quot;＞&lt;/p&gt;
+
+&lt;p&gt;注意：这样设定，访问者将无法脱机浏览。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Refresh(刷新)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;说明：自动刷新并指向新页面。&lt;/p&gt;
+
+&lt;p&gt;用法：＜meta http-equiv=&amp;quot;Refresh&amp;quot; content=&amp;quot;2；URL=http://www.root.net&amp;quot;＞&lt;/p&gt;
+
+&lt;p&gt;注意：其中的2是指停留2秒钟后自动刷新到URL网址。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Set-Cookie(cookie设定)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;说明：如果网页过期，那么存盘的cookie将被删除。&lt;/p&gt;
+
+&lt;p&gt;用法：＜meta http-equiv=&amp;quot;Set-Cookie&amp;quot; content=&amp;quot;cookievalue=xxx; expires=Friday, 12-Jan-2001 18:18:18 GMT； path=/&amp;quot;＞&lt;/p&gt;
+
+&lt;p&gt;注意：必须使用GMT的时间格式。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Window-target(显示窗口的设定)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;说明：强制页面在当前窗口以独立页面显示。&lt;/p&gt;
+
+&lt;p&gt;用法：＜meta http-equiv=&amp;quot;Window-target&amp;quot; content=&amp;quot;_top&amp;quot;＞&lt;/p&gt;
+
+&lt;p&gt;注意：用来防止别人在框架里调用自己的页面。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;content-Type(显示字符集的设定)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;说明：设定页面使用的字符集。&lt;/p&gt;
+
+&lt;p&gt;用法：＜meta http-equiv=&amp;quot;content-Type&amp;quot; content=&amp;quot;text/html; charset=gb2312&amp;quot;＞&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值.
-    meta标签的http-equiv属性语法格式是：＜meta http-equiv=&amp;quot;参数&amp;quot; content=&amp;quot;参数变量值&amp;quot;＞ ；其中http-equiv属性主要有以下几种参数&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;* `Expires(期限)`
-
-    说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。
-
-    用法：＜meta http-equiv=&quot;expires&quot; content=&quot;Fri, 12 Jan 2001 18:18:18 GMT&quot;＞
-
-    注意：必须使用GMT的时间格式。
-
-* `Pragma(cache模式)`
-
-    说明：禁止浏览器从本地计算机的缓存中访问页面内容。
-
-    用法：＜meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;＞
-
-    注意：这样设定，访问者将无法脱机浏览。
-
-* `Refresh(刷新)`
-
-    说明：自动刷新并指向新页面。
-
-    用法：＜meta http-equiv=&quot;Refresh&quot; content=&quot;2；URL=http://www.root.net&quot;＞
-
-    注意：其中的2是指停留2秒钟后自动刷新到URL网址。
-
-* `Set-Cookie(cookie设定)`
-
-    说明：如果网页过期，那么存盘的cookie将被删除。
-
-    用法：＜meta http-equiv=&quot;Set-Cookie&quot; content=&quot;cookievalue=xxx; expires=Friday, 12-Jan-2001 18:18:18 GMT； path=/&quot;＞
-
-    注意：必须使用GMT的时间格式。
-
-* `Window-target(显示窗口的设定)`
-
-    说明：强制页面在当前窗口以独立页面显示。
-
-    用法：＜meta http-equiv=&quot;Window-target&quot; content=&quot;_top&quot;＞
-
-    注意：用来防止别人在框架里调用自己的页面。
-
-* `content-Type(显示字符集的设定)`
-
-    说明：设定页面使用的字符集。
-
-    用法：＜meta http-equiv=&quot;content-Type&quot; content=&quot;text/html; charset=gb2312&quot;＞
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;&lt;code&gt;&amp;lt;meta http-equiv=&amp;quot;X-UA-compatible&amp;quot; content=&amp;quot;IE=edge,chrome=1&amp;quot;&amp;gt;有什么作用&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;A:&lt;/code&gt;这个属性主要是设置浏览器优先使用什么模式来渲染页面的.

@@ -228,87 +228,81 @@
 <p><code>A:</code>meta标签共有两个属性，它们分别是<code>http-equiv</code>属性和<code>name</code>属性，不同的属性又有不同的参数值，这些不同的参数值就实现了不同的网页功能。</p>
 
 <ul>
-<li><code>name属性</code></li>
-</ul>
+<li><p><code>name属性</code>
+name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。
+meta标签的name属性语法格式是：<code>＜meta name=&quot;参数&quot; content=&quot;具体的参数值&quot;＞</code> 。
+其中name属性主要有以下几种参数：</p>
 
-<p>name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。
-    meta标签的name属性语法格式是：<code>＜meta name=&quot;参数&quot; content=&quot;具体的参数值&quot;＞</code> 。
-    其中name属性主要有以下几种参数：</p>
-<div class="highlight"><pre><code class="language-" data-lang="">* `Keywords(关键字)`
-
-    说明：keywords用来告诉搜索引擎你网页的关键字是什么
-
-    举例：＜meta name ="keywords" content="science,education,culture,politics,ecnomics，relationships, entertaiment, human"＞
-
-* `description(网站内容描述)`
-
-    说明：description用来告诉搜索引擎你的网站主要内容。
-
-    举例：＜meta name="description" content="This page is about the meaning of science, education,culture."＞
-
-* `robots(机器人向导)`
-</code></pre></div>
-<p>　　
-        说明：robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。</p>
-<div class="highlight"><pre><code class="language-" data-lang="">    举例：＜meta name="robots" content="none"＞
-* `author(作者)`
-
-    说明：标注网页的作者
-
-    举例：＜meta name="author" content="root,root@21cn.com"＞
-</code></pre></div>
 <ul>
-<li><code>http-equiv属性</code></li>
+<li><p><code>Keywords(关键字)</code></p>
+
+<p>说明：keywords用来告诉搜索引擎你网页的关键字是什么</p>
+
+<p>举例：＜meta name =&quot;keywords&quot; content=&quot;science,education,culture,politics,ecnomics，relationships, entertaiment, human&quot;＞</p></li>
+<li><p><code>description(网站内容描述)</code></p>
+
+<p>说明：description用来告诉搜索引擎你的网站主要内容。</p>
+
+<p>举例：＜meta name=&quot;description&quot; content=&quot;This page is about the meaning of science, education,culture.&quot;＞</p></li>
+<li><p><code>robots(机器人向导)</code>
+　　
+说明：robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。</p>
+
+<p>举例：＜meta name=&quot;robots&quot; content=&quot;none&quot;＞</p></li>
+<li><p><code>author(作者)</code></p>
+
+<p>说明：标注网页的作者</p>
+
+<p>举例：＜meta name=&quot;author&quot; content=&quot;root,root@21cn.com&quot;＞</p></li>
+</ul></li>
+<li><p><code>http-equiv属性</code>
+http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值.
+meta标签的http-equiv属性语法格式是：＜meta http-equiv=&quot;参数&quot; content=&quot;参数变量值&quot;＞ ；其中http-equiv属性主要有以下几种参数</p>
+
+<ul>
+<li><p><code>Expires(期限)</code></p>
+
+<p>说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。</p>
+
+<p>用法：＜meta http-equiv=&quot;expires&quot; content=&quot;Fri, 12 Jan 2001 18:18:18 GMT&quot;＞</p>
+
+<p>注意：必须使用GMT的时间格式。</p></li>
+<li><p><code>Pragma(cache模式)</code></p>
+
+<p>说明：禁止浏览器从本地计算机的缓存中访问页面内容。</p>
+
+<p>用法：＜meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;＞</p>
+
+<p>注意：这样设定，访问者将无法脱机浏览。</p></li>
+<li><p><code>Refresh(刷新)</code></p>
+
+<p>说明：自动刷新并指向新页面。</p>
+
+<p>用法：＜meta http-equiv=&quot;Refresh&quot; content=&quot;2；URL=http://www.root.net&quot;＞</p>
+
+<p>注意：其中的2是指停留2秒钟后自动刷新到URL网址。</p></li>
+<li><p><code>Set-Cookie(cookie设定)</code></p>
+
+<p>说明：如果网页过期，那么存盘的cookie将被删除。</p>
+
+<p>用法：＜meta http-equiv=&quot;Set-Cookie&quot; content=&quot;cookievalue=xxx; expires=Friday, 12-Jan-2001 18:18:18 GMT； path=/&quot;＞</p>
+
+<p>注意：必须使用GMT的时间格式。</p></li>
+<li><p><code>Window-target(显示窗口的设定)</code></p>
+
+<p>说明：强制页面在当前窗口以独立页面显示。</p>
+
+<p>用法：＜meta http-equiv=&quot;Window-target&quot; content=&quot;_top&quot;＞</p>
+
+<p>注意：用来防止别人在框架里调用自己的页面。</p></li>
+<li><p><code>content-Type(显示字符集的设定)</code></p>
+
+<p>说明：设定页面使用的字符集。</p>
+
+<p>用法：＜meta http-equiv=&quot;content-Type&quot; content=&quot;text/html; charset=gb2312&quot;＞</p></li>
+</ul></li>
 </ul>
 
-<p>http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值.
-    meta标签的http-equiv属性语法格式是：＜meta http-equiv=&quot;参数&quot; content=&quot;参数变量值&quot;＞ ；其中http-equiv属性主要有以下几种参数</p>
-<div class="highlight"><pre><code class="language-" data-lang="">* `Expires(期限)`
-
-    说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。
-
-    用法：＜meta http-equiv="expires" content="Fri, 12 Jan 2001 18:18:18 GMT"＞
-
-    注意：必须使用GMT的时间格式。
-
-* `Pragma(cache模式)`
-
-    说明：禁止浏览器从本地计算机的缓存中访问页面内容。
-
-    用法：＜meta http-equiv="Pragma" content="no-cache"＞
-
-    注意：这样设定，访问者将无法脱机浏览。
-
-* `Refresh(刷新)`
-
-    说明：自动刷新并指向新页面。
-
-    用法：＜meta http-equiv="Refresh" content="2；URL=http://www.root.net"＞
-
-    注意：其中的2是指停留2秒钟后自动刷新到URL网址。
-
-* `Set-Cookie(cookie设定)`
-
-    说明：如果网页过期，那么存盘的cookie将被删除。
-
-    用法：＜meta http-equiv="Set-Cookie" content="cookievalue=xxx; expires=Friday, 12-Jan-2001 18:18:18 GMT； path=/"＞
-
-    注意：必须使用GMT的时间格式。
-
-* `Window-target(显示窗口的设定)`
-
-    说明：强制页面在当前窗口以独立页面显示。
-
-    用法：＜meta http-equiv="Window-target" content="_top"＞
-
-    注意：用来防止别人在框架里调用自己的页面。
-
-* `content-Type(显示字符集的设定)`
-
-    说明：设定页面使用的字符集。
-
-    用法：＜meta http-equiv="content-Type" content="text/html; charset=gb2312"＞
-</code></pre></div>
 <h2><code>&lt;meta http-equiv=&quot;X-UA-compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;有什么作用</code></h2>
 
 <p><code>A:</code>这个属性主要是设置浏览器优先使用什么模式来渲染页面的.

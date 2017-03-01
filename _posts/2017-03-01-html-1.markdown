@@ -40,7 +40,6 @@ tags:
 `A:`meta标签共有两个属性，它们分别是`http-equiv`属性和`name`属性，不同的属性又有不同的参数值，这些不同的参数值就实现了不同的网页功能。
 
 * `name属性`
-
 name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。
     meta标签的name属性语法格式是：`＜meta name="参数" content="具体的参数值"＞` 。
     其中name属性主要有以下几种参数：
@@ -69,7 +68,6 @@ name属性主要用于描述网页，与之对应的属性值为content，conten
 		举例：＜meta name="author" content="root,root@21cn.com"＞
 
 * `http-equiv属性`
-
 http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值.
 	meta标签的http-equiv属性语法格式是：＜meta http-equiv="参数" content="参数变量值"＞ ；其中http-equiv属性主要有以下几种参数
     
