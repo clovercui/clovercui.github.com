@@ -193,7 +193,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h1>HTML1</h1>
+				<h1>HTML-1</h1>
 
 <h2><code>网页乱码的问题是如何产生的？怎样解决?</code></h2>
 
@@ -202,6 +202,17 @@
 <h2><code>颜色有几种写法， 红色、 绿色、蓝色、白色、黑色如何表示？ 透明黑色如何表示？#ccc的颜色#eee的颜色？ #333的颜色？</code></h2>
 
 <p><code>A:</code></p>
+
+<ol>
+<li><code>直接书写英文名字</code>。这样的好处是直观。但是没有能很好的控制颜色</li>
+<li><code>rgb(0,0,0)</code>中间的三个 数字分别是0-255.分别代表红  绿  蓝三个颜色。数字数字越大，颜色越深</li>
+<li><code>#FCFCFC</code> 这样是用十六进制来表示颜色。跟上面rgb差不多。两位英文代表一个原色。分别是红绿蓝。这种写法有缩写。比如#FFFFFF可以等于成#FFF，还有#CCFFCC,可以写成#CFC。这就是颜色的写法</li>
+<li><code>rgba（0，0，0，0）</code>前面三个数字跟rgb一样的，最后一个是透明度的控制。取值范围是0-1.一位小数。越接近零。越透明。    <code>注意的是。这种有兼容问题。是CSS3的属性</code>。</li>
+</ol>
+
+<p>红色<code>red</code>、 绿色<code>green</code>、蓝色<code>blue</code>、白色<code>white</code>、黑色<code>black</code>.</p>
+
+<p>透明黑色 <code>rgba(0,0,0,0.8)</code> ,#ccc <code>深灰色</code> #eee <code>浅灰色</code> #333 <code>浅黑色</code></p>
 
 <h2><code>&lt;!doctype html&gt; 的作用是什么</code></h2>
 
@@ -322,11 +333,11 @@ meta标签的http-equiv属性语法格式是：＜meta http-equiv=&quot;参数&q
                     data-title="Html基础-1"
                     data-url="http://clover.htmhub.com/2017/03/01/html-1/"
                     data-images="http://clover.htmhub.com/img/education_large_2x.jpg"
-                    data-content="HTML1
+                    data-content="HTML-1
 
 网页乱码的问题是如何产生的？怎样解决?
 
-A:造成html网页乱码原因主要是html源代码内中文字内容与html编码不同造成。解决办法：保持... | 克洛弗的博客 | Clover Blog " >
+A:造成html网页乱码原因主要是html源代码内中文字内容与html编码不同造成。解决办法：保... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
