@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 01 Mar 2017 15:04:59 +0800</pubDate>
-    <lastBuildDate>Wed, 01 Mar 2017 15:04:59 +0800</lastBuildDate>
+    <pubDate>Wed, 01 Mar 2017 15:06:26 +0800</pubDate>
+    <lastBuildDate>Wed, 01 Mar 2017 15:06:26 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -52,12 +52,12 @@ meta标签的name属性语法格式是：&lt;code&gt;＜meta name=&amp;quot;参�
 其中name属性主要有以下几种参数：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Keywords(关键字)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;Keywords(关键字)&lt;/p&gt;
 
 &lt;p&gt;说明：keywords用来告诉搜索引擎你网页的关键字是什么&lt;/p&gt;
 
 &lt;p&gt;举例：＜meta name =&amp;quot;keywords&amp;quot; content=&amp;quot;science,education,culture,politics,ecnomics，relationships, entertaiment, human&amp;quot;＞&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2&gt;&lt;code&gt;&amp;lt;meta http-equiv=&amp;quot;X-UA-compatible&amp;quot; content=&amp;quot;IE=edge,chrome=1&amp;quot;&amp;gt;有什么作用&lt;/code&gt;&lt;/h2&gt;
