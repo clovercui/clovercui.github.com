@@ -45,8 +45,8 @@ tags:
     meta标签的name属性语法格式是：`＜meta name="参数" content="具体的参数值"＞` 。
     其中name属性主要有以下几种参数：
 
-1. Keywords(关键字)
-	说明：keywords用来告诉搜索引擎你网页的关键字是什么
+    1. Keywords(关键字)
+    说明：keywords用来告诉搜索引擎你网页的关键字是什么
     举例：＜meta name ="keywords" content="science,education,culture,politics,ecnomics，relationships, entertaiment, human"＞
 
 
