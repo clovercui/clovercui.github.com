@@ -56,6 +56,16 @@ name属性主要用于描述网页，与之对应的属性值为content，conten
         
 		举例：＜meta name="description" content="This page is about the meaning of science, education,culture."＞
 
+	* robots(机器人向导)
+　　
+		说明：robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。
+       
+		举例：＜meta name="robots" content="none"＞
+	* author(作者)
+		
+        说明：标注网页的作者
+        
+		举例：＜meta name="author" content="root,root@21cn.com"＞
 
 ## `<meta http-equiv="X-UA-compatible" content="IE=edge,chrome=1">有什么作用`
 
