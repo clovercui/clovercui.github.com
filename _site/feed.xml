@@ -5,9 +5,108 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 01 Mar 2017 15:40:23 +0800</pubDate>
-    <lastBuildDate>Wed, 01 Mar 2017 15:40:23 +0800</lastBuildDate>
+    <pubDate>Mon, 06 Mar 2017 14:55:08 +0800</pubDate>
+    <lastBuildDate>Mon, 06 Mar 2017 14:55:08 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>Html基础-2</title>
+        <description>&lt;h1&gt;HTML-2&lt;/h1&gt;
+
+&lt;h2&gt;&lt;code&gt;样式有几种引入方式? link 和 @import有什么区别&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1.内联方式&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;div style=&quot;background: red&quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;改变当前标签的样式&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;2.嵌入方式&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;嵌入方式指的是在 HTML 头部中的 &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt; 标签下书写 CSS 代码。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;head&amp;gt;
+    &amp;lt;style&amp;gt;
+    .content {
+        background: red;
+    }
+    &amp;lt;/style&amp;gt;
+&amp;lt;/head&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;嵌入方式的 CSS 只对当前的网页有效。因为 CSS 代码是在 HTML 文件中，所以会使得代码比较集中，当我们写模板网页时这通常比较有利。因为查看模板代码的人可以一目了然地查看 HTML 结构和 CSS 样式。因为嵌入的 CSS 只对当前页面有效，所以当多个页面需要引入相同的 CSS 代码时，这样写会导致代码冗余，也不利于维护。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;3.链接方式&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;链接方式指的是使用 HTML 头部的 &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 标签引入外部的 CSS 文件。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;head&amp;gt;
+    &amp;lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&amp;gt;
+&amp;lt;/head&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这是最常见的也是最推荐的引入 CSS 的方式。使用这种方式，所有的 CSS 代码只存在于单独的 CSS 文件中，所以具有良好的可维护性。并且所有的 CSS 代码只存在于 CSS 文件中，CSS 文件会在第一次加载时引入，以后切换页面时只需加载 HTML 文件即可&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;4.导入方式&lt;/code&gt;
+导入方式指的是使用 CSS 规则引入外部 CSS 文件
+&lt;code&gt;
+&amp;lt;style&amp;gt;
+@import url(style.css);
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;link和@import的区别是?&lt;/code&gt;
+两者都是外部引用CSS的方式，但是存在一定的区别&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;区别1：link是XHTML标签，除了加载CSS外，还可以定义RSS等其他事务；@import属于CSS范畴，只能加载CSS。&lt;/li&gt;
+&lt;li&gt;区别2：link引用CSS时，在页面载入时同时加载；@import需要页面网页完全载入以后加载。&lt;/li&gt;
+&lt;li&gt;区别3：link是XHTML标签，无兼容问题；@import是在CSS2.1提出的，低版本的浏览器不支持。&lt;/li&gt;
+&lt;li&gt;区别4：link支持使用Javascript控制DOM去改变样式；而@import不支持。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;&lt;code&gt;文件路径../main.css 、./main.css、main.css、/main.css有什么区别&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;A:&lt;/code&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;../main.css&lt;/code&gt; 是当前目录的上级目录引入main.css&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;./main.css&lt;/code&gt; 是当前目录引入main.css&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;main.css&lt;/code&gt; 同&lt;code&gt;./main.css&lt;/code&gt; 是当前目录引入main.css&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;/main.css&lt;/code&gt; 是在网站根目录引入main.css&lt;/p&gt;
+
+&lt;h2&gt;&lt;code&gt;console.log是做什么用的&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;
+在控制台使用 log方式输出信息，还看查看对象的具体内容。&lt;/p&gt;
+
+&lt;h2&gt;&lt;code&gt;text-align有几个值，分别有什么作用？为什么text-align:justify没有效果？写截图说明区别&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2&gt;&lt;code&gt;px、em、rem分别是什么？有什么区别？如何使用&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2&gt;&lt;code&gt;对chrome 审查元素的功能做个简单的截图介绍&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 06 Mar 2017 00:00:00 +0800</pubDate>
+        <link>http://clover.htmhub.com/2017/03/06/html-2/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2017/03/06/html-2/</guid>
+        
+        <category>Clover</category>
+        
+        <category>前端</category>
+        
+        <category>HTML</category>
+        
+        
+      </item>
     
       <item>
         <title>Html基础-1</title>
@@ -2436,550 +2535,6 @@ rename-command FLUSHALL 1041285018a942a4922cbf76623b741e
         <category>Redis</category>
         
         <category>DB</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Monogo DB Study</title>
-        <description>&lt;h1&gt;MonogoDB  学习笔记&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h1&gt;入门篇&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2&gt;学习目标&lt;/h2&gt;
-
-&lt;hr&gt;
-
-&lt;h4&gt;Mongo 概念&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;mongo&lt;/code&gt; &lt;code&gt;MongoDB&lt;/code&gt; &lt;code&gt;索引&lt;/code&gt; &lt;code&gt;集合&lt;/code&gt; &lt;code&gt;复制集&lt;/code&gt; &lt;code&gt;分片&lt;/code&gt; &lt;code&gt;数据均衡&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4&gt;学会MongoDB的搭建&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;搭建简单的单击服务&lt;/li&gt;
-&lt;li&gt;搭建具有冗余容错功能的复制集&lt;/li&gt;
-&lt;li&gt;搭建大规模数据集群&lt;/li&gt;
-&lt;li&gt;完成集群的自动部署&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4&gt;MongoDB的使用&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;最基本的文档的读写和更新&lt;/li&gt;
-&lt;li&gt;各种不同类型的索引的创建与使用&lt;/li&gt;
-&lt;li&gt;复杂的聚合查询&lt;/li&gt;
-&lt;li&gt;对数据集合进行分片，在不同分片间维持数据均衡&lt;/li&gt;
-&lt;li&gt;数据备份与恢复&lt;/li&gt;
-&lt;li&gt;数据迁移&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4&gt;简单运维&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;部署集群&lt;/li&gt;
-&lt;li&gt;处理多种常见的故障&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt; 单节点失效，如何恢复工作
- 数据库意外被杀死如何进行数据恢复
- 数据库拒绝服务如何排除原因
- 数据库磁盘快慢时如何处理
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;hr&gt;
-
-&lt;h2&gt;学习资源&lt;/h2&gt;
-
-&lt;hr&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;MongoDB官网&lt;/strong&gt; &lt;code&gt;www.mongodb.org&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;MongoDB中国官网&lt;/strong&gt; &lt;code&gt;www.mongoing.com&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;github&lt;/strong&gt; &lt;code&gt;https://github.com/mongodb/mongo&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;中文文档&lt;/strong&gt; &lt;code&gt;docs.mongoing.com&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;视频资源&lt;/strong&gt; &lt;code&gt;http://www.imooc.com/video/5934&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h1&gt;开始学习&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2&gt;数据库&lt;/h2&gt;
-
-&lt;hr&gt;
-
-&lt;h3&gt;概念&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;有组织的存放数据&lt;/li&gt;
-&lt;li&gt;按照不同的需求进行查询&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3&gt;数据库分类&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;sql数据库：支持sql语言的数据库 Oracle,Mysql&lt;/li&gt;
-&lt;li&gt;NoSql数据库：不支持SQL语言的数据库 Redis,MongoDB&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Sql 数据库 | NoSql数据库 
-----------|------------- 
-实时一致性       | 简单便捷 
-事务          |方便扩展
-多表联合查询   | 更好的性能&lt;/p&gt;
-
-&lt;h3&gt;为什么是MongoDB&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;无数据结构的限制&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;没有表结构的概念，每条记录可以有完全不同的结构&lt;/li&gt;
-&lt;li&gt;业务开发方便快捷&lt;/li&gt;
-&lt;li&gt;sql数据库需要先定义表结构再使用&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;name:&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;小明&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,sex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;男&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;name:&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;小明&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;上海&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;name:&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;小明&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,home&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[{&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;山东&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;江西&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;完全的索引支持&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;redis的key-value&lt;/li&gt;
-&lt;li&gt;hbase的单索引    ，二级索引需要自己实现&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;单键索引，多键索引：{x:1,y:1}
-数组索引：[&quot;apple&quot;,&quot;lemon&quot;]
-全文索引：“I am a little bird” (中文)
-地理位置索引：2D
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;方便的冗余和扩展&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;复制集保证数据安全&lt;/li&gt;
-&lt;li&gt;分片扩展数据规模&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;良好的支持&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;完善的文档&lt;/li&gt;
-&lt;li&gt;齐全的驱动支持&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;安装过程 略过&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;# mkdir data
-# mkdir log
-# mkdir conf
-# mkdir bin
-# cd conf
-# vim mongodb.conf
-  port=27017
-  dbpath=data
-  logpath=log/mongod.log
-  fork=true
-启动 # mongod -f conf/mongodb.conf   
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;连接 mongo 121.41.31.214:27017
-数据库的关闭 连接时   db.shutdownServer()&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2&gt;mongoDB的基本操作&lt;/h2&gt;
-
-&lt;hr&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;
-查看所有数据库
-&amp;gt; show dbs
-
-切换数据库
-&amp;gt; use dbname
-
-删除当前数据库,（需要先use）
-&amp;gt; db.dropDatabase();
-
-创建表 (不要特殊创建 只需要use 一个不存在的name mongoDb会在需要的时候自己创建，一个表是一个集合)
-&amp;gt; use dbname
-
-数据的写入  db.集合名.insert(json数据) 表集合不存在的话自动创建 _id自动创建 _id自定义时不能重复
-&amp;gt; db.dbname_collection.insert({x:1})
-
-数据的查询 db.集合名.find()  参数可以为空，返回所有文档
-&amp;gt; db.dbname_collection.find()
-&amp;gt; db.dbname_collection.find({x:1})   查询x=1的文档
-
-循环插入
-&amp;gt; for(i=3;i&amp;lt;100;i++)db.dbname_collection.insert({x:i})
-
-计数
-&amp;gt; db.dbname_collection.find().count()
-
-跳过，限制条数，排序
-&amp;gt; db.dbname_collection.find().skip(3).limit(2).sort({x:1})
-
-
-数据更新 db.集合名.find(查询条件,更新条目)  默认只会更新第一条找到的数据
-&amp;gt; db.dbname_collection.update({x:1},{x:999})  会更新x=1的文档为 {x:999}
-注意：db.dbname_collection.insert({x:1,y:2,z:3}) 若要更新z=3的文档 把x更新为22， 使用 db.dbname_collection.update({z:3},{x:22})  会把{x:1,y:2,z:3}整体覆盖为{x:22} 
-
-局部更新
-&amp;gt;db.dbname_collection.update({z:3},{$set:{x:22}})  局部更新 不会被覆盖
-
-更新不存在的数据，即自动创建 第三个参数 true 标示不存在的时候自动创建
-&amp;gt; db.dbname_collection.update({x:3},{x:22},true)
-
-批量更新  第四个参数 true 批量更新
-&amp;gt; db.dbname_collection.update({x:1},{$set:{x:22}},false,true)
-
-数据删除  必须传参，默认删除所有找的数据
-&amp;gt; db.dbname_collection.remove({x:1})
-&amp;gt; db.dbname_collection.drop()
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;hr&gt;
-
-&lt;h2&gt;MongoDB索引&lt;/h2&gt;
-
-&lt;hr&gt;
-
-&lt;h4&gt;内容简介&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;索引的种类和使用&lt;/li&gt;
-&lt;li&gt;索引的匹配规则&lt;/li&gt;
-&lt;li&gt;如何建立合适的索引&lt;/li&gt;
-&lt;li&gt;索引建立的情况评估&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;查看索引
-&amp;gt; db.dbname_collection.getIndexes()
-
-创建索引  参数也是文档  1代表正向排序 -1 代表逆向排序
-&amp;gt; db.dbname_collection.ensureIndex({x:1})
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4&gt;索引的种类&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;_id索引&lt;/li&gt;
-&lt;li&gt; 单键索引&lt;/li&gt;
-&lt;li&gt; 多键索引&lt;/li&gt;
-&lt;li&gt; 复合索引&lt;/li&gt;
-&lt;li&gt; 过期索引&lt;/li&gt;
-&lt;li&gt; 全文索引&lt;/li&gt;
-&lt;li&gt; 地理位置索引&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h5&gt;_id索引&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;_id索引是绝大多数集合默认建立的索引&lt;/li&gt;
-&lt;li&gt;对于每个插入的数据，MongoDB都会自动生成一条唯一的_id字段&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5&gt;单键索引&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;单键索引是最普通的索引&lt;/li&gt;
-&lt;li&gt;与_id索引不同，单键索引不会自动创建&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5&gt;多键索引&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;多键索引与单键索引创建形式相同，区别在于字段的值
-
-&lt;ul&gt;
-&lt;li&gt;单键索引：值为单一的值，例如字符串，数字或者日期&lt;/li&gt;
-&lt;li&gt;多键索引：值具有多个记录，例如数组
-##### 复合索引&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;当我们的查询条件不只有一个时，就需要建立复合索引
-
-&lt;ul&gt;
-&lt;li&gt;插入{x:1,y:2,z:3}-&amp;gt;按照x与y的值查询-&amp;gt;创建索引db.collection.ensureIndex({x:1,y:1})-&amp;gt;使用{x:1,y:1}作为条件进行查询&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5&gt;过期索引&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;过期索引：是在一段时间后会过期的索引&lt;/li&gt;
-&lt;li&gt;在索引过期后，相应的数据会被删除&lt;/li&gt;
-&lt;li&gt;这适合存储一些在一些时间后会失效的数据 比如用户的登陆信息，存储的日志&lt;br&gt;&lt;/li&gt;
-&lt;li&gt;建立方法：db.collection.ensureIndex({time:1},{expireAfterSeconds:10}),第二个参数是过期时间的秒数&lt;/li&gt;
-&lt;li&gt;过期索引的限制
-
-&lt;ol&gt;
-&lt;li&gt;存储在过期索引字段的值必须是指定的时间类型，说明：必须是ISODate或者ISODate数组，不能使用时间戳，否则不能被自动删除&lt;/li&gt;
-&lt;li&gt;如果指定了ISODate数组，则按照最小的时间进行删除&lt;/li&gt;
-&lt;li&gt;过期索引不能是复合索引&lt;/li&gt;
-&lt;li&gt;删除时间是不精确的 说明：删除过程是由后台程序每60S跑一次，而且删除也需要一些时间，所以存在误差&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5&gt;全文索引&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt; 全文索引：对字符串与字符串数组创建全文可搜索的索引
-适用情况{author:&amp;quot;&amp;quot;,title:&amp;quot;&amp;quot;,article:&amp;quot;&amp;quot;}&lt;/li&gt;
-&lt;li&gt;建立方法
-db.articles.ensureIndex({key:&amp;quot;text&amp;quot;})
-db.articles.ensureIndex({key&lt;em&gt;1:&amp;quot;text&amp;quot;,key&lt;/em&gt;2:&amp;quot;text&amp;quot;})
-db.articles.ensureIndex({&amp;quot;$**&amp;quot;:&amp;quot;text&amp;quot;})&lt;/li&gt;
-&lt;li&gt;如何创建全文索引&lt;br&gt;
-db.imooc_2.ensureIndex({&amp;quot;article&amp;quot;:&amp;quot;text&amp;quot;})&lt;/li&gt;
-&lt;li&gt;如何使用全文索引进行查询
-
-&lt;ol&gt;
-&lt;li&gt; db.articles.find({$text:{$search:&amp;quot;coffee&amp;quot;}})&lt;/li&gt;
-&lt;li&gt; db.articles.find({$text:{$search:&amp;quot;aa bb cc&amp;quot;}}) 查询 aa 或bb 或cc&lt;/li&gt;
-&lt;li&gt; db.articles.find({$text:{$search:&amp;quot;aa bb -cc&amp;quot;}}) 查询aa 或bb 不包含cc&lt;/li&gt;
-&lt;li&gt; db.articles.find({$text:{$search:&amp;quot;\&amp;quot;aa\&amp;quot; \&amp;quot;bb\&amp;quot; \&amp;quot;cc\&amp;quot;&amp;quot;}}) 且的关系 既包含aa也包含bb也包含cc&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;全文索引的相似度&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;$meta操作符：{score:{$meta:&amp;quot;textScore&amp;quot;}}
-  写在查询条件后面可以返回结果的相似度与sort一起使用，可以达到很好的实用效果 db.articles.find({$text:{$search:&amp;quot;aa bb&amp;quot;}},{score:{$meta:&amp;quot;tetxScore&amp;quot;}}).sort({score:{$meta:&amp;quot;tetxScore&amp;quot;}})
-* 全文索引的使用限制
-  1.每次查询，只能指定一个$text查询
-  2. $test查询不能出现在$nor查询中&lt;br&gt;
-  3. 查询中如果包含了$test,hint不再起作用
-  很可惜，MongoDB全文索引还不支持中文&lt;/p&gt;
-
-&lt;h4&gt;索引属性&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;创建索引的格式
-db,collection.ensureIndex({param},{param}) 
-其中第二个参数便是索引的属性&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;比较重要的属性有 名字 唯一性 稀疏性 是否定时删除&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;名字，name指定：db.collection.ensureIndex({},{name:&amp;quot;&amp;quot;})&lt;/li&gt;
-&lt;li&gt;唯一性，unique指定：db.collection.ensureIndex({},{unique:true/false})&lt;/li&gt;
-&lt;li&gt;稀疏性，sparse指定：db.collection.ensureIndex({},{sparse:true/false}) 默认是不稀疏的
-db.collection.find({m:{$exists:true}})查询存在m的文档
-db.collection.ensureIndex({m:1},{sparse:true})&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;db.collection.find({m:{$exists:false}})
-&lt;strong&gt;在选取索引  在稀疏索引上 查找是否存在 将不使用稀疏索引&lt;/strong&gt;
-强制使用索引 db.collection.find({m:{$exists:false}}).hint(&amp;quot;m_1&amp;quot;)&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;* 是否定时删除，expireAfterSeconds指定
-TTL，过期索引
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h5&gt;地理位置索引&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;将一些点的位置存储在MongoDB中，创建索引后，可以按照位置来查找其他点
-
-&lt;ul&gt;
-&lt;li&gt;子分类:&lt;/li&gt;
-&lt;li&gt;2d索引，用于存储和查找平面上的点。&lt;/li&gt;
-&lt;li&gt;2dsphere索引，用于存储和查找球面上的点&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;查找方式
-
-&lt;ul&gt;
-&lt;li&gt;查找距离某个点一定距离的点&lt;br&gt;&lt;/li&gt;
-&lt;li&gt;查找包含在某区域内的点&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;
-2D索引：平面地理位置索引
-        创建方式:db.collection.ensureIndex({w:&quot;2d&quot;})
-        位置表示方式：经纬度[经度,维度]
-        取值范围：经度[-180,180]维度[-90,90]
-        db.collection.insert({w:[100,2]})
-        db.collection.find({w:{$near:[1,1]}})
-        near会返回100个离查询的点最近的点
-        db.collection.find({w:{$near:[1,1]，$maxDistance:10}})  
-
-        查询方式：
-        （1）$near查询：查询距离某个点最近的点
-        （2）$geoWithin查询：查询某个形状内的点
-
-        形状的标示：
-        1.$box:矩形，使用
-        {$box[[&amp;lt;x1&amp;gt;,&amp;lt;y1&amp;gt;],[&amp;lt;x2&amp;gt;,&amp;lt;y2&amp;gt;]]}  1.左边界 2.右边界
-        2.$center:圆形，使用
-        {$center:[[&amp;lt;x1&amp;gt;,&amp;lt;y1&amp;gt;],r]} 1.圆心位置 2.半径
-        3.$polygon:多边形，使用
-        {$polygon：[[&amp;lt;x1&amp;gt;,&amp;lt;y1&amp;gt;],[&amp;lt;x2&amp;gt;,&amp;lt;y2&amp;gt;],[&amp;lt;x3&amp;gt;,&amp;lt;y3&amp;gt;]]}
-
-        db.collection.find({w:{$geoWithin:{$box:[[0,0],[3,3]]}}})
-
-    geoNear查询
-    geoNear使用runCommand命令进行使用
-    {
-    geoNear:&amp;lt;collection&amp;gt;,
-    near:[x,y],
-    minDistance:(对2D索引无效)
-    MaxDistance:
-    num:
-    }
-
-    db.runCommand({geoNear:&quot;location&quot;,near:[1,2],maxDistance:10,num:1})
-
-
-2dsphere: 
-创建方式:db.collection.ensureIndex({w:&quot;2dsphere&quot;})
-位置表示方式
-GeoJson:描述一个点，一条直线，多边形等
-格式：{type:&quot;&quot;,coordinates:[&amp;lt;coordinates&amp;gt;]}
-查询方式和2D索引查询方式类似
-支持$minDistance与$maxDistance
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;hr&gt;
-
-&lt;h2&gt;索引构建情况分析&lt;/h2&gt;
-
-&lt;hr&gt;
-
-&lt;ul&gt;
-&lt;li&gt;索引好处：加快索引相关的查询&lt;/li&gt;
-&lt;li&gt;索引不好处：增加磁盘空间消耗，降低写入性能&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;ul&gt;
-&lt;li&gt;如何评判当前索引构建情况
-
-&lt;ol&gt;
-&lt;li&gt;mongostat工具介绍&lt;/li&gt;
-&lt;li&gt;profile集合介绍&lt;/li&gt;
-&lt;li&gt;日志介绍&lt;/li&gt;
-&lt;li&gt;explain分析&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5&gt;mongostat工具&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;mongostat查看mongodb运行状态的程序&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;使用说明 :mongostat -h 127.0.0.1:12345&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;字段说明:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;inserts&lt;/li&gt;
-&lt;li&gt;query&lt;/li&gt;
-&lt;li&gt;update&lt;/li&gt;
-&lt;li&gt;delete&lt;/li&gt;
-&lt;li&gt;getmore&lt;/li&gt;
-&lt;li&gt;command&lt;/li&gt;
-&lt;li&gt;flushes&lt;/li&gt;
-&lt;li&gt;mapped&lt;/li&gt;
-&lt;li&gt;vsize&lt;/li&gt;
-&lt;li&gt;res&lt;/li&gt;
-&lt;li&gt;non-mapped&lt;/li&gt;
-&lt;li&gt;faults&lt;/li&gt;
-&lt;li&gt;locked&lt;/li&gt;
-&lt;li&gt;idx miss 索引情况&lt;/li&gt;
-&lt;li&gt;qr|qw&lt;/li&gt;
-&lt;li&gt;ar|aw&lt;/li&gt;
-&lt;li&gt;netIn&lt;/li&gt;
-&lt;li&gt;netOut&lt;/li&gt;
-&lt;li&gt;conn&lt;/li&gt;
-&lt;li&gt;set&lt;/li&gt;
-&lt;li&gt;repl&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5&gt;profile集合&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;db.getProfilingStatus()&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;db.setProfilingLevel(2)&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;db.system.profile.find().sort({$natural:-1}).limit(1)  &lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5&gt;日志&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;mongodb.conf 中 verbose=vvvvv    v越多代表日志越详细&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5&gt;explain&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;db.collection.find({x:1}).explain()&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2&gt;MongoDB 安全&lt;/h2&gt;
-
-&lt;hr&gt;
-
-&lt;h3&gt;安全概览&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;最安全的是物理隔离：不现实&lt;/li&gt;
-&lt;li&gt;网络隔离其次&lt;/li&gt;
-&lt;li&gt;防火墙再其次&lt;/li&gt;
-&lt;li&gt;用户名密码在最后&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr&gt;
-
-&lt;h4&gt;开启权限验证&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;auth开启
-mongodb.conf 设置  auth=true;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;keyfile开启&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h5&gt;MongoDB创建用户&lt;/h5&gt;
-
-&lt;ol&gt;
-&lt;li&gt;创建语法：createUser(2.6之前为addUser)&lt;/li&gt;
-&lt;li&gt;
-&lt;code&gt;
-{
-user:&amp;quot;&amp;lt;name&amp;gt;&amp;quot;,
-pwd:&amp;quot;&amp;lt;password&amp;gt;&amp;quot;,
-sustomData:{&amp;lt;说明&amp;gt;},
-roles;[{role:&amp;quot;&amp;lt;role&amp;gt;&amp;quot;,db:&amp;quot;database&amp;quot;}]
-}
-&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;角色类型：内建类型（read,readWrite,dbAdmin,dbOwner,userAdmin）&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h5&gt;用户角色详解&lt;/h5&gt;
-
-&lt;ol&gt;
-&lt;li&gt;数据库角色（read,readWrite,dbAdmin,dbOwner,userAdmin）&lt;/li&gt;
-&lt;li&gt;集群角色（cluterAdmin,clusterManager）&lt;/li&gt;
-&lt;li&gt;备份角色（backup,restore）&lt;/li&gt;
-&lt;li&gt;其他特殊权限（DBAdminAnyDatabase） &lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Fri, 20 May 2016 00:00:00 +0800</pubDate>
-        <link>http://clover.htmhub.com/2016/05/20/monogo-db-study/</link>
-        <guid isPermaLink="true">http://clover.htmhub.com/2016/05/20/monogo-db-study/</guid>
-        
-        <category>Clover</category>
-        
-        <category>MonogoDB</category>
         
         
       </item>
