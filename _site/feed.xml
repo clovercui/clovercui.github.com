@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 06 Mar 2017 17:04:26 +0800</pubDate>
-    <lastBuildDate>Mon, 06 Mar 2017 17:04:26 +0800</lastBuildDate>
+    <pubDate>Mon, 06 Mar 2017 17:08:25 +0800</pubDate>
+    <lastBuildDate>Mon, 06 Mar 2017 17:08:25 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -93,8 +93,9 @@
 &lt;h2&gt;&lt;code&gt;px、em、rem分别是什么？有什么区别？如何使用&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;A:&lt;/code&gt;
-&lt;code&gt;px&lt;/code&gt; PX实际上就是像素,用PX设置字体大小时，比较稳定和精确.但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，如果改变了浏览器的缩放，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体
-&lt;code&gt;em&lt;/code&gt; em是相对于父元素的属性而计算的.EM就是根据基准来缩放字体的大小。EM实质是一个相对值，而非具体的数值。这种技术需要一个参考点，一般都是以&lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt;的“font-size”为基准。&lt;/p&gt;
+&lt;code&gt;px&lt;/code&gt; PX实际上就是像素,用PX设置字体大小时，比较稳定和精确.但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，如果改变了浏览器的缩放，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;em&lt;/code&gt; em是相对于父元素的属性而计算的.EM就是根据基准来缩放字体的大小。EM实质是一个相对值，而非具体的数值。这种技术需要一个参考点，一般都是以&lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt;的“font-size”为基准。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;任意浏览器的默认字体高都是16px。所有未经调整的浏览器都符合: 1em=16px。那么12px=0.75em, 10px=0.625em。为了简化font-size的换算，需要在css中的body选择器中声明Font-size=62.5%，这就使em值变为 16px*62.5%=10px, 这样12px=1.2em, 10px=1em, 也就是说只需要将你的原来的px数值除以10，然后换上em作为单位就行了&lt;/code&gt;&lt;/p&gt;
 
