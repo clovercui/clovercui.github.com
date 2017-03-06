@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 06 Mar 2017 17:03:36 +0800</pubDate>
-    <lastBuildDate>Mon, 06 Mar 2017 17:03:36 +0800</lastBuildDate>
+    <pubDate>Mon, 06 Mar 2017 17:04:26 +0800</pubDate>
+    <lastBuildDate>Mon, 06 Mar 2017 17:04:26 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -101,10 +101,6 @@
 &lt;p&gt;&lt;code&gt;rem&lt;/code&gt; EM是相对于其父元素来设置字体大小的，这样就会存在一个问题，进行任何元素设置，都有可能需要知道他父元素的大小。而Rem是相对于根元素&lt;html&gt;，这样就意味着，我们只需要在根元素确定一个参考值
 &lt;code&gt;浏览器的兼容性 除了IE6-IE8r，其它的浏览器都支持em和rem属性，px是所有浏览器都支持。
 因此为了浏览器的兼容性，可“px”和“rem”一起使用，用&amp;quot;px&amp;quot;来实现IE6-8下的效果，然后使用“Rem”来实现代浏览器的效果。&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2&gt;&lt;code&gt;对chrome 审查元素的功能做个简单的截图介绍&lt;/code&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 06 Mar 2017 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2017/03/06/html-2/</link>
