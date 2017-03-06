@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 06 Mar 2017 14:55:08 +0800</pubDate>
-    <lastBuildDate>Mon, 06 Mar 2017 14:55:08 +0800</lastBuildDate>
+    <pubDate>Mon, 06 Mar 2017 15:01:48 +0800</pubDate>
+    <lastBuildDate>Mon, 06 Mar 2017 15:01:48 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -39,24 +39,23 @@
 &lt;p&gt;嵌入方式的 CSS 只对当前的网页有效。因为 CSS 代码是在 HTML 文件中，所以会使得代码比较集中，当我们写模板网页时这通常比较有利。因为查看模板代码的人可以一目了然地查看 HTML 结构和 CSS 样式。因为嵌入的 CSS 只对当前页面有效，所以当多个页面需要引入相同的 CSS 代码时，这样写会导致代码冗余，也不利于维护。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;3.链接方式&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;链接方式指的是使用 HTML 头部的 &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 标签引入外部的 CSS 文件。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;链接方式指的是使用 HTML 头部的 &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 标签引入外部的 CSS 文件。&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;head&amp;gt;
     &amp;lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&amp;gt;
 &amp;lt;/head&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;这是最常见的也是最推荐的引入 CSS 的方式。使用这种方式，所有的 CSS 代码只存在于单独的 CSS 文件中，所以具有良好的可维护性。并且所有的 CSS 代码只存在于 CSS 文件中，CSS 文件会在第一次加载时引入，以后切换页面时只需加载 HTML 文件即可&lt;/p&gt;
+&lt;p&gt;这是最常见的也是最推荐的引入 CSS 的方式。使用这种方式，所有的 CSS 代码只存在于单独的 CSS 文件中，所以具有良好的可维护性。并且所有的 CSS 代码只存在于 CSS 文件中，CSS 文件会在第一次加载时引入，以后切换页面时只需加载 HTML 文件即可&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;4.导入方式&lt;/code&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;4.导入方式&lt;/code&gt;
-导入方式指的是使用 CSS 规则引入外部 CSS 文件
+&lt;p&gt;导入方式指的是使用 CSS 规则引入外部 CSS 文件
 &lt;code&gt;
 &amp;lt;style&amp;gt;
-@import url(style.css);
+    @import url(style.css);
 &amp;lt;/style&amp;gt;
 &lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;link和@import的区别是?&lt;/code&gt;
-两者都是外部引用CSS的方式，但是存在一定的区别&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;link和@import的区别是?&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;两者都是外部引用CSS的方式，但是存在一定的区别&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;区别1：link是XHTML标签，除了加载CSS外，还可以定义RSS等其他事务；@import属于CSS范畴，只能加载CSS。&lt;/li&gt;
