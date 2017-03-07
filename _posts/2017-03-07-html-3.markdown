@@ -51,8 +51,9 @@ line-height 属性设置行间的距离（行高），不能使用负值。该�
 去Can I use 网站查询  [CanIUse](http://caniuse.com/)
 
 在输入框中查询要查询的属性
+
 inline-block的兼容性：
-![inline-block兼容性](img/ciuinlineblock.png)
+![inline-block兼容性](/img/ciuinlineblock.png)
 
 ## `a 标签的href, title, target 是什么？ title 和 alt有什么区别？如何新窗口打开链接?`
 
