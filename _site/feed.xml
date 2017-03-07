@@ -5,9 +5,98 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 06 Mar 2017 17:08:25 +0800</pubDate>
-    <lastBuildDate>Mon, 06 Mar 2017 17:08:25 +0800</lastBuildDate>
+    <pubDate>Tue, 07 Mar 2017 15:13:42 +0800</pubDate>
+    <lastBuildDate>Tue, 07 Mar 2017 15:13:42 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>Html基础-3</title>
+        <description>&lt;h1&gt;HTML-3&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.zhangxinxu.com/wordpress/2009/11/css%E8%A1%8C%E9%AB%98line-height%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8/&quot;&gt;css行高line-height的一些深入理解及应用&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;&lt;code&gt;line-height有什么作用?&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;line-height 属性设置行间的距离（行高），不能使用负值。该属性会影响行框的布局。在应用到一个块级元素时，它定义了该元素中基线之间的最小距离而不是最大距离。line-height 与 font-size 的计算值之差(行距)分为两半，分别加到一个文本行内容的顶部和底部。可以包含这些内容的最小框就是行框。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;line-height可以被定义为normal。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;body { line-height:normal; }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;line-height可以被定义为继承&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;p { line-height:inherit; }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;line-height可以使用一个百分比的值&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;p { line-height:120%; }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;line-height可以被定义为一个长度值（单位px、em等）&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;p { line-height:20px; }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;line-height也可以被定义为纯数字（甚至没有单位）&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;p { line-height:1.2; }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;&lt;code&gt;如何去查CSS属性的兼容性？比如inline-block哪些浏览器支持？&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;去Can I use 网站查询  &lt;a href=&quot;http://caniuse.com/&quot;&gt;CanIUse&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在输入框中查询要查询的属性
+inline-block的兼容性：
+&lt;img src=&quot;img/ciuinlineblock.png&quot; alt=&quot;inline-block兼容性&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;&lt;code&gt;a 标签的href, title, target 是什么？ title 和 alt有什么区别？如何新窗口打开链接?&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;href&lt;/code&gt;是a标签的链接地址。可以是个链接地址，也可以是一个锚点地址。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;title&lt;/code&gt; 是a标签的标题，鼠标移动上之后显示的名称&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;target&lt;/code&gt; 是 a 标签打开链接的方式，主要有&lt;code&gt;_blank&lt;/code&gt;:浏览器总在一个新打开、未命名的窗口中载入目标文档；&lt;code&gt;_self&lt;/code&gt;:这个目标的值对所有没有指定目标的 &lt;a&gt; 标签是默认目标，它使得目标文档载入并显示在相同的框架或者窗口中作为源文档。这个目标是多余且不必要的，除非和文档标题 &lt;base&gt; 标签中的 target 属性一起使用；&lt;code&gt;_parent&lt;/code&gt;：这个目标使得文档载入父窗口或者包含来超链接引用的框架的框架集。如果这个引用是在窗口或者在顶级框架中，那么它与目标 &lt;em&gt;self 等效；`&lt;/em&gt;top&lt;code&gt;：这个目标使得文档载入包含这个超链接的窗口，用 _top 目标将会清除所有被包含的框架并将文档载入整个浏览器窗口。&lt;/code&gt;framename`:在指定的框架中打开被链接文档。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;title 和 alt区别&lt;/code&gt;:title作为属性时，用来为元素提供额外说明信息，例如，给超链接标签a添加了title属性，把鼠标移动到该链接上面是，就会显示title的内容，以达到补充说明或者提示的效果。alt属性则是用来指定替换文字，只能用在img、area和input元素中（包括applet元素），用于网页中图片无法正常显示时给用户提供文字说明使其了解图像信息。alt是替代图像作用而不是提供额外说明文字的。根据一些SEO人士的说法，使用alt属性还具有搜索引擎优化效果，因为搜素引擎是无法直接读取图像的信息的，alt可以为其提供文字信息所以对搜索引擎比较友好&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;a href=&amp;#39;https://www.baidu.com&amp;#39; target=&amp;#39;_blank&amp;#39;&amp;gt;在新的窗口打开连接&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2&gt;&lt;code&gt;display: none , visibility: hidden, opacity:0 有什么作用？有什么区别？&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;display=none，把元素隐藏起来，并且会改变页面布局，可以理解成在页面中把该元素删除掉,&lt;code&gt;无体积,脱离文档流&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;visibility=hidden，把元素隐藏起来了，但不会改变页面布局，不会触发该元素已经绑定的事件，&lt;code&gt;有体积，在文档流内&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;opacity=0，该元素隐藏起来了，但不会改变页面布局，如果该元素已经绑定一些事件，如click事件，那么点击该区域，也能触发点击事件的 &lt;code&gt;有体积,在文档里内&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;&lt;code&gt;如何去除 a 链接的默认样式？直接在 a 链接父容器添加颜色，能否继承到当前 a 链接上？&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;在a的style中加入text-decoration:none；可以去除a的默认样式&lt;/p&gt;
+
+&lt;p&gt;直接在 a 链接父容器添加颜色，不能继承到当前 a 链接上&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;a标签不会使用继承属性&lt;/code&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 07 Mar 2017 00:00:00 +0800</pubDate>
+        <link>http://clover.htmhub.com/2017/03/07/html-3/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2017/03/07/html-3/</guid>
+        
+        <category>Clover</category>
+        
+        <category>前端</category>
+        
+        <category>HTML</category>
+        
+        
+      </item>
     
       <item>
         <title>Html基础-2</title>
@@ -1899,650 +1988,6 @@ gulp.task(&#39;default&#39;, function() {
         <category>HTML</category>
         
         <category>Gulp</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Redis Study</title>
-        <description>&lt;h1&gt;Redis的学习&lt;/h1&gt;
-
-&lt;hr&gt;
-
-&lt;h2&gt;简介&lt;/h2&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;最近几年来，关于持久化和数据查询的相关技术，其需求已经增长到了让人惊讶的程度。可以断言，关系型数据库再也不是放之四海皆准。换一句话说，围绕数据的解决方案不可能再只有唯一一种。&lt;/p&gt;
-
-&lt;p&gt;对于我来说，在众多新出现的解决方案和工具里，最让人兴奋的，无疑是Redis。为什么？首先是因为其让人不可思议的容易学习，只需要简短的几个小时学习时间，就能对Redis有个大概的认识。还有，Redis在处理一组特定的问题集的同时能保持相当的通用性。更准确地说就是，Redis不会尝试去解决关于数据的所有事情。在你足够了解Redis后，事情就会变得越来越清晰，什么是可行的，什么是不应该由Redis来处理的。作为一名开发人员，如此的经验当是相当的美妙。&lt;/p&gt;
-
-&lt;p&gt;当你能仅使用Redis去构建一个完整系统时，我想大多数人将会发现，Redis能使得他们的许多数据方案变得更为通用，不论是一个传统的关系型数据库，一个面向文档的系统，或是其它更多的东西。这是一种用来实现某些特定特性的解决方法。就类似于一个索引引擎，你不会在Lucene上构建整个程序，但当你需要足够好的搜索，为什么不使用它呢？这对你和你的用户都有好处。当然，关于Redis和索引引擎之间相似性的讨论到此为止。&lt;/p&gt;
-
-&lt;p&gt;本书的目的是向读者传授掌握Redis所需要的基本知识。我们将会注重于学习Redis的5种数据结构，并研究各种数据建模方法。我们还会接触到一些主要的管理细节和调试技巧。&lt;/p&gt;
-
-&lt;h2&gt;安装&lt;/h2&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;&lt;code&gt;windows&lt;/code&gt;:&lt;a href=&quot;https://github.com/dmajkic/redis/downloads&quot;&gt;https://github.com/dmajkic/redis/downloads&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;*nix和MacOSX平台&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ wget http://download.redis.io/releases/redis-3.2.0.tar.gz
-$ tar xzf redis-3.2.0.tar.gz
-$ cd redis-3.2.0
-$ make
-$ make install
-$ cp redis.conf /etc/
-$ cd /etc
-$ vim redis.conf
-修改daemonize yes---目的使进程在后台运行
-$ cd /usr/local/bin
-$./redis-server /etc/redis.conf
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;检查是否启动成功&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-$ ps -ef | grep redis
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;服务启动后通过 redis-cli链接
-进入命令行控制台&lt;/p&gt;
-
-&lt;p&gt;（当然，Redis同样可以通过套件管理程序来安装。例如，使用Homebrew的MaxOSX用户可以只键入brew install redis即可。）&lt;/p&gt;
-
-&lt;p&gt;如果你是通过源文件来安装，二进制可执行文件会被放置在src目录里。通过运行cd src可跳转到src目录。&lt;/p&gt;
-
-&lt;h2&gt;运行和连接Redis&lt;/h2&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;如果一切都工作正常，那Redis的二进制文件应该已经可以曼妙地跳跃于你的指尖之下。Redis只有少量的可执行文件，我们将着重于Redis的服务器和命令行界面（一个类DOS的客户端）。首先，让我们来运行服务器。在Windows平台，双击redis-server，在*nix/MacOSX平台则运行./redis-server.&lt;/p&gt;
-
-&lt;p&gt;如果你仔细看了启动信息，你会看到一个警告，指没能找到redis.conf文件。Redis将会采用内置的默认设置，这对于我们将要做的已经足够了。&lt;/p&gt;
-
-&lt;p&gt;然后，通过双击redis-cli（Windows平台）或者运行./redis-cli（*nix/MacOSX平台），启动Redis的控制台。控制台将会通过默认的端口（6379）来连接本地运行的服务器。&lt;/p&gt;
-
-&lt;p&gt;可以在命令行界面键入info命令来查看一切是不是都运行正常。你会很乐意看到这么一大组关键字-值（key-value）对的显示，这为我们查看服务器的状态提供了大量有效信息。&lt;/p&gt;
-
-&lt;p&gt;如果在上面的启动步骤里遇到什么问题，我建议你到&lt;code&gt;Redis的官方支持组&lt;/code&gt;里获取帮助。&lt;/p&gt;
-
-&lt;h2&gt;驱动Redis&lt;/h2&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;很快你就会发现，Redis的API就如一组定义明确的函数那般容易理解。Redis具有让人难以置信的简单性，其操作过程也同样如此。这意味着，无论你是使用命令行程序，或是使用你喜欢的语言来驱动，整体的感觉都不会相差多少。因此，相对于命令行程序，如果你更愿意通过一种编程语言去驱动Redis，你不会感觉到有任何适应的问题。如果真想如此，可以到Redis的&lt;a href=&quot;http://redis.io/clients&quot;&gt;客户端推荐页面&lt;/a&gt;下载适合的Redis载体。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2&gt;学习-基础知识&lt;/h2&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;是什么使Redis显得这么特别？Redis具体能解决什么类型的问题？要实际应用Redis，开发者必须储备什么知识？在我们能回答这么一些问题之前，我们需要明白Redis到底是什么。&lt;/p&gt;
-
-&lt;p&gt;Redis通常被人们认为是一种持久化的存储器关键字-值型存储（in-memory persistent key-value store）。我认为这种对Redis的描述并不太准确。Redis的确是将所有的数据存放于存储器（更多是是按位存储），而且也确实通过将数据写入磁盘来实现持久化，但是Redis的实际意义比单纯的关键字-值型存储要来得深远。纠正脑海里的这种误解观点非常关键，否则你对于Redis之道以及其应用的洞察力就会变得越发狭义。&lt;/p&gt;
-
-&lt;p&gt;事实是，Redis引入了5种不同的数据结构，只有一个是典型的关键字-值型结构。理解Redis的关键就在于搞清楚这5种数据结构，其工作的原理都是如何，有什么关联方法以及你能怎样应用这些数据结构去构建模型。首先，让我们来弄明白这些数据结构的实际意义。&lt;/p&gt;
-
-&lt;p&gt;应用上面提及的数据结构概念到我们熟悉的关系型数据库里，我们可以认为其引入了一个单独的数据结构——表格。表格既复杂又灵活，基于表格的存储和管理，没有多少东西是你不能进行建模的。然而，这种通用性并不是没有缺点。具体来说就是，事情并不是总能达到假设中的简单或者快速。相对于这种普遍适用（one-size-fits-all）的结构体系，我们可以使用更为专门化的结构体系。当然，因此可能有些事情我们会完成不了(至少，达不到很好的程度）。但话说回来，这样做就能确定我们可以获得想象中的简单性和速度吗？&lt;/p&gt;
-
-&lt;p&gt;针对特定类型的问题使用特定的数据结构？我们不就是这样进行编程的吗？你不会使用一个散列表去存储每份数据，也不会使用一个标量变量去存储。对我来说，这正是Redis的做法。如果你需要处理标量、列表、散列或者集合，为什么不直接就用标量、列表、散列和集合去存储他们？为什么不是直接调用&lt;code&gt;exists(key)&lt;/code&gt;去检测一个已存在的值，而是要调用其他比O(1)（常量时间查找，不会因为待处理元素的增长而变慢）慢的操作？&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3&gt;数据库（Databases）&lt;/h3&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;与你熟悉的关系型数据库一致，Redis有着相同的数据库基本概念，即一个数据库包含一组数据。典型的数据库应用案例是，将一个程序的所有数据组织起来，使之与另一个程序的数据保持独立。&lt;/p&gt;
-
-&lt;p&gt;在Redis里，数据库简单的使用一个数字编号来进行辨认，默认数据库的数字编号是&lt;code&gt;0&lt;/code&gt;。如果你想切换到一个不同的数据库，你可以使用&lt;code&gt;select&lt;/code&gt;命令来实现。在命令行界面里键入&lt;code&gt;select 1&lt;/code&gt;，Redis应该会回复一条&lt;code&gt;OK&lt;/code&gt;的信息，然后命令行界面里的提示符会变成类似&lt;code&gt;redis 127.0.0.1:6379[1]&amp;gt;&lt;/code&gt;这样。如果你想切换回默认数据库，只要在命令行界面键入&lt;code&gt;select 0&lt;/code&gt;即可。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3&gt;命令、关键字和值（Commands, Keys and Values）&lt;/h3&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Redis不仅仅是一种简单的关键字-值型存储，从其核心概念来看，Redis的5种数据结构中的每一个都至少有一个关键字和一个值。在转入其它关于Redis的有用信息之前，我们必须理解关键字和值的概念。&lt;/p&gt;
-
-&lt;p&gt;关键字（Keys）是用来标识数据块。我们将会很常跟关键字打交道，不过在现在，明白关键字就是类似于&lt;code&gt;users:leto&lt;/code&gt;这样的表述就足够了。一般都能很好地理解到，这样关键字包含的信息是一个名为&lt;code&gt;leto&lt;/code&gt;的用户。这个关键字里的冒号没有任何特殊含义，对于Redis而言，使用分隔符来组织关键字是很常见的方法。&lt;/p&gt;
-
-&lt;p&gt;值（Values）是关联于关键字的实际值，可以是任何东西。有时候你会存储字符串，有时候是整数，还有时候你会存储序列化对象（使用JSON、XML或其他格式）。在大多数情况下，Redis会把值看做是一个字节序列，而不会关注它们实质上是什么。要注意，不同的Redis载体处理序列化会有所不同（一些会让你自己决定）。因此，在这本书里，我们将仅讨论字符串、整数和JSON。
-现在让我们活动一下手指吧。在命令行界面键入下面的命令：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;set users:leto &quot;{name: leto, planet: dune, likes: [spice]}&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;这就是Redis命令的基本构成。首先我们要有一个确定的命令，在上面的语句里就是set。然后就是相应的参数，set命令接受两个参数，包括要设置的关键字，以及相应要设置的值。很多的情况是，命令接受一个关键字（当这种情况出现，其经常是第一个参数）。你能想到如何去获取这个值吗？我想你会说（当然一时拿不准也没什么）：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;get users:leto
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;关键字和值的是Redis的基本概念，而&lt;code&gt;get&lt;/code&gt;和&lt;code&gt;set&lt;/code&gt;命令是对此最简单的使用。你可以创建更多的用户，去尝试不同类型的关键字以及不同的值，看看一些不同的组合。&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3&gt;查询（Querying）&lt;/h3&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;随着学习的持续深入，两件事情将变得清晰起来。对于Redis而言，关键字就是一切，而值是没有任何意义。更通俗来看就是，Redis不允许你通过值来进行查询。回到上面的例子，我们就不能查询生活在&lt;code&gt;dune&lt;/code&gt;行星上的用户。&lt;/p&gt;
-
-&lt;p&gt;对许多人来说，这会引起一些担忧。在我们生活的世界里，数据查询是如此的灵活和强大，而Redis的方式看起来是这么的原始和不高效。不要让这些扰乱你太久。要记住，Redis不是一种普遍使用（one-size-fits-all）的解决方案，确实存在这么一些事情是不应该由Redis来解决的（因为其查询的限制）。事实上，在考虑了这些情况后，你会找到新的方法去构建你的数据。&lt;/p&gt;
-
-&lt;p&gt;很快，我们就能看到更多实际的用例。很重要的一点是，我们要明白关于Redis的这些基本事实。这能帮助我们弄清楚为什么值可以是任何东西，因为Redis从来不需要去读取或理解它们。而且，这也可以帮助我们理清思路，然后去思考如何在这个新世界里建立模型。&lt;/p&gt;
-
-&lt;h3&gt;存储器和持久化（Memory and Persistence）&lt;/h3&gt;
-
-&lt;p&gt;我们之前提及过，Redis是一种持久化的存储器内存储（in-memory persistent store）。对于持久化，默认情况下，Redis会根据已变更的关键字数量来进行判断，然后在磁盘里创建数据库的快照（snapshot）。你可以对此进行设置，如果X个关键字已变更，那么每隔Y秒存储数据库一次。默认情况下，如果1000个或更多的关键字已变更，Redis会每隔60秒存储数据库；而如果9个或更少的关键字已变更，Redis会每隔15分钟存储数据库。&lt;/p&gt;
-
-&lt;p&gt;除了创建磁盘快照外，Redis可以在附加模式下运行。任何时候，如果有一个关键字变更，一个单一附加（append-only）的文件会在磁盘里进行更新。在一些情况里，虽然硬件或软件可能发生错误，但用那60秒有效数据存储去换取更好性能是可以接受的。而在另一些情况里，这种损失就难以让人接受，Redis为你提供了选择。在第5章里，我们将会看到第三种选择，其将持久化任务减荷到一个从属数据库里。&lt;/p&gt;
-
-&lt;p&gt;至于存储器，Redis会将所有数据都保留在存储器中。显而易见，运行Redis具有不低的成本：因为RAM仍然是最昂贵的服务器硬件部件。&lt;/p&gt;
-
-&lt;p&gt;我很清楚有一些开发者对即使是一点点的数据空间都是那么的敏感。一本《威廉·莎士比亚全集》需要近5.5MB的存储空间。对于缩放的需求，其它的解决方案趋向于IO-bound或者CPU-bound。这些限制（RAM或者IO）将会需要你去理解更多机器实际依赖的数据类型，以及应该如何去进行存储和查询。除非你是存储大容量的多媒体文件到Redis中，否则存储器内存储应该不会是一个问题。如果这对于一个程序是个问题，你就很可能不会用IO-bound的解决方案。&lt;/p&gt;
-
-&lt;p&gt;Redis有虚拟存储器的支持。然而，这个功能已经被认为是失败的了（通过Redis的开发者），而且它的使用已经被废弃了。&lt;/p&gt;
-
-&lt;p&gt;（从另一个角度来看，一本5.5MB的《威廉·莎士比亚全集》可以通过压缩减小到近2MB。当然，Redis不会自动对值进行压缩，但是因为其将所有值都看作是字节，没有什么限制让你不能对数据进行压缩/解压，通过牺牲处理时间来换取存储空间。）&lt;/p&gt;
-
-&lt;h3&gt;整体来看（Putting It Together）&lt;/h3&gt;
-
-&lt;p&gt;我们已经接触了好几个高层次的主题。在继续深入Redis之前，我想做的最后一件事情是将这些主题整合起来。这些主题包括，查询的限制，数据结构以及Redis在存储器内存储数据的方法。&lt;/p&gt;
-
-&lt;p&gt;当你将这3个主题整合起来，你最终会得出一个绝妙的结论：速度。一些人可能会想，当然Redis会很快速，要知道所有的东西都在存储器里。但这仅仅是其中的一部分，让Redis闪耀的真正原因是其不同于其它解决方案的特殊数据结构。&lt;/p&gt;
-
-&lt;p&gt;能有多快速？这依赖于很多东西，包括你正在使用着哪个命令，数据的类型等等。但Redis的性能测试是趋向于数万或数十万次操作&lt;strong&gt;每秒&lt;/strong&gt;。你可以通过运行&lt;code&gt;redis-benchmark&lt;/code&gt;（就在&lt;code&gt;redis-server&lt;/code&gt;和&lt;code&gt;redis-cli&lt;/code&gt;的同一个文件夹里）来进行测试。&lt;/p&gt;
-
-&lt;p&gt;我曾经试过将一组使用传统模型的代码转向使用Redis。在传统模型里，运行一个我写的载入测试，需要超过5分钟的时间来完成。而在Redis里，只需要150毫秒就完成了。你不会总能得到这么好的收获，但希望这能让你对我们所谈的东西有更清晰的理解。&lt;/p&gt;
-
-&lt;p&gt;理解Redis的这个特性很重要，因为这将影响到你如何去与Redis进行交互。拥有SQL背景的程序员通常会致力于让数据库的数据往返次数减至最小。这对于任何系统都是个好建议，包括Redis。然而，考虑到我们是在处理比较简单的数据结构，有时候我们还是需要与Redis服务器频繁交互，以达到我们的目的。刚开始的时候，可能会对这种数据访问模式感到不太自然。实际上，相对于我们通过Redis获得的高性能而言，这仅仅是微不足道的损失。&lt;/p&gt;
-
-&lt;h3&gt;小结&lt;/h3&gt;
-
-&lt;p&gt;虽然我们只接触和摆弄了Redis的冰山一角，但我们讨论的主题已然覆盖了很大范围内的东西。如果觉得有些事情还是不太清楚（例如查询），不用为此而担心，在下一章我们将会继续深入探讨，希望你的问题都能得到解答。&lt;/p&gt;
-
-&lt;p&gt;这一章的要点包括：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;关键字（Keys）是用于标识一段数据的一个字符串&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;值（Values）是一段任意的字节序列，Redis不会关注它们实质上是什么&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Redis展示了（也实现了）5种专门的数据结构&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;上面的几点使得Redis快速而且容易使用，但要知道Redis并不适用于所有的应用场景&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;\clearpage&lt;/p&gt;
-
-&lt;h2&gt;第2章 - 数据结构&lt;/h2&gt;
-
-&lt;p&gt;现在开始将探究Redis的5种数据结构，我们会解释每种数据结构都是什么，包含了什么有效的方法（Method），以及你能用这些数据结构处理哪些类型的特性和数据。&lt;/p&gt;
-
-&lt;p&gt;目前为止，我们所知道的Redis构成仅包括命令、关键字和值，还没有接触到关于数据结构的具体概念。当我们使用&lt;code&gt;set&lt;/code&gt;命令时，Redis是怎么知道我们是在使用哪个数据结构？其解决方法是，每个命令都相对应于一种特定的数据结构。例如，当你使用&lt;code&gt;set&lt;/code&gt;命令，你就是将值存储到一个字符串数据结构里。而当你使用&lt;code&gt;hset&lt;/code&gt;命令，你就是将值存储到一个散列数据结构里。考虑到Redis的关键字集很小，这样的机制具有相当的可管理性。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://redis.io/commands&quot;&gt;Redis的网站&lt;/a&gt;里有着非常优秀的参考文档，没有任何理由去重造轮子。但为了搞清楚这些数据结构的作用，我们将会覆盖那些必须知道的重要命令。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;没有什么事情比高兴的玩和试验有趣的东西来得更重要的了。在任何时候，你都能通过键入&lt;code&gt;flushdb&lt;/code&gt;命令将你数据库里的所有值清除掉，因此，不要再那么害羞了，去尝试做些疯狂的事情吧！&lt;/p&gt;
-
-&lt;h3&gt;字符串（Strings)&lt;/h3&gt;
-
-&lt;p&gt;在Redis里，字符串是最基本的数据结构。当你在思索着关键字-值对时，你就是在思索着字符串数据结构。不要被名字给搞混了，如之前说过的，你的值可以是任何东西。我更喜欢将他们称作“标量”（Scalars），但也许只有我才这样想。&lt;/p&gt;
-
-&lt;p&gt;我们已经看到了一个常见的字符串使用案例，即通过关键字存储对象的实例。有时候，你会频繁地用到这类操作：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;set users:leto &quot;{name: leto, planet: dune, likes: [spice]}&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;除了这些外，Redis还有一些常用的操作。例如，&lt;code&gt;strlen &amp;lt;key&amp;gt;&lt;/code&gt;能用来获取一个关键字对应值的长度；&lt;code&gt;getrange &amp;lt;key&amp;gt; &amp;lt;start&amp;gt; &amp;lt;end&amp;gt;&lt;/code&gt;将返回指定范围内的关键字对应值；&lt;code&gt;append &amp;lt;key&amp;gt; &amp;lt;value&amp;gt;&lt;/code&gt;会将value附加到已存在的关键字对应值中（如果该关键字并不存在，则会创建一个新的关键字-值对）。不要犹豫，去试试看这些命令吧。下面是我得到的：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;gt; strlen users:leto
-(integer) 42
-
-&amp;gt; getrange users:leto 27 40
-&quot;likes: [spice]&quot;
-
-&amp;gt; append users:leto &quot; OVER 9000!!&quot;
-(integer) 54
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;现在你可能会想，这很好，但似乎没有什么意义。你不能有效地提取出一段范围内的JSON文件，或者为其附加一些值。你是对的，这里的经验是，一些命令，尤其是关于字符串数据结构的，只有在给定了明确的数据类型后，才会有实际意义。&lt;/p&gt;
-
-&lt;p&gt;之前我们知道了，Redis不会去关注你的值是什么东西。通常情况下，这没有错。然而，一些字符串命令是专门为一些类型或值的结构而设计的。作为一个有些含糊的用例，我们可以看到，对于一些自定义的空间效率很高的（space-efficient）串行化对象，&lt;code&gt;append&lt;/code&gt;和&lt;code&gt;getrange&lt;/code&gt;命令将会很有用。对于一个更为具体的用例，我们可以再看一下&lt;code&gt;incr&lt;/code&gt;、&lt;code&gt;incrby&lt;/code&gt;、&lt;code&gt;decr&lt;/code&gt;和&lt;code&gt;decrby&lt;/code&gt;命令。这些命令会增长或者缩减一个字符串数据结构的值：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;gt; incr stats:page:about
-(integer) 1
-&amp;gt; incr stats:page:about
-(integer) 2
-
-&amp;gt; incrby ratings:video:12333 5
-(integer) 5
-&amp;gt; incrby ratings:video:12333 3
-(integer) 8
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;由此你可以想象到，Redis的字符串数据结构能很好地用于分析用途。你还可以去尝试增长&lt;code&gt;users:leto&lt;/code&gt;（一个不是整数的值），然后看看会发生什么（应该会得到一个错误）。&lt;/p&gt;
-
-&lt;p&gt;更为进阶的用例是&lt;code&gt;setbit&lt;/code&gt;和&lt;code&gt;getbit&lt;/code&gt;命令。“今天我们有多少个独立用户访问”是个在Web应用里常见的问题，有一篇&lt;a href=&quot;http://blog.getspool.com/2011/11/29/fast-easy-realtime-metrics-using-redis-bitmaps/&quot;&gt;精彩的博文&lt;/a&gt;，在里面可以看到Spool是如何使用这两个命令有效地解决此问题。对于1.28亿个用户，一部笔记本电脑在不到50毫秒的时间里就给出了答复，而且只用了16MB的存储空间。&lt;/p&gt;
-
-&lt;p&gt;最重要的事情不是在于你是否明白位图（Bitmaps)的工作原理，或者Spool是如何去使用这些命令，而是应该要清楚Redis的字符串数据结构比你当初所想的要有用许多。然而，最常见的应用案例还是上面我们给出的：存储对象（简单或复杂）和计数。同时，由于通过关键字来获取一个值是如此之快，字符串数据结构很常被用来缓存数据。&lt;/p&gt;
-
-&lt;h3&gt;散列（Hashes）&lt;/h3&gt;
-
-&lt;p&gt;我们已经知道把Redis称为一种关键字-值型存储是不太准确的，散列数据结构是一个很好的例证。你会看到，在很多方面里，散列数据结构很像字符串数据结构。两者显著的区别在于，散列数据结构提供了一个额外的间接层：一个域（Field）。因此，散列数据结构中的&lt;code&gt;set&lt;/code&gt;和&lt;code&gt;get&lt;/code&gt;是：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;hset users:goku powerlevel 9000
-hget users:goku powerlevel
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;相关的操作还包括在同一时间设置多个域、同一时间获取多个域、获取所有的域和值、列出所有的域或者删除指定的一个域：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;hmset users:goku race saiyan age 737
-hmget users:goku race powerlevel
-hgetall users:goku
-hkeys users:goku
-hdel users:goku age
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;如你所见，散列数据结构比普通的字符串数据结构具有更多的可操作性。我们可以使用一个散列数据结构去获得更精确的描述，是存储一个用户，而不是一个序列化对象。从而得到的好处是能够提取、更新和删除具体的数据片段，而不必去获取或写入整个值。&lt;/p&gt;
-
-&lt;p&gt;对于散列数据结构，可以从一个经过明确定义的对象的角度来考虑，例如一个用户，关键之处在于要理解他们是如何工作的。从性能上的原因来看，这是正确的，更具粒度化的控制可能会相当有用。在下一章我们将会看到，如何用散列数据结构去组织你的数据，使查询变得更为实效。在我看来，这是散列真正耀眼的地方。&lt;/p&gt;
-
-&lt;h3&gt;列表（Lists）&lt;/h3&gt;
-
-&lt;p&gt;对于一个给定的关键字，列表数据结构让你可以存储和处理一组值。你可以添加一个值到列表里、获取列表的第一个值或最后一个值以及用给定的索引来处理值。列表数据结构维护了值的顺序，提供了基于索引的高效操作。为了跟踪在网站里注册的最新用户，我们可以维护一个&lt;code&gt;newusers&lt;/code&gt;的列表：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;lpush newusers goku
-ltrim newusers 0 50
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;（译注：&lt;code&gt;ltrim&lt;/code&gt;命令的具体构成是&lt;code&gt;LTRIM Key start stop&lt;/code&gt;。要理解&lt;code&gt;ltrim&lt;/code&gt;命令，首先要明白Key所存储的值是一个列表，理论上列表可以存放任意个值。对于指定的列表，根据所提供的两个范围参数start和stop，&lt;code&gt;ltrim&lt;/code&gt;命令会将指定范围外的值都删除掉，只留下范围内的值。）&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;首先，我们将一个新用户推入到列表的前端，然后对列表进行调整，使得该列表只包含50个最近被推入的用户。这是一种常见的模式。&lt;code&gt;ltrim&lt;/code&gt;是一个具有O(N)时间复杂度的操作，N是被删除的值的数量。从上面的例子来看，我们总是在插入了一个用户后再进行列表调整，实际上，其将具有O(1)的时间复杂度（因为N将永远等于1）的常数性能。&lt;/p&gt;
-
-&lt;p&gt;这是我们第一次看到一个关键字的对应值索引另一个值。如果我们想要获取最近的10个用户的详细资料，我们可以运行下面的组合操作：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;keys = redis.lrange(&#39;newusers&#39;, 0, 10)
-redis.mget(*keys.map {|u| &quot;users:#{u}&quot;})
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;我们之前谈论过关于多次往返数据的模式，上面的两行Ruby代码为我们进行了很好的演示。&lt;/p&gt;
-
-&lt;p&gt;当然，对于存储和索引关键字的功能，并不是只有列表数据结构这种方式。值可以是任意的东西，你可以使用列表数据结构去存储日志，也可以用来跟踪用户浏览网站时的路径。如果你过往曾构建过游戏，你可能会使用列表数据结构去跟踪用户的排队活动。&lt;/p&gt;
-
-&lt;h3&gt;集合（Sets）&lt;/h3&gt;
-
-&lt;p&gt;集合数据结构常常被用来存储只能唯一存在的值，并提供了许多的基于集合的操作，例如并集。集合数据结构没有对值进行排序，但是其提供了高效的基于值的操作。使用集合数据结构的典型用例是朋友名单的实现：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sadd friends:leto ghanima paul chani jessica
-sadd friends:duncan paul jessica alia
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;不管一个用户有多少个朋友，我们都能高效地（O(1)时间复杂度）识别出用户X是不是用户Y的朋友：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sismember friends:leto jessica
-sismember friends:leto vladimir
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;而且，我们可以查看两个或更多的人是不是有共同的朋友：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sinter friends:leto friends:duncan
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;甚至可以在一个新的关键字里存储结果：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sinterstore friends:leto_duncan friends:leto friends:duncan
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;有时候需要对值的属性进行标记和跟踪处理，但不能通过简单的复制操作完成，集合数据结构是解决此类问题的最好方法之一。当然，对于那些需要运用集合操作的地方（例如交集和并集），集合数据结构就是最好的选择。&lt;/p&gt;
-
-&lt;h3&gt;分类集合（Sorted Sets）&lt;/h3&gt;
-
-&lt;p&gt;最后也是最强大的数据结构是分类集合数据结构。如果说散列数据结构类似于字符串数据结构，主要区分是域（field）的概念；那么分类集合数据结构就类似于集合数据结构，主要区分是标记（score）的概念。标记提供了排序（sorting）和秩划分（ranking）的功能。如果我们想要一个秩分类的朋友名单，可以这样做：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;zadd friends:duncan 70 ghanima 95 paul 95 chani 75 jessica 1 vladimir
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;对于&lt;code&gt;duncan&lt;/code&gt;的朋友，要怎样计算出标记（score）为90或更高的人数？&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;zcount friends:duncan 90 100
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;如何获取&lt;code&gt;chani&lt;/code&gt;在名单里的秩（rank）？&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;zrevrank friends:duncan chani
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;（译注：&lt;code&gt;zrank&lt;/code&gt;命令的具体构成是&lt;code&gt;ZRANK Key menber&lt;/code&gt;，要知道Key存储的Sorted Set默认是根据Score对各个menber进行升序的排列，该命令就是用来获取menber在该排列里的次序，这就是所谓的秩。）&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;我们使用了&lt;code&gt;zrevrank&lt;/code&gt;命令而不是&lt;code&gt;zrank&lt;/code&gt;命令，这是因为Redis的默认排序是从低到高，但是在这个例子里我们的秩划分是从高到低。对于分类集合数据结构，最常见的应用案例是用来实现排行榜系统。事实上，对于一些基于整数排序，且能以标记（score）来进行有效操作的东西，使用分类集合数据结构来处理应该都是不错的选择。&lt;/p&gt;
-
-&lt;h3&gt;小结&lt;/h3&gt;
-
-&lt;p&gt;对于Redis的5种数据结构，我们进行了高层次的概述。一件有趣的事情是，相对于最初构建时的想法，你经常能用Redis创造出一些更具实效的事情。对于字符串数据结构和分类集合数据结构的使用，很有可能存在一些构建方法是还没有人想到的。当你理解了那些常用的应用案例后，你将发现Redis对于许多类型的问题，都是很理想的选择。还有，不要因为Redis展示了5种数据结构和相应的各种方法，就认为你必须要把所有的东西都用上。只使用一些命令去构建一个特性是很常见的。&lt;/p&gt;
-
-&lt;p&gt;\clearpage&lt;/p&gt;
-
-&lt;h2&gt;第3章 - 使用数据结构&lt;/h2&gt;
-
-&lt;p&gt;在上一章里，我们谈论了Redis的5种数据结构，对于一些可能的用途也给出了用例。现在是时候来看看一些更高级，但依然很常见的主题和设计模式。&lt;/p&gt;
-
-&lt;h3&gt;大O表示法（Big O Notation）&lt;/h3&gt;
-
-&lt;p&gt;在本书中，我们之前就已经看到过大O表示法，包括O(1)和O(N)的表示。大O表示法的惯常用途是，描述一些用于处理一定数量元素的行为的综合表现。在Redis里，对于一个要处理一定数量元素的命令，大O表示法让我们能了解该命令的大概运行速度。&lt;/p&gt;
-
-&lt;p&gt;在Redis的文档里，每一个命令的时间复杂度都用大O表示法进行了描述，还能知道各命令的具体性能会受什么因素影响。让我们来看看一些用例。&lt;/p&gt;
-
-&lt;p&gt;常数时间复杂度O(1)被认为是最快速的，无论我们是在处理5个元素还是5百万个元素，最终都能得到相同的性能。对于&lt;code&gt;sismember&lt;/code&gt;命令，其作用是告诉我们一个值是否属于一个集合，时间复杂度为O(1)。&lt;code&gt;sismember&lt;/code&gt;命令很强大，很大部分的原因是其高效的性能特征。许多Redis命令都具有O(1)的时间复杂度。&lt;/p&gt;
-
-&lt;p&gt;对数时间复杂度O(log(N))被认为是第二快速的，其通过使需扫描的区间不断皱缩来快速完成处理。使用这种“分而治之”的方式，大量的元素能在几个迭代过程里被快速分解完整。&lt;code&gt;zadd&lt;/code&gt;命令的时间复杂度就是O(log(N))，其中N是在分类集合中的元素数量。&lt;/p&gt;
-
-&lt;p&gt;再下来就是线性时间复杂度O(N)，在一个表格的非索引列里进行查找就需要O(N)次操作。&lt;code&gt;ltrim&lt;/code&gt;命令具有O(N)的时间复杂度，但是，在&lt;code&gt;ltrim&lt;/code&gt;命令里，N不是列表所拥有的元素数量，而是被删除的元素数量。从一个具有百万元素的列表里用&lt;code&gt;ltrim&lt;/code&gt;命令删除1个元素，要比从一个具有一千个元素的列表里用&lt;code&gt;ltrim&lt;/code&gt;命令删除10个元素来的快速（实际上，两者很可能会是一样快，因为两个时间都非常的小）。&lt;/p&gt;
-
-&lt;p&gt;根据给定的最小和最大的值的标记，&lt;code&gt;zremrangebyscore&lt;/code&gt;命令会在一个分类集合里进行删除元素操作，其时间复杂度是O(log(N)+M)。这看起来似乎有点儿杂乱，通过阅读文档可以知道，这里的N指的是在分类集合里的总元素数量，而M则是被删除的元素数量。可以看出，对于性能而言，被删除的元素数量很可能会比分类集合里的总元素数量更为重要。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;（译注：&lt;code&gt;zremrangebyscore&lt;/code&gt;命令的具体构成是&lt;code&gt;ZREMRANGEBYSCORE Key max mix&lt;/code&gt;。）&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;对于&lt;code&gt;sort&lt;/code&gt;命令，其时间复杂度为O(N+M*log(M))，我们将会在下一章谈论更多的相关细节。从&lt;code&gt;sort&lt;/code&gt;命令的性能特征来看，可以说这是Redis里最复杂的一个命令。&lt;/p&gt;
-
-&lt;p&gt;还存在其他的时间复杂度描述，包括O(N^2)和O(C^N)。随着N的增大，其性能将急速下降。在Redis里，没有任何一个命令具有这些类型的时间复杂度。&lt;/p&gt;
-
-&lt;p&gt;值得指出的一点是，在Redis里，当我们发现一些操作具有O(N)的时间复杂度时，我们可能可以找到更为好的方法去处理。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;（译注：对于Big O Notation，相信大家都非常的熟悉，虽然原文仅仅是对该表示法进行简单的介绍，但限于个人的算法知识和文笔水平实在有限，此小节的翻译让我头痛颇久，最终成果也确实难以让人满意，望见谅。）&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3&gt;仿多关键字查询（Pseudo Multi Key Queries）&lt;/h3&gt;
-
-&lt;p&gt;时常，你会想通过不同的关键字去查询相同的值。例如，你会想通过电子邮件（当用户开始登录时）去获取用户的具体信息，或者通过用户id（在用户登录后）去获取。有一种很不实效的解决方法，其将用户对象分别放置到两个字符串值里去：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;set users:leto@dune.gov &quot;{id: 9001, email: &#39;leto@dune.gov&#39;, ...}&quot;
-set users:9001 &quot;{id: 9001, email: &#39;leto@dune.gov&#39;, ...}&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;这种方法很糟糕，如此不但会产生两倍数量的内存，而且这将会成为数据管理的恶梦。&lt;/p&gt;
-
-&lt;p&gt;如果Redis允许你将一个关键字链接到另一个的话，可能情况会好很多，可惜Redis并没有提供这样的功能（而且很可能永远都不会提供）。Redis发展到现在，其开发的首要目的是要保持代码和API的整洁简单，关键字链接功能的内部实现并不符合这个前提（对于关键字，我们还有很多相关方法没有谈论到）。其实，Redis已经提供了解决的方法：散列。&lt;/p&gt;
-
-&lt;p&gt;使用散列数据结构，我们可以摆脱重复的缠绕：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;set users:9001 &quot;{id: 9001, email: leto@dune.gov, ...}&quot;
-hset users:lookup:email leto@dune.gov 9001
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;我们所做的是，使用域来作为一个二级索引，然后去引用单个用户对象。要通过id来获取用户信息，我们可以使用一个普通的&lt;code&gt;get&lt;/code&gt;命令：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;get users:9001
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;而如果想通过电子邮箱来获取用户信息，我们可以使用&lt;code&gt;hget&lt;/code&gt;命令再配合使用&lt;code&gt;get&lt;/code&gt;命令（Ruby代码）：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;id = redis.hget(&#39;users:lookup:email&#39;, &#39;leto@dune.gov&#39;)
-user = redis.get(&quot;users:#{id}&quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;你很可能将会经常使用这类用法。在我看来，这就是散列真正耀眼的地方。在你了解这类用法之前，这可能不是一个明显的用例。&lt;/p&gt;
-
-&lt;h3&gt;引用和索引（References and Indexes）&lt;/h3&gt;
-
-&lt;p&gt;我们已经看过几个关于值引用的用例，包括介绍列表数据结构时的用例，以及在上面使用散列数据结构来使查询更灵活一些。进行归纳后会发现，对于那些值与值间的索引和引用，我们都必须手动的去管理。诚实来讲，这确实会让人有点沮丧，尤其是当你想到那些引用相关的操作，如管理、更新和删除等，都必须手动的进行时。在Redis里，这个问题还没有很好的解决方法。&lt;/p&gt;
-
-&lt;p&gt;我们已经看到，集合数据结构很常被用来实现这类索引：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sadd friends:leto ghanima paul chani jessica
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;这个集合里的每一个成员都是一个Redis字符串数据结构的引用，而每一个引用的值则包含着用户对象的具体信息。那么如果&lt;code&gt;chani&lt;/code&gt;改变了她的名字，或者删除了她的帐号，应该如何处理？从整个朋友圈的关系结构来看可能会更好理解，我们知道，&lt;code&gt;chani&lt;/code&gt;也有她的朋友：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sadd friends_of:chani leto paul
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;如果你有什么待处理情况像上面那样，那在维护成本之外，还会有对于额外索引值的处理和存储空间的成本。这可能会令你感到有点退缩。在下一小节里，我们将会谈论减少使用额外数据交互的性能成本的一些方法（在第1章我们粗略地讨论了下）。&lt;/p&gt;
-
-&lt;p&gt;如果你确实在担忧着这些情况，其实，关系型数据库也有同样的开销。索引需要一定的存储空间，必须通过扫描或查找，然后才能找到相应的记录。其开销也是存在的，当然他们对此做了很多的优化工作，使之变得更为有效。&lt;/p&gt;
-
-&lt;p&gt;再次说明，需要在Redis里手动地管理引用确实是颇为棘手。但是，对于你关心的那些问题，包括性能或存储空间等，应该在经过测试后，才会有真正的理解。我想你会发现这不会是一个大问题。&lt;/p&gt;
-
-&lt;h3&gt;数据交互和流水线（Round Trips and Pipelining）&lt;/h3&gt;
-
-&lt;p&gt;我们已经提到过，与服务器频繁交互是Redis的一种常见模式。这类情况可能很常出现，为了使我们能获益更多，值得仔细去看看我们能利用哪些特性。&lt;/p&gt;
-
-&lt;p&gt;许多命令能接受一个或更多的参数，也有一种关联命令（sister-command）可以接受多个参数。例如早前我们看到过&lt;code&gt;mget&lt;/code&gt;命令，接受多个关键字，然后返回值：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;keys = redis.lrange(&#39;newusers&#39;, 0, 10)
-redis.mget(*keys.map {|u| &quot;users:#{u}&quot;})
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;或者是&lt;code&gt;sadd&lt;/code&gt;命令，能添加一个或多个成员到集合里：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sadd friends:vladimir piter
-sadd friends:paul jessica leto &quot;leto II&quot; chani
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Redis还支持流水线功能。通常情况下，当一个客户端发送请求到Redis后，在发送下一个请求之前必须等待Redis的答复。使用流水线功能，你可以发送多个请求，而不需要等待Redis响应。这不但减少了网络开销，还能获得性能上的显著提高。&lt;/p&gt;
-
-&lt;p&gt;值得一提的是，Redis会使用存储器去排列命令，因此批量执行命令是一个好主意。至于具体要多大的批量，将取决于你要使用什么命令（更明确来说，该参数有多大）。另一方面来看，如果你要执行的命令需要差不多50个字符的关键字，你大概可以对此进行数千或数万的批量操作。&lt;/p&gt;
-
-&lt;p&gt;对于不同的Redis载体，在流水线里运行命令的方式会有所差异。在Ruby里，你传递一个代码块到&lt;code&gt;pipelined&lt;/code&gt;方法：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;redis.pipelined do
-  9001.times do
-    redis.incr(&#39;powerlevel&#39;)
-  end
-end
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;正如你可能猜想到的，流水线功能可以实际地加速一连串命令的处理。&lt;/p&gt;
-
-&lt;h3&gt;事务（Transactions）&lt;/h3&gt;
-
-&lt;p&gt;每一个Redis命令都具有原子性，包括那些一次处理多项事情的命令。此外，对于使用多个命令，Redis支持事务功能。&lt;/p&gt;
-
-&lt;p&gt;你可能不知道，但Redis实际上是单线程运行的，这就是为什么每一个Redis命令都能够保证具有原子性。当一个命令在执行时，没有其他命令会运行（我们会在往后的章节里简略谈论一下Scaling）。在你考虑到一些命令去做多项事情时，这会特别的有用。例如：&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;incr&lt;/code&gt;命令实际上就是一个&lt;code&gt;get&lt;/code&gt;命令然后紧随一个&lt;code&gt;set&lt;/code&gt;命令。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;getset&lt;/code&gt;命令设置一个新的值然后返回原始值。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;setnx&lt;/code&gt;命令首先测试关键字是否存在，只有当关键字不存在时才设置值&lt;/p&gt;
-
-&lt;p&gt;虽然这些都很有用，但在实际开发时，往往会需要运行具有原子性的一组命令。若要这样做，首先要执行&lt;code&gt;multi&lt;/code&gt;命令，紧随其后的是所有你想要执行的命令（作为事务的一部分），最后执行&lt;code&gt;exec&lt;/code&gt;命令去实际执行命令，或者使用&lt;code&gt;discard&lt;/code&gt;命令放弃执行命令。Redis的事务功能保证了什么？&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;事务中的命令将会按顺序地被执行&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;事务中的命令将会如单个原子操作般被执行（没有其它的客户端命令会在中途被执行）&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;事务中的命令要么全部被执行，要么不会执行&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;你可以（也应该）在命令行界面对事务功能进行一下测试。还有一点要注意到，没有什么理由不能结合流水线功能和事务功能。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;multi
-hincrby groups:1percent balance -9000000000
-hincrby groups:99percent balance 9000000000
-exec
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;最后，Redis能让你指定一个关键字（或多个关键字），当关键字有改变时，可以查看或者有条件地应用一个事务。这是用于当你需要获取值，且待运行的命令基于那些值时，所有都在一个事务里。对于上面展示的代码，我们不能去实现自己的&lt;code&gt;incr&lt;/code&gt;命令，因为一旦&lt;code&gt;exec&lt;/code&gt;命令被调用，他们会全部被执行在一块。我们不能这么做：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;redis.multi()
-current = redis.get(&#39;powerlevel&#39;)
-redis.set(&#39;powerlevel&#39;, current + 1)
-redis.exec()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;（译注：虽然Redis是单线程运行的，但是我们可以同时运行多个Redis客户端进程，常见的并发问题还是会出现。像上面的代码，在&lt;code&gt;get&lt;/code&gt;运行之后，&lt;code&gt;set&lt;/code&gt;运行之前，&lt;code&gt;powerlevel&lt;/code&gt;的值可能会被另一个Redis客户端给改变，从而造成错误。）&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;这些不是Redis的事务功能的工作。但是，如果我们增加一个&lt;code&gt;watch&lt;/code&gt;到&lt;code&gt;powerlevel&lt;/code&gt;，我们可以这样做：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;redis.watch(&#39;powerlevel&#39;)
-current = redis.get(&#39;powerlevel&#39;)
-redis.multi()
-redis.set(&#39;powerlevel&#39;, current + 1)
-redis.exec()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;在我们调用&lt;code&gt;watch&lt;/code&gt;后，如果另一个客户端改变了&lt;code&gt;powerlevel&lt;/code&gt;的值，我们的事务将会运行失败。如果没有客户端改变&lt;code&gt;powerlevel&lt;/code&gt;的值，那么事务会继续工作。我们可以在一个循环里运行这些代码，直到其能正常工作。&lt;/p&gt;
-
-&lt;h3&gt;关键字反模式（Keys Anti-Pattern）&lt;/h3&gt;
-
-&lt;p&gt;在下一章中，我们将会谈论那些没有确切关联到数据结构的命令，其中的一些是管理或调试工具。然而有一个命令我想特别地在这里进行谈论：&lt;code&gt;keys&lt;/code&gt;命令。这个命令需要一个模式，然后查找所有匹配的关键字。这个命令看起来很适合一些任务，但这不应该用在实际的产品代码里。为什么？因为这个命令通过线性扫描所有的关键字来进行匹配。或者，简单地说，这个命令太慢了。&lt;/p&gt;
-
-&lt;p&gt;人们会如此去使用这个命令？一般会用来构建一个本地的Bug追踪服务。每一个帐号都有一个&lt;code&gt;id&lt;/code&gt;，你可能会通过一个看起来像&lt;code&gt;bug:account_id:bug_id&lt;/code&gt;的关键字，把每一个Bug存储到一个字符串数据结构值中去。如果你在任何时候需要查询一个帐号的Bug（显示它们，或者当用户删除了帐号时删除掉这些Bugs），你可能会尝试去使用&lt;code&gt;keys&lt;/code&gt;命令：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;keys bug:1233:*
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;更好的解决方法应该使用一个散列数据结构，就像我们可以使用散列数据结构来提供一种方法去展示二级索引，因此我们可以使用域来组织数据：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;hset bugs:1233 1 &quot;{id:1, account: 1233, subject: &#39;...&#39;}&quot;
-hset bugs:1233 2 &quot;{id:2, account: 1233, subject: &#39;...&#39;}&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;从一个帐号里获取所有的Bug标识，可以简单地调用&lt;code&gt;hkeys bugs:1233&lt;/code&gt;。去删除一个指定的Bug，可以调用&lt;code&gt;hdel bugs:1233 2&lt;/code&gt;。如果要删除了一个帐号，可以通过&lt;code&gt;del bugs:1233&lt;/code&gt;把关键字删除掉。&lt;/p&gt;
-
-&lt;h3&gt;小结&lt;/h3&gt;
-
-&lt;p&gt;结合这一章以及前一章，希望能让你得到一些洞察力，了解如何使用Redis去支持（Power）实际项目。还有其他的模式可以让你去构建各种类型的东西，但真正的关键是要理解基本的数据结构。你将能领悟到，这些数据结构是如何能够实现你最初视角之外的东西。&lt;/p&gt;
-
-&lt;p&gt;\clearpage&lt;/p&gt;
-
-&lt;h2&gt;第4章 超越数据结构&lt;/h2&gt;
-
-&lt;p&gt;5种数据结构组成了Redis的基础，其他没有关联特定数据结构的命令也有很多。我们已经看过一些这样的命令：&lt;code&gt;info&lt;/code&gt;, &lt;code&gt;select&lt;/code&gt;, &lt;code&gt;flushdb&lt;/code&gt;, &lt;code&gt;multi&lt;/code&gt;, &lt;code&gt;exec&lt;/code&gt;, &lt;code&gt;discard&lt;/code&gt;, &lt;code&gt;watch&lt;/code&gt;和&lt;code&gt;keys&lt;/code&gt;。这一章将看看其他的一些重要命令。&lt;/p&gt;
-
-&lt;h3&gt;使用期限（Expiration）&lt;/h3&gt;
-
-&lt;p&gt;Redis允许你标记一个关键字的使用期限。你可以给予一个Unix时间戳形式（自1970年1月1日起）的绝对时间，或者一个基于秒的存活时间。这是一个基于关键字的命令，因此其不在乎关键字表示的是哪种类型的数据结构。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;expire pages:about 30
-expireat pages:about 1356933600
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;第一个命令将会在30秒后删除掉关键字（包括其关联的值）。第二个命令则会在2012年12月31日上午12点删除掉关键字。&lt;/p&gt;
-
-&lt;p&gt;这让Redis能成为一个理想的缓冲引擎。通过&lt;code&gt;ttl&lt;/code&gt;命令，你可以知道一个关键字还能够存活多久。而通过&lt;code&gt;persist&lt;/code&gt;命令，你可以把一个关键字的使用期限删除掉。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;ttl pages:about
-persist pages:about
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;最后，有个特殊的字符串命令，&lt;code&gt;setex&lt;/code&gt;命令让你可以在一个单独的原子命令里设置一个字符串值，同时里指定一个生存期（这比任何事情都要方便）。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;setex pages:about 30 &#39;&amp;lt;h1&amp;gt;about us&amp;lt;/h1&amp;gt;....&#39;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;发布和订阅（Publication and Subscriptions）&lt;/h3&gt;
-
-&lt;p&gt;Redis的列表数据结构有&lt;code&gt;blpop&lt;/code&gt;和&lt;code&gt;brpop&lt;/code&gt;命令，能从列表里返回且删除第一个（或最后一个）元素，或者被堵塞，直到有一个元素可供操作。这可以用来实现一个简单的队列。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;（译注：对于&lt;code&gt;blpop&lt;/code&gt;和&lt;code&gt;brpop&lt;/code&gt;命令，如果列表里没有关键字可供操作，连接将被堵塞，直到有另外的Redis客户端使用&lt;code&gt;lpush&lt;/code&gt;或&lt;code&gt;rpush&lt;/code&gt;命令推入关键字为止。）&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;此外，Redis对于消息发布和频道订阅有着一流的支持。你可以打开第二个&lt;code&gt;redis-cli&lt;/code&gt;窗口，去尝试一下这些功能。在第一个窗口里订阅一个频道（我们会称它为&lt;code&gt;warnings&lt;/code&gt;）：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;subscribe warnings
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;其将会答复你订阅的信息。现在，在另一个窗口，发布一条消息到&lt;code&gt;warnings&lt;/code&gt;频道：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;publish warnings &quot;it&#39;s over 9000!&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;如果你回到第一个窗口，你应该已经接收到&lt;code&gt;warnings&lt;/code&gt;频道发来的消息。&lt;/p&gt;
-
-&lt;p&gt;你可以订阅多个频道（&lt;code&gt;subscribe channel1 channel2 ...&lt;/code&gt;），订阅一组基于模式的频道（&lt;code&gt;psubscribe warnings:*&lt;/code&gt;），以及使用&lt;code&gt;unsubscribe&lt;/code&gt;和&lt;code&gt;punsubscribe&lt;/code&gt;命令停止监听一个或多个频道，或一个频道模式。&lt;/p&gt;
-
-&lt;p&gt;最后，可以注意到&lt;code&gt;publish&lt;/code&gt;命令的返回值是1，这指出了接收到消息的客户端数量。&lt;/p&gt;
-
-&lt;h3&gt;监控和延迟日志（Monitor and Slow Log）&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;monitor&lt;/code&gt;命令可以让你查看Redis正在做什么。这是一个优秀的调试工具，能让你了解你的程序如何与Redis进行交互。在两个&lt;code&gt;redis-cli&lt;/code&gt;窗口中选一个（如果其中一个还处于订阅状态，你可以使用&lt;code&gt;unsubscribe&lt;/code&gt;命令退订，或者直接关掉窗口再重新打开一个新窗口）键入&lt;code&gt;monitor&lt;/code&gt;命令。在另一个窗口，执行任何其他类型的命令（例如&lt;code&gt;get&lt;/code&gt;或&lt;code&gt;set&lt;/code&gt;命令）。在第一个窗口里，你应该可以看到这些命令，包括他们的参数。&lt;/p&gt;
-
-&lt;p&gt;在实际生产环境里，你应该谨慎运行&lt;code&gt;monitor&lt;/code&gt;命令，这真的仅仅就是一个很有用的调试和开发工具。除此之外，没有更多要说的了。&lt;/p&gt;
-
-&lt;p&gt;随同&lt;code&gt;monitor&lt;/code&gt;命令一起，Redis拥有一个&lt;code&gt;slowlog&lt;/code&gt;命令，这是一个优秀的性能剖析工具。其会记录执行时间超过一定数量&lt;strong&gt;微秒&lt;/strong&gt;的命令。在下一章节，我们会简略地涉及如何配置Redis，现在你可以按下面的输入配置Redis去记录所有的命令：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;config set slowlog-log-slower-than 0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;然后，执行一些命令。最后，你可以检索到所有日志，或者检索最近的那些日志：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;slowlog get
-slowlog get 10
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;通过键入&lt;code&gt;slowlog len&lt;/code&gt;，你可以获取延迟日志里的日志数量。&lt;/p&gt;
-
-&lt;p&gt;对于每个被你键入的命令，你应该查看4个参数：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;一个自动递增的id&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;一个Unix时间戳，表示命令开始运行的时间&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;一个微妙级的时间，显示命令运行的总时间&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;该命令以及所带参数&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;延迟日志保存在存储器中，因此在生产环境中运行（即使有一个低阀值）也应该不是一个问题。默认情况下，它将会追踪最近的1024个日志。&lt;/p&gt;
-
-&lt;h3&gt;排序（Sort）&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;sort&lt;/code&gt;命令是Redis最强大的命令之一。它让你可以在一个列表、集合或者分类集合里对值进行排序（分类集合是通过标记来进行排序，而不是集合里的成员）。下面是一个&lt;code&gt;sort&lt;/code&gt;命令的简单用例：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;rpush users:leto:guesses 5 9 10 2 4 10 19 2
-sort users:leto:guesses
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;这将返回进行升序排序后的值。这里有一个更高级的例子：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sadd friends:ghanima leto paul chani jessica alia duncan
-sort friends:ghanima limit 0 3 desc alpha
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;上面的命令向我们展示了，如何对已排序的记录进行分页（通过&lt;code&gt;limit&lt;/code&gt;），如何返回降序排序的结果（通过&lt;code&gt;desc&lt;/code&gt;），以及如何用字典序排序代替数值序排序（通过&lt;code&gt;alpha&lt;/code&gt;）。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;sort&lt;/code&gt;命令的真正力量是其基于引用对象来进行排序的能力。早先的时候，我们说明了列表、集合和分类集合很常被用于引用其他的Redis对象，&lt;code&gt;sort&lt;/code&gt;命令能够解引用这些关系，而且通过潜在值来进行排序。例如，假设我们有一个Bug追踪器能让用户看到各类已存在问题。我们可能使用一个集合数据结构去追踪正在被监视的问题：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sadd watch:leto 12339 1382 338 9338
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;你可能会有强烈的感觉，想要通过id来排序这些问题（默认的排序就是这样的），但是，我们更可能是通过问题的严重性来对这些问题进行排序。为此，我们要告诉Redis将使用什么模式来进行排序。首先，为了可以看到一个有意义的结果，让我们添加多一点数据：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;set severity:12339 3
-set severity:1382 2
-set severity:338 5
-set severity:9338 4
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;要通过问题的严重性来降序排序这些Bug，你可以这样做：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sort watch:leto by severity:* desc
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Redis将会用存储在列表（集合或分类集合）中的值去替代模式中的&lt;code&gt;*&lt;/code&gt;（通过&lt;code&gt;by&lt;/code&gt;）。这会创建出关键字名字，Redis将通过查询其实际值来排序。&lt;/p&gt;
-
-&lt;p&gt;在Redis里，虽然你可以有成千上万个关键字，类似上面展示的关系还是会引起一些混乱。幸好，&lt;code&gt;sort&lt;/code&gt;命令也可以工作在散列数据结构及其相关域里。相对于拥有大量的高层次关键字，你可以利用散列：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;hset bug:12339 severity 3
-hset bug:12339 priority 1
-hset bug:12339 details &quot;{id: 12339, ....}&quot;
-
-hset bug:1382 severity 2
-hset bug:1382 priority 2
-hset bug:1382 details &quot;{id: 1382, ....}&quot;
-
-hset bug:338 severity 5
-hset bug:338 priority 3
-hset bug:338 details &quot;{id: 338, ....}&quot;
-
-hset bug:9338 severity 4
-hset bug:9338 priority 2
-hset bug:9338 details &quot;{id: 9338, ....}&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;所有的事情不仅变得更为容易管理，而且我们能通过&lt;code&gt;severity&lt;/code&gt;或&lt;code&gt;priority&lt;/code&gt;来进行排序，还可以告诉&lt;code&gt;sort&lt;/code&gt;命令具体要检索出哪一个域的数据：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sort watch:leto by bug:*-&amp;gt;priority get bug:*-&amp;gt;details
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;相同的值替代出现了，但Redis还能识别&lt;code&gt;-&amp;gt;&lt;/code&gt;符号，用它来查看散列中指定的域。里面还包括了&lt;code&gt;get&lt;/code&gt;参数，这里也会进行值替代和域查看，从而检索出Bug的细节（details域的数据）。&lt;/p&gt;
-
-&lt;p&gt;对于太大的集合，&lt;code&gt;sort&lt;/code&gt;命令的执行可能会变得很慢。好消息是，&lt;code&gt;sort&lt;/code&gt;命令的输出可以被存储起来：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sort watch:leto by bug:*-&amp;gt;priority get bug:*-&amp;gt;details store watch_by_priority:leto
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;使用我们已经看过的&lt;code&gt;expiration&lt;/code&gt;命令，再结合&lt;code&gt;sort&lt;/code&gt;命令的&lt;code&gt;store&lt;/code&gt;能力，这是一个美妙的组合。&lt;/p&gt;
-
-&lt;h3&gt;小结&lt;/h3&gt;
-
-&lt;p&gt;这一章主要关注那些非特定数据结构关联的命令。和其他事情一样，它们的使用依情况而定。构建一个程序或特性时，可能不会用到使用期限、发布和订阅或者排序等功能。但知道这些功能的存在是很好的。而且，我们也只接触到了一些命令。还有更多的命令，当你消化理解完这本书后，非常值得去浏览一下&lt;a href=&quot;http://redis.io/commands&quot;&gt;完整的命令列表&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;\clearpage&lt;/p&gt;
-
-&lt;h2&gt;第5章 - 管理&lt;/h2&gt;
-
-&lt;p&gt;在最后一章里，我们将集中谈论Redis运行中的一些管理方面内容。这是一个不完整的Redis管理指南，我们将会回答一些基本的问题，初接触Redis的新用户可能会很感兴趣。&lt;/p&gt;
-
-&lt;h3&gt;配置（Configuration）&lt;/h3&gt;
-
-&lt;p&gt;当你第一次运行Redis的服务器，它会向你显示一个警告，指&lt;code&gt;redis.conf&lt;/code&gt;文件没有被找到。这个文件可以被用来配置Redis的各个方面。一个充分定义（well-documented）的&lt;code&gt;redis.conf&lt;/code&gt;文件对各个版本的Redis都有效。范例文件包含了默认的配置选项，因此，对于想要了解设置在干什么，或默认设置是什么，都会很有用。你可以在&lt;a href=&quot;https://github.com/antirez/redis/raw/2.4.6/redis.conf&quot;&gt;https://github.com/antirez/redis/raw/2.4.6/redis.conf&lt;/a&gt;找到这个文件。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;这个配置文件针对的是Redis 2.4.6，你应该用你的版本号替代上面URL里的&amp;quot;2.4.6&amp;quot;。运行&lt;code&gt;info&lt;/code&gt;命令，其显示的第一个值就是Redis的版本号。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;因为这个文件已经是充分定义（well-documented），我们就不去再进行设置了。&lt;/p&gt;
-
-&lt;p&gt;除了通过&lt;code&gt;redis.conf&lt;/code&gt;文件来配置Redis，&lt;code&gt;config set&lt;/code&gt;命令可以用来对个别值进行设置。实际上，在将&lt;code&gt;slowlog-log-slower-than&lt;/code&gt;设置为0时，我们就已经使用过这个命令了。&lt;/p&gt;
-
-&lt;p&gt;还有一个&lt;code&gt;config get&lt;/code&gt;命令能显示一个设置值。这个命令支持模式匹配，因此如果我们想要显示关联于日志（logging）的所有设置，我们可以这样做：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;config get *log*
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;验证（Authentication）&lt;/h3&gt;
-
-&lt;p&gt;通过设置&lt;code&gt;requirepass&lt;/code&gt;（使用&lt;code&gt;config set&lt;/code&gt;命令或&lt;code&gt;redis.conf&lt;/code&gt;文件），可以让Redis需要一个密码验证。当&lt;code&gt;requirepass&lt;/code&gt;被设置了一个值（就是待用的密码），客户端将需要执行一个&lt;code&gt;auth password&lt;/code&gt;命令。&lt;/p&gt;
-
-&lt;p&gt;一旦一个客户端通过了验证，就可以在任意数据库里执行任何一条命令，包括&lt;code&gt;flushall&lt;/code&gt;命令，这将会清除掉每一个数据库里的所有关键字。通过配置，你可以重命名一些重要命令为混乱的字符串，从而获得一些安全性。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;rename-command CONFIG 5ec4db169f9d4dddacbfb0c26ea7e5ef
-rename-command FLUSHALL 1041285018a942a4922cbf76623b741e
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;或者，你可以将新名字设置为一个空字符串，从而禁用掉一个命令。&lt;/p&gt;
-
-&lt;h3&gt;大小限制（Size Limitations）&lt;/h3&gt;
-
-&lt;p&gt;当你开始使用Redis，你可能会想知道，我能使用多少个关键字？还可能想知道，一个散列数据结构能有多少个域（尤其是当你用它来组织数据时），或者是，一个列表数据结构或集合数据结构能有多少个元素？对于每一个实例，实际限制都能达到亿万级别（hundreds of millions）。&lt;/p&gt;
-
-&lt;h3&gt;复制（Replication）&lt;/h3&gt;
-
-&lt;p&gt;Redis支持复制功能，这意味着当你向一个Redis实例（Master）进行写入时，一个或多个其他实例（Slaves）能通过Master实例来保持更新。可以在配置文件里设置&lt;code&gt;slaveof&lt;/code&gt;，或使用&lt;code&gt;slaveof&lt;/code&gt;命令来配置一个Slave实例。对于那些没有进行这些设置的Redis实例，就可能一个Master实例。&lt;/p&gt;
-
-&lt;p&gt;为了更好保护你的数据，复制功能拷贝数据到不同的服务器。复制功能还能用于改善性能，因为读取请求可以被发送到Slave实例。他们可能会返回一些稍微滞后的数据，但对于大多数程序来说，这是一个值得做的折衷。&lt;/p&gt;
-
-&lt;p&gt;遗憾的是，Redis的复制功能还没有提供自动故障恢复。如果Master实例崩溃了，一个Slave实例需要手动的进行升级。如果你想使用Redis去达到某种高可用性，对于使用心跳监控（heartbeat monitoring）和脚本自动开关（scripts to automate the switch）的传统高可用性工具来说，现在还是一个棘手的难题。&lt;/p&gt;
-
-&lt;h3&gt;备份文件（Backups）&lt;/h3&gt;
-
-&lt;p&gt;备份Redis非常简单，你可以将Redis的快照（snapshot）拷贝到任何地方，包括S3、FTP等。默认情况下，Redis会把快照存储为一个名为&lt;code&gt;dump.rdb&lt;/code&gt;的文件。在任何时候，你都可以对这个文件执行&lt;code&gt;scp&lt;/code&gt;、&lt;code&gt;ftp&lt;/code&gt;或&lt;code&gt;cp&lt;/code&gt;等常用命令。&lt;/p&gt;
-
-&lt;p&gt;有一种常见情况，在Master实例上会停用快照以及单一附加文件（aof），然后让一个Slave实例去处理备份事宜。这可以帮助减少Master实例的载荷。在不损害整体系统响应性的情况下，你还可以在Slave实例上设置更多主动存储的参数。&lt;/p&gt;
-
-&lt;h3&gt;缩放和Redis集群（Scaling and Redis Cluster）&lt;/h3&gt;
-
-&lt;p&gt;复制功能（Replication）是一个成长中的网站可以利用的第一个工具。有一些命令会比另外一些来的昂贵（例如&lt;code&gt;sort&lt;/code&gt;命令），将这些运行载荷转移到一个Slave实例里，可以保持整体系统对于查询的快速响应。&lt;/p&gt;
-
-&lt;p&gt;此外，通过分发你的关键字到多个Redis实例里，可以达到真正的缩放Redis（记住，Redis是单线程的，这些可以运行在同一个逻辑框里）。随着时间的推移，你将需要特别注意这些事情（尽管许多的Redis载体都提供了consistent-hashing算法）。对于数据水平分布（horizontal distribution）的考虑不在这本书所讨论的范围内。这些东西你也很可能不需要去担心，但是，无论你使用哪一种解决方案，有一些事情你还是必须意识到。&lt;/p&gt;
-
-&lt;p&gt;好消息是，这些工作都可在Redis集群下进行。不仅提供水平缩放（包括均衡），为了高可用性，还提供了自动故障恢复。&lt;/p&gt;
-
-&lt;p&gt;高可用性和缩放是可以达到的，只要你愿意为此付出时间和精力，Redis集群也使事情变得简单多了。&lt;/p&gt;
-
-&lt;h3&gt;小结&lt;/h3&gt;
-
-&lt;p&gt;在过去的一段时间里，已经有许多的计划和网站使用了Redis，毫无疑问，Redis已经可以应用于实际生产中了。然而，一些工具还是不够成熟，尤其是一些安全性和可用性相关的工具。对于Redis集群，我们希望很快就能看到其实现，这应该能为一些现有的管理挑战提供处理帮忙。&lt;/p&gt;
-
-&lt;p&gt;\clearpage&lt;/p&gt;
-
-&lt;h2&gt;总结&lt;/h2&gt;
-
-&lt;p&gt;在许多方面，Redis体现了一种简易的数据处理方式，其剥离掉了大部分的复杂性和抽象，并可有效的在不同系统里运行。不少情况下，选择Redis不是最佳的选择。在另一些情况里，Redis就像是为你的数据提供了特别定制的解决方案。&lt;/p&gt;
-
-&lt;p&gt;最终，回到我最开始所说的：Redis很容易学习。现在有许多的新技术，很难弄清楚哪些才真正值得我们花时间去学习。如果你从实际好处来考虑，Redis提供了他的简单性。我坚信，对于你和你的团队，学习Redis是最好的技术投资之一。&lt;/p&gt;
-</description>
-        <pubDate>Mon, 20 Jun 2016 00:00:00 +0800</pubDate>
-        <link>http://clover.htmhub.com/2016/06/20/redis-study/</link>
-        <guid isPermaLink="true">http://clover.htmhub.com/2016/06/20/redis-study/</guid>
-        
-        <category>Clover</category>
-        
-        <category>Redis</category>
-        
-        <category>DB</category>
         
         
       </item>
