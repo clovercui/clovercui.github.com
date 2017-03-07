@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 07 Mar 2017 15:20:18 +0800</pubDate>
-    <lastBuildDate>Tue, 07 Mar 2017 15:20:18 +0800</lastBuildDate>
+    <pubDate>Tue, 07 Mar 2017 15:23:17 +0800</pubDate>
+    <lastBuildDate>Tue, 07 Mar 2017 15:23:17 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -60,7 +60,7 @@
 
 &lt;p&gt;&lt;code&gt;title&lt;/code&gt; 是a标签的标题，鼠标移动上之后显示的名称&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;target&lt;/code&gt; 是 a 标签打开链接的方式，主要有&lt;code&gt;_blank&lt;/code&gt;:浏览器总在一个新打开、未命名的窗口中载入目标文档；&lt;code&gt;_self&lt;/code&gt;:这个目标的值对所有没有指定目标的 &lt;a&gt; 标签是默认目标，它使得目标文档载入并显示在相同的框架或者窗口中作为源文档。这个目标是多余且不必要的，除非和文档标题 &lt;base&gt; 标签中的 target 属性一起使用；&lt;code&gt;_parent&lt;/code&gt;：这个目标使得文档载入父窗口或者包含来超链接引用的框架的框架集。如果这个引用是在窗口或者在顶级框架中，那么它与目标 &lt;em&gt;self 等效；`&lt;/em&gt;top&lt;code&gt;：这个目标使得文档载入包含这个超链接的窗口，用 _top 目标将会清除所有被包含的框架并将文档载入整个浏览器窗口。&lt;/code&gt;framename`:在指定的框架中打开被链接文档。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;target&lt;/code&gt; 是 a 标签打开链接的方式，主要有&lt;code&gt;_blank&lt;/code&gt;:浏览器总在一个新打开、未命名的窗口中载入目标文档；&lt;code&gt;_self&lt;/code&gt;:这个目标的值对所有没有指定目标的 &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; 标签是默认目标，它使得目标文档载入并显示在相同的框架或者窗口中作为源文档。这个目标是多余且不必要的，除非和文档标题 &lt;base&gt; 标签中的 target 属性一起使用；&lt;code&gt;_parent&lt;/code&gt;：这个目标使得文档载入父窗口或者包含来超链接引用的框架的框架集。如果这个引用是在窗口或者在顶级框架中，那么它与目标 &lt;em&gt;self 等效；`&lt;/em&gt;top&lt;code&gt;：这个目标使得文档载入包含这个超链接的窗口，用 _top 目标将会清除所有被包含的框架并将文档载入整个浏览器窗口。&lt;/code&gt;framename`:在指定的框架中打开被链接文档。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;title 和 alt区别&lt;/code&gt;:title作为属性时，用来为元素提供额外说明信息，例如，给超链接标签a添加了title属性，把鼠标移动到该链接上面是，就会显示title的内容，以达到补充说明或者提示的效果。alt属性则是用来指定替换文字，只能用在img、area和input元素中（包括applet元素），用于网页中图片无法正常显示时给用户提供文字说明使其了解图像信息。alt是替代图像作用而不是提供额外说明文字的。根据一些SEO人士的说法，使用alt属性还具有搜索引擎优化效果，因为搜素引擎是无法直接读取图像的信息的，alt可以为其提供文字信息所以对搜索引擎比较友好&lt;/p&gt;
 
