@@ -39,7 +39,7 @@ tags:
     |.class1.class2	|id和class选择器和选择器连写的时候中间没有分隔符，. 和 # 本身充当分隔符的元素|
     |element#id	|id和class选择器和选择器连写的时候中间没有分隔符，. 和 # 本身充当分隔符的元素|
 
-* 属性选择器
+    * 属性选择器
 
     |选择器	|含义|
     |---|---|
@@ -131,31 +131,31 @@ div {color: #666;}
 
 `A:`
 
-    | 选择器 | 含义 |
-    |--------|--------|
-    |E:first-child	|匹配元素E的第一个子元素|
-    |E:link	|匹配所有未被点击的链接|
-    |E:visited	|匹配所有已被点击的链接|
-    |E:active	|匹配鼠标已经其上按下、还没有释放的E元素|
-    |E:hover	|匹配鼠标悬停其上的E元素|
-    |E:focus	|匹配获得当前焦点的E元素|
-    |E:lang(c)	|匹配lang属性等于c的E元素|
-    |E:enabled	|匹配表单中可用的元素|
-    |E:disabled	|匹配表单中禁用的元素
-    |E:checked	|匹配表单中被选中的radio或checkbox元素|
-    |E::selection	|匹配用户当前选中的元素|
-    |E:root	|匹配文档的根元素，对于HTML文档，就是HTML元素|
-    |E:nth-child(n)	|匹配其父元素的第n个子元素，第一个编号为1|
-    |E:nth-last-child(n)	|匹配其父元素的倒数第n个子元素，第一个编号为1|
-    |E:nth-of-type(n)	|与:nth-child()作用类似，但是仅匹配使用同种标签的元素|
-    |E:nth-last-of-type(n)	|与:nth-last-child() 作用类似，但是仅匹配使用同种标签的元素|
-    |E:last-child	|匹配父元素的最后一个子元素，等同于:nth-last-child(1)|
-    |E:first-of-type	|匹配父元素下使用同种标签的第一个子元素，等同于:nth-of-type(1)|
-    |E:last-of-type	|匹配父元素下使用同种标签的最后一个子元素，等同于:nth-last-of-type(1)|
-    |E:only-child	|匹配父元素下仅有的一个子元素，等同于:first-child:last-child或 :nth-child(1):nth-last-child(1)|
-    |E:only-of-type	|匹配父元素下使用同种标签的唯一一个子元素，等同于:first-of-type:last-of-type或 :nth-of-type(1):nth-last-of-type(1)|
-    |E:empty	|匹配一个不包含任何子元素的元素，文本节点也被看作子元素|
-    |E:not(selector)	|匹配不符合当前选择器的任何元素|
+| 选择器 | 含义 |
+|--------|--------|
+|E:first-child	|匹配元素E的第一个子元素|
+|E:link	|匹配所有未被点击的链接|
+|E:visited	|匹配所有已被点击的链接|
+|E:active	|匹配鼠标已经其上按下、还没有释放的E元素|
+|E:hover	|匹配鼠标悬停其上的E元素|
+|E:focus	|匹配获得当前焦点的E元素|
+|E:lang(c)	|匹配lang属性等于c的E元素|
+|E:enabled	|匹配表单中可用的元素|
+|E:disabled	|匹配表单中禁用的元素
+|E:checked	|匹配表单中被选中的radio或checkbox元素|
+|E::selection	|匹配用户当前选中的元素|
+|E:root	|匹配文档的根元素，对于HTML文档，就是HTML元素|
+|E:nth-child(n)	|匹配其父元素的第n个子元素，第一个编号为1|
+|E:nth-last-child(n)	|匹配其父元素的倒数第n个子元素，第一个编号为1|
+|E:nth-of-type(n)	|与:nth-child()作用类似，但是仅匹配使用同种标签的元素|
+|E:nth-last-of-type(n)	|与:nth-last-child() 作用类似，但是仅匹配使用同种标签的元素|
+|E:last-child	|匹配父元素的最后一个子元素，等同于:nth-last-child(1)|
+|E:first-of-type	|匹配父元素下使用同种标签的第一个子元素，等同于:nth-of-type(1)|
+|E:last-of-type	|匹配父元素下使用同种标签的最后一个子元素，等同于:nth-last-of-type(1)|
+|E:only-child	|匹配父元素下仅有的一个子元素，等同于:first-child:last-child或 :nth-child(1):nth-last-child(1)|
+|E:only-of-type	|匹配父元素下使用同种标签的唯一一个子元素，等同于:first-of-type:last-of-type或 :nth-of-type(1):nth-last-of-type(1)|
+|E:empty	|匹配一个不包含任何子元素的元素，文本节点也被看作子元素|
+|E:not(selector)	|匹配不符合当前选择器的任何元素|
 
 ==n的取值==
 
