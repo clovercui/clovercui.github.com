@@ -1,0 +1,106 @@
+---
+layout:     post
+title:      "Html基础-4"
+subtitle:   ""
+date:       2017-03-09
+author:     "Clover"
+header-img: "img/education_large_2x.jpg"
+catalog: true
+tags:
+    - Clover
+    - 前端
+    - HTML
+
+---
+
+# HTML-4
+
+
+
+
+## `如何理解 HTML CSS 语义化? 在平时写代码的过程中要注意哪些细节`
+
+`A:`
+
+`语义化`：让所用的html css标签具有实际意义.选择合适的标签、使用合理的代码结构，便于开发者阅读，同时让浏览器的爬虫和机器很好的解析
+
+`注意细节`:
+
+* 尽可能少的使用无语义的标签div和span；
+* 不要使用纯样式标签，如：`b`、`font`、`u`等，改用css设置；
+* 需要强调的文本，可以包含在`strong`或者`em`标签中（浏览器预设样式，能用CSS指定就不用他们），`strong`默认样式是加粗（不要用b），`em`是斜体（不用i）
+
+
+
+## `form表单有什么作用？有哪些常用的input 标签，分别有什么作用？`
+
+`A:`
+
+`作用`：创建一个表单，实现本页与其他页的数据交互；
+
+`常用input标签`：
+
+* `type=text`：输入用户名、电话号码等；
+* `type=password`：密码输入框；
+* `type=file`：文件目录输入平台；
+* `type=hidden`：将无法明示的重要信息提交到下一页；
+* `type=checkbox`：多选框；
+* `type=radio`：单选框；
+* `type=image`：提交式图片，如验证码；
+* `type=submit/reset`：分别是“提交”“重置”按钮；
+* `type=button`：windows风格按钮。
+
+## `post 和 get 方式的区别？`
+
+`A:`
+
+* get是用来从服务器获得数据；post向服务器上传数据；
+* get安全级别较post低；
+* get传输的数据量小，主要受URL长度限制；post可以传输大量数据；get最多提交1k数据，浏览器的限制。post理论上无限制，受服务器限制
+* Get将表单中数据的按照variable=value的形式，添加到action所指向的URL后面，并且两者使用“?”连接，而各个变量之间使用“&”连接；Post是将表单中的数据放在form的数据体中，按照变量和值相对应的方式，传递到action所指向URL;
+* get是form的默认方式。
+
+## `在input里，name 有什么作用？`
+
+`A:`
+
+* 用途1: 作为可与服务器交互数据的HTML元素的服务器端的标示，比如input、select、textarea、和button等。我们可以在服务器端根据其Name通过Request.Params取得元素提交的值。
+* 用途2：HTML元素Input type='radio'分组，我们知道radio button控件在同一个分组类，check操作是mutex的，同一时间只能选中一个radio，这个分组就是根据相同的Name属性来实现的。
+* 用途3：建立页面中的锚点，我们知道`<a href="URL">link</a>`是获得一个页面超级链接，如果不用href属性，而改用Name，如：，我们就获得了一个页面锚点。
+* 用途4: 作为对象的Identity，如Applet、Object、Embed等元素。比如在Applet对象实例中，我们将使用其Name来引用该对象。
+* 用途5: 在IMG元素和MAP元素之间关联的时候，如果要定义IMG的热点区域，需要使用其属性usemap，使usemap="#name"(被关联的MAP元素的Name)。
+* 用途6: 某些特定元素的属性，如attribute，meta和param。例如为Object定义参数`<PARAM NAME = "appletParameter" VALUE = "value">或Meta中<META NAME = "Author" CONTENT = "Dave Raggett">`
+
+## `<button>提交</button>、<a class="btn" href="#">提交</a>、<input type="submit" value="提交"> 三者有什么区别？`
+
+`A:`
+
+* `<button>提交</button>`：创建一个普通按钮，需要绑定事件才可以用以提交数据；
+* `<a class="btn" href="#">提交</a>`：一个链接按钮；
+* `<input type="submit" value="提交">`：提交按钮，提交表单
+
+## `radio 如何 分组?`
+
+`A:`
+
+name的值设为一样,就是一组。
+
+## `placeholder 属性有什么作用?`
+
+`A:`
+提供可描述输入字段预期值的提示信息
+
+## `type=hidden隐藏域有什么作用? 举例说明`
+
+`A:`
+
+* 隐藏域在页面中对于用户是不可见的，在表单中插入隐藏域的目的在于收集或发送信息，以利于被处理表单的程序所使用。浏览者单击发送按钮发送表单的时候，隐藏域的信息也被一起发送到服务器。
+* 有些时候我们要给用户一信息，让他在提交表单时提交上来以确定用户身份，如sessionkey，等等．当然这些东西也能用cookie实现，但使用隐藏域就简单的多了．而且不会有浏览器不支持，用户禁用cookie的烦恼。
+* 有些时候一个form里有多个提交按钮，怎样使程序能够分清楚到底用户是按那一个按钮提交上来的呢？我们就可以写一个隐藏域，然后在每一个按钮处加上`onclick="document.form.command.value="xx""`然后我们接到数据后先检查command的值就会知道用户是按的那个按钮提交上来的。
+* 有时候一个网页中有多个form，我们知道多个form是不能同时提交的，但有时这些form确实相互作用，我们就可以在form中添加隐藏域来使它们联系起来。
+* javascript不支持全局变量，但有时我们必须用全局变量，我们就可以把值先存在隐藏域里，它的值就不会丢失了
+
+
+
+
+

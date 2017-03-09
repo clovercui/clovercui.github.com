@@ -10,9 +10,9 @@
     <meta name="keyword"  content="克洛弗, Clover克洛弗, Clover, @Clover, 克洛弗的博客, Clover Blog, 博客, 个人网站, 互联网, 前端,后端, 设计, 产品, PHP, JAVA,服务器,LINUX">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Hello 2015 - 克洛弗的博客 | Clover Blog</title>
+    <title>Html基础-4 - 克洛弗的博客 | Clover Blog</title>
 
-    <link rel="canonical" href="http://clover.htmhub.com/2015/01/29/hello-2015/">
+    <link rel="canonical" href="http://clover.htmhub.com/2017/03/09/html-4/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -144,13 +144,13 @@
 
     <!-- Image to hack wechat -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="/img/post-bg-2015.jpg" width="0" height="0"> -->
+<!-- <img src="/img/education_large_2x.jpg" width="0" height="0"> -->
 
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
         position: relative;
-        background-image: url('/img/post-bg-2015.jpg')
+        background-image: url('/img/education_large_2x.jpg')
     }
 
     
@@ -163,15 +163,19 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#生活" title="生活">生活</a>
+                        <a class="tag" href="/tags/#Clover" title="Clover">Clover</a>
+                        
+                        <a class="tag" href="/tags/#前端" title="前端">前端</a>
+                        
+                        <a class="tag" href="/tags/#HTML" title="HTML">HTML</a>
                         
                     </div>
-                    <h1>Hello 2015</h1>
+                    <h1>Html基础-4</h1>
                     
                     
-                    <h2 class="subheading"> "Hello World, Hello Blog"</h2>
+                    <h2 class="subheading"></h2>
                     
-                    <span class="meta">Posted by Hux on January 29, 2015</span>
+                    <span class="meta">Posted by Clover on March 9, 2017</span>
                 </div>
             </div>
         </div>
@@ -189,73 +193,99 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<blockquote>
-<p>“Yeah It&#39;s on. ”</p>
-</blockquote>
+				<h1>HTML-4</h1>
 
-<h2>前言</h2>
+<h2><code>如何理解 HTML CSS 语义化? 在平时写代码的过程中要注意哪些细节</code></h2>
 
-<p>Hux 的 Blog 就这么开通了。</p>
+<p><code>A:</code></p>
 
-<p><a href="#build">跳过废话，直接看技术实现 </a> </p>
+<p><code>语义化</code>：让所用的html css标签具有实际意义.选择合适的标签、使用合理的代码结构，便于开发者阅读，同时让浏览器的爬虫和机器很好的解析</p>
 
-<p>2015 年，Hux 总算有个地方可以好好写点东西了。</p>
-
-<p>作为一个程序员， Blog 这种轮子要是挂在大众博客程序上就太没意思了。一是觉得大部分 Blog 服务都太丑，二是觉得不能随便定制不好玩。之前因为太懒没有折腾，结果就一直连个写 Blog 的地儿都没有。</p>
-
-<p>在玩了一段时间知乎之后，答题的快感又激起了我开博客的冲动。之前的<a href="http://huangxuan.me/portfolio">个人网站</a>是作品集形式的（现在集成进来了），并不适合用来写博文，一不做二不休，花一天搞一个吧！</p>
-
-<p id = "build"></p>
-
-<hr>
-
-<h2>正文</h2>
-
-<p>接下来说说搭建这个博客的技术细节。  </p>
-
-<p>正好之前就有关注过 <a href="https://pages.github.com/">GitHub Pages</a> + <a href="http://jekyllrb.com/">Jekyll</a> 快速 Building Blog 的技术方案，非常轻松时尚。</p>
-
-<p>其优点非常明显：</p>
+<p><code>注意细节</code>:</p>
 
 <ul>
-<li><strong>Markdown</strong> 带来的优雅写作体验</li>
-<li>非常熟悉的 Git workflow ，<strong>Git Commit 即 Blog Post</strong></li>
-<li>利用 GitHub Pages 的域名和免费无限空间，不用自己折腾主机
-
-<ul>
-<li>如果需要自定义域名，也只需要简单改改 DNS 加个 CNAME 就好了 </li>
-</ul></li>
-<li>Jekyll 的自定制非常容易，基本就是个模版引擎</li>
+<li>尽可能少的使用无语义的标签div和span；</li>
+<li>不要使用纯样式标签，如：<code>b</code>、<code>font</code>、<code>u</code>等，改用css设置；</li>
+<li>需要强调的文本，可以包含在<code>strong</code>或者<code>em</code>标签中（浏览器预设样式，能用CSS指定就不用他们），<code>strong</code>默认样式是加粗（不要用b），<code>em</code>是斜体（不用i）</li>
 </ul>
 
-<p>本来觉得最大的缺点可能是 GitHub 在国内访问起来太慢，所以第二天一起床就到 GitCafe(Chinese GitHub Copy) 迁移了一个<a href="http://huxpro.gitcafe.io">镜像</a>出来，结果还是巨慢。</p>
+<h2><code>form表单有什么作用？有哪些常用的input 标签，分别有什么作用？</code></h2>
 
-<p>哥哥可是个前端好嘛！ 果断开 Chrome DevTool 查了下网络请求，原来是 <strong>pending 在了 Google Fonts</strong> 上，页面渲染一直被阻塞到请求超时为止，难怪这么慢。<br>
-忍痛割爱，只好把 Web Fonts 去了（反正超时看到的也只能是 fallback ），果然一下就正常了，而且 GitHub 和 GitCafe 对比并没有感受到明显的速度差异，虽然 github 的 ping 值明显要高一些，达到了 300ms，于是用 DNSPOD 优化了一下速度。</p>
+<p><code>A:</code></p>
 
-<hr>
+<p><code>作用</code>：创建一个表单，实现本页与其他页的数据交互；</p>
 
-<p>配置的过程中也没遇到什么坑，基本就是 Git 的流程，相当顺手</p>
+<p><code>常用input标签</code>：</p>
 
-<p>大的 Jekyll 主题上直接 fork 了 Clean Blog（这个主题也相当有名，就不多赘述了。唯一的缺点大概就是没有标签支持，于是我给它补上了。）</p>
+<ul>
+<li><code>type=text</code>：输入用户名、电话号码等；</li>
+<li><code>type=password</code>：密码输入框；</li>
+<li><code>type=file</code>：文件目录输入平台；</li>
+<li><code>type=hidden</code>：将无法明示的重要信息提交到下一页；</li>
+<li><code>type=checkbox</code>：多选框；</li>
+<li><code>type=radio</code>：单选框；</li>
+<li><code>type=image</code>：提交式图片，如验证码；</li>
+<li><code>type=submit/reset</code>：分别是“提交”“重置”按钮；</li>
+<li><code>type=button</code>：windows风格按钮。</li>
+</ul>
 
-<p>本地调试环境需要 <code>gem install jekyll</code>，结果 rubygem 的源居然被墙了……后来手动改成了我大淘宝的镜像源才成功</p>
+<h2><code>post 和 get 方式的区别？</code></h2>
 
-<p>Theme 的 CSS 是基于 Bootstrap 定制的，看得不爽的地方直接在 Less 里改就好了（平时更习惯 SCSS 些），<strong>不过其实我一直觉得 Bootstrap 在移动端的体验做得相当一般，比我在淘宝参与的团队 CSS 框架差多了……</strong>所以为了体验，也补了不少 CSS 进去</p>
+<p><code>A:</code></p>
 
-<p>最后就进入了耗时反而最长的<strong>做图、写字</strong>阶段，也算是进入了<strong>写博客</strong>的正轨，因为是类似 Hack Day 的方式去搭这个站的，所以折腾折腾着大半夜就过去了。</p>
+<ul>
+<li>get是用来从服务器获得数据；post向服务器上传数据；</li>
+<li>get安全级别较post低；</li>
+<li>get传输的数据量小，主要受URL长度限制；post可以传输大量数据；get最多提交1k数据，浏览器的限制。post理论上无限制，受服务器限制</li>
+<li>Get将表单中数据的按照variable=value的形式，添加到action所指向的URL后面，并且两者使用“?”连接，而各个变量之间使用“&amp;”连接；Post是将表单中的数据放在form的数据体中，按照变量和值相对应的方式，传递到action所指向URL;</li>
+<li>get是form的默认方式。</li>
+</ul>
 
-<p>第二天考虑中文字体的渲染，fork 了 <a href="http://www.typeisbeautiful.com/">Type is Beautiful</a> 的 <code>font</code> CSS，调整了字号，适配了 Win 的渣渲染，中英文混排效果好多了。</p>
+<h2><code>在input里，name 有什么作用？</code></h2>
 
-<h2>后记</h2>
+<p><code>A:</code></p>
 
-<p>回顾这个博客的诞生，纯粹是出于个人兴趣。在知乎相关问题上回答并获得一定的 star 后，我决定把这个博客主题当作一个小小的开源项目来维护。</p>
+<ul>
+<li>用途1: 作为可与服务器交互数据的HTML元素的服务器端的标示，比如input、select、textarea、和button等。我们可以在服务器端根据其Name通过Request.Params取得元素提交的值。</li>
+<li>用途2：HTML元素Input type=&#39;radio&#39;分组，我们知道radio button控件在同一个分组类，check操作是mutex的，同一时间只能选中一个radio，这个分组就是根据相同的Name属性来实现的。</li>
+<li>用途3：建立页面中的锚点，我们知道<code>&lt;a href=&quot;URL&quot;&gt;link&lt;/a&gt;</code>是获得一个页面超级链接，如果不用href属性，而改用Name，如：，我们就获得了一个页面锚点。</li>
+<li>用途4: 作为对象的Identity，如Applet、Object、Embed等元素。比如在Applet对象实例中，我们将使用其Name来引用该对象。</li>
+<li>用途5: 在IMG元素和MAP元素之间关联的时候，如果要定义IMG的热点区域，需要使用其属性usemap，使usemap=&quot;#name&quot;(被关联的MAP元素的Name)。</li>
+<li>用途6: 某些特定元素的属性，如attribute，meta和param。例如为Object定义参数<code>&lt;PARAM NAME = &quot;appletParameter&quot; VALUE = &quot;value&quot;&gt;或Meta中&lt;META NAME = &quot;Author&quot; CONTENT = &quot;Dave Raggett&quot;&gt;</code></li>
+</ul>
 
-<p>在经历 v1.0 - v1.5 的蜕变后，这个博客主题愈发完整，不但增加了诸多 UI 层的优化（opinionated）；在代码层面，更加丰富的配置项也使得这个主题拥有了更好的灵活性与可拓展性。而作为一个开源项目，我也积极的为其完善文档与解决 issue。</p>
+<h2><code>&lt;button&gt;提交&lt;/button&gt;、&lt;a class=&quot;btn&quot; href=&quot;#&quot;&gt;提交&lt;/a&gt;、&lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt; 三者有什么区别？</code></h2>
 
-<p>如果你恰好逛到了这里，希望你也能喜欢这个博客主题。</p>
+<p><code>A:</code></p>
 
-<p>—— Hux 后记于 2015.10</p>
+<ul>
+<li><code>&lt;button&gt;提交&lt;/button&gt;</code>：创建一个普通按钮，需要绑定事件才可以用以提交数据；</li>
+<li><code>&lt;a class=&quot;btn&quot; href=&quot;#&quot;&gt;提交&lt;/a&gt;</code>：一个链接按钮；</li>
+<li><code>&lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</code>：提交按钮，提交表单</li>
+</ul>
+
+<h2><code>radio 如何 分组?</code></h2>
+
+<p><code>A:</code></p>
+
+<p>name的值设为一样,就是一组。</p>
+
+<h2><code>placeholder 属性有什么作用?</code></h2>
+
+<p><code>A:</code>
+提供可描述输入字段预期值的提示信息</p>
+
+<h2><code>type=hidden隐藏域有什么作用? 举例说明</code></h2>
+
+<p><code>A:</code></p>
+
+<ul>
+<li>隐藏域在页面中对于用户是不可见的，在表单中插入隐藏域的目的在于收集或发送信息，以利于被处理表单的程序所使用。浏览者单击发送按钮发送表单的时候，隐藏域的信息也被一起发送到服务器。</li>
+<li>有些时候我们要给用户一信息，让他在提交表单时提交上来以确定用户身份，如sessionkey，等等．当然这些东西也能用cookie实现，但使用隐藏域就简单的多了．而且不会有浏览器不支持，用户禁用cookie的烦恼。</li>
+<li>有些时候一个form里有多个提交按钮，怎样使程序能够分清楚到底用户是按那一个按钮提交上来的呢？我们就可以写一个隐藏域，然后在每一个按钮处加上<code>onclick=&quot;document.form.command.value=&quot;xx&quot;&quot;</code>然后我们接到数据后先检查command的值就会知道用户是按的那个按钮提交上来的。</li>
+<li>有时候一个网页中有多个form，我们知道多个form是不能同时提交的，但有时这些form确实相互作用，我们就可以在form中添加隐藏域来使它们联系起来。</li>
+<li>javascript不支持全局变量，但有时我们必须用全局变量，我们就可以把值先存在隐藏域里，它的值就不会丢失了</li>
+</ul>
 
 
                 <hr>
@@ -265,21 +295,17 @@
                 </style>
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="/2015/01/29/hello-2015"
-                    data-title="Hello 2015"
-                    data-url="http://clover.htmhub.com/2015/01/29/hello-2015/"
-                    data-images="http://clover.htmhub.com/img/post-bg-2015.jpg"
-                    data-content="
-“Yeah It&#39;s on. ”
+                    data-thread-key="/2017/03/09/html-4"
+                    data-title="Html基础-4"
+                    data-url="http://clover.htmhub.com/2017/03/09/html-4/"
+                    data-images="http://clover.htmhub.com/img/education_large_2x.jpg"
+                    data-content="HTML-4
 
+如何理解 HTML CSS 语义化? 在平时写代码的过程中要注意哪些细节
 
-前言
+A:
 
-Hux 的 Blog 就这么开通了。
-
-跳过废话，直接看技术实现  
-
-2015 年，Hux 总算... | 克洛弗的博客 | Clover Blog " >
+语义化：让所用的html css标签具有实际意义.选择... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -299,19 +325,12 @@ Hux 的 Blog 就这么开通了。
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2014/12/13/wechat-block-kuaidi/" data-toggle="tooltip" data-placement="top" title="「知乎」如何看待微信屏蔽快的打车事件？">
+                        <a href="/2017/03/07/html-3/" data-toggle="tooltip" data-placement="top" title="Html基础-3">
                         Previous<br>
-                        <span>「知乎」如何看待微信屏蔽快的打车事件？</span>
+                        <span>Html基础-3</span>
                         </a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/2015/03/10/apple-event-2015/" data-toggle="tooltip" data-placement="top" title="「知乎」如何评价 2015 年 3 月 9 日 Apple 春季发布会？">
-                        Next<br>
-                        <span>「知乎」如何评价 2015 年 3 月 9 日 Apple 春季发布会？</span>
-                        </a>
-                    </li>
                     
                 </ul>
 
@@ -320,9 +339,9 @@ Hux 的 Blog 就这么开通了。
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="/2015/01/29/hello-2015"
-                        data-title="Hello 2015"
-                        data-url="http://clover.htmhub.com/2015/01/29/hello-2015/" >
+                        data-thread-key="/2017/03/09/html-4"
+                        data-title="Html基础-4"
+                        data-url="http://clover.htmhub.com/2017/03/09/html-4/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
