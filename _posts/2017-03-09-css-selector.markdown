@@ -99,7 +99,7 @@ tags:
 
 这样我们就能得知第二条的规则优先级高一些，但是还有一种情况
 
-```
+``` html
 #parent p.class1
 div #child.class1
 
@@ -116,7 +116,7 @@ div #child.class1
 
 如果两个选择器规权值就是一样，我们改怎么判断呢？ 后面的覆盖前面的！
 
-```
+```css
 div {color: #333;}
 ....
 div {color: #666;}
@@ -177,7 +177,7 @@ odd, even
 
 ## `运行如下代码，解析下输出样式的原因`
 
-```
+```html
 <style>
 .item1:first-child{
   color: red;

@@ -281,23 +281,23 @@
 <p>这时候我们可以做个简单的加法运算，id选择器的权值为1000，class选择器为100，标签选择器为10，做一下运算（当然只是为了形象这么说，一万个class选择器加起来也不如一个id选择器优先级高）</p>
 
 <p>这样我们就能得知第二条的规则优先级高一些，但是还有一种情况</p>
-<div class="highlight"><pre><code class="language-" data-lang="">#parent p.class1
+<div class="highlight"><pre><code class="language-html" data-lang="html">#parent p.class1
 div #child.class1
 
-&lt;div id="parent"&gt;
-    &lt;p id="child" class="class1"&gt;
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"parent"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"child"</span> <span class="na">class=</span><span class="s">"class1"</span><span class="nt">&gt;</span>
         Text
-    &lt;/p&gt;
-&lt;/div&gt;
+    <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
 <p>按照我们刚才的方法计算，两个的权值时相同的，这时候应该用那条规则呢？简单来说一句话谁更具体用谁，也就是权值高的选择器作用的越具体优先级越高</p>
 
 <p>我们可以看到两个选择器作用的元素都是p标签，id选择器权值最高，第一条规则作用在了父元素上，第二条规则直接作用在了p标签本身上，所以我们认为第二条选择器的优先级高</p>
 
 <p>如果两个选择器规权值就是一样，我们改怎么判断呢？ 后面的覆盖前面的！</p>
-<div class="highlight"><pre><code class="language-" data-lang="">div {color: #333;}
-....
-div {color: #666;}
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">div</span> <span class="p">{</span><span class="nl">color</span><span class="p">:</span> <span class="m">#333</span><span class="p">;}</span>
+<span class="o">....</span>
+<span class="nt">div</span> <span class="p">{</span><span class="nl">color</span><span class="p">:</span> <span class="m">#666</span><span class="p">;}</span>
 </code></pre></div>
 <p>这样<code>div</code>文案的颜色明显会是<code>#666</code></p>
 
@@ -352,19 +352,19 @@ div {color: #666;}
 <p>同样类型的选择器 <code>:last-child</code> 和 <code>:last-of-type</code>、<code>:nth-child(n)</code>  和  <code>:nth-of-type(n)</code> 也可以这样去理解。</p>
 
 <h2><code>运行如下代码，解析下输出样式的原因</code></h2>
-<div class="highlight"><pre><code class="language-" data-lang="">&lt;style&gt;
-.item1:first-child{
-  color: red;
-}
-.item1:first-of-type{
-  background: blue;
-}
-&lt;/style&gt;
- &lt;div class="ct"&gt;
-   &lt;p class="item1"&gt;aa&lt;/p&gt;
-   &lt;h3 class="item1"&gt;bb&lt;/h3&gt;
-   &lt;h3 class="item1"&gt;ccc&lt;/h3&gt;
- &lt;/div&gt;
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style&gt;</span>
+<span class="nc">.item1</span><span class="nd">:first-child</span><span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.item1</span><span class="nd">:first-of-type</span><span class="p">{</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ct"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"item1"</span><span class="nt">&gt;</span>aa<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"item1"</span><span class="nt">&gt;</span>bb<span class="nt">&lt;/h3&gt;</span>
+   <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"item1"</span><span class="nt">&gt;</span>ccc<span class="nt">&lt;/h3&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
 <p><code>A:</code></p>
 

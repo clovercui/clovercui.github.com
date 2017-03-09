@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 09 Mar 2017 15:07:10 +0800</pubDate>
-    <lastBuildDate>Thu, 09 Mar 2017 15:07:10 +0800</lastBuildDate>
+    <pubDate>Thu, 09 Mar 2017 15:08:03 +0800</pubDate>
+    <lastBuildDate>Thu, 09 Mar 2017 15:08:03 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -206,23 +206,23 @@
 &lt;p&gt;这时候我们可以做个简单的加法运算，id选择器的权值为1000，class选择器为100，标签选择器为10，做一下运算（当然只是为了形象这么说，一万个class选择器加起来也不如一个id选择器优先级高）&lt;/p&gt;
 
 &lt;p&gt;这样我们就能得知第二条的规则优先级高一些，但是还有一种情况&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;#parent p.class1
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;#parent p.class1
 div #child.class1
 
-&amp;lt;div id=&quot;parent&quot;&amp;gt;
-    &amp;lt;p id=&quot;child&quot; class=&quot;class1&quot;&amp;gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;child&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;class1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
         Text
-    &amp;lt;/p&amp;gt;
-&amp;lt;/div&amp;gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;按照我们刚才的方法计算，两个的权值时相同的，这时候应该用那条规则呢？简单来说一句话谁更具体用谁，也就是权值高的选择器作用的越具体优先级越高&lt;/p&gt;
 
 &lt;p&gt;我们可以看到两个选择器作用的元素都是p标签，id选择器权值最高，第一条规则作用在了父元素上，第二条规则直接作用在了p标签本身上，所以我们认为第二条选择器的优先级高&lt;/p&gt;
 
 &lt;p&gt;如果两个选择器规权值就是一样，我们改怎么判断呢？ 后面的覆盖前面的！&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;div {color: #333;}
-....
-div {color: #666;}
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#333&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;....&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#666&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;这样&lt;code&gt;div&lt;/code&gt;文案的颜色明显会是&lt;code&gt;#666&lt;/code&gt;&lt;/p&gt;
 
@@ -277,19 +277,19 @@ div {color: #666;}
 &lt;p&gt;同样类型的选择器 &lt;code&gt;:last-child&lt;/code&gt; 和 &lt;code&gt;:last-of-type&lt;/code&gt;、&lt;code&gt;:nth-child(n)&lt;/code&gt;  和  &lt;code&gt;:nth-of-type(n)&lt;/code&gt; 也可以这样去理解。&lt;/p&gt;
 
 &lt;h2&gt;&lt;code&gt;运行如下代码，解析下输出样式的原因&lt;/code&gt;&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;style&amp;gt;
-.item1:first-child{
-  color: red;
-}
-.item1:first-of-type{
-  background: blue;
-}
-&amp;lt;/style&amp;gt;
- &amp;lt;div class=&quot;ct&quot;&amp;gt;
-   &amp;lt;p class=&quot;item1&quot;&amp;gt;aa&amp;lt;/p&amp;gt;
-   &amp;lt;h3 class=&quot;item1&quot;&amp;gt;bb&amp;lt;/h3&amp;gt;
-   &amp;lt;h3 class=&quot;item1&quot;&amp;gt;ccc&amp;lt;/h3&amp;gt;
- &amp;lt;/div&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.item1&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:first-child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.item1&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:first-of-type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ct&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;aa&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;bb&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;ccc&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
 
