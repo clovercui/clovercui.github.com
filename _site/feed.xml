@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 09 Mar 2017 15:08:03 +0800</pubDate>
-    <lastBuildDate>Thu, 09 Mar 2017 15:08:03 +0800</lastBuildDate>
+    <pubDate>Thu, 09 Mar 2017 15:12:19 +0800</pubDate>
+    <lastBuildDate>Thu, 09 Mar 2017 15:12:19 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -125,19 +125,15 @@
 &lt;h2&gt;选择器类型&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;基础选择器&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;基础选择器&lt;/p&gt;
 
 &lt;p&gt;|选择器| 含义|
 |--------|--------|
 |*  |通用元素选择器，匹配页面任何元素（这也就决定了我们很少使用）|
 |#id    |id选择器，匹配特定id的元素|
 |.class |类选择器，匹配class包含(不是等于)特定类的元素|
-|element|   标签选择器|&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;组合选择器&lt;/li&gt;
-&lt;/ul&gt;
+|element|   标签选择器|&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;组合选择器&lt;/p&gt;
 
 &lt;p&gt;|选择器| 含义|
 |---|---|
@@ -147,11 +143,8 @@
 |E+F    |直接相邻选择器，匹配E元素之后的相邻的同级元素F|
 |E~F    |普通相邻选择器（弟弟选择器），匹配E元素之后的同级元素F（无论直接相邻与否）|
 |.class1.class2 |id和class选择器和选择器连写的时候中间没有分隔符，. 和 # 本身充当分隔符的元素|
-|element#id |id和class选择器和选择器连写的时候中间没有分隔符，. 和 # 本身充当分隔符的元素|&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;属性选择器&lt;/li&gt;
-&lt;/ul&gt;
+|element#id |id和class选择器和选择器连写的时候中间没有分隔符，. 和 # 本身充当分隔符的元素|&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;属性选择器&lt;/p&gt;
 
 &lt;p&gt;|选择器  |含义|
 |---|---|
@@ -160,10 +153,8 @@
 |E[attr ~= value]   |匹配所有属性attr具有多个空格分隔、其中一个值等于value的元素|
 |E[attr ^= value]   |匹配属性attr的值以value开头的元素|
 |E[attr $= value]   |匹配属性attr的值以value结尾的元素|
-|E[attr *= value]   |匹配属性attr的值包含value的元素|&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;伪类选择器&lt;/li&gt;
+|E[attr *= value]   |匹配属性attr的值包含value的元素|&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;伪类选择器&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;往下看&lt;/p&gt;
@@ -231,8 +222,7 @@ div #child.class1
 &lt;h2&gt;&lt;code&gt;列出你知道的伪类选择器&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;| 选择器 | 含义 |
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;| 选择器 | 含义 |
 |--------|--------|
 |E:first-child  |匹配元素E的第一个子元素|
 |E:link |匹配所有未被点击的链接|
@@ -256,8 +246,8 @@ div #child.class1
 |E:only-child   |匹配父元素下仅有的一个子元素，等同于:first-child:last-child或 :nth-child(1):nth-last-child(1)|
 |E:only-of-type |匹配父元素下使用同种标签的唯一一个子元素，等同于:first-of-type:last-of-type或 :nth-of-type(1):nth-last-of-type(1)|
 |E:empty    |匹配一个不包含任何子元素的元素，文本节点也被看作子元素|
-|E:not(selector)    |匹配不符合当前选择器的任何元素|&lt;/p&gt;
-
+|E:not(selector)    |匹配不符合当前选择器的任何元素|
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;==n的取值==&lt;/p&gt;
 
 &lt;p&gt;1，2，3，4，5&lt;/p&gt;
