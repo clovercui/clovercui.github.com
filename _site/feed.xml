@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 09 Mar 2017 15:03:58 +0800</pubDate>
-    <lastBuildDate>Thu, 09 Mar 2017 15:03:58 +0800</lastBuildDate>
+    <pubDate>Thu, 09 Mar 2017 15:06:15 +0800</pubDate>
+    <lastBuildDate>Thu, 09 Mar 2017 15:06:15 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -197,38 +197,34 @@
 &lt;li&gt;&lt;p&gt;浏览器自定义&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;这样就可以看出来上面例子肯定使用id选择器的定义了，还有一种复杂的情况，CSS规则由多个选择器组成
-```&lt;/p&gt;
-
-&lt;h1&gt;test p.class1 {...}&lt;/h1&gt;
-
-&lt;h1&gt;test .class1.class2 {...}&lt;/h1&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;这种场景该使用那条规则呢？
-
-这时候我们可以做个简单的加法运算，id选择器的权值为1000，class选择器为100，标签选择器为10，做一下运算（当然只是为了形象这么说，一万个class选择器加起来也不如一个id选择器优先级高）
-
-这样我们就能得知第二条的规则优先级高一些，但是还有一种情况
+&lt;p&gt;这样就可以看出来上面例子肯定使用id选择器的定义了，还有一种复杂的情况，CSS规则由多个选择器组成&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;#test p.class1 {...}
+#test .class1.class2 {...}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1&gt;parent p.class1&lt;/h1&gt;
+&lt;p&gt;这种场景该使用那条规则呢？&lt;/p&gt;
 
-&lt;p&gt;div #child.class1&lt;/p&gt;
+&lt;p&gt;这时候我们可以做个简单的加法运算，id选择器的权值为1000，class选择器为100，标签选择器为10，做一下运算（当然只是为了形象这么说，一万个class选择器加起来也不如一个id选择器优先级高）&lt;/p&gt;
 
-&lt;div id=&quot;parent&quot;&gt;
-    &lt;p id=&quot;child&quot; class=&quot;class1&quot;&gt;
+&lt;p&gt;这样我们就能得知第二条的规则优先级高一些，但是还有一种情况&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;#parent p.class1
+div #child.class1
+
+&amp;lt;div id=&quot;parent&quot;&amp;gt;
+    &amp;lt;p id=&quot;child&quot; class=&quot;class1&quot;&amp;gt;
         Text
-    &lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;按照我们刚才的方法计算，两个的权值时相同的，这时候应该用那条规则呢？简单来说一句话谁更具体用谁，也就是权值高的选择器作用的越具体优先级越高
-
-我们可以看到两个选择器作用的元素都是p标签，id选择器权值最高，第一条规则作用在了父元素上，第二条规则直接作用在了p标签本身上，所以我们认为第二条选择器的优先级高
-
-如果两个选择器规权值就是一样，我们改怎么判断呢？ 后面的覆盖前面的！
+    &amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;div {color: #333;}
+&lt;p&gt;按照我们刚才的方法计算，两个的权值时相同的，这时候应该用那条规则呢？简单来说一句话谁更具体用谁，也就是权值高的选择器作用的越具体优先级越高&lt;/p&gt;
+
+&lt;p&gt;我们可以看到两个选择器作用的元素都是p标签，id选择器权值最高，第一条规则作用在了父元素上，第二条规则直接作用在了p标签本身上，所以我们认为第二条选择器的优先级高&lt;/p&gt;
+
+&lt;p&gt;如果两个选择器规权值就是一样，我们改怎么判断呢？ 后面的覆盖前面的！&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;div {color: #333;}
 ....
 div {color: #666;}
-``&lt;code&gt;
-这样&lt;/code&gt;div&lt;code&gt;文案的颜色明显会是&lt;/code&gt;#666`&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这样&lt;code&gt;div&lt;/code&gt;文案的颜色明显会是&lt;code&gt;#666&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;总而言之判断CSS选择器规则优先级很简单，每个选择器本身有优先级，越具体优先级越高&lt;/p&gt;
 

@@ -272,38 +272,34 @@
 <li><p>浏览器自定义</p></li>
 </ol>
 
-<p>这样就可以看出来上面例子肯定使用id选择器的定义了，还有一种复杂的情况，CSS规则由多个选择器组成
-```</p>
-
-<h1>test p.class1 {...}</h1>
-
-<h1>test .class1.class2 {...}</h1>
-<div class="highlight"><pre><code class="language-" data-lang="">这种场景该使用那条规则呢？
-
-这时候我们可以做个简单的加法运算，id选择器的权值为1000，class选择器为100，标签选择器为10，做一下运算（当然只是为了形象这么说，一万个class选择器加起来也不如一个id选择器优先级高）
-
-这样我们就能得知第二条的规则优先级高一些，但是还有一种情况
+<p>这样就可以看出来上面例子肯定使用id选择器的定义了，还有一种复杂的情况，CSS规则由多个选择器组成</p>
+<div class="highlight"><pre><code class="language-" data-lang="">#test p.class1 {...}
+#test .class1.class2 {...}
 </code></pre></div>
-<h1>parent p.class1</h1>
+<p>这种场景该使用那条规则呢？</p>
 
-<p>div #child.class1</p>
+<p>这时候我们可以做个简单的加法运算，id选择器的权值为1000，class选择器为100，标签选择器为10，做一下运算（当然只是为了形象这么说，一万个class选择器加起来也不如一个id选择器优先级高）</p>
 
-<div id="parent">
-    <p id="child" class="class1">
+<p>这样我们就能得知第二条的规则优先级高一些，但是还有一种情况</p>
+<div class="highlight"><pre><code class="language-" data-lang="">#parent p.class1
+div #child.class1
+
+&lt;div id="parent"&gt;
+    &lt;p id="child" class="class1"&gt;
         Text
-    </p>
-</div>
-<div class="highlight"><pre><code class="language-" data-lang="">按照我们刚才的方法计算，两个的权值时相同的，这时候应该用那条规则呢？简单来说一句话谁更具体用谁，也就是权值高的选择器作用的越具体优先级越高
-
-我们可以看到两个选择器作用的元素都是p标签，id选择器权值最高，第一条规则作用在了父元素上，第二条规则直接作用在了p标签本身上，所以我们认为第二条选择器的优先级高
-
-如果两个选择器规权值就是一样，我们改怎么判断呢？ 后面的覆盖前面的！
+    &lt;/p&gt;
+&lt;/div&gt;
 </code></pre></div>
-<p>div {color: #333;}
+<p>按照我们刚才的方法计算，两个的权值时相同的，这时候应该用那条规则呢？简单来说一句话谁更具体用谁，也就是权值高的选择器作用的越具体优先级越高</p>
+
+<p>我们可以看到两个选择器作用的元素都是p标签，id选择器权值最高，第一条规则作用在了父元素上，第二条规则直接作用在了p标签本身上，所以我们认为第二条选择器的优先级高</p>
+
+<p>如果两个选择器规权值就是一样，我们改怎么判断呢？ 后面的覆盖前面的！</p>
+<div class="highlight"><pre><code class="language-" data-lang="">div {color: #333;}
 ....
 div {color: #666;}
-``<code>
-这样</code>div<code>文案的颜色明显会是</code>#666`</p>
+</code></pre></div>
+<p>这样<code>div</code>文案的颜色明显会是<code>#666</code></p>
 
 <p>总而言之判断CSS选择器规则优先级很简单，每个选择器本身有优先级，越具体优先级越高</p>
 
