@@ -193,97 +193,118 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h1>HTML-2</h1>
+				<h1 id="html-2">HTML-2</h1>
 
-<h2><code>样式有几种引入方式? link 和 @import有什么区别</code></h2>
+<h2 id="link--import"><code class="highlighter-rouge">样式有几种引入方式? link 和 @import有什么区别</code></h2>
 
-<p><code>A:</code></p>
-
-<ul>
-<li><code>1.内联方式</code></li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">&lt;div style="background: red"&gt;&lt;/div&gt;
-</code></pre></div>
-<p>改变当前标签的样式</p>
+<p><code class="highlighter-rouge">A:</code></p>
 
 <ul>
-<li><p><code>2.嵌入方式</code></p>
-
-<p>嵌入方式指的是在 HTML 头部中的 <code>&lt;style&gt;</code> 标签下书写 CSS 代码。</p>
-<div class="highlight"><pre><code class="language-" data-lang="">&lt;head&gt;
-    &lt;style&gt;
-    .content {
-        background: red;
-    }
-    &lt;/style&gt;
-&lt;/head&gt;
-</code></pre></div>
-<p>嵌入方式的 CSS 只对当前的网页有效。因为 CSS 代码是在 HTML 文件中，所以会使得代码比较集中，当我们写模板网页时这通常比较有利。因为查看模板代码的人可以一目了然地查看 HTML 结构和 CSS 样式。因为嵌入的 CSS 只对当前页面有效，所以当多个页面需要引入相同的 CSS 代码时，这样写会导致代码冗余，也不利于维护。</p></li>
-<li><p><code>3.链接方式</code></p>
-
-<p>链接方式指的是使用 HTML 头部的 <code>&lt;head&gt;</code> 标签引入外部的 CSS 文件。</p>
-<div class="highlight"><pre><code class="language-" data-lang="">&lt;head&gt;
-    &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
-&lt;/head&gt;
-</code></pre></div>
-<p>这是最常见的也是最推荐的引入 CSS 的方式。使用这种方式，所有的 CSS 代码只存在于单独的 CSS 文件中，所以具有良好的可维护性。并且所有的 CSS 代码只存在于 CSS 文件中，CSS 文件会在第一次加载时引入，以后切换页面时只需加载 HTML 文件即可</p></li>
-<li><p><code>4.导入方式</code></p>
-
-<p>导入方式指的是使用 CSS 规则引入外部 CSS 文件
-<code>
-&lt;style&gt;
-    @import url(style.css);
-&lt;/style&gt;
-</code></p></li>
-<li><p><code>link和@import的区别是?</code></p>
-
-<p>两者都是外部引用CSS的方式，但是存在一定的区别</p>
-
-<ul>
-<li>区别1：link是XHTML标签，除了加载CSS外，还可以定义RSS等其他事务；@import属于CSS范畴，只能加载CSS。</li>
-<li>区别2：link引用CSS时，在页面载入时同时加载；@import需要页面网页完全载入以后加载。</li>
-<li>区别3：link是XHTML标签，无兼容问题；@import是在CSS2.1提出的，低版本的浏览器不支持。</li>
-<li>区别4：link支持使用Javascript控制DOM去改变样式；而@import不支持。</li>
-</ul></li>
+  <li><code class="highlighter-rouge">1.内联方式</code></li>
 </ul>
 
-<h2><code>文件路径../main.css 、./main.css、main.css、/main.css有什么区别</code></h2>
+<p>```</p>
+<div style="background: red"></div>
+<p>```
+改变当前标签的样式</p>
 
-<p><code>A:</code> </p>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">2.嵌入方式</code></p>
 
-<p><code>../main.css</code> 是当前目录的上级目录引入main.css</p>
+    <p>嵌入方式指的是在 HTML 头部中的 <code class="highlighter-rouge">&lt;style&gt;</code> 标签下书写 CSS 代码。</p>
 
-<p><code>./main.css</code> 是当前目录引入main.css</p>
+    <p>```</p>
+    <head>
+      <style>
+      .content {
+          background: red;
+      }
+      </style>
+  </head>
+    <p>```
+嵌入方式的 CSS 只对当前的网页有效。因为 CSS 代码是在 HTML 文件中，所以会使得代码比较集中，当我们写模板网页时这通常比较有利。因为查看模板代码的人可以一目了然地查看 HTML 结构和 CSS 样式。因为嵌入的 CSS 只对当前页面有效，所以当多个页面需要引入相同的 CSS 代码时，这样写会导致代码冗余，也不利于维护。</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">3.链接方式</code></p>
 
-<p><code>main.css</code> 同<code>./main.css</code> 是当前目录引入main.css</p>
+    <p>链接方式指的是使用 HTML 头部的 <code class="highlighter-rouge">&lt;head&gt;</code> 标签引入外部的 CSS 文件。</p>
 
-<p><code>/main.css</code> 是在网站根目录引入main.css</p>
+    <p>```</p>
+    <head>
+      <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+    <p>```</p>
 
-<h2><code>console.log是做什么用的</code></h2>
+    <p>这是最常见的也是最推荐的引入 CSS 的方式。使用这种方式，所有的 CSS 代码只存在于单独的 CSS 文件中，所以具有良好的可维护性。并且所有的 CSS 代码只存在于 CSS 文件中，CSS 文件会在第一次加载时引入，以后切换页面时只需加载 HTML 文件即可</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">4.导入方式</code></p>
 
-<p><code>A:</code>
+    <p>导入方式指的是使用 CSS 规则引入外部 CSS 文件
+  ```</p>
+    <style>
+      @import url(style.css);
+  </style>
+
+    <p>```</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">link和@import的区别是?</code></p>
+
+    <p>两者都是外部引用CSS的方式，但是存在一定的区别</p>
+
+    <ul>
+      <li>
+        <p>区别1：link是XHTML标签，除了加载CSS外，还可以定义RSS等其他事务；@import属于CSS范畴，只能加载CSS。</p>
+      </li>
+      <li>
+        <p>区别2：link引用CSS时，在页面载入时同时加载；@import需要页面网页完全载入以后加载。</p>
+      </li>
+      <li>
+        <p>区别3：link是XHTML标签，无兼容问题；@import是在CSS2.1提出的，低版本的浏览器不支持。</p>
+      </li>
+      <li>
+        <p>区别4：link支持使用Javascript控制DOM去改变样式；而@import不支持。</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="maincss-maincssmaincssmaincss"><code class="highlighter-rouge">文件路径../main.css 、./main.css、main.css、/main.css有什么区别</code></h2>
+<p><code class="highlighter-rouge">A:</code></p>
+
+<p><code class="highlighter-rouge">../main.css</code> 是当前目录的上级目录引入main.css</p>
+
+<p><code class="highlighter-rouge">./main.css</code> 是当前目录引入main.css</p>
+
+<p><code class="highlighter-rouge">main.css</code> 同<code class="highlighter-rouge">./main.css</code> 是当前目录引入main.css</p>
+
+<p><code class="highlighter-rouge">/main.css</code> 是在网站根目录引入main.css</p>
+
+<h2 id="consolelog"><code class="highlighter-rouge">console.log是做什么用的</code></h2>
+<p><code class="highlighter-rouge">A:</code>
 在控制台使用 log方式输出信息，还看查看对象的具体内容。</p>
 
-<h2><code>text-align有几个值，分别有什么作用？为什么text-align:justify没有效果？写截图说明区别</code></h2>
+<h2 id="text-aligntext-alignjustify"><code class="highlighter-rouge">text-align有几个值，分别有什么作用？为什么text-align:justify没有效果？写截图说明区别</code></h2>
+<p><code class="highlighter-rouge">A:</code></p>
 
-<p><code>A:</code></p>
+<p><code class="highlighter-rouge">text-align</code>:left,right,center,justify,start,end,inherit,initial</p>
 
-<p><code>text-align</code>:left,right,center,justify,start,end,inherit,initial</p>
+<p><code class="highlighter-rouge">text-align:justify</code> 不起作用因为text-align不会处理被打断的行和最后一行。一行文本不进行处理。还有就是强制换行的也不处理。所以你强制占满了一行他才处理。</p>
 
-<p><code>text-align:justify</code> 不起作用因为text-align不会处理被打断的行和最后一行。一行文本不进行处理。还有就是强制换行的也不处理。所以你强制占满了一行他才处理。</p>
+<h2 id="pxemrem"><code class="highlighter-rouge">px、em、rem分别是什么？有什么区别？如何使用</code></h2>
+<p><code class="highlighter-rouge">A:</code>
+<code class="highlighter-rouge">px</code> PX实际上就是像素,用PX设置字体大小时，比较稳定和精确.但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，如果改变了浏览器的缩放，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体</p>
 
-<h2><code>px、em、rem分别是什么？有什么区别？如何使用</code></h2>
+<p><code class="highlighter-rouge">em</code> em是相对于父元素的属性而计算的.EM就是根据基准来缩放字体的大小。EM实质是一个相对值，而非具体的数值。这种技术需要一个参考点，一般都是以<code class="highlighter-rouge">&lt;body&gt;</code>的“font-size”为基准。</p>
 
-<p><code>A:</code>
-<code>px</code> PX实际上就是像素,用PX设置字体大小时，比较稳定和精确.但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，如果改变了浏览器的缩放，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体</p>
+<p><code class="highlighter-rouge">任意浏览器的默认字体高都是16px。所有未经调整的浏览器都符合: 1em=16px。那么12px=0.75em, 10px=0.625em。为了简化font-size的换算，需要在css中的body选择器中声明Font-size=62.5%，这就使em值变为 16px*62.5%=10px, 这样12px=1.2em, 10px=1em, 也就是说只需要将你的原来的px数值除以10，然后换上em作为单位就行了</code></p>
 
-<p><code>em</code> em是相对于父元素的属性而计算的.EM就是根据基准来缩放字体的大小。EM实质是一个相对值，而非具体的数值。这种技术需要一个参考点，一般都是以<code>&lt;body&gt;</code>的“font-size”为基准。</p>
+<p><code class="highlighter-rouge">rem</code> EM是相对于其父元素来设置字体大小的，这样就会存在一个问题，进行任何元素设置，都有可能需要知道他父元素的大小。而Rem是相对于根元素&lt;html&gt;，这样就意味着，我们只需要在根元素确定一个参考值
+<code class="highlighter-rouge">浏览器的兼容性 除了IE6-IE8r，其它的浏览器都支持em和rem属性，px是所有浏览器都支持。
+因此为了浏览器的兼容性，可“px”和“rem”一起使用，用"px"来实现IE6-8下的效果，然后使用“Rem”来实现代浏览器的效果。</code></p>
 
-<p><code>任意浏览器的默认字体高都是16px。所有未经调整的浏览器都符合: 1em=16px。那么12px=0.75em, 10px=0.625em。为了简化font-size的换算，需要在css中的body选择器中声明Font-size=62.5%，这就使em值变为 16px*62.5%=10px, 这样12px=1.2em, 10px=1em, 也就是说只需要将你的原来的px数值除以10，然后换上em作为单位就行了</code></p>
-
-<p><code>rem</code> EM是相对于其父元素来设置字体大小的，这样就会存在一个问题，进行任何元素设置，都有可能需要知道他父元素的大小。而Rem是相对于根元素<html>，这样就意味着，我们只需要在根元素确定一个参考值
-<code>浏览器的兼容性 除了IE6-IE8r，其它的浏览器都支持em和rem属性，px是所有浏览器都支持。
-因此为了浏览器的兼容性，可“px”和“rem”一起使用，用&quot;px&quot;来实现IE6-8下的效果，然后使用“Rem”来实现代浏览器的效果。</code></p>
 
 
                 <hr>
@@ -304,9 +325,16 @@
 A:
 
 
-1.内联方式
+  1.内联方式
 
-&lt;div style="backgroun... | 克洛弗的博客 | Clover Blog " >
+
+```
+
+```
+改变当前标签的样式
+
+
+... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>

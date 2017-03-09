@@ -193,80 +193,90 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h1>HTML-3</h1>
-
+				<h1 id="html-3">HTML-3</h1>
 <blockquote>
-<p><a href="http://www.zhangxinxu.com/wordpress/2009/11/css%E8%A1%8C%E9%AB%98line-height%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8/">css行高line-height的一些深入理解及应用</a></p>
+  <p><a href="http://www.zhangxinxu.com/wordpress/2009/11/css%E8%A1%8C%E9%AB%98line-height%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8/">css行高line-height的一些深入理解及应用</a></p>
 </blockquote>
 
-<h2><code>line-height有什么作用?</code></h2>
+<h2 id="line-height"><code class="highlighter-rouge">line-height有什么作用?</code></h2>
 
-<p><code>A:</code></p>
+<p><code class="highlighter-rouge">A:</code></p>
 
 <p>line-height 属性设置行间的距离（行高），不能使用负值。该属性会影响行框的布局。在应用到一个块级元素时，它定义了该元素中基线之间的最小距离而不是最大距离。line-height 与 font-size 的计算值之差(行距)分为两半，分别加到一个文本行内容的顶部和底部。可以包含这些内容的最小框就是行框。</p>
 
 <ol>
-<li><p>line-height可以被定义为normal。</p>
+  <li>
+    <p>line-height可以被定义为normal。</p>
 
-<p><code>body { line-height:normal; }</code></p></li>
-<li><p>line-height可以被定义为继承</p>
+    <p><code class="highlighter-rouge">body { line-height:normal; }</code></p>
+  </li>
+  <li>
+    <p>line-height可以被定义为继承</p>
 
-<p><code>p { line-height:inherit; }</code></p></li>
-<li><p>line-height可以使用一个百分比的值</p>
+    <p><code class="highlighter-rouge">p { line-height:inherit; }</code></p>
+  </li>
+  <li>
+    <p>line-height可以使用一个百分比的值</p>
 
-<p><code>p { line-height:120%; }</code></p></li>
-<li><p>line-height可以被定义为一个长度值（单位px、em等）</p>
+    <p><code class="highlighter-rouge">p { line-height:120%; }</code></p>
+  </li>
+  <li>
+    <p>line-height可以被定义为一个长度值（单位px、em等）</p>
 
-<p><code>p { line-height:20px; }</code></p></li>
-<li><p>line-height也可以被定义为纯数字（甚至没有单位）</p>
+    <p><code class="highlighter-rouge">p { line-height:20px; }</code></p>
+  </li>
+  <li>
+    <p>line-height也可以被定义为纯数字（甚至没有单位）</p>
 
-<p><code>p { line-height:1.2; }</code></p></li>
+    <p><code class="highlighter-rouge">p { line-height:1.2; }</code></p>
+  </li>
 </ol>
 
-<h2><code>如何去查CSS属性的兼容性？比如inline-block哪些浏览器支持？</code></h2>
+<h2 id="cssinline-block"><code class="highlighter-rouge">如何去查CSS属性的兼容性？比如inline-block哪些浏览器支持？</code></h2>
 
-<p><code>A:</code></p>
+<p><code class="highlighter-rouge">A:</code></p>
 
 <p>去Can I use 网站查询  <a href="http://caniuse.com/">CanIUse</a></p>
 
 <p>在输入框中查询要查询的属性</p>
 
 <p>inline-block的兼容性：
-<img src="/img/ciuinlineblock.png" alt="inline-block兼容性"></p>
+<img src="/img/ciuinlineblock.png" alt="inline-block兼容性" /></p>
 
-<h2><code>a 标签的href, title, target 是什么？ title 和 alt有什么区别？如何新窗口打开链接?</code></h2>
+<h2 id="a-href-title-target--title--alt"><code class="highlighter-rouge">a 标签的href, title, target 是什么？ title 和 alt有什么区别？如何新窗口打开链接?</code></h2>
 
-<p><code>A:</code></p>
+<p><code class="highlighter-rouge">A:</code></p>
 
-<p><code>href</code>是a标签的链接地址。可以是个链接地址，也可以是一个锚点地址。</p>
+<p><code class="highlighter-rouge">href</code>是a标签的链接地址。可以是个链接地址，也可以是一个锚点地址。</p>
 
-<p><code>title</code> 是a标签的标题，鼠标移动上之后显示的名称</p>
+<p><code class="highlighter-rouge">title</code> 是a标签的标题，鼠标移动上之后显示的名称</p>
 
-<p><code>target</code> 是 a 标签打开链接的方式，主要有<code>_blank</code>:浏览器总在一个新打开、未命名的窗口中载入目标文档；<code>_self</code>:这个目标的值对所有没有指定目标的 <code>&lt;a&gt;</code><code>标签是默认目标，它使得目标文档载入并显示在相同的框架或者窗口中作为源文档。这个目标是多余且不必要的，除非和文档标题 &lt;base&gt; 标签中的 target 属性一起使用；</code><em>parent<code>：这个目标使得文档载入父窗口或者包含来超链接引用的框架的框架集。如果这个引用是在窗口或者在顶级框架中，那么它与目标 _self 等效；</code></em>top<code>：这个目标使得文档载入包含这个超链接的窗口，用 _top 目标将会清除所有被包含的框架并将文档载入整个浏览器窗口。</code>framename`:在指定的框架中打开被链接文档。</p>
+<p><code class="highlighter-rouge">target</code> 是 a 标签打开链接的方式，主要有<code class="highlighter-rouge">_blank</code>:浏览器总在一个新打开、未命名的窗口中载入目标文档；<code class="highlighter-rouge">_self</code>:这个目标的值对所有没有指定目标的 <code class="highlighter-rouge">&lt;a&gt;</code><code class="highlighter-rouge"> 标签是默认目标，它使得目标文档载入并显示在相同的框架或者窗口中作为源文档。这个目标是多余且不必要的，除非和文档标题 &lt;base&gt; 标签中的 target 属性一起使用；</code>_parent<code class="highlighter-rouge">：这个目标使得文档载入父窗口或者包含来超链接引用的框架的框架集。如果这个引用是在窗口或者在顶级框架中，那么它与目标 _self 等效；</code>_top<code class="highlighter-rouge">：这个目标使得文档载入包含这个超链接的窗口，用 _top 目标将会清除所有被包含的框架并将文档载入整个浏览器窗口。</code>framename`:在指定的框架中打开被链接文档。</p>
 
-<p><code>title 和 alt区别</code>:title作为属性时，用来为元素提供额外说明信息，例如，给超链接标签a添加了title属性，把鼠标移动到该链接上面是，就会显示title的内容，以达到补充说明或者提示的效果。alt属性则是用来指定替换文字，只能用在img、area和input元素中（包括applet元素），用于网页中图片无法正常显示时给用户提供文字说明使其了解图像信息。alt是替代图像作用而不是提供额外说明文字的。根据一些SEO人士的说法，使用alt属性还具有搜索引擎优化效果，因为搜素引擎是无法直接读取图像的信息的，alt可以为其提供文字信息所以对搜索引擎比较友好</p>
+<p><code class="highlighter-rouge">title 和 alt区别</code>:title作为属性时，用来为元素提供额外说明信息，例如，给超链接标签a添加了title属性，把鼠标移动到该链接上面是，就会显示title的内容，以达到补充说明或者提示的效果。alt属性则是用来指定替换文字，只能用在img、area和input元素中（包括applet元素），用于网页中图片无法正常显示时给用户提供文字说明使其了解图像信息。alt是替代图像作用而不是提供额外说明文字的。根据一些SEO人士的说法，使用alt属性还具有搜索引擎优化效果，因为搜素引擎是无法直接读取图像的信息的，alt可以为其提供文字信息所以对搜索引擎比较友好</p>
 
-<p><code>&lt;a href=&#39;https://www.baidu.com&#39; target=&#39;_blank&#39;&gt;在新的窗口打开连接&lt;/a&gt;</code></p>
+<p><code class="highlighter-rouge">&lt;a href='https://www.baidu.com' target='_blank'&gt;在新的窗口打开连接&lt;/a&gt;</code></p>
 
-<h2><code>display: none , visibility: hidden, opacity:0 有什么作用？有什么区别？</code></h2>
+<h2 id="display-none--visibility-hidden-opacity0-"><code class="highlighter-rouge">display: none , visibility: hidden, opacity:0 有什么作用？有什么区别？</code></h2>
 
-<p><code>A:</code></p>
+<p><code class="highlighter-rouge">A:</code></p>
 
 <ul>
-<li>display=none，把元素隐藏起来，并且会改变页面布局，可以理解成在页面中把该元素删除掉,<code>无体积,脱离文档流</code></li>
-<li>visibility=hidden，把元素隐藏起来了，但不会改变页面布局，不会触发该元素已经绑定的事件，<code>有体积，在文档流内</code></li>
-<li>opacity=0，该元素隐藏起来了，但不会改变页面布局，如果该元素已经绑定一些事件，如click事件，那么点击该区域，也能触发点击事件的 <code>有体积,在文档里内</code></li>
+  <li>display=none，把元素隐藏起来，并且会改变页面布局，可以理解成在页面中把该元素删除掉,<code class="highlighter-rouge">无体积,脱离文档流</code></li>
+  <li>visibility=hidden，把元素隐藏起来了，但不会改变页面布局，不会触发该元素已经绑定的事件，<code class="highlighter-rouge">有体积，在文档流内</code></li>
+  <li>opacity=0，该元素隐藏起来了，但不会改变页面布局，如果该元素已经绑定一些事件，如click事件，那么点击该区域，也能触发点击事件的 <code class="highlighter-rouge">有体积,在文档里内</code></li>
 </ul>
 
-<h2><code>如何去除 a 链接的默认样式？直接在 a 链接父容器添加颜色，能否继承到当前 a 链接上？</code></h2>
+<h2 id="a--a--a-"><code class="highlighter-rouge">如何去除 a 链接的默认样式？直接在 a 链接父容器添加颜色，能否继承到当前 a 链接上？</code></h2>
 
-<p><code>A:</code></p>
+<p><code class="highlighter-rouge">A:</code></p>
 
 <p>在a的style中加入text-decoration:none；可以去除a的默认样式</p>
 
-<p>直接在 <code>a</code> 链接父容器添加颜色，不能继承到当前 <code>a</code> 链接上</p>
+<p>直接在 <code class="highlighter-rouge">a</code> 链接父容器添加颜色，不能继承到当前 <code class="highlighter-rouge">a</code> 链接上</p>
 
-<p><code>a标签不会使用继承属性</code></p>
+<p><code class="highlighter-rouge">a标签不会使用继承属性</code></p>
+
 
 
                 <hr>
@@ -282,15 +292,14 @@
                     data-images="http://clover.htmhub.com/img/education_large_2x.jpg"
                     data-content="HTML-3
 
-
-css行高line-height的一些深入理解及应用
+  css行高line-height的一些深入理解及应用
 
 
 line-height有什么作用?
 
 A:
 
-line-height 属性设置... | 克洛弗的博客 | Clover Blog " >
+line-height 属性设... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>

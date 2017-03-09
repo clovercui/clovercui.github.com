@@ -191,88 +191,133 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h1>Linux命令行基础</h1>
+				<h1 id="linux">Linux命令行基础</h1>
 
-<h2>一些名词</h2>
+<h2 id="section">一些名词</h2>
 
-<p><code>「图形界面」</code>、<code>「命令行」</code>、<code>「终端」</code>、<code>「shell」</code>、<code>「bash」</code></p>
+<p><code class="highlighter-rouge">「图形界面」</code>、<code class="highlighter-rouge">「命令行」</code>、<code class="highlighter-rouge">「终端」</code>、<code class="highlighter-rouge">「shell」</code>、<code class="highlighter-rouge">「bash」</code></p>
 
-<h2>安装使用</h2>
+<h2 id="section-1">安装使用</h2>
 
 <ul>
-<li>Windws: 安装git, 打开 gitbash</li>
-<li>Linux 打开终端</li>
-<li>Mac 打开终端</li>
+  <li>Windws: 安装git, 打开 gitbash</li>
+  <li>Linux 打开终端</li>
+  <li>Mac 打开终端</li>
 </ul>
 
-<h2>基本命令</h2>
+<h2 id="section-2">基本命令</h2>
 
 <ul>
-<li><p><code>查看当前完整路径</code></p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">pwd</span>
-</code></pre></div></li>
-<li><p><code>查看当前目录下文件</code></p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># 不包括隐藏文件</span>
-ls
+  <li>
+    <p><code class="highlighter-rouge">查看当前完整路径</code></p>
 
-<span class="c"># 查看当前目录下所有文件(包括隐藏文件)</span>
-ls -a
+    <p><code class="highlighter-rouge">bash
+  pwd
+ </code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">查看当前目录下文件</code></p>
 
-<span class="c"># 查看当前目录下所有文件(包括隐藏文件)的详细信息</span>
-ls -al
-</code></pre></div></li>
-<li><p><code>切换目录</code></p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /c/project
-<span class="nb">cd </span>code
-<span class="nb">cd</span> ../css
-<span class="nb">cd</span> ~/Desktop
-</code></pre></div></li>
-<li><p><code>创建文件</code></p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">touch readme.md
-</code></pre></div></li>
-<li><p><code>删除文件</code></p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#创建readme.md</span>
-rm readme.md 
+    <p>```bash
+  # 不包括隐藏文件
+  ls</p>
 
-<span class="c">#删除node_modules文件夹，不提示</span>
-rm -rf node_modules
-</code></pre></div></li>
-<li><p><code>重命名文件</code></p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">mv readme.md README.md
-</code></pre></div></li>
-<li><p>创建文件夹</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir projects
-</code></pre></div></li>
+    <p># 查看当前目录下所有文件(包括隐藏文件)
+  ls -a</p>
+
+    <p># 查看当前目录下所有文件(包括隐藏文件)的详细信息
+  ls -al
+  ```</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">切换目录</code></p>
+
+    <p><code class="highlighter-rouge">bash
+  cd /c/project
+  cd code
+  cd ../css
+  cd ~/Desktop
+ </code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">创建文件</code></p>
+
+    <p><code class="highlighter-rouge">bash
+  touch readme.md
+ </code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">删除文件</code></p>
+
+    <p>```bash
+  #创建readme.md
+  rm readme.md</p>
+
+    <p>#删除node_modules文件夹，不提示
+  rm -rf node_modules
+  ```</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">重命名文件</code></p>
+
+    <p><code class="highlighter-rouge">bash
+  mv readme.md README.md
+ </code></p>
+  </li>
+  <li>
+    <p>创建文件夹</p>
+
+    <p><code class="highlighter-rouge">bash
+  mkdir projects
+ </code></p>
+  </li>
 </ul>
 
-<h2>文件路径</h2>
+<h2 id="section-3">文件路径</h2>
 
 <ul>
-<li><p><code>根目录</code></p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /
-</code></pre></div></li>
-<li><p><code>家目录</code></p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~
-<span class="nb">pwd</span>
-</code></pre></div></li>
-<li><p><code>当前目录</code></p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>books
-<span class="nb">cd</span> ./books
-</code></pre></div></li>
-<li><p><code>上级目录</code></p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ..
-<span class="nb">cd</span> ../css
-</code></pre></div>
-<h2>编辑器VIM</h2></li>
+  <li>
+    <p><code class="highlighter-rouge">根目录</code></p>
+
+    <p><code class="highlighter-rouge">bash
+  cd /
+ </code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">家目录</code></p>
+
+    <p><code class="highlighter-rouge">bash
+  cd ~
+  pwd
+ </code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">当前目录</code></p>
+
+    <p><code class="highlighter-rouge">bash
+  cd books
+  cd ./books
+ </code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">上级目录</code></p>
+
+    <p><code class="highlighter-rouge">bash
+  cd ..
+  cd ../css
+ </code>
+## 编辑器VIM</p>
+  </li>
 </ul>
 
 <ol>
-<li><code>vim a.md</code> 初始进入编辑器命令模式</li>
-<li><code>i</code> 进入编辑模式</li>
-<li>键盘左上角<code>esc</code> 进入命令命令模式</li>
-<li><code>:wq</code> 保存退出</li>
-<li><code>:q!</code> 不保存强制退出</li>
+  <li><code class="highlighter-rouge">vim a.md</code> 初始进入编辑器命令模式</li>
+  <li><code class="highlighter-rouge">i</code> 进入编辑模式</li>
+  <li>键盘左上角<code class="highlighter-rouge">esc</code> 进入命令命令模式</li>
+  <li><code class="highlighter-rouge">:wq</code> 保存退出</li>
+  <li><code class="highlighter-rouge">:q!</code> 不保存强制退出</li>
 </ol>
+
 
 
                 <hr>
@@ -295,7 +340,7 @@ rm -rf node_modules
 安装使用
 
 
-Windws: 安装git, 打开 ... | 克洛弗的博客 | Clover Blog " >
+  Windws: 安装git, 打... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>

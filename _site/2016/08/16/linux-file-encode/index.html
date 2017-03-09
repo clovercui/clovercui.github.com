@@ -191,32 +191,39 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h1>ccrypt</h1>
+				<h1 id="ccrypt">ccrypt</h1>
 
-<p><code>ccrypt是为了取代UNIX crypt而设计的，这个实用工具可用于文件和数据流加密及解密。它使用Rijndael密码</code></p>
+<p><code class="highlighter-rouge">ccrypt是为了取代UNIX crypt而设计的，这个实用工具可用于文件和数据流加密及解密。它使用Rijndael密码</code></p>
 
-<hr>
+<hr />
 
-<h2>安装</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">sudo apt-get install ccrypt
+<h2 id="section">安装</h2>
+
+<p><code class="highlighter-rouge">
+sudo apt-get install ccrypt
 # yum install ccrypt
-</code></pre></div>
-<hr>
+</code></p>
 
-<h2>使用</h2>
-
-<ul>
-<li>加密文件</li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">ccencrypt filename
-</code></pre></div>
-<p>输入两次密码</p>
+<hr />
+<p>## 使用</p>
 
 <ul>
-<li>解密文件</li>
+  <li>加密文件</li>
 </ul>
-<div class="highlight"><pre><code class="language-" data-lang="">ccdecrypt filename
-</code></pre></div>
+
+<p><code class="highlighter-rouge">
+ccencrypt filename
+</code>
+输入两次密码</p>
+
+<ul>
+  <li>解密文件</li>
+</ul>
+
+<p><code class="highlighter-rouge">
+ccdecrypt filename
+</code></p>
+
 <p>提供加密时输入的同一个密码才能解密</p>
 
 <p>它使用ccencrypt来加密、使用ccdecrypt来解密。一定要注意，加密时，原始文件(tecmint.txt)换成了tecmint.txt.cpt;解密时，加密文件(tecmint.txt.cpt)换成了原始文件(tecmint.txt)。你可以使用ls命令来予以核查</p>
@@ -240,7 +247,9 @@ ccrypt是为了取代UNIX crypt而设计的，这个实用工具可用于文件�
 
 
 安装
-su... | 克洛弗的博客 | Clover Blog " >
+
+
+... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>

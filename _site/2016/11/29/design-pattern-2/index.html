@@ -194,315 +194,339 @@
                 post-container">
 
 				<blockquote>
-<p>参考资料《大话设计模式》
+  <p>参考资料《大话设计模式》
 作者程杰</p>
-
-<p>参考 http://blog.csdn.net/jhq0113/article/details/44906491</p>
 </blockquote>
 
-<h1>设计模式-创建型</h1>
+<blockquote>
+  <p>参考 http://blog.csdn.net/jhq0113/article/details/44906491</p>
+</blockquote>
 
-<h2>1.简单工厂模式</h2>
+<h1 id="section">设计模式-创建型</h1>
 
-<p><code>简单工厂模式</code>:不属于23种常用面向对象设计模式之一。简单工厂模式是由<code>一个工厂对象决定创建出哪一种产品类的实例</code>。简单工厂模式是工厂模式家族中最简单实用的模式，可以理解为是不同工厂模式的一个特殊实现。其实质是由一个工厂类<code>根据传入的参数，动态决定应该创建哪一个产品类</code>（这些产品类继承自一个父类或接口）的实例
-<img src="http://clover.htmhub.com/img/phpdesign/20150409224555911.jpeg" alt="pp"></p>
+<h2 id="section-1">1.简单工厂模式</h2>
+
+<p><code class="highlighter-rouge">简单工厂模式</code>:不属于23种常用面向对象设计模式之一。简单工厂模式是由<code class="highlighter-rouge">一个工厂对象决定创建出哪一种产品类的实例</code>。简单工厂模式是工厂模式家族中最简单实用的模式，可以理解为是不同工厂模式的一个特殊实现。其实质是由一个工厂类<code class="highlighter-rouge">根据传入的参数，动态决定应该创建哪一个产品类</code>（这些产品类继承自一个父类或接口）的实例
+<img src="http://clover.htmhub.com/img/phpdesign/20150409224555911.jpeg" alt="pp" /></p>
 
 <ul>
-<li><p><strong>角色和职责</strong>：</p>
+  <li>
+    <p><strong>角色和职责</strong>：</p>
 
-<ul>
-<li><code>工厂(SimpleFactory)角色</code>：简单工厂模式的核心，它负责实现创建所有实例的内部逻辑。<code>工厂类可以被外界直接调用，创建所需的产品对象</code></li>
-<li><code>抽象产品（IProduct）角色</code>:简单工厂模式所创建的所有对象的父类，它负责描述所有实例所共有的公共接口。</li>
-<li><code>具体产品（Concrete Product）角色</code>:是简单工厂模式的创建目标，所有创建的对象都是充当这个角色的某个具体类的实例</li>
-</ul></li>
-<li><p><strong>需求</strong>：根据提供相应的属性值由简单工厂创建具有相应特性的产品对象</p></li>
-<li><p><strong>代码示例</strong>：</p>
-<div class="highlight"><pre><code class="language-php" data-lang="php">    <span class="cp">&lt;?php</span>  
-    <span class="sd">/** 
-     * Created by PhpStorm. 
-     * User: Jiang 
-     * Date: 2015/4/9 
-     * Time: 21:48 
-     */</span>  
+    <ul>
+      <li><code class="highlighter-rouge">工厂(SimpleFactory)角色</code>：简单工厂模式的核心，它负责实现创建所有实例的内部逻辑。<code class="highlighter-rouge">工厂类可以被外界直接调用，创建所需的产品对象</code></li>
+      <li><code class="highlighter-rouge">抽象产品（IProduct）角色</code>:简单工厂模式所创建的所有对象的父类，它负责描述所有实例所共有的公共接口。</li>
+      <li><code class="highlighter-rouge">具体产品（Concrete Product）角色</code>:是简单工厂模式的创建目标，所有创建的对象都是充当这个角色的某个具体类的实例</li>
+    </ul>
+  </li>
+  <li><strong>需求</strong>：根据提供相应的属性值由简单工厂创建具有相应特性的产品对象</li>
+  <li>
+    <p><strong>代码示例</strong>：</p>
 
-    <span class="sd">/**抽象产品角色 
-     * Interface IProduct   产品接口 
-     */</span>  
-    <span class="k">interface</span> <span class="nx">IProduct</span>  
-    <span class="p">{</span>  
-        <span class="sd">/**X轴旋转 
-         * @return mixed 
-         */</span>  
-        <span class="k">function</span> <span class="nf">XRotate</span><span class="p">();</span>  
+    <p>```php
+      &lt;?php<br />
+      /** 
+       * Created by PhpStorm. 
+       * User: Jiang 
+       * Date: 2015/4/9 
+       * Time: 21:48 
+       */</p>
 
-        <span class="sd">/**Y轴旋转 
-         * @return mixed 
-         */</span>  
-        <span class="k">function</span> <span class="nf">YRotate</span><span class="p">();</span>  
-    <span class="p">}</span>  
+    <div class="highlighter-rouge"><pre class="highlight"><code>  /**抽象产品角色 
+   * Interface IProduct   产品接口 
+   */  
+  interface IProduct  
+  {  
+      /**X轴旋转 
+       * @return mixed 
+       */  
+      function XRotate();  
+	  
+      /**Y轴旋转 
+       * @return mixed 
+       */  
+      function YRotate();  
+  }  
+	  
+  /**具体产品角色 
+   * Class XProduct        X轴旋转产品 
+   */  
+  class XProduct implements IProduct  
+  {  
+      private $xMax=1;  
+      private $yMax=1;  
+	  
+      function __construct($xMax,$yMax)  
+      {  
+          $this-&gt;xMax=$xMax;  
+          $this-&gt;yMax=1;  
+      }  
+	  
+      function XRotate()  
+      {  
+          echo "您好，我是X轴旋转产品，X轴转转转。。。。。。";  
+      }  
+	  
+      function YRotate()  
+      {  
+          echo "抱歉，我是X轴旋转产品，我没有Y轴。。。。。。";  
+      }  
+  }  
+	  
+  /**具体产品角色 
+   * Class YProduct        Y轴旋转产品 
+   */  
+  class YProduct implements IProduct  
+  {  
+      private $xMax=1;  
+      private $yMax=1;  
+	  
+      function __construct($xMax,$yMax)  
+      {  
+          $this-&gt;xMax=1;  
+          $this-&gt;yMax=$yMax;  
+      }  
+	  
+      function XRotate()  
+      {  
+          echo "抱歉，我是Y轴旋转产品，我没有X轴。。。。。。";  
+      }  
+	  
+      function YRotate()  
+      {  
+          echo "您好，我是Y轴旋转产品，Y轴转转转。。。。。。";  
+      }  
+  }  
+	  
+  /**具体产品角色 
+   * Class XYProduct        XY轴都可旋转产品 
+   */  
+  class XYProduct implements IProduct  
+  {  
+      private $xMax=1;  
+      private $yMax=1;  
+	  
+      function __construct($xMax,$yMax)  
+      {  
+          $this-&gt;xMax=$xMax;  
+          $this-&gt;yMax=$yMax;  
+      }  
+	  
+      function XRotate()  
+      {  
+          echo "您好，我是XY轴都可旋转产品，X轴转转转。。。。。。";  
+      }  
+	  
+      function YRotate()  
+      {  
+          echo "您好，我是XY轴都可旋转产品，Y轴转转转。。。。。。";  
+      }  
+  }  
+	  
+  /**工厂角色 
+   * Class ProductFactory 
+   */  
+  class ProductFactory  
+  {  
+      static function GetInstance($xMax,$yMax)  
+      {  
+          if($xMax&gt;1 &amp;&amp; $yMax===1)  
+          {  
+              return new XProduct($xMax,$yMax);  
+          }  
+          elseif($xMax===1 &amp;&amp; $yMax&gt;1)  
+          {  
+              return new YProduct($xMax,$yMax);  
+          }  
+          elseif($xMax&gt;1 &amp;&amp; $yMax&gt;1)  
+          {  
+              return new XYProduct($xMax,$yMax);  
+          }  
+          else  
+          {  
+              return null;  
+          }  
+      }  
+  }     ```
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p><strong>代码示例</strong>：</p>
 
-    <span class="sd">/**具体产品角色 
-     * Class XProduct        X轴旋转产品 
-     */</span>  
-    <span class="k">class</span> <span class="nc">XProduct</span> <span class="k">implements</span> <span class="nx">IProduct</span>  
-    <span class="p">{</span>  
-        <span class="k">private</span> <span class="nv">$xMax</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>  
-        <span class="k">private</span> <span class="nv">$yMax</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>  
+    <p>```php
+          &lt;?php<br />
+      /** 
+       * Created by PhpStorm. 
+       * User: Jiang 
+       * Date: 2015/4/9 
+       * Time: 21:54 
+       */<br />
+      require_once “./SimpleFactory/SimpleFactory.php”;</p>
 
-        <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$xMax</span><span class="p">,</span><span class="nv">$yMax</span><span class="p">)</span>  
-        <span class="p">{</span>  
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xMax</span><span class="o">=</span><span class="nv">$xMax</span><span class="p">;</span>  
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">yMax</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>  
-        <span class="p">}</span>  
+    <div class="highlighter-rouge"><pre class="highlight"><code>  header("Content-Type:text/html;charset=utf-8");  
+	  
+  $pro=array();  
+  $pro[]=ProductFactory::GetInstance(1,12);  
+  $pro[]=ProductFactory::GetInstance(12,1);  
+  $pro[]=ProductFactory::GetInstance(12,12);  
+  $pro[]=ProductFactory::GetInstance(0,12);  
+	  
+  foreach($pro as $v)  
+  {  
+      if($v)  
+      {  
+          echo "&lt;br/&gt;";  
+          $v-&gt;XRotate();  
+          echo "&lt;br/&gt;";  
+          $v-&gt;YRotate();  
+      }  
+      else  
+      {  
+          echo "非法产品！&lt;br/&gt;";  
+      }  
+      echo "&lt;hr/&gt;";  
+  }     ```
+</code></pre>
+    </div>
 
-        <span class="k">function</span> <span class="nf">XRotate</span><span class="p">()</span>  
-        <span class="p">{</span>  
-            <span class="k">echo</span> <span class="s2">"您好，我是X轴旋转产品，X轴转转转。。。。。。"</span><span class="p">;</span>  
-        <span class="p">}</span>  
-
-        <span class="k">function</span> <span class="nf">YRotate</span><span class="p">()</span>  
-        <span class="p">{</span>  
-            <span class="k">echo</span> <span class="s2">"抱歉，我是X轴旋转产品，我没有Y轴。。。。。。"</span><span class="p">;</span>  
-        <span class="p">}</span>  
-    <span class="p">}</span>  
-
-    <span class="sd">/**具体产品角色 
-     * Class YProduct        Y轴旋转产品 
-     */</span>  
-    <span class="k">class</span> <span class="nc">YProduct</span> <span class="k">implements</span> <span class="nx">IProduct</span>  
-    <span class="p">{</span>  
-        <span class="k">private</span> <span class="nv">$xMax</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>  
-        <span class="k">private</span> <span class="nv">$yMax</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>  
-
-        <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$xMax</span><span class="p">,</span><span class="nv">$yMax</span><span class="p">)</span>  
-        <span class="p">{</span>  
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xMax</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>  
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">yMax</span><span class="o">=</span><span class="nv">$yMax</span><span class="p">;</span>  
-        <span class="p">}</span>  
-
-        <span class="k">function</span> <span class="nf">XRotate</span><span class="p">()</span>  
-        <span class="p">{</span>  
-            <span class="k">echo</span> <span class="s2">"抱歉，我是Y轴旋转产品，我没有X轴。。。。。。"</span><span class="p">;</span>  
-        <span class="p">}</span>  
-
-        <span class="k">function</span> <span class="nf">YRotate</span><span class="p">()</span>  
-        <span class="p">{</span>  
-            <span class="k">echo</span> <span class="s2">"您好，我是Y轴旋转产品，Y轴转转转。。。。。。"</span><span class="p">;</span>  
-        <span class="p">}</span>  
-    <span class="p">}</span>  
-
-    <span class="sd">/**具体产品角色 
-     * Class XYProduct        XY轴都可旋转产品 
-     */</span>  
-    <span class="k">class</span> <span class="nc">XYProduct</span> <span class="k">implements</span> <span class="nx">IProduct</span>  
-    <span class="p">{</span>  
-        <span class="k">private</span> <span class="nv">$xMax</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>  
-        <span class="k">private</span> <span class="nv">$yMax</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>  
-
-        <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$xMax</span><span class="p">,</span><span class="nv">$yMax</span><span class="p">)</span>  
-        <span class="p">{</span>  
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xMax</span><span class="o">=</span><span class="nv">$xMax</span><span class="p">;</span>  
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">yMax</span><span class="o">=</span><span class="nv">$yMax</span><span class="p">;</span>  
-        <span class="p">}</span>  
-
-        <span class="k">function</span> <span class="nf">XRotate</span><span class="p">()</span>  
-        <span class="p">{</span>  
-            <span class="k">echo</span> <span class="s2">"您好，我是XY轴都可旋转产品，X轴转转转。。。。。。"</span><span class="p">;</span>  
-        <span class="p">}</span>  
-
-        <span class="k">function</span> <span class="nf">YRotate</span><span class="p">()</span>  
-        <span class="p">{</span>  
-            <span class="k">echo</span> <span class="s2">"您好，我是XY轴都可旋转产品，Y轴转转转。。。。。。"</span><span class="p">;</span>  
-        <span class="p">}</span>  
-    <span class="p">}</span>  
-
-    <span class="sd">/**工厂角色 
-     * Class ProductFactory 
-     */</span>  
-    <span class="k">class</span> <span class="nc">ProductFactory</span>  
-    <span class="p">{</span>  
-        <span class="k">static</span> <span class="k">function</span> <span class="nf">GetInstance</span><span class="p">(</span><span class="nv">$xMax</span><span class="p">,</span><span class="nv">$yMax</span><span class="p">)</span>  
-        <span class="p">{</span>  
-            <span class="k">if</span><span class="p">(</span><span class="nv">$xMax</span><span class="o">&gt;</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nv">$yMax</span><span class="o">===</span><span class="mi">1</span><span class="p">)</span>  
-            <span class="p">{</span>  
-                <span class="k">return</span> <span class="k">new</span> <span class="nx">XProduct</span><span class="p">(</span><span class="nv">$xMax</span><span class="p">,</span><span class="nv">$yMax</span><span class="p">);</span>  
-            <span class="p">}</span>  
-            <span class="k">elseif</span><span class="p">(</span><span class="nv">$xMax</span><span class="o">===</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nv">$yMax</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span>  
-            <span class="p">{</span>  
-                <span class="k">return</span> <span class="k">new</span> <span class="nx">YProduct</span><span class="p">(</span><span class="nv">$xMax</span><span class="p">,</span><span class="nv">$yMax</span><span class="p">);</span>  
-            <span class="p">}</span>  
-            <span class="k">elseif</span><span class="p">(</span><span class="nv">$xMax</span><span class="o">&gt;</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nv">$yMax</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span>  
-            <span class="p">{</span>  
-                <span class="k">return</span> <span class="k">new</span> <span class="nx">XYProduct</span><span class="p">(</span><span class="nv">$xMax</span><span class="p">,</span><span class="nv">$yMax</span><span class="p">);</span>  
-            <span class="p">}</span>  
-            <span class="k">else</span>  
-            <span class="p">{</span>  
-                <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>  
-            <span class="p">}</span>  
-        <span class="p">}</span>  
-    <span class="p">}</span>  
-</code></pre></div></li>
-<li><p><strong>代码示例</strong>：</p>
-<div class="highlight"><pre><code class="language-php" data-lang="php">        <span class="cp">&lt;?php</span>  
-    <span class="sd">/** 
-     * Created by PhpStorm. 
-     * User: Jiang 
-     * Date: 2015/4/9 
-     * Time: 21:54 
-     */</span>  
-    <span class="k">require_once</span> <span class="s2">"./SimpleFactory/SimpleFactory.php"</span><span class="p">;</span>  
-
-    <span class="nb">header</span><span class="p">(</span><span class="s2">"Content-Type:text/html;charset=utf-8"</span><span class="p">);</span>  
-
-    <span class="nv">$pro</span><span class="o">=</span><span class="k">array</span><span class="p">();</span>  
-    <span class="nv">$pro</span><span class="p">[]</span><span class="o">=</span><span class="nx">ProductFactory</span><span class="o">::</span><span class="na">GetInstance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">12</span><span class="p">);</span>  
-    <span class="nv">$pro</span><span class="p">[]</span><span class="o">=</span><span class="nx">ProductFactory</span><span class="o">::</span><span class="na">GetInstance</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>  
-    <span class="nv">$pro</span><span class="p">[]</span><span class="o">=</span><span class="nx">ProductFactory</span><span class="o">::</span><span class="na">GetInstance</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">);</span>  
-    <span class="nv">$pro</span><span class="p">[]</span><span class="o">=</span><span class="nx">ProductFactory</span><span class="o">::</span><span class="na">GetInstance</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">);</span>  
-
-    <span class="k">foreach</span><span class="p">(</span><span class="nv">$pro</span> <span class="k">as</span> <span class="nv">$v</span><span class="p">)</span>  
-    <span class="p">{</span>  
-        <span class="k">if</span><span class="p">(</span><span class="nv">$v</span><span class="p">)</span>  
-        <span class="p">{</span>  
-            <span class="k">echo</span> <span class="s2">"&lt;br/&gt;"</span><span class="p">;</span>  
-            <span class="nv">$v</span><span class="o">-&gt;</span><span class="na">XRotate</span><span class="p">();</span>  
-            <span class="k">echo</span> <span class="s2">"&lt;br/&gt;"</span><span class="p">;</span>  
-            <span class="nv">$v</span><span class="o">-&gt;</span><span class="na">YRotate</span><span class="p">();</span>  
-        <span class="p">}</span>  
-        <span class="k">else</span>  
-        <span class="p">{</span>  
-            <span class="k">echo</span> <span class="s2">"非法产品！&lt;br/&gt;"</span><span class="p">;</span>  
-        <span class="p">}</span>  
-        <span class="k">echo</span> <span class="s2">"&lt;hr/&gt;"</span><span class="p">;</span>  
-    <span class="p">}</span>  
-</code></pre></div></li>
+    <p>用浏览器访问测试代码，我们可以发现创建的对象依次是YProduct,XProduct,XYProduct,null。简单工厂的核心代码在于工厂(ProductFactory)这个角色，这里根据传入的xMax与yMax值去创建不同的对象，这便是简单工厂的实质，而且我们在测试调用客户端根本不知道具体的产品类是什么样，这样就做到了调用与创建的分离</p>
+  </li>
+  <li>
+    <p><strong>优点</strong>：让对象的调用者和对象创建过程分离，当对象调用者需要对象时，直接向工厂请求即可。从而<code class="highlighter-rouge">避免了对象的调用者与对象的实现类以硬编码方式耦合，以提高系统的可维护性、可扩展性。</code></p>
+  </li>
+  <li><strong>缺点</strong>：当产品修改时，工厂类也要做相应的修改，比如要增加一种操作类，如求M数的N次方，就得改case,修改原有类，<code class="highlighter-rouge">违背了开放-封闭原则</code>。</li>
 </ul>
 
-<p>用浏览器访问测试代码，我们可以发现创建的对象依次是YProduct,XProduct,XYProduct,null。简单工厂的核心代码在于工厂(ProductFactory)这个角色，这里根据传入的xMax与yMax值去创建不同的对象，这便是简单工厂的实质，而且我们在测试调用客户端根本不知道具体的产品类是什么样，这样就做到了调用与创建的分离</p>
+<h2 id="section-2">2.工厂方法</h2>
 
 <ul>
-<li><p><strong>优点</strong>：让对象的调用者和对象创建过程分离，当对象调用者需要对象时，直接向工厂请求即可。从而<code>避免了对象的调用者与对象的实现类以硬编码方式耦合，以提高系统的可维护性、可扩展性。</code></p></li>
-<li><p><strong>缺点</strong>：当产品修改时，工厂类也要做相应的修改，比如要增加一种操作类，如求M数的N次方，就得改case,修改原有类，<code>违背了开放-封闭原则</code>。</p></li>
+  <li><strong>具体案例</strong>：请MM去麦当劳吃汉堡，不同的MM有不同的口味，要每个都记住是一件烦人的事情，我们一般采用FactoryMethod模式，带着MM到服务员那儿，说“要一个汉堡”，具体要什么样的汉堡呢，让MM直接跟服务员说就行了</li>
 </ul>
 
-<h2>2.工厂方法</h2>
+<p>工厂方法模式核心工厂类不再负责所有产品的创建，而是将具体创建的工作交给子类去做，成为一个抽象工厂角色，仅负责给出具体工厂类必须实现的接口，而不接触哪一个产品类应当被实例化这种细节，如下图：<img src="http://clover.htmhub.com/img/phpdesign/20150416222830823.png" alt="ww" /></p>
 
 <ul>
-<li><strong>具体案例</strong>：请MM去麦当劳吃汉堡，不同的MM有不同的口味，要每个都记住是一件烦人的事情，我们一般采用FactoryMethod模式，带着MM到服务员那儿，说“要一个汉堡”，具体要什么样的汉堡呢，让MM直接跟服务员说就行了</li>
-</ul>
+  <li><strong>角色和职责</strong>：
+    <ul>
+      <li><code class="highlighter-rouge">抽象工厂角色（IServerFactory）</code>：是工厂方法模式的核心，与应用程序无关。任何在模式中创建的对象的工厂类必须实现这个接口</li>
+      <li><code class="highlighter-rouge">具体工厂角色(ChickenLegBaoFactory)</code>:这是实现抽象工厂接口的具体工厂类，包含与应用程序密切相关的逻辑，并且受到应用程序调用以创建产品对象</li>
+      <li><code class="highlighter-rouge">抽象产品角色(IHanbao)</code>:工厂方法模式所创建的对象的超类型，也就是产品对象的共同父类或共同拥有的接口</li>
+      <li><code class="highlighter-rouge">具体产品角色(ChickenLegBao)</code>:这个角色实现了抽象产品角色所定义的接口。某具体产品有专门的具体工厂创建，它们之间往往一一对应</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>代码示例</strong>：</p>
 
-<p>工厂方法模式核心工厂类不再负责所有产品的创建，而是将具体创建的工作交给子类去做，成为一个抽象工厂角色，仅负责给出具体工厂类必须实现的接口，而不接触哪一个产品类应当被实例化这种细节，如下图：<img src="http://clover.htmhub.com/img/phpdesign/20150416222830823.png" alt="ww"></p>
+    <p>```php
+      &lt;?php<br />
+      /** 
+       * Created by PhpStorm. 
+       * User: Jiang 
+       * Date: 2015/4/16 
+       * Time: 22:12 
+       */</p>
 
-<ul>
-<li><p><strong>角色和职责</strong>：</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>  /**抽象产品角色       汉堡 
+   * Interface IHanbao 
+   */  
+  interface IHanbao  
+  {  
+      function Allay();  
+  }  
+	  
+  /**具体产品角色         肉松汉堡 
+   * Class RouSongBao 
+   */  
+  class RouSongBao implements IHanbao  
+  {  
+      function Allay()  
+      {  
+          echo "I am 肉松汉堡，小的给主人解饿了！&lt;br/&gt;";  
+      }  
+	  
+  }  
+	  
+  /**鸡肉汉堡 
+   * Class ChickenBao 
+   */  
+  class ChickenBao implements IHanbao  
+  {  
+      function Allay()  
+      {  
+          echo "I am 鸡肉汉堡，小的给主人解饿了！&lt;br/&gt;";  
+      }  
+	  
+  }  
+	  
+  /**抽象工厂角色 
+   * Interface IServerFactory 
+   */  
+  interface IServerFactory  
+  {  
+      function MakeHanbao();  
+  }  
+	  
+  /**具体工厂角色     肉松汉堡工厂 
+   * Class RouSongFactory 
+   */  
+  class RouSongFactory implements IServerFactory  
+  {  
+	  
+      function MakeHanbao()  
+      {  
+          return new RouSongBao();  
+      }  
+  }  
+	  
+  class ChickenFactory implements IServerFactory  
+  {  
+	  
+      function MakeHanbao()  
+      {  
+          return new ChickenBao();  
+      }  
+  }    ```
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p><strong>测试代码</strong>：</p>
 
-<ul>
-<li><code>抽象工厂角色（IServerFactory）</code>：是工厂方法模式的核心，与应用程序无关。任何在模式中创建的对象的工厂类必须实现这个接口</li>
-<li><code>具体工厂角色(ChickenLegBaoFactory)</code>:这是实现抽象工厂接口的具体工厂类，包含与应用程序密切相关的逻辑，并且受到应用程序调用以创建产品对象</li>
-<li><code>抽象产品角色(IHanbao)</code>:工厂方法模式所创建的对象的超类型，也就是产品对象的共同父类或共同拥有的接口</li>
-<li><code>具体产品角色(ChickenLegBao)</code>:这个角色实现了抽象产品角色所定义的接口。某具体产品有专门的具体工厂创建，它们之间往往一一对应</li>
-</ul></li>
-<li><p><strong>代码示例</strong>：</p>
-<div class="highlight"><pre><code class="language-php" data-lang="php">    <span class="cp">&lt;?php</span>  
-    <span class="sd">/** 
-     * Created by PhpStorm. 
-     * User: Jiang 
-     * Date: 2015/4/16 
-     * Time: 22:12 
-     */</span>  
+    <p>```php
+      header(“Content-Type:text/html;charset=utf-8”);<br />
+      //————————工厂方式测试代码——————<br />
+      require_once “./FactoryMethod/FactoryMethod.php”;</p>
 
-    <span class="sd">/**抽象产品角色       汉堡 
-     * Interface IHanbao 
-     */</span>  
-    <span class="k">interface</span> <span class="nx">IHanbao</span>  
-    <span class="p">{</span>  
-        <span class="k">function</span> <span class="nf">Allay</span><span class="p">();</span>  
-    <span class="p">}</span>  
-
-    <span class="sd">/**具体产品角色         肉松汉堡 
-     * Class RouSongBao 
-     */</span>  
-    <span class="k">class</span> <span class="nc">RouSongBao</span> <span class="k">implements</span> <span class="nx">IHanbao</span>  
-    <span class="p">{</span>  
-        <span class="k">function</span> <span class="nf">Allay</span><span class="p">()</span>  
-        <span class="p">{</span>  
-            <span class="k">echo</span> <span class="s2">"I am 肉松汉堡，小的给主人解饿了！&lt;br/&gt;"</span><span class="p">;</span>  
-        <span class="p">}</span>  
-
-    <span class="p">}</span>  
-
-    <span class="sd">/**鸡肉汉堡 
-     * Class ChickenBao 
-     */</span>  
-    <span class="k">class</span> <span class="nc">ChickenBao</span> <span class="k">implements</span> <span class="nx">IHanbao</span>  
-    <span class="p">{</span>  
-        <span class="k">function</span> <span class="nf">Allay</span><span class="p">()</span>  
-        <span class="p">{</span>  
-            <span class="k">echo</span> <span class="s2">"I am 鸡肉汉堡，小的给主人解饿了！&lt;br/&gt;"</span><span class="p">;</span>  
-        <span class="p">}</span>  
-
-    <span class="p">}</span>  
-
-    <span class="sd">/**抽象工厂角色 
-     * Interface IServerFactory 
-     */</span>  
-    <span class="k">interface</span> <span class="nx">IServerFactory</span>  
-    <span class="p">{</span>  
-        <span class="k">function</span> <span class="nf">MakeHanbao</span><span class="p">();</span>  
-    <span class="p">}</span>  
-
-    <span class="sd">/**具体工厂角色     肉松汉堡工厂 
-     * Class RouSongFactory 
-     */</span>  
-    <span class="k">class</span> <span class="nc">RouSongFactory</span> <span class="k">implements</span> <span class="nx">IServerFactory</span>  
-    <span class="p">{</span>  
-
-        <span class="k">function</span> <span class="nf">MakeHanbao</span><span class="p">()</span>  
-        <span class="p">{</span>  
-            <span class="k">return</span> <span class="k">new</span> <span class="nx">RouSongBao</span><span class="p">();</span>  
-        <span class="p">}</span>  
-    <span class="p">}</span>  
-
-    <span class="k">class</span> <span class="nc">ChickenFactory</span> <span class="k">implements</span> <span class="nx">IServerFactory</span>  
-    <span class="p">{</span>  
-
-        <span class="k">function</span> <span class="nf">MakeHanbao</span><span class="p">()</span>  
-        <span class="p">{</span>  
-            <span class="k">return</span> <span class="k">new</span> <span class="nx">ChickenBao</span><span class="p">();</span>  
-        <span class="p">}</span>  
-    <span class="p">}</span> 
-</code></pre></div></li>
-<li><p><strong>测试代码</strong>：</p>
-<div class="highlight"><pre><code class="language-php" data-lang="php">    header("Content-Type:text/html;charset=utf-8");  
-    //------------------------工厂方式测试代码------------------  
-    require_once "./FactoryMethod/FactoryMethod.php";  
-
-    //-----------------餐厅厨师-----------  
-    $chickenFactory=new ChickenFactory();  
-    $rouSongFactory=new RouSongFactory();  
-
-    //-----------点餐------------  
-    $chicken1=$chickenFactory-&gt;MakeHanbao();  
-    $chicken2=$chickenFactory-&gt;MakeHanbao();  
-    $rouSong1=$rouSongFactory-&gt;MakeHanbao();  
-    $rouSong2=$rouSongFactory-&gt;MakeHanbao();  
-
-    //------------------顾客吃饭---------  
-    $chicken1-&gt;Allay();  
-    $chicken2-&gt;Allay();  
-    $rouSong1-&gt;Allay();  
-    $rouSong2-&gt;Allay();  
-</code></pre></div>
-<p>用浏览器运行测试代码我们可以发现，顾客都享用了自己的食物</p></li>
-<li><p><strong>优点</strong>:<code>克服了简单工厂模式违背开放-封闭的原则</code>，保持了封装对象创建过程的优点 </p></li>
-<li><p><strong>缺点</strong>：当增加产品时，就得增加一个产品工厂的类，增加额外的开发量。避免不了分支判断的问题</p></li>
-<li><p><strong>简单工厂模式与工厂方法模式的比较</strong>：</p>
-
-<ul>
-<li><code>1.结构复杂度</code>:简单工厂模式要占优。简单工厂模式只需一个工厂类，而工厂方法模式的工厂类随着产品类个数增加而增加，从而增加了结构的复杂程度。</li>
-<li><code>2.代码复杂度</code> :代码复杂度和结构复杂度是一对矛盾，既然简单工厂模式在结构方面相对简洁，那么它在代码方面肯定是比工厂方法模式复杂的了。简单工厂模式的工厂类随着产品类的增加需要增加很多方法（或代码），而工厂方法模式每个具体工厂类只完成单一任务，代码简洁。</li>
-<li><code>3.管理上的难度</code>:假如某个具体产品类需要进行一定的修改，很可能需要修改对应的工厂类。当同时需要修改多个产品类的时候，对工厂类的修改会变得相当麻烦。反而简单工厂没有这些麻烦，当多个产品类需要修改是，简单工厂模式仍然仅仅需要修改唯一的工厂类。</li>
-</ul></li>
+    <div class="highlighter-rouge"><pre class="highlight"><code>  //-----------------餐厅厨师-----------  
+  $chickenFactory=new ChickenFactory();  
+  $rouSongFactory=new RouSongFactory();  
+	  
+  //-----------点餐------------  
+  $chicken1=$chickenFactory-&gt;MakeHanbao();  
+  $chicken2=$chickenFactory-&gt;MakeHanbao();  
+  $rouSong1=$rouSongFactory-&gt;MakeHanbao();  
+  $rouSong2=$rouSongFactory-&gt;MakeHanbao();  
+	  
+  //------------------顾客吃饭---------  
+  $chicken1-&gt;Allay();  
+  $chicken2-&gt;Allay();  
+  $rouSong1-&gt;Allay();  
+  $rouSong2-&gt;Allay();     ```	   用浏览器运行测试代码我们可以发现，顾客都享用了自己的食物
+</code></pre>
+    </div>
+  </li>
+  <li><strong>优点</strong>:<code class="highlighter-rouge">克服了简单工厂模式违背开放-封闭的原则</code>，保持了封装对象创建过程的优点</li>
+  <li>
+    <p><strong>缺点</strong>：当增加产品时，就得增加一个产品工厂的类，增加额外的开发量。避免不了分支判断的问题</p>
+  </li>
+  <li><strong>简单工厂模式与工厂方法模式的比较</strong>：
+    <ul>
+      <li><code class="highlighter-rouge">1.结构复杂度</code>:简单工厂模式要占优。简单工厂模式只需一个工厂类，而工厂方法模式的工厂类随着产品类个数增加而增加，从而增加了结构的复杂程度。</li>
+      <li><code class="highlighter-rouge">2.代码复杂度</code> :代码复杂度和结构复杂度是一对矛盾，既然简单工厂模式在结构方面相对简洁，那么它在代码方面肯定是比工厂方法模式复杂的了。简单工厂模式的工厂类随着产品类的增加需要增加很多方法（或代码），而工厂方法模式每个具体工厂类只完成单一任务，代码简洁。</li>
+      <li><code class="highlighter-rouge">3.管理上的难度</code>:假如某个具体产品类需要进行一定的修改，很可能需要修改对应的工厂类。当同时需要修改多个产品类的时候，对工厂类的修改会变得相当麻烦。反而简单工厂没有这些麻烦，当多个产品类需要修改是，简单工厂模式仍然仅仅需要修改唯一的工厂类。</li>
+    </ul>
+  </li>
 </ul>
 
 
@@ -518,11 +542,12 @@
                     data-url="http://clover.htmhub.com/2016/11/29/design-pattern-2/"
                     data-images="http://clover.htmhub.com/img/post-bg-js-module.jpg"
                     data-content="
-参考资料《大话设计模式》
+  参考资料《大话设计模式》
 作者程杰
 
-参考 http://blog.csdn.net/jhq0113/article/details/44906491
-... | 克洛弗的博客 | Clover Blog " >
+
+
+  参考 http://blog.csdn.net/jhq0113/article/details/449... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>

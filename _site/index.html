@@ -194,9 +194,9 @@ A:
 注意细节:
 
 
-尽可能少的使用无语义的标签div和span；
-不要使用纯样式标签，如：b、font、u等，改用css设置；
-需要强调的文本，可以包含在st...
+  尽可能少的使用无语义的标签div和span；
+  不要使用纯样式标签，如：b、font、u等，改用css设置；
+  需要强调的文本，可...
         </div>
     </a>
     <p class="post-meta">
@@ -221,18 +221,24 @@ A:
 选择器类型
 
 
-基础选择器
+  
+    基础选择器
 
-|选择器| 含义|
-|--------|--------|
-|*  |通用元素选择器，匹配页面任何元素（这也就决定了我们很少使用）|
-|#id    |id选择器，匹配特定id的元素|
-|.class |类选择器，匹配class包含(不是等于)特定类的元素|
-|element|   标签选择器|
-组合选择器
-
-|选择器| 含义|
-|---|---...
+    
+      
+        
+          选择器
+          含义
+        
+      
+      
+        
+          *
+          通用元素选择器，匹配页面任何元素（这也就决定了我们很少使用）
+        
+        
+          #id
+  ...
         </div>
     </a>
     <p class="post-meta">
@@ -254,15 +260,14 @@ A:
         <div class="post-content-preview">
             HTML-3
 
-
-css行高line-height的一些深入理解及应用
+  css行高line-height的一些深入理解及应用
 
 
 line-height有什么作用?
 
 A:
 
-line-height 属性设置行间的距离（行高），不能使用负值。该属性会影响行框的布局。在应用到一个块级元素时，它定义了该元素中基线之间的最小距离而不是最大距离。line-height 与 font-size 的计算值之差(行距)分为两半，分别加到一个文本行内容的顶部和...
+line-height 属性设置行间的距离（行高），不能使用负值。该属性会影响行框的布局。在应用到一个块级元素时，它定义了该元素中基线之间的最小距离而不是最大距离。line-height 与 font-size 的计算值之差(行距)分为两半，分别加到一个文本行内容的顶部...
         </div>
     </a>
     <p class="post-meta">
@@ -289,18 +294,26 @@ line-height 属性设置行间的距离（行高），不能使用负值。该�
 A:
 
 
-1.内联方式
+  1.内联方式
 
-&lt;div style="background: red"&gt;&lt;/div&gt;
 
+```
+
+```
 改变当前标签的样式
 
 
-2.嵌入方式
+  
+    2.嵌入方式
 
-嵌入方式指的是在 HTML 头部中的 &lt;style&gt; 标签下书写 CSS 代码。
-&lt;head&gt;
-    &lt;style&g...
+    嵌入方式指的是在 HTML 头部中的 &lt;style&gt; 标签下书写 CSS 代码。
+
+    ```
+    
+      
+  
+    ```
+嵌入方式的 CSS 只对当前的网页有效。因为...
         </div>
     </a>
     <p class="post-meta">
@@ -323,10 +336,9 @@ A:
             HTML-1
 
 网页乱码的问题是如何产生的？怎样解决?
+A:造成html网页乱码原因主要是html源代码内中文字内容与html编码不同造成。解决办法：保持文件的编写字符集和网页设置的字符集保持一致 如使用UTF-8编写的文件，网页头设置为&lt;meta charset="utf-8"&gt;
 
-A:造成html网页乱码原因主要是html源代码内中文字内容与html编码不同造成。解决办法：保持文件的编写字符集和网页设置的字符集保持一致 如使用UTF-8编写的文件，网页头设置为&lt;meta charset=&quot;utf-8&quot;&gt;
-
-颜色有几种写法， 红色、 绿色、蓝色、白色、黑色如何表示？ 透明黑色如何表...
+颜色有几种写法， 红色、 绿色、蓝色、白色、黑色如何表示？ 透明黑色如何表示？#ccc的颜色#e...
         </div>
     </a>
     <p class="post-meta">
@@ -355,25 +367,26 @@ A:造成html网页乱码原因主要是html源代码内中文字内容与html编
 安装使用
 
 
-Windws: 安装git, 打开 gitbash
-Linux 打开终端
-Mac 打开终端
+  Windws: 安装git, 打开 gitbash
+  Linux 打开终端
+  Mac 打开终端
 
 
 基本命令
 
 
-查看当前完整路径
-pwd
+  
+    查看当前完整路径
 
-查看当前目录下文件
-# 不包括隐藏文件
-ls
+    bash
+  pwd
+ 
+  
+  
+    查看当前目录下文件
 
-# 查看当前目录下所有文件(包括隐藏文件)
-ls -a
-
-# 查看当前目录下所有文件(包括...
+    ```bash
+  # 不包括隐藏文...
         </div>
     </a>
     <p class="post-meta">
@@ -394,17 +407,19 @@ ls -a
         
         <div class="post-content-preview">
             
-参考资料《大话设计模式》
+  参考资料《大话设计模式》
 作者程杰
 
-参考 http://blog.csdn.net/jhq0113/article/details/44906491
+
+
+  参考 http://blog.csdn.net/jhq0113/article/details/44906491
 
 
 设计模式-创建型
 
 1.简单工厂模式
 
-简单工厂模式:不属于23种常用面向对象设计模式之一。简单工厂模式是由一个工厂对象决定创建出哪一种产品类的实例。简单工厂模式是工厂模式家族中最简单实用的模式，可以理解为是不同工厂模式的一个特殊实现。...
+简单工厂模式:不属于23种常用面向对象设计模式之一。简单工厂模式是由一个工厂对象决定创建出哪一种产品类的实例。简单工厂模式是工厂模式家族中最简单实用的模式，可以理解为是不同工厂模式的一...
         </div>
     </a>
     <p class="post-meta">
@@ -425,10 +440,12 @@ ls -a
         
         <div class="post-content-preview">
             
-参考资料《大话设计模式》
+  参考资料《大话设计模式》
 作者程杰
 
-参考 http://blog.csdn.net/jhq0113/article/details/44906491
+
+
+  参考 http://blog.csdn.net/jhq0113/article/details/44906491
 
 
 设计模式-概述
@@ -437,7 +454,7 @@ ls -a
 
 设计模式（Design Pattern）是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。
 
-2.设计模式的...
+2...
         </div>
     </a>
     <p class="post-meta">
@@ -458,13 +475,13 @@ ls -a
         
         <div class="post-content-preview">
             
-https://github.com/liexusong/php-beast
+  https://github.com/liexusong/php-beast
 
 
 
   _____  _    _ _____    ____  ______           _____ _______
  |  __ \| |  | |  __ \  |  _ \|  ____|   /\    / ____|__   __|
- | |__) | |__| | |__) | | |_)...
+ | |__) | |__| | |__) | | |...
         </div>
     </a>
     <p class="post-meta">
@@ -491,26 +508,30 @@ ccrypt是为了取代UNIX crypt而设计的，这个实用工具可用于文件�
 
 
 安装
+
+
 sudo apt-get install ccrypt
 # yum install ccrypt
 
 
 
-使用
+## 使用
 
 
-加密文件
+  加密文件
+
+
 
 ccencrypt filename
 
 输入两次密码
 
 
-解密文件
+  解密文件
 
-ccdecrypt filename
 
-提供加密...
+
+ccdecrypt f...
         </div>
     </a>
     <p class="post-meta">

@@ -191,147 +191,165 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h1>MonogoDB  学习笔记</h1>
+				<h1 id="monogodb--">MonogoDB  学习笔记</h1>
 
-<hr>
+<hr />
 
-<h1>入门篇</h1>
+<h1 id="section">入门篇</h1>
 
-<hr>
+<hr />
 
-<h2>学习目标</h2>
+<h2 id="section-1">学习目标</h2>
 
-<hr>
+<hr />
 
-<h4>Mongo 概念</h4>
-
-<ul>
-<li><code>mongo</code> <code>MongoDB</code> <code>索引</code> <code>集合</code> <code>复制集</code> <code>分片</code> <code>数据均衡</code></li>
-</ul>
-
-<h4>学会MongoDB的搭建</h4>
+<h4 id="mongo-">Mongo 概念</h4>
 
 <ul>
-<li>搭建简单的单击服务</li>
-<li>搭建具有冗余容错功能的复制集</li>
-<li>搭建大规模数据集群</li>
-<li>完成集群的自动部署</li>
+  <li><code class="highlighter-rouge">mongo</code> <code class="highlighter-rouge">MongoDB</code> <code class="highlighter-rouge">索引</code> <code class="highlighter-rouge">集合</code> <code class="highlighter-rouge">复制集</code> <code class="highlighter-rouge">分片</code> <code class="highlighter-rouge">数据均衡</code></li>
 </ul>
 
-<h4>MongoDB的使用</h4>
+<h4 id="mongodb">学会MongoDB的搭建</h4>
 
 <ul>
-<li>最基本的文档的读写和更新</li>
-<li>各种不同类型的索引的创建与使用</li>
-<li>复杂的聚合查询</li>
-<li>对数据集合进行分片，在不同分片间维持数据均衡</li>
-<li>数据备份与恢复</li>
-<li>数据迁移</li>
+  <li>搭建简单的单击服务</li>
+  <li>搭建具有冗余容错功能的复制集</li>
+  <li>搭建大规模数据集群</li>
+  <li>完成集群的自动部署</li>
 </ul>
 
-<h4>简单运维</h4>
+<h4 id="mongodb-1">MongoDB的使用</h4>
 
 <ul>
-<li>部署集群</li>
-<li>处理多种常见的故障</li>
+  <li>最基本的文档的读写和更新</li>
+  <li>各种不同类型的索引的创建与使用</li>
+  <li>复杂的聚合查询</li>
+  <li>对数据集合进行分片，在不同分片间维持数据均衡</li>
+  <li>数据备份与恢复</li>
+  <li>数据迁移</li>
 </ul>
-<div class="highlight"><pre><code class="language-" data-lang=""> 单节点失效，如何恢复工作
+
+<h4 id="section-2">简单运维</h4>
+
+<ul>
+  <li>部署集群</li>
+  <li>处理多种常见的故障</li>
+</ul>
+
+<p>```
+ 单节点失效，如何恢复工作
  数据库意外被杀死如何进行数据恢复
  数据库拒绝服务如何排除原因
- 数据库磁盘快慢时如何处理
+ 数据库磁盘快慢时如何处理</p>
 
-</code></pre></div>
-<hr>
+<p>```</p>
 
-<h2>学习资源</h2>
+<hr />
 
-<hr>
-
+<h2 id="section-3">学习资源</h2>
+<hr />
 <ul>
-<li><strong>MongoDB官网</strong> <code>www.mongodb.org</code></li>
-<li><strong>MongoDB中国官网</strong> <code>www.mongoing.com</code></li>
-<li><strong>github</strong> <code>https://github.com/mongodb/mongo</code></li>
-<li><strong>中文文档</strong> <code>docs.mongoing.com</code></li>
-<li><strong>视频资源</strong> <code>http://www.imooc.com/video/5934</code></li>
+  <li><strong>MongoDB官网</strong> <code class="highlighter-rouge">www.mongodb.org</code></li>
+  <li><strong>MongoDB中国官网</strong> <code class="highlighter-rouge">www.mongoing.com</code></li>
+  <li><strong>github</strong> <code class="highlighter-rouge">https://github.com/mongodb/mongo</code></li>
+  <li><strong>中文文档</strong> <code class="highlighter-rouge">docs.mongoing.com</code></li>
+  <li><strong>视频资源</strong> <code class="highlighter-rouge">http://www.imooc.com/video/5934</code></li>
 </ul>
 
-<hr>
+<hr />
 
-<h1>开始学习</h1>
+<h1 id="section-4">开始学习</h1>
 
-<hr>
+<hr />
 
-<h2>数据库</h2>
+<h2 id="section-5">数据库</h2>
 
-<hr>
+<hr />
+<p>### 概念
+1. 有组织的存放数据
+2. 按照不同的需求进行查询</p>
 
-<h3>概念</h3>
-
+<h3 id="section-6">数据库分类</h3>
 <ol>
-<li>有组织的存放数据</li>
-<li>按照不同的需求进行查询</li>
+  <li>sql数据库：支持sql语言的数据库 Oracle,Mysql</li>
+  <li>NoSql数据库：不支持SQL语言的数据库 Redis,MongoDB</li>
 </ol>
 
-<h3>数据库分类</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Sql 数据库</th>
+      <th>NoSql数据库</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>实时一致性</td>
+      <td>简单便捷</td>
+    </tr>
+    <tr>
+      <td>事务</td>
+      <td>方便扩展</td>
+    </tr>
+    <tr>
+      <td>多表联合查询</td>
+      <td>更好的性能</td>
+    </tr>
+  </tbody>
+</table>
 
+<h3 id="mongodb-2">为什么是MongoDB</h3>
 <ol>
-<li>sql数据库：支持sql语言的数据库 Oracle,Mysql</li>
-<li>NoSql数据库：不支持SQL语言的数据库 Redis,MongoDB</li>
+  <li>无数据结构的限制
+    <ol>
+      <li>没有表结构的概念，每条记录可以有完全不同的结构</li>
+      <li>业务开发方便快捷</li>
+      <li>sql数据库需要先定义表结构再使用</li>
+    </ol>
+
+    <p><code class="highlighter-rouge"><span class="w">
+ </span><span class="p">{</span><span class="err">name:</span><span class="nt">"小明"</span><span class="err">,sex</span><span class="p">:</span><span class="s2">"男"</span><span class="p">}</span><span class="w">
+ </span><span class="p">{</span><span class="err">name:</span><span class="nt">"小明"</span><span class="err">,address</span><span class="p">:</span><span class="s2">"上海"</span><span class="p">}</span><span class="w">
+ </span><span class="p">{</span><span class="err">name:</span><span class="nt">"小明"</span><span class="err">,home</span><span class="p">:[{</span><span class="nt">"山东"</span><span class="err">}</span><span class="p">,{</span><span class="nt">"江西"</span><span class="err">}</span><span class="p">]}</span><span class="w">
+</span></code></p>
+  </li>
+  <li>完全的索引支持
+    <ol>
+      <li>redis的key-value</li>
+      <li>hbase的单索引	，二级索引需要自己实现</li>
+    </ol>
+
+    <p><code class="highlighter-rouge">
+ 单键索引，多键索引：{x:1,y:1}
+ 数组索引：["apple","lemon"]
+ 全文索引：“I am a little bird” (中文)
+ 地理位置索引：2D
+</code></p>
+  </li>
+  <li>方便的冗余和扩展
+    <ol>
+      <li>复制集保证数据安全</li>
+      <li>分片扩展数据规模</li>
+    </ol>
+  </li>
+  <li>良好的支持
+    <ol>
+      <li>完善的文档</li>
+      <li>齐全的驱动支持</li>
+    </ol>
+  </li>
 </ol>
 
-<p>Sql 数据库 | NoSql数据库 
-----------|------------- 
-实时一致性       | 简单便捷 
-事务          |方便扩展
-多表联合查询   | 更好的性能</p>
-
-<h3>为什么是MongoDB</h3>
-
-<ol>
-<li><p>无数据结构的限制</p>
-
-<ol>
-<li>没有表结构的概念，每条记录可以有完全不同的结构</li>
-<li>业务开发方便快捷</li>
-<li>sql数据库需要先定义表结构再使用</li>
-</ol>
-<div class="highlight"><pre><code class="language-" data-lang=""><span class="p">{</span><span class="err">name:</span><span class="nt">"小明"</span><span class="err">,sex</span><span class="p">:</span><span class="s2">"男"</span><span class="p">}</span><span class="w">
-</span><span class="p">{</span><span class="err">name:</span><span class="nt">"小明"</span><span class="err">,address</span><span class="p">:</span><span class="s2">"上海"</span><span class="p">}</span><span class="w">
-</span><span class="p">{</span><span class="err">name:</span><span class="nt">"小明"</span><span class="err">,home</span><span class="p">:[{</span><span class="nt">"山东"</span><span class="err">}</span><span class="p">,{</span><span class="nt">"江西"</span><span class="err">}</span><span class="p">]}</span><span class="w">
-</span></code></pre></div></li>
-<li><p>完全的索引支持</p>
-
-<ol>
-<li>redis的key-value</li>
-<li>hbase的单索引    ，二级索引需要自己实现</li>
-</ol>
-<div class="highlight"><pre><code class="language-" data-lang="">单键索引，多键索引：{x:1,y:1}
-数组索引：["apple","lemon"]
-全文索引：“I am a little bird” (中文)
-地理位置索引：2D
-</code></pre></div></li>
-<li><p>方便的冗余和扩展</p>
-
-<ol>
-<li>复制集保证数据安全</li>
-<li>分片扩展数据规模</li>
-</ol></li>
-<li><p>良好的支持</p>
-
-<ol>
-<li>完善的文档</li>
-<li>齐全的驱动支持</li>
-</ol></li>
-</ol>
-
-<hr>
+<hr />
 
 <blockquote>
-<p>安装过程 略过</p>
+  <p>安装过程 略过</p>
 </blockquote>
 
-<hr>
-<div class="highlight"><pre><code class="language-" data-lang=""># mkdir data
+<hr />
+
+<p><code class="highlighter-rouge">
+# mkdir data
 # mkdir log
 # mkdir conf
 # mkdir bin
@@ -342,385 +360,395 @@
   logpath=log/mongod.log
   fork=true
 启动 # mongod -f conf/mongodb.conf   
-</code></pre></div>
-<p>连接 mongo 121.41.31.214:27017
+</code>
+连接 mongo 121.41.31.214:27017
 数据库的关闭 连接时   db.shutdownServer()</p>
 
-<hr>
+<hr />
 
-<h2>mongoDB的基本操作</h2>
+<h2 id="mongodb-3">mongoDB的基本操作</h2>
 
-<hr>
-<div class="highlight"><pre><code class="language-" data-lang="">
-查看所有数据库
-&gt; show dbs
+<hr />
 
-切换数据库
-&gt; use dbname
+<p>```</p>
 
-删除当前数据库,（需要先use）
-&gt; db.dropDatabase();
+<p>查看所有数据库
+&gt; show dbs</p>
 
-创建表 (不要特殊创建 只需要use 一个不存在的name mongoDb会在需要的时候自己创建，一个表是一个集合)
-&gt; use dbname
+<p>切换数据库
+&gt; use dbname</p>
 
-数据的写入  db.集合名.insert(json数据) 表集合不存在的话自动创建 _id自动创建 _id自定义时不能重复
-&gt; db.dbname_collection.insert({x:1})
+<p>删除当前数据库,（需要先use）
+&gt; db.dropDatabase();</p>
 
-数据的查询 db.集合名.find()  参数可以为空，返回所有文档
+<p>创建表 (不要特殊创建 只需要use 一个不存在的name mongoDb会在需要的时候自己创建，一个表是一个集合)
+&gt; use dbname</p>
+
+<p>数据的写入  db.集合名.insert(json数据) 表集合不存在的话自动创建 _id自动创建 _id自定义时不能重复
+&gt; db.dbname_collection.insert({x:1})</p>
+
+<p>数据的查询 db.集合名.find()  参数可以为空，返回所有文档
 &gt; db.dbname_collection.find()
-&gt; db.dbname_collection.find({x:1})   查询x=1的文档
+&gt; db.dbname_collection.find({x:1})   查询x=1的文档</p>
 
-循环插入
-&gt; for(i=3;i&lt;100;i++)db.dbname_collection.insert({x:i})
+<p>循环插入
+&gt; for(i=3;i&lt;100;i++)db.dbname_collection.insert({x:i})</p>
 
-计数
-&gt; db.dbname_collection.find().count()
+<p>计数
+&gt; db.dbname_collection.find().count()</p>
 
-跳过，限制条数，排序
-&gt; db.dbname_collection.find().skip(3).limit(2).sort({x:1})
+<p>跳过，限制条数，排序
+&gt; db.dbname_collection.find().skip(3).limit(2).sort({x:1})</p>
 
-
-数据更新 db.集合名.find(查询条件,更新条目)  默认只会更新第一条找到的数据
+<p>数据更新 db.集合名.find(查询条件,更新条目)  默认只会更新第一条找到的数据
 &gt; db.dbname_collection.update({x:1},{x:999})  会更新x=1的文档为 {x:999}
-注意：db.dbname_collection.insert({x:1,y:2,z:3}) 若要更新z=3的文档 把x更新为22， 使用 db.dbname_collection.update({z:3},{x:22})  会把{x:1,y:2,z:3}整体覆盖为{x:22} 
+注意：db.dbname_collection.insert({x:1,y:2,z:3}) 若要更新z=3的文档 把x更新为22， 使用 db.dbname_collection.update({z:3},{x:22})  会把{x:1,y:2,z:3}整体覆盖为{x:22}</p>
 
-局部更新
-&gt;db.dbname_collection.update({z:3},{$set:{x:22}})  局部更新 不会被覆盖
+<p>局部更新
+&gt;db.dbname_collection.update({z:3},{$set:{x:22}})  局部更新 不会被覆盖</p>
 
-更新不存在的数据，即自动创建 第三个参数 true 标示不存在的时候自动创建
-&gt; db.dbname_collection.update({x:3},{x:22},true)
+<p>更新不存在的数据，即自动创建 第三个参数 true 标示不存在的时候自动创建
+&gt; db.dbname_collection.update({x:3},{x:22},true)</p>
 
-批量更新  第四个参数 true 批量更新
-&gt; db.dbname_collection.update({x:1},{$set:{x:22}},false,true)
+<p>批量更新  第四个参数 true 批量更新
+&gt; db.dbname_collection.update({x:1},{$set:{x:22}},false,true)</p>
 
-数据删除  必须传参，默认删除所有找的数据
+<p>数据删除  必须传参，默认删除所有找的数据
 &gt; db.dbname_collection.remove({x:1})
-&gt; db.dbname_collection.drop()
+&gt; db.dbname_collection.drop()</p>
 
-</code></pre></div>
-<hr>
+<p>```</p>
 
-<h2>MongoDB索引</h2>
+<hr />
 
-<hr>
+<h2 id="mongodb-4">MongoDB索引</h2>
 
-<h4>内容简介</h4>
+<hr />
 
-<ol>
-<li>索引的种类和使用</li>
-<li>索引的匹配规则</li>
-<li>如何建立合适的索引</li>
-<li>索引建立的情况评估</li>
-</ol>
-<div class="highlight"><pre><code class="language-" data-lang="">查看索引
-&gt; db.dbname_collection.getIndexes()
-
-创建索引  参数也是文档  1代表正向排序 -1 代表逆向排序
-&gt; db.dbname_collection.ensureIndex({x:1})
-
-</code></pre></div>
-<h4>索引的种类</h4>
+<h4 id="section-7">内容简介</h4>
 
 <ol>
-<li>_id索引</li>
-<li> 单键索引</li>
-<li> 多键索引</li>
-<li> 复合索引</li>
-<li> 过期索引</li>
-<li> 全文索引</li>
-<li> 地理位置索引</li>
+  <li>索引的种类和使用</li>
+  <li>索引的匹配规则</li>
+  <li>如何建立合适的索引</li>
+  <li>索引建立的情况评估</li>
 </ol>
 
-<h5>_id索引</h5>
+<p>```
+查看索引
+&gt; db.dbname_collection.getIndexes()</p>
 
+<p>创建索引  参数也是文档  1代表正向排序 -1 代表逆向排序
+&gt; db.dbname_collection.ensureIndex({x:1})</p>
+
+<p>```</p>
+
+<h4 id="section-8">索引的种类</h4>
+
+<ol>
+  <li>_id索引</li>
+  <li>单键索引</li>
+  <li>多键索引</li>
+  <li>复合索引</li>
+  <li>过期索引</li>
+  <li>全文索引</li>
+  <li>地理位置索引</li>
+</ol>
+
+<h5 id="id">_id索引</h5>
 <ul>
-<li>_id索引是绝大多数集合默认建立的索引</li>
-<li>对于每个插入的数据，MongoDB都会自动生成一条唯一的_id字段</li>
+  <li>_id索引是绝大多数集合默认建立的索引</li>
+  <li>对于每个插入的数据，MongoDB都会自动生成一条唯一的_id字段</li>
 </ul>
 
-<h5>单键索引</h5>
-
+<h5 id="section-9">单键索引</h5>
 <ul>
-<li>单键索引是最普通的索引</li>
-<li>与_id索引不同，单键索引不会自动创建</li>
+  <li>单键索引是最普通的索引</li>
+  <li>与_id索引不同，单键索引不会自动创建</li>
 </ul>
 
-<h5>多键索引</h5>
-
+<h5 id="section-10">多键索引</h5>
 <ul>
-<li>多键索引与单键索引创建形式相同，区别在于字段的值
-
-<ul>
-<li>单键索引：值为单一的值，例如字符串，数字或者日期</li>
-<li>多键索引：值具有多个记录，例如数组
+  <li>多键索引与单键索引创建形式相同，区别在于字段的值
+    <ul>
+      <li>单键索引：值为单一的值，例如字符串，数字或者日期</li>
+      <li>多键索引：值具有多个记录，例如数组
 ##### 复合索引</li>
-</ul></li>
-<li>当我们的查询条件不只有一个时，就需要建立复合索引
-
-<ul>
-<li>插入{x:1,y:2,z:3}-&gt;按照x与y的值查询-&gt;创建索引db.collection.ensureIndex({x:1,y:1})-&gt;使用{x:1,y:1}作为条件进行查询<br></li>
-</ul></li>
+    </ul>
+  </li>
+  <li>当我们的查询条件不只有一个时，就需要建立复合索引
+    <ul>
+      <li>插入{x:1,y:2,z:3}-&gt;按照x与y的值查询-&gt;创建索引db.collection.ensureIndex({x:1,y:1})-&gt;使用{x:1,y:1}作为条件进行查询</li>
+    </ul>
+  </li>
 </ul>
 
-<h5>过期索引</h5>
-
+<h5 id="section-11">过期索引</h5>
 <ul>
-<li>过期索引：是在一段时间后会过期的索引</li>
-<li>在索引过期后，相应的数据会被删除</li>
-<li>这适合存储一些在一些时间后会失效的数据 比如用户的登陆信息，存储的日志<br></li>
-<li>建立方法：db.collection.ensureIndex({time:1},{expireAfterSeconds:10}),第二个参数是过期时间的秒数</li>
-<li>过期索引的限制
+  <li>过期索引：是在一段时间后会过期的索引</li>
+  <li>在索引过期后，相应的数据会被删除</li>
+  <li>这适合存储一些在一些时间后会失效的数据 比如用户的登陆信息，存储的日志</li>
+  <li>建立方法：db.collection.ensureIndex({time:1},{expireAfterSeconds:10}),第二个参数是过期时间的秒数</li>
+  <li>过期索引的限制
+    <ol>
+      <li>存储在过期索引字段的值必须是指定的时间类型，说明：必须是ISODate或者ISODate数组，不能使用时间戳，否则不能被自动删除</li>
+      <li>如果指定了ISODate数组，则按照最小的时间进行删除</li>
+      <li>过期索引不能是复合索引</li>
+      <li>删除时间是不精确的 说明：删除过程是由后台程序每60S跑一次，而且删除也需要一些时间，所以存在误差</li>
+    </ol>
+  </li>
+</ul>
 
+<h5 id="section-12">全文索引</h5>
+<ul>
+  <li>全文索引：对字符串与字符串数组创建全文可搜索的索引
+适用情况{author:”“,title:”“,article:””}</li>
+  <li>建立方法
+  db.articles.ensureIndex({key:”text”})
+  db.articles.ensureIndex({key_1:”text”,key_2:”text”})
+  db.articles.ensureIndex({“$**”:”text”})</li>
+  <li>如何创建全文索引	
+  db.imooc_2.ensureIndex({“article”:”text”})</li>
+  <li>如何使用全文索引进行查询
+    <ol>
+      <li>db.articles.find({$text:{$search:”coffee”}})</li>
+      <li>db.articles.find({$text:{$search:”aa bb cc”}}) 查询 aa 或bb 或cc</li>
+      <li>db.articles.find({$text:{$search:”aa bb -cc”}}) 查询aa 或bb 不包含cc</li>
+      <li>db.articles.find({$text:{$search:”"aa" "bb" "cc"”}}) 且的关系 既包含aa也包含bb也包含cc</li>
+    </ol>
+  </li>
+  <li>
+    <p>全文索引的相似度</p>
+
+    <p>$meta操作符：{score:{$meta:”textScore”}}
+写在查询条件后面可以返回结果的相似度与sort一起使用，可以达到很好的实用效果	db.articles.find({$text:{$search:”aa bb”}},{score:{$meta:”tetxScore”}}).sort({score:{$meta:”tetxScore”}})</p>
+  </li>
+  <li>全文索引的使用限制
+1.每次查询，只能指定一个$text查询
+    <ol>
+      <li>$test查询不能出现在$nor查询中</li>
+      <li>查询中如果包含了$test,hint不再起作用
+很可惜，MongoDB全文索引还不支持中文</li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="section-13">索引属性</h4>
 <ol>
-<li>存储在过期索引字段的值必须是指定的时间类型，说明：必须是ISODate或者ISODate数组，不能使用时间戳，否则不能被自动删除</li>
-<li>如果指定了ISODate数组，则按照最小的时间进行删除</li>
-<li>过期索引不能是复合索引</li>
-<li>删除时间是不精确的 说明：删除过程是由后台程序每60S跑一次，而且删除也需要一些时间，所以存在误差</li>
-</ol></li>
-</ul>
+  <li>创建索引的格式
+ db,collection.ensureIndex({param},{param}) 
+ 其中第二个参数便是索引的属性</li>
+  <li>比较重要的属性有 名字 唯一性 稀疏性 是否定时删除
+    <ul>
+      <li>名字，name指定：db.collection.ensureIndex({},{name:””})</li>
+      <li>唯一性，unique指定：db.collection.ensureIndex({},{unique:true/false})</li>
+      <li>稀疏性，sparse指定：db.collection.ensureIndex({},{sparse:true/false}) 默认是不稀疏的
+ db.collection.find({m:{$exists:true}})查询存在m的文档
+ db.collection.ensureIndex({m:1},{sparse:true})</li>
+    </ul>
 
-<h5>全文索引</h5>
+    <p>db.collection.find({m:{$exists:false}})
+ <strong>在选取索引  在稀疏索引上 查找是否存在 将不使用稀疏索引</strong>
+ 强制使用索引 db.collection.find({m:{$exists:false}}).hint(“m_1”)</p>
 
-<ul>
-<li> 全文索引：对字符串与字符串数组创建全文可搜索的索引
-适用情况{author:&quot;&quot;,title:&quot;&quot;,article:&quot;&quot;}</li>
-<li>建立方法
-db.articles.ensureIndex({key:&quot;text&quot;})
-db.articles.ensureIndex({key<em>1:&quot;text&quot;,key</em>2:&quot;text&quot;})
-db.articles.ensureIndex({&quot;$**&quot;:&quot;text&quot;})</li>
-<li>如何创建全文索引<br>
-db.imooc_2.ensureIndex({&quot;article&quot;:&quot;text&quot;})</li>
-<li>如何使用全文索引进行查询
-
-<ol>
-<li> db.articles.find({$text:{$search:&quot;coffee&quot;}})</li>
-<li> db.articles.find({$text:{$search:&quot;aa bb cc&quot;}}) 查询 aa 或bb 或cc</li>
-<li> db.articles.find({$text:{$search:&quot;aa bb -cc&quot;}}) 查询aa 或bb 不包含cc</li>
-<li> db.articles.find({$text:{$search:&quot;\&quot;aa\&quot; \&quot;bb\&quot; \&quot;cc\&quot;&quot;}}) 且的关系 既包含aa也包含bb也包含cc</li>
-</ol></li>
-<li>全文索引的相似度</li>
-</ul>
-
-<p>$meta操作符：{score:{$meta:&quot;textScore&quot;}}
-  写在查询条件后面可以返回结果的相似度与sort一起使用，可以达到很好的实用效果 db.articles.find({$text:{$search:&quot;aa bb&quot;}},{score:{$meta:&quot;tetxScore&quot;}}).sort({score:{$meta:&quot;tetxScore&quot;}})
-* 全文索引的使用限制
-  1.每次查询，只能指定一个$text查询
-  2. $test查询不能出现在$nor查询中<br>
-  3. 查询中如果包含了$test,hint不再起作用
-  很可惜，MongoDB全文索引还不支持中文</p>
-
-<h4>索引属性</h4>
-
-<ol>
-<li>创建索引的格式
-db,collection.ensureIndex({param},{param}) 
-其中第二个参数便是索引的属性</li>
-<li><p>比较重要的属性有 名字 唯一性 稀疏性 是否定时删除</p>
-
-<ul>
-<li>名字，name指定：db.collection.ensureIndex({},{name:&quot;&quot;})</li>
-<li>唯一性，unique指定：db.collection.ensureIndex({},{unique:true/false})</li>
-<li>稀疏性，sparse指定：db.collection.ensureIndex({},{sparse:true/false}) 默认是不稀疏的
-db.collection.find({m:{$exists:true}})查询存在m的文档
-db.collection.ensureIndex({m:1},{sparse:true})</li>
-</ul>
-
-<p>db.collection.find({m:{$exists:false}})
-<strong>在选取索引  在稀疏索引上 查找是否存在 将不使用稀疏索引</strong>
-强制使用索引 db.collection.find({m:{$exists:false}}).hint(&quot;m_1&quot;)</p></li>
+    <ul>
+      <li>是否定时删除，expireAfterSeconds指定
+ TTL，过期索引</li>
+    </ul>
+  </li>
 </ol>
-<div class="highlight"><pre><code class="language-" data-lang="">* 是否定时删除，expireAfterSeconds指定
-TTL，过期索引
-</code></pre></div>
-<h5>地理位置索引</h5>
 
+<h5 id="section-14">地理位置索引</h5>
 <ul>
-<li>将一些点的位置存储在MongoDB中，创建索引后，可以按照位置来查找其他点
-
-<ul>
-<li>子分类:</li>
-<li>2d索引，用于存储和查找平面上的点。</li>
-<li>2dsphere索引，用于存储和查找球面上的点</li>
-</ul></li>
-<li>查找方式
-
-<ul>
-<li>查找距离某个点一定距离的点<br></li>
-<li>查找包含在某区域内的点</li>
-</ul></li>
+  <li>将一些点的位置存储在MongoDB中，创建索引后，可以按照位置来查找其他点
+    <ul>
+      <li>子分类:
+        <ol>
+          <li>2d索引，用于存储和查找平面上的点。</li>
+          <li>2dsphere索引，用于存储和查找球面上的点</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>查找方式
+    <ul>
+      <li>查找距离某个点一定距离的点</li>
+      <li>查找包含在某区域内的点</li>
+    </ul>
+  </li>
 </ul>
-<div class="highlight"><pre><code class="language-" data-lang="">
-2D索引：平面地理位置索引
-        创建方式:db.collection.ensureIndex({w:"2d"})
-        位置表示方式：经纬度[经度,维度]
-        取值范围：经度[-180,180]维度[-90,90]
-        db.collection.insert({w:[100,2]})
-        db.collection.find({w:{$near:[1,1]}})
-        near会返回100个离查询的点最近的点
-        db.collection.find({w:{$near:[1,1]，$maxDistance:10}})  
 
-        查询方式：
-        （1）$near查询：查询距离某个点最近的点
-        （2）$geoWithin查询：查询某个形状内的点
+<p>```</p>
 
-        形状的标示：
-        1.$box:矩形，使用
-        {$box[[&lt;x1&gt;,&lt;y1&gt;],[&lt;x2&gt;,&lt;y2&gt;]]}  1.左边界 2.右边界
-        2.$center:圆形，使用
-        {$center:[[&lt;x1&gt;,&lt;y1&gt;],r]} 1.圆心位置 2.半径
-        3.$polygon:多边形，使用
-        {$polygon：[[&lt;x1&gt;,&lt;y1&gt;],[&lt;x2&gt;,&lt;y2&gt;],[&lt;x3&gt;,&lt;y3&gt;]]}
+<p>2D索引：平面地理位置索引
+		创建方式:db.collection.ensureIndex({w:”2d”})
+		位置表示方式：经纬度[经度,维度]
+		取值范围：经度[-180,180]维度[-90,90]
+		db.collection.insert({w:[100,2]})
+		db.collection.find({w:{$near:[1,1]}})
+		near会返回100个离查询的点最近的点
+		db.collection.find({w:{$near:[1,1]，$maxDistance:10}})</p>
 
-        db.collection.find({w:{$geoWithin:{$box:[[0,0],[3,3]]}}})
+<div class="highlighter-rouge"><pre class="highlight"><code>	查询方式：
+	（1）$near查询：查询距离某个点最近的点
+	（2）$geoWithin查询：查询某个形状内的点
+	
+	形状的标示：
+	1.$box:矩形，使用
+	{$box[[&lt;x1&gt;,&lt;y1&gt;],[&lt;x2&gt;,&lt;y2&gt;]]}  1.左边界 2.右边界
+	2.$center:圆形，使用
+	{$center:[[&lt;x1&gt;,&lt;y1&gt;],r]} 1.圆心位置 2.半径
+	3.$polygon:多边形，使用
+	{$polygon：[[&lt;x1&gt;,&lt;y1&gt;],[&lt;x2&gt;,&lt;y2&gt;],[&lt;x3&gt;,&lt;y3&gt;]]}
+	
+	db.collection.find({w:{$geoWithin:{$box:[[0,0],[3,3]]}}})
+	
+geoNear查询
+geoNear使用runCommand命令进行使用
+{
+geoNear:&lt;collection&gt;,
+near:[x,y],
+minDistance:(对2D索引无效)
+MaxDistance:
+num:
+}
 
-    geoNear查询
-    geoNear使用runCommand命令进行使用
-    {
-    geoNear:&lt;collection&gt;,
-    near:[x,y],
-    minDistance:(对2D索引无效)
-    MaxDistance:
-    num:
-    }
+db.runCommand({geoNear:"location",near:[1,2],maxDistance:10,num:1})
+</code></pre>
+</div>
 
-    db.runCommand({geoNear:"location",near:[1,2],maxDistance:10,num:1})
-
-
-2dsphere: 
-创建方式:db.collection.ensureIndex({w:"2dsphere"})
+<p>2dsphere: 
+创建方式:db.collection.ensureIndex({w:”2dsphere”})
 位置表示方式
 GeoJson:描述一个点，一条直线，多边形等
-格式：{type:"",coordinates:[&lt;coordinates&gt;]}
+格式：{type:”“,coordinates:[<coordinates>]}
 查询方式和2D索引查询方式类似
-支持$minDistance与$maxDistance
+支持$minDistance与$maxDistance</coordinates></p>
 
-</code></pre></div>
-<hr>
+<p>```</p>
 
-<h2>索引构建情况分析</h2>
+<hr />
 
-<hr>
+<h2 id="section-15">索引构建情况分析</h2>
+
+<hr />
 
 <ul>
-<li>索引好处：加快索引相关的查询</li>
-<li>索引不好处：增加磁盘空间消耗，降低写入性能</li>
+  <li>索引好处：加快索引相关的查询</li>
+  <li>索引不好处：增加磁盘空间消耗，降低写入性能</li>
 </ul>
 
-<hr>
-
+<hr />
 <ul>
-<li>如何评判当前索引构建情况
+  <li>如何评判当前索引构建情况
+    <ol>
+      <li>mongostat工具介绍</li>
+      <li>profile集合介绍</li>
+      <li>日志介绍</li>
+      <li>explain分析</li>
+    </ol>
+  </li>
+</ul>
 
+<h5 id="mongostat">mongostat工具</h5>
+<ul>
+  <li>mongostat查看mongodb运行状态的程序</li>
+  <li>
+    <p>使用说明	:mongostat -h 127.0.0.1:12345</p>
+  </li>
+  <li>字段说明:
+ 	* inserts
+ 	* query
+ 	* update
+ 	* delete
+ 	* getmore
+ 	* command
+ 	* flushes
+ 	* mapped
+ 	* vsize
+ 	* res
+ 	* non-mapped
+ 	* faults
+ 	* locked
+ 	* idx miss 索引情况
+ 	* qr|qw
+ 	* ar|aw
+ 	* netIn
+ 	* netOut
+ 	* conn
+ 	* set
+ 	* repl</li>
+</ul>
+
+<h5 id="profile">profile集合</h5>
+<ul>
+  <li>db.getProfilingStatus()</li>
+  <li>
+    <p>db.setProfilingLevel(2)</p>
+  </li>
+  <li>db.system.profile.find().sort({$natural:-1}).limit(1)</li>
+</ul>
+
+<h5 id="section-16">日志</h5>
+<ul>
+  <li>mongodb.conf 中 verbose=vvvvv    v越多代表日志越详细</li>
+</ul>
+
+<h5 id="explain">explain</h5>
+<ul>
+  <li>db.collection.find({x:1}).explain()</li>
+</ul>
+
+<hr />
+
+<h2 id="mongodb-">MongoDB 安全</h2>
+
+<hr />
+
+<h3 id="section-17">安全概览</h3>
 <ol>
-<li>mongostat工具介绍</li>
-<li>profile集合介绍</li>
-<li>日志介绍</li>
-<li>explain分析</li>
-</ol></li>
-</ul>
-
-<h5>mongostat工具</h5>
-
-<ul>
-<li>mongostat查看mongodb运行状态的程序</li>
-<li><p>使用说明 :mongostat -h 127.0.0.1:12345</p></li>
-<li><p>字段说明:</p>
-
-<ul>
-<li>inserts</li>
-<li>query</li>
-<li>update</li>
-<li>delete</li>
-<li>getmore</li>
-<li>command</li>
-<li>flushes</li>
-<li>mapped</li>
-<li>vsize</li>
-<li>res</li>
-<li>non-mapped</li>
-<li>faults</li>
-<li>locked</li>
-<li>idx miss 索引情况</li>
-<li>qr|qw</li>
-<li>ar|aw</li>
-<li>netIn</li>
-<li>netOut</li>
-<li>conn</li>
-<li>set</li>
-<li>repl</li>
-</ul></li>
-</ul>
-
-<h5>profile集合</h5>
-
-<ul>
-<li>db.getProfilingStatus()</li>
-<li><p>db.setProfilingLevel(2)</p></li>
-<li><p>db.system.profile.find().sort({$natural:-1}).limit(1)  </p></li>
-</ul>
-
-<h5>日志</h5>
-
-<ul>
-<li>mongodb.conf 中 verbose=vvvvv    v越多代表日志越详细</li>
-</ul>
-
-<h5>explain</h5>
-
-<ul>
-<li>db.collection.find({x:1}).explain()</li>
-</ul>
-
-<hr>
-
-<h2>MongoDB 安全</h2>
-
-<hr>
-
-<h3>安全概览</h3>
-
-<ol>
-<li>最安全的是物理隔离：不现实</li>
-<li>网络隔离其次</li>
-<li>防火墙再其次</li>
-<li>用户名密码在最后</li>
+  <li>最安全的是物理隔离：不现实</li>
+  <li>网络隔离其次</li>
+  <li>防火墙再其次</li>
+  <li>用户名密码在最后</li>
 </ol>
 
-<hr>
+<hr />
 
-<h4>开启权限验证</h4>
-
+<h4 id="section-18">开启权限验证</h4>
 <ol>
-<li><p>auth开启
-mongodb.conf 设置  auth=true;</p></li>
-<li><p>keyfile开启</p></li>
+  <li>
+    <p>auth开启
+mongodb.conf 设置  auth=true;</p>
+  </li>
+  <li>
+    <p>keyfile开启</p>
+  </li>
 </ol>
 
-<h5>MongoDB创建用户</h5>
-
+<h5 id="mongodb-5">MongoDB创建用户</h5>
 <ol>
-<li>创建语法：createUser(2.6之前为addUser)</li>
-<li>
-<code>
-{
-user:&quot;&lt;name&gt;&quot;,
-pwd:&quot;&lt;password&gt;&quot;,
-sustomData:{&lt;说明&gt;},
-roles;[{role:&quot;&lt;role&gt;&quot;,db:&quot;database&quot;}]
-}
-</code></li>
-<li>角色类型：内建类型（read,readWrite,dbAdmin,dbOwner,userAdmin）</li>
+  <li>创建语法：createUser(2.6之前为addUser)</li>
+  <li><code class="highlighter-rouge"><span class="w">
+</span><span class="p">{</span><span class="w">
+</span><span class="err">user:</span><span class="nt">"&lt;name&gt;"</span><span class="err">,</span><span class="w">
+</span><span class="err">pwd</span><span class="p">:</span><span class="s2">"&lt;password&gt;"</span><span class="p">,</span><span class="w">
+</span><span class="err">sustomData</span><span class="p">:{</span><span class="err">&lt;说明&gt;</span><span class="p">},</span><span class="w">
+</span><span class="err">roles;[{role</span><span class="p">:</span><span class="s2">"&lt;role&gt;"</span><span class="p">,</span><span class="err">db</span><span class="p">:</span><span class="s2">"database"</span><span class="p">}</span><span class="err">]</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></li>
+  <li>角色类型：内建类型（read,readWrite,dbAdmin,dbOwner,userAdmin）</li>
 </ol>
 
-<h5>用户角色详解</h5>
+<h5 id="section-19">用户角色详解</h5>
 
 <ol>
-<li>数据库角色（read,readWrite,dbAdmin,dbOwner,userAdmin）</li>
-<li>集群角色（cluterAdmin,clusterManager）</li>
-<li>备份角色（backup,restore）</li>
-<li>其他特殊权限（DBAdminAnyDatabase） </li>
+  <li>数据库角色（read,readWrite,dbAdmin,dbOwner,userAdmin）</li>
+  <li>集群角色（cluterAdmin,clusterManager）</li>
+  <li>备份角色（backup,restore）</li>
+  <li>其他特殊权限（DBAdminAnyDatabase）</li>
 </ol>
+
 
 
                 <hr>
@@ -749,9 +777,7 @@ roles;[{role:&quot;&lt;role&gt;&quot;,db:&quot;database&quot;}]
 Mongo 概念
 
 
-mongo MongoDB 索引 集合 复制集 分片 数据均衡
-
-... | 克洛弗的博客 | Clover Blog " >
+  mongo MongoDB 索引 集合 复制集 分片 数据均衡... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>

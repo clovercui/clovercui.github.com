@@ -193,139 +193,159 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h1>HTML-1</h1>
+				<h1 id="html-1">HTML-1</h1>
 
-<h2><code>网页乱码的问题是如何产生的？怎样解决?</code></h2>
+<h2 id="section"><code class="highlighter-rouge">网页乱码的问题是如何产生的？怎样解决?</code></h2>
+<p><code class="highlighter-rouge">A:</code>造成html网页乱码原因主要是html源代码内中文字内容与html编码不同造成。解决办法：保持文件的编写字符集和网页设置的字符集保持一致 如使用UTF-8编写的文件，网页头设置为<code class="highlighter-rouge">&lt;meta charset="utf-8"&gt;</code></p>
 
-<p><code>A:</code>造成html网页乱码原因主要是html源代码内中文字内容与html编码不同造成。解决办法：保持文件的编写字符集和网页设置的字符集保持一致 如使用UTF-8编写的文件，网页头设置为<code>&lt;meta charset=&quot;utf-8&quot;&gt;</code></p>
-
-<h2><code>颜色有几种写法， 红色、 绿色、蓝色、白色、黑色如何表示？ 透明黑色如何表示？#ccc的颜色#eee的颜色？ #333的颜色？</code></h2>
-
-<p><code>A:</code></p>
+<h2 id="ccceee-333"><code class="highlighter-rouge">颜色有几种写法， 红色、 绿色、蓝色、白色、黑色如何表示？ 透明黑色如何表示？#ccc的颜色#eee的颜色？ #333的颜色？</code></h2>
+<p><code class="highlighter-rouge">A:</code></p>
 
 <ol>
-<li><code>直接书写英文名字</code>。这样的好处是直观。但是没有能很好的控制颜色</li>
-<li><code>rgb(0,0,0)</code>中间的三个 数字分别是0-255.分别代表红  绿  蓝三个颜色。数字数字越大，颜色越深</li>
-<li><code>#FCFCFC</code> 这样是用十六进制来表示颜色。跟上面rgb差不多。两位英文代表一个原色。分别是红绿蓝。这种写法有缩写。比如#FFFFFF可以等于成#FFF，还有#CCFFCC,可以写成#CFC。这就是颜色的写法</li>
-<li><code>rgba（0，0，0，0）</code>前面三个数字跟rgb一样的，最后一个是透明度的控制。取值范围是0-1.一位小数。越接近零。越透明。    <code>注意的是。这种有兼容问题。是CSS3的属性</code>。</li>
+  <li><code class="highlighter-rouge">直接书写英文名字</code>。这样的好处是直观。但是没有能很好的控制颜色</li>
+  <li><code class="highlighter-rouge">rgb(0,0,0)</code>中间的三个 数字分别是0-255.分别代表红  绿  蓝三个颜色。数字数字越大，颜色越深</li>
+  <li><code class="highlighter-rouge">#FCFCFC</code> 这样是用十六进制来表示颜色。跟上面rgb差不多。两位英文代表一个原色。分别是红绿蓝。这种写法有缩写。比如#FFFFFF可以等于成#FFF，还有#CCFFCC,可以写成#CFC。这就是颜色的写法</li>
+  <li><code class="highlighter-rouge">rgba（0，0，0，0）</code>前面三个数字跟rgb一样的，最后一个是透明度的控制。取值范围是0-1.一位小数。越接近零。越透明。    <code class="highlighter-rouge">注意的是。这种有兼容问题。是CSS3的属性</code>。</li>
 </ol>
 
-<p>红色<code>red</code>、 绿色<code>green</code>、蓝色<code>blue</code>、白色<code>white</code>、黑色<code>black</code>.</p>
+<p>红色<code class="highlighter-rouge">red</code>、 绿色<code class="highlighter-rouge">green</code>、蓝色<code class="highlighter-rouge">blue</code>、白色<code class="highlighter-rouge">white</code>、黑色<code class="highlighter-rouge">black</code>.</p>
 
-<p>透明黑色 <code>rgba(0,0,0,0.8)</code> ,#ccc <code>深灰色</code> #eee <code>浅灰色</code> #333 <code>浅黑色</code></p>
+<p>透明黑色 <code class="highlighter-rouge">rgba(0,0,0,0.8)</code> ,#ccc <code class="highlighter-rouge">深灰色</code> #eee <code class="highlighter-rouge">浅灰色</code> #333 <code class="highlighter-rouge">浅黑色</code></p>
 
-<h2><code>&lt;!doctype html&gt; 的作用是什么</code></h2>
+<h2 id="doctype-html-"><code class="highlighter-rouge">&lt;!doctype html&gt; 的作用是什么</code></h2>
+<p><code class="highlighter-rouge">A:</code>告知浏览器以Html5的标准来解析页面，Html5相对宽松，没有严格模式和混杂模式之分。</p>
 
-<p><code>A:</code>告知浏览器以Html5的标准来解析页面，Html5相对宽松，没有严格模式和混杂模式之分。</p>
-
-<h2><code>严格模式和混杂模式指什么</code></h2>
-
-<p><code>A:</code>&lt;!DOCTYPE&gt;声明叫做文件类型定义（DTD），声明的作用为了告诉浏览器该文件的类型。让浏览器解析器知道应该用哪个规范来解析文档。&lt;!DOCTYPE&gt;声明必须在 HTML 文档的第一行，这并不是一个 HTML 标签。</p>
+<h2 id="section-1"><code class="highlighter-rouge">严格模式和混杂模式指什么</code></h2>
+<p><code class="highlighter-rouge">A:</code>&lt;!DOCTYPE&gt;声明叫做文件类型定义（DTD），声明的作用为了告诉浏览器该文件的类型。让浏览器解析器知道应该用哪个规范来解析文档。&lt;!DOCTYPE&gt;声明必须在 HTML 文档的第一行，这并不是一个 HTML 标签。</p>
 
 <ul>
-<li><code>严格模式：</code>又称标准模式，是指浏览器按照 W3C 标准解析代码.</li>
-<li><code>混杂模式：</code>又称怪异模式或兼容模式，是指浏览器用自己的方式解析代码。</li>
+  <li><code class="highlighter-rouge">严格模式：</code>又称标准模式，是指浏览器按照 W3C 标准解析代码.</li>
+  <li><code class="highlighter-rouge">混杂模式：</code>又称怪异模式或兼容模式，是指浏览器用自己的方式解析代码。</li>
 </ul>
 
 <ol>
-<li>如果文档包含严格的 DOCTYPE ，那么它一般以严格模式呈现。（严格 DTD ——严格模式） </li>
-<li>包含过渡 DTD 和 URI 的 DOCTYPE ，也以严格模式呈现，但有过渡 DTD 而没有 URI （统一资源标识符，就是声明最后的地址）会导致页面以混杂模式呈现。（有 URI 的过渡 DTD ——严格模式；没有 URI 的过渡 DTD ——混杂模式） </li>
-<li>DOCTYPE 不存在或形式不正确会导致文档以混杂模式呈现。（DTD不存在或者格式不正确——混杂模式）</li>
-<li>HTML5 没有 DTD ，因此也就没有严格模式与混杂模式的区别，HTML5 有相对宽松的语法，实现时，已经尽可能大的实现了向后兼容。（ HTML5 没有严格和混杂之分）</li>
+  <li>如果文档包含严格的 DOCTYPE ，那么它一般以严格模式呈现。（严格 DTD ——严格模式）</li>
+  <li>包含过渡 DTD 和 URI 的 DOCTYPE ，也以严格模式呈现，但有过渡 DTD 而没有 URI （统一资源标识符，就是声明最后的地址）会导致页面以混杂模式呈现。（有 URI 的过渡 DTD ——严格模式；没有 URI 的过渡 DTD ——混杂模式）</li>
+  <li>DOCTYPE 不存在或形式不正确会导致文档以混杂模式呈现。（DTD不存在或者格式不正确——混杂模式）</li>
+  <li>HTML5 没有 DTD ，因此也就没有严格模式与混杂模式的区别，HTML5 有相对宽松的语法，实现时，已经尽可能大的实现了向后兼容。（ HTML5 没有严格和混杂之分）</li>
 </ol>
 
-<h2><code>meta 有什么作用，常见的值有哪些</code></h2>
-
-<p><code>A:</code>meta标签共有两个属性，它们分别是<code>http-equiv</code>属性和<code>name</code>属性，不同的属性又有不同的参数值，这些不同的参数值就实现了不同的网页功能。</p>
+<h2 id="meta-"><code class="highlighter-rouge">meta 有什么作用，常见的值有哪些</code></h2>
+<p><code class="highlighter-rouge">A:</code>meta标签共有两个属性，它们分别是<code class="highlighter-rouge">http-equiv</code>属性和<code class="highlighter-rouge">name</code>属性，不同的属性又有不同的参数值，这些不同的参数值就实现了不同的网页功能。</p>
 
 <ul>
-<li><p><code>name属性</code>
+  <li>
+    <p><code class="highlighter-rouge">name属性</code>
 name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。
-meta标签的name属性语法格式是：<code>＜meta name=&quot;参数&quot; content=&quot;具体的参数值&quot;＞</code> 。
-其中name属性主要有以下几种参数：</p>
+  meta标签的name属性语法格式是：<code class="highlighter-rouge">＜meta name="参数" content="具体的参数值"＞</code> 。
+  其中name属性主要有以下几种参数：</p>
 
-<ul>
-<li><p><code>Keywords(关键字)</code></p>
+    <ul>
+      <li><code class="highlighter-rouge">Keywords(关键字)</code></li>
+    </ul>
 
-<p>说明：keywords用来告诉搜索引擎你网页的关键字是什么</p>
+  	说明：keywords用来告诉搜索引擎你网页的关键字是什么
 
-<p>举例：＜meta name =&quot;keywords&quot; content=&quot;science,education,culture,politics,ecnomics，relationships, entertaiment, human&quot;＞</p></li>
-<li><p><code>description(网站内容描述)</code></p>
+  	举例：＜meta name =”keywords” content=”science,education,culture,politics,ecnomics，relationships, entertaiment, human”＞
 
-<p>说明：description用来告诉搜索引擎你的网站主要内容。</p>
+    <ul>
+      <li>
+        <p><code class="highlighter-rouge">description(网站内容描述)</code></p>
 
-<p>举例：＜meta name=&quot;description&quot; content=&quot;This page is about the meaning of science, education,culture.&quot;＞</p></li>
-<li><p><code>robots(机器人向导)</code>
+        <p>说明：description用来告诉搜索引擎你的网站主要内容。</p>
+
+        <p>举例：＜meta name=”description” content=”This page is about the meaning of science, education,culture.”＞</p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">robots(机器人向导)</code>
 　　
-说明：robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。</p>
+  说明：robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。</p>
 
-<p>举例：＜meta name=&quot;robots&quot; content=&quot;none&quot;＞</p></li>
-<li><p><code>author(作者)</code></p>
+        <p>举例：＜meta name=”robots” content=”none”＞</p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">author(作者)</code></p>
 
-<p>说明：标注网页的作者</p>
+        <p>说明：标注网页的作者</p>
 
-<p>举例：＜meta name=&quot;author&quot; content=&quot;root,root@21cn.com&quot;＞</p></li>
-</ul></li>
-<li><p><code>http-equiv属性</code>
+        <p>举例：＜meta name=”author” content=”root,root@21cn.com”＞</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">http-equiv属性</code>
 http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值.
-meta标签的http-equiv属性语法格式是：＜meta http-equiv=&quot;参数&quot; content=&quot;参数变量值&quot;＞ ；其中http-equiv属性主要有以下几种参数</p>
+  meta标签的http-equiv属性语法格式是：＜meta http-equiv=”参数” content=”参数变量值”＞ ；其中http-equiv属性主要有以下几种参数</p>
 
-<ul>
-<li><p><code>Expires(期限)</code></p>
+    <ul>
+      <li>
+        <p><code class="highlighter-rouge">Expires(期限)</code></p>
 
-<p>说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。</p>
+        <p>说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。</p>
 
-<p>用法：＜meta http-equiv=&quot;expires&quot; content=&quot;Fri, 12 Jan 2001 18:18:18 GMT&quot;＞</p>
+        <p>用法：＜meta http-equiv=”expires” content=”Fri, 12 Jan 2001 18:18:18 GMT”＞</p>
 
-<p>注意：必须使用GMT的时间格式。</p></li>
-<li><p><code>Pragma(cache模式)</code></p>
+        <p>注意：必须使用GMT的时间格式。</p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">Pragma(cache模式)</code></p>
 
-<p>说明：禁止浏览器从本地计算机的缓存中访问页面内容。</p>
+        <p>说明：禁止浏览器从本地计算机的缓存中访问页面内容。</p>
 
-<p>用法：＜meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;＞</p>
+        <p>用法：＜meta http-equiv=”Pragma” content=”no-cache”＞</p>
 
-<p>注意：这样设定，访问者将无法脱机浏览。</p></li>
-<li><p><code>Refresh(刷新)</code></p>
+        <p>注意：这样设定，访问者将无法脱机浏览。</p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">Refresh(刷新)</code></p>
 
-<p>说明：自动刷新并指向新页面。</p>
+        <p>说明：自动刷新并指向新页面。</p>
 
-<p>用法：＜meta http-equiv=&quot;Refresh&quot; content=&quot;2；URL=http://www.root.net&quot;＞</p>
+        <p>用法：＜meta http-equiv=”Refresh” content=”2；URL=http://www.root.net”＞</p>
 
-<p>注意：其中的2是指停留2秒钟后自动刷新到URL网址。</p></li>
-<li><p><code>Set-Cookie(cookie设定)</code></p>
+        <p>注意：其中的2是指停留2秒钟后自动刷新到URL网址。</p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">Set-Cookie(cookie设定)</code></p>
 
-<p>说明：如果网页过期，那么存盘的cookie将被删除。</p>
+        <p>说明：如果网页过期，那么存盘的cookie将被删除。</p>
 
-<p>用法：＜meta http-equiv=&quot;Set-Cookie&quot; content=&quot;cookievalue=xxx; expires=Friday, 12-Jan-2001 18:18:18 GMT； path=/&quot;＞</p>
+        <p>用法：＜meta http-equiv=”Set-Cookie” content=”cookievalue=xxx; expires=Friday, 12-Jan-2001 18:18:18 GMT； path=/”＞</p>
 
-<p>注意：必须使用GMT的时间格式。</p></li>
-<li><p><code>Window-target(显示窗口的设定)</code></p>
+        <p>注意：必须使用GMT的时间格式。</p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">Window-target(显示窗口的设定)</code></p>
 
-<p>说明：强制页面在当前窗口以独立页面显示。</p>
+        <p>说明：强制页面在当前窗口以独立页面显示。</p>
 
-<p>用法：＜meta http-equiv=&quot;Window-target&quot; content=&quot;_top&quot;＞</p>
+        <p>用法：＜meta http-equiv=”Window-target” content=”_top”＞</p>
 
-<p>注意：用来防止别人在框架里调用自己的页面。</p></li>
-<li><p><code>content-Type(显示字符集的设定)</code></p>
+        <p>注意：用来防止别人在框架里调用自己的页面。</p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">content-Type(显示字符集的设定)</code></p>
 
-<p>说明：设定页面使用的字符集。</p>
+        <p>说明：设定页面使用的字符集。</p>
 
-<p>用法：＜meta http-equiv=&quot;content-Type&quot; content=&quot;text/html; charset=gb2312&quot;＞</p></li>
-</ul></li>
+        <p>用法：＜meta http-equiv=”content-Type” content=”text/html; charset=gb2312”＞</p>
+      </li>
+    </ul>
+  </li>
 </ul>
 
-<h2><code>&lt;meta http-equiv=&quot;X-UA-compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;有什么作用</code></h2>
+<h2 id="meta-http-equivx-ua-compatible-contentieedgechrome1"><code class="highlighter-rouge">&lt;meta http-equiv="X-UA-compatible" content="IE=edge,chrome=1"&gt;有什么作用</code></h2>
 
-<p><code>A:</code>这个属性主要是设置浏览器优先使用什么模式来渲染页面的.
+<p><code class="highlighter-rouge">A:</code>这个属性主要是设置浏览器优先使用什么模式来渲染页面的.
 以上代码IE=edge告诉IE使用最新的edge引擎渲染网页，chrome=1则可以激活Chrome Frame</p>
 
-<h2><code>常见的浏览器有哪些，什么内核</code></h2>
+<h2 id="section-2"><code class="highlighter-rouge">常见的浏览器有哪些，什么内核</code></h2>
 
 <ol>
-<li>使用<code>Trident</code>的是internet explorer，国产的绝大部分浏览器。Trident是就是ie内核</li>
-<li>使用<code>Gecko</code>的是Mozilla Firefox，使用 Gecko 内核的浏览器也有不少，如 Netscape MozillaSuite/SeaMonkey 等</li>
-<li>使用<code>Presto</code>的是opera，这是目前公认网页浏览速度最快的浏览器内核</li>
-<li>使用<code>WebKit</code>的有苹果的safari，谷歌的chrome，还有国产的大部分双核浏览器其中一核就是WebKit</li>
+  <li>使用<code class="highlighter-rouge">Trident</code>的是internet explorer，国产的绝大部分浏览器。Trident是就是ie内核</li>
+  <li>使用<code class="highlighter-rouge">Gecko</code>的是Mozilla Firefox，使用 Gecko 内核的浏览器也有不少，如 Netscape MozillaSuite/SeaMonkey 等</li>
+  <li>使用<code class="highlighter-rouge">Presto</code>的是opera，这是目前公认网页浏览速度最快的浏览器内核</li>
+  <li>使用<code class="highlighter-rouge">WebKit</code>的有苹果的safari，谷歌的chrome，还有国产的大部分双核浏览器其中一核就是WebKit</li>
 </ol>
 
 
@@ -343,8 +363,7 @@ meta标签的http-equiv属性语法格式是：＜meta http-equiv=&quot;参数&q
                     data-content="HTML-1
 
 网页乱码的问题是如何产生的？怎样解决?
-
-A:造成html网页乱码原因主要是html源代码内中文字内容与html编码不同造成。解决办法：保... | 克洛弗的博客 | Clover Blog " >
+A:造成html网页乱码原因主要是html源代码内中文字内容与html编码不同造成。解决办法：保持... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>

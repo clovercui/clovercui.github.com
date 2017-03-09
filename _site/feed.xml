@@ -5,105 +5,106 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 09 Mar 2017 15:12:19 +0800</pubDate>
-    <lastBuildDate>Thu, 09 Mar 2017 15:12:19 +0800</lastBuildDate>
+    <pubDate>Thu, 09 Mar 2017 15:18:04 +0800</pubDate>
+    <lastBuildDate>Thu, 09 Mar 2017 15:18:04 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
         <title>Html基础-4</title>
-        <description>&lt;h1&gt;HTML-4&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;html-4&quot;&gt;HTML-4&lt;/h1&gt;
 
-&lt;h2&gt;&lt;code&gt;如何理解 HTML CSS 语义化? 在平时写代码的过程中要注意哪些细节&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;html-css--&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;如何理解 HTML CSS 语义化? 在平时写代码的过程中要注意哪些细节&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;语义化&lt;/code&gt;：让所用的html css标签具有实际意义.选择合适的标签、使用合理的代码结构，便于开发者阅读，同时让浏览器的爬虫和机器很好的解析&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;语义化&lt;/code&gt;：让所用的html css标签具有实际意义.选择合适的标签、使用合理的代码结构，便于开发者阅读，同时让浏览器的爬虫和机器很好的解析&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;注意细节&lt;/code&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;尽可能少的使用无语义的标签div和span；&lt;/li&gt;
-&lt;li&gt;不要使用纯样式标签，如：&lt;code&gt;b&lt;/code&gt;、&lt;code&gt;font&lt;/code&gt;、&lt;code&gt;u&lt;/code&gt;等，改用css设置；&lt;/li&gt;
-&lt;li&gt;需要强调的文本，可以包含在&lt;code&gt;strong&lt;/code&gt;或者&lt;code&gt;em&lt;/code&gt;标签中（浏览器预设样式，能用CSS指定就不用他们），&lt;code&gt;strong&lt;/code&gt;默认样式是加粗（不要用b），&lt;code&gt;em&lt;/code&gt;是斜体（不用i）&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;&lt;code&gt;form表单有什么作用？有哪些常用的input 标签，分别有什么作用？&lt;/code&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;作用&lt;/code&gt;：创建一个表单，实现本页与其他页的数据交互；&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;常用input标签&lt;/code&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;注意细节&lt;/code&gt;:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;type=text&lt;/code&gt;：输入用户名、电话号码等；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;type=password&lt;/code&gt;：密码输入框；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;type=file&lt;/code&gt;：文件目录输入平台；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;type=hidden&lt;/code&gt;：将无法明示的重要信息提交到下一页；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;type=checkbox&lt;/code&gt;：多选框；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;type=radio&lt;/code&gt;：单选框；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;type=image&lt;/code&gt;：提交式图片，如验证码；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;type=submit/reset&lt;/code&gt;：分别是“提交”“重置”按钮；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;type=button&lt;/code&gt;：windows风格按钮。&lt;/li&gt;
+  &lt;li&gt;尽可能少的使用无语义的标签div和span；&lt;/li&gt;
+  &lt;li&gt;不要使用纯样式标签，如：&lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;font&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;u&lt;/code&gt;等，改用css设置；&lt;/li&gt;
+  &lt;li&gt;需要强调的文本，可以包含在&lt;code class=&quot;highlighter-rouge&quot;&gt;strong&lt;/code&gt;或者&lt;code class=&quot;highlighter-rouge&quot;&gt;em&lt;/code&gt;标签中（浏览器预设样式，能用CSS指定就不用他们），&lt;code class=&quot;highlighter-rouge&quot;&gt;strong&lt;/code&gt;默认样式是加粗（不要用b），&lt;code class=&quot;highlighter-rouge&quot;&gt;em&lt;/code&gt;是斜体（不用i）&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;&lt;code&gt;post 和 get 方式的区别？&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;forminput-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;form表单有什么作用？有哪些常用的input 标签，分别有什么作用？&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;作用&lt;/code&gt;：创建一个表单，实现本页与其他页的数据交互；&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;常用input标签&lt;/code&gt;：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;get是用来从服务器获得数据；post向服务器上传数据；&lt;/li&gt;
-&lt;li&gt;get安全级别较post低；&lt;/li&gt;
-&lt;li&gt;get传输的数据量小，主要受URL长度限制；post可以传输大量数据；get最多提交1k数据，浏览器的限制。post理论上无限制，受服务器限制&lt;/li&gt;
-&lt;li&gt;Get将表单中数据的按照variable=value的形式，添加到action所指向的URL后面，并且两者使用“?”连接，而各个变量之间使用“&amp;amp;”连接；Post是将表单中的数据放在form的数据体中，按照变量和值相对应的方式，传递到action所指向URL;&lt;/li&gt;
-&lt;li&gt;get是form的默认方式。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;type=text&lt;/code&gt;：输入用户名、电话号码等；&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;type=password&lt;/code&gt;：密码输入框；&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;type=file&lt;/code&gt;：文件目录输入平台；&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;type=hidden&lt;/code&gt;：将无法明示的重要信息提交到下一页；&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;type=checkbox&lt;/code&gt;：多选框；&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;type=radio&lt;/code&gt;：单选框；&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;type=image&lt;/code&gt;：提交式图片，如验证码；&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;type=submit/reset&lt;/code&gt;：分别是“提交”“重置”按钮；&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;type=button&lt;/code&gt;：windows风格按钮。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;&lt;code&gt;在input里，name 有什么作用？&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;post--get-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;post 和 get 方式的区别？&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;用途1: 作为可与服务器交互数据的HTML元素的服务器端的标示，比如input、select、textarea、和button等。我们可以在服务器端根据其Name通过Request.Params取得元素提交的值。&lt;/li&gt;
-&lt;li&gt;用途2：HTML元素Input type=&amp;#39;radio&amp;#39;分组，我们知道radio button控件在同一个分组类，check操作是mutex的，同一时间只能选中一个radio，这个分组就是根据相同的Name属性来实现的。&lt;/li&gt;
-&lt;li&gt;用途3：建立页面中的锚点，我们知道&lt;code&gt;&amp;lt;a href=&amp;quot;URL&amp;quot;&amp;gt;link&amp;lt;/a&amp;gt;&lt;/code&gt;是获得一个页面超级链接，如果不用href属性，而改用Name，如：，我们就获得了一个页面锚点。&lt;/li&gt;
-&lt;li&gt;用途4: 作为对象的Identity，如Applet、Object、Embed等元素。比如在Applet对象实例中，我们将使用其Name来引用该对象。&lt;/li&gt;
-&lt;li&gt;用途5: 在IMG元素和MAP元素之间关联的时候，如果要定义IMG的热点区域，需要使用其属性usemap，使usemap=&amp;quot;#name&amp;quot;(被关联的MAP元素的Name)。&lt;/li&gt;
-&lt;li&gt;用途6: 某些特定元素的属性，如attribute，meta和param。例如为Object定义参数&lt;code&gt;&amp;lt;PARAM NAME = &amp;quot;appletParameter&amp;quot; VALUE = &amp;quot;value&amp;quot;&amp;gt;或Meta中&amp;lt;META NAME = &amp;quot;Author&amp;quot; CONTENT = &amp;quot;Dave Raggett&amp;quot;&amp;gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;get是用来从服务器获得数据；post向服务器上传数据；&lt;/li&gt;
+  &lt;li&gt;get安全级别较post低；&lt;/li&gt;
+  &lt;li&gt;get传输的数据量小，主要受URL长度限制；post可以传输大量数据；get最多提交1k数据，浏览器的限制。post理论上无限制，受服务器限制&lt;/li&gt;
+  &lt;li&gt;Get将表单中数据的按照variable=value的形式，添加到action所指向的URL后面，并且两者使用“?”连接，而各个变量之间使用“&amp;amp;”连接；Post是将表单中的数据放在form的数据体中，按照变量和值相对应的方式，传递到action所指向URL;&lt;/li&gt;
+  &lt;li&gt;get是form的默认方式。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;&lt;code&gt;&amp;lt;button&amp;gt;提交&amp;lt;/button&amp;gt;、&amp;lt;a class=&amp;quot;btn&amp;quot; href=&amp;quot;#&amp;quot;&amp;gt;提交&amp;lt;/a&amp;gt;、&amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;提交&amp;quot;&amp;gt; 三者有什么区别？&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;inputname-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;在input里，name 有什么作用？&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;button&amp;gt;提交&amp;lt;/button&amp;gt;&lt;/code&gt;：创建一个普通按钮，需要绑定事件才可以用以提交数据；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;a class=&amp;quot;btn&amp;quot; href=&amp;quot;#&amp;quot;&amp;gt;提交&amp;lt;/a&amp;gt;&lt;/code&gt;：一个链接按钮；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;input type=&amp;quot;submit&amp;quot; value=&amp;quot;提交&amp;quot;&amp;gt;&lt;/code&gt;：提交按钮，提交表单&lt;/li&gt;
+  &lt;li&gt;用途1: 作为可与服务器交互数据的HTML元素的服务器端的标示，比如input、select、textarea、和button等。我们可以在服务器端根据其Name通过Request.Params取得元素提交的值。&lt;/li&gt;
+  &lt;li&gt;用途2：HTML元素Input type=’radio’分组，我们知道radio button控件在同一个分组类，check操作是mutex的，同一时间只能选中一个radio，这个分组就是根据相同的Name属性来实现的。&lt;/li&gt;
+  &lt;li&gt;用途3：建立页面中的锚点，我们知道&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a href=&quot;URL&quot;&amp;gt;link&amp;lt;/a&amp;gt;&lt;/code&gt;是获得一个页面超级链接，如果不用href属性，而改用Name，如：，我们就获得了一个页面锚点。&lt;/li&gt;
+  &lt;li&gt;用途4: 作为对象的Identity，如Applet、Object、Embed等元素。比如在Applet对象实例中，我们将使用其Name来引用该对象。&lt;/li&gt;
+  &lt;li&gt;用途5: 在IMG元素和MAP元素之间关联的时候，如果要定义IMG的热点区域，需要使用其属性usemap，使usemap=”#name”(被关联的MAP元素的Name)。&lt;/li&gt;
+  &lt;li&gt;用途6: 某些特定元素的属性，如attribute，meta和param。例如为Object定义参数&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;PARAM NAME = &quot;appletParameter&quot; VALUE = &quot;value&quot;&amp;gt;或Meta中&amp;lt;META NAME = &quot;Author&quot; CONTENT = &quot;Dave Raggett&quot;&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;&lt;code&gt;radio 如何 分组?&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;buttonbuttona-classbtn-hrefainput-typesubmit-value-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;button&amp;gt;提交&amp;lt;/button&amp;gt;、&amp;lt;a class=&quot;btn&quot; href=&quot;#&quot;&amp;gt;提交&amp;lt;/a&amp;gt;、&amp;lt;input type=&quot;submit&quot; value=&quot;提交&quot;&amp;gt; 三者有什么区别？&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;button&amp;gt;提交&amp;lt;/button&amp;gt;&lt;/code&gt;：创建一个普通按钮，需要绑定事件才可以用以提交数据；&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a class=&quot;btn&quot; href=&quot;#&quot;&amp;gt;提交&amp;lt;/a&amp;gt;&lt;/code&gt;：一个链接按钮；&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;input type=&quot;submit&quot; value=&quot;提交&quot;&amp;gt;&lt;/code&gt;：提交按钮，提交表单&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;radio--&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;radio 如何 分组?&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;name的值设为一样,就是一组。&lt;/p&gt;
 
-&lt;h2&gt;&lt;code&gt;placeholder 属性有什么作用?&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;placeholder-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;placeholder 属性有什么作用?&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;
 提供可描述输入字段预期值的提示信息&lt;/p&gt;
 
-&lt;h2&gt;&lt;code&gt;type=hidden隐藏域有什么作用? 举例说明&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;typehidden-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;type=hidden隐藏域有什么作用? 举例说明&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;隐藏域在页面中对于用户是不可见的，在表单中插入隐藏域的目的在于收集或发送信息，以利于被处理表单的程序所使用。浏览者单击发送按钮发送表单的时候，隐藏域的信息也被一起发送到服务器。&lt;/li&gt;
-&lt;li&gt;有些时候我们要给用户一信息，让他在提交表单时提交上来以确定用户身份，如sessionkey，等等．当然这些东西也能用cookie实现，但使用隐藏域就简单的多了．而且不会有浏览器不支持，用户禁用cookie的烦恼。&lt;/li&gt;
-&lt;li&gt;有些时候一个form里有多个提交按钮，怎样使程序能够分清楚到底用户是按那一个按钮提交上来的呢？我们就可以写一个隐藏域，然后在每一个按钮处加上&lt;code&gt;onclick=&amp;quot;document.form.command.value=&amp;quot;xx&amp;quot;&amp;quot;&lt;/code&gt;然后我们接到数据后先检查command的值就会知道用户是按的那个按钮提交上来的。&lt;/li&gt;
-&lt;li&gt;有时候一个网页中有多个form，我们知道多个form是不能同时提交的，但有时这些form确实相互作用，我们就可以在form中添加隐藏域来使它们联系起来。&lt;/li&gt;
-&lt;li&gt;javascript不支持全局变量，但有时我们必须用全局变量，我们就可以把值先存在隐藏域里，它的值就不会丢失了&lt;/li&gt;
+  &lt;li&gt;隐藏域在页面中对于用户是不可见的，在表单中插入隐藏域的目的在于收集或发送信息，以利于被处理表单的程序所使用。浏览者单击发送按钮发送表单的时候，隐藏域的信息也被一起发送到服务器。&lt;/li&gt;
+  &lt;li&gt;有些时候我们要给用户一信息，让他在提交表单时提交上来以确定用户身份，如sessionkey，等等．当然这些东西也能用cookie实现，但使用隐藏域就简单的多了．而且不会有浏览器不支持，用户禁用cookie的烦恼。&lt;/li&gt;
+  &lt;li&gt;有些时候一个form里有多个提交按钮，怎样使程序能够分清楚到底用户是按那一个按钮提交上来的呢？我们就可以写一个隐藏域，然后在每一个按钮处加上&lt;code class=&quot;highlighter-rouge&quot;&gt;onclick=&quot;document.form.command.value=&quot;xx&quot;&quot;&lt;/code&gt;然后我们接到数据后先检查command的值就会知道用户是按的那个按钮提交上来的。&lt;/li&gt;
+  &lt;li&gt;有时候一个网页中有多个form，我们知道多个form是不能同时提交的，但有时这些form确实相互作用，我们就可以在form中添加隐藏域来使它们联系起来。&lt;/li&gt;
+  &lt;li&gt;javascript不支持全局变量，但有时我们必须用全局变量，我们就可以把值先存在隐藏域里，它的值就不会丢失了&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         <pubDate>Thu, 09 Mar 2017 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2017/03/09/html-4/</link>
@@ -120,57 +121,160 @@
     
       <item>
         <title>CSS选择器</title>
-        <description>&lt;h1&gt;CSS选择器&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;css&quot;&gt;CSS选择器&lt;/h1&gt;
 
-&lt;h2&gt;选择器类型&lt;/h2&gt;
+&lt;h2 id=&quot;section&quot;&gt;选择器类型&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;基础选择器&lt;/p&gt;
+  &lt;li&gt;
+    &lt;p&gt;基础选择器&lt;/p&gt;
 
-&lt;p&gt;|选择器| 含义|
-|--------|--------|
-|*  |通用元素选择器，匹配页面任何元素（这也就决定了我们很少使用）|
-|#id    |id选择器，匹配特定id的元素|
-|.class |类选择器，匹配class包含(不是等于)特定类的元素|
-|element|   标签选择器|&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;组合选择器&lt;/p&gt;
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;选择器&lt;/th&gt;
+          &lt;th&gt;含义&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;*&lt;/td&gt;
+          &lt;td&gt;通用元素选择器，匹配页面任何元素（这也就决定了我们很少使用）&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;#id&lt;/td&gt;
+          &lt;td&gt;id选择器，匹配特定id的元素&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;.class&lt;/td&gt;
+          &lt;td&gt;类选择器，匹配class包含(不是等于)特定类的元素&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;element&lt;/td&gt;
+          &lt;td&gt;标签选择器&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;组合选择器&lt;/p&gt;
 
-&lt;p&gt;|选择器| 含义|
-|---|---|
-|E,F    |多元素选择器，用,分隔，同时匹配元素E或元素F|
-|E F    |后代选择器，用空格分隔，匹配E元素所有的后代（不只是子元素、子元素向下递归）元素F|
-|E&amp;gt;F    |子元素选择器，用&amp;gt;分隔，匹配E元素的所有直接子元素|
-|E+F    |直接相邻选择器，匹配E元素之后的相邻的同级元素F|
-|E~F    |普通相邻选择器（弟弟选择器），匹配E元素之后的同级元素F（无论直接相邻与否）|
-|.class1.class2 |id和class选择器和选择器连写的时候中间没有分隔符，. 和 # 本身充当分隔符的元素|
-|element#id |id和class选择器和选择器连写的时候中间没有分隔符，. 和 # 本身充当分隔符的元素|&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;属性选择器&lt;/p&gt;
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;选择器&lt;/th&gt;
+          &lt;th&gt;含义&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;E,F&lt;/td&gt;
+          &lt;td&gt;多元素选择器，用,分隔，同时匹配元素E或元素F&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;E F&lt;/td&gt;
+          &lt;td&gt;后代选择器，用空格分隔，匹配E元素所有的后代（不只是子元素、子元素向下递归）元素F&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;E&amp;gt;F&lt;/td&gt;
+          &lt;td&gt;子元素选择器，用&amp;gt;分隔，匹配E元素的所有直接子元素&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;E+F&lt;/td&gt;
+          &lt;td&gt;直接相邻选择器，匹配E元素之后的相邻的同级元素F&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;E~F&lt;/td&gt;
+          &lt;td&gt;普通相邻选择器（弟弟选择器），匹配E元素之后的同级元素F（无论直接相邻与否）&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;.class1.class2&lt;/td&gt;
+          &lt;td&gt;id和class选择器和选择器连写的时候中间没有分隔符，. 和 # 本身充当分隔符的元素&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;element#id&lt;/td&gt;
+          &lt;td&gt;id和class选择器和选择器连写的时候中间没有分隔符，. 和 # 本身充当分隔符的元素&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;属性选择器&lt;/p&gt;
 
-&lt;p&gt;|选择器  |含义|
-|---|---|
-|E[attr]    |匹配所有具有属性attr的元素，div[id]就能取到所有有id属性的div|
-|E[attr = value]    |匹配属性attr值为value的元素，div[id=test],匹配id=test的div|
-|E[attr ~= value]   |匹配所有属性attr具有多个空格分隔、其中一个值等于value的元素|
-|E[attr ^= value]   |匹配属性attr的值以value开头的元素|
-|E[attr $= value]   |匹配属性attr的值以value结尾的元素|
-|E[attr *= value]   |匹配属性attr的值包含value的元素|&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;伪类选择器&lt;/p&gt;&lt;/li&gt;
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;选择器&lt;/th&gt;
+          &lt;th&gt;含义&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;E[attr]&lt;/td&gt;
+          &lt;td&gt;匹配所有具有属性attr的元素，div[id]就能取到所有有id属性的div&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;E[attr = value]&lt;/td&gt;
+          &lt;td&gt;匹配属性attr值为value的元素，div[id=test],匹配id=test的div&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;E[attr ~= value]&lt;/td&gt;
+          &lt;td&gt;匹配所有属性attr具有多个空格分隔、其中一个值等于value的元素&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;E[attr ^= value]&lt;/td&gt;
+          &lt;td&gt;匹配属性attr的值以value开头的元素&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;E[attr $= value]&lt;/td&gt;
+          &lt;td&gt;匹配属性attr的值以value结尾的元素&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;E[attr *= value]&lt;/td&gt;
+          &lt;td&gt;匹配属性attr的值包含value的元素&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;伪类选择器&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;往下看&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;伪元素选择器&lt;/li&gt;
+  &lt;li&gt;伪元素选择器&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;|选择器  |含义|
-|---|---|
-|E::first-line  |匹配E元素内容的第一行|
-|E::first-letter    |匹配E元素内容的第一个字母|
-|E::before  |在E元素之前插入生成的内容|
-|E::after   |在E元素之后插入生成的内容|&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;选择器&lt;/th&gt;
+      &lt;th&gt;含义&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;E::first-line&lt;/td&gt;
+      &lt;td&gt;匹配E元素内容的第一行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;E::first-letter&lt;/td&gt;
+      &lt;td&gt;匹配E元素内容的第一个字母&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;E::before&lt;/td&gt;
+      &lt;td&gt;在E元素之前插入生成的内容&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;E::after&lt;/td&gt;
+      &lt;td&gt;在E元素之后插入生成的内容&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
-&lt;h2&gt;CSS优先级&lt;/h2&gt;
+&lt;h2 id=&quot;css-1&quot;&gt;CSS优先级&lt;/h2&gt;
 
 &lt;p&gt;从高到低分别是&lt;/p&gt;
 
@@ -179,75 +283,101 @@
 &lt;p&gt;作为style属性写在元素标签上的内联样式&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;id选择器&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;类选择器&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;伪类选择器&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;属性选择器&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;标签选择器&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;通配符选择器&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;浏览器自定义&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;id选择器&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;类选择器&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;伪类选择器&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;属性选择器&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;标签选择器&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;通配符选择器&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;浏览器自定义&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;这样就可以看出来上面例子肯定使用id选择器的定义了，还有一种复杂的情况，CSS规则由多个选择器组成&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nf&quot;&gt;#test&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.class1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nf&quot;&gt;#test&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.class1.class2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;css
+#test p.class1 {...}
+#test .class1.class2 {...}
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;这种场景该使用那条规则呢？&lt;/p&gt;
 
 &lt;p&gt;这时候我们可以做个简单的加法运算，id选择器的权值为1000，class选择器为100，标签选择器为10，做一下运算（当然只是为了形象这么说，一万个class选择器加起来也不如一个id选择器优先级高）&lt;/p&gt;
 
 &lt;p&gt;这样我们就能得知第二条的规则优先级高一些，但是还有一种情况&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;#parent p.class1
-div #child.class1
 
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;child&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;class1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;p&gt;``` html
+#parent p.class1
+div #child.class1&lt;/p&gt;
+
+&lt;div id=&quot;parent&quot;&gt;
+    &lt;p id=&quot;child&quot; class=&quot;class1&quot;&gt;
         Text
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;```&lt;/p&gt;
+
 &lt;p&gt;按照我们刚才的方法计算，两个的权值时相同的，这时候应该用那条规则呢？简单来说一句话谁更具体用谁，也就是权值高的选择器作用的越具体优先级越高&lt;/p&gt;
 
 &lt;p&gt;我们可以看到两个选择器作用的元素都是p标签，id选择器权值最高，第一条规则作用在了父元素上，第二条规则直接作用在了p标签本身上，所以我们认为第二条选择器的优先级高&lt;/p&gt;
 
 &lt;p&gt;如果两个选择器规权值就是一样，我们改怎么判断呢？ 后面的覆盖前面的！&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#333&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;....&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#666&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;这样&lt;code&gt;div&lt;/code&gt;文案的颜色明显会是&lt;code&gt;#666&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;css
+div {color: #333;}
+....
+div {color: #666;}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这样&lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt;文案的颜色明显会是&lt;code class=&quot;highlighter-rouge&quot;&gt;#666&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;总而言之判断CSS选择器规则优先级很简单，每个选择器本身有优先级，越具体优先级越高&lt;/p&gt;
 
-&lt;h2&gt;&lt;code&gt;列出你知道的伪类选择器&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;列出你知道的伪类选择器&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;| 选择器 | 含义 |
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;| 选择器 | 含义 |
 |--------|--------|
-|E:first-child  |匹配元素E的第一个子元素|
-|E:link |匹配所有未被点击的链接|
-|E:visited  |匹配所有已被点击的链接|
-|E:active   |匹配鼠标已经其上按下、还没有释放的E元素|
-|E:hover    |匹配鼠标悬停其上的E元素|
-|E:focus    |匹配获得当前焦点的E元素|
-|E:lang(c)  |匹配lang属性等于c的E元素|
-|E:enabled  |匹配表单中可用的元素|
-|E:disabled |匹配表单中禁用的元素
-|E:checked  |匹配表单中被选中的radio或checkbox元素|
-|E::selection   |匹配用户当前选中的元素|
-|E:root |匹配文档的根元素，对于HTML文档，就是HTML元素|
-|E:nth-child(n) |匹配其父元素的第n个子元素，第一个编号为1|
-|E:nth-last-child(n)    |匹配其父元素的倒数第n个子元素，第一个编号为1|
-|E:nth-of-type(n)   |与:nth-child()作用类似，但是仅匹配使用同种标签的元素|
-|E:nth-last-of-type(n)  |与:nth-last-child() 作用类似，但是仅匹配使用同种标签的元素|
-|E:last-child   |匹配父元素的最后一个子元素，等同于:nth-last-child(1)|
-|E:first-of-type    |匹配父元素下使用同种标签的第一个子元素，等同于:nth-of-type(1)|
-|E:last-of-type |匹配父元素下使用同种标签的最后一个子元素，等同于:nth-last-of-type(1)|
-|E:only-child   |匹配父元素下仅有的一个子元素，等同于:first-child:last-child或 :nth-child(1):nth-last-child(1)|
-|E:only-of-type |匹配父元素下使用同种标签的唯一一个子元素，等同于:first-of-type:last-of-type或 :nth-of-type(1):nth-last-of-type(1)|
-|E:empty    |匹配一个不包含任何子元素的元素，文本节点也被看作子元素|
-|E:not(selector)    |匹配不符合当前选择器的任何元素|
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+|E:first-child	|匹配元素E的第一个子元素|
+|E:link	|匹配所有未被点击的链接|
+|E:visited	|匹配所有已被点击的链接|
+|E:active	|匹配鼠标已经其上按下、还没有释放的E元素|
+|E:hover	|匹配鼠标悬停其上的E元素|
+|E:focus	|匹配获得当前焦点的E元素|
+|E:lang(c)	|匹配lang属性等于c的E元素|
+|E:enabled	|匹配表单中可用的元素|
+|E:disabled	|匹配表单中禁用的元素
+|E:checked	|匹配表单中被选中的radio或checkbox元素|
+|E::selection	|匹配用户当前选中的元素|
+|E:root	|匹配文档的根元素，对于HTML文档，就是HTML元素|
+|E:nth-child(n)	|匹配其父元素的第n个子元素，第一个编号为1|
+|E:nth-last-child(n)	|匹配其父元素的倒数第n个子元素，第一个编号为1|
+|E:nth-of-type(n)	|与:nth-child()作用类似，但是仅匹配使用同种标签的元素|
+|E:nth-last-of-type(n)	|与:nth-last-child() 作用类似，但是仅匹配使用同种标签的元素|
+|E:last-child	|匹配父元素的最后一个子元素，等同于:nth-last-child(1)|
+|E:first-of-type	|匹配父元素下使用同种标签的第一个子元素，等同于:nth-of-type(1)|
+|E:last-of-type	|匹配父元素下使用同种标签的最后一个子元素，等同于:nth-last-of-type(1)|
+|E:only-child	|匹配父元素下仅有的一个子元素，等同于:first-child:last-child或 :nth-child(1):nth-last-child(1)|
+|E:only-of-type	|匹配父元素下使用同种标签的唯一一个子元素，等同于:first-of-type:last-of-type或 :nth-of-type(1):nth-last-of-type(1)|
+|E:empty	|匹配一个不包含任何子元素的元素，文本节点也被看作子元素|
+|E:not(selector)	|匹配不符合当前选择器的任何元素|
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 &lt;p&gt;==n的取值==&lt;/p&gt;
 
 &lt;p&gt;1，2，3，4，5&lt;/p&gt;
@@ -256,43 +386,48 @@ div #child.class1
 
 &lt;p&gt;odd, even&lt;/p&gt;
 
-&lt;h2&gt;&lt;code&gt;:first-child和:first-of-type的作用和区别&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;first-childfirst-of-type&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:first-child和:first-of-type的作用和区别&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;:first-child&lt;/code&gt; 匹配的是某父元素的第一个子元素，可以说是结构上的第一个子元素。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:first-child&lt;/code&gt; 匹配的是某父元素的第一个子元素，可以说是结构上的第一个子元素。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;:first-of-type&lt;/code&gt; 匹配的是该类型的第一个，类型是指什么呢，就是冒号前面匹配到的东西，比如 p:first-of-type，就是指所有p元素中的第一个。这里不再限制是第一个子元素了，只要是该类型元素的第一个就行了，当然这些元素的范围都是属于同一级的，也就是同辈的。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:first-of-type&lt;/code&gt; 匹配的是该类型的第一个，类型是指什么呢，就是冒号前面匹配到的东西，比如 p:first-of-type，就是指所有p元素中的第一个。这里不再限制是第一个子元素了，只要是该类型元素的第一个就行了，当然这些元素的范围都是属于同一级的，也就是同辈的。&lt;/p&gt;
 
-&lt;p&gt;同样类型的选择器 &lt;code&gt;:last-child&lt;/code&gt; 和 &lt;code&gt;:last-of-type&lt;/code&gt;、&lt;code&gt;:nth-child(n)&lt;/code&gt;  和  &lt;code&gt;:nth-of-type(n)&lt;/code&gt; 也可以这样去理解。&lt;/p&gt;
+&lt;p&gt;同样类型的选择器 &lt;code class=&quot;highlighter-rouge&quot;&gt;:last-child &lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;:last-of-type&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;:nth-child(n)&lt;/code&gt;  和  &lt;code class=&quot;highlighter-rouge&quot;&gt;:nth-of-type(n)&lt;/code&gt; 也可以这样去理解。&lt;/p&gt;
 
-&lt;h2&gt;&lt;code&gt;运行如下代码，解析下输出样式的原因&lt;/code&gt;&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;.item1&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:first-child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;.item1&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:first-of-type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ct&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-   &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;aa&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-   &lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;bb&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
-   &lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;ccc&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;section-2&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;运行如下代码，解析下输出样式的原因&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/QQ20170309-144057@2x.png&quot; alt=&quot;展示效果&quot;&gt;&lt;/p&gt;
+&lt;p&gt;```html&lt;/p&gt;
+&lt;style&gt;
+.item1:first-child{
+  color: red;
+}
+.item1:first-of-type{
+  background: blue;
+}
+&lt;/style&gt;
 
-&lt;p&gt;&lt;code&gt;.item1:first-child&lt;/code&gt;匹配到class是item1的第一个子元素，所以 &lt;code&gt;&amp;lt;p class=&amp;quot;item1&amp;quot;&amp;gt;aa&amp;lt;/p&amp;gt;&lt;/code&gt; 是第一个子元素 展示位文字红色
-&lt;code&gt;.item1:first-of-type&lt;/code&gt; 匹配到class是item1的第一种标签类型，所以 &lt;code&gt;&amp;lt;p class=&amp;quot;item1&amp;quot;&amp;gt;aa&amp;lt;/p&amp;gt;&lt;/code&gt; 为第一个&lt;code&gt;p&lt;/code&gt;标签，&lt;code&gt;&amp;lt;h3 class=&amp;quot;item1&amp;quot;&amp;gt;bb&amp;lt;/h3&amp;gt;&lt;/code&gt;为第一个&lt;code&gt;h3&lt;/code&gt;标签，所以 这两个背景色展示位蓝色。&lt;/p&gt;
+&lt;div class=&quot;ct&quot;&gt;
+   &lt;p class=&quot;item1&quot;&gt;aa&lt;/p&gt;
+   &lt;h3 class=&quot;item1&quot;&gt;bb&lt;/h3&gt;
+   &lt;h3 class=&quot;item1&quot;&gt;ccc&lt;/h3&gt;
+ &lt;/div&gt;
+&lt;p&gt;```&lt;/p&gt;
 
-&lt;h2&gt;&lt;code&gt;text-align: center的作用是什么，作用在什么元素上？能让什么元素水平居中&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/QQ20170309-144057@2x.png&quot; alt=&quot;展示效果&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.item1:first-child&lt;/code&gt;匹配到class是item1的第一个子元素，所以 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;p class=&quot;item1&quot;&amp;gt;aa&amp;lt;/p&amp;gt;&lt;/code&gt; 是第一个子元素 展示位文字红色
+&lt;code class=&quot;highlighter-rouge&quot;&gt;.item1:first-of-type&lt;/code&gt; 匹配到class是item1的第一种标签类型，所以 ` &amp;lt;p class=&quot;item1&quot;&amp;gt;aa&amp;lt;/p&amp;gt;&lt;code class=&quot;highlighter-rouge&quot;&gt; 为第一个&lt;/code&gt;p&lt;code class=&quot;highlighter-rouge&quot;&gt;标签，&lt;/code&gt;&amp;lt;h3 class=&quot;item1&quot;&amp;gt;bb&amp;lt;/h3&amp;gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;为第一个&lt;/code&gt;h3`标签，所以 这两个背景色展示位蓝色。&lt;/p&gt;
+
+&lt;h2 id=&quot;text-align-center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;text-align: center的作用是什么，作用在什么元素上？能让什么元素水平居中&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;作用是让元素内部 行内元素、display为（table-cell、inline和inline-block）的块级元素水平居中，作用在块级元素上。&lt;/p&gt;
+
 </description>
         <pubDate>Thu, 09 Mar 2017 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2017/03/09/css-selector/</link>
@@ -311,80 +446,90 @@ div #child.class1
     
       <item>
         <title>Html基础-3</title>
-        <description>&lt;h1&gt;HTML-3&lt;/h1&gt;
-
+        <description>&lt;h1 id=&quot;html-3&quot;&gt;HTML-3&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.zhangxinxu.com/wordpress/2009/11/css%E8%A1%8C%E9%AB%98line-height%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8/&quot;&gt;css行高line-height的一些深入理解及应用&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;http://www.zhangxinxu.com/wordpress/2009/11/css%E8%A1%8C%E9%AB%98line-height%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8/&quot;&gt;css行高line-height的一些深入理解及应用&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2&gt;&lt;code&gt;line-height有什么作用?&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;line-height&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;line-height有什么作用?&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;line-height 属性设置行间的距离（行高），不能使用负值。该属性会影响行框的布局。在应用到一个块级元素时，它定义了该元素中基线之间的最小距离而不是最大距离。line-height 与 font-size 的计算值之差(行距)分为两半，分别加到一个文本行内容的顶部和底部。可以包含这些内容的最小框就是行框。&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;line-height可以被定义为normal。&lt;/p&gt;
+  &lt;li&gt;
+    &lt;p&gt;line-height可以被定义为normal。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;body { line-height:normal; }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;line-height可以被定义为继承&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;body { line-height:normal; }&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;line-height可以被定义为继承&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;p { line-height:inherit; }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;line-height可以使用一个百分比的值&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;p { line-height:inherit; }&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;line-height可以使用一个百分比的值&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;p { line-height:120%; }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;line-height可以被定义为一个长度值（单位px、em等）&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;p { line-height:120%; }&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;line-height可以被定义为一个长度值（单位px、em等）&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;p { line-height:20px; }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;line-height也可以被定义为纯数字（甚至没有单位）&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;p { line-height:20px; }&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;line-height也可以被定义为纯数字（甚至没有单位）&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;p { line-height:1.2; }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;p { line-height:1.2; }&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2&gt;&lt;code&gt;如何去查CSS属性的兼容性？比如inline-block哪些浏览器支持？&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;cssinline-block&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;如何去查CSS属性的兼容性？比如inline-block哪些浏览器支持？&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;去Can I use 网站查询  &lt;a href=&quot;http://caniuse.com/&quot;&gt;CanIUse&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;在输入框中查询要查询的属性&lt;/p&gt;
 
 &lt;p&gt;inline-block的兼容性：
-&lt;img src=&quot;/img/ciuinlineblock.png&quot; alt=&quot;inline-block兼容性&quot;&gt;&lt;/p&gt;
+&lt;img src=&quot;/img/ciuinlineblock.png&quot; alt=&quot;inline-block兼容性&quot; /&gt;&lt;/p&gt;
 
-&lt;h2&gt;&lt;code&gt;a 标签的href, title, target 是什么？ title 和 alt有什么区别？如何新窗口打开链接?&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;a-href-title-target--title--alt&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;a 标签的href, title, target 是什么？ title 和 alt有什么区别？如何新窗口打开链接?&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;href&lt;/code&gt;是a标签的链接地址。可以是个链接地址，也可以是一个锚点地址。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;href&lt;/code&gt;是a标签的链接地址。可以是个链接地址，也可以是一个锚点地址。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;title&lt;/code&gt; 是a标签的标题，鼠标移动上之后显示的名称&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt; 是a标签的标题，鼠标移动上之后显示的名称&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;target&lt;/code&gt; 是 a 标签打开链接的方式，主要有&lt;code&gt;_blank&lt;/code&gt;:浏览器总在一个新打开、未命名的窗口中载入目标文档；&lt;code&gt;_self&lt;/code&gt;:这个目标的值对所有没有指定目标的 &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;&lt;code&gt;标签是默认目标，它使得目标文档载入并显示在相同的框架或者窗口中作为源文档。这个目标是多余且不必要的，除非和文档标题 &amp;lt;base&amp;gt; 标签中的 target 属性一起使用；&lt;/code&gt;&lt;em&gt;parent&lt;code&gt;：这个目标使得文档载入父窗口或者包含来超链接引用的框架的框架集。如果这个引用是在窗口或者在顶级框架中，那么它与目标 _self 等效；&lt;/code&gt;&lt;/em&gt;top&lt;code&gt;：这个目标使得文档载入包含这个超链接的窗口，用 _top 目标将会清除所有被包含的框架并将文档载入整个浏览器窗口。&lt;/code&gt;framename`:在指定的框架中打开被链接文档。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;target&lt;/code&gt; 是 a 标签打开链接的方式，主要有&lt;code class=&quot;highlighter-rouge&quot;&gt;_blank&lt;/code&gt;:浏览器总在一个新打开、未命名的窗口中载入目标文档；&lt;code class=&quot;highlighter-rouge&quot;&gt;_self&lt;/code&gt;:这个目标的值对所有没有指定目标的 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a&amp;gt;&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt; 标签是默认目标，它使得目标文档载入并显示在相同的框架或者窗口中作为源文档。这个目标是多余且不必要的，除非和文档标题 &amp;lt;base&amp;gt; 标签中的 target 属性一起使用；&lt;/code&gt;_parent&lt;code class=&quot;highlighter-rouge&quot;&gt;：这个目标使得文档载入父窗口或者包含来超链接引用的框架的框架集。如果这个引用是在窗口或者在顶级框架中，那么它与目标 _self 等效；&lt;/code&gt;_top&lt;code class=&quot;highlighter-rouge&quot;&gt;：这个目标使得文档载入包含这个超链接的窗口，用 _top 目标将会清除所有被包含的框架并将文档载入整个浏览器窗口。&lt;/code&gt;framename`:在指定的框架中打开被链接文档。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;title 和 alt区别&lt;/code&gt;:title作为属性时，用来为元素提供额外说明信息，例如，给超链接标签a添加了title属性，把鼠标移动到该链接上面是，就会显示title的内容，以达到补充说明或者提示的效果。alt属性则是用来指定替换文字，只能用在img、area和input元素中（包括applet元素），用于网页中图片无法正常显示时给用户提供文字说明使其了解图像信息。alt是替代图像作用而不是提供额外说明文字的。根据一些SEO人士的说法，使用alt属性还具有搜索引擎优化效果，因为搜素引擎是无法直接读取图像的信息的，alt可以为其提供文字信息所以对搜索引擎比较友好&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;title 和 alt区别&lt;/code&gt;:title作为属性时，用来为元素提供额外说明信息，例如，给超链接标签a添加了title属性，把鼠标移动到该链接上面是，就会显示title的内容，以达到补充说明或者提示的效果。alt属性则是用来指定替换文字，只能用在img、area和input元素中（包括applet元素），用于网页中图片无法正常显示时给用户提供文字说明使其了解图像信息。alt是替代图像作用而不是提供额外说明文字的。根据一些SEO人士的说法，使用alt属性还具有搜索引擎优化效果，因为搜素引擎是无法直接读取图像的信息的，alt可以为其提供文字信息所以对搜索引擎比较友好&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;&amp;lt;a href=&amp;#39;https://www.baidu.com&amp;#39; target=&amp;#39;_blank&amp;#39;&amp;gt;在新的窗口打开连接&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a href=&#39;https://www.baidu.com&#39; target=&#39;_blank&#39;&amp;gt;在新的窗口打开连接&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2&gt;&lt;code&gt;display: none , visibility: hidden, opacity:0 有什么作用？有什么区别？&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;display-none--visibility-hidden-opacity0-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;display: none , visibility: hidden, opacity:0 有什么作用？有什么区别？&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;display=none，把元素隐藏起来，并且会改变页面布局，可以理解成在页面中把该元素删除掉,&lt;code&gt;无体积,脱离文档流&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;visibility=hidden，把元素隐藏起来了，但不会改变页面布局，不会触发该元素已经绑定的事件，&lt;code&gt;有体积，在文档流内&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;opacity=0，该元素隐藏起来了，但不会改变页面布局，如果该元素已经绑定一些事件，如click事件，那么点击该区域，也能触发点击事件的 &lt;code&gt;有体积,在文档里内&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;display=none，把元素隐藏起来，并且会改变页面布局，可以理解成在页面中把该元素删除掉,&lt;code class=&quot;highlighter-rouge&quot;&gt;无体积,脱离文档流&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;visibility=hidden，把元素隐藏起来了，但不会改变页面布局，不会触发该元素已经绑定的事件，&lt;code class=&quot;highlighter-rouge&quot;&gt;有体积，在文档流内&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;opacity=0，该元素隐藏起来了，但不会改变页面布局，如果该元素已经绑定一些事件，如click事件，那么点击该区域，也能触发点击事件的 &lt;code class=&quot;highlighter-rouge&quot;&gt;有体积,在文档里内&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;&lt;code&gt;如何去除 a 链接的默认样式？直接在 a 链接父容器添加颜色，能否继承到当前 a 链接上？&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;a--a--a-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;如何去除 a 链接的默认样式？直接在 a 链接父容器添加颜色，能否继承到当前 a 链接上？&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;在a的style中加入text-decoration:none；可以去除a的默认样式&lt;/p&gt;
 
-&lt;p&gt;直接在 &lt;code&gt;a&lt;/code&gt; 链接父容器添加颜色，不能继承到当前 &lt;code&gt;a&lt;/code&gt; 链接上&lt;/p&gt;
+&lt;p&gt;直接在 &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; 链接父容器添加颜色，不能继承到当前 &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; 链接上&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;a标签不会使用继承属性&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;a标签不会使用继承属性&lt;/code&gt;&lt;/p&gt;
+
 </description>
         <pubDate>Tue, 07 Mar 2017 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2017/03/07/html-3/</link>
@@ -401,97 +546,118 @@ div #child.class1
     
       <item>
         <title>Html基础-2</title>
-        <description>&lt;h1&gt;HTML-2&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;html-2&quot;&gt;HTML-2&lt;/h1&gt;
 
-&lt;h2&gt;&lt;code&gt;样式有几种引入方式? link 和 @import有什么区别&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;link--import&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;样式有几种引入方式? link 和 @import有什么区别&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;1.内联方式&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;div style=&quot;background: red&quot;&amp;gt;&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;改变当前标签的样式&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;2.嵌入方式&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;嵌入方式指的是在 HTML 头部中的 &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt; 标签下书写 CSS 代码。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;head&amp;gt;
-    &amp;lt;style&amp;gt;
-    .content {
-        background: red;
-    }
-    &amp;lt;/style&amp;gt;
-&amp;lt;/head&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;嵌入方式的 CSS 只对当前的网页有效。因为 CSS 代码是在 HTML 文件中，所以会使得代码比较集中，当我们写模板网页时这通常比较有利。因为查看模板代码的人可以一目了然地查看 HTML 结构和 CSS 样式。因为嵌入的 CSS 只对当前页面有效，所以当多个页面需要引入相同的 CSS 代码时，这样写会导致代码冗余，也不利于维护。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;3.链接方式&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;链接方式指的是使用 HTML 头部的 &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 标签引入外部的 CSS 文件。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;head&amp;gt;
-    &amp;lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&amp;gt;
-&amp;lt;/head&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;这是最常见的也是最推荐的引入 CSS 的方式。使用这种方式，所有的 CSS 代码只存在于单独的 CSS 文件中，所以具有良好的可维护性。并且所有的 CSS 代码只存在于 CSS 文件中，CSS 文件会在第一次加载时引入，以后切换页面时只需加载 HTML 文件即可&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;4.导入方式&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;导入方式指的是使用 CSS 规则引入外部 CSS 文件
-&lt;code&gt;
-&amp;lt;style&amp;gt;
-    @import url(style.css);
-&amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;link和@import的区别是?&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;两者都是外部引用CSS的方式，但是存在一定的区别&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;区别1：link是XHTML标签，除了加载CSS外，还可以定义RSS等其他事务；@import属于CSS范畴，只能加载CSS。&lt;/li&gt;
-&lt;li&gt;区别2：link引用CSS时，在页面载入时同时加载；@import需要页面网页完全载入以后加载。&lt;/li&gt;
-&lt;li&gt;区别3：link是XHTML标签，无兼容问题；@import是在CSS2.1提出的，低版本的浏览器不支持。&lt;/li&gt;
-&lt;li&gt;区别4：link支持使用Javascript控制DOM去改变样式；而@import不支持。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1.内联方式&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;&lt;code&gt;文件路径../main.css 、./main.css、main.css、/main.css有什么区别&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;```&lt;/p&gt;
+&lt;div style=&quot;background: red&quot;&gt;&lt;/div&gt;
+&lt;p&gt;```
+改变当前标签的样式&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt; &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2.嵌入方式&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;../main.css&lt;/code&gt; 是当前目录的上级目录引入main.css&lt;/p&gt;
+    &lt;p&gt;嵌入方式指的是在 HTML 头部中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;style&amp;gt;&lt;/code&gt; 标签下书写 CSS 代码。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;./main.css&lt;/code&gt; 是当前目录引入main.css&lt;/p&gt;
+    &lt;p&gt;```&lt;/p&gt;
+    &lt;head&gt;
+      &lt;style&gt;
+      .content {
+          background: red;
+      }
+      &lt;/style&gt;
+  &lt;/head&gt;
+    &lt;p&gt;```
+嵌入方式的 CSS 只对当前的网页有效。因为 CSS 代码是在 HTML 文件中，所以会使得代码比较集中，当我们写模板网页时这通常比较有利。因为查看模板代码的人可以一目了然地查看 HTML 结构和 CSS 样式。因为嵌入的 CSS 只对当前页面有效，所以当多个页面需要引入相同的 CSS 代码时，这样写会导致代码冗余，也不利于维护。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;3.链接方式&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;main.css&lt;/code&gt; 同&lt;code&gt;./main.css&lt;/code&gt; 是当前目录引入main.css&lt;/p&gt;
+    &lt;p&gt;链接方式指的是使用 HTML 头部的 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 标签引入外部的 CSS 文件。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;/main.css&lt;/code&gt; 是在网站根目录引入main.css&lt;/p&gt;
+    &lt;p&gt;```&lt;/p&gt;
+    &lt;head&gt;
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot; /&gt;
+  &lt;/head&gt;
+    &lt;p&gt;```&lt;/p&gt;
 
-&lt;h2&gt;&lt;code&gt;console.log是做什么用的&lt;/code&gt;&lt;/h2&gt;
+    &lt;p&gt;这是最常见的也是最推荐的引入 CSS 的方式。使用这种方式，所有的 CSS 代码只存在于单独的 CSS 文件中，所以具有良好的可维护性。并且所有的 CSS 代码只存在于 CSS 文件中，CSS 文件会在第一次加载时引入，以后切换页面时只需加载 HTML 文件即可&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;4.导入方式&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;
+    &lt;p&gt;导入方式指的是使用 CSS 规则引入外部 CSS 文件
+  ```&lt;/p&gt;
+    &lt;style&gt;
+      @import url(style.css);
+  &lt;/style&gt;
+
+    &lt;p&gt;```&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;link和@import的区别是?&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;两者都是外部引用CSS的方式，但是存在一定的区别&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;区别1：link是XHTML标签，除了加载CSS外，还可以定义RSS等其他事务；@import属于CSS范畴，只能加载CSS。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;区别2：link引用CSS时，在页面载入时同时加载；@import需要页面网页完全载入以后加载。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;区别3：link是XHTML标签，无兼容问题；@import是在CSS2.1提出的，低版本的浏览器不支持。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;区别4：link支持使用Javascript控制DOM去改变样式；而@import不支持。&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;maincss-maincssmaincssmaincss&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;文件路径../main.css 、./main.css、main.css、/main.css有什么区别&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;../main.css&lt;/code&gt; 是当前目录的上级目录引入main.css&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./main.css&lt;/code&gt; 是当前目录引入main.css&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;main.css&lt;/code&gt; 同&lt;code class=&quot;highlighter-rouge&quot;&gt;./main.css&lt;/code&gt; 是当前目录引入main.css&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/main.css&lt;/code&gt; 是在网站根目录引入main.css&lt;/p&gt;
+
+&lt;h2 id=&quot;consolelog&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;console.log是做什么用的&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;
 在控制台使用 log方式输出信息，还看查看对象的具体内容。&lt;/p&gt;
 
-&lt;h2&gt;&lt;code&gt;text-align有几个值，分别有什么作用？为什么text-align:justify没有效果？写截图说明区别&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;text-aligntext-alignjustify&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;text-align有几个值，分别有什么作用？为什么text-align:justify没有效果？写截图说明区别&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;text-align&lt;/code&gt;:left,right,center,justify,start,end,inherit,initial&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;text-align&lt;/code&gt;:left,right,center,justify,start,end,inherit,initial&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;text-align:justify&lt;/code&gt; 不起作用因为text-align不会处理被打断的行和最后一行。一行文本不进行处理。还有就是强制换行的也不处理。所以你强制占满了一行他才处理。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;text-align:justify&lt;/code&gt; 不起作用因为text-align不会处理被打断的行和最后一行。一行文本不进行处理。还有就是强制换行的也不处理。所以你强制占满了一行他才处理。&lt;/p&gt;
+&lt;h2 id=&quot;pxemrem&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;px、em、rem分别是什么？有什么区别？如何使用&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;px&lt;/code&gt; PX实际上就是像素,用PX设置字体大小时，比较稳定和精确.但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，如果改变了浏览器的缩放，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体&lt;/p&gt;
 
-&lt;h2&gt;&lt;code&gt;px、em、rem分别是什么？有什么区别？如何使用&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;em&lt;/code&gt; em是相对于父元素的属性而计算的.EM就是根据基准来缩放字体的大小。EM实质是一个相对值，而非具体的数值。这种技术需要一个参考点，一般都是以&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt;的“font-size”为基准。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;
-&lt;code&gt;px&lt;/code&gt; PX实际上就是像素,用PX设置字体大小时，比较稳定和精确.但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，如果改变了浏览器的缩放，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;任意浏览器的默认字体高都是16px。所有未经调整的浏览器都符合: 1em=16px。那么12px=0.75em, 10px=0.625em。为了简化font-size的换算，需要在css中的body选择器中声明Font-size=62.5%，这就使em值变为 16px*62.5%=10px, 这样12px=1.2em, 10px=1em, 也就是说只需要将你的原来的px数值除以10，然后换上em作为单位就行了&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;em&lt;/code&gt; em是相对于父元素的属性而计算的.EM就是根据基准来缩放字体的大小。EM实质是一个相对值，而非具体的数值。这种技术需要一个参考点，一般都是以&lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt;的“font-size”为基准。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rem&lt;/code&gt; EM是相对于其父元素来设置字体大小的，这样就会存在一个问题，进行任何元素设置，都有可能需要知道他父元素的大小。而Rem是相对于根元素&amp;lt;html&amp;gt;，这样就意味着，我们只需要在根元素确定一个参考值
+&lt;code class=&quot;highlighter-rouge&quot;&gt;浏览器的兼容性 除了IE6-IE8r，其它的浏览器都支持em和rem属性，px是所有浏览器都支持。
+因此为了浏览器的兼容性，可“px”和“rem”一起使用，用&quot;px&quot;来实现IE6-8下的效果，然后使用“Rem”来实现代浏览器的效果。&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;任意浏览器的默认字体高都是16px。所有未经调整的浏览器都符合: 1em=16px。那么12px=0.75em, 10px=0.625em。为了简化font-size的换算，需要在css中的body选择器中声明Font-size=62.5%，这就使em值变为 16px*62.5%=10px, 这样12px=1.2em, 10px=1em, 也就是说只需要将你的原来的px数值除以10，然后换上em作为单位就行了&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;rem&lt;/code&gt; EM是相对于其父元素来设置字体大小的，这样就会存在一个问题，进行任何元素设置，都有可能需要知道他父元素的大小。而Rem是相对于根元素&lt;html&gt;，这样就意味着，我们只需要在根元素确定一个参考值
-&lt;code&gt;浏览器的兼容性 除了IE6-IE8r，其它的浏览器都支持em和rem属性，px是所有浏览器都支持。
-因此为了浏览器的兼容性，可“px”和“rem”一起使用，用&amp;quot;px&amp;quot;来实现IE6-8下的效果，然后使用“Rem”来实现代浏览器的效果。&lt;/code&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 06 Mar 2017 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2017/03/06/html-2/</link>
@@ -508,139 +674,159 @@ div #child.class1
     
       <item>
         <title>Html基础-1</title>
-        <description>&lt;h1&gt;HTML-1&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;html-1&quot;&gt;HTML-1&lt;/h1&gt;
 
-&lt;h2&gt;&lt;code&gt;网页乱码的问题是如何产生的？怎样解决?&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;section&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;网页乱码的问题是如何产生的？怎样解决?&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;造成html网页乱码原因主要是html源代码内中文字内容与html编码不同造成。解决办法：保持文件的编写字符集和网页设置的字符集保持一致 如使用UTF-8编写的文件，网页头设置为&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;造成html网页乱码原因主要是html源代码内中文字内容与html编码不同造成。解决办法：保持文件的编写字符集和网页设置的字符集保持一致 如使用UTF-8编写的文件，网页头设置为&lt;code&gt;&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2&gt;&lt;code&gt;颜色有几种写法， 红色、 绿色、蓝色、白色、黑色如何表示？ 透明黑色如何表示？#ccc的颜色#eee的颜色？ #333的颜色？&lt;/code&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;ccceee-333&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;颜色有几种写法， 红色、 绿色、蓝色、白色、黑色如何表示？ 透明黑色如何表示？#ccc的颜色#eee的颜色？ #333的颜色？&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;直接书写英文名字&lt;/code&gt;。这样的好处是直观。但是没有能很好的控制颜色&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;rgb(0,0,0)&lt;/code&gt;中间的三个 数字分别是0-255.分别代表红  绿  蓝三个颜色。数字数字越大，颜色越深&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;#FCFCFC&lt;/code&gt; 这样是用十六进制来表示颜色。跟上面rgb差不多。两位英文代表一个原色。分别是红绿蓝。这种写法有缩写。比如#FFFFFF可以等于成#FFF，还有#CCFFCC,可以写成#CFC。这就是颜色的写法&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;rgba（0，0，0，0）&lt;/code&gt;前面三个数字跟rgb一样的，最后一个是透明度的控制。取值范围是0-1.一位小数。越接近零。越透明。    &lt;code&gt;注意的是。这种有兼容问题。是CSS3的属性&lt;/code&gt;。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;直接书写英文名字&lt;/code&gt;。这样的好处是直观。但是没有能很好的控制颜色&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rgb(0,0,0)&lt;/code&gt;中间的三个 数字分别是0-255.分别代表红  绿  蓝三个颜色。数字数字越大，颜色越深&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#FCFCFC&lt;/code&gt; 这样是用十六进制来表示颜色。跟上面rgb差不多。两位英文代表一个原色。分别是红绿蓝。这种写法有缩写。比如#FFFFFF可以等于成#FFF，还有#CCFFCC,可以写成#CFC。这就是颜色的写法&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rgba（0，0，0，0）&lt;/code&gt;前面三个数字跟rgb一样的，最后一个是透明度的控制。取值范围是0-1.一位小数。越接近零。越透明。    &lt;code class=&quot;highlighter-rouge&quot;&gt;注意的是。这种有兼容问题。是CSS3的属性&lt;/code&gt;。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;红色&lt;code&gt;red&lt;/code&gt;、 绿色&lt;code&gt;green&lt;/code&gt;、蓝色&lt;code&gt;blue&lt;/code&gt;、白色&lt;code&gt;white&lt;/code&gt;、黑色&lt;code&gt;black&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;红色&lt;code class=&quot;highlighter-rouge&quot;&gt;red&lt;/code&gt;、 绿色&lt;code class=&quot;highlighter-rouge&quot;&gt;green&lt;/code&gt;、蓝色&lt;code class=&quot;highlighter-rouge&quot;&gt;blue&lt;/code&gt;、白色&lt;code class=&quot;highlighter-rouge&quot;&gt;white&lt;/code&gt;、黑色&lt;code class=&quot;highlighter-rouge&quot;&gt;black&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;透明黑色 &lt;code&gt;rgba(0,0,0,0.8)&lt;/code&gt; ,#ccc &lt;code&gt;深灰色&lt;/code&gt; #eee &lt;code&gt;浅灰色&lt;/code&gt; #333 &lt;code&gt;浅黑色&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;透明黑色 &lt;code class=&quot;highlighter-rouge&quot;&gt;rgba(0,0,0,0.8)&lt;/code&gt; ,#ccc &lt;code class=&quot;highlighter-rouge&quot;&gt;深灰色&lt;/code&gt; #eee &lt;code class=&quot;highlighter-rouge&quot;&gt;浅灰色&lt;/code&gt; #333 &lt;code class=&quot;highlighter-rouge&quot;&gt;浅黑色&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2&gt;&lt;code&gt;&amp;lt;!doctype html&amp;gt; 的作用是什么&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;doctype-html-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;!doctype html&amp;gt; 的作用是什么&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;告知浏览器以Html5的标准来解析页面，Html5相对宽松，没有严格模式和混杂模式之分。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;告知浏览器以Html5的标准来解析页面，Html5相对宽松，没有严格模式和混杂模式之分。&lt;/p&gt;
-
-&lt;h2&gt;&lt;code&gt;严格模式和混杂模式指什么&lt;/code&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;&amp;lt;!DOCTYPE&amp;gt;声明叫做文件类型定义（DTD），声明的作用为了告诉浏览器该文件的类型。让浏览器解析器知道应该用哪个规范来解析文档。&amp;lt;!DOCTYPE&amp;gt;声明必须在 HTML 文档的第一行，这并不是一个 HTML 标签。&lt;/p&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;严格模式和混杂模式指什么&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&amp;lt;!DOCTYPE&amp;gt;声明叫做文件类型定义（DTD），声明的作用为了告诉浏览器该文件的类型。让浏览器解析器知道应该用哪个规范来解析文档。&amp;lt;!DOCTYPE&amp;gt;声明必须在 HTML 文档的第一行，这并不是一个 HTML 标签。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;严格模式：&lt;/code&gt;又称标准模式，是指浏览器按照 W3C 标准解析代码.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;混杂模式：&lt;/code&gt;又称怪异模式或兼容模式，是指浏览器用自己的方式解析代码。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;严格模式：&lt;/code&gt;又称标准模式，是指浏览器按照 W3C 标准解析代码.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;混杂模式：&lt;/code&gt;又称怪异模式或兼容模式，是指浏览器用自己的方式解析代码。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;ol&gt;
-&lt;li&gt;如果文档包含严格的 DOCTYPE ，那么它一般以严格模式呈现。（严格 DTD ——严格模式） &lt;/li&gt;
-&lt;li&gt;包含过渡 DTD 和 URI 的 DOCTYPE ，也以严格模式呈现，但有过渡 DTD 而没有 URI （统一资源标识符，就是声明最后的地址）会导致页面以混杂模式呈现。（有 URI 的过渡 DTD ——严格模式；没有 URI 的过渡 DTD ——混杂模式） &lt;/li&gt;
-&lt;li&gt;DOCTYPE 不存在或形式不正确会导致文档以混杂模式呈现。（DTD不存在或者格式不正确——混杂模式）&lt;/li&gt;
-&lt;li&gt;HTML5 没有 DTD ，因此也就没有严格模式与混杂模式的区别，HTML5 有相对宽松的语法，实现时，已经尽可能大的实现了向后兼容。（ HTML5 没有严格和混杂之分）&lt;/li&gt;
+  &lt;li&gt;如果文档包含严格的 DOCTYPE ，那么它一般以严格模式呈现。（严格 DTD ——严格模式）&lt;/li&gt;
+  &lt;li&gt;包含过渡 DTD 和 URI 的 DOCTYPE ，也以严格模式呈现，但有过渡 DTD 而没有 URI （统一资源标识符，就是声明最后的地址）会导致页面以混杂模式呈现。（有 URI 的过渡 DTD ——严格模式；没有 URI 的过渡 DTD ——混杂模式）&lt;/li&gt;
+  &lt;li&gt;DOCTYPE 不存在或形式不正确会导致文档以混杂模式呈现。（DTD不存在或者格式不正确——混杂模式）&lt;/li&gt;
+  &lt;li&gt;HTML5 没有 DTD ，因此也就没有严格模式与混杂模式的区别，HTML5 有相对宽松的语法，实现时，已经尽可能大的实现了向后兼容。（ HTML5 没有严格和混杂之分）&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2&gt;&lt;code&gt;meta 有什么作用，常见的值有哪些&lt;/code&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;meta标签共有两个属性，它们分别是&lt;code&gt;http-equiv&lt;/code&gt;属性和&lt;code&gt;name&lt;/code&gt;属性，不同的属性又有不同的参数值，这些不同的参数值就实现了不同的网页功能。&lt;/p&gt;
+&lt;h2 id=&quot;meta-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;meta 有什么作用，常见的值有哪些&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;meta标签共有两个属性，它们分别是&lt;code class=&quot;highlighter-rouge&quot;&gt;http-equiv&lt;/code&gt;属性和&lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt;属性，不同的属性又有不同的参数值，这些不同的参数值就实现了不同的网页功能。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;name属性&lt;/code&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;name属性&lt;/code&gt;
 name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。
-meta标签的name属性语法格式是：&lt;code&gt;＜meta name=&amp;quot;参数&amp;quot; content=&amp;quot;具体的参数值&amp;quot;＞&lt;/code&gt; 。
-其中name属性主要有以下几种参数：&lt;/p&gt;
+  meta标签的name属性语法格式是：&lt;code class=&quot;highlighter-rouge&quot;&gt;＜meta name=&quot;参数&quot; content=&quot;具体的参数值&quot;＞&lt;/code&gt; 。
+  其中name属性主要有以下几种参数：&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;Keywords(关键字)&lt;/code&gt;&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Keywords(关键字)&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
 
-&lt;p&gt;说明：keywords用来告诉搜索引擎你网页的关键字是什么&lt;/p&gt;
+  	说明：keywords用来告诉搜索引擎你网页的关键字是什么
 
-&lt;p&gt;举例：＜meta name =&amp;quot;keywords&amp;quot; content=&amp;quot;science,education,culture,politics,ecnomics，relationships, entertaiment, human&amp;quot;＞&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;description(网站内容描述)&lt;/code&gt;&lt;/p&gt;
+  	举例：＜meta name =”keywords” content=”science,education,culture,politics,ecnomics，relationships, entertaiment, human”＞
 
-&lt;p&gt;说明：description用来告诉搜索引擎你的网站主要内容。&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;description(网站内容描述)&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;举例：＜meta name=&amp;quot;description&amp;quot; content=&amp;quot;This page is about the meaning of science, education,culture.&amp;quot;＞&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;robots(机器人向导)&lt;/code&gt;
+        &lt;p&gt;说明：description用来告诉搜索引擎你的网站主要内容。&lt;/p&gt;
+
+        &lt;p&gt;举例：＜meta name=”description” content=”This page is about the meaning of science, education,culture.”＞&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;robots(机器人向导)&lt;/code&gt;
 　　
-说明：robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。&lt;/p&gt;
+  说明：robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。&lt;/p&gt;
 
-&lt;p&gt;举例：＜meta name=&amp;quot;robots&amp;quot; content=&amp;quot;none&amp;quot;＞&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;author(作者)&lt;/code&gt;&lt;/p&gt;
+        &lt;p&gt;举例：＜meta name=”robots” content=”none”＞&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;author(作者)&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;说明：标注网页的作者&lt;/p&gt;
+        &lt;p&gt;说明：标注网页的作者&lt;/p&gt;
 
-&lt;p&gt;举例：＜meta name=&amp;quot;author&amp;quot; content=&amp;quot;root,root@21cn.com&amp;quot;＞&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;http-equiv属性&lt;/code&gt;
+        &lt;p&gt;举例：＜meta name=”author” content=”root,root@21cn.com”＞&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http-equiv属性&lt;/code&gt;
 http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值.
-meta标签的http-equiv属性语法格式是：＜meta http-equiv=&amp;quot;参数&amp;quot; content=&amp;quot;参数变量值&amp;quot;＞ ；其中http-equiv属性主要有以下几种参数&lt;/p&gt;
+  meta标签的http-equiv属性语法格式是：＜meta http-equiv=”参数” content=”参数变量值”＞ ；其中http-equiv属性主要有以下几种参数&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;Expires(期限)&lt;/code&gt;&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Expires(期限)&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。&lt;/p&gt;
+        &lt;p&gt;说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。&lt;/p&gt;
 
-&lt;p&gt;用法：＜meta http-equiv=&amp;quot;expires&amp;quot; content=&amp;quot;Fri, 12 Jan 2001 18:18:18 GMT&amp;quot;＞&lt;/p&gt;
+        &lt;p&gt;用法：＜meta http-equiv=”expires” content=”Fri, 12 Jan 2001 18:18:18 GMT”＞&lt;/p&gt;
 
-&lt;p&gt;注意：必须使用GMT的时间格式。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;Pragma(cache模式)&lt;/code&gt;&lt;/p&gt;
+        &lt;p&gt;注意：必须使用GMT的时间格式。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Pragma(cache模式)&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;说明：禁止浏览器从本地计算机的缓存中访问页面内容。&lt;/p&gt;
+        &lt;p&gt;说明：禁止浏览器从本地计算机的缓存中访问页面内容。&lt;/p&gt;
 
-&lt;p&gt;用法：＜meta http-equiv=&amp;quot;Pragma&amp;quot; content=&amp;quot;no-cache&amp;quot;＞&lt;/p&gt;
+        &lt;p&gt;用法：＜meta http-equiv=”Pragma” content=”no-cache”＞&lt;/p&gt;
 
-&lt;p&gt;注意：这样设定，访问者将无法脱机浏览。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;Refresh(刷新)&lt;/code&gt;&lt;/p&gt;
+        &lt;p&gt;注意：这样设定，访问者将无法脱机浏览。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Refresh(刷新)&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;说明：自动刷新并指向新页面。&lt;/p&gt;
+        &lt;p&gt;说明：自动刷新并指向新页面。&lt;/p&gt;
 
-&lt;p&gt;用法：＜meta http-equiv=&amp;quot;Refresh&amp;quot; content=&amp;quot;2；URL=http://www.root.net&amp;quot;＞&lt;/p&gt;
+        &lt;p&gt;用法：＜meta http-equiv=”Refresh” content=”2；URL=http://www.root.net”＞&lt;/p&gt;
 
-&lt;p&gt;注意：其中的2是指停留2秒钟后自动刷新到URL网址。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;Set-Cookie(cookie设定)&lt;/code&gt;&lt;/p&gt;
+        &lt;p&gt;注意：其中的2是指停留2秒钟后自动刷新到URL网址。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Set-Cookie(cookie设定)&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;说明：如果网页过期，那么存盘的cookie将被删除。&lt;/p&gt;
+        &lt;p&gt;说明：如果网页过期，那么存盘的cookie将被删除。&lt;/p&gt;
 
-&lt;p&gt;用法：＜meta http-equiv=&amp;quot;Set-Cookie&amp;quot; content=&amp;quot;cookievalue=xxx; expires=Friday, 12-Jan-2001 18:18:18 GMT； path=/&amp;quot;＞&lt;/p&gt;
+        &lt;p&gt;用法：＜meta http-equiv=”Set-Cookie” content=”cookievalue=xxx; expires=Friday, 12-Jan-2001 18:18:18 GMT； path=/”＞&lt;/p&gt;
 
-&lt;p&gt;注意：必须使用GMT的时间格式。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;Window-target(显示窗口的设定)&lt;/code&gt;&lt;/p&gt;
+        &lt;p&gt;注意：必须使用GMT的时间格式。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Window-target(显示窗口的设定)&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;说明：强制页面在当前窗口以独立页面显示。&lt;/p&gt;
+        &lt;p&gt;说明：强制页面在当前窗口以独立页面显示。&lt;/p&gt;
 
-&lt;p&gt;用法：＜meta http-equiv=&amp;quot;Window-target&amp;quot; content=&amp;quot;_top&amp;quot;＞&lt;/p&gt;
+        &lt;p&gt;用法：＜meta http-equiv=”Window-target” content=”_top”＞&lt;/p&gt;
 
-&lt;p&gt;注意：用来防止别人在框架里调用自己的页面。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;content-Type(显示字符集的设定)&lt;/code&gt;&lt;/p&gt;
+        &lt;p&gt;注意：用来防止别人在框架里调用自己的页面。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;content-Type(显示字符集的设定)&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;说明：设定页面使用的字符集。&lt;/p&gt;
+        &lt;p&gt;说明：设定页面使用的字符集。&lt;/p&gt;
 
-&lt;p&gt;用法：＜meta http-equiv=&amp;quot;content-Type&amp;quot; content=&amp;quot;text/html; charset=gb2312&amp;quot;＞&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+        &lt;p&gt;用法：＜meta http-equiv=”content-Type” content=”text/html; charset=gb2312”＞&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;&lt;code&gt;&amp;lt;meta http-equiv=&amp;quot;X-UA-compatible&amp;quot; content=&amp;quot;IE=edge,chrome=1&amp;quot;&amp;gt;有什么作用&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;meta-http-equivx-ua-compatible-contentieedgechrome1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;meta http-equiv=&quot;X-UA-compatible&quot; content=&quot;IE=edge,chrome=1&quot;&amp;gt;有什么作用&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;A:&lt;/code&gt;这个属性主要是设置浏览器优先使用什么模式来渲染页面的.
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;这个属性主要是设置浏览器优先使用什么模式来渲染页面的.
 以上代码IE=edge告诉IE使用最新的edge引擎渲染网页，chrome=1则可以激活Chrome Frame&lt;/p&gt;
 
-&lt;h2&gt;&lt;code&gt;常见的浏览器有哪些，什么内核&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;section-2&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;常见的浏览器有哪些，什么内核&lt;/code&gt;&lt;/h2&gt;
 
 &lt;ol&gt;
-&lt;li&gt;使用&lt;code&gt;Trident&lt;/code&gt;的是internet explorer，国产的绝大部分浏览器。Trident是就是ie内核&lt;/li&gt;
-&lt;li&gt;使用&lt;code&gt;Gecko&lt;/code&gt;的是Mozilla Firefox，使用 Gecko 内核的浏览器也有不少，如 Netscape MozillaSuite/SeaMonkey 等&lt;/li&gt;
-&lt;li&gt;使用&lt;code&gt;Presto&lt;/code&gt;的是opera，这是目前公认网页浏览速度最快的浏览器内核&lt;/li&gt;
-&lt;li&gt;使用&lt;code&gt;WebKit&lt;/code&gt;的有苹果的safari，谷歌的chrome，还有国产的大部分双核浏览器其中一核就是WebKit&lt;/li&gt;
+  &lt;li&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;Trident&lt;/code&gt;的是internet explorer，国产的绝大部分浏览器。Trident是就是ie内核&lt;/li&gt;
+  &lt;li&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;Gecko&lt;/code&gt;的是Mozilla Firefox，使用 Gecko 内核的浏览器也有不少，如 Netscape MozillaSuite/SeaMonkey 等&lt;/li&gt;
+  &lt;li&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;Presto&lt;/code&gt;的是opera，这是目前公认网页浏览速度最快的浏览器内核&lt;/li&gt;
+  &lt;li&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;WebKit&lt;/code&gt;的有苹果的safari，谷歌的chrome，还有国产的大部分双核浏览器其中一核就是WebKit&lt;/li&gt;
 &lt;/ol&gt;
 </description>
         <pubDate>Wed, 01 Mar 2017 00:00:00 +0800</pubDate>
@@ -658,88 +844,133 @@ meta标签的http-equiv属性语法格式是：＜meta http-equiv=&amp;quot;参�
     
       <item>
         <title>Linux命令行基础</title>
-        <description>&lt;h1&gt;Linux命令行基础&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;linux&quot;&gt;Linux命令行基础&lt;/h1&gt;
 
-&lt;h2&gt;一些名词&lt;/h2&gt;
+&lt;h2 id=&quot;section&quot;&gt;一些名词&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;「图形界面」&lt;/code&gt;、&lt;code&gt;「命令行」&lt;/code&gt;、&lt;code&gt;「终端」&lt;/code&gt;、&lt;code&gt;「shell」&lt;/code&gt;、&lt;code&gt;「bash」&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;「图形界面」&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;「命令行」&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;「终端」&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;「shell」&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;「bash」&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2&gt;安装使用&lt;/h2&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;安装使用&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Windws: 安装git, 打开 gitbash&lt;/li&gt;
-&lt;li&gt;Linux 打开终端&lt;/li&gt;
-&lt;li&gt;Mac 打开终端&lt;/li&gt;
+  &lt;li&gt;Windws: 安装git, 打开 gitbash&lt;/li&gt;
+  &lt;li&gt;Linux 打开终端&lt;/li&gt;
+  &lt;li&gt;Mac 打开终端&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;基本命令&lt;/h2&gt;
+&lt;h2 id=&quot;section-2&quot;&gt;基本命令&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;查看当前完整路径&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;查看当前目录下文件&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# 不包括隐藏文件&lt;/span&gt;
-ls
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;查看当前完整路径&lt;/code&gt;&lt;/p&gt;
 
-&lt;span class=&quot;c&quot;&gt;# 查看当前目录下所有文件(包括隐藏文件)&lt;/span&gt;
-ls -a
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bash
+  pwd
+ &lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;查看当前目录下文件&lt;/code&gt;&lt;/p&gt;
 
-&lt;span class=&quot;c&quot;&gt;# 查看当前目录下所有文件(包括隐藏文件)的详细信息&lt;/span&gt;
-ls -al
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;切换目录&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /c/project
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;code
-&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ../css
-&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/Desktop
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;创建文件&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;touch readme.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;删除文件&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#创建readme.md&lt;/span&gt;
-rm readme.md 
+    &lt;p&gt;```bash
+  # 不包括隐藏文件
+  ls&lt;/p&gt;
 
-&lt;span class=&quot;c&quot;&gt;#删除node_modules文件夹，不提示&lt;/span&gt;
-rm -rf node_modules
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;重命名文件&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mv readme.md README.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;创建文件夹&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkdir projects
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+    &lt;p&gt;# 查看当前目录下所有文件(包括隐藏文件)
+  ls -a&lt;/p&gt;
+
+    &lt;p&gt;# 查看当前目录下所有文件(包括隐藏文件)的详细信息
+  ls -al
+  ```&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;切换目录&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bash
+  cd /c/project
+  cd code
+  cd ../css
+  cd ~/Desktop
+ &lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;创建文件&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bash
+  touch readme.md
+ &lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;删除文件&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;```bash
+  #创建readme.md
+  rm readme.md&lt;/p&gt;
+
+    &lt;p&gt;#删除node_modules文件夹，不提示
+  rm -rf node_modules
+  ```&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;重命名文件&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bash
+  mv readme.md README.md
+ &lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;创建文件夹&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bash
+  mkdir projects
+ &lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;文件路径&lt;/h2&gt;
+&lt;h2 id=&quot;section-3&quot;&gt;文件路径&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;根目录&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;家目录&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~
-&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;当前目录&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;books
-&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ./books
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;上级目录&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..
-&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ../css
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;编辑器VIM&lt;/h2&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;根目录&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bash
+  cd /
+ &lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;家目录&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bash
+  cd ~
+  pwd
+ &lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;当前目录&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bash
+  cd books
+  cd ./books
+ &lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;上级目录&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bash
+  cd ..
+  cd ../css
+ &lt;/code&gt;
+## 编辑器VIM&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;vim a.md&lt;/code&gt; 初始进入编辑器命令模式&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;i&lt;/code&gt; 进入编辑模式&lt;/li&gt;
-&lt;li&gt;键盘左上角&lt;code&gt;esc&lt;/code&gt; 进入命令命令模式&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;:wq&lt;/code&gt; 保存退出&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;:q!&lt;/code&gt; 不保存强制退出&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vim a.md&lt;/code&gt; 初始进入编辑器命令模式&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt; 进入编辑模式&lt;/li&gt;
+  &lt;li&gt;键盘左上角&lt;code class=&quot;highlighter-rouge&quot;&gt;esc&lt;/code&gt; 进入命令命令模式&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:wq&lt;/code&gt; 保存退出&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:q!&lt;/code&gt; 不保存强制退出&lt;/li&gt;
 &lt;/ol&gt;
+
 </description>
         <pubDate>Tue, 28 Feb 2017 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2017/02/28/linux-cli/</link>
@@ -755,315 +986,339 @@ rm -rf node_modules
       <item>
         <title>PHP设计模式-Part2 创建型</title>
         <description>&lt;blockquote&gt;
-&lt;p&gt;参考资料《大话设计模式》
+  &lt;p&gt;参考资料《大话设计模式》
 作者程杰&lt;/p&gt;
-
-&lt;p&gt;参考 http://blog.csdn.net/jhq0113/article/details/44906491&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h1&gt;设计模式-创建型&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;参考 http://blog.csdn.net/jhq0113/article/details/44906491&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;h2&gt;1.简单工厂模式&lt;/h2&gt;
+&lt;h1 id=&quot;section&quot;&gt;设计模式-创建型&lt;/h1&gt;
 
-&lt;p&gt;&lt;code&gt;简单工厂模式&lt;/code&gt;:不属于23种常用面向对象设计模式之一。简单工厂模式是由&lt;code&gt;一个工厂对象决定创建出哪一种产品类的实例&lt;/code&gt;。简单工厂模式是工厂模式家族中最简单实用的模式，可以理解为是不同工厂模式的一个特殊实现。其实质是由一个工厂类&lt;code&gt;根据传入的参数，动态决定应该创建哪一个产品类&lt;/code&gt;（这些产品类继承自一个父类或接口）的实例
-&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150409224555911.jpeg&quot; alt=&quot;pp&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;1.简单工厂模式&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;简单工厂模式&lt;/code&gt;:不属于23种常用面向对象设计模式之一。简单工厂模式是由&lt;code class=&quot;highlighter-rouge&quot;&gt;一个工厂对象决定创建出哪一种产品类的实例&lt;/code&gt;。简单工厂模式是工厂模式家族中最简单实用的模式，可以理解为是不同工厂模式的一个特殊实现。其实质是由一个工厂类&lt;code class=&quot;highlighter-rouge&quot;&gt;根据传入的参数，动态决定应该创建哪一个产品类&lt;/code&gt;（这些产品类继承自一个父类或接口）的实例
+&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150409224555911.jpeg&quot; alt=&quot;pp&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;角色和职责&lt;/strong&gt;：&lt;/p&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;角色和职责&lt;/strong&gt;：&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;工厂(SimpleFactory)角色&lt;/code&gt;：简单工厂模式的核心，它负责实现创建所有实例的内部逻辑。&lt;code&gt;工厂类可以被外界直接调用，创建所需的产品对象&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;抽象产品（IProduct）角色&lt;/code&gt;:简单工厂模式所创建的所有对象的父类，它负责描述所有实例所共有的公共接口。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;具体产品（Concrete Product）角色&lt;/code&gt;:是简单工厂模式的创建目标，所有创建的对象都是充当这个角色的某个具体类的实例&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;需求&lt;/strong&gt;：根据提供相应的属性值由简单工厂创建具有相应特性的产品对象&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;代码示例&lt;/strong&gt;：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;    &lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;  
-    &lt;span class=&quot;sd&quot;&gt;/** 
-     * Created by PhpStorm. 
-     * User: Jiang 
-     * Date: 2015/4/9 
-     * Time: 21:48 
-     */&lt;/span&gt;  
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;工厂(SimpleFactory)角色&lt;/code&gt;：简单工厂模式的核心，它负责实现创建所有实例的内部逻辑。&lt;code class=&quot;highlighter-rouge&quot;&gt;工厂类可以被外界直接调用，创建所需的产品对象&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;抽象产品（IProduct）角色&lt;/code&gt;:简单工厂模式所创建的所有对象的父类，它负责描述所有实例所共有的公共接口。&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;具体产品（Concrete Product）角色&lt;/code&gt;:是简单工厂模式的创建目标，所有创建的对象都是充当这个角色的某个具体类的实例&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;需求&lt;/strong&gt;：根据提供相应的属性值由简单工厂创建具有相应特性的产品对象&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;代码示例&lt;/strong&gt;：&lt;/p&gt;
 
-    &lt;span class=&quot;sd&quot;&gt;/**抽象产品角色 
-     * Interface IProduct   产品接口 
-     */&lt;/span&gt;  
-    &lt;span class=&quot;k&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IProduct&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-        &lt;span class=&quot;sd&quot;&gt;/**X轴旋转 
-         * @return mixed 
-         */&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;XRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
+    &lt;p&gt;```php
+      &amp;lt;?php&lt;br /&gt;
+      /** 
+       * Created by PhpStorm. 
+       * User: Jiang 
+       * Date: 2015/4/9 
+       * Time: 21:48 
+       */&lt;/p&gt;
 
-        &lt;span class=&quot;sd&quot;&gt;/**Y轴旋转 
-         * @return mixed 
-         */&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;YRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  /**抽象产品角色 
+   * Interface IProduct   产品接口 
+   */  
+  interface IProduct  
+  {  
+      /**X轴旋转 
+       * @return mixed 
+       */  
+      function XRotate();  
+	  
+      /**Y轴旋转 
+       * @return mixed 
+       */  
+      function YRotate();  
+  }  
+	  
+  /**具体产品角色 
+   * Class XProduct        X轴旋转产品 
+   */  
+  class XProduct implements IProduct  
+  {  
+      private $xMax=1;  
+      private $yMax=1;  
+	  
+      function __construct($xMax,$yMax)  
+      {  
+          $this-&amp;gt;xMax=$xMax;  
+          $this-&amp;gt;yMax=1;  
+      }  
+	  
+      function XRotate()  
+      {  
+          echo &quot;您好，我是X轴旋转产品，X轴转转转。。。。。。&quot;;  
+      }  
+	  
+      function YRotate()  
+      {  
+          echo &quot;抱歉，我是X轴旋转产品，我没有Y轴。。。。。。&quot;;  
+      }  
+  }  
+	  
+  /**具体产品角色 
+   * Class YProduct        Y轴旋转产品 
+   */  
+  class YProduct implements IProduct  
+  {  
+      private $xMax=1;  
+      private $yMax=1;  
+	  
+      function __construct($xMax,$yMax)  
+      {  
+          $this-&amp;gt;xMax=1;  
+          $this-&amp;gt;yMax=$yMax;  
+      }  
+	  
+      function XRotate()  
+      {  
+          echo &quot;抱歉，我是Y轴旋转产品，我没有X轴。。。。。。&quot;;  
+      }  
+	  
+      function YRotate()  
+      {  
+          echo &quot;您好，我是Y轴旋转产品，Y轴转转转。。。。。。&quot;;  
+      }  
+  }  
+	  
+  /**具体产品角色 
+   * Class XYProduct        XY轴都可旋转产品 
+   */  
+  class XYProduct implements IProduct  
+  {  
+      private $xMax=1;  
+      private $yMax=1;  
+	  
+      function __construct($xMax,$yMax)  
+      {  
+          $this-&amp;gt;xMax=$xMax;  
+          $this-&amp;gt;yMax=$yMax;  
+      }  
+	  
+      function XRotate()  
+      {  
+          echo &quot;您好，我是XY轴都可旋转产品，X轴转转转。。。。。。&quot;;  
+      }  
+	  
+      function YRotate()  
+      {  
+          echo &quot;您好，我是XY轴都可旋转产品，Y轴转转转。。。。。。&quot;;  
+      }  
+  }  
+	  
+  /**工厂角色 
+   * Class ProductFactory 
+   */  
+  class ProductFactory  
+  {  
+      static function GetInstance($xMax,$yMax)  
+      {  
+          if($xMax&amp;gt;1 &amp;amp;&amp;amp; $yMax===1)  
+          {  
+              return new XProduct($xMax,$yMax);  
+          }  
+          elseif($xMax===1 &amp;amp;&amp;amp; $yMax&amp;gt;1)  
+          {  
+              return new YProduct($xMax,$yMax);  
+          }  
+          elseif($xMax&amp;gt;1 &amp;amp;&amp;amp; $yMax&amp;gt;1)  
+          {  
+              return new XYProduct($xMax,$yMax);  
+          }  
+          else  
+          {  
+              return null;  
+          }  
+      }  
+  }     ```
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;代码示例&lt;/strong&gt;：&lt;/p&gt;
 
-    &lt;span class=&quot;sd&quot;&gt;/**具体产品角色 
-     * Class XProduct        X轴旋转产品 
-     */&lt;/span&gt;  
-    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XProduct&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IProduct&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+    &lt;p&gt;```php
+          &amp;lt;?php&lt;br /&gt;
+      /** 
+       * Created by PhpStorm. 
+       * User: Jiang 
+       * Date: 2015/4/9 
+       * Time: 21:54 
+       */&lt;br /&gt;
+      require_once “./SimpleFactory/SimpleFactory.php”;&lt;/p&gt;
 
-        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-            &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-            &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  header(&quot;Content-Type:text/html;charset=utf-8&quot;);  
+	  
+  $pro=array();  
+  $pro[]=ProductFactory::GetInstance(1,12);  
+  $pro[]=ProductFactory::GetInstance(12,1);  
+  $pro[]=ProductFactory::GetInstance(12,12);  
+  $pro[]=ProductFactory::GetInstance(0,12);  
+	  
+  foreach($pro as $v)  
+  {  
+      if($v)  
+      {  
+          echo &quot;&amp;lt;br/&amp;gt;&quot;;  
+          $v-&amp;gt;XRotate();  
+          echo &quot;&amp;lt;br/&amp;gt;&quot;;  
+          $v-&amp;gt;YRotate();  
+      }  
+      else  
+      {  
+          echo &quot;非法产品！&amp;lt;br/&amp;gt;&quot;;  
+      }  
+      echo &quot;&amp;lt;hr/&amp;gt;&quot;;  
+  }     ```
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
 
-        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;XRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;您好，我是X轴旋转产品，X轴转转转。。。。。。&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-
-        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;YRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;抱歉，我是X轴旋转产品，我没有Y轴。。。。。。&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-
-    &lt;span class=&quot;sd&quot;&gt;/**具体产品角色 
-     * Class YProduct        Y轴旋转产品 
-     */&lt;/span&gt;  
-    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;YProduct&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IProduct&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-
-        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-            &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-            &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-
-        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;XRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;抱歉，我是Y轴旋转产品，我没有X轴。。。。。。&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-
-        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;YRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;您好，我是Y轴旋转产品，Y轴转转转。。。。。。&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-
-    &lt;span class=&quot;sd&quot;&gt;/**具体产品角色 
-     * Class XYProduct        XY轴都可旋转产品 
-     */&lt;/span&gt;  
-    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;XYProduct&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IProduct&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-
-        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-            &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-            &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-
-        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;XRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;您好，我是XY轴都可旋转产品，X轴转转转。。。。。。&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-
-        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;YRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;您好，我是XY轴都可旋转产品，Y轴转转转。。。。。。&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-
-    &lt;span class=&quot;sd&quot;&gt;/**工厂角色 
-     * Class ProductFactory 
-     */&lt;/span&gt;  
-    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ProductFactory&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;GetInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;===&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
-            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;XProduct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-            &lt;span class=&quot;k&quot;&gt;elseif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;===&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
-            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;YProduct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-            &lt;span class=&quot;k&quot;&gt;elseif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
-            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;XYProduct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$xMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$yMax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;  
-            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;代码示例&lt;/strong&gt;：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;        &lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;  
-    &lt;span class=&quot;sd&quot;&gt;/** 
-     * Created by PhpStorm. 
-     * User: Jiang 
-     * Date: 2015/4/9 
-     * Time: 21:54 
-     */&lt;/span&gt;  
-    &lt;span class=&quot;k&quot;&gt;require_once&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;./SimpleFactory/SimpleFactory.php&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-
-    &lt;span class=&quot;nb&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Content-Type:text/html;charset=utf-8&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
-
-    &lt;span class=&quot;nv&quot;&gt;$pro&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
-    &lt;span class=&quot;nv&quot;&gt;$pro&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ProductFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;GetInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
-    &lt;span class=&quot;nv&quot;&gt;$pro&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ProductFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;GetInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
-    &lt;span class=&quot;nv&quot;&gt;$pro&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ProductFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;GetInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
-    &lt;span class=&quot;nv&quot;&gt;$pro&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ProductFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;GetInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
-
-    &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$pro&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;br/&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-            &lt;span class=&quot;nv&quot;&gt;$v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;XRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
-            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;br/&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-            &lt;span class=&quot;nv&quot;&gt;$v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;YRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;非法产品！&amp;lt;br/&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;hr/&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+    &lt;p&gt;用浏览器访问测试代码，我们可以发现创建的对象依次是YProduct,XProduct,XYProduct,null。简单工厂的核心代码在于工厂(ProductFactory)这个角色，这里根据传入的xMax与yMax值去创建不同的对象，这便是简单工厂的实质，而且我们在测试调用客户端根本不知道具体的产品类是什么样，这样就做到了调用与创建的分离&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;优点&lt;/strong&gt;：让对象的调用者和对象创建过程分离，当对象调用者需要对象时，直接向工厂请求即可。从而&lt;code class=&quot;highlighter-rouge&quot;&gt;避免了对象的调用者与对象的实现类以硬编码方式耦合，以提高系统的可维护性、可扩展性。&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;缺点&lt;/strong&gt;：当产品修改时，工厂类也要做相应的修改，比如要增加一种操作类，如求M数的N次方，就得改case,修改原有类，&lt;code class=&quot;highlighter-rouge&quot;&gt;违背了开放-封闭原则&lt;/code&gt;。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;用浏览器访问测试代码，我们可以发现创建的对象依次是YProduct,XProduct,XYProduct,null。简单工厂的核心代码在于工厂(ProductFactory)这个角色，这里根据传入的xMax与yMax值去创建不同的对象，这便是简单工厂的实质，而且我们在测试调用客户端根本不知道具体的产品类是什么样，这样就做到了调用与创建的分离&lt;/p&gt;
+&lt;h2 id=&quot;section-2&quot;&gt;2.工厂方法&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;优点&lt;/strong&gt;：让对象的调用者和对象创建过程分离，当对象调用者需要对象时，直接向工厂请求即可。从而&lt;code&gt;避免了对象的调用者与对象的实现类以硬编码方式耦合，以提高系统的可维护性、可扩展性。&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;缺点&lt;/strong&gt;：当产品修改时，工厂类也要做相应的修改，比如要增加一种操作类，如求M数的N次方，就得改case,修改原有类，&lt;code&gt;违背了开放-封闭原则&lt;/code&gt;。&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;具体案例&lt;/strong&gt;：请MM去麦当劳吃汉堡，不同的MM有不同的口味，要每个都记住是一件烦人的事情，我们一般采用FactoryMethod模式，带着MM到服务员那儿，说“要一个汉堡”，具体要什么样的汉堡呢，让MM直接跟服务员说就行了&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;2.工厂方法&lt;/h2&gt;
+&lt;p&gt;工厂方法模式核心工厂类不再负责所有产品的创建，而是将具体创建的工作交给子类去做，成为一个抽象工厂角色，仅负责给出具体工厂类必须实现的接口，而不接触哪一个产品类应当被实例化这种细节，如下图：&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150416222830823.png&quot; alt=&quot;ww&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;具体案例&lt;/strong&gt;：请MM去麦当劳吃汉堡，不同的MM有不同的口味，要每个都记住是一件烦人的事情，我们一般采用FactoryMethod模式，带着MM到服务员那儿，说“要一个汉堡”，具体要什么样的汉堡呢，让MM直接跟服务员说就行了&lt;/li&gt;
-&lt;/ul&gt;
+  &lt;li&gt;&lt;strong&gt;角色和职责&lt;/strong&gt;：
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;抽象工厂角色（IServerFactory）&lt;/code&gt;：是工厂方法模式的核心，与应用程序无关。任何在模式中创建的对象的工厂类必须实现这个接口&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;具体工厂角色(ChickenLegBaoFactory)&lt;/code&gt;:这是实现抽象工厂接口的具体工厂类，包含与应用程序密切相关的逻辑，并且受到应用程序调用以创建产品对象&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;抽象产品角色(IHanbao)&lt;/code&gt;:工厂方法模式所创建的对象的超类型，也就是产品对象的共同父类或共同拥有的接口&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;具体产品角色(ChickenLegBao)&lt;/code&gt;:这个角色实现了抽象产品角色所定义的接口。某具体产品有专门的具体工厂创建，它们之间往往一一对应&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;代码示例&lt;/strong&gt;：&lt;/p&gt;
 
-&lt;p&gt;工厂方法模式核心工厂类不再负责所有产品的创建，而是将具体创建的工作交给子类去做，成为一个抽象工厂角色，仅负责给出具体工厂类必须实现的接口，而不接触哪一个产品类应当被实例化这种细节，如下图：&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150416222830823.png&quot; alt=&quot;ww&quot;&gt;&lt;/p&gt;
+    &lt;p&gt;```php
+      &amp;lt;?php&lt;br /&gt;
+      /** 
+       * Created by PhpStorm. 
+       * User: Jiang 
+       * Date: 2015/4/16 
+       * Time: 22:12 
+       */&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;角色和职责&lt;/strong&gt;：&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  /**抽象产品角色       汉堡 
+   * Interface IHanbao 
+   */  
+  interface IHanbao  
+  {  
+      function Allay();  
+  }  
+	  
+  /**具体产品角色         肉松汉堡 
+   * Class RouSongBao 
+   */  
+  class RouSongBao implements IHanbao  
+  {  
+      function Allay()  
+      {  
+          echo &quot;I am 肉松汉堡，小的给主人解饿了！&amp;lt;br/&amp;gt;&quot;;  
+      }  
+	  
+  }  
+	  
+  /**鸡肉汉堡 
+   * Class ChickenBao 
+   */  
+  class ChickenBao implements IHanbao  
+  {  
+      function Allay()  
+      {  
+          echo &quot;I am 鸡肉汉堡，小的给主人解饿了！&amp;lt;br/&amp;gt;&quot;;  
+      }  
+	  
+  }  
+	  
+  /**抽象工厂角色 
+   * Interface IServerFactory 
+   */  
+  interface IServerFactory  
+  {  
+      function MakeHanbao();  
+  }  
+	  
+  /**具体工厂角色     肉松汉堡工厂 
+   * Class RouSongFactory 
+   */  
+  class RouSongFactory implements IServerFactory  
+  {  
+	  
+      function MakeHanbao()  
+      {  
+          return new RouSongBao();  
+      }  
+  }  
+	  
+  class ChickenFactory implements IServerFactory  
+  {  
+	  
+      function MakeHanbao()  
+      {  
+          return new ChickenBao();  
+      }  
+  }    ```
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;测试代码&lt;/strong&gt;：&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;抽象工厂角色（IServerFactory）&lt;/code&gt;：是工厂方法模式的核心，与应用程序无关。任何在模式中创建的对象的工厂类必须实现这个接口&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;具体工厂角色(ChickenLegBaoFactory)&lt;/code&gt;:这是实现抽象工厂接口的具体工厂类，包含与应用程序密切相关的逻辑，并且受到应用程序调用以创建产品对象&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;抽象产品角色(IHanbao)&lt;/code&gt;:工厂方法模式所创建的对象的超类型，也就是产品对象的共同父类或共同拥有的接口&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;具体产品角色(ChickenLegBao)&lt;/code&gt;:这个角色实现了抽象产品角色所定义的接口。某具体产品有专门的具体工厂创建，它们之间往往一一对应&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;代码示例&lt;/strong&gt;：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;    &lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;  
-    &lt;span class=&quot;sd&quot;&gt;/** 
-     * Created by PhpStorm. 
-     * User: Jiang 
-     * Date: 2015/4/16 
-     * Time: 22:12 
-     */&lt;/span&gt;  
+    &lt;p&gt;```php
+      header(“Content-Type:text/html;charset=utf-8”);&lt;br /&gt;
+      //————————工厂方式测试代码——————&lt;br /&gt;
+      require_once “./FactoryMethod/FactoryMethod.php”;&lt;/p&gt;
 
-    &lt;span class=&quot;sd&quot;&gt;/**抽象产品角色       汉堡 
-     * Interface IHanbao 
-     */&lt;/span&gt;  
-    &lt;span class=&quot;k&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IHanbao&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Allay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-
-    &lt;span class=&quot;sd&quot;&gt;/**具体产品角色         肉松汉堡 
-     * Class RouSongBao 
-     */&lt;/span&gt;  
-    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RouSongBao&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IHanbao&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Allay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;I am 肉松汉堡，小的给主人解饿了！&amp;lt;br/&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-
-    &lt;span class=&quot;sd&quot;&gt;/**鸡肉汉堡 
-     * Class ChickenBao 
-     */&lt;/span&gt;  
-    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ChickenBao&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IHanbao&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Allay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;I am 鸡肉汉堡，小的给主人解饿了！&amp;lt;br/&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-
-    &lt;span class=&quot;sd&quot;&gt;/**抽象工厂角色 
-     * Interface IServerFactory 
-     */&lt;/span&gt;  
-    &lt;span class=&quot;k&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IServerFactory&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MakeHanbao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-
-    &lt;span class=&quot;sd&quot;&gt;/**具体工厂角色     肉松汉堡工厂 
-     * Class RouSongFactory 
-     */&lt;/span&gt;  
-    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RouSongFactory&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IServerFactory&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-
-        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MakeHanbao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;RouSongBao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-
-    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ChickenFactory&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IServerFactory&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-
-        &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MakeHanbao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ChickenBao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;测试代码&lt;/strong&gt;：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;    header(&quot;Content-Type:text/html;charset=utf-8&quot;);  
-    //------------------------工厂方式测试代码------------------  
-    require_once &quot;./FactoryMethod/FactoryMethod.php&quot;;  
-
-    //-----------------餐厅厨师-----------  
-    $chickenFactory=new ChickenFactory();  
-    $rouSongFactory=new RouSongFactory();  
-
-    //-----------点餐------------  
-    $chicken1=$chickenFactory-&amp;gt;MakeHanbao();  
-    $chicken2=$chickenFactory-&amp;gt;MakeHanbao();  
-    $rouSong1=$rouSongFactory-&amp;gt;MakeHanbao();  
-    $rouSong2=$rouSongFactory-&amp;gt;MakeHanbao();  
-
-    //------------------顾客吃饭---------  
-    $chicken1-&amp;gt;Allay();  
-    $chicken2-&amp;gt;Allay();  
-    $rouSong1-&amp;gt;Allay();  
-    $rouSong2-&amp;gt;Allay();  
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;用浏览器运行测试代码我们可以发现，顾客都享用了自己的食物&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;优点&lt;/strong&gt;:&lt;code&gt;克服了简单工厂模式违背开放-封闭的原则&lt;/code&gt;，保持了封装对象创建过程的优点 &lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;缺点&lt;/strong&gt;：当增加产品时，就得增加一个产品工厂的类，增加额外的开发量。避免不了分支判断的问题&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;简单工厂模式与工厂方法模式的比较&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;1.结构复杂度&lt;/code&gt;:简单工厂模式要占优。简单工厂模式只需一个工厂类，而工厂方法模式的工厂类随着产品类个数增加而增加，从而增加了结构的复杂程度。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;2.代码复杂度&lt;/code&gt; :代码复杂度和结构复杂度是一对矛盾，既然简单工厂模式在结构方面相对简洁，那么它在代码方面肯定是比工厂方法模式复杂的了。简单工厂模式的工厂类随着产品类的增加需要增加很多方法（或代码），而工厂方法模式每个具体工厂类只完成单一任务，代码简洁。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;3.管理上的难度&lt;/code&gt;:假如某个具体产品类需要进行一定的修改，很可能需要修改对应的工厂类。当同时需要修改多个产品类的时候，对工厂类的修改会变得相当麻烦。反而简单工厂没有这些麻烦，当多个产品类需要修改是，简单工厂模式仍然仅仅需要修改唯一的工厂类。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  //-----------------餐厅厨师-----------  
+  $chickenFactory=new ChickenFactory();  
+  $rouSongFactory=new RouSongFactory();  
+	  
+  //-----------点餐------------  
+  $chicken1=$chickenFactory-&amp;gt;MakeHanbao();  
+  $chicken2=$chickenFactory-&amp;gt;MakeHanbao();  
+  $rouSong1=$rouSongFactory-&amp;gt;MakeHanbao();  
+  $rouSong2=$rouSongFactory-&amp;gt;MakeHanbao();  
+	  
+  //------------------顾客吃饭---------  
+  $chicken1-&amp;gt;Allay();  
+  $chicken2-&amp;gt;Allay();  
+  $rouSong1-&amp;gt;Allay();  
+  $rouSong2-&amp;gt;Allay();     ```	   用浏览器运行测试代码我们可以发现，顾客都享用了自己的食物
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;优点&lt;/strong&gt;:&lt;code class=&quot;highlighter-rouge&quot;&gt;克服了简单工厂模式违背开放-封闭的原则&lt;/code&gt;，保持了封装对象创建过程的优点&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;缺点&lt;/strong&gt;：当增加产品时，就得增加一个产品工厂的类，增加额外的开发量。避免不了分支判断的问题&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;简单工厂模式与工厂方法模式的比较&lt;/strong&gt;：
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1.结构复杂度&lt;/code&gt;:简单工厂模式要占优。简单工厂模式只需一个工厂类，而工厂方法模式的工厂类随着产品类个数增加而增加，从而增加了结构的复杂程度。&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2.代码复杂度&lt;/code&gt; :代码复杂度和结构复杂度是一对矛盾，既然简单工厂模式在结构方面相对简洁，那么它在代码方面肯定是比工厂方法模式复杂的了。简单工厂模式的工厂类随着产品类的增加需要增加很多方法（或代码），而工厂方法模式每个具体工厂类只完成单一任务，代码简洁。&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;3.管理上的难度&lt;/code&gt;:假如某个具体产品类需要进行一定的修改，很可能需要修改对应的工厂类。当同时需要修改多个产品类的时候，对工厂类的修改会变得相当麻烦。反而简单工厂没有这些麻烦，当多个产品类需要修改是，简单工厂模式仍然仅仅需要修改唯一的工厂类。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Tue, 29 Nov 2016 00:00:00 +0800</pubDate>
@@ -1082,29 +1337,30 @@ rm -rf node_modules
       <item>
         <title>PHP设计模式-Part1 理论篇</title>
         <description>&lt;blockquote&gt;
-&lt;p&gt;参考资料《大话设计模式》
+  &lt;p&gt;参考资料《大话设计模式》
 作者程杰&lt;/p&gt;
-
-&lt;p&gt;参考 http://blog.csdn.net/jhq0113/article/details/44906491&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h1&gt;设计模式-概述&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;参考 http://blog.csdn.net/jhq0113/article/details/44906491&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;h2&gt;1.什么是设计模式&lt;/h2&gt;
+&lt;h1 id=&quot;section&quot;&gt;设计模式-概述&lt;/h1&gt;
 
-&lt;p&gt;设计模式（Design Pattern）是一套&lt;code&gt;被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结&lt;/code&gt;。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。&lt;/p&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;1.什么是设计模式&lt;/h2&gt;
 
-&lt;h2&gt;2.设计模式的优点&lt;/h2&gt;
+&lt;p&gt;设计模式（Design Pattern）是一套&lt;code class=&quot;highlighter-rouge&quot;&gt;被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结&lt;/code&gt;。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;2.设计模式的优点&lt;/h2&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;复用解决方案&lt;/code&gt;：设计模式本身就是对某一类问题的通用解决方案，是更高级别的复用，已经超出了代码复用&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;确定通用术语&lt;/code&gt;：开发中的交流和协作都需要共同的词汇其础和对问题的共识.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;代码更易于修改与维护&lt;/code&gt;：因为设计模式都是久经考验的解决方案,它们的结构都是经过长期的发展形成的，善于应对变化，设计模式本身也是对变化点的封装&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;模式有助于提高思考层次&lt;/code&gt;。学习模式后,就算不用模式中的方法，也会更好的采取更好的策略去解决问题&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;复用解决方案&lt;/code&gt;：设计模式本身就是对某一类问题的通用解决方案，是更高级别的复用，已经超出了代码复用&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;确定通用术语&lt;/code&gt;：开发中的交流和协作都需要共同的词汇其础和对问题的共识.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;代码更易于修改与维护&lt;/code&gt;：因为设计模式都是久经考验的解决方案,它们的结构都是经过长期的发展形成的，善于应对变化，设计模式本身也是对变化点的封装&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;模式有助于提高思考层次&lt;/code&gt;。学习模式后,就算不用模式中的方法，也会更好的采取更好的策略去解决问题&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2&gt;3.资源&lt;/h2&gt;
-
+&lt;h2 id=&quot;section-3&quot;&gt;3.资源&lt;/h2&gt;
 &lt;p&gt;更多详情敬请关注我的视频课程：&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://edu.csdn.net/course/detail/602&quot;&gt;PHP面向对象设计模式&lt;/a&gt;&lt;/p&gt;
@@ -1119,147 +1375,159 @@ rm -rf node_modules
 
 &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/dragonpeng2008/article/details/6836448&quot;&gt;UML类图总结&lt;/a&gt;&lt;/p&gt;
 
-&lt;h1&gt;设计模式-六大原则&lt;/h1&gt;
+&lt;h1 id=&quot;section-4&quot;&gt;设计模式-六大原则&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;单一职责&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;里氏替换&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;依赖倒置&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;接口隔离&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;迪米特法则&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;开闭原则&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;单一职责&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;里氏替换&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;依赖倒置&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;接口隔离&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;迪米特法则&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;开闭原则&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406222929184.jpeg&quot; alt=&quot;六大原则&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406222929184.jpeg&quot; alt=&quot;六大原则&quot; /&gt;&lt;/p&gt;
 
-&lt;h2&gt;1.单一职责&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：&lt;code&gt;不要存在多于一个导致类变更的原因。&lt;/code&gt;通俗的说，即一个类只负责一项职责。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;场景&lt;/strong&gt;：类T负责两个不同的职责：职责P1，职责P2。当由于职责P1需求发生改变而需要修改类T时，有可能会导致原本运行正常的职责P2功能发生故障，关系如下图：&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406223705732.jpeg&quot; alt=&quot;p1&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;修改&lt;/strong&gt;: &lt;code&gt;遵循单一职责原则.&lt;/code&gt;分别建立两个类T1、T2，使T1完成职责P1功能，T2完成职责P2功能。这样，当修改类T1时，不会使职责P2发生故障风险；同理，当修改T2时，也不会使职责P1发生故障风险，结构如下图： &lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406223805012.jpeg&quot; alt=&quot;p2&quot;&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;优点&lt;/strong&gt;: &lt;/p&gt;
+&lt;h2 id=&quot;section-5&quot;&gt;1.单一职责&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;1)可以降低类的复杂度，一个类只负责一项职责，逻辑简单&lt;/li&gt;
-&lt;li&gt;2)提高类的可读性，提高系统的可维护性；&lt;/li&gt;
-&lt;li&gt;3)变更引起的风险降低，变更是必然的&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：&lt;code class=&quot;highlighter-rouge&quot;&gt; 不要存在多于一个导致类变更的原因。&lt;/code&gt;通俗的说，即一个类只负责一项职责。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;场景&lt;/strong&gt;：类T负责两个不同的职责：职责P1，职责P2。当由于职责P1需求发生改变而需要修改类T时，有可能会导致原本运行正常的职责P2功能发生故障，关系如下图：&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406223705732.jpeg&quot; alt=&quot;p1&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;修改&lt;/strong&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;遵循单一职责原则.&lt;/code&gt;分别建立两个类T1、T2，使T1完成职责P1功能，T2完成职责P2功能。这样，当修改类T1时，不会使职责P2发生故障风险；同理，当修改T2时，也不会使职责P1发生故障风险，结构如下图： &lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406223805012.jpeg&quot; alt=&quot;p2&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;优点&lt;/strong&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;1)可以降低类的复杂度，一个类只负责一项职责，逻辑简单&lt;/li&gt;
+      &lt;li&gt;2)提高类的可读性，提高系统的可维护性；&lt;/li&gt;
+      &lt;li&gt;3)变更引起的风险降低，变更是必然的&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;2.里氏替换原则&lt;/h2&gt;
+&lt;h2 id=&quot;section-6&quot;&gt;2.里氏替换原则&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：所有引用基类的地方必须能透明地使用其子类的对象，也就是说&lt;code&gt;子类可以扩展父类的功能，但不能改变父类原有的功能&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;场景&lt;/strong&gt;：有一功能P1，由类A完成。现需要将功能P1进行扩展，扩展后的功能为P，其中P由原有功能P1与新功能P2组成。新功能P由类A的子类B来完成，则子类B在完成新功能P2的同时，有可能会导致原有功能P1发生故障，如下图 &lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406224441455.jpeg&quot; alt=&quot;p2&quot;&gt;
-CountPriceByJKL类继承于CountPrice类，CountPriceByJKL重写了Count()方法，这样可能影响到原来Count方法的功能。
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;修改&lt;/strong&gt;: 当使用继承时，遵循里氏替换原则。类B继承类A时，除添加新的方法完成新增功能P2外，尽量不要重写父类A的方法，也尽量不要重载父类A的方法。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：所有引用基类的地方必须能透明地使用其子类的对象，也就是说&lt;code class=&quot;highlighter-rouge&quot;&gt;子类可以扩展父类的功能，但不能改变父类原有的功能&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;场景&lt;/strong&gt;：有一功能P1，由类A完成。现需要将功能P1进行扩展，扩展后的功能为P，其中P由原有功能P1与新功能P2组成。新功能P由类A的子类B来完成，则子类B在完成新功能P2的同时，有可能会导致原有功能P1发生故障，如下图 &lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406224441455.jpeg&quot; alt=&quot;p2&quot; /&gt;
+ CountPriceByJKL类继承于CountPrice类，CountPriceByJKL重写了Count()方法，这样可能影响到原来Count方法的功能。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;修改&lt;/strong&gt;: 当使用继承时，遵循里氏替换原则。类B继承类A时，除添加新的方法完成新增功能P2外，尽量不要重写父类A的方法，也尽量不要重载父类A的方法。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;3.依赖倒置原则&lt;/h2&gt;
+&lt;h2 id=&quot;section-7&quot;&gt;3.依赖倒置原则&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：高层模块不应该依赖低层模块，二者都应该依赖其抽象；抽象不应该依赖细节；细节应该依赖抽象&lt;/p&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：高层模块不应该依赖低层模块，二者都应该依赖其抽象；抽象不应该依赖细节；细节应该依赖抽象&lt;/p&gt;
 
-&lt;p&gt;此处理解起来是最困难的，一般会在项目框架的搭建的时候用到，例如，业务逻辑层相对于数据层是高层模块，因为业务逻辑层需要调用数据层去连接数据库，但是要做到可扩展高复用，尽量不要让业务逻辑层依赖数据层，可以在数据层抽象出一个接口，让业务逻辑层依赖于这个抽象接口&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;场景&lt;/strong&gt;：类A（高层模块）直接依赖类B（低层模块），假如要将类A改为依赖类C（低层模块），则必须通过修改类A的代码来达成。这种场景下，类A一般是高层模块，负责复杂的业务逻辑；类B和类C是低层模块，负责基本的原子操作；假如修改类A，会给程序带来不必要的风险。&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406225436362.jpeg&quot; alt=&quot;p2&quot;&gt;&lt;/p&gt;
+    &lt;p&gt;此处理解起来是最困难的，一般会在项目框架的搭建的时候用到，例如，业务逻辑层相对于数据层是高层模块，因为业务逻辑层需要调用数据层去连接数据库，但是要做到可扩展高复用，尽量不要让业务逻辑层依赖数据层，可以在数据层抽象出一个接口，让业务逻辑层依赖于这个抽象接口&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;场景&lt;/strong&gt;：类A（高层模块）直接依赖类B（低层模块），假如要将类A改为依赖类C（低层模块），则必须通过修改类A的代码来达成。这种场景下，类A一般是高层模块，负责复杂的业务逻辑；类B和类C是低层模块，负责基本的原子操作；假如修改类A，会给程序带来不必要的风险。&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406225436362.jpeg&quot; alt=&quot;p2&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;AutoSystem类直接依赖于HondaCar与FordCar两个类，这样就产生了一个高耦合，AutoSystem类想操控HondaCar或者FordCar必须直接创建相应对象。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;修改&lt;/strong&gt;: 将类A修改为依赖接口I，类B和类C各自实现接口I，类A通过接口I间接与类B或者类C发生联系，则会大大降低修改类A的几率，如下图：&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406225842955.jpeg&quot; alt=&quot;p2&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;经过此番修改，Honda与Ford实现ICar接口，提供了Run、Stop以及Turn功能方法，AutoSystem依赖ICar接口，这样迫使AutoSystem依赖抽象接口，这就使得AutoSystem类能够应对更多的需求变化。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;优点&lt;/strong&gt;: &lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;1)低层模块尽量都要有抽象类或接口，或者两者都有&lt;/li&gt;
-&lt;li&gt;2)变量的声明类型尽量是抽象类或接口&lt;/li&gt;
-&lt;li&gt;3)使用继承时遵循里氏替换原则 &lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+    &lt;p&gt;AutoSystem类直接依赖于HondaCar与FordCar两个类，这样就产生了一个高耦合，AutoSystem类想操控HondaCar或者FordCar必须直接创建相应对象。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;修改&lt;/strong&gt;: 将类A修改为依赖接口I，类B和类C各自实现接口I，类A通过接口I间接与类B或者类C发生联系，则会大大降低修改类A的几率，如下图：&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406225842955.jpeg&quot; alt=&quot;p2&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;4.接口隔离原则&lt;/h2&gt;
+ 	经过此番修改，Honda与Ford实现ICar接口，提供了Run、Stop以及Turn功能方法，AutoSystem依赖ICar接口，这样迫使AutoSystem依赖抽象接口，这就使得AutoSystem类能够应对更多的需求变化。
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：客户端不应该依赖它不需要的接口；一个类对另一个类的依赖应该建立在最小的接口上。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;场景&lt;/strong&gt;：类A通过接口I依赖类B，类C通过接口I依赖类D，如果接口I对于类A和类B来说不是最小接口，则类B和类D必须去实现他们不需要的方法，如下图：&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406231050132.jpeg&quot; alt=&quot;p2&quot;&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;修改&lt;/strong&gt;:将臃肿的接口I拆分为独立的几个接口，类A和类C分别与他们需要的接口建立依赖关系。也就是采用接口隔离原则&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406231127388.jpeg&quot; alt=&quot;p2&quot;&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;注意&lt;/strong&gt;: 
-
-&lt;ul&gt;
-&lt;li&gt;1)&lt;code&gt;接口尽量小，但是要有限度&lt;/code&gt;。对接口进行细化可以提高程序设计灵活性 ，是不争的事实，但是如果过小，则会造成接口数量过多，使设计复杂化。所以一定要适度。&lt;/li&gt;
-&lt;li&gt;2)为依赖接口的类定制服务，只暴露给调用的类它需要的方法，它不需要的方法则隐藏起来。只有专注地为一个模块提供定制服务，才能建立最小的依赖关系&lt;/li&gt;
-&lt;li&gt;3)提高内聚，减少对外交互。使接口用&lt;code&gt;最少的方法去完成最多&lt;/code&gt;的事情&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;优点&lt;/strong&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;1)低层模块尽量都要有抽象类或接口，或者两者都有&lt;/li&gt;
+      &lt;li&gt;2)变量的声明类型尽量是抽象类或接口&lt;/li&gt;
+      &lt;li&gt;3)使用继承时遵循里氏替换原则&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;5.迪米特法则（最少知道原则）&lt;/h2&gt;
+&lt;h2 id=&quot;section-8&quot;&gt;4.接口隔离原则&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：一个对象应该对其他对象保持最少的了解&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;场景&lt;/strong&gt;：类与类之间的关系越密切，耦合度越大，当一个类发生改变时，对另一个类的影响也越大&lt;/p&gt;
-
-&lt;p&gt;简单的理解就是高内聚，一个类尽量减少对其他对象的依赖，并且这个类的方法和属性能用私有的就尽量私有化&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;:  &lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;1)&lt;code&gt;只与直接的朋友通信，不要和陌生人说话&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;2)过分的使用该原则，将导致系统复杂度变大。所以在采用迪米特法则时要反复权衡，既做到结构清晰，又要高内聚低耦合&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：客户端不应该依赖它不需要的接口；一个类对另一个类的依赖应该建立在最小的接口上。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;场景&lt;/strong&gt;：类A通过接口I依赖类B，类C通过接口I依赖类D，如果接口I对于类A和类B来说不是最小接口，则类B和类D必须去实现他们不需要的方法，如下图：&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406231050132.jpeg&quot; alt=&quot;p2&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;修改&lt;/strong&gt;:将臃肿的接口I拆分为独立的几个接口，类A和类C分别与他们需要的接口建立依赖关系。也就是采用接口隔离原则&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406231127388.jpeg&quot; alt=&quot;p2&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;注意&lt;/strong&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;1)&lt;code class=&quot;highlighter-rouge&quot;&gt;接口尽量小，但是要有限度&lt;/code&gt;。对接口进行细化可以提高程序设计灵活性 ，是不争的事实，但是如果过小，则会造成接口数量过多，使设计复杂化。所以一定要适度。&lt;/li&gt;
+      &lt;li&gt;2)为依赖接口的类定制服务，只暴露给调用的类它需要的方法，它不需要的方法则隐藏起来。只有专注地为一个模块提供定制服务，才能建立最小的依赖关系&lt;/li&gt;
+      &lt;li&gt;3)提高内聚，减少对外交互。使接口用&lt;code class=&quot;highlighter-rouge&quot;&gt;最少的方法去完成最多&lt;/code&gt;的事情&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;6.开闭原则&lt;/h2&gt;
+&lt;h2 id=&quot;section-9&quot;&gt;5.迪米特法则（最少知道原则）&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：一个软件实体如类、模块和函数应该&lt;code&gt;对扩展开放，对修改关闭&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;场景&lt;/strong&gt;：在软件的生命周期内，因为变化、升级和维护等原因需要对软件原有代码进行修改时，可能会给旧代码中引入错误，也可能会使我们不得不对整个功能进行重构，并且需要原有代码经过重新测试&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;建议&lt;/strong&gt;: 当软件需求变化时，尽量通过扩展软件实体的行为来实现变化，而不是通过修改已有的代码来实现变化&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：一个对象应该对其他对象保持最少的了解&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;场景&lt;/strong&gt;：类与类之间的关系越密切，耦合度越大，当一个类发生改变时，对另一个类的影响也越大&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1&gt;设计模式分类&lt;/h1&gt;
-
-&lt;p&gt;一般将面向对象设计模式分为三类 &lt;code&gt;创建型&lt;/code&gt;、&lt;code&gt;结构型&lt;/code&gt;、&lt;code&gt;行为型&lt;/code&gt;三种。 &lt;/p&gt;
+ 	简单的理解就是高内聚，一个类尽量减少对其他对象的依赖，并且这个类的方法和属性能用私有的就尽量私有化
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;创建型&lt;/code&gt; ：创建对象时，不再由我们直接实例化对象；而是根据特定场景，由程序来确定创建对象的方式，从而保证更大的性能、更好的&lt;code&gt;架构&lt;/code&gt;优势。创建型模式主要有&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;简单工厂模式（并不是23种设计模式之一）&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;工厂方法&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;抽象工厂模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;单例模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;生成器模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;原型模式&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;结构型&lt;/code&gt; ：用于帮助将多个对象组织成更大的结构。结构型模式主要有&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;适配器模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;桥接模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;组合器模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;装饰器模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;门面模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;亨元模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;代理模式&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;行为型&lt;/code&gt; ：用于帮助系统间各对象的通信，以及如何控制复杂系统中流程。行为型模式主要有&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;命令模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;解释器模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;迭代器模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;中介者模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;备忘录模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;观察者模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;状态模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;策略模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;模板模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;访问者模式&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;职责链模式&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;注意&lt;/strong&gt;: 	
+ 	* 1)&lt;code class=&quot;highlighter-rouge&quot;&gt;只与直接的朋友通信，不要和陌生人说话&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;2)过分的使用该原则，将导致系统复杂度变大。所以在采用迪米特法则时要反复权衡，既做到结构清晰，又要高内聚低耦合&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&quot;section-10&quot;&gt;6.开闭原则&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：一个软件实体如类、模块和函数应该&lt;code class=&quot;highlighter-rouge&quot;&gt;对扩展开放，对修改关闭&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;场景&lt;/strong&gt;：在软件的生命周期内，因为变化、升级和维护等原因需要对软件原有代码进行修改时，可能会给旧代码中引入错误，也可能会使我们不得不对整个功能进行重构，并且需要原有代码经过重新测试&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;建议&lt;/strong&gt;: 当软件需求变化时，尽量通过扩展软件实体的行为来实现变化，而不是通过修改已有的代码来实现变化&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;section-11&quot;&gt;设计模式分类&lt;/h1&gt;
+
+&lt;p&gt;一般将面向对象设计模式分为三类 &lt;code class=&quot;highlighter-rouge&quot;&gt;创建型&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;结构型&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;行为型&lt;/code&gt;三种。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;创建型&lt;/code&gt; ：创建对象时，不再由我们直接实例化对象；而是根据特定场景，由程序来确定创建对象的方式，从而保证更大的性能、更好的&lt;code class=&quot;highlighter-rouge&quot;&gt;架构&lt;/code&gt;优势。创建型模式主要有
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;简单工厂模式（并不是23种设计模式之一）&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;工厂方法&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;抽象工厂模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;单例模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;生成器模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;原型模式&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;结构型&lt;/code&gt; ：用于帮助将多个对象组织成更大的结构。结构型模式主要有
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;适配器模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;桥接模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;组合器模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;装饰器模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;门面模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;亨元模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;代理模式&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;行为型&lt;/code&gt; ：用于帮助系统间各对象的通信，以及如何控制复杂系统中流程。行为型模式主要有
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;命令模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;解释器模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;迭代器模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;中介者模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;备忘录模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;观察者模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;状态模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;策略模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;模板模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;访问者模式&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;职责链模式&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
 </description>
         <pubDate>Tue, 29 Nov 2016 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2016/11/29/design-pattern/</link>
@@ -1277,7 +1545,7 @@ CountPriceByJKL类继承于CountPrice类，CountPriceByJKL重写了Count()方法
       <item>
         <title>PHP源码加密模块 php-beast</title>
         <description>&lt;blockquote&gt;
-&lt;p&gt;https://github.com/liexusong/php-beast&lt;/p&gt;
+  &lt;p&gt;https://github.com/liexusong/php-beast&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;pre&gt;&lt;code&gt;
@@ -1290,34 +1558,33 @@ CountPriceByJKL类继承于CountPrice类，CountPriceByJKL重写了Count()方法
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;pre&gt;
-此模块可以用于商业用途, 版权归原作者.&lt;br/&gt;
+此模块可以用于商业用途, 版权归原作者.&lt;br /&gt;
 QQ交流群：239243332
 &lt;/pre&gt;
 
 &lt;p&gt;&lt;b&gt;php-beast可以自定义加密模块，加密模块编写教程: &lt;a href=&quot;https://github.com/liexusong/php-beast/wiki/%E5%8A%A0%E5%AF%86%E6%A8%A1%E5%9D%97%E7%BC%96%E5%86%99%E6%95%99%E7%A8%8B&quot;&gt;点击&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
 
 &lt;h3&gt;编译安装如下:&lt;/h3&gt;
-
 &lt;pre&gt;&lt;code&gt;
 $ wget https://github.com/liexusong/php-beast/archive/master.zip
 $ unzip master.zip
 $ cd php-beast-master
 $ phpize
 $ ./configure --with-php-config=/usr/local/php/bin/php-config
-$ sudo make &amp;&amp; make install
+$ sudo make &amp;amp;&amp;amp; make install
 
 编译好之后修改php.ini配置文件, 加入配置项: extension=beast.so, 重启php-fpm
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;pre&gt;温馨提示: 可以设置较大的缓存提高效率&lt;/pre&gt;
 
-&lt;p&gt;&lt;b&gt;使用php-beast的性能：&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;
-&lt;img src=&quot;http://git.oschina.net/liexusong/php-beast/raw/master/images/beast1.png?dir=0&amp;filepath=images/beast1.png&amp;oid=645b87003dada2eac4f1a9fcfd353aa0423f5711&amp;sha=7ec2a0ddc7780b2bab538d9f49d8b262f1bc37b7&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;使用php-beast的性能：&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://git.oschina.net/liexusong/php-beast/raw/master/images/beast1.png?dir=0&amp;amp;filepath=images/beast1.png&amp;amp;oid=645b87003dada2eac4f1a9fcfd353aa0423f5711&amp;amp;sha=7ec2a0ddc7780b2bab538d9f49d8b262f1bc37b7&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;b&gt;不使用php-beast的性能：&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;
-&lt;img src=&quot;http://git.oschina.net/liexusong/php-beast/raw/master/images/beast2.png?dir=0&amp;filepath=images/beast2.png&amp;oid=3f07cff6dca34b22d8933ab0ea1740a0e4f37e34&amp;sha=7ec2a0ddc7780b2bab538d9f49d8b262f1bc37b7&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;不使用php-beast的性能：&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://git.oschina.net/liexusong/php-beast/raw/master/images/beast2.png?dir=0&amp;amp;filepath=images/beast2.png&amp;amp;oid=3f07cff6dca34b22d8933ab0ea1740a0e4f37e34&amp;amp;sha=7ec2a0ddc7780b2bab538d9f49d8b262f1bc37b7&quot; /&gt;&lt;/p&gt;
 
-配置项:
+&lt;p&gt;配置项:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;
  beast.cache_size = size
  beast.log_file = &quot;path_to_log&quot;
@@ -1325,83 +1592,88 @@ $ sudo make &amp;&amp; make install
  beast.encrypt_handler = &quot;des-algo&quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-支持的模块有：
+&lt;p&gt;支持的模块有：&lt;/p&gt;
 &lt;pre&gt;
  1. AES
  2. DES
  3. Base64
 &lt;/pre&gt;
 
-&lt;p&gt;通过测试环境:
+&lt;p&gt;通过测试环境:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;
  Nginx + Fastcgi + (PHP-5.2.x ~ PHP-5.6.x)
-&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3&gt;注意&lt;/h3&gt;
-
 &lt;p&gt;如果出现502错误，一般是由于GCC版本太低导致，请先升级GCC再安装本模块。&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;h2&gt;怎么加密项目&lt;/h2&gt;
-
-&lt;p&gt;安装完 &lt;code&gt;php-beast&lt;/code&gt; 后可以使用 &lt;code&gt;tools&lt;/code&gt; 目录下的 &lt;code&gt;encode_files.php&lt;/code&gt; 来加密你的项目。使用 &lt;code&gt;encode_files.php&lt;/code&gt; 之前先修改 &lt;code&gt;tools&lt;/code&gt; 目录下的 &lt;code&gt;configure.ini&lt;/code&gt; 文件，如下：
+&lt;h2 id=&quot;section&quot;&gt;怎么加密项目&lt;/h2&gt;
+&lt;p&gt;安装完 &lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 后可以使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;tools&lt;/code&gt; 目录下的 &lt;code class=&quot;highlighter-rouge&quot;&gt;encode_files.php&lt;/code&gt; 来加密你的项目。使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;encode_files.php&lt;/code&gt; 之前先修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;tools&lt;/code&gt; 目录下的 &lt;code class=&quot;highlighter-rouge&quot;&gt;configure.ini&lt;/code&gt; 文件，如下：
 ```ini
 ; source path
-src_path = &amp;quot;&amp;quot;&lt;/p&gt;
+src_path = “”&lt;/p&gt;
 
 &lt;p&gt;; destination path
-dst_path = &amp;quot;&amp;quot;&lt;/p&gt;
+dst_path = “”&lt;/p&gt;
 
 &lt;p&gt;; expire time
-expire = &amp;quot;&amp;quot;
-``&lt;code&gt;
-&lt;/code&gt;src&lt;em&gt;path&lt;code&gt;是要加密项目的路径，&lt;/code&gt;dst&lt;/em&gt;path&lt;code&gt;是保存加密后项目的路径，&lt;/code&gt;expire&lt;code&gt;是设置项目可使用的时间 (&lt;/code&gt;expire&lt;code&gt;的格式是：&lt;/code&gt;YYYY-mm-dd HH:ii:ss&lt;code&gt;)。
-修改完&lt;/code&gt;configure.ini&lt;code&gt;文件后就可以使用命令&lt;/code&gt;php encode_files.php` 开始加密项目。&lt;/p&gt;
+expire = “”
+```
+&lt;code class=&quot;highlighter-rouge&quot;&gt;src_path&lt;/code&gt; 是要加密项目的路径，&lt;code class=&quot;highlighter-rouge&quot;&gt;dst_path&lt;/code&gt; 是保存加密后项目的路径，&lt;code class=&quot;highlighter-rouge&quot;&gt;expire&lt;/code&gt; 是设置项目可使用的时间 (&lt;code class=&quot;highlighter-rouge&quot;&gt;expire&lt;/code&gt; 的格式是：&lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-mm-dd HH:ii:ss&lt;/code&gt;)。
+修改完 &lt;code class=&quot;highlighter-rouge&quot;&gt;configure.ini&lt;/code&gt; 文件后就可以使用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;php encode_files.php&lt;/code&gt; 开始加密项目。&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;h2&gt;制定自己的php-beast&lt;/h2&gt;
+&lt;h2 id=&quot;php-beast&quot;&gt;制定自己的php-beast&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;php-beast&lt;/code&gt; 有多个地方可以定制的，以下一一列出：&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 有多个地方可以定制的，以下一一列出：&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;1.&lt;/em&gt; 使用 &lt;code&gt;header.c&lt;/code&gt; 文件可以修改 &lt;code&gt;php-beast&lt;/code&gt; 加密后的文件头结构，这样网上的解密软件就不能认识我们的加密文件，就不能进行解密，增加加密的安全性。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;1.&lt;/em&gt; 使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;header.c&lt;/code&gt; 文件可以修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 加密后的文件头结构，这样网上的解密软件就不能认识我们的加密文件，就不能进行解密，增加加密的安全性。&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;2.&lt;/em&gt; &lt;code&gt;php-beast&lt;/code&gt; 提供只能在指定的机器上运行的功能。要使用此功能可以在 &lt;code&gt;networkcards.c&lt;/code&gt; 文件添加能够运行机器的网卡号，例如：
-&lt;code&gt;c
+&lt;p&gt;&lt;em&gt;2.&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 提供只能在指定的机器上运行的功能。要使用此功能可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;networkcards.c&lt;/code&gt; 文件添加能够运行机器的网卡号，例如：
+&lt;code class=&quot;highlighter-rouge&quot;&gt;c
 char *allow_networkcards[] = {
-    &amp;quot;fa:16:3e:08:88:01&amp;quot;,
+	&quot;fa:16:3e:08:88:01&quot;,
     NULL,
 };
 &lt;/code&gt;
-这样设置之后，&lt;code&gt;php-beast&lt;/code&gt; 扩展就只能在 &lt;code&gt;fa:16:3e:08:88:01&lt;/code&gt; 这台机器上运行。另外要注意的是，由于有些机器网卡名可能不一样，所以如果你的网卡名不是 &lt;code&gt;eth0&lt;/code&gt; 的话，可以在 &lt;code&gt;php.ini&lt;/code&gt; 中添加配置项： &lt;code&gt;beast.networkcard = &amp;quot;xxx&amp;quot;&lt;/code&gt; 其中 &lt;code&gt;xxx&lt;/code&gt; 就是你的网卡名，也可以配置多张网卡，如：&lt;code&gt;beast.networkcard = &amp;quot;eth0,eth1,eth2&amp;quot;&lt;/code&gt;。&lt;/p&gt;
+这样设置之后，&lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 扩展就只能在 &lt;code class=&quot;highlighter-rouge&quot;&gt;fa:16:3e:08:88:01&lt;/code&gt; 这台机器上运行。另外要注意的是，由于有些机器网卡名可能不一样，所以如果你的网卡名不是 &lt;code class=&quot;highlighter-rouge&quot;&gt;eth0&lt;/code&gt; 的话，可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;php.ini&lt;/code&gt; 中添加配置项： &lt;code class=&quot;highlighter-rouge&quot;&gt;beast.networkcard = &quot;xxx&quot;&lt;/code&gt; 其中 &lt;code class=&quot;highlighter-rouge&quot;&gt;xxx&lt;/code&gt; 就是你的网卡名，也可以配置多张网卡，如：&lt;code class=&quot;highlighter-rouge&quot;&gt;beast.networkcard = &quot;eth0,eth1,eth2&quot;&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;3.&lt;/em&gt; 使用 &lt;code&gt;php-beast&lt;/code&gt; 时最好不要使用默认的加密key，因为扩展是开源的，如果使用默认加密key的话，很容易被人发现。所以最好编译的时候修改加密的key，&lt;code&gt;aes模块&lt;/code&gt; 可以在 &lt;code&gt;aes_algo_handler.c&lt;/code&gt; 文件修改，而 &lt;code&gt;des模块&lt;/code&gt; 可以在 &lt;code&gt;des_algo_handler.c&lt;/code&gt; 文件修改。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;3.&lt;/em&gt; 使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 时最好不要使用默认的加密key，因为扩展是开源的，如果使用默认加密key的话，很容易被人发现。所以最好编译的时候修改加密的key，&lt;code class=&quot;highlighter-rouge&quot;&gt;aes模块&lt;/code&gt; 可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;aes_algo_handler.c&lt;/code&gt; 文件修改，而 &lt;code class=&quot;highlighter-rouge&quot;&gt;des模块&lt;/code&gt; 可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;des_algo_handler.c&lt;/code&gt; 文件修改。&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;h3&gt;使用过程&lt;/h3&gt;
+&lt;h3 id=&quot;section-1&quot;&gt;使用过程&lt;/h3&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;安装好php-beast喝php扩展&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;编写 php-beast-master/tools/configure.ini&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装好php-beast喝php扩展&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;编写 php-beast-master/tools/configure.ini&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;  ; source path
-  src_path = &quot;/home/wwwroot/demo9.htmhub.com.bak&quot;
 
-  ; destination path
-  dst_path = &quot;/home/wwwroot/demo9.htmhub.com&quot;
+&lt;p&gt;```
+  ; source path
+  src_path = “/home/wwwroot/demo9.htmhub.com.bak”&lt;/p&gt;
 
-  ; expire time
-  expire = &quot;&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;; destination path
+  dst_path = “/home/wwwroot/demo9.htmhub.com”&lt;/p&gt;
+
+&lt;p&gt;; expire time
+  expire = “”
+  ```&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;执行编译过程 &lt;/li&gt;
+  &lt;li&gt;执行编译过程&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;code&gt;php  php-beast-master/tools/encode_files.php&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php  php-beast-master/tools/encode_files.php&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;此时会将配置好的代码加密，解密过程是通过 beast.so 在线解密的。PHP文件可以正常访问。&lt;/p&gt;
 </description>
@@ -1420,32 +1692,39 @@ char *allow_networkcards[] = {
     
       <item>
         <title>Linux文件加密之ccrypt</title>
-        <description>&lt;h1&gt;ccrypt&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;ccrypt&quot;&gt;ccrypt&lt;/h1&gt;
 
-&lt;p&gt;&lt;code&gt;ccrypt是为了取代UNIX crypt而设计的，这个实用工具可用于文件和数据流加密及解密。它使用Rijndael密码&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ccrypt是为了取代UNIX crypt而设计的，这个实用工具可用于文件和数据流加密及解密。它使用Rijndael密码&lt;/code&gt;&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;h2&gt;安装&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;sudo apt-get install ccrypt
+&lt;h2 id=&quot;section&quot;&gt;安装&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+sudo apt-get install ccrypt
 # yum install ccrypt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;hr&gt;
+&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2&gt;使用&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;加密文件&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;ccencrypt filename
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;输入两次密码&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;## 使用&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;解密文件&lt;/li&gt;
+  &lt;li&gt;加密文件&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;ccdecrypt filename
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+ccencrypt filename
+&lt;/code&gt;
+输入两次密码&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;解密文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+ccdecrypt filename
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;提供加密时输入的同一个密码才能解密&lt;/p&gt;
 
 &lt;p&gt;它使用ccencrypt来加密、使用ccdecrypt来解密。一定要注意，加密时，原始文件(tecmint.txt)换成了tecmint.txt.cpt;解密时，加密文件(tecmint.txt.cpt)换成了原始文件(tecmint.txt)。你可以使用ls命令来予以核查&lt;/p&gt;
