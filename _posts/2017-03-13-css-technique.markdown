@@ -108,17 +108,72 @@ opacity作用于元素以及元素内部的所有元素的透明度；俩者的�
 
 ![gif](/img/b4316f7925ce12d39281a083299f52c449260b41.gif)
 
+`代码`
+
+<style>
+.demo{
+width:100%;
+height:200px;
+border:1px solid #54e823;
+background-color:#eee;
+}
+.spi{
+background:url(/img/result.png);
+}
+
+.spi1{
+background-position: 0px 0px;
+}
+.spi1:hover{
+background-position: 0px -134px;
+}
+.spi2{
+background-position: 0px -45px;
+}
+.spi2:hover{
+background-position: 0px -183px;
+}
+.spi3{
+background-position: 0px -88px;
+}
+.spi1:hover{
+background-position: 0px -230px;
+}
+</style>
+
+<div class="demo">
+    <div class="spi spi1"></div>
+    <div class="spi spi2"></div>
+    <div class="spi spi3"></div>
+</div>
+
+
 ### 使用字体图标(如 iconfont, 查找->加入购物车->下载 demo1 、 fortawesome 或者fontello1)实现上例效果
 
+`代码`
+
+<div class="demo">
+
+</div>
 
 ### 使用css border实现如下三角形
 
 ![border三角形](/img/1cc5ec2069c4cd2b4c7eac7e848d31bd1625602d_1_690x482.png)
 
+`代码`
+
+<div class="demo">
+
+</div>
+
+
+
 ## 推荐资源
 
 
 > [工具-图片在线合并3](http://csssprites.com/)
+
 > [工具-图片在线压缩1](https://tinypng.com/)
+
 > [工具-caniuse 在线查兼容](http://caniuse.com/)
 
