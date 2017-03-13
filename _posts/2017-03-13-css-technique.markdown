@@ -118,7 +118,11 @@ border:1px solid #54e823;
 background-color:#eee;
 }
 .spi{
-background:url(/img/result.png);
+    background:url(/img/result.png);
+    width: 50px;
+    height: 20px;
+    border: 1px solid #e41515;
+    display: inline-block;
 }
 
 .spi1{
@@ -142,9 +146,9 @@ background-position: 0px -230px;
 </style>
 
 <div class="demo">
-    <div class="spi spi1"></div>
-    <div class="spi spi2"></div>
-    <div class="spi spi3"></div>
+    <div class="spi spi1">前进</div>
+    <div class="spi spi2">开始</div>
+    <div class="spi spi3">停止</div>
 </div>
 
 
