@@ -74,6 +74,9 @@ IE的盒模型width、height=content＋padding＋border。
 <div class="btn">提交</div>
 <button class="btn"> 发送</button>
 ```
+![qq](/img/49bf909c-9ad6-420c-be68-2f68d8f12d60.png)
+
+`代码效果：`
 
 <style>
 .demo{

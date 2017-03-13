@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 13 Mar 2017 14:07:09 +0800</pubDate>
-    <lastBuildDate>Mon, 13 Mar 2017 14:07:09 +0800</lastBuildDate>
+    <pubDate>Mon, 13 Mar 2017 14:09:14 +0800</pubDate>
+    <lastBuildDate>Mon, 13 Mar 2017 14:09:14 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -71,7 +71,10 @@ IE的盒模型与W3C盒模型的区别在与width的计算。&lt;/p&gt;
 &lt;span class=&quot;btn&quot;&gt;取消&lt;/span&gt;&lt;/p&gt;
 &lt;div class=&quot;btn&quot;&gt;提交&lt;/div&gt;
 &lt;p&gt;&lt;button class=&quot;btn&quot;&gt; 发送&lt;/button&gt;
-```&lt;/p&gt;
+```
+&lt;img src=&quot;/img/49bf909c-9ad6-420c-be68-2f68d8f12d60.png&quot; alt=&quot;qq&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;代码效果：&lt;/code&gt;&lt;/p&gt;
 
 &lt;style&gt;
 .demo{
