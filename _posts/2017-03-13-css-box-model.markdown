@@ -94,6 +94,7 @@ background-color:#eee;
     line-height: 25px;
     border-radius: 5px;
     color: #fff !important;
+    cursor: pointer;
 }
 </style>
 
