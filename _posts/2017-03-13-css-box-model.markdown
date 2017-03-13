@@ -79,11 +79,16 @@ IE的盒模型width、height=content＋padding＋border。
 .demo{
 width:100%;
 height:200px;
-border:1px solid #ccc;
+border:1px solid #54e823;
+background-color:#eee;
 }
 </style>
 
 <div class="demo">
+<a class="btn" href="#">确定</a>
+<span class="btn" >取消</span>
+<div class="btn">提交</div>
+<button class="btn"> 发送</button>
 </div>
 
 
