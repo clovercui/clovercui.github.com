@@ -122,7 +122,7 @@ background-color:#eee;
     background-size: 20px;
     width: 60px;
     height: 20px;
-    border: 1px solid #e41515;
+   
     display: inline-block;
     line-height: 20px;
     padding-left: 20px;
@@ -164,15 +164,15 @@ color:rgb(165,104,190);
 .demo{
 width:100%;
 height:200px;
-border:1px solid #54e823;
 background-color:#eee;
+border:1px solid #54e823;
 }
 .spi{
 	background: url(/img/result.png) 0 0 no-repeat;
     background-size: 20px;
     width: 60px;
     height: 20px;
-    border: 1px solid #e41515;
+   
     display: inline-block;
     line-height: 20px;
     padding-left: 20px;
