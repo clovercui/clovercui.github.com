@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 13 Mar 2017 14:59:12 +0800</pubDate>
-    <lastBuildDate>Mon, 13 Mar 2017 14:59:12 +0800</lastBuildDate>
+    <pubDate>Mon, 13 Mar 2017 15:04:27 +0800</pubDate>
+    <lastBuildDate>Mon, 13 Mar 2017 15:04:27 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -65,7 +65,7 @@
 &lt;p&gt;contain——按比例调整背景图片，使得其图片宽高比自适应整个元素的背景区域的宽高比，因此假如背景图片过大，而背景区域的整体宽高比不能恰好包含背景图片的话，那么其背景区域会出现空白，这个值多用于响应式页面；&lt;/p&gt;
 
 &lt;p&gt;cover——按比例调整背景图片，这个值的属性和contain正好相反，背景图会按照比例填充背景区域，如果背景图片过大且不能正好按照宽高比包含背景区域，那么背景图片就会被裁减显示不全；
-&lt;a href=&quot;http://www.webhek.com/background-size/&quot;&gt;参考文档&lt;/a&gt;&lt;/p&gt;
+&amp;gt; &lt;a href=&quot;http://www.webhek.com/background-size/&quot;&gt;参考文档&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/145951-71351468654e5c7b.png&quot; alt=&quot;兼容性&quot; /&gt;&lt;/p&gt;
 
@@ -100,7 +100,30 @@ filter:Alpah(opacity=60)/*IE8及之前版本*/
 
 &lt;p&gt;opacity作用于元素以及元素内部的所有元素的透明度；俩者的兼容性都需要IE8以上版本的支持&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/q285661571/article/details/7536490&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/q285661571/article/details/7536490&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;代码&lt;/h2&gt;
+
+&lt;h3 id=&quot;css-sprite-6--hover-&quot;&gt;使用CSS Sprite 把如下6张图标图片合并成一张图片，做出如下效果, 当 hover 时背景变色&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/b4316f7925ce12d39281a083299f52c449260b41.gif&quot; alt=&quot;gif&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;iconfont----demo1--fortawesome-fontello1&quot;&gt;使用字体图标(如 iconfont, 查找-&amp;gt;加入购物车-&amp;gt;下载 demo1 、 fortawesome 或者fontello1)实现上例效果&lt;/h3&gt;
+
+&lt;h3 id=&quot;css-border&quot;&gt;使用css border实现如下三角形&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/1cc5ec2069c4cd2b4c7eac7e848d31bd1625602d_1_690x482.png&quot; alt=&quot;border三角形&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;推荐资源&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://csssprites.com/&quot;&gt;工具-图片在线合并3&lt;/a&gt;
+&lt;a href=&quot;https://tinypng.com/&quot;&gt;工具-图片在线压缩1&lt;/a&gt;
+&lt;a href=&quot;http://caniuse.com/&quot;&gt;工具-caniuse 在线查兼容&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
 </description>
         <pubDate>Mon, 13 Mar 2017 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2017/03/13/css-technique/</link>

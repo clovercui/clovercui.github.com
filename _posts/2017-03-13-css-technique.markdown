@@ -64,7 +64,7 @@ percentage——根据给定的百分比调整图片大小；
 contain——按比例调整背景图片，使得其图片宽高比自适应整个元素的背景区域的宽高比，因此假如背景图片过大，而背景区域的整体宽高比不能恰好包含背景图片的话，那么其背景区域会出现空白，这个值多用于响应式页面；
 
 cover——按比例调整背景图片，这个值的属性和contain正好相反，背景图会按照比例填充背景区域，如果背景图片过大且不能正好按照宽高比包含背景区域，那么背景图片就会被裁减显示不全；
-[参考文档](http://www.webhek.com/background-size/)
+> [参考文档](http://www.webhek.com/background-size/)
 
 ![兼容性](/img/145951-71351468654e5c7b.png)
 
@@ -100,4 +100,25 @@ rgba只能作用于颜色或背景色，并不能使设置的颜色透明化；
 
 opacity作用于元素以及元素内部的所有元素的透明度；俩者的兼容性都需要IE8以上版本的支持
 
-[参考](http://blog.csdn.net/q285661571/article/details/7536490)
+> [参考](http://blog.csdn.net/q285661571/article/details/7536490)
+
+## 代码
+
+### 使用CSS Sprite 把如下6张图标图片合并成一张图片，做出如下效果, 当 hover 时背景变色
+
+![gif](/img/b4316f7925ce12d39281a083299f52c449260b41.gif)
+
+### 使用字体图标(如 iconfont, 查找->加入购物车->下载 demo1 、 fortawesome 或者fontello1)实现上例效果
+
+
+### 使用css border实现如下三角形
+
+![border三角形](/img/1cc5ec2069c4cd2b4c7eac7e848d31bd1625602d_1_690x482.png)
+
+## 推荐资源
+
+
+> [工具-图片在线合并3](http://csssprites.com/)
+> [工具-图片在线压缩1](https://tinypng.com/)
+> [工具-caniuse 在线查兼容](http://caniuse.com/)
+
