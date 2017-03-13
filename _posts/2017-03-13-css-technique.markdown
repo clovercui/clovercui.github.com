@@ -127,7 +127,7 @@ background-color:#eee;
     line-height: 20px;
     padding-left: 20px;
     font-size: 13px;
-    font-color:rgb(108,108,108);
+    color:rgb(108,108,108);
 }
 
 .spi1{
@@ -135,21 +135,21 @@ background-position: 0px -1px;
 }
 .spi1:hover{
 background-position: -1px -78px;
-font-color:rgb(165,104,190);
+color:rgb(165,104,190);
 }
 .spi2{
 background-position: 1px -26px;
 }
 .spi2:hover{
 background-position: -2px -106px;
-font-color:rgb(165,104,190);
+color:rgb(165,104,190);
 }
 .spi3{
 background-position: 0px -53px;
 }
 .spi3:hover{
 background-position: 2px -131px;
-font-color:rgb(165,104,190);
+color:rgb(165,104,190);
 }
 </style>
 
@@ -177,7 +177,7 @@ background-color:#eee;
     line-height: 20px;
     padding-left: 20px;
     font-size: 13px;
-    font-color:rgb(108,108,108);
+    color:rgb(108,108,108);
 }
 
 .spi1{
@@ -185,21 +185,21 @@ background-position: 0px -1px;
 }
 .spi1:hover{
 background-position: -1px -78px;
-font-color:rgb(165,104,190);
+color:rgb(165,104,190);
 }
 .spi2{
 background-position: 1px -26px;
 }
 .spi2:hover{
 background-position: -2px -106px;
-font-color:rgb(165,104,190);
+color:rgb(165,104,190);
 }
 .spi3{
 background-position: 0px -53px;
 }
 .spi3:hover{
 background-position: 2px -131px;
-font-color:rgb(165,104,190);
+color:rgb(165,104,190);
 }
 </style>
 
