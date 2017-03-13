@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 13 Mar 2017 17:52:43 +0800</pubDate>
-    <lastBuildDate>Mon, 13 Mar 2017 17:52:43 +0800</lastBuildDate>
+    <pubDate>Mon, 13 Mar 2017 18:00:34 +0800</pubDate>
+    <lastBuildDate>Mon, 13 Mar 2017 18:00:34 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -129,25 +129,29 @@ background-color:#eee;
     line-height: 20px;
     padding-left: 20px;
     font-size: 13px;
+    font-color:rgb(108,108,108);
 }
 
 .spi1{
 background-position: 0px -1px;
 }
 .spi1:hover{
-background-position: 1px -78px
+background-position: -1px -78px;
+font-color:rgb(165,104,190);
 }
 .spi2{
 background-position: 1px -26px;
 }
 .spi2:hover{
-background-position: 2px -106px;
+background-position: -2px -106px;
+font-color:rgb(165,104,190);
 }
 .spi3{
-background-position: 2px -53px;
+background-position: 0px -53px;
 }
 .spi3:hover{
-background-position: 0px -131px;
+background-position: 2px -131px;
+font-color:rgb(165,104,190);
 }
 &lt;/style&gt;
 
