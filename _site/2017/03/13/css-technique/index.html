@@ -10,9 +10,9 @@
     <meta name="keyword"  content="克洛弗, Clover克洛弗, Clover, @Clover, 克洛弗的博客, Clover Blog, 博客, 个人网站, 互联网, 前端,后端, 设计, 产品, PHP, JAVA,服务器,LINUX">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>CSS选择器 - 克洛弗的博客 | Clover Blog</title>
+    <title>CSS常用技巧 - 克洛弗的博客 | Clover Blog</title>
 
-    <link rel="canonical" href="http://clover.htmhub.com/2017/03/09/css-selector/">
+    <link rel="canonical" href="http://clover.htmhub.com/2017/03/13/css-technique/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -172,12 +172,12 @@
                         <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
                         
                     </div>
-                    <h1>CSS选择器</h1>
+                    <h1>CSS常用技巧</h1>
                     
                     
                     <h2 class="subheading"></h2>
                     
-                    <span class="meta">Posted by Clover on March 9, 2017</span>
+                    <span class="meta">Posted by Clover on March 13, 2017</span>
                 </div>
             </div>
         </div>
@@ -195,389 +195,96 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h1 id="css">CSS选择器</h1>
+				<h1 id="css">CSS常用技巧</h1>
 
-<h2 id="section">选择器类型</h2>
+<h2 id="css-sprite-"><code class="highlighter-rouge">CSS Sprite(雪碧图|精灵图)指什么? 有什么作用</code></h2>
 
-<ul>
-  <li>
-    <p>基础选择器</p>
+<p><code class="highlighter-rouge">A:</code></p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>选择器</th>
-          <th>含义</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>*</td>
-          <td>通用元素选择器，匹配页面任何元素（这也就决定了我们很少使用）</td>
-        </tr>
-        <tr>
-          <td>#id</td>
-          <td>id选择器，匹配特定id的元素</td>
-        </tr>
-        <tr>
-          <td>.class</td>
-          <td>类选择器，匹配class包含(不是等于)特定类的元素</td>
-        </tr>
-        <tr>
-          <td>element</td>
-          <td>标签选择器</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <p>组合选择器</p>
+<p><code class="highlighter-rouge">雪碧图</code> 就是将很多小图标合并成一张图，这样在加载图片时只需要走一次网络请求，然后用<code class="highlighter-rouge">background-position</code>定位来显示部分图片</p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>选择器</th>
-          <th>含义</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>E,F</td>
-          <td>多元素选择器，用,分隔，同时匹配元素E或元素F</td>
-        </tr>
-        <tr>
-          <td>E F</td>
-          <td>后代选择器，用空格分隔，匹配E元素所有的后代（不只是子元素、子元素向下递归）元素F</td>
-        </tr>
-        <tr>
-          <td>E&gt;F</td>
-          <td>子元素选择器，用&gt;分隔，匹配E元素的所有直接子元素</td>
-        </tr>
-        <tr>
-          <td>E+F</td>
-          <td>直接相邻选择器，匹配E元素之后的相邻的同级元素F</td>
-        </tr>
-        <tr>
-          <td>E~F</td>
-          <td>普通相邻选择器（弟弟选择器），匹配E元素之后的同级元素F（无论直接相邻与否）</td>
-        </tr>
-        <tr>
-          <td>.class1.class2</td>
-          <td>id和class选择器和选择器连写的时候中间没有分隔符，. 和 # 本身充当分隔符的元素</td>
-        </tr>
-        <tr>
-          <td>element#id</td>
-          <td>id和class选择器和选择器连写的时候中间没有分隔符，. 和 # 本身充当分隔符的元素</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <ul>
-      <li>属性选择器</li>
-    </ul>
-
-    <table>
-      <thead>
-        <tr>
-          <th>选择器</th>
-          <th>含义</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>E[attr]</td>
-          <td>匹配所有具有属性attr的元素，div[id]就能取到所有有id属性的div</td>
-        </tr>
-        <tr>
-          <td>E[attr = value]</td>
-          <td>匹配属性attr值为value的元素，div[id=test],匹配id=test的div</td>
-        </tr>
-        <tr>
-          <td>E[attr ~= value]</td>
-          <td>匹配所有属性attr具有多个空格分隔、其中一个值等于value的元素</td>
-        </tr>
-        <tr>
-          <td>E[attr ^= value]</td>
-          <td>匹配属性attr的值以value开头的元素</td>
-        </tr>
-        <tr>
-          <td>E[attr $= value]</td>
-          <td>匹配属性attr的值以value结尾的元素</td>
-        </tr>
-        <tr>
-          <td>E[attr *= value]</td>
-          <td>匹配属性attr的值包含value的元素</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <p>伪类选择器</p>
-  </li>
-</ul>
-
-<p>往下看</p>
-
-<ul>
-  <li>伪元素选择器</li>
-</ul>
-
-<table>
-  <thead>
-    <tr>
-      <th>选择器</th>
-      <th>含义</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>E::first-line</td>
-      <td>匹配E元素内容的第一行</td>
-    </tr>
-    <tr>
-      <td>E::first-letter</td>
-      <td>匹配E元素内容的第一个字母</td>
-    </tr>
-    <tr>
-      <td>E::before</td>
-      <td>在E元素之前插入生成的内容</td>
-    </tr>
-    <tr>
-      <td>E::after</td>
-      <td>在E元素之后插入生成的内容</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="css-1">CSS优先级</h2>
-
-<p>从高到低分别是</p>
-
-<p>在属性后面使用 !important 会覆盖页面内任何位置定义的元素样式</p>
-
-<p>作为style属性写在元素标签上的内联样式</p>
+<p>作用：</p>
 
 <ol>
-  <li>
-    <p>id选择器</p>
-  </li>
-  <li>
-    <p>类选择器</p>
-  </li>
-  <li>
-    <p>伪类选择器</p>
-  </li>
-  <li>
-    <p>属性选择器</p>
-  </li>
-  <li>
-    <p>标签选择器</p>
-  </li>
-  <li>
-    <p>通配符选择器</p>
-  </li>
-  <li>
-    <p>浏览器自定义</p>
-  </li>
+  <li>能够减少页面的请求数、降低图片占用的字节，以此来达到提升页面访问速度的目的</li>
+  <li>提高页面的加载速度；</li>
 </ol>
 
-<p>这样就可以看出来上面例子肯定使用id选择器的定义了，还有一种复杂的情况，CSS规则由多个选择器组成</p>
+<blockquote>
+  <p><a href="http://riny.net/2014/compass-sprite/">参考</a></p>
+</blockquote>
+
+<h2 id="imgcss"><code class="highlighter-rouge">img标签和CSS背景使用图片在使用场景上有何区别</code></h2>
+
+<p><code class="highlighter-rouge">A:</code></p>
+
+<p><code class="highlighter-rouge">img</code>标签适用于经常改变的情况，会通过后台更新的数据,例如商品的图片，任务的照片信息；
+<code class="highlighter-rouge">.css</code>背景适用于不会经常改变的情况，例如 图标等；</p>
+
+<h2 id="title--alt"><code class="highlighter-rouge">title 和 alt属性分别有什么作用</code></h2>
+
+<p><code class="highlighter-rouge">A:</code></p>
+
+<p><code class="highlighter-rouge">title</code>用于显示额外提示文字，鼠标放在元素上面时会显示。
+<code class="highlighter-rouge">alt</code>用于在无法加载图片时，替代图片显示,并且对SEO爬虫友好，可以提升网页的权重。</p>
+
+<h2 id="background-urlabcpng-0-0-no-repeat"><code class="highlighter-rouge">background: url(abc.png) 0 0 no-repeat;这句话是什么意思</code></h2>
+
+<p><code class="highlighter-rouge">A:</code>
+背景图片使用css同级目录下的abc.png 位置偏移 X轴0px,Y轴0px；不重复。</p>
+
+<h2 id="background-size--"><code class="highlighter-rouge">background-size有什么作用? 兼容性如何? 常用的值是?</code></h2>
+
+<p><code class="highlighter-rouge">A:</code></p>
+
+<p>CSS 的 background-size 属性能调整背景图片的大小，从而替代了用原始大小显示图片的默认行为
+常用的值有以下几类：</p>
+
+<p>auto——原始图片大小；</p>
+
+<p>length——根据给定长度值调整背景图片大小；</p>
+
+<p>percentage——根据给定的百分比调整图片大小；</p>
+
+<p>contain——按比例调整背景图片，使得其图片宽高比自适应整个元素的背景区域的宽高比，因此假如背景图片过大，而背景区域的整体宽高比不能恰好包含背景图片的话，那么其背景区域会出现空白，这个值多用于响应式页面；</p>
+
+<p>cover——按比例调整背景图片，这个值的属性和contain正好相反，背景图会按照比例填充背景区域，如果背景图片过大且不能正好按照宽高比包含背景区域，那么背景图片就会被裁减显示不全；
+<a href="http://www.webhek.com/background-size/">参考文档</a></p>
+
+<p><img src="/img/145951-71351468654e5c7b.png" alt="兼容性" /></p>
+
+<h2 id="div"><code class="highlighter-rouge">如何让一个div水平居中？如何让图片水平居中</code></h2>
+
+<p><code class="highlighter-rouge">A:</code></p>
+
+<p>可对div(块级元素)设置margin：0 auto</p>
+
+<p>设置水平居中 对图片(行内元素)设置text-align:center</p>
+
+<p>设置水平居中 或者设置display:block，按照块级元素设置；</p>
+
+<h2 id="section"><code class="highlighter-rouge">如何设置元素透明? 兼容性？</code></h2>
+
+<p><code class="highlighter-rouge">A:</code></p>
 
 <p><code class="highlighter-rouge">css
-#test p.class1 {...}
-#test .class1.class2 {...}
+div{ 
+opacity:0.6;
+filter:Alpah(opacity=60)/*IE8及之前版本*/
+}
 </code></p>
 
-<p>这种场景该使用那条规则呢？</p>
+<p><img src="/img/145951-923845199b1b1688.png" alt="兼容性" /></p>
 
-<p>这时候我们可以做个简单的加法运算，id选择器的权值为1000，class选择器为100，标签选择器为10，做一下运算（当然只是为了形象这么说，一万个class选择器加起来也不如一个id选择器优先级高）</p>
-
-<p>这样我们就能得知第二条的规则优先级高一些，但是还有一种情况</p>
-
-<p>``` html
-#parent p.class1
-div #child.class1</p>
-
-<div id="parent">
-    <p id="child" class="class1">
-        Text
-    </p>
-</div>
-<p>```</p>
-
-<p>按照我们刚才的方法计算，两个的权值时相同的，这时候应该用那条规则呢？简单来说一句话谁更具体用谁，也就是权值高的选择器作用的越具体优先级越高</p>
-
-<p>我们可以看到两个选择器作用的元素都是p标签，id选择器权值最高，第一条规则作用在了父元素上，第二条规则直接作用在了p标签本身上，所以我们认为第二条选择器的优先级高</p>
-
-<p>如果两个选择器规权值就是一样，我们改怎么判断呢？ 后面的覆盖前面的！</p>
-
-<p><code class="highlighter-rouge">css
-div {color: #333;}
-....
-div {color: #666;}
-</code></p>
-
-<p>这样<code class="highlighter-rouge">div</code>文案的颜色明显会是<code class="highlighter-rouge">#666</code></p>
-
-<p>总而言之判断CSS选择器规则优先级很简单，每个选择器本身有优先级，越具体优先级越高</p>
-
-<h2 id="section-1"><code class="highlighter-rouge">列出你知道的伪类选择器</code></h2>
+<h2 id="opacity--rgba"><code class="highlighter-rouge">opacity 和 rgba都能设置透明，有什么区别</code></h2>
 
 <p><code class="highlighter-rouge">A:</code></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>选择器</th>
-      <th>含义</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>E:first-child</td>
-      <td>匹配元素E的第一个子元素</td>
-    </tr>
-    <tr>
-      <td>E:link</td>
-      <td>匹配所有未被点击的链接</td>
-    </tr>
-    <tr>
-      <td>E:visited</td>
-      <td>匹配所有已被点击的链接</td>
-    </tr>
-    <tr>
-      <td>E:active</td>
-      <td>匹配鼠标已经其上按下、还没有释放的E元素</td>
-    </tr>
-    <tr>
-      <td>E:hover</td>
-      <td>匹配鼠标悬停其上的E元素</td>
-    </tr>
-    <tr>
-      <td>E:focus</td>
-      <td>匹配获得当前焦点的E元素</td>
-    </tr>
-    <tr>
-      <td>E:lang(c)</td>
-      <td>匹配lang属性等于c的E元素</td>
-    </tr>
-    <tr>
-      <td>E:enabled</td>
-      <td>匹配表单中可用的元素</td>
-    </tr>
-    <tr>
-      <td>E:disabled</td>
-      <td>匹配表单中禁用的元素</td>
-    </tr>
-    <tr>
-      <td>E:checked</td>
-      <td>匹配表单中被选中的radio或checkbox元素</td>
-    </tr>
-    <tr>
-      <td>E::selection</td>
-      <td>匹配用户当前选中的元素</td>
-    </tr>
-    <tr>
-      <td>E:root</td>
-      <td>匹配文档的根元素，对于HTML文档，就是HTML元素</td>
-    </tr>
-    <tr>
-      <td>E:nth-child(n)</td>
-      <td>匹配其父元素的第n个子元素，第一个编号为1</td>
-    </tr>
-    <tr>
-      <td>E:nth-last-child(n)</td>
-      <td>匹配其父元素的倒数第n个子元素，第一个编号为1</td>
-    </tr>
-    <tr>
-      <td>E:nth-of-type(n)</td>
-      <td>与:nth-child()作用类似，但是仅匹配使用同种标签的元素</td>
-    </tr>
-    <tr>
-      <td>E:nth-last-of-type(n)</td>
-      <td>与:nth-last-child() 作用类似，但是仅匹配使用同种标签的元素</td>
-    </tr>
-    <tr>
-      <td>E:last-child</td>
-      <td>匹配父元素的最后一个子元素，等同于:nth-last-child(1)</td>
-    </tr>
-    <tr>
-      <td>E:first-of-type</td>
-      <td>匹配父元素下使用同种标签的第一个子元素，等同于:nth-of-type(1)</td>
-    </tr>
-    <tr>
-      <td>E:last-of-type</td>
-      <td>匹配父元素下使用同种标签的最后一个子元素，等同于:nth-last-of-type(1)</td>
-    </tr>
-    <tr>
-      <td>E:only-child</td>
-      <td>匹配父元素下仅有的一个子元素，等同于:first-child:last-child或 :nth-child(1):nth-last-child(1)</td>
-    </tr>
-    <tr>
-      <td>E:only-of-type</td>
-      <td>匹配父元素下使用同种标签的唯一一个子元素，等同于:first-of-type:last-of-type或 :nth-of-type(1):nth-last-of-type(1)</td>
-    </tr>
-    <tr>
-      <td>E:empty</td>
-      <td>匹配一个不包含任何子元素的元素，文本节点也被看作子元素</td>
-    </tr>
-    <tr>
-      <td>E:not(selector)</td>
-      <td>匹配不符合当前选择器的任何元素</td>
-    </tr>
-  </tbody>
-</table>
+<p>rgba只能作用于颜色或背景色，并不能使设置的颜色透明化；</p>
 
-<p>==n的取值==</p>
+<p>opacity作用于元素以及元素内部的所有元素的透明度；俩者的兼容性都需要IE8以上版本的支持</p>
 
-<p>1，2，3，4，5</p>
-
-<p>2n+1, 2n, 4n-1</p>
-
-<p>odd, even</p>
-
-<h2 id="first-childfirst-of-type"><code class="highlighter-rouge">:first-child和:first-of-type的作用和区别</code></h2>
-
-<p><code class="highlighter-rouge">A:</code></p>
-
-<p><code class="highlighter-rouge">:first-child</code> 匹配的是某父元素的第一个子元素，可以说是结构上的第一个子元素。</p>
-
-<p><code class="highlighter-rouge">:first-of-type</code> 匹配的是该类型的第一个，类型是指什么呢，就是冒号前面匹配到的东西，比如 p:first-of-type，就是指所有p元素中的第一个。这里不再限制是第一个子元素了，只要是该类型元素的第一个就行了，当然这些元素的范围都是属于同一级的，也就是同辈的。</p>
-
-<p>同样类型的选择器 <code class="highlighter-rouge">:last-child </code> 和 <code class="highlighter-rouge">:last-of-type</code>、<code class="highlighter-rouge">:nth-child(n)</code>  和  <code class="highlighter-rouge">:nth-of-type(n)</code> 也可以这样去理解。</p>
-
-<h2 id="section-2"><code class="highlighter-rouge">运行如下代码，解析下输出样式的原因</code></h2>
-
-<p>```html</p>
-<style>
-.item1:first-child{
-  color: red;
-}
-.item1:first-of-type{
-  background: blue;
-}
-</style>
-
-<div class="ct">
-   <p class="item1">aa</p>
-   <h3 class="item1">bb</h3>
-   <h3 class="item1">ccc</h3>
- </div>
-<p>```</p>
-
-<p><code class="highlighter-rouge">A:</code></p>
-
-<p><img src="/img/QQ20170309-144057@2x.png" alt="展示效果" /></p>
-
-<p><code class="highlighter-rouge">.item1:first-child</code>匹配到class是item1的第一个子元素，所以 <code class="highlighter-rouge">&lt;p class="item1"&gt;aa&lt;/p&gt;</code> 是第一个子元素 展示位文字红色
-<code class="highlighter-rouge">.item1:first-of-type</code> 匹配到class是item1的第一种标签类型，所以 ` &lt;p class="item1"&gt;aa&lt;/p&gt;<code class="highlighter-rouge"> 为第一个</code>p<code class="highlighter-rouge">标签，</code>&lt;h3 class="item1"&gt;bb&lt;/h3&gt;<code class="highlighter-rouge">为第一个</code>h3`标签，所以 这两个背景色展示位蓝色。</p>
-
-<h2 id="text-align-center"><code class="highlighter-rouge">text-align: center的作用是什么，作用在什么元素上？能让什么元素水平居中</code></h2>
-
-<p><code class="highlighter-rouge">A:</code></p>
-
-<p>作用是让元素内部 行内元素、display为（table-cell、inline和inline-block）的块级元素水平居中，作用在块级元素上。</p>
-
+<p><a href="http://blog.csdn.net/q285661571/article/details/7536490">参考</a></p>
 
 
                 <hr>
@@ -587,23 +294,17 @@ div {color: #666;}
                 </style>
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="/2017/03/09/css-selector"
-                    data-title="CSS选择器"
-                    data-url="http://clover.htmhub.com/2017/03/09/css-selector/"
+                    data-thread-key="/2017/03/13/css-technique"
+                    data-title="CSS常用技巧"
+                    data-url="http://clover.htmhub.com/2017/03/13/css-technique/"
                     data-images="http://clover.htmhub.com/img/education_large_2x.jpg"
-                    data-content="CSS选择器
+                    data-content="CSS常用技巧
 
-选择器类型
+CSS Sprite(雪碧图|精灵图)指什么? 有什么作用
 
+A:
 
-  
-    基础选择器
-
-    
-      
-        
-          选择器
-          含义... | 克洛弗的博客 | Clover Blog " >
+雪碧图 就是将很多小图标合并成一张图，这样在加载图片时只需要走一次... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -623,19 +324,12 @@ div {color: #666;}
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2017/03/07/html-3/" data-toggle="tooltip" data-placement="top" title="Html基础-3">
+                        <a href="/2017/03/13/css-box-model/" data-toggle="tooltip" data-placement="top" title="CSS盒模型-1">
                         Previous<br>
-                        <span>Html基础-3</span>
+                        <span>CSS盒模型-1</span>
                         </a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/2017/03/09/html-4/" data-toggle="tooltip" data-placement="top" title="Html基础-4">
-                        Next<br>
-                        <span>Html基础-4</span>
-                        </a>
-                    </li>
                     
                 </ul>
 
@@ -644,9 +338,9 @@ div {color: #666;}
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="/2017/03/09/css-selector"
-                        data-title="CSS选择器"
-                        data-url="http://clover.htmhub.com/2017/03/09/css-selector/" >
+                        data-thread-key="/2017/03/13/css-technique"
+                        data-title="CSS常用技巧"
+                        data-url="http://clover.htmhub.com/2017/03/13/css-technique/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->

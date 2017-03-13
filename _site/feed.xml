@@ -5,9 +5,117 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 13 Mar 2017 14:09:14 +0800</pubDate>
-    <lastBuildDate>Mon, 13 Mar 2017 14:09:14 +0800</lastBuildDate>
+    <pubDate>Mon, 13 Mar 2017 14:59:12 +0800</pubDate>
+    <lastBuildDate>Mon, 13 Mar 2017 14:59:12 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>CSS常用技巧</title>
+        <description>&lt;h1 id=&quot;css&quot;&gt;CSS常用技巧&lt;/h1&gt;
+
+&lt;h2 id=&quot;css-sprite-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CSS Sprite(雪碧图|精灵图)指什么? 有什么作用&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;雪碧图&lt;/code&gt; 就是将很多小图标合并成一张图，这样在加载图片时只需要走一次网络请求，然后用&lt;code class=&quot;highlighter-rouge&quot;&gt;background-position&lt;/code&gt;定位来显示部分图片&lt;/p&gt;
+
+&lt;p&gt;作用：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;能够减少页面的请求数、降低图片占用的字节，以此来达到提升页面访问速度的目的&lt;/li&gt;
+  &lt;li&gt;提高页面的加载速度；&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://riny.net/2014/compass-sprite/&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;imgcss&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;img标签和CSS背景使用图片在使用场景上有何区别&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;img&lt;/code&gt;标签适用于经常改变的情况，会通过后台更新的数据,例如商品的图片，任务的照片信息；
+&lt;code class=&quot;highlighter-rouge&quot;&gt;.css&lt;/code&gt;背景适用于不会经常改变的情况，例如 图标等；&lt;/p&gt;
+
+&lt;h2 id=&quot;title--alt&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;title 和 alt属性分别有什么作用&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt;用于显示额外提示文字，鼠标放在元素上面时会显示。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;alt&lt;/code&gt;用于在无法加载图片时，替代图片显示,并且对SEO爬虫友好，可以提升网页的权重。&lt;/p&gt;
+
+&lt;h2 id=&quot;background-urlabcpng-0-0-no-repeat&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;background: url(abc.png) 0 0 no-repeat;这句话是什么意思&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;
+背景图片使用css同级目录下的abc.png 位置偏移 X轴0px,Y轴0px；不重复。&lt;/p&gt;
+
+&lt;h2 id=&quot;background-size--&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;background-size有什么作用? 兼容性如何? 常用的值是?&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;CSS 的 background-size 属性能调整背景图片的大小，从而替代了用原始大小显示图片的默认行为
+常用的值有以下几类：&lt;/p&gt;
+
+&lt;p&gt;auto——原始图片大小；&lt;/p&gt;
+
+&lt;p&gt;length——根据给定长度值调整背景图片大小；&lt;/p&gt;
+
+&lt;p&gt;percentage——根据给定的百分比调整图片大小；&lt;/p&gt;
+
+&lt;p&gt;contain——按比例调整背景图片，使得其图片宽高比自适应整个元素的背景区域的宽高比，因此假如背景图片过大，而背景区域的整体宽高比不能恰好包含背景图片的话，那么其背景区域会出现空白，这个值多用于响应式页面；&lt;/p&gt;
+
+&lt;p&gt;cover——按比例调整背景图片，这个值的属性和contain正好相反，背景图会按照比例填充背景区域，如果背景图片过大且不能正好按照宽高比包含背景区域，那么背景图片就会被裁减显示不全；
+&lt;a href=&quot;http://www.webhek.com/background-size/&quot;&gt;参考文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/145951-71351468654e5c7b.png&quot; alt=&quot;兼容性&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;div&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;如何让一个div水平居中？如何让图片水平居中&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;可对div(块级元素)设置margin：0 auto&lt;/p&gt;
+
+&lt;p&gt;设置水平居中 对图片(行内元素)设置text-align:center&lt;/p&gt;
+
+&lt;p&gt;设置水平居中 或者设置display:block，按照块级元素设置；&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;如何设置元素透明? 兼容性？&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;css
+div{ 
+opacity:0.6;
+filter:Alpah(opacity=60)/*IE8及之前版本*/
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/145951-923845199b1b1688.png&quot; alt=&quot;兼容性&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;opacity--rgba&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;opacity 和 rgba都能设置透明，有什么区别&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;rgba只能作用于颜色或背景色，并不能使设置的颜色透明化；&lt;/p&gt;
+
+&lt;p&gt;opacity作用于元素以及元素内部的所有元素的透明度；俩者的兼容性都需要IE8以上版本的支持&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/q285661571/article/details/7536490&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 13 Mar 2017 00:00:00 +0800</pubDate>
+        <link>http://clover.htmhub.com/2017/03/13/css-technique/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2017/03/13/css-technique/</guid>
+        
+        <category>Clover</category>
+        
+        <category>前端</category>
+        
+        <category>HTML</category>
+        
+        <category>CSS</category>
+        
+        
+      </item>
     
       <item>
         <title>CSS盒模型-1</title>
@@ -1723,154 +1831,6 @@ http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器
         <category>Clover</category>
         
         <category>设计模式</category>
-        
-        <category>PHP</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>PHP源码加密模块 php-beast</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;https://github.com/liexusong/php-beast&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code&gt;
-  _____  _    _ _____    ____  ______           _____ _______
- |  __ \| |  | |  __ \  |  _ \|  ____|   /\    / ____|__   __|
- | |__) | |__| | |__) | | |_)/| |__     /  \  | (___    | |
- |  ___/|  __  |  ___/  |  _ ||  __|   / /\ \  \___ \   | |
- | |    | |  | | |      | |_)\| |____ / ____ \ ____) |  | |
- |_|    |_|  |_|_|      |____/|______/_/    \_\_____/   |_|
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;
-此模块可以用于商业用途, 版权归原作者.&lt;br /&gt;
-QQ交流群：239243332
-&lt;/pre&gt;
-
-&lt;p&gt;&lt;b&gt;php-beast可以自定义加密模块，加密模块编写教程: &lt;a href=&quot;https://github.com/liexusong/php-beast/wiki/%E5%8A%A0%E5%AF%86%E6%A8%A1%E5%9D%97%E7%BC%96%E5%86%99%E6%95%99%E7%A8%8B&quot;&gt;点击&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
-
-&lt;h3&gt;编译安装如下:&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;
-$ wget https://github.com/liexusong/php-beast/archive/master.zip
-$ unzip master.zip
-$ cd php-beast-master
-$ phpize
-$ ./configure --with-php-config=/usr/local/php/bin/php-config
-$ sudo make &amp;amp;&amp;amp; make install
-
-编译好之后修改php.ini配置文件, 加入配置项: extension=beast.so, 重启php-fpm
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;温馨提示: 可以设置较大的缓存提高效率&lt;/pre&gt;
-
-&lt;p&gt;&lt;b&gt;使用php-beast的性能：&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;http://git.oschina.net/liexusong/php-beast/raw/master/images/beast1.png?dir=0&amp;amp;filepath=images/beast1.png&amp;amp;oid=645b87003dada2eac4f1a9fcfd353aa0423f5711&amp;amp;sha=7ec2a0ddc7780b2bab538d9f49d8b262f1bc37b7&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;b&gt;不使用php-beast的性能：&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;http://git.oschina.net/liexusong/php-beast/raw/master/images/beast2.png?dir=0&amp;amp;filepath=images/beast2.png&amp;amp;oid=3f07cff6dca34b22d8933ab0ea1740a0e4f37e34&amp;amp;sha=7ec2a0ddc7780b2bab538d9f49d8b262f1bc37b7&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;配置项:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;
- beast.cache_size = size
- beast.log_file = &quot;path_to_log&quot;
- beast.enable = On
- beast.encrypt_handler = &quot;des-algo&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;支持的模块有：&lt;/p&gt;
-&lt;pre&gt;
- 1. AES
- 2. DES
- 3. Base64
-&lt;/pre&gt;
-
-&lt;p&gt;通过测试环境:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;
- Nginx + Fastcgi + (PHP-5.2.x ~ PHP-5.6.x)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;注意&lt;/h3&gt;
-&lt;p&gt;如果出现502错误，一般是由于GCC版本太低导致，请先升级GCC再安装本模块。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;怎么加密项目&lt;/h2&gt;
-&lt;p&gt;安装完 &lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 后可以使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;tools&lt;/code&gt; 目录下的 &lt;code class=&quot;highlighter-rouge&quot;&gt;encode_files.php&lt;/code&gt; 来加密你的项目。使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;encode_files.php&lt;/code&gt; 之前先修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;tools&lt;/code&gt; 目录下的 &lt;code class=&quot;highlighter-rouge&quot;&gt;configure.ini&lt;/code&gt; 文件，如下：
-```ini
-; source path
-src_path = “”&lt;/p&gt;
-
-&lt;p&gt;; destination path
-dst_path = “”&lt;/p&gt;
-
-&lt;p&gt;; expire time
-expire = “”
-```
-&lt;code class=&quot;highlighter-rouge&quot;&gt;src_path&lt;/code&gt; 是要加密项目的路径，&lt;code class=&quot;highlighter-rouge&quot;&gt;dst_path&lt;/code&gt; 是保存加密后项目的路径，&lt;code class=&quot;highlighter-rouge&quot;&gt;expire&lt;/code&gt; 是设置项目可使用的时间 (&lt;code class=&quot;highlighter-rouge&quot;&gt;expire&lt;/code&gt; 的格式是：&lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-mm-dd HH:ii:ss&lt;/code&gt;)。
-修改完 &lt;code class=&quot;highlighter-rouge&quot;&gt;configure.ini&lt;/code&gt; 文件后就可以使用命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;php encode_files.php&lt;/code&gt; 开始加密项目。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;php-beast&quot;&gt;制定自己的php-beast&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 有多个地方可以定制的，以下一一列出：&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;1.&lt;/em&gt; 使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;header.c&lt;/code&gt; 文件可以修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 加密后的文件头结构，这样网上的解密软件就不能认识我们的加密文件，就不能进行解密，增加加密的安全性。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;2.&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 提供只能在指定的机器上运行的功能。要使用此功能可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;networkcards.c&lt;/code&gt; 文件添加能够运行机器的网卡号，例如：
-&lt;code class=&quot;highlighter-rouge&quot;&gt;c
-char *allow_networkcards[] = {
-	&quot;fa:16:3e:08:88:01&quot;,
-    NULL,
-};
-&lt;/code&gt;
-这样设置之后，&lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 扩展就只能在 &lt;code class=&quot;highlighter-rouge&quot;&gt;fa:16:3e:08:88:01&lt;/code&gt; 这台机器上运行。另外要注意的是，由于有些机器网卡名可能不一样，所以如果你的网卡名不是 &lt;code class=&quot;highlighter-rouge&quot;&gt;eth0&lt;/code&gt; 的话，可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;php.ini&lt;/code&gt; 中添加配置项： &lt;code class=&quot;highlighter-rouge&quot;&gt;beast.networkcard = &quot;xxx&quot;&lt;/code&gt; 其中 &lt;code class=&quot;highlighter-rouge&quot;&gt;xxx&lt;/code&gt; 就是你的网卡名，也可以配置多张网卡，如：&lt;code class=&quot;highlighter-rouge&quot;&gt;beast.networkcard = &quot;eth0,eth1,eth2&quot;&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;3.&lt;/em&gt; 使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;php-beast&lt;/code&gt; 时最好不要使用默认的加密key，因为扩展是开源的，如果使用默认加密key的话，很容易被人发现。所以最好编译的时候修改加密的key，&lt;code class=&quot;highlighter-rouge&quot;&gt;aes模块&lt;/code&gt; 可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;aes_algo_handler.c&lt;/code&gt; 文件修改，而 &lt;code class=&quot;highlighter-rouge&quot;&gt;des模块&lt;/code&gt; 可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;des_algo_handler.c&lt;/code&gt; 文件修改。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;使用过程&lt;/h3&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;安装好php-beast喝php扩展&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;编写 php-beast-master/tools/configure.ini&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;```
-  ; source path
-  src_path = “/home/wwwroot/demo9.htmhub.com.bak”&lt;/p&gt;
-
-&lt;p&gt;; destination path
-  dst_path = “/home/wwwroot/demo9.htmhub.com”&lt;/p&gt;
-
-&lt;p&gt;; expire time
-  expire = “”
-  ```&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;执行编译过程&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php  php-beast-master/tools/encode_files.php&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;此时会将配置好的代码加密，解密过程是通过 beast.so 在线解密的。PHP文件可以正常访问。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 16 Aug 2016 00:00:00 +0800</pubDate>
-        <link>http://clover.htmhub.com/2016/08/16/php-codes-encode/</link>
-        <guid isPermaLink="true">http://clover.htmhub.com/2016/08/16/php-codes-encode/</guid>
-        
-        <category>Clover</category>
-        
-        <category>Linux</category>
         
         <category>PHP</category>
         
