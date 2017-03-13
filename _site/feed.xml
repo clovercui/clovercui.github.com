@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 13 Mar 2017 14:04:36 +0800</pubDate>
-    <lastBuildDate>Mon, 13 Mar 2017 14:04:36 +0800</lastBuildDate>
+    <pubDate>Mon, 13 Mar 2017 14:05:38 +0800</pubDate>
+    <lastBuildDate>Mon, 13 Mar 2017 14:05:38 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -80,7 +80,7 @@ height:200px;
 border:1px solid #54e823;
 background-color:#eee;
 }
-.btn {
+.demo .btn {
     width: 60px;
     height: 30px;
     background: #e2440c;

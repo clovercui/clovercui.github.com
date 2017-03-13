@@ -82,7 +82,7 @@ height:200px;
 border:1px solid #54e823;
 background-color:#eee;
 }
-.btn {
+.demo .btn {
     width: 60px;
     height: 30px;
     background: #e2440c;
