@@ -19,13 +19,13 @@ tags:
 ![标准盒模型](/img/201503151.JPG)
 ![IE盒模型](/img/201503152.JPG)
 
-==区别==：W3C标准中padding、border所占的空间不在width、height范围内，大家俗称的IE的盒模型width包括content尺寸＋padding＋border
+`区别`：W3C标准中padding、border所占的空间不在width、height范围内，大家俗称的IE的盒模型width包括content尺寸＋padding＋border
 
 早期IE6、IE7使用“IE盒模型”，后来更新了一次，更新后的IE6、IE7使用标准盒模型IE8及以上版本使用标准盒模型
 
 没有DOCTYPE的情况下使用怪异模式，IE也使用“IE盒模型”
 
-==兼容方案==：使用css3新样式box-sizing
+`兼容方案`：使用css3新样式box-sizing
 
 * content-box：w3c标准盒模型
 * border-box：“IE盒模型”
@@ -80,7 +80,7 @@ width:100%;
 height:200px;
 border:1px solid #ccc;
 }
-<style>
+</style>
 
 <div class="demo">
 </div>
