@@ -82,6 +82,19 @@ height:200px;
 border:1px solid #54e823;
 background-color:#eee;
 }
+.btn {
+    width: 60px;
+    height: 30px;
+    background: #e2440c;
+    display: inline-block;
+    margin: 10px 2px;
+    padding: 2px 2px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 5px;
+    color: #fff !important;
+}
 </style>
 
 <div class="demo">
