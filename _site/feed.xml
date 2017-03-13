@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 13 Mar 2017 13:41:38 +0800</pubDate>
-    <lastBuildDate>Mon, 13 Mar 2017 13:41:38 +0800</lastBuildDate>
+    <pubDate>Mon, 13 Mar 2017 13:50:18 +0800</pubDate>
+    <lastBuildDate>Mon, 13 Mar 2017 13:50:18 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -33,23 +33,40 @@
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;如果遇到一个属性想知道兼容性，在哪查看?&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;盒模型包括：margin、border、padding、content&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;margin&lt;/code&gt;：外边距。margin没有背景颜色，它是完全透明的。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;border&lt;/code&gt;：边框。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;padding&lt;/code&gt;：内边距。会受到框中填充的背景颜色影响。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt;：盒子的内容，显示文本和图像。&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;ie-w3c&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;IE 盒模型和W3C盒模型有什么区别?&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;以下代码的作用？兼容性？&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/img/2406284-21cf8014fc9756bb.png&quot; alt=&quot;盒模型区别&quot; /&gt;
+IE的盒模型与W3C盒模型的区别在与width的计算。&lt;/p&gt;
+
+&lt;p&gt;W3C标准中width、height=content。不包含padding、border所占的空间；&lt;/p&gt;
+
+&lt;p&gt;IE的盒模型width、height=content＋padding＋border。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;以下代码的作用？兼容性？&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;css
 *{
   box-sizing: border-box;
 }
-&lt;/code&gt;
-## 代码
-```html
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;
+此代码作用是 &lt;code class=&quot;highlighter-rouge&quot;&gt;使用IE盒模型&lt;/code&gt; 渲染页面,即&lt;code class=&quot;highlighter-rouge&quot;&gt;width、height=content＋padding＋border&lt;/code&gt;
+&lt;img src=&quot;/img/2406284-6a337b312349eb87.png&quot; alt=&quot;兼容性&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;代码&lt;/h2&gt;
+&lt;p&gt;```html
 &lt;a class=&quot;btn&quot; href=&quot;#&quot;&gt;确定&lt;/a&gt;
 &lt;span class=&quot;btn&quot;&gt;取消&lt;/span&gt;&lt;/p&gt;
 &lt;div class=&quot;btn&quot;&gt;提交&lt;/div&gt;

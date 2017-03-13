@@ -217,23 +217,40 @@
 
 <p><code class="highlighter-rouge">A:</code></p>
 
-<h2 id="section-1"><code class="highlighter-rouge">如果遇到一个属性想知道兼容性，在哪查看?</code></h2>
+<p>盒模型包括：margin、border、padding、content</p>
 
-<p><code class="highlighter-rouge">A:</code></p>
+<ul>
+  <li><code class="highlighter-rouge">margin</code>：外边距。margin没有背景颜色，它是完全透明的。</li>
+  <li><code class="highlighter-rouge">border</code>：边框。</li>
+  <li><code class="highlighter-rouge">padding</code>：内边距。会受到框中填充的背景颜色影响。</li>
+  <li><code class="highlighter-rouge">content</code>：盒子的内容，显示文本和图像。</li>
+</ul>
 
 <h2 id="ie-w3c"><code class="highlighter-rouge">IE 盒模型和W3C盒模型有什么区别?</code></h2>
 
 <p><code class="highlighter-rouge">A:</code></p>
 
-<h2 id="section-2"><code class="highlighter-rouge">以下代码的作用？兼容性？</code></h2>
+<p><img src="/img/2406284-21cf8014fc9756bb.png" alt="盒模型区别" />
+IE的盒模型与W3C盒模型的区别在与width的计算。</p>
+
+<p>W3C标准中width、height=content。不包含padding、border所占的空间；</p>
+
+<p>IE的盒模型width、height=content＋padding＋border。</p>
+
+<h2 id="section-1"><code class="highlighter-rouge">以下代码的作用？兼容性？</code></h2>
 
 <p><code class="highlighter-rouge">css
 *{
   box-sizing: border-box;
 }
-</code>
-## 代码
-```html
+</code></p>
+
+<p><code class="highlighter-rouge">A:</code>
+此代码作用是 <code class="highlighter-rouge">使用IE盒模型</code> 渲染页面,即<code class="highlighter-rouge">width、height=content＋padding＋border</code>
+<img src="/img/2406284-6a337b312349eb87.png" alt="兼容性" /></p>
+
+<h2 id="section-2">代码</h2>
+<p>```html
 <a class="btn" href="#">确定</a>
 <span class="btn">取消</span></p>
 <div class="btn">提交</div>
