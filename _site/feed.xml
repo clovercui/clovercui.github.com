@@ -5,9 +5,86 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 09 Mar 2017 16:43:53 +0800</pubDate>
-    <lastBuildDate>Thu, 09 Mar 2017 16:43:53 +0800</lastBuildDate>
+    <pubDate>Mon, 13 Mar 2017 13:41:38 +0800</pubDate>
+    <lastBuildDate>Mon, 13 Mar 2017 13:41:38 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>CSS盒模型-1</title>
+        <description>&lt;h1 id=&quot;css&quot;&gt;CSS盒模型&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/201503151.JPG&quot; alt=&quot;标准盒模型&quot; /&gt;
+&lt;img src=&quot;/img/201503152.JPG&quot; alt=&quot;IE盒模型&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;==区别==：W3C标准中padding、border所占的空间不在width、height范围内，大家俗称的IE的盒模型width包括content尺寸＋padding＋border&lt;/p&gt;
+
+&lt;p&gt;早期IE6、IE7使用“IE盒模型”，后来更新了一次，更新后的IE6、IE7使用标准盒模型IE8及以上版本使用标准盒模型&lt;/p&gt;
+
+&lt;p&gt;没有DOCTYPE的情况下使用怪异模式，IE也使用“IE盒模型”&lt;/p&gt;
+
+&lt;p&gt;==兼容方案==：使用css3新样式box-sizing&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;content-box：w3c标准盒模型&lt;/li&gt;
+  &lt;li&gt;border-box：“IE盒模型”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;盒模型包括哪些属性&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;如果遇到一个属性想知道兼容性，在哪查看?&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ie-w3c&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;IE 盒模型和W3C盒模型有什么区别?&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;以下代码的作用？兼容性？&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;css
+*{
+  box-sizing: border-box;
+}
+&lt;/code&gt;
+## 代码
+```html
+&lt;a class=&quot;btn&quot; href=&quot;#&quot;&gt;确定&lt;/a&gt;
+&lt;span class=&quot;btn&quot;&gt;取消&lt;/span&gt;&lt;/p&gt;
+&lt;div class=&quot;btn&quot;&gt;提交&lt;/div&gt;
+&lt;p&gt;&lt;button class=&quot;btn&quot;&gt; 发送&lt;/button&gt;
+```&lt;/p&gt;
+&lt;style&gt;
+.demo{
+width:100%;
+height:200px;
+border:1px solid #ccc;
+}
+&lt;style&gt;
+
+&lt;div class=&quot;demo&quot;&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;/style&gt;
+</description>
+        <pubDate>Mon, 13 Mar 2017 00:00:00 +0800</pubDate>
+        <link>http://clover.htmhub.com/2017/03/13/css-box-model/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2017/03/13/css-box-model/</guid>
+        
+        <category>Clover</category>
+        
+        <category>前端</category>
+        
+        <category>HTML</category>
+        
+        <category>CSS</category>
+        
+        
+      </item>
     
       <item>
         <title>Html基础-4</title>
@@ -1760,56 +1837,6 @@ char *allow_networkcards[] = {
         <category>Linux</category>
         
         <category>PHP</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Linux文件加密之ccrypt</title>
-        <description>&lt;h1 id=&quot;ccrypt&quot;&gt;ccrypt&lt;/h1&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ccrypt是为了取代UNIX crypt而设计的，这个实用工具可用于文件和数据流加密及解密。它使用Rijndael密码&lt;/code&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;安装&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
-sudo apt-get install ccrypt
-# yum install ccrypt
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;## 使用&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;加密文件&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
-ccencrypt filename
-&lt;/code&gt;
-输入两次密码&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;解密文件&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
-ccdecrypt filename
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;提供加密时输入的同一个密码才能解密&lt;/p&gt;
-
-&lt;p&gt;它使用ccencrypt来加密、使用ccdecrypt来解密。一定要注意，加密时，原始文件(tecmint.txt)换成了tecmint.txt.cpt;解密时，加密文件(tecmint.txt.cpt)换成了原始文件(tecmint.txt)。你可以使用ls命令来予以核查&lt;/p&gt;
-</description>
-        <pubDate>Tue, 16 Aug 2016 00:00:00 +0800</pubDate>
-        <link>http://clover.htmhub.com/2016/08/16/linux-file-encode/</link>
-        <guid isPermaLink="true">http://clover.htmhub.com/2016/08/16/linux-file-encode/</guid>
-        
-        <category>Clover</category>
-        
-        <category>Linux</category>
         
         
       </item>
