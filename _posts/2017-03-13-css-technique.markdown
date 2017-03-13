@@ -109,6 +109,56 @@ opacity作用于元素以及元素内部的所有元素的透明度；俩者的�
 ![gif](/img/b4316f7925ce12d39281a083299f52c449260b41.gif)
 
 `代码`
+```html
+<style>
+.demo{
+width:100%;
+height:200px;
+border:1px solid #54e823;
+background-color:#eee;
+}
+.spi{
+	background: url(/img/result.png) 0 0 no-repeat;
+    background-size: 20px;
+    width: 60px;
+    height: 20px;
+    border: 1px solid #e41515;
+    display: inline-block;
+    line-height: 20px;
+    padding-left: 20px;
+    font-size: 13px;
+    font-color:rgb(108,108,108);
+}
+
+.spi1{
+background-position: 0px -1px;
+}
+.spi1:hover{
+background-position: -1px -78px;
+font-color:rgb(165,104,190);
+}
+.spi2{
+background-position: 1px -26px;
+}
+.spi2:hover{
+background-position: -2px -106px;
+font-color:rgb(165,104,190);
+}
+.spi3{
+background-position: 0px -53px;
+}
+.spi3:hover{
+background-position: 2px -131px;
+font-color:rgb(165,104,190);
+}
+</style>
+
+<div class="demo">
+    <div class="spi spi1">前进</div>
+    <div class="spi spi2">开始</div>
+    <div class="spi spi3">停止</div>
+</div>
+```
 
 <style>
 .demo{
