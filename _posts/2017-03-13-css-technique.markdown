@@ -472,6 +472,7 @@ margin-top:40px;
     height: 80px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    padding: 10px;
 }
 .cls1{
 	position: absolute;
@@ -497,6 +498,7 @@ margin-top:40px;
 }
 /*旋转*/
 .tips2{
+padding: 10px;
 	position:relative;
     width: 200px;
     height: 80px;
@@ -518,6 +520,7 @@ margin-top:40px;
 
 /*伪元素做法*/
 .tips3{
+padding: 10px;
    position:relative;
     width: 200px;
     height: 80px;
@@ -551,6 +554,7 @@ margin-top:40px;
     border-right: 10px transparent solid;
 }
 .tips4{
+padding: 10px;
     position:relative;
     width: 200px;
     height: 80px;
@@ -577,22 +581,56 @@ margin-top:40px;
 }
 
 .yuan1{
-
+	position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100px;
+    height: 200px;
+    background-color: red;
+    border-radius: 100px 0 0 100px;
 }
 .yuan2{
-
+    width: 100px;
+    position: absolute;
+    left: 100px;
+    height: 200px;
+    background-color: black;
+    border-radius: 0px 100px 100px 0px;
 }
 .yuan3{
-
+position: absolute;
+    width: 100px;
+    height: 100px;
+    background: red;
+    border-radius: 50px;
+    left: 50px;
 }
 .yuan4{
-
+position: absolute;
+    width: 100px;
+    height: 100px;
+    background: black;
+    border-radius: 50px;
+    left: 50px;
+    top: 100px;
 }
 .yuan5{
-
+    width: 50px;
+    height: 50px;
+    background: black;
+    border-radius: 25px;
+    position: absolute;
+    top: 25px;
+    left: 75px;
 }
 .yuan6{
-
+    width: 50px;
+    height: 50px;
+    background: red;
+    border-radius: 25px;
+    position: absolute;
+    top: 125px;
+    left: 75px;
 }
 
 
@@ -616,7 +654,7 @@ margin-top:40px;
         <div class="yuan2"></div>
         <div class="yuan3"></div>
         <div class="yuan4"></div>
-        <div class="yuan4"></div>
+        <div class="yuan5"></div>
         <div class="yuan6"></div>
     </div>
 <div>
