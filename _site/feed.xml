@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 14 Mar 2017 11:00:25 +0800</pubDate>
-    <lastBuildDate>Tue, 14 Mar 2017 11:00:25 +0800</lastBuildDate>
+    <pubDate>Tue, 14 Mar 2017 11:03:20 +0800</pubDate>
+    <lastBuildDate>Tue, 14 Mar 2017 11:03:20 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -257,29 +257,47 @@ border-right:yellow 50px solid;
 width:0px;
 height:0px;
 border-top:blue 50px solid;
+border-left:rgba(0,0,0,0) 50px solid;
+border-right:rgba(0,0,0,0) 50px solid;
+}
+.sj2{
+width:0px;
+height:0px;
+border-top:rgba(0,0,0,0) 50px solid;
+border-bottom:rgba(0,0,0,0) 50px solid;
+border-left:red 50px solid;
 
+}
+.sj3{
+width:0px;
+height:0px;
+border-top:rgba(0,0,0,0) 50px solid;
+border-bottom:rgba(0,0,0,0) 50px solid;
+
+border-right:yellow 50px solid;
+}
+.sj4{
+width:0px;
+height:0px;
+
+border-bottom:green 50px solid;
 border-left:rgba(0,0,0,0) 50px solid;
 border-right:rgba(0,0,0,0) 50px solid;
 }
 &lt;/style&gt;
 
 &lt;div class=&quot;demo1&quot;&gt;
-&lt;div class=&quot;sj&quot;&gt;&lt;div&gt;
-&lt;div class=&quot; sj1&quot;&gt;&lt;div&gt;
-&lt;div class=&quot; sj2&quot;&gt;&lt;div&gt;
-&lt;div class=&quot; sj2&quot;&gt;&lt;div&gt;
-&lt;div class=&quot; sj3&quot;&gt;&lt;div&gt;
-&lt;div class=&quot; sj4&quot;&gt;&lt;div&gt;
-&lt;div class=&quot; sj5&quot;&gt;&lt;div&gt;
-&lt;div class=&quot; sj6&quot;&gt;&lt;div&gt;
-&lt;div class=&quot; sj6&quot;&gt;&lt;div&gt;
+&lt;div class=&quot;sj&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot; sj1&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot; sj2&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot; sj2&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot; sj3&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot; sj4&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot; sj5&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot; sj6&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot; sj7&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-
-
-
-
-&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Mon, 13 Mar 2017 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2017/03/13/css-technique/</link>
