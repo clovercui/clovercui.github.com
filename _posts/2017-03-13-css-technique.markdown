@@ -305,8 +305,6 @@ border-left:rgba(0,0,0,0)  50px solid;
 <div class=' sj4'></div>
 <div class=' sj5'></div>
 <div class=' sj6'></div>
-<div class=' sj7'></div>
-<div class=' sj8'></div>
 </div>
 
 
