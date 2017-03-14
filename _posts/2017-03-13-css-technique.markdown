@@ -171,6 +171,8 @@ color:rgb(165,104,190);
 </div>
 ```
 
+`代码效果`
+
 <style>
 .demo{
 width:100%;
@@ -234,11 +236,91 @@ color:rgb(165,104,190);
 ![border三角形](/img/1cc5ec2069c4cd2b4c7eac7e848d31bd1625602d_1_690x482.png)
 
 `代码`
+
+```html
 <style>
 
 .demo1{
 width:100%;
-height:500px;
+height:600px;
+background-color:#eee;
+border:1px solid #54e823;
+}
+.demo1 div{
+margin-bottom:10px;
+}
+.sj{
+width:0px;
+height:0px;
+border-top:blue 50px solid;
+border-bottom:green 50px solid;
+border-left:red 50px solid;
+border-right:yellow 50px solid;
+}
+.sj1{
+width:0px;
+height:0px;
+border-top:blue 50px solid;
+border-left:rgba(0,0,0,0) 50px solid;
+border-right:rgba(0,0,0,0) 50px solid;
+}
+.sj2{
+width:0px;
+height:0px;
+border-top:rgba(0,0,0,0) 50px solid;
+border-bottom:rgba(0,0,0,0) 50px solid;
+border-left:red 50px solid;
+
+}
+.sj3{
+width:0px;
+height:0px;
+border-top:rgba(0,0,0,0) 50px solid;
+border-bottom:rgba(0,0,0,0) 50px solid;
+
+border-right:yellow 50px solid;
+}
+.sj4{
+width:0px;
+height:0px;
+border-bottom:green 50px solid;
+border-left:rgba(0,0,0,0) 50px solid;
+border-right:rgba(0,0,0,0) 50px solid;
+}
+
+.sj5{
+width:0px;
+height:0px;
+border-top:rgba(0,0,0,0) 50px solid;
+border-left:red 50px solid;
+}
+.sj6{
+width:0px;
+height:0px;
+border-bottom:green 50px solid;
+border-left:rgba(0,0,0,0)  50px solid;
+}
+</style>
+<div class="demo1">
+<div class='sj'></div>
+<div class=' sj1'></div>
+<div class=' sj2'></div>
+<div class=' sj3'></div>
+<div class=' sj4'></div>
+<div class=' sj5'></div>
+<div class=' sj6'></div>
+</div>
+
+
+```
+
+`代码效果`
+
+<style>
+
+.demo1{
+width:100%;
+height:600px;
 background-color:#eee;
 border:1px solid #54e823;
 }
