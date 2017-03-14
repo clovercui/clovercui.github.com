@@ -102,6 +102,17 @@ opacity作用于元素以及元素内部的所有元素的透明度；俩者的�
 
 > [参考](http://blog.csdn.net/q285661571/article/details/7536490)
 
+
+## 推荐资源
+
+
+> [工具-图片在线合并3](http://csssprites.com/)
+
+> [工具-图片在线压缩1](https://tinypng.com/)
+
+> [工具-caniuse 在线查兼容](http://caniuse.com/)
+
+
 ## 代码
 
 ### 使用CSS Sprite 把如下6张图标图片合并成一张图片，做出如下效果, 当 hover 时背景变色
@@ -224,6 +235,12 @@ color:rgb(165,104,190);
 
 `代码`
 <style>
+.demo1{
+width:100%;
+height:500px;
+background-color:#eee;
+border:1px solid #54e823;
+}
 .sj{
 width:0px;
 height:0px;
@@ -232,19 +249,28 @@ border-bottom:green 50px solid;
 border-left:red 50px solid;
 border-right:yellow 50px solid;
 }
+.sj1{
+width:0px;
+height:0px;
+border-top:blue 50px solid;
+
+border-left:rgba(0,0,0,0) 50px solid;
+border-right:rgba(0,0,0,0) 50px solid;
+}
 </style>
-<div class="demo">
+<div class="demo1">
 <div class='sj'><div>
+<div class=' sj1'><div>
+<div class=' sj2'><div>
+<div class=' sj2'><div>
+<div class=' sj3'><div>
+<div class=' sj4'><div>
+<div class=' sj5'><div>
+<div class=' sj6'><div>
+<div class=' sj6'><div>
 </div>
 
 
 
-## 推荐资源
 
-
-> [工具-图片在线合并3](http://csssprites.com/)
-
-> [工具-图片在线压缩1](https://tinypng.com/)
-
-> [工具-caniuse 在线查兼容](http://caniuse.com/)
 
