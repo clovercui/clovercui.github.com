@@ -576,8 +576,8 @@ padding: 10px;
     background: #eee;
 }
 /*太极*/
-.taiji{
-	position：relative;
+.taiji {
+    position: relative;
 }
 
 .yuan1{
@@ -598,7 +598,7 @@ padding: 10px;
     border-radius: 0px 100px 100px 0px;
 }
 .yuan3{
-position: absolute;
+	position: absolute;
     width: 100px;
     height: 100px;
     background: red;
@@ -606,7 +606,7 @@ position: absolute;
     left: 50px;
 }
 .yuan4{
-position: absolute;
+	position: absolute;
     width: 100px;
     height: 100px;
     background: black;
