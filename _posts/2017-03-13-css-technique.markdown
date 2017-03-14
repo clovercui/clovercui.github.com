@@ -227,8 +227,26 @@ color:rgb(165,104,190);
 
 `代码`
 
+`代码效果`
+<style>
+@font-face {font-family: 'clovericonfont';
+    src: url('iconfont.eot'); /* IE9*/
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('iconfont.woff') format('woff'), /* chrome、firefox */
+    url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.clovericonfont{
+    font-family:"clovericonfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}
+</style>
 <div class="demo">
-
+<i class="clovericonfont">&#xe64e;</i>
+<i class="clovericonfont">&#xe7fc;</i>
+<i class="clovericonfont">&#xe601;</i>
 </div>
 
 ### 使用css border实现如下三角形
