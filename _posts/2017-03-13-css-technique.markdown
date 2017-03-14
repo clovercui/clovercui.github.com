@@ -459,23 +459,76 @@ background-color:#eee;
 border:1px solid #54e823;
 padding:10px;
 }
+.contain-demo>div{
+margin-top:10px;
+}
 
+/*tootips*/
+/*传统做法*/
+/*重叠*/
 .tips1{
 width:100px;
 height:50px;
 border-radius:1px solid #ccc;
 }
+.cls1{
+
+}
+.cls2{
+
+}
+/*旋转*/
+.tips2{
+width:100px;
+height:50px;
+border-radius:1px solid #ccc;
+}
+
+.cls3{
+
+}
+
+/*伪元素做法*/
+.tips3{
+width:100px;
+height:50px;
+border-radius:1px solid #ccc;
+}
+.tips4{
+width:100px;
+height:50px;
+border-radius:1px solid #ccc;
+}
+
+
+/*太极*/
+.taiji{
+	
+}
+
 
 </style>
 `代码效果`
 <div class='contain-demo'>
 	<div class="tips1">
+    	<div class="cls1"></div>
+        <div class="cls2"></div>
     </div>
 	<div class="tips2">
+    	<div class="cls3"></div>
     </div>
     <div class="tips3">
     </div>
 	<div class="tips4">
+    </div>
+    
+    <div class="taiji">
+    	<div class="yuan1"></div>
+        <div class="yuan2"></div>
+        <div class="yuan3"></div>
+        <div class="yuan4"></div>
+        <div class="yuan4"></div>
+        <div class="yuan6"></div>
     </div>
 <div>
 
