@@ -223,9 +223,18 @@ color:rgb(165,104,190);
 ![border三角形](/img/1cc5ec2069c4cd2b4c7eac7e848d31bd1625602d_1_690x482.png)
 
 `代码`
-
+<style>
+.sj{
+width:0px;
+height:0px;
+border-top:blue 50px solid;
+border-bottom:green 50px solid;
+border-left:red 50px solid;
+border-right:yellow 50px solid;
+}
+</style>
 <div class="demo">
-
+<div class='sj'><div>
 </div>
 
 
