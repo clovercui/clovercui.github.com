@@ -650,26 +650,44 @@ border:1px solid #54e823;
 padding:10px;
 }
 .contain-demo>div{
-margin-top:10px;
+margin-top:40px;
 }
 
 /*tootips*/
 /*传统做法*/
 /*重叠*/
 .tips1{
+	position:relative;
     width: 200px;
     height: 80px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 .cls1{
-
+	position: absolute;
+    top: -20px;
+    left: 85px;
+    width: 0px;
+    height: 0px;
+    border-top: 10px transparent solid;
+    border-left: 10px transparent solid;
+    border-bottom: 10px #ccc solid;
+    border-right: 10px transparent solid;
 }
 .cls2{
-
+	position: absolute;
+    top: -18px;
+    left: 85px;
+    width: 0px;
+    height: 0px;
+    border-top: 10px transparent solid;
+    border-left: 10px transparent solid;
+    border-bottom: 10px #eee solid;
+    border-right: 10px transparent solid;
 }
 /*旋转*/
 .tips2{
+	position:relative;
     width: 200px;
     height: 80px;
     border: 1px solid #ccc;
@@ -677,24 +695,72 @@ margin-top:10px;
 }
 
 .cls3{
-
+	position: absolute;
+    top: -8px;
+    width: 15px;
+    height: 15px;
+    border-top: 1px #ccc solid;
+    border-left: 1px #ccc solid;
+    left: 88px;
+    transform: rotate(45deg);
+    background: #eee;
 }
 
 /*伪元素做法*/
 .tips3{
+   position:relative;
     width: 200px;
     height: 80px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+.tips3::before{
+    content:"";
+    display:block;
+	position: absolute;
+    top: -20px;
+    left: 85px;
+    width: 0px;
+    height: 0px;
+    border-top: 10px transparent solid;
+    border-left: 10px transparent solid;
+    border-bottom: 10px #ccc solid;
+    border-right: 10px transparent solid;
+}
+.tips3::after{
+    content:"";
+    display:block;
+	position: absolute;
+    top: -18px;
+    left: 85px;
+    width: 0px;
+    height: 0px;
+    border-top: 10px transparent solid;
+    border-left: 10px transparent solid;
+    border-bottom: 10px #eee solid;
+    border-right: 10px transparent solid;
 }
 .tips4{
+    position:relative;
     width: 200px;
     height: 80px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-
+.tips4::before{
+    content:"";
+    display:block;
+	position: absolute;
+    top: -8px;
+    width: 15px;
+    height: 15px;
+    border-top: 1px #ccc solid;
+    border-left: 1px #ccc solid;
+    left: 88px;
+    transform: rotate(45deg);
+    background: #eee;
+}
 /*太极*/
 .taiji{
 	
@@ -712,10 +778,8 @@ margin-top:10px;
 	<div class="tips2">
     	<div class="cls3"></div>
     </div>
-    <div class="tips3">
-    </div>
-	<div class="tips4">
-    </div>
+    <div class="tips3"></div>
+	<div class="tips4">Clover说：太酷了</div>
     
     <div class="taiji">
     	<div class="yuan1"></div>
