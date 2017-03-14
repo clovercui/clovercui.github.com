@@ -243,9 +243,9 @@ color:rgb(165,104,190);
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
     padding-right:10px;
-     color:rgb(108,108,108);
+
     }
-.clovericonfont：hover{
+.clovericonfont:hover{
     color:rgb(165,104,190);
     }
 </style>
