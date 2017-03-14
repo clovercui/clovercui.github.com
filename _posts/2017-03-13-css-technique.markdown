@@ -444,6 +444,45 @@ border-left:rgba(0,0,0,0)  50px solid;
 </div>
 
 
+## `tooltip 和 太极`
+
+`代码`
+
+```html
+
+```
+<style>
+.contain-demo{
+width:100%;
+height:600px;
+background-color:#eee;
+border:1px solid #54e823;
+padding:10px;
+}
+
+.tips1{
+width:100px;
+height:50px;
+border-radius:1px solid #ccc;
+}
+
+</style>
+`代码效果`
+<div class='contain-demo'>
+	<div class="tips1">
+    </div>
+	<div class="tips2">
+    </div>
+    <div class="tips3">
+    </div>
+	<div class="tips4">
+    </div>
+<div>
+
+
+
+
+
 
 
 
