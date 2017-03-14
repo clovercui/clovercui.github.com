@@ -235,11 +235,15 @@ color:rgb(165,104,190);
 
 `代码`
 <style>
+
 .demo1{
 width:100%;
 height:500px;
 background-color:#eee;
 border:1px solid #54e823;
+}
+.demo1 div{
+margin-bottom:10px;
 }
 .sj{
 width:0px;
