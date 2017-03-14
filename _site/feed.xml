@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 14 Mar 2017 13:56:42 +0800</pubDate>
-    <lastBuildDate>Tue, 14 Mar 2017 13:56:42 +0800</lastBuildDate>
+    <pubDate>Tue, 14 Mar 2017 14:10:51 +0800</pubDate>
+    <lastBuildDate>Tue, 14 Mar 2017 14:10:51 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -473,9 +473,10 @@ margin-top:10px;
 /*传统做法*/
 /*重叠*/
 .tips1{
-width:100px;
-height:50px;
-border-radius:1px solid #ccc;
+    width: 200px;
+    height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 .cls1{
 
@@ -485,9 +486,10 @@ border-radius:1px solid #ccc;
 }
 /*旋转*/
 .tips2{
-width:100px;
-height:50px;
-border-radius:1px solid #ccc;
+    width: 200px;
+    height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .cls3{
@@ -496,14 +498,16 @@ border-radius:1px solid #ccc;
 
 /*伪元素做法*/
 .tips3{
-width:100px;
-height:50px;
-border-radius:1px solid #ccc;
+    width: 200px;
+    height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 .tips4{
-width:100px;
-height:50px;
-border-radius:1px solid #ccc;
+    width: 200px;
+    height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 
