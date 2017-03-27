@@ -5,9 +5,274 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 14 Mar 2017 14:57:00 +0800</pubDate>
-    <lastBuildDate>Tue, 14 Mar 2017 14:57:00 +0800</lastBuildDate>
+    <pubDate>Mon, 27 Mar 2017 16:44:22 +0800</pubDate>
+    <lastBuildDate>Mon, 27 Mar 2017 16:44:22 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>免费API汇总</title>
+        <description>&lt;p&gt;本页仅收集中国国内可用API，如需查看其他版本，请点击&lt;a href=&quot;https://github.com/marktony/Awesome_API&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;目录&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#笔记&quot;&gt;笔记&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#出行&quot;&gt;出行&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#词典&quot;&gt;词典&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#电商&quot;&gt;电商&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#地图&quot;&gt;地图&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#电影&quot;&gt;电影&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#即时通讯&quot;&gt;即时通讯&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#开发者网站&quot;&gt;开发者网站&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#快递查询&quot;&gt;快递查询&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#旅游&quot;&gt;旅游&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#社交&quot;&gt;社交&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#视频&quot;&gt;视频&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#天气&quot;&gt;天气&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#团队协作&quot;&gt;团队协作&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#图片与图像处理&quot;&gt;图片与图像处理&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#外卖&quot;&gt;外卖&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#消息推送&quot;&gt;消息推送&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#音乐&quot;&gt;音乐&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#云&quot;&gt;云&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#语音识别&quot;&gt;语音识别&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#综合&quot;&gt;综合&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;笔记&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://msdn.microsoft.com/en-us/office/office365/howto/onenote-landing&quot;&gt;OneNote&lt;/a&gt; - OneNote支持获取，复制，创建，更新，导入与导出笔记，支持为笔记添加多媒体内容，管理权限等。提供SDK和Demo。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.wiz.cn/manual/plugin/&quot;&gt;为知笔记&lt;/a&gt; - 为知笔记Windows客户端开放了大量的API，其中绝大部分，都通过COM提供，可以在javascript, C#, C++, Delphi等语言中使用。接口通过IDL(Interface description language)语言描述。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev.yinxiang.com/&quot;&gt;印象笔记&lt;/a&gt; - 印象笔记提供了ActionScript 3, Android, C++, Windows, iOS, Java, JavaScript, OS X, Perl, PHP, Python, Ruby等平台的SDK和完整的API参考文档，可通过API进行认证，笔记，笔记本，附件，搜索，同步等操作，同时提供企业版和本地API。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://note.youdao.com/open/&quot;&gt;有道云笔记&lt;/a&gt; - 有道云笔记提供了Android SDK，同时Open API允许进行授权，用户，笔记本，笔记，分享，附件等方面的操作。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;出行&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://open.xiaojukeji.com/&quot;&gt;滴滴&lt;/a&gt; - 滴滴提供了iOS和Android SDK, 可实现拉起滴滴叫车等方面的操作。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://developerpre.10101111.com/&quot;&gt;神州专车&lt;/a&gt; - 神州专车提供了API模式和H5模式两种接入模式，允许进行基础信息，订单，支付，充值，用户，发票，代金券，企业等方面的操作。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.uber.com/&quot;&gt;Uber&lt;/a&gt; - Uber提供了Android和iOS的SDK,允许进行乘客，行程体验，司机，派送次数等四大方面的操作。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;词典&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://api.fanyi.baidu.com/api/trans/product/index&quot;&gt;百度翻译&lt;/a&gt; - 百度翻译支持多种语言互相翻译，包含PHP, JS, Python, C, Java版Demo。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.microsoft.com/en-us/translator/translatorapi.aspx&quot;&gt;必应词典&lt;/a&gt; - 微软翻译API支持文字和语音两种类型，支持多种语言互相翻译，提供C#版本Demo。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jokermonn/-Api/blob/master/BingDic.md&quot;&gt;必应词典(非官方)&lt;/a&gt; - 支持单词和语句翻译。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://open.iciba.com/?c=api&quot;&gt;金山词霸&lt;/a&gt; - 金山词霸允许进行简单的翻译操作。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jokermonn/-Api/blob/master/KingsoftDic.md&quot;&gt;金山词霸(非官方)&lt;/a&gt; - 金山词霸允许进行简单的翻译操作。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.shanbay.com/help/developer/api_v1/&quot;&gt;扇贝&lt;/a&gt; - 扇贝提供了完整的API，允许进行用户，查询，添加学习记录，忘记单词，例句，笔记等方面的操作。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://fanyi.youdao.com/openapi&quot;&gt;有道词典&lt;/a&gt; - 有道词典允许进行简单的翻译操作。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jokermonn/-Api/blob/master/YoudaoDic.md&quot;&gt;有道词典(非官方)&lt;/a&gt; - 允许进行简单的翻译操作。 #非官方&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;电商&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://open.dangdang.com/&quot;&gt;当当&lt;/a&gt; - 当当允许商家用户和网站接入授权，可进行商品，订单，图片，问答，店铺和促销等方面的操作。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jos.jd.com/api/index.htm&quot;&gt;京东&lt;/a&gt; - 京东提供了Java, PHP, .net的SDK，授权后可进行多种操作。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://open.suning.com/ospos/apipage/toApiListMenu.do&quot;&gt;苏宁开放服务&lt;/a&gt; - 苏宁提供了Java, PHP, .Net, Python版本的SDK，授权后可进行多种操作。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://open.taobao.com/doc2/api_list.htm&quot;&gt;淘宝开放平台&lt;/a&gt; - 淘宝提供了Java, .Net, PHP, Python版本的SDK，授权后提供多种操作。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.amazon.com/public/zh&quot;&gt;亚马逊&lt;/a&gt; - 亚马逊提供多种语言版本的SDK，授权后允许多种操作。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-5&quot;&gt;地图&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://lbsyun.baidu.com/&quot;&gt;百度地图&lt;/a&gt; - 百度地图提供了Android, iOS版本的SDK和JavaScript API，可进行定位、地图、数据、出行、鹰眼轨迹和分析服务。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://lbs.amap.com/&quot;&gt;高德地图&lt;/a&gt; - 高德地图提供了JavaScript和web服务API，Android和iOS SDK，支持地图，定位，搜索，路线规划，导航和室内地图等。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://lbs.qq.com/&quot;&gt;腾讯地图&lt;/a&gt; - 腾讯地图提供了JavaScript API，Android和iOS SDK，支持定位，地图，地点搜索，路线和导航等。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://lbs.tianditu.com/api-new/home.html&quot;&gt;天地图&lt;/a&gt; - 天地图提供了H5 API和JavaScript API等web API，同时提供了Android和iOS SDK，支持基础地图服务，图层管理，地图覆盖物，地图工具，地名搜索和出行规划服务。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://open.mapbar.com/&quot;&gt;图吧地图&lt;/a&gt; - 图吧提供了JavaScript和Flash API，Android和iOS SDK，支持定位，地址解析，位置标注，位置截图，路线规划，周边查询，兴趣点搜索和在线导航。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-6&quot;&gt;电影&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developers.douban.com/wiki/?title=movie_v2&quot;&gt;豆瓣电影&lt;/a&gt; - 豆瓣电影支持电影条目，影人条目，搜索和榜单等。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jokermonn/-Api/blob/master/DoubanMovie.md&quot;&gt;豆瓣电影(非官方)&lt;/a&gt; - 获取最近热映电影、短评、影评、图片等。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/9855610eb1d4&quot;&gt;猫眼电影(非官方)&lt;/a&gt; - 支持查询首页电影列表，电影详情(含评论)，本地影院和影院详情，选座。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jokermonn/-Api/blob/master/Time.md&quot;&gt;Time时光(非官方)&lt;/a&gt; - 支持获取&lt;a href=&quot;http://www.mtime.com/&quot;&gt;时光网&lt;/a&gt;网站数据。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/avenwu/vplus/blob/master/doc/v%E7%94%B5%E5%BD%B1api%E6%8E%A5%E5%8F%A3.md&quot;&gt;V电影(非官方)&lt;/a&gt; - 支持获取&lt;a href=&quot;http://www.vmovier.com/&quot;&gt;V电影&lt;/a&gt;网站的数据。 #非官方&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-7&quot;&gt;即时通讯&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.easemob.com/&quot;&gt;环信&lt;/a&gt; - 支持Android, iOS, WebIM, Linux, REST集成，支持多种消息类型。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://rongcloud.cn/&quot;&gt;融云&lt;/a&gt; - 支持Android, iOS, Web, 游戏集成，支持多种消息类型。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://netease.im/&quot;&gt;网易云信&lt;/a&gt; - 支持IM实时通讯，实时音视频，教学白班，专线电话，短信，聊天室，提供iOS, Android, Windows和Web SDK。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.qcloud.com/product/im&quot;&gt;腾讯云通信IM&lt;/a&gt; - 提供iOS, Android, Windows和Web SDK，支持多种消息类型。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-8&quot;&gt;开发者网站&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://open.coding.net/&quot;&gt;Coding&lt;/a&gt; - 授权后可访问coding.net网站的内容。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://gank.io/api&quot;&gt;干货集中营&lt;/a&gt; - 提供妹子图和Android, iOS, 前端，拓展资源等内容。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.diycode.cc/api&quot;&gt;diycode&lt;/a&gt; - 授权后可访问diycode网站的内容。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.oschina.net/openapi&quot;&gt;开源中国&lt;/a&gt; - 授权后可访问开源中国网站的内容。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://laravel-china.org/topics/3097&quot;&gt;Laravel China&lt;/a&gt; - 授权后可访问 Laravel China 网站的内容。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ruby-china.org/api-doc/&quot;&gt;Ruby China&lt;/a&gt; - 授权后可访问Ruby China网站的内容。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.v2ex.com/p/7v9TEc53&quot;&gt;V2EX&lt;/a&gt; - 可访问V2EX网站的内容。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-9&quot;&gt;快递查询&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.aikuaidi.cn/api/&quot;&gt;爱快递&lt;/a&gt; - 爱快递支持国内90多家快递物流订单查询服务，免费版有使用次数限制，可用于电子商城单号跟踪,手机应用,微信快递接口等服务。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.kuaidi100.com/openapi/&quot;&gt;快递100&lt;/a&gt; - 快递100支持300家国内国际快递，免费版有使用次数限制。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jokermonn/-Api/blob/master/ExpressDelivery100.md&quot;&gt;快递100(非官方)&lt;/a&gt; - 快递100支持300家国内国际快递。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.kdniao.com/&quot;&gt;快递鸟&lt;/a&gt; - 快递鸟支持国内外400多家快递公司，免费版有使用次数限制，包含.Net, PHP, Java版Demo。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.kuaidi.com/openapi.html&quot;&gt;快递网&lt;/a&gt; - 快递网支持上百家快递查询服务，免费版有使用次数限制。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jokermonn/-Api/blob/master/ExpressDelivery.md&quot;&gt;快递网(非官方)&lt;/a&gt; - 快递网支持上百家快递查询服务。 #非官方&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-10&quot;&gt;旅游&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jokermonn/-Api/blob/master/12306.md&quot;&gt;12306(非官方)&lt;/a&gt; - 支持获取12306火车票票数、票价查询。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://open.qunar.com/&quot;&gt;去哪儿&lt;/a&gt; - 支持获取去哪儿网的内容。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://open.tuniu.cn/&quot;&gt;途牛&lt;/a&gt; - 支持途牛网的内容，仅开放给供应商系统。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jokermonn/-Api/blob/master/TuniuTickets.md&quot;&gt;途牛火车票(非官方)&lt;/a&gt; - 支持获取途牛火车票票数、票价查询。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://u.ctrip.com/union/help/Termsofuse.aspx&quot;&gt;携程&lt;/a&gt; - 支持携程网的内容。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://open.elong.com/wiki/API%E6%96%87%E6%A1%A3&quot;&gt;艺龙&lt;/a&gt; - 支持获取产品数据，完成用户的预订，进行订单查询、更改或取消。提供在线工具，以及H5, Java, C#, PHP, Ruby版本的Demo。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-11&quot;&gt;社交&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://open-doc.dingtalk.com/&quot;&gt;钉钉&lt;/a&gt; - 支持免登，企业通讯录，服务窗，钉盘，地图，会话，DING，电话，音频，扫码，支付，分享等服务，提供SDK和Demo，PC版UI规范，调试工具和钉钉UI组件库。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developers.douban.com/wiki/?title=guide&quot;&gt;豆瓣&lt;/a&gt; - 支持图书，电影，音乐，同城，广播，用户，日记，相册，线上活动，论坛，回复和我去等功能，提供豆瓣组件，豆瓣标示和Demo。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://open.kaixin001.com/document.php&quot;&gt;开心网&lt;/a&gt; - 支持用户信息，登录授权，好友，传播应用，支付，分享内容，消息，交互，开心网应用等内容，提供SDK，开源插件和标示素材。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://wiki.connect.qq.com/api%E5%88%97%E8%A1%A8&quot;&gt;QQ互联&lt;/a&gt; - 支持用户资料，QQ会员信息，空间相册，腾讯微博资料，分享到腾讯微博，微博好友信息，财付通信息等内容，提供SDK, Demo, 以及设计资源。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://open.weibo.com/wiki/API&quot;&gt;微博&lt;/a&gt; - 支持粉丝服务，微博，评论，用户，关系，账号，收藏，搜索，提醒，短链，公共服务，位置服务，地理信息，地图引擎，支付以及OAuth2.0授权等内容，提供微博标示及SDK。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://open.weixin.qq.com/&quot;&gt;微信&lt;/a&gt; - 支持移动应用，网站应用，公众账号，公众号第三方平台等内容，提供SDK, Demo, 以及设计资源。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-12&quot;&gt;视频&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://open.iqiyi.com/&quot;&gt;爱奇艺&lt;/a&gt; - 支持弹幕，全色彩播放器，高清码流，视频托管，播放爱奇艺视频，应用分发，IOCP等内容。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/fython/BilibiliAPIDocs&quot;&gt;Bilibili(非官方)&lt;/a&gt; - 支持登录，我的信息，番剧专题，视频/专题收藏、关注，番剧，弹幕等。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Vespa314/bilibili-api/blob/master/api.md&quot;&gt;Bilibili(非官方)&lt;/a&gt; - 支持获取Bilibili网站数据。#非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.lecloud.com/zh-cn/help/api.html&quot;&gt;乐视&lt;/a&gt; - 支持标准直播，标准点播，视频发行平台，移动直播等内容，提供SDK下载。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jokermonn/-Api/blob/master/Neihan.md&quot;&gt;内涵段子(非官方)&lt;/a&gt; - 支持获取内涵段子中大部分模块信息。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://lm.tv.sohu.com/union/open_platform.do&quot;&gt;搜狐视频&lt;/a&gt; - 支持一二级内容获取，内容分类获取，视频详情信息，专辑详情信息，分级列表获取，关键词搜索等内容。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://api.tudou.com/apidoc/index.php/%E9%A6%96%E9%A1%B5&quot;&gt;土豆&lt;/a&gt; - 支持视频模块，豆单模块，影视库模块，用户模块，转帖模块，字段定义模块等内容。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://doc.open.youku.com/?spm=0.0.0.0.fOn6ND&quot;&gt;优酷&lt;/a&gt; - 支持内容输出，视频搜索，智能推荐，用户登录，用户互动，用户信息，视频上传至优酷，视频互动等内容，提供SDK。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-13&quot;&gt;天气&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://wiki.swarma.net/index.php/%E5%BD%A9%E4%BA%91%E5%A4%A9%E6%B0%94API/v2&quot;&gt;彩云天气&lt;/a&gt; - 支持全球天气数据，两种空气质量数据，天气预报，实况天气，独家降水预报，独家空气质量预报，六种天气数据，四种生活指数数据等内容，部分功能收费。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.kancloud.cn/hefengyun/weather/222344&quot;&gt;和风天气&lt;/a&gt; - 支持7-10天预报，实况天气，每小时预报，生活指数，灾害预警，景点天气，历史天气，城市查询等内容，仅国内数据免费。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jokermonn/-Api/blob/master/MeizuWeather.md&quot;&gt;魅族天气(非官方)&lt;/a&gt; - 支持获取魅族天气。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jokermonn/-Api/blob/master/XiaomiWeather.md&quot;&gt;小米天气(非官方)&lt;/a&gt; - 支持获取小米天气数据。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.thinkpage.cn/doc&quot;&gt;心知天气&lt;/a&gt; - 支持天气实况，逐日预报和历史，24小时逐小时预报，过去24小时天气历史记录，气象灾害预警，空气质量实况与城市排行，逐日和逐小时空气质量预报，过去24小时空气质量历史记录，生活指数，农历、节气、生肖，机动车尾号限行，日出日落，月初月落和月像，城市搜索等内容，仅国内数据免费。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jokermonn/-Api/blob/master/CenterWeather.md&quot;&gt;中央天气预报(非官方)&lt;/a&gt; - 支持获取中央天气预报数据。 #非官方&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-14&quot;&gt;团队协作&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.teambition.com/developer/open-platform&quot;&gt;Teambition&lt;/a&gt; - 支持详细的文档说明，部分平台提供demo。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-15&quot;&gt;图片与图像处理&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.v2ex.com/t/157267&quot;&gt;Bing每日壁纸(非官方)&lt;/a&gt; - 支持图片URL和图片描述，可获取不同地区的数据。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/pinguo/PGSkinPrettifyEngine&quot;&gt;Camera360&lt;/a&gt; - 支持全帧率直播美白滤镜，提供SDK和Demo。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://imgsdk.com/&quot;&gt;嗨图&lt;/a&gt; - 支持图片标注，仅提供iOS版本SDK。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev.camcard.com/?language=zh-cn&quot;&gt;名片全能王&lt;/a&gt; - 支持精准识别几十种语言的名片，自动切边并美化名片图像，自动返回识别结果，提供多种版本SDK，收费。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.intsig.com/zh/products/camcard_for_id&quot;&gt;企业证件识别&lt;/a&gt; - 支持身份证，驾驶证，护照等，收费。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev.camscanner.com/?language=zh-cn&quot;&gt;扫描全能王&lt;/a&gt; - 支持图像智能剪裁，五种图像增强模式，手动调节图像细节，自动返回扫描结果等，提供iOS与Android版本SDK，收费。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://api1.wozhitu.com/&quot;&gt;我知图&lt;/a&gt; - 支持相似图像搜索，图像识别匹配，图像识别关键词推荐，重复图片探测等内容。&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;[银行卡&lt;/td&gt;
+          &lt;td&gt;信用卡识别](http://www.intsig.com/zh/products/creditcard) - 提供SDK和API，收费。&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-16&quot;&gt;外卖&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://dev.waimai.baidu.com/&quot;&gt;百度外卖&lt;/a&gt; - 支持商户，菜品，商品，订单和基础数据等内容，提供SDK和Demo。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://developer.dianping.com/&quot;&gt;大众点评&lt;/a&gt; - 支持商户，团购，在线预定，商品点评，数据统计，元数据等内容。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://openapi.eleme.io/v2/quickstart.html&quot;&gt;饿了么&lt;/a&gt; - 支持查询，预定，订单，其他订单，数据推送，支付，评价，活动，账户同步，数据落地同步等内容。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://developer.waimai.meituan.com/doc/show&quot;&gt;美团外卖&lt;/a&gt; - 支持门店，配送范围，菜品，药品，订单，订单推送等内容。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-17&quot;&gt;消息推送&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://push.baidu.com/doc/restapi/restapi&quot;&gt;百度云推送&lt;/a&gt; - 支持iOS, Android和服务器端，支持推送，统计，组管理等Rest API接口。服务器端支持Java, Python, PHP, REST API。提供所支持各语言版本的SDK。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://developer.huawei.com/push&quot;&gt;华为推送&lt;/a&gt; - 支持Android，提供SDK。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.jiguang.cn/jpush/server/push/rest_api_v3_push/&quot;&gt;极光&lt;/a&gt; - 支持Android, iOS, WindowsPhone, 服务器端REST API, 提供Java, Python, PHP, Ruby, C#, Node.js等版本的SDK。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://leancloud.cn/docs/push_guide.html&quot;&gt;LeanCloud&lt;/a&gt; - 支持Android, iOS, WindowsPhone和Web网页推送，使用云引擎和JavaScript创建推送，使用REST API推送消息。提供Objectvie-C(开放源码), JavaScript(开放源码), Android, Unity, .Net, WindowsPhone, Java(开放源码), Python(开放源码), PHP(开放源码), C++(开放源码), Swift(开放源码)版本SDK。同时提供Demo。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://xg.qq.com/&quot;&gt;腾讯信鸽&lt;/a&gt; - 支持iOS和Android平台，服务器端采用Rest API, 同时服务器端支持Java, PHP, Python等语言并提供SDK。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://dev.xiaomi.com/console/appservice/push.html&quot;&gt;小米&lt;/a&gt; - 支持Android和iOS平台，服务器端支持Java, Python并提供SDK。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://dev.umeng.com/push/android/api-doc&quot;&gt;友盟&lt;/a&gt; - 支持Android和iOS平台，服务器端支持PHP, Java, Python并提供SDK。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-18&quot;&gt;音乐&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://my.oschina.net/skiden/blog/102025&quot;&gt;百度音乐(非官方)&lt;/a&gt; - 支持频道歌曲列表，专辑的歌曲列表，歌曲的详细信息，歌手专辑信息，搜索，歌手的所有歌曲，排行榜，所有专辑，所有歌手，歌手的专辑列表，歌手信息，歌词搜索，歌曲文件详细信息。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developers.douban.com/wiki/?title=music_v2&quot;&gt;豆瓣音乐&lt;/a&gt; - 支持音乐信息，评论信息，标签信息，搜索音乐，某个音乐中标记最多的标签，发表、修改、删除评论，用户对音乐的所有标签等内容。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/kaolafm/api&quot;&gt;考拉FM&lt;/a&gt; - 支持获取指定分类下列表和内容，搜索指定关键字内容，专辑/电台/直播详情，指定专辑下列表，指定电台播单，分类下专辑TOP50，指定期(碎片)所在专辑最新分页功能，分类下全部直播计划，版本升级接口，排行榜，精选，传统电台列表/详情/地区等。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://119.29.39.252/index.php/2016/10/20/1-2/&quot;&gt;酷狗音乐(非官方)&lt;/a&gt; - 支持搜索，各种排行榜，歌手专辑信息，下载和获取播放地址。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://wq.qq.com/&quot;&gt;企鹅FM&lt;/a&gt; - 支持获取电台分类列表，电台分类下的专辑信息列表，专辑下节目信息列表，电台节目播放链接，搜索关键字相关主播/专辑/节目，主播名下专辑，特定时间段内新增主播/更新的专辑/新增的专辑等。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ccchangkong/article/issues/23&quot;&gt;QQ音乐(非官方)&lt;/a&gt; - 支持歌曲榜单，歌曲/歌词地址，歌曲图片。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://open.qingting.fm/&quot;&gt;蜻蜓FM&lt;/a&gt; - 支持OAuth2.0授权，音频数据中心，分类，点播，直播，临时直播，排行榜，搜索，内容更新状态，主播，此刻，专题，活动等内容。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/darknessomi/musicbox/wiki/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%96%B0%E7%89%88WebAPI%E5%88%86%E6%9E%90%E3%80%82&quot;&gt;网易云音乐(非官方)&lt;/a&gt; - 支持获取用户歌单，歌单详情，歌曲URL。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://open.ximalaya.com/index&quot;&gt;喜马拉雅FM&lt;/a&gt; - 支持Android和iOS平台，并提供相应的SDK和Demo，具体支持内容请下载相关文件查看。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-19&quot;&gt;云&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://develop.aliyun.com/api?spm=5176.8142029.388261.274.4FJSwV&quot;&gt;阿里云&lt;/a&gt; - 支持弹性计算，数据库，存储与CDN，网络，应用服务，域名与网站等类别的内容，并提供了相关SDK。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.baidu.com/doc/index.html&quot;&gt;百度云&lt;/a&gt; - 支持计算和网络，存储和CDN，数据库，安全和管理，数据分析，智能多媒体服务，物联网服务，人工智能，应用服务，网站服务，数字营销服务等内容，并提供相关的SDK。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.bmob.cn/&quot;&gt;Bmob&lt;/a&gt; - 支持云数据库，容器服务，消息推送，文件存储，短信验证码，及时通讯，云端逻辑，定时任务，地理位置等。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://leancloud.cn/&quot;&gt;LeanCloud&lt;/a&gt; - 	支持云存储，数据分析，用户关系，实时通讯，消息推送，移动统计等。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.qiniu.com/&quot;&gt;七牛云&lt;/a&gt; - 支持对象存储，融合CDN，直播云，数据处理等。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.qcloud.com/doc/api&quot;&gt;腾讯云&lt;/a&gt; - 支持计算，网络，存储与CDN，数据库，安全服务，监控与管理，域名服务，视频服务，大数据与AI等内容，提供相关SDK。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.wilddog.com/&quot;&gt;野狗&lt;/a&gt; - 支持实时数据同步，实时视频通话，及时通讯，短信，身份认证等。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-20&quot;&gt;语音识别&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://yuyin.baidu.com/&quot;&gt;百度语音&lt;/a&gt; - 支持全平台REST API, 离线在线融合模式，深度语义解析，场景识别定制，自定义上传语料、训练模型，基础服务永久免费。提供相应SDK和Demo应用。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://openspeech.sogou.com/Sogou/php/index.php&quot;&gt;搜狗语音云开放平台&lt;/a&gt; - 支持在线/离线语音识别，在线听歌识曲，离线语音合成等内容。提供相应平台SDK。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.xfyun.cn/&quot;&gt;讯飞开放平台&lt;/a&gt; - 支持语音听写/转写，在线/离线命令词识别，语音唤醒等内容，平台支持广泛，提供相应SDK。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-21&quot;&gt;杂志&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ZongweiBai/DoubanOpenDaily/blob/b87473b90911e687d291e847b133b5c4c4a700a3/app/src/main/java/com/monosky/daily/constant/APIConstData.java&quot;&gt;豆瓣一刻(非官方)&lt;/a&gt; - 支持获取指定日期文章列表，栏目总览，推荐作者，作者信息，作者更多文章信息，栏目文章列表及翻页，文章评论及热门评论列表。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jokermonn/-Api/blob/master/Eyepetizer.md&quot;&gt;开眼(非官方)&lt;/a&gt; - 支持获取未登录状态下开眼精选、发现、关注信息。  #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jokermonn/-Api/blob/master/ONEv3.5.0~.md&quot;&gt;One一个(非官方)&lt;/a&gt; - 支持获取首页图片，文章，音乐及电影。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jokermonn/-Api/blob/master/Tuchong.md&quot;&gt;图虫(非官方)&lt;/a&gt; - 支持获取图虫 app 所有信息。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jokermonn/-Api/blob/master/Yixi.md&quot;&gt;一席(非官方)&lt;/a&gt; - 支持获取一席主页、演讲、讲者、枝桠等内容 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/izzyleung/ZhihuDailyPurify/wiki/%E7%9F%A5%E4%B9%8E%E6%97%A5%E6%8A%A5-API-%E5%88%86%E6%9E%90&quot;&gt;知乎日报(非官方)&lt;/a&gt; - 支持获取界面启动图像，软件版本查询，最新消息，消息内容获取与离线下载，过往消息，新闻额外消息，新闻对应长/短评论查看，主题日报列表，主题日报内容，热门消息，栏目总览，栏目具体消息，新闻的推荐者，某个专栏之前的新闻，Editor的主页等。 #非官方&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/marktony/zhuanlan/wiki&quot;&gt;知乎专栏(非官方)&lt;/a&gt; - 支持获取指定专栏的信息，指定专栏的文章列表，指定的文章内容，评论列表，点赞信息。 #非官方&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-22&quot;&gt;综合&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.avatardata.cn/Docs&quot;&gt;阿凡达数据&lt;/a&gt; - 支持金融股票，充值认证，便民类，新闻文章，医药交通，科教文艺，创意数据，及时通讯等内容。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.alidayu.com/&quot;&gt;阿里大于&lt;/a&gt; - 支持验证码，短信通知，语音通知，流量钱包充值，私密专线，群发助手等内容。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.apix.cn/&quot;&gt;APiX&lt;/a&gt; - 支持基础征信数据，信用分析服务，支付缴费接口等数据，部分免费。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://apistore.baidu.com/&quot;&gt;百度API STORE&lt;/a&gt; - 支持多种类型数据，部分免费，提供SDK。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.haoservice.com/&quot;&gt;HaoService&lt;/a&gt; - 支持多种类型数据。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.juhe.cn/&quot;&gt;聚合数据&lt;/a&gt; - 支持多种类型数据，部分免费。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://m.datayes.com/&quot;&gt;通联数据&lt;/a&gt; - 提供金融类数据，支持免费试用。&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 27 Mar 2017 00:00:00 +0800</pubDate>
+        <link>http://clover.htmhub.com/2017/03/27/free-apis/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2017/03/27/free-apis/</guid>
+        
+        <category>Clover</category>
+        
+        <category>API</category>
+        
+        
+      </item>
     
       <item>
         <title>CSS常用技巧</title>
@@ -2398,214 +2663,6 @@ http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器
         <pubDate>Tue, 29 Nov 2016 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2016/11/29/design-pattern-2/</link>
         <guid isPermaLink="true">http://clover.htmhub.com/2016/11/29/design-pattern-2/</guid>
-        
-        <category>Clover</category>
-        
-        <category>设计模式</category>
-        
-        <category>PHP</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>PHP设计模式-Part1 理论篇</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;参考资料《大话设计模式》
-作者程杰&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;参考 http://blog.csdn.net/jhq0113/article/details/44906491&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;section&quot;&gt;设计模式-概述&lt;/h1&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;1.什么是设计模式&lt;/h2&gt;
-
-&lt;p&gt;设计模式（Design Pattern）是一套&lt;code class=&quot;highlighter-rouge&quot;&gt;被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结&lt;/code&gt;。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;2.设计模式的优点&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;复用解决方案&lt;/code&gt;：设计模式本身就是对某一类问题的通用解决方案，是更高级别的复用，已经超出了代码复用&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;确定通用术语&lt;/code&gt;：开发中的交流和协作都需要共同的词汇其础和对问题的共识.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;代码更易于修改与维护&lt;/code&gt;：因为设计模式都是久经考验的解决方案,它们的结构都是经过长期的发展形成的，善于应对变化，设计模式本身也是对变化点的封装&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;模式有助于提高思考层次&lt;/code&gt;。学习模式后,就算不用模式中的方法，也会更好的采取更好的策略去解决问题&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;3.资源&lt;/h2&gt;
-&lt;p&gt;更多详情敬请关注我的视频课程：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://edu.csdn.net/course/detail/602&quot;&gt;PHP面向对象设计模式&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;分享一个我在公司内部培训的资料，C#实例源代码及类图：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://pan.baidu.com/s/1qWOE5dy&quot;&gt;设计模式源代码及UML类图&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;对应23种面向对象设计模式PPT：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://pan.baidu.com/s/1i3zksE5&quot;&gt;23种常用面向对象设计模式&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/dragonpeng2008/article/details/6836448&quot;&gt;UML类图总结&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-4&quot;&gt;设计模式-六大原则&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;单一职责&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;里氏替换&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;依赖倒置&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;接口隔离&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;迪米特法则&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;开闭原则&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406222929184.jpeg&quot; alt=&quot;六大原则&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-5&quot;&gt;1.单一职责&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：&lt;code class=&quot;highlighter-rouge&quot;&gt; 不要存在多于一个导致类变更的原因。&lt;/code&gt;通俗的说，即一个类只负责一项职责。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;场景&lt;/strong&gt;：类T负责两个不同的职责：职责P1，职责P2。当由于职责P1需求发生改变而需要修改类T时，有可能会导致原本运行正常的职责P2功能发生故障，关系如下图：&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406223705732.jpeg&quot; alt=&quot;p1&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;修改&lt;/strong&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;遵循单一职责原则.&lt;/code&gt;分别建立两个类T1、T2，使T1完成职责P1功能，T2完成职责P2功能。这样，当修改类T1时，不会使职责P2发生故障风险；同理，当修改T2时，也不会使职责P1发生故障风险，结构如下图： &lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406223805012.jpeg&quot; alt=&quot;p2&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;优点&lt;/strong&gt;:
-    &lt;ul&gt;
-      &lt;li&gt;1)可以降低类的复杂度，一个类只负责一项职责，逻辑简单&lt;/li&gt;
-      &lt;li&gt;2)提高类的可读性，提高系统的可维护性；&lt;/li&gt;
-      &lt;li&gt;3)变更引起的风险降低，变更是必然的&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;section-6&quot;&gt;2.里氏替换原则&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：所有引用基类的地方必须能透明地使用其子类的对象，也就是说&lt;code class=&quot;highlighter-rouge&quot;&gt;子类可以扩展父类的功能，但不能改变父类原有的功能&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;场景&lt;/strong&gt;：有一功能P1，由类A完成。现需要将功能P1进行扩展，扩展后的功能为P，其中P由原有功能P1与新功能P2组成。新功能P由类A的子类B来完成，则子类B在完成新功能P2的同时，有可能会导致原有功能P1发生故障，如下图 &lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406224441455.jpeg&quot; alt=&quot;p2&quot; /&gt;
- CountPriceByJKL类继承于CountPrice类，CountPriceByJKL重写了Count()方法，这样可能影响到原来Count方法的功能。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;修改&lt;/strong&gt;: 当使用继承时，遵循里氏替换原则。类B继承类A时，除添加新的方法完成新增功能P2外，尽量不要重写父类A的方法，也尽量不要重载父类A的方法。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;section-7&quot;&gt;3.依赖倒置原则&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：高层模块不应该依赖低层模块，二者都应该依赖其抽象；抽象不应该依赖细节；细节应该依赖抽象&lt;/p&gt;
-
-    &lt;p&gt;此处理解起来是最困难的，一般会在项目框架的搭建的时候用到，例如，业务逻辑层相对于数据层是高层模块，因为业务逻辑层需要调用数据层去连接数据库，但是要做到可扩展高复用，尽量不要让业务逻辑层依赖数据层，可以在数据层抽象出一个接口，让业务逻辑层依赖于这个抽象接口&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;场景&lt;/strong&gt;：类A（高层模块）直接依赖类B（低层模块），假如要将类A改为依赖类C（低层模块），则必须通过修改类A的代码来达成。这种场景下，类A一般是高层模块，负责复杂的业务逻辑；类B和类C是低层模块，负责基本的原子操作；假如修改类A，会给程序带来不必要的风险。&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406225436362.jpeg&quot; alt=&quot;p2&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;AutoSystem类直接依赖于HondaCar与FordCar两个类，这样就产生了一个高耦合，AutoSystem类想操控HondaCar或者FordCar必须直接创建相应对象。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;修改&lt;/strong&gt;: 将类A修改为依赖接口I，类B和类C各自实现接口I，类A通过接口I间接与类B或者类C发生联系，则会大大降低修改类A的几率，如下图：&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406225842955.jpeg&quot; alt=&quot;p2&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
- 	经过此番修改，Honda与Ford实现ICar接口，提供了Run、Stop以及Turn功能方法，AutoSystem依赖ICar接口，这样迫使AutoSystem依赖抽象接口，这就使得AutoSystem类能够应对更多的需求变化。
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;优点&lt;/strong&gt;:
-    &lt;ul&gt;
-      &lt;li&gt;1)低层模块尽量都要有抽象类或接口，或者两者都有&lt;/li&gt;
-      &lt;li&gt;2)变量的声明类型尽量是抽象类或接口&lt;/li&gt;
-      &lt;li&gt;3)使用继承时遵循里氏替换原则&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;section-8&quot;&gt;4.接口隔离原则&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：客户端不应该依赖它不需要的接口；一个类对另一个类的依赖应该建立在最小的接口上。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;场景&lt;/strong&gt;：类A通过接口I依赖类B，类C通过接口I依赖类D，如果接口I对于类A和类B来说不是最小接口，则类B和类D必须去实现他们不需要的方法，如下图：&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406231050132.jpeg&quot; alt=&quot;p2&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;修改&lt;/strong&gt;:将臃肿的接口I拆分为独立的几个接口，类A和类C分别与他们需要的接口建立依赖关系。也就是采用接口隔离原则&lt;img src=&quot;http://clover.htmhub.com/img/phpdesign/20150406231127388.jpeg&quot; alt=&quot;p2&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;注意&lt;/strong&gt;:
-    &lt;ul&gt;
-      &lt;li&gt;1)&lt;code class=&quot;highlighter-rouge&quot;&gt;接口尽量小，但是要有限度&lt;/code&gt;。对接口进行细化可以提高程序设计灵活性 ，是不争的事实，但是如果过小，则会造成接口数量过多，使设计复杂化。所以一定要适度。&lt;/li&gt;
-      &lt;li&gt;2)为依赖接口的类定制服务，只暴露给调用的类它需要的方法，它不需要的方法则隐藏起来。只有专注地为一个模块提供定制服务，才能建立最小的依赖关系&lt;/li&gt;
-      &lt;li&gt;3)提高内聚，减少对外交互。使接口用&lt;code class=&quot;highlighter-rouge&quot;&gt;最少的方法去完成最多&lt;/code&gt;的事情&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;section-9&quot;&gt;5.迪米特法则（最少知道原则）&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：一个对象应该对其他对象保持最少的了解&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;场景&lt;/strong&gt;：类与类之间的关系越密切，耦合度越大，当一个类发生改变时，对另一个类的影响也越大&lt;/li&gt;
-&lt;/ul&gt;
-
- 	简单的理解就是高内聚，一个类尽量减少对其他对象的依赖，并且这个类的方法和属性能用私有的就尽量私有化
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;注意&lt;/strong&gt;: 	
- 	* 1)&lt;code class=&quot;highlighter-rouge&quot;&gt;只与直接的朋友通信，不要和陌生人说话&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;2)过分的使用该原则，将导致系统复杂度变大。所以在采用迪米特法则时要反复权衡，既做到结构清晰，又要高内聚低耦合&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;section-10&quot;&gt;6.开闭原则&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：一个软件实体如类、模块和函数应该&lt;code class=&quot;highlighter-rouge&quot;&gt;对扩展开放，对修改关闭&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;场景&lt;/strong&gt;：在软件的生命周期内，因为变化、升级和维护等原因需要对软件原有代码进行修改时，可能会给旧代码中引入错误，也可能会使我们不得不对整个功能进行重构，并且需要原有代码经过重新测试&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;建议&lt;/strong&gt;: 当软件需求变化时，尽量通过扩展软件实体的行为来实现变化，而不是通过修改已有的代码来实现变化&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;section-11&quot;&gt;设计模式分类&lt;/h1&gt;
-
-&lt;p&gt;一般将面向对象设计模式分为三类 &lt;code class=&quot;highlighter-rouge&quot;&gt;创建型&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;结构型&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;行为型&lt;/code&gt;三种。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;创建型&lt;/code&gt; ：创建对象时，不再由我们直接实例化对象；而是根据特定场景，由程序来确定创建对象的方式，从而保证更大的性能、更好的&lt;code class=&quot;highlighter-rouge&quot;&gt;架构&lt;/code&gt;优势。创建型模式主要有
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;简单工厂模式（并不是23种设计模式之一）&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;工厂方法&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;抽象工厂模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;单例模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;生成器模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;原型模式&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;结构型&lt;/code&gt; ：用于帮助将多个对象组织成更大的结构。结构型模式主要有
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;适配器模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;桥接模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;组合器模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;装饰器模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;门面模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;亨元模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;代理模式&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;行为型&lt;/code&gt; ：用于帮助系统间各对象的通信，以及如何控制复杂系统中流程。行为型模式主要有
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;命令模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;解释器模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;迭代器模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;中介者模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;备忘录模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;观察者模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;状态模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;策略模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;模板模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;访问者模式&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;职责链模式&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Tue, 29 Nov 2016 00:00:00 +0800</pubDate>
-        <link>http://clover.htmhub.com/2016/11/29/design-pattern/</link>
-        <guid isPermaLink="true">http://clover.htmhub.com/2016/11/29/design-pattern/</guid>
         
         <category>Clover</category>
         
