@@ -507,5 +507,274 @@ BFC的全称是 [Block Format Content](http://www.w3.org/TR/CSS21/visuren.html#b
 	固定定位的元素脱离文档流，在原位置上方直至设置了定位值，参照物为浏览器可视区
 
 
+## `有几种定位方式，分别是如何实现定位的，使用场景如何？`
+
+`A:`
+
+有四种定位方式
+
+1. static 静态定位方式
+
+其为文档的默认定位方式，不会脱离文档流，其会忽略top、 right、 bottom、 left、 z-index 等声明；
+
+2. absolute 绝对定位方式
+
+使用该定位方式其会脱离文档流，其会相对于static定位以外的第一个父元素进行定位，其支持top、 right、 bottom、 left、 z-index 等声明；
+
+3. relative 相对定位方式
+
+其会相对其正常位置进行定位，不会脱离文档流；
+
+4. fixed 固定定位方式
+
+相对窗口进行定位，其不会随着页面翻动而移动，其完全脱离文档流；
+
+
+## `absolute, relative, fixed 偏移的参考点分别是什么`
+
+`A`
+
+1. absolute偏移 参考点
+
+a、若指定了left/right、top/bottom，其会参考除static以外的第一个父元素的原始坐标点，若父元素没有定义定位方式其会往祖元素找里，若还没找到则继续往上找，直至找到为止，若均未找到，则会参考浏览器的左上角原点坐标；
+另：当存在嵌套关系时，比如一个div里包裹了一个absolute元素，且该div定位方式已经确定，则absolute元素的参考点为div里内容区的左上角为参考点
+
+```html
+	<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Document</title>
+      <style>
+      *{
+          margin: 0px;
+          padding: 0px;
+          box-sizing:border-box;
+
+      }
+      .static-div{
+          height: 200px;
+          border: 10px solid red;
+          background-color: pink;
+      }
+      .fixed-div{
+          height: 40px;
+          border: 10px solid green;
+          background-color: #ccc;
+          position: fixed;        
+          top: 250px;
+          left: 100px;
+      }
+      .absolute-div{
+          height: 200px;
+          border: 20px solid blue;
+          position: absolute;
+          top: 150px;
+          left: 300px;
+      }
+      .relative-div{
+          height: 200px;
+          width: 400px;
+          border: 10px solid yellow;
+          background-color: #ccc;
+          position: relative;
+          top:100px;
+          left:250px;
+      }
+
+          </style>
+    </head>
+    <body>
+
+    <div class="static-div">我是正常的块级元素div</div>
+    <div class="fixed-div">我是固定定位的块级元素div</div>
+    <div class="static-div">我是正常的块级元素div</div>
+    <div class="relative-div">我是相对定位的块级元素div
+      <div class="absolute-div">我是绝对定位的块级元素div</div> 
+    </div>
+
+    <div class="static-div">我是正常的块级元素div</div> 
+    <div class="static-div">我是正常的块级元素div</div> 
+    </body>
+    </html>
+```
+
+上述代码中 absolute-div定义了position: top: 150px; left: 300px;
+
+absolute-div坐标如下：（560px，660px）
+![](/img/2166980-c2eea1be397dd074.png)
+而relative-div坐标如下：（250px，500px）
+![](/img/2166980-5d5b362982cb6639.png)
+两者横坐标相减得 310px；纵坐标相减得160px；而relative-div的border宽度为10px，因此此时absolute-div的参考点为relative-div的内容区左上角；（将relative-div的border宽度变更为20px后，还是可以看出absolute-div的参考点为relative-div的内容区左上角）
+
+b.若未指定left/right、top/bottom，但指定了其父元素的定位方式，则其会视内容区的元素而定进行摆放；如上面代码将absolute-div的position: top: 150px; left: 300px; 注释掉后会形成这样的情况
+![](/img/2166980-c6affe6430cd4fad.png)
+
+c、若未指定left/right、top/bottom，且其父元素及父元素以上均未指定定位方式，其会脱离文档流，但其会定位在后出现的文档流的原始坐标上；如下述代码中：
+
+```html
+	<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing:border-box;
+
+        }
+        .static-div{
+            height: 200px;
+            border: 10px solid red;
+            background-color: pink;
+        }
+        .fixed-div{
+            height: 40px;
+            border: 10px solid green;
+            background-color: #ccc;
+            position: fixed;        
+            top: 250px;
+            left: 100px;
+        }
+        .absolute-div{
+            height: 200px;
+            border: 20px solid blue;
+            position: absolute;
+
+
+        }
+        .relative-div{
+            height: 200px;
+            width: 400px;
+            border: 10px solid yellow;
+            background-color: #ccc;
+            position: relative;
+            top:100px;
+            left:250px;
+        }
+
+        </style>
+    </head>
+    <body>
+
+     <div class="static-div">我是正常的块级元素div</div>
+     <div class="fixed-div">我是固定定位的块级元素div</div>
+     <div class="static-div">我是正常的块级元素div</div>
+     <div class="relative-div">我是相对定位的块级元素div </div>
+     <div class="absolute-div">我是绝对定位的块级元素div</div> 
+     <div class="static-div">我是正常的块级元素div</div> 
+     <div class="static-div">我是正常的块级元素div</div>
+     <div class="static-div">我是正常的块级元素div</div> 
+    </body>
+    </html>
+```
+
+![](/img/2166980-68fccea30fca83e3.png)
+
+2. relative偏移参考点
+
+其参考点为其本身的文档流
+
+3. fixed 偏移参考点
+
+浏览器窗口本身，与页面无关，即滚动页面其不会随之移动，而是固定在窗口的指定位置上
+
+
+## `z-index 有什么作用? 如何使用?`
+
+`A`
+
+z-index定义了z方向（与显示屏垂直的方向，值越大者堆叠显示在前面）的级别从而使元素有序堆叠显示。
+
+ps:该属性值只对已定位的元素有效。
+
+堆叠顺序
+
+* 不对元素设position时，文档流后面的元素覆盖前面的元素。
+* 将元素设置的position设置为relative ，absolute 或者 fixed，元素会覆盖没有设置 position 属性或者属性值为 static 的元素。
+* 一般情况下z-index值越大者在前面。
+* 子元素继承元素的堆叠关系，不论子元素的z-index值比父元素的兄弟元素大或者小，都继承父元素与其兄弟元素的堆叠关系。
+
+## `position:relative和负margin都可以使元素位置发生偏移?二者有什么区别`
+
+`A`
+
+区别是使用position:relative ，该元素原来的位置不会脱离文档流，即使用时可能会出现空白的情况，而负margin则不存在这样的情况；
+当margin-top、margin-left为负值的时候，会把元素上移、左移
+
+## `如何让一个固定宽高的元素在页面上垂直水平居中?`
+
+`A`
+
+垂直居中一般利用绝对定位中的负边距实现，首先用absolute把元素设置为绝对定位，再将top和left为50%，再对元素设置其自身高度、长度一般的负边距，使元素中心移动到父元素中心，实现居中对齐
+
+```html
+    <style>
+    .demo{
+    width:600px;
+    height:600px;
+    background-color:#eee;
+    border:1px solid #54e823;
+    }
+    .mydiv{
+    width:100px;
+    height:200px;
+    background-color:red;
+    position: absolute;
+          top: 50%;
+          left:50%;
+          margin-left: -50px;
+          margin-top: -100px;
+    }
+    </style>
+    <div class="demo">
+        <div class="mydiv">我要水平垂直居中<div>
+    </div>
+```
+
+<style>
+.demo{
+width:600px;
+height:600px;
+background-color:#eee;
+border:1px solid #54e823;
+}
+.mydiv{
+width:100px;
+height:200px;
+background-color:red;
+position: absolute;
+      top: 50%;
+      left:50%;
+      margin-left: -50px;
+      margin-top: -100px;
+}
+</style>
+<div class="demo">
+	<div class="mydiv">我要水平垂直居中<div>
+</div>
+
+
+
+
+## `浮动元素有什么特征？对其他浮动元素、普通元素、文字分别有什么影响?`
+
+`A`
+
+
+## `清除浮动指什么? 如何清除浮动?`
+
+`A`
+
+
+
+
+
+
+
+
+
 ## 代码
 
