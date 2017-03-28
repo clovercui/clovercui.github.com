@@ -497,12 +497,14 @@ BFC的全称是 [Block Format Content](http://www.w3.org/TR/CSS21/visuren.html#b
 * float——浮动
 `float: left;或float: right;`
 * position——定位
- * 绝对定位 `position: absolute;` 
- 
- 绝对定位的元素脱离文档流，在原位置上方直至设置了定位值，以最近已定位的祖先元素内边框为参照。
- * 固定定位 `position: fixed;`
- 
- 固定定位的元素脱离文档流，在原位置上方直至设置了定位值，参照物为浏览器可视区
+     
+     * 绝对定位 `position: absolute;`
+     
+	绝对定位的元素脱离文档流，在原位置上方直至设置了定位值，以最近已定位的祖先元素内边框为参照。
+	
+	* 固定定位 `position: fixed;`
+	
+	固定定位的元素脱离文档流，在原位置上方直至设置了定位值，参照物为浏览器可视区
 
 
 ## 代码
