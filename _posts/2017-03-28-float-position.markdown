@@ -713,6 +713,7 @@ ps:该属性值只对已定位的元素有效。
 ```html
     <style>
     .demo{
+    position: relative;
     width:600px;
     height:600px;
     background-color:#eee;
@@ -736,6 +737,7 @@ ps:该属性值只对已定位的元素有效。
 
 <style>
 .demo{
+position: relative;
 width:600px;
 height:600px;
 background-color:#eee;
