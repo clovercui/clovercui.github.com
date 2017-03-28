@@ -840,12 +840,27 @@ border:1px solid #54e823;
 width:600px;
 margin:0 auto;
 }
+.contrain a{
+color: #333;
+    text-decoration: none;
+}
+
 .nav{
 list-style:none;
 float:left;
 }
 .nav>li{
 float:left;
+margin-left:15px;
+}
+
+.nav li a{
+	display: block;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10px;
+    color: #fff;
 }
 
 .clear:after{
