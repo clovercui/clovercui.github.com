@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 28 Mar 2017 15:04:16 +0800</pubDate>
-    <lastBuildDate>Tue, 28 Mar 2017 15:04:16 +0800</lastBuildDate>
+    <pubDate>Tue, 28 Mar 2017 15:04:45 +0800</pubDate>
+    <lastBuildDate>Tue, 28 Mar 2017 15:04:45 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -795,56 +795,40 @@
     &amp;lt;div class=&quot;demo&quot;&amp;gt;
         &amp;lt;div class=&quot;mydiv&quot;&amp;gt;我要水平垂直居中&amp;lt;div&amp;gt;
     &amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;
+    &lt;style&gt;
+    .demo{
+    position: relative;
+    width:600px;
+    height:600px;
+    background-color:#eee;
+    border:1px solid #54e823;
+    }
+    .mydiv{
+    width:100px;
+    height:200px;
+    background-color:red;
+    position: absolute;
+          top: 50%;
+          left:50%;
+          margin-left: -50px;
+          margin-top: -100px;
+    }
+    &lt;/style&gt;
+    &amp;lt;div class=&quot;demo&quot;&amp;gt;
+        &amp;lt;div class=&quot;mydiv&quot;&amp;gt;我要水平垂直居中&amp;lt;div&amp;gt;
+    &amp;lt;/div&amp;gt;&lt;/p&gt;
 
-&lt;style&gt;
-.demo{
-position: relative;
-width:600px;
-height:600px;
-background-color:#eee;
-border:1px solid #54e823;
-}
-.mydiv{
-width:100px;
-height:200px;
-background-color:red;
-position: absolute;
-      top: 50%;
-      left:50%;
-      margin-left: -50px;
-      margin-top: -100px;
-}
-&lt;/style&gt;
+&lt;h2 id=&quot;section-13&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;浮动元素有什么特征？对其他浮动元素、普通元素、文字分别有什么影响?&lt;/code&gt;&lt;/h2&gt;
 
-&lt;div class=&quot;demo&quot;&gt;
-	&lt;div class=&quot;mydiv&quot;&gt;我要水平垂直居中&lt;div&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;&lt;/p&gt;
 
+&lt;h2 id=&quot;section-14&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;清除浮动指什么? 如何清除浮动?&lt;/code&gt;&lt;/h2&gt;
 
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;&lt;/p&gt;
 
+&lt;h2 id=&quot;section-15&quot;&gt;代码&lt;/h2&gt;
 
-
-## `浮动元素有什么特征？对其他浮动元素、普通元素、文字分别有什么影响?`
-
-`A`
-
-
-## `清除浮动指什么? 如何清除浮动?`
-
-`A`
-
-
-
-
-
-
-
-
-
-## 代码
-
-&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 28 Mar 2017 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2017/03/28/float-position/</link>

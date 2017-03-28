@@ -734,29 +734,28 @@ ps:该属性值只对已定位的元素有效。
         <div class="mydiv">我要水平垂直居中<div>
     </div>
 ```
-
-<style>
-.demo{
-position: relative;
-width:600px;
-height:600px;
-background-color:#eee;
-border:1px solid #54e823;
-}
-.mydiv{
-width:100px;
-height:200px;
-background-color:red;
-position: absolute;
-      top: 50%;
-      left:50%;
-      margin-left: -50px;
-      margin-top: -100px;
-}
-</style>
-<div class="demo">
-	<div class="mydiv">我要水平垂直居中<div>
-</div>
+    <style>
+    .demo{
+    position: relative;
+    width:600px;
+    height:600px;
+    background-color:#eee;
+    border:1px solid #54e823;
+    }
+    .mydiv{
+    width:100px;
+    height:200px;
+    background-color:red;
+    position: absolute;
+          top: 50%;
+          left:50%;
+          margin-left: -50px;
+          margin-top: -100px;
+    }
+    </style>
+    <div class="demo">
+        <div class="mydiv">我要水平垂直居中<div>
+    </div>
 
 
 
