@@ -810,9 +810,9 @@ position: absolute;
 }
 </style>
 <div class="demo">
-    <div class="mydiv">我要水平垂直居中<div>
+    <div class="mydiv">我要水平垂直居中</div>
 </div>
-<div></div>
+
 
 `写出如下两栏布局, 其中中间区块宽度900px, 居中,左侧边栏宽度200px, 右侧边栏宽度自适应，缝隙10px`
 
