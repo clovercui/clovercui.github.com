@@ -754,7 +754,7 @@ ps:该属性值只对已定位的元素有效。
     }
     </style>
     <div class="demo">
-        <div class="mydiv">我要水平垂直居中<div>
+        <div class="mydiv"><div>
     </div>
 
 
