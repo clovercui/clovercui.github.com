@@ -1004,37 +1004,39 @@
 <p>清除浮动指的是清除浮动对其他元素造成的影响。</p>
 
 <ul>
-  <li>如何清除浮动</li>
+  <li>
+    <p>如何清除浮动</p>
+
+    <p>清除浮动的方法有很多，概括如下：</p>
+
+    <ul>
+      <li>运用clear:both/left/right清除浮动</li>
+    </ul>
+
+    <p>可以在浮动元素末尾添加一个空内容带clear样式属性的标签，最常用、最有的方式是添加一个带clear的伪元素，如下代码：</p>
+
+    <p><code class="highlighter-rouge">css
+      .clearfix:after{
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .clear{*zoom: 1;}  /*兼容IE6*/
+ </code></p>
+
+    <ul>
+      <li>触发BFC清除浮动</li>
+    </ul>
+
+    <p>触发BFC的方式有很多，如下：</p>
+
+  	* 清除子元素浮动，父元素也浮动或者绝对定位触发BFC。
+
+  	* overflow属性值非visiable
+
+  	* display成非块级盒子。
+  </li>
 </ul>
-
-<p>清除浮动的方法有很多，概括如下：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>* 运用clear:both/left/right清除浮动
-
-可以在浮动元素末尾添加一个空内容带clear样式属性的标签，最常用、最有的方式是添加一个带clear的伪元素，如下代码：
-
-```css
-    .clearfix:after{
-      content: "";
-      display: block;
-      clear: both;
-    }
-    .clear{*zoom: 1;}  /*兼容IE6*/
-```
-
-* 触发BFC清除浮动
-</code></pre>
-</div>
-
-<p>触发BFC的方式有很多，如下：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>* 清除子元素浮动，父元素也浮动或者绝对定位触发BFC。
-    
-* overflow属性值非visiable
-    
-* display成非块级盒子。
-</code></pre>
-</div>
 
 <h2 id="section-15">代码</h2>
 
