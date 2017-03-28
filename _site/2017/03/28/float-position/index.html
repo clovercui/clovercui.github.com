@@ -1079,7 +1079,157 @@ position: absolute;
 <img src="/img/09340020-7ff9-40b1-a61b-546687788e73" alt="" /></li>
 </ul>
 
-<p><code class="highlighter-rouge">代码效果</code></p>
+<p><code class="highlighter-rouge">代码</code></p>
+
+<p>```html
+	&lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+        &lt;head&gt;
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>定位布局演示</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    &lt;!--css引入区--&gt;
+    &lt;link href="" rel="stylesheet"&gt;
+    &lt;!--js引入区--&gt;
+    &lt;script type="text/javascript" src=""&gt;&lt;/script&gt;
+    &lt;style&gt;
+body, ul, li, p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 14px/1.5 "Microsoft YaHei","微软雅黑",sans-serif;
+    color: #656565;
+}
+.hearder{
+    height:50px;
+    background-color:#333;
+}
+.content{
+    width:900px;
+    margin:0 auto;
+
+}
+.content img{
+    height:50px;
+}
+ a{
+    color: #333;
+    text-decoration: none;
+}
+
+
+.nav{
+    list-style:none;
+    float:right;
+}
+.nav&gt;li{
+    float:left;
+    margin-left:15px;
+}
+
+.nav li a{
+    display: block;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10px;
+    color: #fff;
+}
+.nav li a:hover{
+    background-color: #fff;
+    color:#333;
+}
+
+.clear:after{
+    content:'';
+    display:block;
+    clear: both;
+}
+
+.footer{
+
+    height:50px;
+
+    background-color:#333;
+}
+.mainlayout{
+    margin-top :10px;
+
+}
+.mainlayout .left{
+    float: left;
+    width: 200px;
+    min-height: 500px;
+    background-color: #eee;
+}
+.mainlayout .main{
+
+    margin-left:210px;
+    padding: 20px 10px;
+    background-color: #eee;
+
+}
+.content ul{
+    list-style: none;
+}
+
+.content ul li{
+    float: left;
+    margin-left: 10px;
+    line-height: 50px;
+}
+.footer a{
+    color:#fff;
+}
+.main h1 {
+    margin: 20px 0;
+}
+&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+        &lt;div class="hearder"&gt;
+            &lt;div class="content"&gt;
+                &lt;a href="javascript:void(0);"&gt;&lt;img src='img/logo-tiny.png'&gt;&lt;/a&gt;
+                &lt;ul class="nav"&gt;
+                    &lt;li&gt;&lt;a href="javascript:void(0);"&gt;技能&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="javascript:void(0);"&gt;经历&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="javascript:void(0);"&gt;作品&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="javascript:void(0);"&gt;关于&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="mainlayout clear"&gt;
+            &lt;div class="content"&gt;
+                &lt;div class="left"&gt;&lt;/div&gt;
+                &lt;div class="main"&gt;
+                    &lt;h1&gt;我的作品&lt;/h1&gt;
+                    &lt;p&gt;生活很美好&lt;/p&gt;
+                    &lt;p&gt;心情不错&lt;/p&gt;
+                    &lt;p&gt;代码写的很漂亮&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="footer clear"&gt;
+            &lt;div class="content"&gt;
+               &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="http://jirengu.com"&gt;饥人谷&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="http://jscode.me"&gt;JSCODE&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="http://js.jirengu.com"&gt;JSBIN&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt; ```
+</code></pre>
+</div>
 
 <p><a href="/positiondemo.html">代码效果演示</a></p>
 

@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 28 Mar 2017 16:48:28 +0800</pubDate>
-    <lastBuildDate>Tue, 28 Mar 2017 16:48:28 +0800</lastBuildDate>
+    <pubDate>Tue, 28 Mar 2017 16:51:00 +0800</pubDate>
+    <lastBuildDate>Tue, 28 Mar 2017 16:51:00 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -895,7 +895,157 @@ position: absolute;
 &lt;img src=&quot;/img/09340020-7ff9-40b1-a61b-546687788e73&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;代码效果&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;代码&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;```html
+	&amp;lt;!DOCTYPE html&amp;gt;
+    &amp;lt;html&amp;gt;
+        &amp;lt;head&amp;gt;
+        &lt;meta charset=&quot;utf-8&quot; /&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+        &lt;title&gt;定位布局演示&lt;/title&gt;
+        &lt;meta name=&quot;description&quot; content=&quot;&quot; /&gt;
+        &lt;meta name=&quot;keywords&quot; content=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &amp;lt;!--css引入区--&amp;gt;
+    &amp;lt;link href=&quot;&quot; rel=&quot;stylesheet&quot;&amp;gt;
+    &amp;lt;!--js引入区--&amp;gt;
+    &amp;lt;script type=&quot;text/javascript&quot; src=&quot;&quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;style&amp;gt;
+body, ul, li, p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 14px/1.5 &quot;Microsoft YaHei&quot;,&quot;微软雅黑&quot;,sans-serif;
+    color: #656565;
+}
+.hearder{
+    height:50px;
+    background-color:#333;
+}
+.content{
+    width:900px;
+    margin:0 auto;
+
+}
+.content img{
+    height:50px;
+}
+ a{
+    color: #333;
+    text-decoration: none;
+}
+
+
+.nav{
+    list-style:none;
+    float:right;
+}
+.nav&amp;gt;li{
+    float:left;
+    margin-left:15px;
+}
+
+.nav li a{
+    display: block;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10px;
+    color: #fff;
+}
+.nav li a:hover{
+    background-color: #fff;
+    color:#333;
+}
+
+.clear:after{
+    content:&#39;&#39;;
+    display:block;
+    clear: both;
+}
+
+.footer{
+
+    height:50px;
+
+    background-color:#333;
+}
+.mainlayout{
+    margin-top :10px;
+
+}
+.mainlayout .left{
+    float: left;
+    width: 200px;
+    min-height: 500px;
+    background-color: #eee;
+}
+.mainlayout .main{
+
+    margin-left:210px;
+    padding: 20px 10px;
+    background-color: #eee;
+
+}
+.content ul{
+    list-style: none;
+}
+
+.content ul li{
+    float: left;
+    margin-left: 10px;
+    line-height: 50px;
+}
+.footer a{
+    color:#fff;
+}
+.main h1 {
+    margin: 20px 0;
+}
+&amp;lt;/style&amp;gt;
+    &amp;lt;/head&amp;gt;
+    &amp;lt;body&amp;gt;
+
+        &amp;lt;div class=&quot;hearder&quot;&amp;gt;
+            &amp;lt;div class=&quot;content&quot;&amp;gt;
+                &amp;lt;a href=&quot;javascript:void(0);&quot;&amp;gt;&amp;lt;img src=&#39;img/logo-tiny.png&#39;&amp;gt;&amp;lt;/a&amp;gt;
+                &amp;lt;ul class=&quot;nav&quot;&amp;gt;
+                    &amp;lt;li&amp;gt;&amp;lt;a href=&quot;javascript:void(0);&quot;&amp;gt;技能&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                    &amp;lt;li&amp;gt;&amp;lt;a href=&quot;javascript:void(0);&quot;&amp;gt;经历&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                    &amp;lt;li&amp;gt;&amp;lt;a href=&quot;javascript:void(0);&quot;&amp;gt;作品&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                    &amp;lt;li&amp;gt;&amp;lt;a href=&quot;javascript:void(0);&quot;&amp;gt;关于&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                &amp;lt;/ul&amp;gt;
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+        &amp;lt;div class=&quot;mainlayout clear&quot;&amp;gt;
+            &amp;lt;div class=&quot;content&quot;&amp;gt;
+                &amp;lt;div class=&quot;left&quot;&amp;gt;&amp;lt;/div&amp;gt;
+                &amp;lt;div class=&quot;main&quot;&amp;gt;
+                    &amp;lt;h1&amp;gt;我的作品&amp;lt;/h1&amp;gt;
+                    &amp;lt;p&amp;gt;生活很美好&amp;lt;/p&amp;gt;
+                    &amp;lt;p&amp;gt;心情不错&amp;lt;/p&amp;gt;
+                    &amp;lt;p&amp;gt;代码写的很漂亮&amp;lt;/p&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+        &amp;lt;div class=&quot;footer clear&quot;&amp;gt;
+            &amp;lt;div class=&quot;content&quot;&amp;gt;
+               &amp;lt;ul&amp;gt;
+                    &amp;lt;li&amp;gt;&amp;lt;a href=&quot;http://jirengu.com&quot;&amp;gt;饥人谷&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                    &amp;lt;li&amp;gt;&amp;lt;a href=&quot;http://jscode.me&quot;&amp;gt;JSCODE&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                    &amp;lt;li&amp;gt;&amp;lt;a href=&quot;http://js.jirengu.com&quot;&amp;gt;JSBIN&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                &amp;lt;/ul&amp;gt;
+            &amp;lt;/div&amp;gt;
+
+        &amp;lt;/div&amp;gt;
+
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt; ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;a href=&quot;/positiondemo.html&quot;&gt;代码效果演示&lt;/a&gt;&lt;/p&gt;
 

@@ -824,7 +824,156 @@ position: absolute;
 * 自备创意，风格样式不需要和范例保持一样，技术上到位就行	
 ![](/img/09340020-7ff9-40b1-a61b-546687788e73)
 
-`代码效果`
+`代码`
+
+```html
+	<!DOCTYPE html>
+    <html>
+        <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>定位布局演示</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+        <!--css引入区-->
+        <link href="" rel="stylesheet">
+        <!--js引入区-->
+        <script type="text/javascript" src=""></script>
+        <style>
+    body, ul, li, p, h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font: 14px/1.5 "Microsoft YaHei","微软雅黑",sans-serif;
+        color: #656565;
+    }
+    .hearder{
+        height:50px;
+        background-color:#333;
+    }
+    .content{
+        width:900px;
+        margin:0 auto;
+
+    }
+    .content img{
+        height:50px;
+    }
+     a{
+        color: #333;
+        text-decoration: none;
+    }
+
+
+    .nav{
+        list-style:none;
+        float:right;
+    }
+    .nav>li{
+        float:left;
+        margin-left:15px;
+    }
+
+    .nav li a{
+        display: block;
+        font-size: 16px;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 10px;
+        color: #fff;
+    }
+    .nav li a:hover{
+        background-color: #fff;
+        color:#333;
+    }
+
+    .clear:after{
+        content:'';
+        display:block;
+        clear: both;
+    }
+
+    .footer{
+
+        height:50px;
+
+        background-color:#333;
+    }
+    .mainlayout{
+        margin-top :10px;
+
+    }
+    .mainlayout .left{
+        float: left;
+        width: 200px;
+        min-height: 500px;
+        background-color: #eee;
+    }
+    .mainlayout .main{
+
+        margin-left:210px;
+        padding: 20px 10px;
+        background-color: #eee;
+
+    }
+    .content ul{
+        list-style: none;
+    }
+
+    .content ul li{
+        float: left;
+        margin-left: 10px;
+        line-height: 50px;
+    }
+    .footer a{
+        color:#fff;
+    }
+    .main h1 {
+        margin: 20px 0;
+    }
+    </style>
+        </head>
+        <body>
+
+            <div class="hearder">
+                <div class="content">
+                    <a href="javascript:void(0);"><img src='img/logo-tiny.png'></a>
+                    <ul class="nav">
+                        <li><a href="javascript:void(0);">技能</a></li>
+                        <li><a href="javascript:void(0);">经历</a></li>
+                        <li><a href="javascript:void(0);">作品</a></li>
+                        <li><a href="javascript:void(0);">关于</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mainlayout clear">
+                <div class="content">
+                    <div class="left"></div>
+                    <div class="main">
+                        <h1>我的作品</h1>
+                        <p>生活很美好</p>
+                        <p>心情不错</p>
+                        <p>代码写的很漂亮</p>
+                </div>
+                </div>
+            </div>
+            <div class="footer clear">
+                <div class="content">
+                   <ul>
+                        <li><a href="http://jirengu.com">饥人谷</a></li>
+                        <li><a href="http://jscode.me">JSCODE</a></li>
+                        <li><a href="http://js.jirengu.com">JSBIN</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </body>
+    </html>
+```
 
 [代码效果演示](/positiondemo.html)
 
