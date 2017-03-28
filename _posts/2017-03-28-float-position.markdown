@@ -813,3 +813,15 @@ position: absolute;
     <div class="mydiv">我要水平垂直居中<div>
 </div>
 
+
+`写出如下两栏布局, 其中中间区块宽度900px, 居中,左侧边栏宽度200px, 右侧边栏宽度自适应，缝隙10px`
+
+* 做完可[参考范例4](http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/10-1.html)
+* ps: 图片左浮动，导航栏整体右浮动，导航栏里面的li元素左浮动。
+* ps: aside左浮动，main 不浮动设置 margin-left
+* 凡是有浮动的地方，其直接父元素必须清除浮动
+* 自备创意，风格样式不需要和范例保持一样，技术上到位就行	
+![](/img/09340020-7ff9-40b1-a61b-546687788e73)
+
+
+
