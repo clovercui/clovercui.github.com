@@ -981,6 +981,32 @@
     &lt;/div&gt;
 </code></p>
 
+<p><code class="highlighter-rouge">代码效果</code></p>
+
+<style>
+.demo{
+position: relative;
+width:600px;
+height:600px;
+background-color:#eee;
+border:1px solid #54e823;
+}
+.mydiv{
+width:100px;
+height:200px;
+background-color:red;
+position: absolute;
+      top: 50%;
+      left:50%;
+      margin-left: -50px;
+      margin-top: -100px;
+}
+</style>
+
+<div class="demo">
+    <div class="mydiv">我要水平垂直居中</div>
+</div>
+
 <h2 id="section-13"><code class="highlighter-rouge">浮动元素有什么特征？对其他浮动元素、普通元素、文字分别有什么影响?</code></h2>
 
 <p><code class="highlighter-rouge">A</code></p>
@@ -1042,33 +1068,7 @@
 
 <h2 id="section-15">代码</h2>
 
-<p><code class="highlighter-rouge">代码效果</code></p>
-
-<style>
-.demo{
-position: relative;
-width:600px;
-height:600px;
-background-color:#eee;
-border:1px solid #54e823;
-}
-.mydiv{
-width:100px;
-height:200px;
-background-color:red;
-position: absolute;
-      top: 50%;
-      left:50%;
-      margin-left: -50px;
-      margin-top: -100px;
-}
-</style>
-
-<div class="demo">
-    <div class="mydiv">我要水平垂直居中</div>
-</div>
-
-<p><code class="highlighter-rouge">写出如下两栏布局, 其中中间区块宽度900px, 居中,左侧边栏宽度200px, 右侧边栏宽度自适应，缝隙10px</code></p>
+<h3 id="px-200px-10px"><code class="highlighter-rouge">写出如下两栏布局, 其中中间区块宽度900px, 居中,左侧边栏宽度200px, 右侧边栏宽度自适应，缝隙10px</code></h3>
 
 <ul>
   <li>做完可<a href="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/10-1.html">参考范例4</a></li>
@@ -1078,6 +1078,31 @@ position: absolute;
   <li>自备创意，风格样式不需要和范例保持一样，技术上到位就行	
 <img src="/img/09340020-7ff9-40b1-a61b-546687788e73" alt="" /></li>
 </ul>
+
+<p><code class="highlighter-rouge">代码效果</code></p>
+
+<style>
+.contrain{
+width:800px;
+height:400px;
+border:1px solid #54e823;
+}
+.header{
+	
+    height:50px;
+    width:100%;
+    background-color:#333;
+}
+</style>
+
+<div class="contrain">
+	<div class="hearder"></div>
+    <div class="main">
+    	<div class="left"></div>
+        <div class="main"></div>
+    </div>
+    <div class="footer"></div>
+</div>
 
 
 

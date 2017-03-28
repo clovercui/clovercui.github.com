@@ -735,6 +735,31 @@ ps:该属性值只对已定位的元素有效。
     </div>
 ```
 
+`代码效果`
+
+<style>
+.demo{
+position: relative;
+width:600px;
+height:600px;
+background-color:#eee;
+border:1px solid #54e823;
+}
+.mydiv{
+width:100px;
+height:200px;
+background-color:red;
+position: absolute;
+      top: 50%;
+      left:50%;
+      margin-left: -50px;
+      margin-top: -100px;
+}
+</style>
+<div class="demo">
+    <div class="mydiv">我要水平垂直居中</div>
+</div>
+
 
 
 ## `浮动元素有什么特征？对其他浮动元素、普通元素、文字分别有什么影响?`
@@ -788,33 +813,9 @@ ps:该属性值只对已定位的元素有效。
 ## 代码
 
 
-`代码效果`
-
-<style>
-.demo{
-position: relative;
-width:600px;
-height:600px;
-background-color:#eee;
-border:1px solid #54e823;
-}
-.mydiv{
-width:100px;
-height:200px;
-background-color:red;
-position: absolute;
-      top: 50%;
-      left:50%;
-      margin-left: -50px;
-      margin-top: -100px;
-}
-</style>
-<div class="demo">
-    <div class="mydiv">我要水平垂直居中</div>
-</div>
 
 
-`写出如下两栏布局, 其中中间区块宽度900px, 居中,左侧边栏宽度200px, 右侧边栏宽度自适应，缝隙10px`
+### `写出如下两栏布局, 其中中间区块宽度900px, 居中,左侧边栏宽度200px, 右侧边栏宽度自适应，缝隙10px`
 
 * 做完可[参考范例4](http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/10-1.html)
 * ps: 图片左浮动，导航栏整体右浮动，导航栏里面的li元素左浮动。
@@ -822,6 +823,35 @@ position: absolute;
 * 凡是有浮动的地方，其直接父元素必须清除浮动
 * 自备创意，风格样式不需要和范例保持一样，技术上到位就行	
 ![](/img/09340020-7ff9-40b1-a61b-546687788e73)
+
+`代码效果`
+
+<style>
+.contrain{
+width:800px;
+height:400px;
+border:1px solid #54e823;
+}
+.header{
+	
+    height:50px;
+    width:100%;
+    background-color:#333;
+}
+</style>
+
+<div class="contrain">
+	<div class="hearder"></div>
+    <div class="main">
+    	<div class="left"></div>
+        <div class="main"></div>
+    </div>
+    <div class="footer"></div>
+</div>
+
+
+
+
 
 
 
