@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 28 Mar 2017 15:07:07 +0800</pubDate>
-    <lastBuildDate>Tue, 28 Mar 2017 15:07:07 +0800</lastBuildDate>
+    <pubDate>Tue, 28 Mar 2017 15:12:37 +0800</pubDate>
+    <lastBuildDate>Tue, 28 Mar 2017 15:12:37 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -797,6 +797,60 @@
     &amp;lt;/div&amp;gt;
 &lt;/code&gt;&lt;/p&gt;
 
+&lt;h2 id=&quot;section-13&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;浮动元素有什么特征？对其他浮动元素、普通元素、文字分别有什么影响?&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;浮动元素会脱离文档流；&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;碰到其他浮动元素其并不会忽略；&lt;/li&gt;
+  &lt;li&gt;遇见块级元素其会完全忽略浮动元素，但遇到块级元素中的内联元素或直接的内联元素，内联元素会环绕该浮动元素；&lt;/li&gt;
+  &lt;li&gt;遇见文字时，文字会环绕在浮动元素周围；&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-14&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;清除浮动指什么? 如何清除浮动?&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;清除浮动&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;清除浮动指的是清除浮动对其他元素造成的影响。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如何清除浮动&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;清除浮动的方法有很多，概括如下：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* 运用clear:both/left/right清除浮动
+
+可以在浮动元素末尾添加一个空内容带clear样式属性的标签，最常用、最有的方式是添加一个带clear的伪元素，如下代码：
+
+```css
+    .clearfix:after{
+      content: &quot;&quot;;
+      display: block;
+      clear: both;
+    }
+    .clear{*zoom: 1;}  /*兼容IE6*/
+```
+* 触发BFC清除浮动
+
+触发BFC的方式有很多，如下：
+
+    * 清除子元素浮动，父元素也浮动或者绝对定位触发BFC。
+    
+    * overflow属性值非visiable
+    
+    * display成非块级盒子。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-15&quot;&gt;代码&lt;/h2&gt;
+
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;代码效果&lt;/code&gt;&lt;/p&gt;
 
 &lt;style&gt;
@@ -820,28 +874,8 @@ position: absolute;
 &lt;/style&gt;
 
 &lt;div class=&quot;demo&quot;&gt;
-    &lt;div class=&quot;mydiv&quot;&gt;&lt;div&gt;
+    &lt;div class=&quot;mydiv&quot;&gt;我要水平垂直居中&lt;div&gt;
 &lt;/div&gt;
-
-
-## `浮动元素有什么特征？对其他浮动元素、普通元素、文字分别有什么影响?`
-
-`A`
-
-
-## `清除浮动指什么? 如何清除浮动?`
-
-`A`
-
-
-
-
-
-
-
-
-
-## 代码
 
 &lt;/div&gt;&lt;/div&gt;
 </description>
