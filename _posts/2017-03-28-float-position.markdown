@@ -406,8 +406,11 @@ BFC的全称是 [Block Format Content](http://www.w3.org/TR/CSS21/visuren.html#b
 我们可以利用BFC的第三条特性来“清浮动”，这里其实说清浮动已经不再合适，应该说包含浮动。也就是说只要父容器形成BFC就可以，简单看看如何形成BFC
 
 * float为 left|right
+
 * overflow为 hidden|auto|scroll
+
 * display为 table-cell|table-caption|inline-block
+
 * position为 absolute|fixed
 
 我们可以对父容器添加这些属性来形成BFC达到“清浮动”效果
