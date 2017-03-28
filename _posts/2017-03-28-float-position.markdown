@@ -777,11 +777,11 @@ ps:该属性值只对已定位的元素有效。
 
 		触发BFC的方式有很多，如下：
     
-    	* 清除子元素浮动，父元素也浮动或者绝对定位触发BFC。
+    	1. 清除子元素浮动，父元素也浮动或者绝对定位触发BFC。
         
-    	* overflow属性值非visiable
+    	2. overflow属性值非visiable
         
-    	* display成非块级盒子。
+    	3. display成非块级盒子。
 
 
 
