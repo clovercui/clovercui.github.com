@@ -810,11 +810,6 @@ position: absolute;
 
 
 
-## 代码
-
-
-
-
 ### `写出如下两栏布局, 其中中间区块宽度900px, 居中,左侧边栏宽度200px, 右侧边栏宽度自适应，缝隙10px`
 
 * 做完可[参考范例4](http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/10-1.html)
