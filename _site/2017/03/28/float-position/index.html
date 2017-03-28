@@ -707,9 +707,27 @@
   <li>使父容器形成BFC</li>
 </ol>
 
-<h2 id="section-10">``</h2>
+<h2 id="section-10"><code class="highlighter-rouge">文档流的概念指什么？有哪种方式可以让元素脱离文档流?</code></h2>
 
 <p><code class="highlighter-rouge">A:</code></p>
+
+<p><code class="highlighter-rouge">文档流</code>是文档在排列的时候所占据的位置，将窗体自上而下分成一行行, 并在每行中按从左至右的顺序排放元素,即为文档流</p>
+
+<p>脱离文档流即表示元素不在应该的那个位置了。</p>
+
+<p>让元素脱离文档流的方式有：</p>
+
+<ul>
+  <li>float——浮动
+<code class="highlighter-rouge">float: left;或float: right;</code></li>
+  <li>position——定位</li>
+  <li>绝对定位 <code class="highlighter-rouge">position: absolute;</code></li>
+</ul>
+
+<p>绝对定位的元素脱离文档流，在原位置上方直至设置了定位值，以最近已定位的祖先元素内边框为参照。
+ * 固定定位 <code class="highlighter-rouge">position: fixed;</code></p>
+
+<p>固定定位的元素脱离文档流，在原位置上方直至设置了定位值，参照物为浏览器可视区</p>
 
 <h2 id="section-11">代码</h2>
 
