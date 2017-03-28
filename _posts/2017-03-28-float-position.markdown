@@ -426,12 +426,16 @@ BFC的全称是 [Block Format Content](http://www.w3.org/TR/CSS21/visuren.html#b
 我们可以利用这点儿在IE6、7下完成清浮动，先看看怎么使元素hasLayout为true
 
 * position: absolute
+
 * float: left|right
+
 * display: inline-block
+
 * width: 除 “auto” 外的任意值
 * height: 除 “auto” 外的任意值
 * zoom: 除 “normal” 外的任意值
 * writing-mode: tb-rl
+
 * 在IE7中使用overflow: hidden|scroll|auto 也可以使hasLayout为true
 
 ### 通用的清理浮动法案
