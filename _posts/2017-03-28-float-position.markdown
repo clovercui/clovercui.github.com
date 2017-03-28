@@ -873,7 +873,7 @@ clear: both;
 <div class="contrain">
 	<div class="hearder">
     	<div class="content clear">
-        	<a href="javascript:void(0);"><img src='/img/logo-tiny.png'></a>
+        	<a href="javascript:void(0);"><img style="display: static;max-width: 100%;height: 50px;margin: 0" src='/img/logo-tiny.png'></a>
             <ul class="nav">
             	<li><a href="javascript:void(0);">技能</a></li>
                 <li><a href="javascript:void(0);">经历</a></li>
