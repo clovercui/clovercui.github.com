@@ -772,15 +772,16 @@ ps:该属性值只对已定位的元素有效。
         }
         .clear{*zoom: 1;}  /*兼容IE6*/
     ```
+    
 	* 触发BFC清除浮动
 
-	触发BFC的方式有很多，如下：
+触发BFC的方式有很多，如下：
     
-        * 清除子元素浮动，父元素也浮动或者绝对定位触发BFC。
+    * 清除子元素浮动，父元素也浮动或者绝对定位触发BFC。
         
-        * overflow属性值非visiable
+    * overflow属性值非visiable
         
-        * display成非块级盒子。
+    * display成非块级盒子。
 
 
 
