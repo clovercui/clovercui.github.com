@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 28 Mar 2017 15:35:26 +0800</pubDate>
-    <lastBuildDate>Tue, 28 Mar 2017 15:35:26 +0800</lastBuildDate>
+    <pubDate>Tue, 28 Mar 2017 15:47:41 +0800</pubDate>
+    <lastBuildDate>Tue, 28 Mar 2017 15:47:41 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -903,16 +903,41 @@ width:800px;
 height:400px;
 border:1px solid #54e823;
 }
-.header{
-	
+.hearder{
     height:50px;
-    width:100%;
     background-color:#333;
+}
+.content{
+width:600px;
+margin:0 auto;
+}
+.nav{
+list-style:none;
+float:left;
+}
+.nav&gt;li{
+float:left;
+}
+
+.clear:after{
+content:&#39;&#39;;
+diaplay:block;
+clear: both;
 }
 &lt;/style&gt;
 
 &lt;div class=&quot;contrain&quot;&gt;
-	&lt;div class=&quot;hearder&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;hearder&quot;&gt;
+    	&lt;div class=&quot;content clear&quot;&gt;
+        	&lt;a href=&quot;javascript:void(0);&quot;&gt;&lt;img src=&quot;/img/logo-tiny.png&quot; /&gt;&lt;/a&gt;
+            &lt;ul class=&quot;nav&quot;&gt;
+            	&lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;技能&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;经历&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;作品&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;关于&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
     &lt;div class=&quot;main&quot;&gt;
     	&lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;main&quot;&gt;&lt;/div&gt;

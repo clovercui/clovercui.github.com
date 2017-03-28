@@ -1087,16 +1087,41 @@ width:800px;
 height:400px;
 border:1px solid #54e823;
 }
-.header{
-	
+.hearder{
     height:50px;
-    width:100%;
     background-color:#333;
+}
+.content{
+width:600px;
+margin:0 auto;
+}
+.nav{
+list-style:none;
+float:left;
+}
+.nav>li{
+float:left;
+}
+
+.clear:after{
+content:'';
+diaplay:block;
+clear: both;
 }
 </style>
 
 <div class="contrain">
-	<div class="hearder"></div>
+	<div class="hearder">
+    	<div class="content clear">
+        	<a href="javascript:void(0);"><img src="/img/logo-tiny.png" /></a>
+            <ul class="nav">
+            	<li><a href="javascript:void(0);">技能</a></li>
+                <li><a href="javascript:void(0);">经历</a></li>
+                <li><a href="javascript:void(0);">作品</a></li>
+                <li><a href="javascript:void(0);">关于</a></li>
+            </ul>
+        </div>
+    </div>
     <div class="main">
     	<div class="left"></div>
         <div class="main"></div>
