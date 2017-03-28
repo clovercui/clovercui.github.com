@@ -251,7 +251,7 @@ CSS有三种基本的定位机制：`普通流`，`相对定位`和`绝对定位
     </div>
 </div>
 
-
+<div style="clear:both"></div>
 `卡住了`
 
 ```html
@@ -275,7 +275,7 @@ CSS有三种基本的定位机制：`普通流`，`相对定位`和`绝对定位
 </div>
 
 
-
+<div style="clear:both"></div>
 
 
 ### 行框
@@ -369,7 +369,7 @@ CSS有三种基本的定位机制：`普通流`，`相对定位`和`绝对定位
     <div style="height: 100px; width: 100px; background-color: Yellow;  float:left;">
     </div>
 </div>
-
+<div style="clear:both"></div>
 如果我们想让父元素在视觉上包围浮动元素可以像下面这样处理,在最后添加一个空div，对它清理
 
 ```html
