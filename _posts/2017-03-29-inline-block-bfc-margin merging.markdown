@@ -300,3 +300,11 @@ BFC的用法都体现了规则的第5条：
 
 
 [两栏布局](/demo/两栏布局.html)
+
+
+## 参考
+[w3cplus-理解 bfc 和边距合并1](http://www.w3cplus.com/css/understanding-bfc-and-margin-collapse.html)
+[w3c-bfc2](http://www.w3.org/TR/CSS2/visuren.html#block-formatting)
+[w3c-边距合并1](http://www.w3.org/TR/CSS2/box.html#collapsing-margins)
+
+
