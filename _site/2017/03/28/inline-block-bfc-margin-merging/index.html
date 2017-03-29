@@ -10,9 +10,9 @@
     <meta name="keyword"  content="克洛弗, Clover克洛弗, Clover, @Clover, 克洛弗的博客, Clover Blog, 博客, 个人网站, 互联网, 前端,后端, 设计, 产品, PHP, JAVA,服务器,LINUX">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>JavaScript Module Loader - 克洛弗的博客 | Clover Blog</title>
+    <title>inline-block、BFC、边距合并 - 克洛弗的博客 | Clover Blog</title>
 
-    <link rel="canonical" href="http://clover.htmhub.com/2015/05/25/js-module-loader/">
+    <link rel="canonical" href="http://clover.htmhub.com/2017/03/28/inline-block-bfc-margin-merging/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -144,13 +144,13 @@
 
     <!-- Image to hack wechat -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="/img/post-bg-js-module.jpg" width="0" height="0"> -->
+<!-- <img src="/img/education_large_2x.jpg" width="0" height="0"> -->
 
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
         position: relative;
-        background-image: url('/img/post-bg-js-module.jpg')
+        background-image: url('/img/education_large_2x.jpg')
     }
 
     
@@ -163,17 +163,21 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#前端开发" title="前端开发">前端开发</a>
+                        <a class="tag" href="/tags/#Clover" title="Clover">Clover</a>
                         
-                        <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                        <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
+                        
+                        <a class="tag" href="/tags/#HTML" title="HTML">HTML</a>
+                        
+                        <a class="tag" href="/tags/#前端" title="前端">前端</a>
                         
                     </div>
-                    <h1>JavaScript Module Loader</h1>
+                    <h1>inline-block、BFC、边距合并</h1>
                     
                     
-                    <h2 class="subheading">CommonJS，RequireJS，SeaJS 归纳笔记</h2>
+                    <h2 class="subheading"></h2>
                     
-                    <span class="meta">Posted by Hux on May 25, 2015</span>
+                    <span class="meta">Posted by Clover on March 28, 2017</span>
                 </div>
             </div>
         </div>
@@ -191,308 +195,313 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h2 id="foreword">Foreword</h2>
+				<h1 id="inline-blockbfc">inline-block、BFC、边距合并</h1>
 
-<blockquote>
-  <p>Here comes Module!</p>
-</blockquote>
+<h2 id="section"><code class="highlighter-rouge">在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例</code></h2>
 
-<p>随着网站逐渐变成「互联网应用程序」，嵌入网页的 JavaScript 代码越来越庞大，越来越复杂。网页越来越像桌面程序，需要一个团队分工协作、进度管理、单元测试……我们不得不使用软件工程的方法，来管理网页的业务逻辑。</p>
+<p><code class="highlighter-rouge">A</code></p>
 
-<p>于是，JavaScript 的模块化成为迫切需求。在 ES6 Module 来临之前，JavaScript 社区提供了强大支持，尝试在现有的运行环境下，实现模块的效果。</p>
+<p>外边距合并[Margin Collapse]：同属于同一BFC的block,垂直方向上都会发生合并</p>
 
-<h2 id="commonjs--node">CommonJS &amp; Node</h2>
+<p>合并规则为：不论对于时父子间还是同级兄弟之间都遵循，同号取绝对值大的为间距，异号向加结果作间距</p>
 
-<blockquote>
-  <p>Javascript: not just for browsers any more! —— CommonJS Slogen</p>
-</blockquote>
+<p>处理方式：根据产生原因可知，只要元素不在同一BFC之内，就不会发生margin collapase，所以可以overflow非visible， float非none， position非静态和相关， display：inline-block／table-cell… 等脱离文档流的手段，相对来说overflow设置比较简单</p>
 
-<p>前端模块化的事实标准之一，2009 年 8 月，<a href="http://wiki.commonjs.org/wiki/CommonJS">CommonJS</a> 诞生。</p>
+<h2 id="inline-block"><code class="highlighter-rouge">去除inline-block内缝隙有哪几种常见方法?</code></h2>
 
-<p>CommonJS 本质上只是一套规范（API 定义），而 Node.js 采用并实现了部分规范，CommonJS Module 的写法也因此广泛流行。</p>
+<p><code class="highlighter-rouge">A:</code></p>
 
-<p>让我们看看 Node 中的实现：</p>
+<p>inline-block如果不作处理会在个元素之间带来一个空隙</p>
 
-<p>```
-// 由于 Node 原生支持模块的作用域，并不需要额外的 wrapper
-// “as though the module was wrapped in a function”</p>
-
-<p>var a = require(‘./a’)  // 加载模块（同步加载）
-a.doSomething()         // 等上一句执行完才会执行</p>
-
-<p>exports.b = function(){ // 暴露 b 函数接口
-  // do something
-}
-```</p>
-
-<p><code class="highlighter-rouge">exports</code>是一个内置对象，就像<code class="highlighter-rouge">require</code>是一个内置加载函数一样。如果你希望直接赋值一个完整的对象或者构造函数，覆写<code class="highlighter-rouge">module.exports</code>就可以了。</p>
-
-<p>CommonJS 前身叫 ServerJS ，<strong>后来希望能更加 COMMON，成为通吃各种环境的模块规范，改名为 CommonJS</strong> 。CommonJS 最初只专注于 Server-side 而非浏览器环境，因此它采用了同步加载的机制，这对服务器环境（硬盘 I/O 速度）不是问题，而对浏览器环境（网速）来说并不合适。</p>
-
-<p>因此，各种适用于浏览器环境的模块框架与标准逐个诞生，他们的共同点是：</p>
+<p>分析原因：这是由于inline元素中，内容的 空格和回车都会显示为一个空的字符导致的，所以解决办法就是想办法去除这个空的字符，可以：</p>
 
 <ul>
-  <li>采用异步加载（预先加载所有依赖的模块后回调执行，符合浏览器的网络环境）</li>
-  <li>虽然代码风格不同，但其实都可以看作 CommonJS Modules 语法的变体。</li>
-  <li>都在向着 <strong>COMMON</strong> 的方向进化：<strong>兼容不同风格，兼容浏览器和服务器两种环境</strong></li>
+  <li>inline元素之间不加空格跟回车，内容元素直接相邻</li>
+  <li>通过字体处理，包裹的父元素字体大小设置为0，而内容的元素字体大小正常</li>
+  <li>通过margin=-4来处理</li>
+  <li>最好的方式就是，不用inline-block而使用float替代</li>
 </ul>
 
-<p>本文接下来要讨论的典例是：</p>
+<h2 id="overflow-auto-hidden"><code class="highlighter-rouge">容器使用overflow: auto| hidden撑开高度的原理是什么？</code></h2>
 
-<ul>
-  <li>RequireJS &amp; AMD（异步加载，预执行，依赖前置。默认推荐 AMD 写法）</li>
-  <li>SeaJS &amp; CMD（异步加载，懒执行，依赖就近，默认推荐 CommonJS 写法）</li>
-</ul>
+<p>本质上来说就是因为触发建立了BFC，而BFC就是能让上下左右都包裹住哪怕是浮动的元素</p>
 
-<h2 id="history">History</h2>
+<h2 id="bfcbfc"><code class="highlighter-rouge">BFC是什么？如何形成BFC，有什么作用?</code></h2>
 
-<!--<h2 id="history"> History </h2>-->
+<p><code class="highlighter-rouge">A:</code></p>
 
 <blockquote>
-  <p>此段落参考自玉伯的 <a href="https://github.com/seajs/seajs/issues/588">前端模块化开发那点历史</a></p>
+  <p>Boxes in the normal flow belong to a formatting context, which may be block or inline, but not both simultaneously. Block-level boxes participate in a block formatting context. Inline-level boxes participate in an inline formatting context.</p>
 </blockquote>
 
-<p>09-10 年间，CommonJS（那时还叫 ServerJS） 社区推出 <a href="http://wiki.commonjs.org/wiki/Modules">Modules/1.0</a> 规范，并且在 Node.js 等环境下取得了很不错的实践。</p>
-
-<p>09年下半年这帮充满干劲的小伙子们想把 ServerJS 的成功经验进一步推广到浏览器端，于是将社区改名叫 CommonJS，同时激烈争论 Modules 的下一版规范。分歧和冲突由此诞生，逐步形成了三大流派：</p>
-
-<ol>
-  <li><strong>Modules/1.x</strong> 流派。这个观点觉得 1.x 规范已经够用，只要移植到浏览器端就好。要做的是新增 <a href="http://wiki.commonjs.org/wiki/Modules/Transport">Modules/Transport</a> 规范，即在浏览器上运行前，先通过转换工具将模块转换为符合 Transport 规范的代码。主流代表是服务端的开发人员。现在值得关注的有两个实现：越来越火的 component 和走在前沿的 es6 module transpiler。</li>
-  <li><strong>Modules/Async</strong> 流派。这个观点觉得浏览器有自身的特征，不应该直接用 Modules/1.x 规范。这个观点下的典型代表是 <a href="http://wiki.commonjs.org/wiki/Modules/AsynchronousDefinition">AMD</a> 规范及其实现 <a href="http://requirejs.org/">RequireJS</a>。这个稍后再细说。</li>
-  <li><strong>Modules/2.0</strong> 流派。这个观点觉得浏览器有自身的特征，不应该直接用 Modules/1.x 规范，但应该尽可能与 Modules/1.x 规范保持一致。这个观点下的典型代表是 BravoJS 和 FlyScript 的作者。BravoJS 作者对 CommonJS 的社区的贡献很大，这份 Modules/2.0-draft 规范花了很多心思。FlyScript 的作者提出了 Modules/Wrappings 规范，这规范是 CMD 规范的前身。可惜的是 BravoJS 太学院派，FlyScript 后来做了自我阉割，将整个网站（flyscript.org）下线了。这个观点在本文中的典型代表就是 SeaJS 和 CMD 了</li>
-</ol>
-
-<p>补一嘴：阿里 KISSY 的 KMD 其实跟 AMD 非常类似，只是用 <code class="highlighter-rouge">add</code>和<code class="highlighter-rouge">use</code> 两个源自于 YUI Modules 的函数名替换了 <code class="highlighter-rouge">define</code> 和 <code class="highlighter-rouge">require</code> ，但其原理更接近 RequireJS ，与 YUI Modules 的 <code class="highlighter-rouge">Y</code> 沙箱 Attach 机制并不相同</p>
-
-<h2 id="requirejs--amd">RequireJS &amp; AMD</h2>
-
-<p><a href="http://wiki.commonjs.org/wiki/Modules/AsynchronousDefinition">AMD (Async Module Definition)</a> 是 RequireJS 在推广过程中对模块定义的规范化产出。</p>
-
-<blockquote>
-  <p>RequireJS is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments</p>
-</blockquote>
-
-<p>RequireJS 主要解决的还是 CommonJS 同步加载脚本不适合浏览器 这个问题：</p>
-
-<p>```
-//CommonJS</p>
-
-<p>var Employee = require(“types/Employee”);</p>
-
-<p>function Programmer (){
-    //do something
-}</p>
-
-<p>Programmer.prototype = new Employee();</p>
-
-<p>//如果 require call 是异步的，那么肯定 error
-//因为在执行这句前 Employee 模块肯定来不及加载进来 
-```
-&gt; As the comment indicates above, if require() is async, this code will not work. However, loading scripts synchronously in the browser kills performance. So, what to do?</p>
-
-<p>所以我们需要 <strong>Function Wrapping</strong> 来获取依赖并且提前通过 script tag 提前加载进来</p>
-
-<p>```
-//AMD Wrapper</p>
-
-<p>define(
-    [types/Employee],    //依赖
-    function(Employee){  //这个回调会在所有依赖都被加载后才执行</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>    function Programmer(){
-        //do something
-    };
-
-    Programmer.prototype = new Employee();
-    return Programmer;  //return Constructor
-} ) ```
-</code></pre>
-</div>
-
-<p>当依赖模块非常多时，这种<strong>依赖前置</strong>的写法会显得有点奇怪，所以 AMD 给了一个语法糖， <strong>simplified CommonJS wrapping</strong>，借鉴了 CommonJS 的 require 就近风格，也更方便对 CommonJS 模块的兼容：</p>
-
-<p>```
-define(function (require) {
-    var dependency1 = require(‘dependency1’),
-        dependency2 = require(‘dependency2’);</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>return function () {}; }); ``` The AMD loader will parse out the `require('')` calls by using `Function.prototype.toString()`, then internally convert the above define call into this:
-</code></pre>
-</div>
-
-<p>```
-define([‘require’, ‘dependency1’, ‘dependency2’], function (require) {
-    var dependency1 = require(‘dependency1’),
-        dependency2 = require(‘dependency2’);</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>return function () {}; }); ```
-</code></pre>
-</div>
-
-<p>出于<code class="highlighter-rouge">Function.prototype.toString()</code>兼容性和性能的考虑，最好的做法还是做一次 <strong>optimized build</strong></p>
-
-<p>AMD 和 CommonJS 的核心争议如下：</p>
-
-<h4 id="section">1. <strong>执行时机</strong></h4>
-
-<p>Modules/1.0:</p>
-
-<p><code class="highlighter-rouge">
-var a = require("./a") // 执行到此时，a.js 才同步下载并执行
-</code></p>
-
-<p>AMD: （使用 require 的语法糖时）</p>
-
-<p><code class="highlighter-rouge">
-define(["require"],function(require)){
-    // 在这里，a.js 已经下载并且执行好了
-    // 使用 require() 并不是 AMD 的推荐写法
-    var a = require("./a") // 此处仅仅是取模块 a 的 exports
-})
-</code></p>
-
-<p>AMD 里提前下载 a.js 是出于对浏览器环境的考虑，只能采取异步下载，这个社区都认可（Sea.js 也是这么做的）</p>
-
-<p>但是 AMD 的执行是 Early Executing，而 Modules/1.0 是第一次 require 时才执行。这个差异很多人不能接受，包括持 Modules/2.0 观点的人也不能接受。</p>
-
-<h4 id="section-1">2. <strong>书写风格</strong></h4>
-
-<p>AMD 推荐的风格并不使用<code class="highlighter-rouge">require</code>，而是通过参数传入，破坏了<strong>依赖就近</strong>：</p>
-
-<p>```
-define([“a”, “b”, “c”],function(a, b, c){
-    // 提前申明了并初始化了所有模块</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>true || b.foo(); //即便根本没用到模块 b，但 b 还是提前执行了。 }) ```
-</code></pre>
-</div>
-
-<p>不过，在笔者看来，风格喜好因人而异，主要还是<strong>预执行</strong>和<strong>懒执行</strong>的差异。</p>
-
-<p>另外，require 2.0 也开始思考异步处理<strong>软依赖</strong>（区别于一定需要的<strong>硬依赖</strong>）的问题，提出了这样的方案：</p>
-
-<p><code class="highlighter-rouge">
-// 函数体内：
-if(status){
-    async(['a'],function(a){
-        a.doSomething()
-    })
-}
-</code></p>
-
-<h2 id="seajs--cmd">SeaJS &amp; CMD</h2>
-
-<p>CMD (Common Module Definition) 是 <a href="http://seajs.org/docs/">SeaJS</a> 在推广过程中对模块定义的规范化产出，是 Modules/2.0 流派的支持者，因此 SeaJS 的模块写法尽可能与 Modules/1.x 规范保持一致。</p>
-
-<p>不过目前国外的该流派都死得差不多了，RequireJS 目前成为浏览器端模块的事实标准，国内最有名气的就是玉伯的 Sea.js ，不过对国际的推广力度不够。</p>
+<p>在w3c规范中这样说道，每个文档流中的盒子必定属于一个格式化环境，要么块级格式化环境，要么行内格式化环境，其中，块级元素在块级格式化环境中，行内元素在行内格式化环境中
+其实HTML根元素html就是一个默认的块级格式化上下文，因为当页面的内容在视窗显示不下的时候，会出现滚动条，意味着html根元素的overflow属性的值为auto
+那么块级格式化上下文是什么呢，通俗来说，就是一个独立的布局环境，外面的元素不能影响里面的元素，里面的元素也不能影响外面的元素，那么BFC的布局规则是怎样的呢</p>
 
 <ul>
-  <li>CMD Specification
-    <ul>
-      <li><a href="https://github.com/cmdjs/specification/blob/master/draft/module.md">English (CMDJS-repo)</a></li>
-      <li><a href="https://github.com/seajs/seajs/issues/242">Chinese (SeaJS-repo)</a></li>
-    </ul>
+  <li>
+    <p>BFC布局规则</p>
+
+    <ol>
+      <li>内部的BOX会在垂直方向，一个接一个地放置</li>
+      <li>BOX垂直方向的距离由margin决定。属于同一个BFC的两个相邻的BOX的margin会发生重叠</li>
+      <li>每个元素的margin-box的左边与包含块的border-box的左边相接触（对于从左往右的格式，反之相反）。及时存在浮动也是如此</li>
+      <li>BFC的区域不会与float box重叠</li>
+      <li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此</li>
+      <li>计算BFC高度时，浮动元素也参与计算</li>
+    </ol>
+  </li>
+  <li>
+    <p>如何触发BFC</p>
   </li>
 </ul>
 
-<p>CMD 主要有 define, factory, require, export 这么几个东西</p>
+<blockquote>
+  <p>Floats, absolutely positioned elements, block containers (such as inline-blocks, table-cells, and table-captions) that are not block boxes, and block boxes with ‘overflow’ other than ‘visible’ (except when that value has been propagated to the viewport) establish new block formatting contexts for their contents.</p>
+</blockquote>
+
+<p>浮动元素，绝对定位元素，块级容器但是不是块级盒子（例如：display的值为inline-block、table-cell、table-caption），块级元素的overflow属性的值不为visible</p>
 
 <ul>
-  <li>define <code class="highlighter-rouge">define(id?, deps?, factory)</code></li>
-  <li>factory <code class="highlighter-rouge">factory(require, exports, module)</code></li>
-  <li>require <code class="highlighter-rouge">require(id)</code></li>
-  <li>exports <code class="highlighter-rouge">Object</code></li>
-</ul>
+  <li>
+    <p>BFC的作用</p>
 
-<p>CMD 推荐的 Code Style 是使用 CommonJS 风格的 <code class="highlighter-rouge">require</code>：</p>
-
-<ul>
-  <li>这个 require 实际上是一个全局函数，用于加载模块，这里实际就是传入而已</li>
-</ul>
-
-<p>```
-define(function(require, exports) {</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// 获取模块 a 的接口
-var a = require('./a');
-// 调用模块 a 的方法
-a.doSomething();
-  
-// 对外提供 foo 属性
-exports.foo = 'bar';
-// 对外提供 doSomething 方法
-exports.doSomething = function() {};
-</code></pre>
-</div>
-
-<p>});
-```</p>
-
-<p>但是你也可以使用 AMD 风格，或者使用 return 来进行模块暴露</p>
-
-<p>```
-define(‘hello’, [‘jquery’], function(require, exports, module) {</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// 模块代码...
-  
-// 直接通过 return 暴露接口
-return {
-    foo: 'bar',
-    doSomething: function() {}
-};
-</code></pre>
-</div>
-
-<p>});
-```</p>
-
-<p>Sea.js 借鉴了 RequireJS 的不少东西，比如将 FlyScript 中的 module.declare 改名为 define 等。Sea.js 更多地来自 Modules/2.0 的观点，但尽可能去掉了学院派的东西，加入了不少实战派的理念。</p>
-
-<h2 id="amd-vs-cmd">AMD vs CMD</h2>
-
-<p><strong>虽然两者目前都兼容各种风格，但其底层原理并不相同，从其分别推荐的写法就可以看出两者背后原理的不同：</strong></p>
-
-<ol>
-  <li>对于依赖的模块，AMD 是<strong>提前执行</strong>，CMD 是<strong>懒执行</strong>。（都是先加载）
-    <ul>
-      <li>CMD 推崇<strong>依赖就近</strong>，AMD 推崇<strong>依赖前置</strong>。</li>
-    </ul>
+    <ol>
+      <li>清除内部浮动</li>
+      <li>自适应两栏布局</li>
+      <li>阻止垂直外边距合并</li>
+    </ol>
   </li>
-</ol>
+</ul>
 
-<p>看代码：</p>
+<p>BFC的用法都体现了规则的第5条：</p>
 
-<p>```
-// AMD 默认推荐</p>
+<blockquote>
+  <p>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此</p>
+</blockquote>
 
-<p>define([’./a’, ‘./b’], function(a, b) {  // 依赖前置，提前执行</p>
+<p>因为BFC内部和外部互不影响，所以当外部元素浮动时，BFC通过自身变窄不与浮动元素重叠来消除的影响，而当内部元素浮动时，为了不影响外部元素，所以把浮动元素的高度计算在内，阻止margin合并也是为了内部元素不与外部元素互相影响</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>a.doSomething()
-b.doSomething()
+<h2 id="section-1">代码</h2>
+
+<h3 id="section-2"><code class="highlighter-rouge">实现如下效果的导航条</code></h3>
+
+<p><img src="/img/a777a42b7fc6a7c3b4a8ff0afa88fb76f8cb75d4.gif" alt="" /></p>
+
+<p>```html
+    <!--
+        @authors Clover (clover_cui@163.com)
+        @date    2017-03-28 17:03:08  
+    -->
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+        &lt;head&gt;
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>导航</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    &lt;!--css引入区--&gt;
+    &lt;link href="" rel="stylesheet"&gt;
+    &lt;!--js引入区--&gt;
+    &lt;script type="text/javascript" src=""&gt;&lt;/script&gt;
+    &lt;style type="text/css"&gt;
+        body, ul, li, p, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: 14px/1.5 "Microsoft YaHei","微软雅黑",sans-serif;
+            color: #656565;
+        }
+        ul{
+            list-style: none;
+        }
+        .contain{
+            margin:20px auto;
+            height: 300px;
+            width:900px;
+            border: 1px solid #333;
+        }
+        .head{
+            height:50px;
+            background-color: #ccc;
+        }
+        .nav a{
+            color: #656565;
+            text-decoration: none;
+            display: block;
+            padding: 0 20px;
+            line-height: 50px;
+        }
+
+        .nav&gt;li{ 
+            margin:0 20px;              
+            float: left;
+            position: relative;
+        }
+        .nav li:hover{
+            background-color: #333;
+
+        }
+       .nav li:hover&gt;a{
+          color:#fff;
+       }
+
+        .nav ul{
+            display: none;
+            /*border: 1px solid #ccc;
+            border-top:0px;*/
+            position: absolute;
+            left:0;
+            top:100%;
+            background-color: #eee;
+        }
+         .nav li:hover ul{
+            display:block;
+
+         }
+
+
+        .clear:after{
+            content:'';
+            display:block;
+            clear: both;
+        }
+    &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="contain"&gt;
+        &lt;div style="text-align: center;"&gt;&lt;h1&gt;___导航栏演示____&lt;h1&gt;&lt;/div&gt;
+            &lt;div class="head"&gt;
+                &lt;ul class="nav clear"&gt;
+                    &lt;li&gt;
+                        &lt;a href="#"&gt;前端&lt;/a&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="#"&gt;JavascriptJavascript&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href="#"&gt;服务端&lt;/a&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="#"&gt;PHP&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="#"&gt;Node&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="#"&gt;Java&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href="#"&gt;前端工具&lt;/a&gt;
+                         &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="#"&gt;Sublime&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="#"&gt;Git&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="#"&gt;Webstorm&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href="#"&gt;HTML&lt;/a&gt;
+                         &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="#"&gt;Javascript&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href="#"&gt;NODE&lt;/a&gt;
+                         &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="#"&gt;Javascript&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt; ```
 </code></pre>
 </div>
 
-<p>})</p>
+<p><a href="/demo/navdemo.html">导航条示例</a></p>
 
-<p>```</p>
+<h3 id="bfc"><code class="highlighter-rouge">利用BFC的原理实现两栏布局</code></h3>
 
-<p>```
-// CMD</p>
+<p>```html
+    <!--
+        @authors Clover (clover_cui@163.com)
+        @date    2017-03-29 14:45:17  
+    -->
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+        &lt;head&gt;
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>两栏布局</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" /></p>
 
-<p>define(function(require, exports, module) {</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>    &lt;!--css引入区--&gt;
+    &lt;link href="" rel="stylesheet"&gt;
+    &lt;!--js引入区--&gt;
+    &lt;script type="text/javascript" src=""&gt;&lt;/script&gt;
+    &lt;style&gt;
 
-<div class="highlighter-rouge"><pre class="highlight"><code>var a = require('./a')
-a.doSomething()
-  
-var b = require('./b') // 依赖就近，延迟执行
-b.doSomething()  }) ```
+    html,body,p,h1,h2{
+            margin:0;
+            padding:0;
+        }
+        #header{
+            height:40px;
+            background: red;
+        }
+        #content .aside{
+            background: blue;
+            min-height:100px;
+            width: 200px;
+            float:left;
+        }
+        #content .main{
+            /*margin方法*/
+            /*margin-left:200px;*/
+            /*bfc*/
+            overflow: auto;
+            background: pink;
+            min-height:500px;
+        }
+        #footer{
+            height:40px;
+            background: green;
+        }
+       .clear{
+            content: "";
+            display: block;
+            clear:both;
+       }
+
+
+    &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id="header"&gt;
+        头部
+        &lt;/div&gt;
+        &lt;div id="content"&gt;
+            &lt;div class="aside"&gt;我是左边栏&lt;/div&gt;
+            &lt;div class="main"&gt;我是 主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是 主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id="footer"&gt;
+        尾部
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt; ```
 </code></pre>
 </div>
 
-<h2 id="webpack">WebPack</h2>
-
-<p><strong><a href="/2015/07/09/js-module-7day/">请移步《JavaScript 模块化七日谈》</a></strong></p>
-
+<p><a href="/demo/两栏布局.html">两栏布局</a></p>
 
 
                 <hr>
@@ -502,17 +511,17 @@ b.doSomething()  }) ```
                 </style>
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="/2015/05/25/js-module-loader"
-                    data-title="JavaScript Module Loader"
-                    data-url="http://clover.htmhub.com/2015/05/25/js-module-loader/"
-                    data-images="http://clover.htmhub.com/img/post-bg-js-module.jpg"
-                    data-content="Foreword
+                    data-thread-key="/2017/03/28/inline-block-bfc-margin merging"
+                    data-title="inline-block、BFC、边距合并"
+                    data-url="http://clover.htmhub.com/2017/03/28/inline-block-bfc-margin-merging/"
+                    data-images="http://clover.htmhub.com/img/education_large_2x.jpg"
+                    data-content="inline-block、BFC、边距合并
 
+在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例
 
-  Here comes Module!
+A
 
-
-随着网站逐渐变成「互联网应用程序」，嵌入网页的 JavaScript 代码越来越庞大，... | 克洛弗的博客 | Clover Blog " >
+外边距... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -532,19 +541,12 @@ b.doSomething()  }) ```
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2015/05/11/see-u-ali/" data-toggle="tooltip" data-placement="top" title="See you, Alibaba ">
+                        <a href="/2017/03/28/float-position/" data-toggle="tooltip" data-placement="top" title="浮动-定位">
                         Previous<br>
-                        <span>See you, Alibaba </span>
+                        <span>浮动-定位</span>
                         </a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/2015/06/15/alitrip-strategy/" data-toggle="tooltip" data-placement="top" title="聊聊「阿里旅行 · 去啊」—— 行业与战略 ">
-                        Next<br>
-                        <span>聊聊「阿里旅行 · 去啊」—— 行业与战略 </span>
-                        </a>
-                    </li>
                     
                 </ul>
 
@@ -553,9 +555,9 @@ b.doSomething()  }) ```
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="/2015/05/25/js-module-loader"
-                        data-title="JavaScript Module Loader"
-                        data-url="http://clover.htmhub.com/2015/05/25/js-module-loader/" >
+                        data-thread-key="/2017/03/28/inline-block-bfc-margin merging"
+                        data-title="inline-block、BFC、边距合并"
+                        data-url="http://clover.htmhub.com/2017/03/28/inline-block-bfc-margin-merging/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->

@@ -1,0 +1,67 @@
+<!--
+    @authors Clover (clover_cui@163.com)
+    @date    2017-03-29 14:45:17  
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>两栏布局</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <!--css引入区-->
+    <link href="" rel="stylesheet">
+    <!--js引入区-->
+    <script type="text/javascript" src=""></script>
+    <style>
+
+    html,body,p,h1,h2{
+            margin:0;
+            padding:0;
+        }
+        #header{
+            height:40px;
+            background: red;
+        }
+        #content .aside{
+            background: blue;
+            min-height:100px;
+            width: 200px;
+            float:left;
+        }
+        #content .main{
+            /*margin方法*/
+            /*margin-left:200px;*/
+            /*bfc*/
+            overflow: auto;
+            background: pink;
+            min-height:500px;
+        }
+        #footer{
+            height:40px;
+            background: green;
+        }
+       .clear{
+            content: "";
+            display: block;
+            clear:both;
+       }
+
+
+    </style>
+    </head>
+    <body>
+        <div id="header">
+        头部
+        </div>
+        <div id="content">
+            <div class="aside">我是左边栏</div>
+            <div class="main">我是 主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是 主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域我是主体区域</div>
+        </div>
+        <div id="footer">
+        尾部
+        </div>
+    </body>
+</html>
