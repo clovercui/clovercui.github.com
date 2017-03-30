@@ -30,13 +30,42 @@ tags:
 [参考](http://js.jirengu.com/fag/2/edit)
 
 <style>
+
 .demo{
 height:500px;
 border:1px solid #38b1da;
 }
+.demo ul{
+list-style:none;
+}
+
+.main{
+width:600px;
+background:#ccc;
+}
+
+.ulnav li{
+	float:left;
+	width:192px;
+    margin-left:12px;
+    height:100px;
+}
+
 
 </style>
 
 <div class="demo">
-
+	<div class="content">
+    	<div class="main">
+        	<ul class="ulnav">
+            	<li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+        </div>
+    
+    </div>
 </div>
