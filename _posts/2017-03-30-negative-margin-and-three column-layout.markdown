@@ -38,17 +38,27 @@ border:1px solid #38b1da;
 .demo ul{
 list-style:none;
 }
-
+.content{
+	width:600px;
+    margin:0 auto;
+}
 .main{
 width:600px;
 background:#ccc;
 }
+
+.clear:after{  /*清除浮动，让父亲撑开高度*/
+      content: '';
+      display: block;
+      clear: both;
+    }
 
 .ulnav li{
 	float:left;
 	width:192px;
     margin-left:12px;
     height:100px;
+    margin-top: 10px;
 }
 
 
@@ -57,7 +67,7 @@ background:#ccc;
 <div class="demo">
 	<div class="content">
     	<div class="main">
-        	<ul class="ulnav">
+        	<ul class="ulnav clear">
             	<li>1</li>
                 <li>2</li>
                 <li>3</li>
