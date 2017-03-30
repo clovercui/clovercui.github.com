@@ -5,9 +5,54 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 29 Mar 2017 18:00:37 +0800</pubDate>
-    <lastBuildDate>Wed, 29 Mar 2017 18:00:37 +0800</lastBuildDate>
+    <pubDate>Thu, 30 Mar 2017 15:58:29 +0800</pubDate>
+    <lastBuildDate>Thu, 30 Mar 2017 15:58:29 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>负边距、三栏布局</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;负边距、三栏布局&lt;/h1&gt;
+
+&lt;h2 id=&quot;position-relative&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;负边距在让元素产生偏移时和position: relative有什么区别?&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&quot;margin-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;使用负 margin 形成三栏布局有什么条件?&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;圣杯布局的原理是怎样的? 简述实现圣杯布局的步骤&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;双飞翼布局的原理? 实现步骤?&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;代码&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;用浮动、负边距实现如下效果&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://js.jirengu.com/fag/2/edit&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+
+&lt;style&gt;
+.demo{
+height:500px;
+border:1px solid #38b1da;
+}
+
+&lt;/style&gt;
+
+&lt;div class=&quot;demo&quot;&gt;
+
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 30 Mar 2017 00:00:00 +0800</pubDate>
+        <link>http://clover.htmhub.com/2017/03/30/negative-margin-and-three-column-layout/</link>
+        <guid isPermaLink="true">http://clover.htmhub.com/2017/03/30/negative-margin-and-three-column-layout/</guid>
+        
+        <category>Clover</category>
+        
+        <category>CSS</category>
+        
+        <category>HTML</category>
+        
+        <category>前端</category>
+        
+        
+      </item>
     
       <item>
         <title>inline-block、BFC、边距合并</title>
@@ -3388,176 +3433,6 @@ div {color: #666;}
         <pubDate>Mon, 06 Mar 2017 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2017/03/06/html-2/</link>
         <guid isPermaLink="true">http://clover.htmhub.com/2017/03/06/html-2/</guid>
-        
-        <category>Clover</category>
-        
-        <category>前端</category>
-        
-        <category>HTML</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Html基础-1</title>
-        <description>&lt;h1 id=&quot;html-1&quot;&gt;HTML-1&lt;/h1&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;网页乱码的问题是如何产生的？怎样解决?&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;造成html网页乱码原因主要是html源代码内中文字内容与html编码不同造成。解决办法：保持文件的编写字符集和网页设置的字符集保持一致 如使用UTF-8编写的文件，网页头设置为&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;ccceee-333&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;颜色有几种写法， 红色、 绿色、蓝色、白色、黑色如何表示？ 透明黑色如何表示？#ccc的颜色#eee的颜色？ #333的颜色？&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;直接书写英文名字&lt;/code&gt;。这样的好处是直观。但是没有能很好的控制颜色&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rgb(0,0,0)&lt;/code&gt;中间的三个 数字分别是0-255.分别代表红  绿  蓝三个颜色。数字数字越大，颜色越深&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#FCFCFC&lt;/code&gt; 这样是用十六进制来表示颜色。跟上面rgb差不多。两位英文代表一个原色。分别是红绿蓝。这种写法有缩写。比如#FFFFFF可以等于成#FFF，还有#CCFFCC,可以写成#CFC。这就是颜色的写法&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rgba（0，0，0，0）&lt;/code&gt;前面三个数字跟rgb一样的，最后一个是透明度的控制。取值范围是0-1.一位小数。越接近零。越透明。    &lt;code class=&quot;highlighter-rouge&quot;&gt;注意的是。这种有兼容问题。是CSS3的属性&lt;/code&gt;。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;红色&lt;code class=&quot;highlighter-rouge&quot;&gt;red&lt;/code&gt;、 绿色&lt;code class=&quot;highlighter-rouge&quot;&gt;green&lt;/code&gt;、蓝色&lt;code class=&quot;highlighter-rouge&quot;&gt;blue&lt;/code&gt;、白色&lt;code class=&quot;highlighter-rouge&quot;&gt;white&lt;/code&gt;、黑色&lt;code class=&quot;highlighter-rouge&quot;&gt;black&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;透明黑色 &lt;code class=&quot;highlighter-rouge&quot;&gt;rgba(0,0,0,0.8)&lt;/code&gt; ,#ccc &lt;code class=&quot;highlighter-rouge&quot;&gt;深灰色&lt;/code&gt; #eee &lt;code class=&quot;highlighter-rouge&quot;&gt;浅灰色&lt;/code&gt; #333 &lt;code class=&quot;highlighter-rouge&quot;&gt;浅黑色&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;doctype-html-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;!doctype html&amp;gt; 的作用是什么&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;告知浏览器以Html5的标准来解析页面，Html5相对宽松，没有严格模式和混杂模式之分。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;严格模式和混杂模式指什么&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&amp;lt;!DOCTYPE&amp;gt;声明叫做文件类型定义（DTD），声明的作用为了告诉浏览器该文件的类型。让浏览器解析器知道应该用哪个规范来解析文档。&amp;lt;!DOCTYPE&amp;gt;声明必须在 HTML 文档的第一行，这并不是一个 HTML 标签。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;严格模式：&lt;/code&gt;又称标准模式，是指浏览器按照 W3C 标准解析代码.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;混杂模式：&lt;/code&gt;又称怪异模式或兼容模式，是指浏览器用自己的方式解析代码。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;如果文档包含严格的 DOCTYPE ，那么它一般以严格模式呈现。（严格 DTD ——严格模式）&lt;/li&gt;
-  &lt;li&gt;包含过渡 DTD 和 URI 的 DOCTYPE ，也以严格模式呈现，但有过渡 DTD 而没有 URI （统一资源标识符，就是声明最后的地址）会导致页面以混杂模式呈现。（有 URI 的过渡 DTD ——严格模式；没有 URI 的过渡 DTD ——混杂模式）&lt;/li&gt;
-  &lt;li&gt;DOCTYPE 不存在或形式不正确会导致文档以混杂模式呈现。（DTD不存在或者格式不正确——混杂模式）&lt;/li&gt;
-  &lt;li&gt;HTML5 没有 DTD ，因此也就没有严格模式与混杂模式的区别，HTML5 有相对宽松的语法，实现时，已经尽可能大的实现了向后兼容。（ HTML5 没有严格和混杂之分）&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;meta-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;meta 有什么作用，常见的值有哪些&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;meta标签共有两个属性，它们分别是&lt;code class=&quot;highlighter-rouge&quot;&gt;http-equiv&lt;/code&gt;属性和&lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt;属性，不同的属性又有不同的参数值，这些不同的参数值就实现了不同的网页功能。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;name属性&lt;/code&gt;
-name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。
-  meta标签的name属性语法格式是：&lt;code class=&quot;highlighter-rouge&quot;&gt;＜meta name=&quot;参数&quot; content=&quot;具体的参数值&quot;＞&lt;/code&gt; 。
-  其中name属性主要有以下几种参数：&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Keywords(关键字)&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-
-  	说明：keywords用来告诉搜索引擎你网页的关键字是什么
-
-  	举例：＜meta name =”keywords” content=”science,education,culture,politics,ecnomics，relationships, entertaiment, human”＞
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;description(网站内容描述)&lt;/code&gt;&lt;/p&gt;
-
-        &lt;p&gt;说明：description用来告诉搜索引擎你的网站主要内容。&lt;/p&gt;
-
-        &lt;p&gt;举例：＜meta name=”description” content=”This page is about the meaning of science, education,culture.”＞&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;robots(机器人向导)&lt;/code&gt;
-　　
-  说明：robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all。&lt;/p&gt;
-
-        &lt;p&gt;举例：＜meta name=”robots” content=”none”＞&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;author(作者)&lt;/code&gt;&lt;/p&gt;
-
-        &lt;p&gt;说明：标注网页的作者&lt;/p&gt;
-
-        &lt;p&gt;举例：＜meta name=”author” content=”root,root@21cn.com”＞&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http-equiv属性&lt;/code&gt;
-http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值.
-  meta标签的http-equiv属性语法格式是：＜meta http-equiv=”参数” content=”参数变量值”＞ ；其中http-equiv属性主要有以下几种参数&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Expires(期限)&lt;/code&gt;&lt;/p&gt;
-
-        &lt;p&gt;说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。&lt;/p&gt;
-
-        &lt;p&gt;用法：＜meta http-equiv=”expires” content=”Fri, 12 Jan 2001 18:18:18 GMT”＞&lt;/p&gt;
-
-        &lt;p&gt;注意：必须使用GMT的时间格式。&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Pragma(cache模式)&lt;/code&gt;&lt;/p&gt;
-
-        &lt;p&gt;说明：禁止浏览器从本地计算机的缓存中访问页面内容。&lt;/p&gt;
-
-        &lt;p&gt;用法：＜meta http-equiv=”Pragma” content=”no-cache”＞&lt;/p&gt;
-
-        &lt;p&gt;注意：这样设定，访问者将无法脱机浏览。&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Refresh(刷新)&lt;/code&gt;&lt;/p&gt;
-
-        &lt;p&gt;说明：自动刷新并指向新页面。&lt;/p&gt;
-
-        &lt;p&gt;用法：＜meta http-equiv=”Refresh” content=”2；URL=http://www.root.net”＞&lt;/p&gt;
-
-        &lt;p&gt;注意：其中的2是指停留2秒钟后自动刷新到URL网址。&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Set-Cookie(cookie设定)&lt;/code&gt;&lt;/p&gt;
-
-        &lt;p&gt;说明：如果网页过期，那么存盘的cookie将被删除。&lt;/p&gt;
-
-        &lt;p&gt;用法：＜meta http-equiv=”Set-Cookie” content=”cookievalue=xxx; expires=Friday, 12-Jan-2001 18:18:18 GMT； path=/”＞&lt;/p&gt;
-
-        &lt;p&gt;注意：必须使用GMT的时间格式。&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Window-target(显示窗口的设定)&lt;/code&gt;&lt;/p&gt;
-
-        &lt;p&gt;说明：强制页面在当前窗口以独立页面显示。&lt;/p&gt;
-
-        &lt;p&gt;用法：＜meta http-equiv=”Window-target” content=”_top”＞&lt;/p&gt;
-
-        &lt;p&gt;注意：用来防止别人在框架里调用自己的页面。&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;content-Type(显示字符集的设定)&lt;/code&gt;&lt;/p&gt;
-
-        &lt;p&gt;说明：设定页面使用的字符集。&lt;/p&gt;
-
-        &lt;p&gt;用法：＜meta http-equiv=”content-Type” content=”text/html; charset=gb2312”＞&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;meta-http-equivx-ua-compatible-contentieedgechrome1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;meta http-equiv=&quot;X-UA-compatible&quot; content=&quot;IE=edge,chrome=1&quot;&amp;gt;有什么作用&lt;/code&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;这个属性主要是设置浏览器优先使用什么模式来渲染页面的.
-以上代码IE=edge告诉IE使用最新的edge引擎渲染网页，chrome=1则可以激活Chrome Frame&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;常见的浏览器有哪些，什么内核&lt;/code&gt;&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;Trident&lt;/code&gt;的是internet explorer，国产的绝大部分浏览器。Trident是就是ie内核&lt;/li&gt;
-  &lt;li&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;Gecko&lt;/code&gt;的是Mozilla Firefox，使用 Gecko 内核的浏览器也有不少，如 Netscape MozillaSuite/SeaMonkey 等&lt;/li&gt;
-  &lt;li&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;Presto&lt;/code&gt;的是opera，这是目前公认网页浏览速度最快的浏览器内核&lt;/li&gt;
-  &lt;li&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;WebKit&lt;/code&gt;的有苹果的safari，谷歌的chrome，还有国产的大部分双核浏览器其中一核就是WebKit&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Wed, 01 Mar 2017 00:00:00 +0800</pubDate>
-        <link>http://clover.htmhub.com/2017/03/01/html-1/</link>
-        <guid isPermaLink="true">http://clover.htmhub.com/2017/03/01/html-1/</guid>
         
         <category>Clover</category>
         
