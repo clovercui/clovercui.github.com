@@ -43,7 +43,7 @@ margin:0px;
 }
 .content{
 	width:600px;
-    margin:0 auto;
+    margin:120px auto;
 }
 .main{
 width:600px;
