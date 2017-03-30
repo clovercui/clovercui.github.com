@@ -59,6 +59,7 @@ background:#ccc;
     margin-left:12px;
     height:100px;
     margin-top: 10px;
+    background:green;
 }
 
 
