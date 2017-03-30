@@ -38,6 +38,8 @@ overflow:auto;
 }
 .demo ul{
 list-style:none;
+padding:0px;
+margin:0px;
 }
 .content{
 	width:600px;
@@ -63,7 +65,7 @@ background:#ccc;
     background:green;
 }
 .ulnav{
-    margin-left: -52px;
+    margin-left: -12px;
     margin-bottom: 10px;
 }
 
