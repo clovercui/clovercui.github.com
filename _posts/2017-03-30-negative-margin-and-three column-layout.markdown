@@ -34,6 +34,7 @@ tags:
 .demo{
 height:500px;
 border:1px solid #38b1da;
+overflow:auto;
 }
 .demo ul{
 list-style:none;
@@ -61,7 +62,10 @@ background:#ccc;
     margin-top: 10px;
     background:green;
 }
-
+.ulnav{
+    margin-left: -52px;
+    margin-bottom: 10px;
+}
 
 </style>
 
