@@ -66,7 +66,7 @@ background:#ccc;
 }
 .ulnav{
     margin-left: -12px;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 </style>
