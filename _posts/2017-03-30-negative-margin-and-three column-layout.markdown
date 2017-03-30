@@ -36,7 +36,7 @@ height:500px;
 border:1px solid #38b1da;
 overflow:auto;
 }
-.demo ul{
+ul{
 list-style:none;
 padding:0px;
 margin:0px;
