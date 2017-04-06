@@ -199,7 +199,29 @@
 
 <h2 id="position-relative"><code class="highlighter-rouge">负边距在让元素产生偏移时和position: relative有什么区别?</code></h2>
 
+<p><code class="highlighter-rouge">A:</code></p>
+
+<ul>
+  <li>position:relative,元素偏移后脱离的文档流，但元素原来的位置仍然占据文档流中，不会影响之前的文档流，其之后的元素仍然会认为定位元素在文档流中而跟随在后面。</li>
+</ul>
+
+<p><img src="/img/2155778-f3484ab45d48a5b5.png" alt="" /></p>
+
+<ul>
+  <li>负margin：元素偏移后并没有脱离文档流，位置变化影响了文档流，之后的元素按文档流的排列特征也会跟着偏移
+<img src="/img/2155778-d95972ee88a29c11.png" alt="" /></li>
+</ul>
+
 <h2 id="margin-"><code class="highlighter-rouge">使用负 margin 形成三栏布局有什么条件?</code></h2>
+
+<p><code class="highlighter-rouge">A:</code></p>
+
+<ol>
+  <li>必须设置浮动</li>
+  <li>父容器下有三个块级元素</li>
+  <li>中间的子元素宽度设置为父容器宽度的100%</li>
+  <li>左右两栏的子元素设置负边距</li>
+</ol>
 
 <h2 id="section-1"><code class="highlighter-rouge">圣杯布局的原理是怎样的? 简述实现圣杯布局的步骤</code></h2>
 
@@ -210,6 +232,71 @@
 <h3 id="section-4"><code class="highlighter-rouge">用浮动、负边距实现如下效果</code></h3>
 
 <p><a href="http://js.jirengu.com/fag/2/edit">参考</a></p>
+
+<p><code class="highlighter-rouge">代码</code></p>
+
+<p>```html
+    <style></style></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.demo{
+height:500px;
+border:1px solid #38b1da;
+overflow:auto;
+}
+ul{
+list-style:none;
+padding:0px;
+margin:0px;
+}
+.content{
+    width:600px;
+    margin:120px auto;
+}
+.main{
+width:600px;
+background:#ccc;
+}
+
+.clear:after{  /*清除浮动，让父亲撑开高度*/
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+.ulnav li{
+    float:left;
+    width:192px;
+    margin-left:12px;
+    height:100px;
+    margin-top: 10px;
+    background:green;
+}
+.ulnav{
+    margin-left: -12px;
+    padding-bottom: 10px;
+}
+
+&lt;/style&gt;
+
+&lt;div class="demo"&gt;
+    &lt;div class="content"&gt;
+        &lt;div class="main"&gt;
+            &lt;ul class="ulnav clear"&gt;
+                &lt;li&gt;1&lt;/li&gt;
+                &lt;li&gt;2&lt;/li&gt;
+                &lt;li&gt;3&lt;/li&gt;
+                &lt;li&gt;4&lt;/li&gt;
+                &lt;li&gt;5&lt;/li&gt;
+                &lt;li&gt;6&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+<p>```</p>
 
 <style>
 
@@ -269,6 +356,18 @@ background:#ccc;
     </div>
 </div>
 
+<h3 id="section-5"><code class="highlighter-rouge">圣杯布局</code></h3>
+
+<blockquote>
+  <p><a href="/demo/圣杯布局.html">圣杯布局demo</a></p>
+</blockquote>
+
+<h3 id="section-6"><code class="highlighter-rouge">双飞翼布局</code></h3>
+
+<blockquote>
+  <p><a href="/demo/双飞翼布局.html">双飞翼布局DEMO</a></p>
+</blockquote>
+
 
                 <hr>
 
@@ -285,9 +384,10 @@ background:#ccc;
 
 负边距在让元素产生偏移时和position: relative有什么区别?
 
-使用负 margin 形成三栏布局有什么条件?
+A:
 
-圣杯布... | 克洛弗的博客 | Clover Blog " >
+
+  position:relative,元素偏... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
