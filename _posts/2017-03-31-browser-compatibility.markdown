@@ -61,8 +61,39 @@ CSS Hack大致有3种表现形式，`CSS属性前缀法`、`选择器前缀法`�
 
 > [browserhacks](http://browserhacks.com/)
 
+## `如何调试 IE 浏览器`
+
+
+## `什么是CSS hack？在 CSS 和 HTML里如何写 hack？在 CSS 中 IE 7、IE 8的 hack 方式？`
+
+
+## `列举几种 浏览器兼容问题`
+
+
+## `针对兼容、多浏览器覆盖有什么看法？渐进增强和**优雅降级**是什么意思？`
+
+
+## `reset.css和normalize.css分别是做什么的？为什么推荐使用nomalize.css?`
+
+
+## `IE盒模型和标准盒模型有什么区别? 怎样使 IE7、8使用标准盒模型?box-sizing:border-box有什么作用`
+
+
+
+
+
 
 ### 参考
 
 >[条件注释 ](http://zh.wikipedia.org/wiki/%E6%9D%A1%E4%BB%B6%E6%B3%A8%E9%87%8A)
+
 >[史上最全的CSS hack方式一览](http://blog.csdn.net/freshlover/article/details/12132801)
+
+>[http://www.teaching-materials.org/csstools/](http://www.teaching-materials.org/csstools/)
+
+>[知乎：怎样可以很好地保证网页的浏览器兼容性](https://www.zhihu.com/question/19736007)
+
+>[让我们谈一谈 Normalize.css](http://jerryzou.com/posts/aboutNormalizeCss/)
+
+>[知乎: Normalize.css 与传统的 CSS Reset 有哪些区别](https://www.zhihu.com/question/20094066)
+

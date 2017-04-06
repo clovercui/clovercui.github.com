@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 06 Apr 2017 15:17:06 +0800</pubDate>
-    <lastBuildDate>Thu, 06 Apr 2017 15:17:06 +0800</lastBuildDate>
+    <pubDate>Thu, 06 Apr 2017 17:28:03 +0800</pubDate>
+    <lastBuildDate>Thu, 06 Apr 2017 17:28:03 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -109,12 +109,44 @@
   &lt;p&gt;&lt;a href=&quot;http://browserhacks.com/&quot;&gt;browserhacks&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;参考&lt;/h3&gt;
+&lt;h2 id=&quot;ie-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;如何调试 IE 浏览器&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&quot;css-hack-css--html-hack-css--ie-7ie-8-hack-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;什么是CSS hack？在 CSS 和 HTML里如何写 hack？在 CSS 中 IE 7、IE 8的 hack 方式？&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;列举几种 浏览器兼容问题&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;针对兼容、多浏览器覆盖有什么看法？渐进增强和**优雅降级**是什么意思？&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&quot;resetcssnormalizecssnomalizecss&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;reset.css和normalize.css分别是做什么的？为什么推荐使用nomalize.css?&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&quot;ie--ie78box-sizingborder-box&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;IE盒模型和标准盒模型有什么区别? 怎样使 IE7、8使用标准盒模型?box-sizing:border-box有什么作用&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;参考&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;a href=&quot;http://zh.wikipedia.org/wiki/%E6%9D%A1%E4%BB%B6%E6%B3%A8%E9%87%8A&quot;&gt;条件注释 &lt;/a&gt;
-&lt;a href=&quot;http://blog.csdn.net/freshlover/article/details/12132801&quot;&gt;史上最全的CSS hack方式一览&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;http://zh.wikipedia.org/wiki/%E6%9D%A1%E4%BB%B6%E6%B3%A8%E9%87%8A&quot;&gt;条件注释 &lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/freshlover/article/details/12132801&quot;&gt;史上最全的CSS hack方式一览&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://www.teaching-materials.org/csstools/&quot;&gt;http://www.teaching-materials.org/csstools/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/19736007&quot;&gt;知乎：怎样可以很好地保证网页的浏览器兼容性&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://jerryzou.com/posts/aboutNormalizeCss/&quot;&gt;让我们谈一谈 Normalize.css&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/20094066&quot;&gt;知乎: Normalize.css 与传统的 CSS Reset 有哪些区别&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
 </description>
         <pubDate>Thu, 06 Apr 2017 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2017/04/06/browser-compatibility/</link>
