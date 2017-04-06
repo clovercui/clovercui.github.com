@@ -47,5 +47,5 @@ NOT运算符。这是摆立即在前面的功能，操作员，或子表达式�
 子表达式运营商。在与布尔运算符用于创建更复杂的表达式。     |
 |  &    |[if (gt IE 5)&(lt IE 7)]|   The AND operator. Returns true if all subexpressions evaluate to true
 AND运算符。如果所有的子表达式计算结果为true，返回true     |
-|  |    | [if (IE 6)|(IE 7)] |    The OR operator. Returns true if any of the subexpressions evaluates to true.
+|  ==|==    | ==[if (IE 6)|(IE 7)]== |    The OR operator. Returns true if any of the subexpressions evaluates to true.
 OR运算符。返回true，如果子表达式计算结果为true    |
