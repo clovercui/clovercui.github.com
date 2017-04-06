@@ -10,9 +10,9 @@
     <meta name="keyword"  content="克洛弗, Clover克洛弗, Clover, @Clover, 克洛弗的博客, Clover Blog, 博客, 个人网站, 互联网, 前端,后端, 设计, 产品, PHP, JAVA,服务器,LINUX">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>「知乎」为什么阿里系软件体验都不好？ - 克洛弗的博客 | Clover Blog</title>
+    <title>浏览器兼容 - 克洛弗的博客 | Clover Blog</title>
 
-    <link rel="canonical" href="http://clover.htmhub.com/2014/10/01/why-alibaba-ux-sucks/">
+    <link rel="canonical" href="http://clover.htmhub.com/2017/04/06/browser-compatibility/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -144,13 +144,13 @@
 
     <!-- Image to hack wechat -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="/img/post-bg-alibaba.jpg" width="0" height="0"> -->
+<!-- <img src="/img/education_large_2x.jpg" width="0" height="0"> -->
 
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
         position: relative;
-        background-image: url('/img/post-bg-alibaba.jpg')
+        background-image: url('/img/education_large_2x.jpg')
     }
 
     
@@ -163,19 +163,21 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#知乎" title="知乎">知乎</a>
+                        <a class="tag" href="/tags/#Clover" title="Clover">Clover</a>
                         
-                        <a class="tag" href="/tags/#阿里巴巴" title="阿里巴巴">阿里巴巴</a>
+                        <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
                         
-                        <a class="tag" href="/tags/#交互设计" title="交互设计">交互设计</a>
+                        <a class="tag" href="/tags/#HTML" title="HTML">HTML</a>
+                        
+                        <a class="tag" href="/tags/#前端" title="前端">前端</a>
                         
                     </div>
-                    <h1>「知乎」为什么阿里系软件体验都不好？</h1>
+                    <h1>浏览器兼容</h1>
                     
                     
-                    <h2 class="subheading">或许这就是所谓的企业 DNA </h2>
+                    <h2 class="subheading">css hack和条件注释</h2>
                     
-                    <span class="meta">Posted by Hux on October 1, 2014</span>
+                    <span class="meta">Posted by Clover on April 6, 2017</span>
                 </div>
             </div>
         </div>
@@ -193,63 +195,151 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<blockquote>
-  <p>这篇文章转载自<a href="http://www.zhihu.com/question/25657351/answer/31278511">我在知乎上的回答</a></p>
+				<h1 id="section">条件注释</h1>
+
+<p>条件注释 (conditional comment) 是于HTML源码中被IE有条件解释的语句。条件注释可被用来向IE提供及隐藏代码。</p>
+
+<p><code class="highlighter-rouge">html
+ 	&lt;!--[if IE 6]&gt;
+    &lt;p&gt;You are using Internet Explorer 6.&lt;/p&gt;
+    &lt;![endif]--&gt;
+    &lt;!--[if !IE]&gt;&lt;!--&gt;
+    &lt;script&gt;alert(1);&lt;/script&gt;
+    &lt;!--&lt;![endif]--&gt;
+    &lt;!--[if IE 8]&gt;
+    &lt;link href="ie8only.css" rel="stylesheet"&gt;
+    &lt;![endif]--&gt;
+</code></p>
+
+<blockquote>
+  <p>为了提高与 HTML5 的可互操作性和兼容性，Internet Explorer 10 标准模式和 Quirks 模式中删除了对条件注释的支持。 这意味着，与在其他浏览器中相同，条件注释将被视作一般注释。 使用了条件注释的页面在 Windows Internet Explorer 9 中可正常工作，但在 Internet Explorer 10 中无法正常工作。 不再支持条件注释</p>
 </blockquote>
 
-<div>
-    <br />
-    <br /><b>一言以蔽之，优先级。</b>
-    <br />这个优先级并不是由谁或者哪个Boss定的，而是<b>长期的市场竞争和业务需求下的结果</b>
-    <br />
-    <br />
-    <ul>
-        <li><b>为什么企鹅家的App用户体验较好？</b>
-        </li>
-    </ul>
-    企鹅家的主力产品，QQ、微信、QQ音乐、QQ空间 等，多是IM（即时通讯）、SNS（社交网络）、数字娱乐 等形态的产品。
-    <br />
-    <br /><b>这类产品往往必须「直接依靠优秀的产品服务与用户体验」来赢得用户。</b>
-    <br />
-    <br />如果这点做不好，产品就无法在竞争中脱颖而出。这也使得在企鹅内部，<b>围绕这部分的要求，需求，反馈 </b><b>都一定最多，使得企鹅不得不把这部分做好</b>。
-    <br />
-    <br />
-    <ul>
-        <li><b>那为什么阿里系的App用户体验较差？</b>
-        </li>
-    </ul>
-    阿里系的主力产品，从1688、淘宝、再到支付宝、天猫、淘宝旅行、淘点点、一淘、旺旺，要么是电商类产品，要么就是电商类的延伸产品。
-    <br />
-    <br />而这类产品的核心竞争力（或者说要做好的难处），往往在<b>「如何与实体经济，甚至政府 打交道」、</b><b>「如何做好运营」，</b>而非优秀的用户体验。
-    <br />
-    <br />应该说，阿里从来都不是不重视用户体验，这两年更是愈发重视。但是因为身处这样的市场环境，<b>阿里必须先完成这些优先级更高的需求（海量的业务，运营需求）以抢占市场，</b>
-    <br />这才导致阿里内部无法有太多精力focus到客户端体验上。
-    <br />
-    <br />
-    <br />
-    <br />上面就算基本回答了题主的问题，
-    <br />不过，知乎惯例，多说几句：
-    <br />
-    <br /><b>其实，上面的答案，也可以说这都是说辞。</b>
-    <br />
-    <br />在我刚刚加入阿里的时候，我也一度纳闷甚至郁闷这个事。直到我开始接触更多的项目，我才能逐渐理解「为什么会这样」。
-    <br />
-    <br /><b>但是，这并不足以成为借口。</b>
-    <br /><b>该不该改？ 当然该改。</b>
-    <br />
-    <br />我相信几乎所有阿里人，尤其UED，肯定都不希望这样。
-    <br />只能说，这需要阿里投入更多的人、更多的时间、更多的努力来做好
-    <br />
-    <br />
-    <br />
-    <br />以上。
-    <br />
-    <br />利益相关：
-    <br />阿里员工
-    <br />
-    <br />
-</div>
-
+<table>
+  <thead>
+    <tr>
+      <th>项目</th>
+      <th>范例</th>
+      <th>说明</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>!</td>
+      <td>[if !IE]</td>
+      <td>The NOT operator. This is placed immediately in front of the feature, operator, or subexpression to reverse the Boolean meaning of the expression.</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>NOT运算符。这是摆立即在前面的功能，操作员，或子表达式扭转布尔表达式的意义。</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lt</td>
+      <td>[if lt IE 5.5]</td>
+      <td>The less-than operator. Returns true if the first argument is less than the second argument.</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>小于运算符。如果第一个参数小于第二个参数，则返回true。</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lte</td>
+      <td>[if lte IE 6]</td>
+      <td>The less-than or equal operator. Returns true if the first argument is less than or equal to the second argument.</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>小于或等于运算。如果第一个参数是小于或等于第二个参数，则返回true。</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>gt</td>
+      <td>[if gt IE 5]</td>
+      <td>The greater-than operator. Returns true if the first argument is greater than the second argument.</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>大于运算符。如果第一个参数大于第二个参数，则返回true。</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>gte</td>
+      <td>[if gte IE 7]</td>
+      <td>The greater-than or equal operator. Returns true if the first argument is greater than or equal to the second argument.</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>大于或等于运算。如果第一个参数是大于或等于第二个参数，则返回true。</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>( )</td>
+      <td>[if !(IE 7)]</td>
+      <td>Subexpression operators. Used in conjunction with boolean operators to create more complex expressions.</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>子表达式运营商。在与布尔运算符用于创建更复杂的表达式。</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>&amp;</td>
+      <td>[if (gt IE 5)&amp;(lt IE 7)]</td>
+      <td>The AND operator. Returns true if all subexpressions evaluate to true</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>AND运算符。如果所有的子表达式计算结果为true，返回true</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>[if (IE 6)</td>
+      <td>(IE 7)]</td>
+      <td>The OR operator. Returns true if any of the subexpressions evaluates to true.</td>
+    </tr>
+    <tr>
+      <td>OR运算符。返回true，如果子表达式计算结果为true</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
 
 
                 <hr>
@@ -259,18 +349,15 @@
                 </style>
                 <div class="ds-share"
                     style="text-align: right"
-                    data-thread-key="/2014/10/01/why-alibaba-ux-sucks"
-                    data-title="「知乎」为什么阿里系软件体验都不好？"
-                    data-url="http://clover.htmhub.com/2014/10/01/why-alibaba-ux-sucks/"
-                    data-images="http://clover.htmhub.com/img/post-bg-alibaba.jpg"
-                    data-content="
-  这篇文章转载自我在知乎上的回答
+                    data-thread-key="/2017/04/06/browser-compatibility"
+                    data-title="浏览器兼容"
+                    data-url="http://clover.htmhub.com/2017/04/06/browser-compatibility/"
+                    data-images="http://clover.htmhub.com/img/education_large_2x.jpg"
+                    data-content="条件注释
 
+条件注释 (conditional comment) 是于HTML源码中被IE有条件解释的语句。条件注释可被用来向IE提供及隐藏代码。
 
-
-    
-    一言以蔽之，优先级。
-    这个优先级并不是由谁或者哪个Boss定的，而是长期的市场竞争和... | 克洛弗的博客 | Clover Blog " >
+ht... | 克洛弗的博客 | Clover Blog " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -290,19 +377,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2014/09/04/is-pure-android-better/" data-toggle="tooltip" data-placement="top" title="「知乎」对中国用户而言，Pure Android 是否比 MIUI 或 Flyme 体验更好？">
+                        <a href="/2017/03/30/negative-margin-and-three-column-layout/" data-toggle="tooltip" data-placement="top" title="负边距、三栏布局">
                         Previous<br>
-                        <span>「知乎」对中国用户而言，Pure Android 是否比 MIUI 或 Flyme 体验更好？</span>
+                        <span>负边距、三栏布局</span>
                         </a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/2014/11/20/responsive-web-design/" data-toggle="tooltip" data-placement="top" title="「知乎」你们觉得响应式好呢，还是手机和PC端分开来写？">
-                        Next<br>
-                        <span>「知乎」你们觉得响应式好呢，还是手机和PC端分开来写？</span>
-                        </a>
-                    </li>
                     
                 </ul>
 
@@ -311,9 +391,9 @@
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                        data-thread-key="/2014/10/01/why-alibaba-ux-sucks"
-                        data-title="「知乎」为什么阿里系软件体验都不好？"
-                        data-url="http://clover.htmhub.com/2014/10/01/why-alibaba-ux-sucks/" >
+                        data-thread-key="/2017/04/06/browser-compatibility"
+                        data-title="浏览器兼容"
+                        data-url="http://clover.htmhub.com/2017/04/06/browser-compatibility/" >
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -324,6 +404,20 @@
             </div>  
 
     <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
         
 
     <!-- Sidebar Container -->
@@ -747,6 +841,50 @@
 
 
 <!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
 
 
 
