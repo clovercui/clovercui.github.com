@@ -40,4 +40,4 @@ tags:
 |  gte   |[if gte IE 7] |    The greater-than or equal operator. Returns true if the first argument is greater than or equal to the second argument.大于或等于运算。如果第一个参数是大于或等于第二个参数，则返回true。    |
 |  ( )   | [if !(IE 7)] |   Subexpression operators. Used in conjunction with boolean operators to create more complex expressions.子表达式运营商。在与布尔运算符用于创建更复杂的表达式。     |
 |  &    |[if (gt IE 5)&(lt IE 7)]|   The AND operator. Returns true if all subexpressions evaluate to true AND运算符。如果所有的子表达式计算结果为true，返回true     |
-|  ==|==    | ==[if (IE 6)|(IE 7)]== |    The OR operator. Returns true if any of the subexpressions evaluates to true. OR运算符。返回true，如果子表达式计算结果为true    |
+|  &#124; | [if (IE 6)&#124;(IE 7)] |    The OR operator. Returns true if any of the subexpressions evaluates to true. OR运算符。返回true，如果子表达式计算结果为true    |

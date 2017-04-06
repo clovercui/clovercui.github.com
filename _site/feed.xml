@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 06 Apr 2017 15:06:13 +0800</pubDate>
-    <lastBuildDate>Thu, 06 Apr 2017 15:06:13 +0800</lastBuildDate>
+    <pubDate>Thu, 06 Apr 2017 15:11:23 +0800</pubDate>
+    <lastBuildDate>Thu, 06 Apr 2017 15:11:23 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -37,8 +37,6 @@
       &lt;th&gt;项目&lt;/th&gt;
       &lt;th&gt;范例&lt;/th&gt;
       &lt;th&gt;说明&lt;/th&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt; &lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
@@ -46,56 +44,40 @@
       &lt;td&gt;!&lt;/td&gt;
       &lt;td&gt;[if !IE]&lt;/td&gt;
       &lt;td&gt;The NOT operator. This is placed immediately in front of the feature, operator, or subexpression to reverse the Boolean meaning of the expression.NOT运算符。这是摆立即在前面的功能，操作员，或子表达式扭转布尔表达式的意义。&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;lt&lt;/td&gt;
       &lt;td&gt;[if lt IE 5.5]&lt;/td&gt;
       &lt;td&gt;The less-than operator. Returns true if the first argument is less than the second argument.小于运算符。如果第一个参数小于第二个参数，则返回true。&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;lte&lt;/td&gt;
       &lt;td&gt;[if lte IE 6]&lt;/td&gt;
       &lt;td&gt;The less-than or equal operator. Returns true if the first argument is less than or equal to the second argument.小于或等于运算。如果第一个参数是小于或等于第二个参数，则返回true。&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;gt&lt;/td&gt;
       &lt;td&gt;[if gt IE 5]&lt;/td&gt;
       &lt;td&gt;The greater-than operator. Returns true if the first argument is greater than the second argument.大于运算符。如果第一个参数大于第二个参数，则返回true。&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;gte&lt;/td&gt;
       &lt;td&gt;[if gte IE 7]&lt;/td&gt;
       &lt;td&gt;The greater-than or equal operator. Returns true if the first argument is greater than or equal to the second argument.大于或等于运算。如果第一个参数是大于或等于第二个参数，则返回true。&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;( )&lt;/td&gt;
       &lt;td&gt;[if !(IE 7)]&lt;/td&gt;
       &lt;td&gt;Subexpression operators. Used in conjunction with boolean operators to create more complex expressions.子表达式运营商。在与布尔运算符用于创建更复杂的表达式。&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&amp;amp;&lt;/td&gt;
       &lt;td&gt;[if (gt IE 5)&amp;amp;(lt IE 7)]&lt;/td&gt;
       &lt;td&gt;The AND operator. Returns true if all subexpressions evaluate to true AND运算符。如果所有的子表达式计算结果为true，返回true&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;==&lt;/td&gt;
-      &lt;td&gt;==&lt;/td&gt;
-      &lt;td&gt;==[if (IE 6)&lt;/td&gt;
-      &lt;td&gt;(IE 7)]==&lt;/td&gt;
+      &lt;td&gt;|&lt;/td&gt;
+      &lt;td&gt;[if (IE 6)|(IE 7)]&lt;/td&gt;
       &lt;td&gt;The OR operator. Returns true if any of the subexpressions evaluates to true. OR运算符。返回true，如果子表达式计算结果为true&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
