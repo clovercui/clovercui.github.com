@@ -225,7 +225,37 @@
 
 <h2 id="section-1"><code class="highlighter-rouge">圣杯布局的原理是怎样的? 简述实现圣杯布局的步骤</code></h2>
 
+<p><code class="highlighter-rouge">A:</code></p>
+
+<p>圣杯布局是一个两边在父容器里顶宽，中间自适应的布局并且中间主内容首先渲染。设置三个div浮动，左右两栏加上负margin使其与中间栏并排。然后中间栏设置左右padding，再对两个边栏使用position: relative属性并设置left定位使其不遮挡中间栏。</p>
+
+<ol>
+  <li>写好一个三栏HTML结构
+ <img src="/img/2155778-17f6d5af52b85b31.png" alt="圣杯布局HTML结构" /></li>
+  <li>使用浮动与负margin写好一个三栏并排的布局
+ <img src="/img/2155778-0f4b4e9a132b3e6c.png" alt="三栏并排" /></li>
+  <li>给父容器设置左右padding，然后给两个边栏设置position: relative; 并设置left值定位到父容器的两边顶宽
+ <img src="/img/2155778-b7faed23e04b72fa.png" alt="圣杯布局" /></li>
+  <li>设置圣杯布局的两栏布局只需要删除父容器的右内边距
+ <img src="/img/2155778-84f6223248a67ed5.png" alt="删除父容器右内边距形成圣杯两栏布局" /></li>
+</ol>
+
 <h2 id="section-2"><code class="highlighter-rouge">双飞翼布局的原理? 实现步骤?</code></h2>
+
+<p><code class="highlighter-rouge">A:</code></p>
+
+<p>双飞翼布局也是一个两边在父容器里顶宽，中间自适应的布局并且中间主内容首先渲染。设置三个div浮动，左右两栏加上负margin使其与中间栏并排的布局。区别在于双飞翼布局中间的div设置了子div来放置内容，在这个子div里设置了margin来给两边的div留出了位置</p>
+
+<ol>
+  <li>写好一个三栏HTML结构，与圣杯不同的是在主内容里增加一个子div
+ <img src="/img/2155778-502dedc533521aac.png" alt="双飞翼HTML结构" /></li>
+  <li>使用浮动与负margin写好一个三栏并排的布局
+ <img src="/img/2155778-95a81eef83a74dae.png" alt="双飞翼三栏并排" /></li>
+  <li>给中间栏设置左右margin值形成双飞翼布局
+ <img src="/img/2155778-536227648f0b26f4.png" alt="给中间栏设置左右margin值形成双飞翼布局" /></li>
+  <li>双飞翼布局形成两栏布局只需要删除一边侧栏并且删除主内容的一边外边距
+ <img src="/img/2155778-12036b91f4e4d094.png" alt="删除一栏和一侧外边距" /></li>
+</ol>
 
 <h2 id="section-3">代码</h2>
 
@@ -362,11 +392,202 @@ background:#ccc;
   <p><a href="/demo/圣杯布局.html">圣杯布局demo</a></p>
 </blockquote>
 
+<p><code class="highlighter-rouge">代码</code></p>
+
+<p>```html
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+        &lt;head&gt;
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>圣杯布局</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    &lt;!--css引入区--&gt;
+    &lt;link href="" rel="stylesheet"&gt;
+    &lt;!--js引入区--&gt;
+    &lt;script type="text/javascript" src=""&gt;&lt;/script&gt;
+    &lt;style type="text/css"&gt;
+
+    html,body,ul,p,h1,h2,h3{
+        margin:0px;
+        padding:0px;
+    }
+        .contain{
+
+            background: #ccc;
+            padding:0 200px;
+        }
+
+        .main{
+            float:left;
+            width:100%;
+            height:100%;
+            background: red;
+
+
+        }
+        .aside{
+            float:left;
+            background: yellow;
+            width:200px;
+            height:200px;
+            margin-left:-100%;
+            position: relative; 
+            left: -200px;
+        }
+
+        .bside{
+            background: blue;
+            width:200px;
+            height:200px;
+            float:left;
+            margin-left:-200px;
+            position: relative; 
+            left: 200px;
+        }
+
+         .clear::after{
+            content: "";
+            display: block;
+            clear:both;
+       }
+
+    &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="contain clear"&gt;
+        这里是主题
+            &lt;div class="main"&gt;
+                 这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                     这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+            &lt;/div&gt;
+            &lt;div class="aside"&gt;&lt;/div&gt;
+            &lt;div class="bside"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+
+    &lt;/body&gt;
+&lt;/html&gt; ```
+</code></pre>
+</div>
+
 <h3 id="section-6"><code class="highlighter-rouge">双飞翼布局</code></h3>
 
 <blockquote>
   <p><a href="/demo/双飞翼布局.html">双飞翼布局DEMO</a></p>
 </blockquote>
+
+<p>```html
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+        &lt;head&gt;
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>双飞翼布局</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    &lt;!--css引入区--&gt;
+    &lt;link href="" rel="stylesheet"&gt;
+    &lt;!--js引入区--&gt;
+    &lt;script type="text/javascript" src=""&gt;&lt;/script&gt;
+    &lt;style type="text/css"&gt;
+
+    html,body,ul,p,h1,h2,h3{
+        margin:0px;
+        padding:0px;
+    }
+        .contain{
+
+
+            background: #ccc;
+
+        }
+
+        .main{
+            float:left;
+            width:100%;
+            height:100%;
+
+
+        }
+        .warp{
+            /*width:100%;*/
+            height:100%;
+            margin:0 200px;
+            background: red;
+        }
+        .aside{
+            float:left;
+            background: yellow;
+            width:200px;
+            height:200px;
+            margin-left:-100%;          
+        }
+
+        .bside{
+            background: blue;
+            width:200px;
+            height:200px;
+            float:left;
+            margin-left:-200px;
+
+        }
+
+         .clear::after{
+            content: "";
+            display: block;
+            clear:both;
+       }
+
+    &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="contain clear"&gt;
+         &lt;p&gt;这里是整体&lt;/p&gt;
+            &lt;div class="main"&gt;
+                &lt;div class="warp"&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                     这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                    这里是内容&lt;br&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="aside"&gt;&lt;/div&gt;
+            &lt;div class="bside"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt; ```
+</code></pre>
+</div>
 
 
                 <hr>

@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 06 Apr 2017 14:20:01 +0800</pubDate>
-    <lastBuildDate>Thu, 06 Apr 2017 14:20:01 +0800</lastBuildDate>
+    <pubDate>Thu, 06 Apr 2017 14:30:31 +0800</pubDate>
+    <lastBuildDate>Thu, 06 Apr 2017 14:30:31 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -41,7 +41,37 @@
 
 &lt;h2 id=&quot;section-1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;圣杯布局的原理是怎样的? 简述实现圣杯布局的步骤&lt;/code&gt;&lt;/h2&gt;
 
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;圣杯布局是一个两边在父容器里顶宽，中间自适应的布局并且中间主内容首先渲染。设置三个div浮动，左右两栏加上负margin使其与中间栏并排。然后中间栏设置左右padding，再对两个边栏使用position: relative属性并设置left定位使其不遮挡中间栏。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;写好一个三栏HTML结构
+ &lt;img src=&quot;/img/2155778-17f6d5af52b85b31.png&quot; alt=&quot;圣杯布局HTML结构&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;使用浮动与负margin写好一个三栏并排的布局
+ &lt;img src=&quot;/img/2155778-0f4b4e9a132b3e6c.png&quot; alt=&quot;三栏并排&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;给父容器设置左右padding，然后给两个边栏设置position: relative; 并设置left值定位到父容器的两边顶宽
+ &lt;img src=&quot;/img/2155778-b7faed23e04b72fa.png&quot; alt=&quot;圣杯布局&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;设置圣杯布局的两栏布局只需要删除父容器的右内边距
+ &lt;img src=&quot;/img/2155778-84f6223248a67ed5.png&quot; alt=&quot;删除父容器右内边距形成圣杯两栏布局&quot; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
 &lt;h2 id=&quot;section-2&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;双飞翼布局的原理? 实现步骤?&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;双飞翼布局也是一个两边在父容器里顶宽，中间自适应的布局并且中间主内容首先渲染。设置三个div浮动，左右两栏加上负margin使其与中间栏并排的布局。区别在于双飞翼布局中间的div设置了子div来放置内容，在这个子div里设置了margin来给两边的div留出了位置&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;写好一个三栏HTML结构，与圣杯不同的是在主内容里增加一个子div
+ &lt;img src=&quot;/img/2155778-502dedc533521aac.png&quot; alt=&quot;双飞翼HTML结构&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;使用浮动与负margin写好一个三栏并排的布局
+ &lt;img src=&quot;/img/2155778-95a81eef83a74dae.png&quot; alt=&quot;双飞翼三栏并排&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;给中间栏设置左右margin值形成双飞翼布局
+ &lt;img src=&quot;/img/2155778-536227648f0b26f4.png&quot; alt=&quot;给中间栏设置左右margin值形成双飞翼布局&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;双飞翼布局形成两栏布局只需要删除一边侧栏并且删除主内容的一边外边距
+ &lt;img src=&quot;/img/2155778-12036b91f4e4d094.png&quot; alt=&quot;删除一栏和一侧外边距&quot; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;section-3&quot;&gt;代码&lt;/h2&gt;
 
@@ -178,11 +208,202 @@ background:#ccc;
   &lt;p&gt;&lt;a href=&quot;/demo/圣杯布局.html&quot;&gt;圣杯布局demo&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;代码&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;```html
+    &amp;lt;!DOCTYPE html&amp;gt;
+    &amp;lt;html&amp;gt;
+        &amp;lt;head&amp;gt;
+        &lt;meta charset=&quot;utf-8&quot; /&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+        &lt;title&gt;圣杯布局&lt;/title&gt;
+        &lt;meta name=&quot;description&quot; content=&quot;&quot; /&gt;
+        &lt;meta name=&quot;keywords&quot; content=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &amp;lt;!--css引入区--&amp;gt;
+    &amp;lt;link href=&quot;&quot; rel=&quot;stylesheet&quot;&amp;gt;
+    &amp;lt;!--js引入区--&amp;gt;
+    &amp;lt;script type=&quot;text/javascript&quot; src=&quot;&quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;style type=&quot;text/css&quot;&amp;gt;
+
+    html,body,ul,p,h1,h2,h3{
+        margin:0px;
+        padding:0px;
+    }
+        .contain{
+
+            background: #ccc;
+            padding:0 200px;
+        }
+
+        .main{
+            float:left;
+            width:100%;
+            height:100%;
+            background: red;
+
+
+        }
+        .aside{
+            float:left;
+            background: yellow;
+            width:200px;
+            height:200px;
+            margin-left:-100%;
+            position: relative; 
+            left: -200px;
+        }
+
+        .bside{
+            background: blue;
+            width:200px;
+            height:200px;
+            float:left;
+            margin-left:-200px;
+            position: relative; 
+            left: 200px;
+        }
+
+         .clear::after{
+            content: &quot;&quot;;
+            display: block;
+            clear:both;
+       }
+
+    &amp;lt;/style&amp;gt;
+    &amp;lt;/head&amp;gt;
+    &amp;lt;body&amp;gt;
+        &amp;lt;div class=&quot;contain clear&quot;&amp;gt;
+        这里是主题
+            &amp;lt;div class=&quot;main&quot;&amp;gt;
+                 这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                     这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;div class=&quot;aside&quot;&amp;gt;&amp;lt;/div&amp;gt;
+            &amp;lt;div class=&quot;bside&quot;&amp;gt;&amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+
+
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt; ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 &lt;h3 id=&quot;section-6&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;双飞翼布局&lt;/code&gt;&lt;/h3&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;a href=&quot;/demo/双飞翼布局.html&quot;&gt;双飞翼布局DEMO&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;```html
+    &amp;lt;!DOCTYPE html&amp;gt;
+    &amp;lt;html&amp;gt;
+        &amp;lt;head&amp;gt;
+        &lt;meta charset=&quot;utf-8&quot; /&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+        &lt;title&gt;双飞翼布局&lt;/title&gt;
+        &lt;meta name=&quot;description&quot; content=&quot;&quot; /&gt;
+        &lt;meta name=&quot;keywords&quot; content=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &amp;lt;!--css引入区--&amp;gt;
+    &amp;lt;link href=&quot;&quot; rel=&quot;stylesheet&quot;&amp;gt;
+    &amp;lt;!--js引入区--&amp;gt;
+    &amp;lt;script type=&quot;text/javascript&quot; src=&quot;&quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;style type=&quot;text/css&quot;&amp;gt;
+
+    html,body,ul,p,h1,h2,h3{
+        margin:0px;
+        padding:0px;
+    }
+        .contain{
+
+
+            background: #ccc;
+
+        }
+
+        .main{
+            float:left;
+            width:100%;
+            height:100%;
+
+
+        }
+        .warp{
+            /*width:100%;*/
+            height:100%;
+            margin:0 200px;
+            background: red;
+        }
+        .aside{
+            float:left;
+            background: yellow;
+            width:200px;
+            height:200px;
+            margin-left:-100%;          
+        }
+
+        .bside{
+            background: blue;
+            width:200px;
+            height:200px;
+            float:left;
+            margin-left:-200px;
+
+        }
+
+         .clear::after{
+            content: &quot;&quot;;
+            display: block;
+            clear:both;
+       }
+
+    &amp;lt;/style&amp;gt;
+    &amp;lt;/head&amp;gt;
+    &amp;lt;body&amp;gt;
+        &amp;lt;div class=&quot;contain clear&quot;&amp;gt;
+         &amp;lt;p&amp;gt;这里是整体&amp;lt;/p&amp;gt;
+            &amp;lt;div class=&quot;main&quot;&amp;gt;
+                &amp;lt;div class=&quot;warp&quot;&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                     这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                    这里是内容&amp;lt;br&amp;gt;
+                &amp;lt;/div&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;div class=&quot;aside&quot;&amp;gt;&amp;lt;/div&amp;gt;
+            &amp;lt;div class=&quot;bside&quot;&amp;gt;&amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt; ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 </description>
         <pubDate>Thu, 30 Mar 2017 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2017/03/30/negative-margin-and-three-column-layout/</link>
