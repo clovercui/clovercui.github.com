@@ -267,6 +267,39 @@
   </tbody>
 </table>
 
+<h2 id="css-hack">CSS hack</h2>
+
+<p>CSS hack由于不同厂商的浏览器，比如Internet Explorer,Safari,Mozilla Firefox,Chrome等，或者是同一厂商的浏览器的不同版本，如IE6和IE7，对CSS的解析认识不完全一样，因此会导致生成的页面效果不一样，得不到我们所需要的页面效果。</p>
+
+<p>这个时候我们就需要针对不同的浏览器去写不同的CSS，让它能够同时兼容不同的浏览器，能在不同的浏览器中也能得到我们想要的页面效果。 简单的说，CSS hack的目的就是使你的CSS代码兼容不同的浏览器。当然，我们也可以反过来利用CSS hack为不同版本的浏览器定制编写不同的CSS效果。</p>
+
+<h3 id="css-hack-1">CSS hack分类</h3>
+
+<p>CSS Hack大致有3种表现形式，<code class="highlighter-rouge">CSS属性前缀法</code>、<code class="highlighter-rouge">选择器前缀法</code>以及<code class="highlighter-rouge">IE条件注释法</code>（即HTML头部引用if IE）Hack，实际项目中CSS Hack大部分是针对IE浏览器不同版本之间的表现差异而引入的。</p>
+
+<ol>
+  <li>
+    <p>属性前缀法(即类内部Hack)：例如 IE6能识别下划线”“和星号” “，IE7能识别星号” “，但不能识别下划线”“，IE6~IE10都认识”\9”，但firefox前述三个都不能认识</p>
+  </li>
+  <li>
+    <p>选择器前缀法(即选择器Hack)：例如 IE6能识别html .class{}，IE7能识别+html .class{}或者<code class="highlighter-rouge">*:first-child+html .class{}</code></p>
+  </li>
+  <li>
+    <p>IE条件注释法(即HTML条件注释Hack)：针对所有IE(注：IE10+已经不再支持条件注释)： ，针对IE6及以下版本： 。这类Hack不仅对CSS生效，对写在判断语句里面的所有代码都会生效</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p><a href="http://browserhacks.com/">browserhacks</a></p>
+</blockquote>
+
+<h3 id="section-1">参考</h3>
+
+<blockquote>
+  <p><img src="http://zh.wikipedia.org/wiki/%E6%9D%A1%E4%BB%B6%E6%B3%A8%E9%87%8A" alt="条件注释 " />
+<img src="http://blog.csdn.net/freshlover/article/details/12132801" alt="史上最全的CSS hack方式一览" /></p>
+</blockquote>
+
 
                 <hr>
 

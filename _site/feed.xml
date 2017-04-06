@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 06 Apr 2017 15:11:23 +0800</pubDate>
-    <lastBuildDate>Thu, 06 Apr 2017 15:11:23 +0800</lastBuildDate>
+    <pubDate>Thu, 06 Apr 2017 15:15:49 +0800</pubDate>
+    <lastBuildDate>Thu, 06 Apr 2017 15:15:49 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -82,6 +82,39 @@
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;h2 id=&quot;css-hack&quot;&gt;CSS hack&lt;/h2&gt;
+
+&lt;p&gt;CSS hack由于不同厂商的浏览器，比如Internet Explorer,Safari,Mozilla Firefox,Chrome等，或者是同一厂商的浏览器的不同版本，如IE6和IE7，对CSS的解析认识不完全一样，因此会导致生成的页面效果不一样，得不到我们所需要的页面效果。&lt;/p&gt;
+
+&lt;p&gt;这个时候我们就需要针对不同的浏览器去写不同的CSS，让它能够同时兼容不同的浏览器，能在不同的浏览器中也能得到我们想要的页面效果。 简单的说，CSS hack的目的就是使你的CSS代码兼容不同的浏览器。当然，我们也可以反过来利用CSS hack为不同版本的浏览器定制编写不同的CSS效果。&lt;/p&gt;
+
+&lt;h3 id=&quot;css-hack-1&quot;&gt;CSS hack分类&lt;/h3&gt;
+
+&lt;p&gt;CSS Hack大致有3种表现形式，&lt;code class=&quot;highlighter-rouge&quot;&gt;CSS属性前缀法&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;选择器前缀法&lt;/code&gt;以及&lt;code class=&quot;highlighter-rouge&quot;&gt;IE条件注释法&lt;/code&gt;（即HTML头部引用if IE）Hack，实际项目中CSS Hack大部分是针对IE浏览器不同版本之间的表现差异而引入的。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;属性前缀法(即类内部Hack)：例如 IE6能识别下划线”“和星号” “，IE7能识别星号” “，但不能识别下划线”“，IE6~IE10都认识”\9”，但firefox前述三个都不能认识&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;选择器前缀法(即选择器Hack)：例如 IE6能识别html .class{}，IE7能识别+html .class{}或者&lt;code class=&quot;highlighter-rouge&quot;&gt;*:first-child+html .class{}&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;IE条件注释法(即HTML条件注释Hack)：针对所有IE(注：IE10+已经不再支持条件注释)： ，针对IE6及以下版本： 。这类Hack不仅对CSS生效，对写在判断语句里面的所有代码都会生效&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://browserhacks.com/&quot;&gt;browserhacks&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;参考&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src=&quot;http://zh.wikipedia.org/wiki/%E6%9D%A1%E4%BB%B6%E6%B3%A8%E9%87%8A&quot; alt=&quot;条件注释 &quot; /&gt;
+&lt;img src=&quot;http://blog.csdn.net/freshlover/article/details/12132801&quot; alt=&quot;史上最全的CSS hack方式一览&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         <pubDate>Thu, 06 Apr 2017 00:00:00 +0800</pubDate>
         <link>http://clover.htmhub.com/2017/04/06/browser-compatibility/</link>
