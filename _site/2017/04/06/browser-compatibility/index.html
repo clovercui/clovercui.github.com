@@ -477,13 +477,64 @@ height: 1%; /* 父元素上面 */
 
 <p><code class="highlighter-rouge">A:</code></p>
 
+<ul>
+  <li><code class="highlighter-rouge">针对兼容问题</code>，首先做个统计，看看使用自己的产品的用户。如果使用IE的比例多（大于5%），可能就要考虑兼容问题。</li>
+</ul>
+
+<p>针对自己的代码，如果效果没有渲染出来，首先看某个元素是否有问题。怎么看呢，在Can I use上面查一下兼容性（当然也可以自己一步步调试代码，一个个删元素，找到问题所在）。如果不兼容，再搜一下解决方案,因为这些版本都比较老了，遇到的问题一般都已经遇到了，一般可以找到解决方案。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">渐进增强与优雅降级</code>
+    <ul>
+      <li>渐进增强</li>
+    </ul>
+
+    <p>开发时先去兼顾，针对某一版本浏览器做开发。开发之后，再对高级浏览器增加一些特别的、额外的一些效果，使得看起来更好看一些，增强用户体验。
+  * 优雅降级</p>
+
+    <p>开发过程中，不用考虑低版本，等开发完成之后，慢慢去作一个适应。只要页面正常，不乱，就可以了，不用追求特别高的还原度。</p>
+
+    <ul>
+      <li>两者的区别</li>
+    </ul>
+
+    <p><code class="highlighter-rouge">渐进增强</code>是从一个比较基础的，从能够起作用的版本开始，然后再对不断扩充，来达到要求。<code class="highlighter-rouge">优雅降级</code>则是从比较复杂的现状开始，把设计对象限定为当前主流的浏览器版本。</p>
+  </li>
+</ul>
+
 <h2 id="resetcssnormalizecssnomalizecss"><code class="highlighter-rouge">reset.css和normalize.css分别是做什么的？为什么推荐使用nomalize.css?</code></h2>
 
 <p><code class="highlighter-rouge">A:</code></p>
 
+<ul>
+  <li><code class="highlighter-rouge">reset.css</code>和<code class="highlighter-rouge">normalize.css</code></li>
+</ul>
+
+<p>在html当中，一些标签会有默认的样式，比如body、ul等会有外边距。<code class="highlighter-rouge">reset.css</code>和<code class="highlighter-rouge">normalize.css</code>就是去掉默认样式的。当然它们也有区别，<code class="highlighter-rouge">normalize.css</code>是一种<code class="highlighter-rouge">reset.css</code>的替代方案。</p>
+
+<p><code class="highlighter-rouge">normalize.css</code>的作用有：保护有用的浏览器的一些默认样式，而不是完全重置；修复浏览器自身的一些bug；优化css可用性；解释代码。</p>
+
+<ul>
+  <li>
+    <p>推荐用<code class="highlighter-rouge">nomalize.css</code>的原因有以下几点：</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">reset.css</code>比较暴力，它会对所有标签的默认样式重置为一样的效果；而<code class="highlighter-rouge">normalize.css</code>比较温和，注重通用的方案，重置掉该重置的样式，保留有用的 user agent 样式</li>
+      <li><code class="highlighter-rouge">normalize.css</code>对一些浏览器的 bug 进行修复；而<code class="highlighter-rouge">reset.css</code>是无法做到的。</li>
+      <li><code class="highlighter-rouge">normalilze.css</code>不会让调试工具变得杂乱；而<code class="highlighter-rouge">reset.css</code>在浏览器调试工具中有大段的继承链，显得比较杂乱，难看。</li>
+    </ul>
+  </li>
+</ul>
+
 <h2 id="ie--ie78box-sizingborder-box"><code class="highlighter-rouge">IE盒模型和标准盒模型有什么区别? 怎样使 IE7、8使用标准盒模型?box-sizing:border-box有什么作用</code></h2>
 
-<h3 id="section-3">参考</h3>
+<p><code class="highlighter-rouge">A:</code></p>
+
+<h2 id="ie-6-7-8-inline-blockmax-width"><code class="highlighter-rouge">在 ie 6, 7, 8中展示 盒模型、inline-block、max-width的区别</code></h2>
+
+<p><code class="highlighter-rouge">A:</code></p>
+
+<h2 id="section-3">参考</h2>
 
 <blockquote>
   <p><a href="http://zh.wikipedia.org/wiki/%E6%9D%A1%E4%BB%B6%E6%B3%A8%E9%87%8A">条件注释 </a></p>

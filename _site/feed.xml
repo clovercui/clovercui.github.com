@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 24 May 2017 11:02:49 +0800</pubDate>
-    <lastBuildDate>Wed, 24 May 2017 11:02:49 +0800</lastBuildDate>
+    <pubDate>Wed, 24 May 2017 11:14:04 +0800</pubDate>
+    <lastBuildDate>Wed, 24 May 2017 11:14:04 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -430,13 +430,64 @@ height: 1%; /* 父元素上面 */
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;针对兼容问题&lt;/code&gt;，首先做个统计，看看使用自己的产品的用户。如果使用IE的比例多（大于5%），可能就要考虑兼容问题。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;针对自己的代码，如果效果没有渲染出来，首先看某个元素是否有问题。怎么看呢，在Can I use上面查一下兼容性（当然也可以自己一步步调试代码，一个个删元素，找到问题所在）。如果不兼容，再搜一下解决方案,因为这些版本都比较老了，遇到的问题一般都已经遇到了，一般可以找到解决方案。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;渐进增强与优雅降级&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;渐进增强&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;开发时先去兼顾，针对某一版本浏览器做开发。开发之后，再对高级浏览器增加一些特别的、额外的一些效果，使得看起来更好看一些，增强用户体验。
+  * 优雅降级&lt;/p&gt;
+
+    &lt;p&gt;开发过程中，不用考虑低版本，等开发完成之后，慢慢去作一个适应。只要页面正常，不乱，就可以了，不用追求特别高的还原度。&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;两者的区别&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;渐进增强&lt;/code&gt;是从一个比较基础的，从能够起作用的版本开始，然后再对不断扩充，来达到要求。&lt;code class=&quot;highlighter-rouge&quot;&gt;优雅降级&lt;/code&gt;则是从比较复杂的现状开始，把设计对象限定为当前主流的浏览器版本。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&quot;resetcssnormalizecssnomalizecss&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;reset.css和normalize.css分别是做什么的？为什么推荐使用nomalize.css?&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;reset.css&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;normalize.css&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在html当中，一些标签会有默认的样式，比如body、ul等会有外边距。&lt;code class=&quot;highlighter-rouge&quot;&gt;reset.css&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;normalize.css&lt;/code&gt;就是去掉默认样式的。当然它们也有区别，&lt;code class=&quot;highlighter-rouge&quot;&gt;normalize.css&lt;/code&gt;是一种&lt;code class=&quot;highlighter-rouge&quot;&gt;reset.css&lt;/code&gt;的替代方案。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;normalize.css&lt;/code&gt;的作用有：保护有用的浏览器的一些默认样式，而不是完全重置；修复浏览器自身的一些bug；优化css可用性；解释代码。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;推荐用&lt;code class=&quot;highlighter-rouge&quot;&gt;nomalize.css&lt;/code&gt;的原因有以下几点：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;reset.css&lt;/code&gt;比较暴力，它会对所有标签的默认样式重置为一样的效果；而&lt;code class=&quot;highlighter-rouge&quot;&gt;normalize.css&lt;/code&gt;比较温和，注重通用的方案，重置掉该重置的样式，保留有用的 user agent 样式&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;normalize.css&lt;/code&gt;对一些浏览器的 bug 进行修复；而&lt;code class=&quot;highlighter-rouge&quot;&gt;reset.css&lt;/code&gt;是无法做到的。&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;normalilze.css&lt;/code&gt;不会让调试工具变得杂乱；而&lt;code class=&quot;highlighter-rouge&quot;&gt;reset.css&lt;/code&gt;在浏览器调试工具中有大段的继承链，显得比较杂乱，难看。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&quot;ie--ie78box-sizingborder-box&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;IE盒模型和标准盒模型有什么区别? 怎样使 IE7、8使用标准盒模型?box-sizing:border-box有什么作用&lt;/code&gt;&lt;/h2&gt;
 
-&lt;h3 id=&quot;section-3&quot;&gt;参考&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ie-6-7-8-inline-blockmax-width&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;在 ie 6, 7, 8中展示 盒模型、inline-block、max-width的区别&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;参考&lt;/h2&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;a href=&quot;http://zh.wikipedia.org/wiki/%E6%9D%A1%E4%BB%B6%E6%B3%A8%E9%87%8A&quot;&gt;条件注释 &lt;/a&gt;&lt;/p&gt;
