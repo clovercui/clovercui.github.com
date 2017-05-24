@@ -87,7 +87,8 @@ CSS Hack大致有3种表现形式，`CSS属性前缀法`、`选择器前缀法`�
     * `属性前缀法`(即类内部Hack)：比如，IE6能识别下划线和星号，IE7能识别星号，但不能识别下划线，IE6~IE10都认识"\9"，但firefox前述三个都不认识。
     * `选择器前缀法`(即选择器Hack)：例如 IE6能识别`*html .class{}`，IE7能识别`*+html .class{}`或者`*:first-child+html .class{}`。
     * `IE条件注释法`(即HTML条件注释Hack)：针对所有IE(`IE10+已经不再支持条件注释`) 
-    	只在IE下生效
+    	
+        只在IE下生效
         ```html
             <!--[if IE]> 
             <link rel="stylesheet" type="text/css" href="ie.css">
@@ -112,10 +113,31 @@ CSS Hack大致有3种表现形式，`CSS属性前缀法`、`选择器前缀法`�
             <![endif]-->
         ```
 
+CSS hack现在用的越来越少，能不用尽量不用，可以用最少的hack去实现多浏览器兼容的页面。所以不需要花很大精力去记，有这个概念，知道一些常见的就行。i知道星号是做ie67的hack，下划线是ie6的hack就行。浏览器越老，bug越多，但是越来越不关注这个了。
 
 ## `列举几种 浏览器兼容问题`
 
 `A:`
+
+* 透明度opacity
+
+```css
+opacity: 0.4;
+```
+![透明度兼容](/img/2244513-ccecb85ada3aeca5.png)
+
+可以看到在IE8是部分支持。
+
+![](/img/2244513-e2ff4d45cfd92135.png)
+
+解决方案：
+```css
+	filter:alpha(opacity=50);
+	zoom: 1; /* IE7需要加上这句，来触发hasLayout，不然没有效果。*/
+```
+![解决之后](/img/2244513-fbc504cd4abb7efa.png)
+
+
 
 ## `针对兼容、多浏览器覆盖有什么看法？渐进增强和**优雅降级**是什么意思？`
 
