@@ -59,12 +59,23 @@ CSS Hack大致有3种表现形式，`CSS属性前缀法`、`选择器前缀法`�
 
 3. IE条件注释法(即HTML条件注释Hack)：针对所有IE(注：IE10+已经不再支持条件注释)： ，针对IE6及以下版本： 。这类Hack不仅对CSS生效，对写在判断语句里面的所有代码都会生效
 
-> [browserhacks](http://browserhacks.com/)
+> [CSS hack查询站->browserhacks](http://browserhacks.com/)
 
 ## `如何调试 IE 浏览器`
 
+`A:`
+
+* `使用高版本IE控制台（对于IE7以上）`
+* `border: 1px solid red;` （对于IE6以下没有开发者工具，可以使用此方法。看边界来进行调试，这也是调试的重要手段。border不行就再加上background。）
+* `outline: 1px solid red;` （IE6不支持。）
+* `javascript: alert (document.get ...) ` 在IE里面执行JS，在JS里面写样式进行调试。）
+* `利用远程服务器，连接到有对应版本的机器上进行调试`
+* `安装多个虚拟机，每个虚拟机安装不同版本的IE浏览器进行测试`
+* `利用一些可以对不同版本进行切换的工具，比如IEtester、SuperPreview、Xenocode Browser Sandbox （可以实现真正的在线测试，但是有的要收费。）`
+
 
 ## `什么是CSS hack？在 CSS 和 HTML里如何写 hack？在 CSS 中 IE 7、IE 8的 hack 方式？`
+
 
 
 ## `列举几种 浏览器兼容问题`

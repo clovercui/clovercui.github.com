@@ -290,10 +290,22 @@
 </ol>
 
 <blockquote>
-  <p><a href="http://browserhacks.com/">browserhacks</a></p>
+  <p><a href="http://browserhacks.com/">CSS hack查询站-&gt;browserhacks</a></p>
 </blockquote>
 
 <h2 id="ie-"><code class="highlighter-rouge">如何调试 IE 浏览器</code></h2>
+
+<p><code class="highlighter-rouge">A:</code></p>
+
+<ul>
+  <li><code class="highlighter-rouge">使用高版本IE控制台（对于IE7以上）</code></li>
+  <li><code class="highlighter-rouge">border: 1px solid red;</code> （对于IE6以下没有开发者工具，可以使用此方法。看边界来进行调试，这也是调试的重要手段。border不行就再加上background。）</li>
+  <li><code class="highlighter-rouge">outline: 1px solid red;</code> （IE6不支持。）</li>
+  <li><code class="highlighter-rouge">javascript: alert (document.get ...) </code> 在IE里面执行JS，在JS里面写样式进行调试。）</li>
+  <li><code class="highlighter-rouge">利用远程服务器，连接到有对应版本的机器上进行调试</code></li>
+  <li><code class="highlighter-rouge">安装多个虚拟机，每个虚拟机安装不同版本的IE浏览器进行测试</code></li>
+  <li><code class="highlighter-rouge">利用一些可以对不同版本进行切换的工具，比如IEtester、SuperPreview、Xenocode Browser Sandbox （可以实现真正的在线测试，但是有的要收费。）</code></li>
+</ul>
 
 <h2 id="css-hack-css--html-hack-css--ie-7ie-8-hack-"><code class="highlighter-rouge">什么是CSS hack？在 CSS 和 HTML里如何写 hack？在 CSS 中 IE 7、IE 8的 hack 方式？</code></h2>
 
