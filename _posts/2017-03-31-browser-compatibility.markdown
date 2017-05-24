@@ -223,7 +223,7 @@ height: 1%; /* 父元素上面 */
 
 
 
-## `针对兼容、多浏览器覆盖有什么看法？渐进增强和**优雅降级**是什么意思？`
+## `针对兼容、多浏览器覆盖有什么看法？渐进增强和优雅降级是什么意思？`
 
 `A:`
 
@@ -258,7 +258,7 @@ height: 1%; /* 父元素上面 */
 
 	* `reset.css`比较暴力，它会对所有标签的默认样式重置为一样的效果；而`normalize.css`比较温和，注重通用的方案，重置掉该重置的样式，保留有用的 user agent 样式
 	* `normalize.css`对一些浏览器的 bug 进行修复；而`reset.css`是无法做到的。
-	* `normalilze.css`不会让调试工具变得杂乱；而`reset.css`在浏览器调试工具中有大段的继承链，显得比较杂乱，难看。
+	* `normalize.css`不会让调试工具变得杂乱；而`reset.css`在浏览器调试工具中有大段的继承链，显得比较杂乱，难看。
 
 
 
@@ -266,11 +266,69 @@ height: 1%; /* 父元素上面 */
 
 `A:`
 
+* IE盒模型设置的width和height不仅仅是指content内容的大小，还包括border边框和padding内边距；而标准盒模型设置的width和height就是content内容的大小。
 
+* 不添加doctype，也就是IE678怪异模式，使用的是IE盒模型；添加doctype，chrome， ie9+, ie678，使用的是标准盒模型。
+
+* box-sizing是定义元素盒尺寸大小的方式。它的属性值可以为content-box、padding-box、border-box、inherit。
+
+`box-sizing: border-box;`计算方法为width/height=content+padding+border，表示指定的宽度和高度包含边框、内边距和内容区域。这就是上面提到的`IE盒模型`。
 
 ## `在 ie 6, 7, 8中展示 盒模型、inline-block、max-width的区别`
 
 `A:`
+
+* `盒模型`
+	
+    * `IE6`
+    ![添加doctype，标准盒模型](/img/2244513-da793b0c1341c630.png)
+    ![不添加doctype，IE盒模型](/img/2244513-86c6b5fa373a73eb.png)
+	* `IE7`
+    ![添加doctype，标准盒模型](/img/2244513-e860d8b428d27941.png)
+    ![不添加doctype，IE盒模型](/img/2244513-866f2115cc5006b6.png)
+    * `IE8`
+    ![添加doctype，标准盒模型](/img/2244513-19062e0ac59bdec9.png)
+    ![不添加doctype，IE盒模型](/img/2244513-e980c2ecdaf04035.png)
+
+
+在上面的截图中，可以看到当IE为IE盒模型的时候，它变成了长方形，高度变高了。因为在盒模型中，撑起高度的就是line-height，所以这里的高度应该就是字体（这里为空白字符）的line-height造成的。经过测试，发现IE678以及11都有这种情况，这应该是IE的一个bug。
+![IE8截图](/img/2244513-91d8536925399037.png)
+解决方案就是把字体设为0px就好啦。
+![](/img/2244513-8e8982e9b29a9c26.png)
+
+* `inline-block`
+
+	* 块级元素
+		* IE6
+		![ie6不识别inline-block](/img/2244513-7e36315fa850604c.png)
+		* IE7
+		![ie7不识别inline-block](/img/2244513-eb2b6cfcfb9bdac1.png)
+		* IE8
+		![ie8识别inline-block](/img/2244513-4b92e208fb7027ab.png)
+    * 行内元素
+    	* IE6
+		![ie6中行内元素支持inline-block](/img/2244513-0c89256b1fc6ada3.png)
+        可以看到在ie6中，行内元素可以设置宽高。所以在ie6中，行内元素支持inline-block。
+		* IE7
+		![ie7中行内元素支持inline-block](/img/2244513-98a537249b710d28.png)
+        同理，行内元素在ie7中也支持inline-block。
+		* IE8
+		![ie8中行内元素支持inline-block](/img/2244513-839f16c391b15d07.png)
+        
+        在ie8中，行内元素也支持inline-block
+        
+        在Can I use中我们也可以看到，IE67是部分支持。
+        
+        ![inline-block的兼容性](/img/2244513-91770c02857fa098.png)
+       
+* `max-width`
+
+ 	* `IE6`
+    ![ie6不支持max-width](/img/2244513-912384a834d8db4a.png)
+	* `IE7`
+    ![ie7支持max-width](/img/2244513-67b9cae986281d65.png)
+    * `IE8`
+    ![ie8支持max-width](/img/2244513-191b8f553393f15f.png)
 
 
 

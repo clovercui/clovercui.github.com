@@ -473,7 +473,7 @@ height: 1%; /* 父元素上面 */
 
 <p><img src="/img/2244513-a84fcd6c7d902e7b.png" alt="" /></p>
 
-<h2 id="section-2"><code class="highlighter-rouge">针对兼容、多浏览器覆盖有什么看法？渐进增强和**优雅降级**是什么意思？</code></h2>
+<h2 id="section-2"><code class="highlighter-rouge">针对兼容、多浏览器覆盖有什么看法？渐进增强和优雅降级是什么意思？</code></h2>
 
 <p><code class="highlighter-rouge">A:</code></p>
 
@@ -521,7 +521,7 @@ height: 1%; /* 父元素上面 */
     <ul>
       <li><code class="highlighter-rouge">reset.css</code>比较暴力，它会对所有标签的默认样式重置为一样的效果；而<code class="highlighter-rouge">normalize.css</code>比较温和，注重通用的方案，重置掉该重置的样式，保留有用的 user agent 样式</li>
       <li><code class="highlighter-rouge">normalize.css</code>对一些浏览器的 bug 进行修复；而<code class="highlighter-rouge">reset.css</code>是无法做到的。</li>
-      <li><code class="highlighter-rouge">normalilze.css</code>不会让调试工具变得杂乱；而<code class="highlighter-rouge">reset.css</code>在浏览器调试工具中有大段的继承链，显得比较杂乱，难看。</li>
+      <li><code class="highlighter-rouge">normalize.css</code>不会让调试工具变得杂乱；而<code class="highlighter-rouge">reset.css</code>在浏览器调试工具中有大段的继承链，显得比较杂乱，难看。</li>
     </ul>
   </li>
 </ul>
@@ -530,9 +530,95 @@ height: 1%; /* 父元素上面 */
 
 <p><code class="highlighter-rouge">A:</code></p>
 
+<ul>
+  <li>
+    <p>IE盒模型设置的width和height不仅仅是指content内容的大小，还包括border边框和padding内边距；而标准盒模型设置的width和height就是content内容的大小。</p>
+  </li>
+  <li>
+    <p>不添加doctype，也就是IE678怪异模式，使用的是IE盒模型；添加doctype，chrome， ie9+, ie678，使用的是标准盒模型。</p>
+  </li>
+  <li>
+    <p>box-sizing是定义元素盒尺寸大小的方式。它的属性值可以为content-box、padding-box、border-box、inherit。</p>
+  </li>
+</ul>
+
+<p><code class="highlighter-rouge">box-sizing: border-box;</code>计算方法为width/height=content+padding+border，表示指定的宽度和高度包含边框、内边距和内容区域。这就是上面提到的<code class="highlighter-rouge">IE盒模型</code>。</p>
+
 <h2 id="ie-6-7-8-inline-blockmax-width"><code class="highlighter-rouge">在 ie 6, 7, 8中展示 盒模型、inline-block、max-width的区别</code></h2>
 
 <p><code class="highlighter-rouge">A:</code></p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">盒模型</code></p>
+
+    <ul>
+      <li><code class="highlighter-rouge">IE6</code>
+  <img src="/img/2244513-da793b0c1341c630.png" alt="添加doctype，标准盒模型" />
+  <img src="/img/2244513-86c6b5fa373a73eb.png" alt="不添加doctype，IE盒模型" /></li>
+      <li><code class="highlighter-rouge">IE7</code>
+  <img src="/img/2244513-e860d8b428d27941.png" alt="添加doctype，标准盒模型" />
+  <img src="/img/2244513-866f2115cc5006b6.png" alt="不添加doctype，IE盒模型" /></li>
+      <li><code class="highlighter-rouge">IE8</code>
+  <img src="/img/2244513-19062e0ac59bdec9.png" alt="添加doctype，标准盒模型" />
+  <img src="/img/2244513-e980c2ecdaf04035.png" alt="不添加doctype，IE盒模型" /></li>
+    </ul>
+  </li>
+</ul>
+
+<p>在上面的截图中，可以看到当IE为IE盒模型的时候，它变成了长方形，高度变高了。因为在盒模型中，撑起高度的就是line-height，所以这里的高度应该就是字体（这里为空白字符）的line-height造成的。经过测试，发现IE678以及11都有这种情况，这应该是IE的一个bug。
+<img src="/img/2244513-91d8536925399037.png" alt="IE8截图" />
+解决方案就是把字体设为0px就好啦。
+<img src="/img/2244513-8e8982e9b29a9c26.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">inline-block</code></p>
+
+    <ul>
+      <li>块级元素
+        <ul>
+          <li>IE6
+  <img src="/img/2244513-7e36315fa850604c.png" alt="ie6不识别inline-block" /></li>
+          <li>IE7
+  <img src="/img/2244513-eb2b6cfcfb9bdac1.png" alt="ie7不识别inline-block" /></li>
+          <li>IE8
+  <img src="/img/2244513-4b92e208fb7027ab.png" alt="ie8识别inline-block" /></li>
+        </ul>
+      </li>
+      <li>行内元素
+  	* IE6
+  <img src="/img/2244513-0c89256b1fc6ada3.png" alt="ie6中行内元素支持inline-block" />
+  可以看到在ie6中，行内元素可以设置宽高。所以在ie6中，行内元素支持inline-block。
+        <ul>
+          <li>IE7
+  <img src="/img/2244513-98a537249b710d28.png" alt="ie7中行内元素支持inline-block" />
+  同理，行内元素在ie7中也支持inline-block。</li>
+          <li>IE8
+  <img src="/img/2244513-839f16c391b15d07.png" alt="ie8中行内元素支持inline-block" /></li>
+        </ul>
+
+        <p>在ie8中，行内元素也支持inline-block</p>
+
+        <p>在Can I use中我们也可以看到，IE67是部分支持。</p>
+
+        <p><img src="/img/2244513-91770c02857fa098.png" alt="inline-block的兼容性" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">max-width</code></p>
+  </li>
+</ul>
+
+ 	* <code class="highlighter-rouge">IE6</code>
+<div class="highlighter-rouge"><pre class="highlight"><code>![ie6不支持max-width](/img/2244513-912384a834d8db4a.png)
+* `IE7`
+![ie7支持max-width](/img/2244513-67b9cae986281d65.png)
+* `IE8`
+![ie8支持max-width](/img/2244513-191b8f553393f15f.png)
+</code></pre>
+</div>
 
 <h2 id="section-3">参考</h2>
 

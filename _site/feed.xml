@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 24 May 2017 11:14:04 +0800</pubDate>
-    <lastBuildDate>Wed, 24 May 2017 11:14:04 +0800</lastBuildDate>
+    <pubDate>Wed, 24 May 2017 12:02:54 +0800</pubDate>
+    <lastBuildDate>Wed, 24 May 2017 12:02:54 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -426,7 +426,7 @@ height: 1%; /* 父元素上面 */
 
 &lt;p&gt;&lt;img src=&quot;/img/2244513-a84fcd6c7d902e7b.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;针对兼容、多浏览器覆盖有什么看法？渐进增强和**优雅降级**是什么意思？&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;section-2&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;针对兼容、多浏览器覆盖有什么看法？渐进增强和优雅降级是什么意思？&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
@@ -474,7 +474,7 @@ height: 1%; /* 父元素上面 */
     &lt;ul&gt;
       &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;reset.css&lt;/code&gt;比较暴力，它会对所有标签的默认样式重置为一样的效果；而&lt;code class=&quot;highlighter-rouge&quot;&gt;normalize.css&lt;/code&gt;比较温和，注重通用的方案，重置掉该重置的样式，保留有用的 user agent 样式&lt;/li&gt;
       &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;normalize.css&lt;/code&gt;对一些浏览器的 bug 进行修复；而&lt;code class=&quot;highlighter-rouge&quot;&gt;reset.css&lt;/code&gt;是无法做到的。&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;normalilze.css&lt;/code&gt;不会让调试工具变得杂乱；而&lt;code class=&quot;highlighter-rouge&quot;&gt;reset.css&lt;/code&gt;在浏览器调试工具中有大段的继承链，显得比较杂乱，难看。&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;normalize.css&lt;/code&gt;不会让调试工具变得杂乱；而&lt;code class=&quot;highlighter-rouge&quot;&gt;reset.css&lt;/code&gt;在浏览器调试工具中有大段的继承链，显得比较杂乱，难看。&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -483,9 +483,95 @@ height: 1%; /* 父元素上面 */
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;IE盒模型设置的width和height不仅仅是指content内容的大小，还包括border边框和padding内边距；而标准盒模型设置的width和height就是content内容的大小。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;不添加doctype，也就是IE678怪异模式，使用的是IE盒模型；添加doctype，chrome， ie9+, ie678，使用的是标准盒模型。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;box-sizing是定义元素盒尺寸大小的方式。它的属性值可以为content-box、padding-box、border-box、inherit。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;box-sizing: border-box;&lt;/code&gt;计算方法为width/height=content+padding+border，表示指定的宽度和高度包含边框、内边距和内容区域。这就是上面提到的&lt;code class=&quot;highlighter-rouge&quot;&gt;IE盒模型&lt;/code&gt;。&lt;/p&gt;
+
 &lt;h2 id=&quot;ie-6-7-8-inline-blockmax-width&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;在 ie 6, 7, 8中展示 盒模型、inline-block、max-width的区别&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;盒模型&lt;/code&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;IE6&lt;/code&gt;
+  &lt;img src=&quot;/img/2244513-da793b0c1341c630.png&quot; alt=&quot;添加doctype，标准盒模型&quot; /&gt;
+  &lt;img src=&quot;/img/2244513-86c6b5fa373a73eb.png&quot; alt=&quot;不添加doctype，IE盒模型&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;IE7&lt;/code&gt;
+  &lt;img src=&quot;/img/2244513-e860d8b428d27941.png&quot; alt=&quot;添加doctype，标准盒模型&quot; /&gt;
+  &lt;img src=&quot;/img/2244513-866f2115cc5006b6.png&quot; alt=&quot;不添加doctype，IE盒模型&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;IE8&lt;/code&gt;
+  &lt;img src=&quot;/img/2244513-19062e0ac59bdec9.png&quot; alt=&quot;添加doctype，标准盒模型&quot; /&gt;
+  &lt;img src=&quot;/img/2244513-e980c2ecdaf04035.png&quot; alt=&quot;不添加doctype，IE盒模型&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在上面的截图中，可以看到当IE为IE盒模型的时候，它变成了长方形，高度变高了。因为在盒模型中，撑起高度的就是line-height，所以这里的高度应该就是字体（这里为空白字符）的line-height造成的。经过测试，发现IE678以及11都有这种情况，这应该是IE的一个bug。
+&lt;img src=&quot;/img/2244513-91d8536925399037.png&quot; alt=&quot;IE8截图&quot; /&gt;
+解决方案就是把字体设为0px就好啦。
+&lt;img src=&quot;/img/2244513-8e8982e9b29a9c26.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;inline-block&lt;/code&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;块级元素
+        &lt;ul&gt;
+          &lt;li&gt;IE6
+  &lt;img src=&quot;/img/2244513-7e36315fa850604c.png&quot; alt=&quot;ie6不识别inline-block&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;IE7
+  &lt;img src=&quot;/img/2244513-eb2b6cfcfb9bdac1.png&quot; alt=&quot;ie7不识别inline-block&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;IE8
+  &lt;img src=&quot;/img/2244513-4b92e208fb7027ab.png&quot; alt=&quot;ie8识别inline-block&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;行内元素
+  	* IE6
+  &lt;img src=&quot;/img/2244513-0c89256b1fc6ada3.png&quot; alt=&quot;ie6中行内元素支持inline-block&quot; /&gt;
+  可以看到在ie6中，行内元素可以设置宽高。所以在ie6中，行内元素支持inline-block。
+        &lt;ul&gt;
+          &lt;li&gt;IE7
+  &lt;img src=&quot;/img/2244513-98a537249b710d28.png&quot; alt=&quot;ie7中行内元素支持inline-block&quot; /&gt;
+  同理，行内元素在ie7中也支持inline-block。&lt;/li&gt;
+          &lt;li&gt;IE8
+  &lt;img src=&quot;/img/2244513-839f16c391b15d07.png&quot; alt=&quot;ie8中行内元素支持inline-block&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;p&gt;在ie8中，行内元素也支持inline-block&lt;/p&gt;
+
+        &lt;p&gt;在Can I use中我们也可以看到，IE67是部分支持。&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;/img/2244513-91770c02857fa098.png&quot; alt=&quot;inline-block的兼容性&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;max-width&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+ 	* &lt;code class=&quot;highlighter-rouge&quot;&gt;IE6&lt;/code&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![ie6不支持max-width](/img/2244513-912384a834d8db4a.png)
+* `IE7`
+![ie7支持max-width](/img/2244513-67b9cae986281d65.png)
+* `IE8`
+![ie8支持max-width](/img/2244513-191b8f553393f15f.png)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h2 id=&quot;section-3&quot;&gt;参考&lt;/h2&gt;
 
