@@ -76,16 +76,54 @@ CSS Hack大致有3种表现形式，`CSS属性前缀法`、`选择器前缀法`�
 
 ## `什么是CSS hack？在 CSS 和 HTML里如何写 hack？在 CSS 中 IE 7、IE 8的 hack 方式？`
 
+`A:`
+
+* CSS hack由于不同的浏览器，比如Internet Explorer,Safari,Mozilla Firefox,Chrome等，或者是同一厂商的浏览器的不同版本，如IE6和IE7，对CSS的解析认识不完全一样，因此会导致生成的页面效果不一样，得不到我们所需要的页面效果。这个时候我们就需要针对不同的浏览器去写不同的CSS，让它能够同时兼容不同的浏览器，能在不同的浏览器中也能得到我们想要的页面效果。 简单的说，CSS hack的目的就是使你的CSS代码兼容不同的浏览器。当然，我们也可以反过来利用CSS hack为不同版本的浏览器定制编写不同的CSS效果。
+
+* CSS hack分类
+
+	CSS Hack大致有3种表现形式，`CSS属性前缀法`、`选择器前缀法`以及`IE条件注释法`（即HTML头部引用if IE）Hack，实际项目中CSS Hack大部分是针对IE浏览器不同版本之间的表现差异而引入的。
+	
+    * `属性前缀法`(即类内部Hack)：比如，IE6能识别下划线和星号，IE7能识别星号，但不能识别下划线，IE6~IE10都认识"\9"，但firefox前述三个都不认识。
+    * `选择器前缀法`(即选择器Hack)：例如 IE6能识别`*html .class{}`，IE7能识别`*+html .class{}`或者`*:first-child+html .class{}`。
+    * `IE条件注释法`(即HTML条件注释Hack)：针对所有IE(`IE10+已经不再支持条件注释`) 
+    	只在IE下生效
+        ```html
+            <!--[if IE]> 
+            <link rel="stylesheet" type="text/css" href="ie.css">
+            <![endif]-->
+        ```
+        只在IE6下生效
+        ```html
+            <!--[if IE 6]> 
+            <link rel="stylesheet" type="text/css" href="ie6.css">
+            <![endif]-->
+        ```
+        只在IE6以上版本生效
+        ```html
+            <!--[if gte IE 6]>
+            这段文字只在IE6以上(包括)版本IE浏览器显示
+            <![endif]-->
+        ```
+        非IE浏览器生效
+        ```html
+            <!--[if !IE]>
+            这段文字只在非IE浏览器显示
+            <![endif]-->
+        ```
 
 
 ## `列举几种 浏览器兼容问题`
 
+`A:`
 
 ## `针对兼容、多浏览器覆盖有什么看法？渐进增强和**优雅降级**是什么意思？`
 
+`A:`
 
 ## `reset.css和normalize.css分别是做什么的？为什么推荐使用nomalize.css?`
 
+`A:`
 
 ## `IE盒模型和标准盒模型有什么区别? 怎样使 IE7、8使用标准盒模型?box-sizing:border-box有什么作用`
 
