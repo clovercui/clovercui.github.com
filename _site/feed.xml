@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 24 May 2017 12:02:54 +0800</pubDate>
-    <lastBuildDate>Wed, 24 May 2017 12:02:54 +0800</lastBuildDate>
+    <pubDate>Wed, 24 May 2017 12:07:05 +0800</pubDate>
+    <lastBuildDate>Wed, 24 May 2017 12:07:05 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -506,15 +506,21 @@ height: 1%; /* 父元素上面 */
     &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;盒模型&lt;/code&gt;&lt;/p&gt;
 
     &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;IE6&lt;/code&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;IE6&lt;/code&gt;
   &lt;img src=&quot;/img/2244513-da793b0c1341c630.png&quot; alt=&quot;添加doctype，标准盒模型&quot; /&gt;
-  &lt;img src=&quot;/img/2244513-86c6b5fa373a73eb.png&quot; alt=&quot;不添加doctype，IE盒模型&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;IE7&lt;/code&gt;
+  &lt;img src=&quot;/img/2244513-86c6b5fa373a73eb.png&quot; alt=&quot;不添加doctype，IE盒模型&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;IE7&lt;/code&gt;
   &lt;img src=&quot;/img/2244513-e860d8b428d27941.png&quot; alt=&quot;添加doctype，标准盒模型&quot; /&gt;
-  &lt;img src=&quot;/img/2244513-866f2115cc5006b6.png&quot; alt=&quot;不添加doctype，IE盒模型&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;IE8&lt;/code&gt;
+  &lt;img src=&quot;/img/2244513-866f2115cc5006b6.png&quot; alt=&quot;不添加doctype，IE盒模型&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;IE8&lt;/code&gt;
   &lt;img src=&quot;/img/2244513-19062e0ac59bdec9.png&quot; alt=&quot;添加doctype，标准盒模型&quot; /&gt;
-  &lt;img src=&quot;/img/2244513-e980c2ecdaf04035.png&quot; alt=&quot;不添加doctype，IE盒模型&quot; /&gt;&lt;/li&gt;
+  &lt;img src=&quot;/img/2244513-e980c2ecdaf04035.png&quot; alt=&quot;不添加doctype，IE盒模型&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -529,35 +535,45 @@ height: 1%; /* 父元素上面 */
     &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;inline-block&lt;/code&gt;&lt;/p&gt;
 
     &lt;ul&gt;
-      &lt;li&gt;块级元素
+      &lt;li&gt;
+        &lt;p&gt;块级元素&lt;/p&gt;
+
         &lt;ul&gt;
-          &lt;li&gt;IE6
-  &lt;img src=&quot;/img/2244513-7e36315fa850604c.png&quot; alt=&quot;ie6不识别inline-block&quot; /&gt;&lt;/li&gt;
-          &lt;li&gt;IE7
-  &lt;img src=&quot;/img/2244513-eb2b6cfcfb9bdac1.png&quot; alt=&quot;ie7不识别inline-block&quot; /&gt;&lt;/li&gt;
-          &lt;li&gt;IE8
-  &lt;img src=&quot;/img/2244513-4b92e208fb7027ab.png&quot; alt=&quot;ie8识别inline-block&quot; /&gt;&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;IE6
+  &lt;img src=&quot;/img/2244513-7e36315fa850604c.png&quot; alt=&quot;ie6不识别inline-block&quot; /&gt;&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;IE7
+  &lt;img src=&quot;/img/2244513-eb2b6cfcfb9bdac1.png&quot; alt=&quot;ie7不识别inline-block&quot; /&gt;&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;IE8
+  &lt;img src=&quot;/img/2244513-4b92e208fb7027ab.png&quot; alt=&quot;ie8识别inline-block&quot; /&gt;&lt;/p&gt;
+          &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;行内元素
-  	* IE6
-  &lt;img src=&quot;/img/2244513-0c89256b1fc6ada3.png&quot; alt=&quot;ie6中行内元素支持inline-block&quot; /&gt;
-  可以看到在ie6中，行内元素可以设置宽高。所以在ie6中，行内元素支持inline-block。
-        &lt;ul&gt;
-          &lt;li&gt;IE7
-  &lt;img src=&quot;/img/2244513-98a537249b710d28.png&quot; alt=&quot;ie7中行内元素支持inline-block&quot; /&gt;
-  同理，行内元素在ie7中也支持inline-block。&lt;/li&gt;
-          &lt;li&gt;IE8
-  &lt;img src=&quot;/img/2244513-839f16c391b15d07.png&quot; alt=&quot;ie8中行内元素支持inline-block&quot; /&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-
-        &lt;p&gt;在ie8中，行内元素也支持inline-block&lt;/p&gt;
-
-        &lt;p&gt;在Can I use中我们也可以看到，IE67是部分支持。&lt;/p&gt;
-
-        &lt;p&gt;&lt;img src=&quot;/img/2244513-91770c02857fa098.png&quot; alt=&quot;inline-block的兼容性&quot; /&gt;&lt;/p&gt;
+      &lt;li&gt;
+        &lt;p&gt;行内元素&lt;/p&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
+
+  	* IE6
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ![ie6中行内元素支持inline-block](/img/2244513-0c89256b1fc6ada3.png)
+  可以看到在ie6中，行内元素可以设置宽高。所以在ie6中，行内元素支持inline-block。
+  * IE7
+  ![ie7中行内元素支持inline-block](/img/2244513-98a537249b710d28.png)
+  同理，行内元素在ie7中也支持inline-block。
+  * IE8
+  ![ie8中行内元素支持inline-block](/img/2244513-839f16c391b15d07.png)
+    
+  在ie8中，行内元素也支持inline-block
+    
+  在Can I use中我们也可以看到，IE67是部分支持。
+    
+  ![inline-block的兼容性](/img/2244513-91770c02857fa098.png)
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;max-width&lt;/code&gt;&lt;/p&gt;
@@ -565,9 +581,12 @@ height: 1%; /* 父元素上面 */
 &lt;/ul&gt;
 
  	* &lt;code class=&quot;highlighter-rouge&quot;&gt;IE6&lt;/code&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![ie6不支持max-width](/img/2244513-912384a834d8db4a.png)
+
 * `IE7`
 ![ie7支持max-width](/img/2244513-67b9cae986281d65.png)
+
 * `IE8`
 ![ie8支持max-width](/img/2244513-191b8f553393f15f.png)
 &lt;/code&gt;&lt;/pre&gt;

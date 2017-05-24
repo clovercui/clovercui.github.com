@@ -283,9 +283,11 @@ height: 1%; /* 父元素上面 */
     * `IE6`
     ![添加doctype，标准盒模型](/img/2244513-da793b0c1341c630.png)
     ![不添加doctype，IE盒模型](/img/2244513-86c6b5fa373a73eb.png)
+	
 	* `IE7`
     ![添加doctype，标准盒模型](/img/2244513-e860d8b428d27941.png)
     ![不添加doctype，IE盒模型](/img/2244513-866f2115cc5006b6.png)
+    
     * `IE8`
     ![添加doctype，标准盒模型](/img/2244513-19062e0ac59bdec9.png)
     ![不添加doctype，IE盒模型](/img/2244513-e980c2ecdaf04035.png)
@@ -299,13 +301,18 @@ height: 1%; /* 父元素上面 */
 * `inline-block`
 
 	* 块级元素
+	
 		* IE6
 		![ie6不识别inline-block](/img/2244513-7e36315fa850604c.png)
+		
 		* IE7
 		![ie7不识别inline-block](/img/2244513-eb2b6cfcfb9bdac1.png)
+		
 		* IE8
 		![ie8识别inline-block](/img/2244513-4b92e208fb7027ab.png)
+    
     * 行内元素
+    
     	* IE6
 		![ie6中行内元素支持inline-block](/img/2244513-0c89256b1fc6ada3.png)
         可以看到在ie6中，行内元素可以设置宽高。所以在ie6中，行内元素支持inline-block。
@@ -324,9 +331,12 @@ height: 1%; /* 父元素上面 */
 * `max-width`
 
  	* `IE6`
+ 	
     ![ie6不支持max-width](/img/2244513-912384a834d8db4a.png)
+	
 	* `IE7`
     ![ie7支持max-width](/img/2244513-67b9cae986281d65.png)
+    
     * `IE8`
     ![ie8支持max-width](/img/2244513-191b8f553393f15f.png)
 
