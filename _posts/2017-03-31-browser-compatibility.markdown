@@ -119,7 +119,7 @@ CSS hack现在用的越来越少，能不用尽量不用，可以用最少的hac
 
 `A:`
 
-* 透明度opacity
+* `透明度opacity`
 
 ```css
 opacity: 0.4;
@@ -136,6 +136,79 @@ opacity: 0.4;
 	zoom: 1; /* IE7需要加上这句，来触发hasLayout，不然没有效果。*/
 ```
 ![解决之后](/img/2244513-fbc504cd4abb7efa.png)
+
+* `display: inline-block`
+
+inline元素的display属性设置为inline-block时，所有的浏览器都支持；
+
+block元素的display属性设置为inline-block时，IE6/IE7浏览器是不支持的。
+
+![未解决之前](/img/2244513-2b589ed87f2a6472.png)
+
+`解决方案1：`
+
+```css
+*display: inline; /* 将块级元素设置为内联对象呈递。*/
+*zoom: 1;  /* 触发haslayout */
+```
+![](/img/2244513-3d4a06731527638d.png)
+
+`解决方案2：`
+
+先使用`display: inline-block;`属性触发块级元素，然后再定义`display:inline;，`让块元素呈递为内联对象。需要注意的是，两个display 要先后放在两个CSS声明中才有效果，顺序也不能反了。
+
+```css
+div{
+display: inline-block;
+}
+div{
+*display: inline;
+}
+```
+
+![](/img/2244513-8f70598ef70099c5.png)
+
+* `块级元素的外边距margin无效`
+
+块级元素设置外边距margin无效，行内元素有效果（当然行内元素只有左右的外边距会有效果）。
+
+![块级元素设置外边距](/img/2244513-44d02caa3ba72bd3.png)
+![行内元素设置外边距](/img/2244513-4c463f063dddfd62.png)
+
+在IE中，一个元素要么自己对自身的内容进行计算大小和组织，要么依赖于父元素来计算尺寸，所以子元素的margin失效。解决方法的思想主要是触发haslayout。
+
+`解决方案1：`
+
+给父元素加overflow: hidden;或者overflow: auto;。
+
+![](/img/2244513-bbecdae6f7e3d0a0.png)
+
+`解决方案2：`
+
+![](/img/2244513-d99ed7f89474b7b5.png)
+
+`解决方案3：`
+
+```css
+height: 1%; /* 父元素上面 */
+```
+
+![](/img/2244513-d1aeb75981d470c9.png)
+
+* `margin加倍`
+
+给ie6的浮动元素添加margin样式的时候，实际的渲染效果是本身设置的外边距的两倍。解决方案是在这个元素里面加上`display: inline`;。
+
+这里需要注意的一点是，清除浮动的时候一定要在父元素上加上`zoom: 1;`，否则没有效果。
+
+![ie6margin加倍](/img/2244513-a168afa8a49cc869.png)
+
+不过按道理来说，这个margin加倍的情况应该是左右方向上都有的，不知道为什么这里只有左边方向上有。
+
+![解决之后](/img/2244513-868cd9bbc698824f.png)
+![ie7margin不加倍](/img/2244513-09f00d49cbaa6b21.png)
+![ie8margin不加倍](img/2244513-3708b37931ad74d2.png)
+
 
 
 

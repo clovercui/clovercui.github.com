@@ -362,7 +362,7 @@
 <p><code class="highlighter-rouge">A:</code></p>
 
 <ul>
-  <li>透明度opacity</li>
+  <li><code class="highlighter-rouge">透明度opacity</code></li>
 </ul>
 
 <p><code class="highlighter-rouge">css
@@ -380,6 +380,84 @@ opacity: 0.4;
 	zoom: 1; /* IE7需要加上这句，来触发hasLayout，不然没有效果。*/
 </code>
 <img src="/img/2244513-fbc504cd4abb7efa.png" alt="解决之后" /></p>
+
+<ul>
+  <li><code class="highlighter-rouge">display: inline-block</code></li>
+</ul>
+
+<p>inline元素的display属性设置为inline-block时，所有的浏览器都支持；</p>
+
+<p>block元素的display属性设置为inline-block时，IE6/IE7浏览器是不支持的。</p>
+
+<p><img src="/img/2244513-2b589ed87f2a6472.png" alt="未解决之前" /></p>
+
+<p><code class="highlighter-rouge">解决方案1：</code></p>
+
+<p><code class="highlighter-rouge">css
+*display: inline; /* 将块级元素设置为内联对象呈递。*/
+*zoom: 1;  /* 触发haslayout */
+</code>
+<img src="/img/2244513-3d4a06731527638d.png" alt="" /></p>
+
+<p><code class="highlighter-rouge">解决方案2：</code></p>
+
+<p>先使用<code class="highlighter-rouge">display: inline-block;</code>属性触发块级元素，然后再定义<code class="highlighter-rouge">display:inline;，</code>让块元素呈递为内联对象。需要注意的是，两个display 要先后放在两个CSS声明中才有效果，顺序也不能反了。</p>
+
+<p><code class="highlighter-rouge">css
+div{
+display: inline-block;
+}
+div{
+*display: inline;
+}
+</code></p>
+
+<p><img src="/img/2244513-8f70598ef70099c5.png" alt="" /></p>
+
+<ul>
+  <li><code class="highlighter-rouge">块级元素的外边距margin无效</code></li>
+</ul>
+
+<p>块级元素设置外边距margin无效，行内元素有效果（当然行内元素只有左右的外边距会有效果）。</p>
+
+<p><img src="/img/2244513-44d02caa3ba72bd3.png" alt="块级元素设置外边距" />
+<img src="/img/2244513-4c463f063dddfd62.png" alt="行内元素设置外边距" /></p>
+
+<p>在IE中，一个元素要么自己对自身的内容进行计算大小和组织，要么依赖于父元素来计算尺寸，所以子元素的margin失效。解决方法的思想主要是触发haslayout。</p>
+
+<p><code class="highlighter-rouge">解决方案1：</code></p>
+
+<p>给父元素加overflow: hidden;或者overflow: auto;。</p>
+
+<p><img src="/img/2244513-bbecdae6f7e3d0a0.png" alt="" /></p>
+
+<p><code class="highlighter-rouge">解决方案2：</code></p>
+
+<p><img src="/img/2244513-d99ed7f89474b7b5.png" alt="" /></p>
+
+<p><code class="highlighter-rouge">解决方案3：</code></p>
+
+<p><code class="highlighter-rouge">css
+height: 1%; /* 父元素上面 */
+</code></p>
+
+<p><img src="/img/2244513-d1aeb75981d470c9.png" alt="" /></p>
+
+<ul>
+  <li><code class="highlighter-rouge">margin加倍</code></li>
+</ul>
+
+<p>给ie6的浮动元素添加margin样式的时候，实际的渲染效果是本身设置的外边距的两倍。解决方案是在这个元素里面加上<code class="highlighter-rouge">display: inline</code>;。</p>
+
+<p>这里需要注意的一点是，清除浮动的时候一定要在父元素上加上<code class="highlighter-rouge">zoom: 1;</code>，否则没有效果。</p>
+
+<p><img src="/img/2244513-a168afa8a49cc869.png" alt="ie6margin加倍" /></p>
+
+<p>不过按道理来说，这个margin加倍的情况应该是左右方向上都有的，不知道为什么这里只有左边方向上有。</p>
+
+<p><img src="/img/2244513-868cd9bbc698824f.png" alt="解决之后" />
+<img src="/img/2244513-09f00d49cbaa6b21.png" alt="ie7margin不加倍" />
+<img src="img/2244513-3708b37931ad74d2.png" alt="ie8margin不加倍" /></p>
 
 <h2 id="section-2"><code class="highlighter-rouge">针对兼容、多浏览器覆盖有什么看法？渐进增强和**优雅降级**是什么意思？</code></h2>
 

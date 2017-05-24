@@ -5,8 +5,8 @@
     <description>克洛弗，Web &amp; Mobile Lover，Front-End Engineer，UX Designer，PHP&amp;JAVA Engineer | 这里是 @Clover克洛弗 的个人博客，与你一起发现更大的世界。</description>
     <link>http://clover.htmhub.com/</link>
     <atom:link href="http://clover.htmhub.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 24 May 2017 10:44:51 +0800</pubDate>
-    <lastBuildDate>Wed, 24 May 2017 10:44:51 +0800</lastBuildDate>
+    <pubDate>Wed, 24 May 2017 10:59:21 +0800</pubDate>
+    <lastBuildDate>Wed, 24 May 2017 10:59:21 +0800</lastBuildDate>
     <generator>Jekyll v3.0.3</generator>
     
       <item>
@@ -315,7 +315,7 @@
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A:&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;透明度opacity&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;透明度opacity&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;css
@@ -333,6 +333,84 @@ opacity: 0.4;
 	zoom: 1; /* IE7需要加上这句，来触发hasLayout，不然没有效果。*/
 &lt;/code&gt;
 &lt;img src=&quot;/img/2244513-fbc504cd4abb7efa.png&quot; alt=&quot;解决之后&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;display: inline-block&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;inline元素的display属性设置为inline-block时，所有的浏览器都支持；&lt;/p&gt;
+
+&lt;p&gt;block元素的display属性设置为inline-block时，IE6/IE7浏览器是不支持的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2244513-2b589ed87f2a6472.png&quot; alt=&quot;未解决之前&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;解决方案1：&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;css
+*display: inline; /* 将块级元素设置为内联对象呈递。*/
+*zoom: 1;  /* 触发haslayout */
+&lt;/code&gt;
+&lt;img src=&quot;/img/2244513-3d4a06731527638d.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;解决方案2：&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;先使用&lt;code class=&quot;highlighter-rouge&quot;&gt;display: inline-block;&lt;/code&gt;属性触发块级元素，然后再定义&lt;code class=&quot;highlighter-rouge&quot;&gt;display:inline;，&lt;/code&gt;让块元素呈递为内联对象。需要注意的是，两个display 要先后放在两个CSS声明中才有效果，顺序也不能反了。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;css
+div{
+display: inline-block;
+}
+div{
+*display: inline;
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2244513-8f70598ef70099c5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;块级元素的外边距margin无效&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;块级元素设置外边距margin无效，行内元素有效果（当然行内元素只有左右的外边距会有效果）。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2244513-44d02caa3ba72bd3.png&quot; alt=&quot;块级元素设置外边距&quot; /&gt;
+&lt;img src=&quot;/img/2244513-4c463f063dddfd62.png&quot; alt=&quot;行内元素设置外边距&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在IE中，一个元素要么自己对自身的内容进行计算大小和组织，要么依赖于父元素来计算尺寸，所以子元素的margin失效。解决方法的思想主要是触发haslayout。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;解决方案1：&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;给父元素加overflow: hidden;或者overflow: auto;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2244513-bbecdae6f7e3d0a0.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;解决方案2：&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2244513-d99ed7f89474b7b5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;解决方案3：&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;css
+height: 1%; /* 父元素上面 */
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2244513-d1aeb75981d470c9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;margin加倍&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;给ie6的浮动元素添加margin样式的时候，实际的渲染效果是本身设置的外边距的两倍。解决方案是在这个元素里面加上&lt;code class=&quot;highlighter-rouge&quot;&gt;display: inline&lt;/code&gt;;。&lt;/p&gt;
+
+&lt;p&gt;这里需要注意的一点是，清除浮动的时候一定要在父元素上加上&lt;code class=&quot;highlighter-rouge&quot;&gt;zoom: 1;&lt;/code&gt;，否则没有效果。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2244513-a168afa8a49cc869.png&quot; alt=&quot;ie6margin加倍&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;不过按道理来说，这个margin加倍的情况应该是左右方向上都有的，不知道为什么这里只有左边方向上有。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2244513-868cd9bbc698824f.png&quot; alt=&quot;解决之后&quot; /&gt;
+&lt;img src=&quot;/img/2244513-09f00d49cbaa6b21.png&quot; alt=&quot;ie7margin不加倍&quot; /&gt;
+&lt;img src=&quot;img/2244513-3708b37931ad74d2.png&quot; alt=&quot;ie8margin不加倍&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-2&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;针对兼容、多浏览器覆盖有什么看法？渐进增强和**优雅降级**是什么意思？&lt;/code&gt;&lt;/h2&gt;
 
